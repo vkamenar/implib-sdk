@@ -1,0 +1,32 @@
+include '..\implib.inc'
+
+implib comdlg32.dll, ChooseColorA, _ChooseColorA@4, __imp__ChooseColorA@4
+implib comdlg32.dll, ChooseColorW, _ChooseColorW@4, __imp__ChooseColorW@4
+implib comdlg32.dll, ChooseFontA, _ChooseFontA@4, __imp__ChooseFontA@4
+implib comdlg32.dll, ChooseFontW, _ChooseFontW@4, __imp__ChooseFontW@4
+implib comdlg32.dll, CommDlgExtendedError, _CommDlgExtendedError@0, __imp__CommDlgExtendedError@0
+implib comdlg32.dll, DllCanUnloadNow, _DllCanUnloadNow@0, __imp__DllCanUnloadNow@0
+implib comdlg32.dll, DllGetClassObject, _DllGetClassObject@12, __imp__DllGetClassObject@12
+implib comdlg32.dll, FindTextA, _FindTextA@4, __imp__FindTextA@4
+implib comdlg32.dll, FindTextW, _FindTextW@4, __imp__FindTextW@4
+implib comdlg32.dll, GetFileTitleA, _GetFileTitleA@12, __imp__GetFileTitleA@12
+implib comdlg32.dll, GetFileTitleW, _GetFileTitleW@12, __imp__GetFileTitleW@12
+implib comdlg32.dll, GetOpenFileNameA, _GetOpenFileNameA@4, __imp__GetOpenFileNameA@4
+implib comdlg32.dll, GetOpenFileNameW, _GetOpenFileNameW@4, __imp__GetOpenFileNameW@4
+implib comdlg32.dll, GetSaveFileNameA, _GetSaveFileNameA@4, __imp__GetSaveFileNameA@4
+implib comdlg32.dll, GetSaveFileNameW, _GetSaveFileNameW@4, __imp__GetSaveFileNameW@4
+implib comdlg32.dll, LoadAlterBitmap, _LoadAlterBitmap@12, __imp__LoadAlterBitmap@12
+implib comdlg32.dll, PageSetupDlgA, _PageSetupDlgA@4, __imp__PageSetupDlgA@4
+implib comdlg32.dll, PageSetupDlgW, _PageSetupDlgW@4, __imp__PageSetupDlgW@4
+implib comdlg32.dll, PrintDlgA, _PrintDlgA@4, __imp__PrintDlgA@4
+implib comdlg32.dll, PrintDlgExA, _PrintDlgExA@4, __imp__PrintDlgExA@4
+implib comdlg32.dll, PrintDlgExW, _PrintDlgExW@4, __imp__PrintDlgExW@4
+implib comdlg32.dll, PrintDlgW, _PrintDlgW@4, __imp__PrintDlgW@4
+implib comdlg32.dll, ReplaceTextA, _ReplaceTextA@4, __imp__ReplaceTextA@4
+implib comdlg32.dll, ReplaceTextW, _ReplaceTextW@4, __imp__ReplaceTextW@4
+implib comdlg32.dll, Ssync_ANSI_UNICODE_Struct_For_WOW, _Ssync_ANSI_UNICODE_Struct_For_WOW@12, __imp__Ssync_ANSI_UNICODE_Struct_For_WOW@12
+implib comdlg32.dll, WantArrows, _WantArrows@16, __imp__WantArrows@16
+implib comdlg32.dll, dwLBSubclass, _dwLBSubclass@16, __imp__dwLBSubclass@16
+implib comdlg32.dll, dwOKSubclass, _dwOKSubclass@16, __imp__dwOKSubclass@16
+
+endlib
