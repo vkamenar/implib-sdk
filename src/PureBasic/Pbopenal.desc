@@ -1,0 +1,196 @@
+; PBOPENAL.DESC
+; -------------
+; OpenAL versions 1.0 and 1.1 import lib
+; PureBasic library description. Requires PureBasic v3.50 or later.
+
+C
+0
+LIB
+0
+Help
+alGenBuffers, Long, Any, (n, *buffers) - Generates one or more buffers, which contain audio data
+None
+alDeleteBuffers, Long, Any, (n, *buffers) - Deletes one or more buffers, freeing the resources used by the buffer
+None
+alIsBuffer, Long, (buffer) - Tests if a buffer name is valid
+Byte
+alBufferData, Long, Long, Any, Long, Long, (buffer, format, *data, size, freq) - Fills a buffer with audio data
+None
+alBufferf, Long, Long, Float, (buffer, param, value) - Sets a floating point property of a buffer
+None
+alBuffer3f, Long, Long, Float, Float, Float, (buffer, param, v1, v2, v3) - Sets a floating point property of a buffer
+None
+alBufferfv, Long, Long, Any, (buffer, param, *values) - Sets a floating point property of a buffer
+None
+alBufferi, Long, Long, Long, (buffer, param, value) - Sets an integer property of a buffer
+None
+alBuffer3i, Long, Long, Long, Long, Long, (buffer, param, v1, v2, v3) - Sets an integer property of a buffer
+None
+alBufferiv, Long, Long, Any, (buffer, param, *values) - Sets an integer property of a buffer
+None
+alGetBufferf, Long, Long, Any, (buffer, pname, *value) - Retrieves a floating point property of a buffer
+None
+alGetBuffer3f, Long, Long, Any, Any, Any, (buffer, pname, *v1, *v2, *v3) - Retrieves a floating point property of a buffer
+None
+alGetBufferfv, Long, Long, Any, (buffer, pname, *values) - Retrieves a floating point property of a buffer
+None
+alGetBufferi, Long, Long, Any, (buffer, pname, *value) - Retrieves an integer property of a buffer
+None
+alGetBuffer3i, Long, Long, Any, Any, Any, (buffer, pname, *v1, *v2, *v3) - Retrieves an integer property of a buffer
+None
+alGetBufferiv, Long, Long, Any, (buffer, pname, *values) - Retrieves an integer property of a buffer
+None
+alGenSources, Long, Any, (n, *sources) - Generates one or more sources
+None
+alDeleteSources, Long, Any, (n, *sources) - Deletes one or more sources
+None
+alIsSource, Long, (source) - Tests if a source name is valid
+Byte
+alSourcef, Long, Long, Float, (source, param, value) - Sets a floating point property of a source
+None
+alSource3f, Long, Long, Float, Float, Float, (source, param, v1, v2, v3) - Sets a floating point property of a source
+None
+alSourcefv, Long, Long, Any, (source, param, *values) - Sets a floating point property of a source
+None
+alSourcei, Long, Long, Long, (source, param, value) - Sets an integer property of a source
+None
+alSource3i, Long, Long, Long, Long, Long, (source, param, v1, v2, v3) - Sets an integer property of a source
+None
+alSourceiv, Long, Long, Any, (source, param, *values) - Sets an integer property of a source
+None
+alGetSourcef, Long, Long, Any, (source, pname, *value) - Retrieves a floating point property of a source
+None
+alGetSource3f, Long, Long, Any, Any, Any, (source, pname, *v1, *v2, *v3) - Retrieves a floating point property of a source
+None
+alGetSourcefv, Long, Long, Any, (source, pname, *values) - Retrieves a floating point property of a source
+None
+alGetSourcei, Long, Long, Any, (source, pname, *value) - Retrieves an integer property of a source
+None
+alGetSource3i, Long, Long, Any, Any, Any, (source, pname, *v1, *v2, *v3) - Retrieves an integer property of a source
+None
+alGetSourceiv, Long, Long, Any, (source, pname, *values) - Retrieves an integer property of a source
+None
+alSourcePlay, Long, (source) - Plays a source
+None
+alSourcePlayv, Long, Any, (n, *sources) - Plays a set of sources
+None
+alSourcePause, Long, (source) - Pauses a source
+None
+alSourcePausev, Long, Any, (n, *sources) - Pauses a set of sources
+None
+alSourceStop, Long, (source) - Stops a source
+None
+alSourceStopv, Long, Any, (n, *sources) - Stops a set of sources
+None
+alSourceRewind, Long, (source) - Stops the source and sets its state to AL_INITIAL
+None
+alSourceRewindv, Long, Any, (n, *sources) - Stops a set of sources and sets all their states to AL_INITIAL
+None
+alSourceQueueBuffers, Long, Long, Any, (source, n, *buffers) - Queues a set of buffers on a source
+None
+alSourceUnqueueBuffers, Long, Long, Any, (source, n, *buffers) - Unqueues a set of buffers attached to a source
+None
+alListenerf, Long, Float, (param, value) - Sets a floating point property of the listener
+None
+alListener3f, Long, Float, Float, Float, (param, v1, v2, v3) - Sets a floating point property of the listener
+None
+alListenerfv, Long, Any, (param, *values) - Sets a floating point property of the listener
+None
+alListeneri, Long, Long, (param, value) - Sets an integer property of the listener
+None
+alListener3i, Long, Long, Long, Long, (param, v1, v2, v3) - Sets an integer property of the listener
+None
+alListeneriv, Long, Any, (param, *values) - Sets an integer property of the listener
+None
+alGetListenerf, Long, Any, (pname, *value) - Retrieves a floating point property of the listener
+None
+alGetListener3f, Long, Any, Any, Any, (pname, *v1, *v2, *v3) - Retrieves a floating point property of the listener
+None
+alGetListenerfv, Long, Any, (pname, *values) - Retrieves a floating point property of the listener
+None
+alGetListeneri, Long, Any, (pname, *value) - Retrieves an integer property of the listener
+None
+alGetListener3i, Long, Any, Any, Any, (pname, *v1, *v2, *v3) - Retrieves an integer property of the listener
+None
+alGetListeneriv, Long, Any, (pname, *values) - Retrieves an integer property of the listener
+None
+alEnable, Long, (capability) - Enables a feature of the OpenAL driver
+None
+alDisable, Long, (capability) - Disables a feature of the OpenAL driver
+None
+alIsEnabled, Long, (capability) - Returns a boolean indicating if a specific feature is enabled in the OpenAL driver
+Byte
+alGetBoolean, Long, (param) - Returns a boolean OpenAL state
+Byte
+alGetDouble, Long, (param) - Returns a double precision floating point OpenAL state
+Double
+alGetFloat, Long, (param) - Returns a floating point OpenAL state
+Float
+alGetInteger, Long, (param) - Returns an integer OpenAL state
+Long
+alGetBooleanv, Long, Any, (param, *data) - Returns a boolean OpenAL state
+None
+alGetDoublev, Long, Any, (param, *data) - Returns a double precision floating point OpenAL state
+None
+alGetFloatv, Long, Any, (param, *data) - Returns a floating point OpenAL state
+None
+alGetIntegerv, Long, Any, (param, *data) - Returns an integer OpenAL state
+None
+alcGetIntegerv, Any, Long, Long, Any, (*device, param, size, *data) - Returns integers related to the context
+None
+alGetString, Long, (param) - Retrieves an OpenAL string property
+Long
+alcGetString, Any, Long, (*device, param) - Returns pointers to strings related to the context
+Long
+alDistanceModel, Long, (value) - Selects the OpenAL distance model
+None
+alDopplerFactor, Float, (value) - Selects the OpenAL Doppler factor value
+None
+alDopplerVelocity, Float, (value) - Deprecated in v1.1: use alSpeedOfSound instead!
+None
+alSpeedOfSound, Float, (value) - Selects the speed of sound for use in Doppler calculations
+None
+alGetError () - Returns the current error state and then clears the error state
+Long
+alcGetError, Any, (*device) - Retrieves the current context error state
+Long
+alIsExtensionPresent, Any, (*extname) - Tests if a specific extension is available for the OpenAL driver
+Byte
+alcIsExtensionPresent, Any, Any, (*device, *extname) - Queries if a specified context extension is available
+Byte
+alGetProcAddress, Any, (*fname) - Returns the address of an OpenAL extension function
+Long
+alcGetProcAddress, Any, Any, (*device, *fname) - Retrieves the address of a specified context extension function
+Long
+alGetEnumValue, Any, (*ename) - Returns the enumeration value of an OpenAL enum described by a string
+Long
+alcGetEnumValue, Any, Any, (*device, *ename) - Retrieves the enum value for a specified enumeration name
+Long
+alcCreateContext, Any, Any, (*device, *attrlist) - Creates a context using a specified device
+Long
+alcMakeContextCurrent, Any, (*context) - Makes a specified context the current context
+Byte
+alcProcessContext, Any, (*context) - Tells a context to begin processing
+None
+alcSuspendContext, Any, (*context) - Suspends processing on a specified context
+None
+alcDestroyContext, Any, (*context) - Destroys a context
+None
+alcGetCurrentContext () - Retrieves a pointer to the current context
+Long
+alcGetContextsDevice, Any, (*context) - Retrieves a context's device pointer
+Long
+alcOpenDevice, Any, (*devicename) - Opens a device by name
+Long
+alcCloseDevice, Any, (*device) - Closes the specified device
+Byte
+alcCaptureOpenDevice, Any, Long, Long, Long, (*devicename, freq, format, size) - Opens a capture device by name
+Long
+alcCaptureCloseDevice, Any, (*device) - Closes the specified capture device
+Byte
+alcCaptureStart, Any, (*device) - Begins a capture operation
+None
+alcCaptureStop, Any, (*device) - Stops a capture operation
+None
+alcCaptureSamples, Any, Any, Long, (*device, *buffer, samples) - Completes a capture operation and does not block
+None
