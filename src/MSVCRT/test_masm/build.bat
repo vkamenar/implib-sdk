@@ -23,7 +23,7 @@ IF EXIST "%MSLNK%.exe" GOTO LINKFOUND
 ECHO Linker not found.
 GOTO EXIT
 :LINKFOUND
-"%MSLNK%" /SUBSYSTEM:CONSOLE test.obj ..\..\..\lib\msvcrt.lib
+"%MSLNK%" /OPT:nowin98 /SUBSYSTEM:CONSOLE /MERGE:.rdata=.text -ignore:4078 test.obj ..\..\..\lib\msvcrt.lib
 :EXIT
 pause
 ENDLOCAL
