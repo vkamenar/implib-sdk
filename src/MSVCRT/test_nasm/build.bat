@@ -26,7 +26,7 @@ IF EXIST "%POLINK%.exe" GOTO LINKFOUND
 ECHO Polink linker not found.
 GOTO EXIT
 :LINKFOUND
-"%POLINK%" /ENTRY:start /SUBSYSTEM:CONSOLE test.obj ..\..\..\lib\msvcrt.lib
+"%POLINK%" /ENTRY:start /SUBSYSTEM:CONSOLE /MERGE:.data=.text test.obj ..\..\..\lib\msvcrt.lib
 :EXIT
 pause
 ENDLOCAL
