@@ -846,6 +846,27 @@ implib gdi32.dll, ScriptIsComplex, _ScriptIsComplex@12, __imp__ScriptIsComplex@1
 implib gdi32.dll, ScriptItemize, _ScriptItemize@0, __imp__ScriptItemize@0
 implib gdi32.dll, ScriptItemizeOpenType, _ScriptItemizeOpenType@32, __imp__ScriptItemizeOpenType@32
 implib gdi32.dll, ScriptJustify, _ScriptJustify@24, __imp__ScriptJustify@24
+implib gdi32.dll, ScriptLayout, _ScriptLayout@16, __imp__ScriptLayout@16
+implib gdi32.dll, ScriptPlace, _ScriptPlace@36, __imp__ScriptPlace@36
+implib gdi32.dll, ScriptPlaceOpenType, _ScriptPlaceOpenType@72, __imp__ScriptPlaceOpenType@72
+implib gdi32.dll, ScriptPositionSingleGlyph, _ScriptPositionSingleGlyph@52, __imp__ScriptPositionSingleGlyph@52
+implib gdi32.dll, ScriptRecordDigitSubstitution, _ScriptRecordDigitSubstitution@12, __imp__ScriptRecordDigitSubstitution@12
+implib gdi32.dll, ScriptShape, _ScriptShape@0, __imp__ScriptShape@0
+implib gdi32.dll, ScriptShapeOpenType, _ScriptShapeOpenType@64, __imp__ScriptShapeOpenType@64
+implib gdi32.dll, ScriptStringAnalyse, _ScriptStringAnalyse@52, __imp__ScriptStringAnalyse@52
+implib gdi32.dll, ScriptStringCPtoX, _ScriptStringCPtoX@20, __imp__ScriptStringCPtoX@20
+implib gdi32.dll, ScriptStringFree, _ScriptStringFree@4, __imp__ScriptStringFree@4
+implib gdi32.dll, ScriptStringGetLogicalWidths, _ScriptStringGetLogicalWidths@8, __imp__ScriptStringGetLogicalWidths@8
+implib gdi32.dll, ScriptStringGetOrder, _ScriptStringGetOrder@8, __imp__ScriptStringGetOrder@8
+implib gdi32.dll, ScriptStringOut, _ScriptStringOut@32, __imp__ScriptStringOut@32
+implib gdi32.dll, ScriptStringValidate, _ScriptStringValidate@4, __imp__ScriptStringValidate@4
+implib gdi32.dll, ScriptStringXtoCP, _ScriptStringXtoCP@20, __imp__ScriptStringXtoCP@20
+implib gdi32.dll, ScriptString_pLogAttr, _ScriptString_pLogAttr@4, __imp__ScriptString_pLogAttr@4
+implib gdi32.dll, ScriptString_pSize, _ScriptString_pSize@4, __imp__ScriptString_pSize@4
+implib gdi32.dll, ScriptString_pcOutChars, _ScriptString_pcOutChars@4, __imp__ScriptString_pcOutChars@4
+implib gdi32.dll, ScriptSubstituteSingleGlyph, _ScriptSubstituteSingleGlyph@36, __imp__ScriptSubstituteSingleGlyph@36
+implib gdi32.dll, ScriptTextOut, _ScriptTextOut@0, __imp__ScriptTextOut@0
+implib gdi32.dll, ScriptXtoCP, _ScriptXtoCP@0, __imp__ScriptXtoCP@0
 implib gdi32.dll, SelectBrushLocal, _SelectBrushLocal@8, __imp__SelectBrushLocal@8
 implib gdi32.dll, SelectClipPath, _SelectClipPath@8, __imp__SelectClipPath@8
 implib gdi32.dll, SelectClipRgn, _SelectClipRgn@8, __imp__SelectClipRgn@8
@@ -884,6 +905,7 @@ implib gdi32.dll, SetMapperFlags, _SetMapperFlags@8, __imp__SetMapperFlags@8
 implib gdi32.dll, SetMetaFileBitsEx, _SetMetaFileBitsEx@8, __imp__SetMetaFileBitsEx@8
 implib gdi32.dll, SetMetaRgn, _SetMetaRgn@4, __imp__SetMetaRgn@4
 implib gdi32.dll, SetMiterLimit, _SetMiterLimit@12, __imp__SetMiterLimit@12
+implib gdi32.dll, SetOPMSigningKeyAndSequenceNumbers, _SetOPMSigningKeyAndSequenceNumbers@8, __imp__SetOPMSigningKeyAndSequenceNumbers@8
 implib gdi32.dll, SetPaletteEntries, _SetPaletteEntries@16, __imp__SetPaletteEntries@16
 implib gdi32.dll, SetPixel, _SetPixel@16, __imp__SetPixel@16
 implib gdi32.dll, SetPixelFormat, _SetPixelFormat@12, __imp__SetPixelFormat@12
@@ -922,6 +944,9 @@ implib gdi32.dll, UnrealizeObject, _UnrealizeObject@4, __imp__UnrealizeObject@4
 implib gdi32.dll, UpdateColors, _UpdateColors@4, __imp__UpdateColors@4
 implib gdi32.dll, UpdateICMRegKeyA, _UpdateICMRegKeyA@16, __imp__UpdateICMRegKeyA@16
 implib gdi32.dll, UpdateICMRegKeyW, _UpdateICMRegKeyW@16, __imp__UpdateICMRegKeyW@16
+implib gdi32.dll, UspAllocCache, _UspAllocCache@8, __imp__UspAllocCache@8
+implib gdi32.dll, UspAllocTemp, _UspAllocTemp@8, __imp__UspAllocTemp@8
+implib gdi32.dll, UspFreeMem, _UspFreeMem@4, __imp__UspFreeMem@4
 implib gdi32.dll, WidenPath, _WidenPath@4, __imp__WidenPath@4
 implib gdi32.dll, XFORMOBJ_bApplyXform, _XFORMOBJ_bApplyXform@20, __imp__XFORMOBJ_bApplyXform@20
 implib gdi32.dll, XFORMOBJ_iGetXform, _XFORMOBJ_iGetXform@8, __imp__XFORMOBJ_iGetXform@8
@@ -929,9 +954,24 @@ implib gdi32.dll, XLATEOBJ_cGetPalette, _XLATEOBJ_cGetPalette@16, __imp__XLATEOB
 implib gdi32.dll, XLATEOBJ_hGetColorTransform, _XLATEOBJ_hGetColorTransform@4, __imp__XLATEOBJ_hGetColorTransform@4
 implib gdi32.dll, XLATEOBJ_iXlate, _XLATEOBJ_iXlate@8, __imp__XLATEOBJ_iXlate@8
 implib gdi32.dll, XLATEOBJ_piVector, _XLATEOBJ_piVector@4, __imp__XLATEOBJ_piVector@4
+implib gdi32.dll, bCreateDCW, _bCreateDCW@24, __imp__bCreateDCW@24
+implib gdi32.dll, bDeleteLDC, _bDeleteLDC@4, __imp__bDeleteLDC@4
 implib gdi32.dll, bInitSystemAndFontsDirectoriesW, _bInitSystemAndFontsDirectoriesW@8, __imp__bInitSystemAndFontsDirectoriesW@8
 implib gdi32.dll, bMakePathNameW, _bMakePathNameW@16, __imp__bMakePathNameW@16
 implib gdi32.dll, cGetTTFFromFOT, _cGetTTFFromFOT@28, __imp__cGetTTFFromFOT@28
+implib gdi32.dll, fpClosePrinter
+implib gdi32.dll, ftsWordBreak, _ftsWordBreak@20, __imp__ftsWordBreak@20
+implib gdi32.dll, gMaxGdiHandleCount
+implib gdi32.dll, gW32PID
+implib gdi32.dll, g_systemCallFilterId
 implib gdi32.dll, gdiPlaySpoolStream, _gdiPlaySpoolStream@24, __imp__gdiPlaySpoolStream@24
+implib gdi32.dll, ghICM
+implib gdi32.dll, hGetPEBHandle, _hGetPEBHandle@8, __imp__hGetPEBHandle@8
+implib gdi32.dll, pGdiDevCaps
+implib gdi32.dll, pGdiSharedHandleTable
+implib gdi32.dll, pGdiSharedMemory
+implib gdi32.dll, pldcGet, _pldcGet@4, __imp__pldcGet@4
+implib gdi32.dll, semDxTrimNotification
+implib gdi32.dll, vSetPldc, _vSetPldc@8, __imp__vSetPldc@8
 
 endlib
