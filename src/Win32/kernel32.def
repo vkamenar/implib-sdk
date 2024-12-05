@@ -1177,7 +1177,7 @@ implib KERNEL32.DLL, ReadProcessMemory, _ReadProcessMemory@20, __imp__ReadProces
 implib KERNEL32.DLL, ReadThreadProfilingData, _ReadThreadProfilingData@12, __imp__ReadThreadProfilingData@12
 implib KERNEL32.DLL, ReclaimVirtualMemory, _ReclaimVirtualMemory@8, __imp__ReclaimVirtualMemory@8
 
-; These functions should be imported from advapi32. Uncomment the following entry if you really need to import them from kernel32 instead.
+; These functions should be imported from advapi32. Uncomment the following entries if you really need to import them from kernel32 instead.
 ; implib KERNEL32.DLL, RegCloseKey, _RegCloseKey@4, __imp__RegCloseKey@4
 ; implib KERNEL32.DLL, RegCopyTreeW, _RegCopyTreeW@12, __imp__RegCopyTreeW@12
 ; implib KERNEL32.DLL, RegCreateKeyExA, _RegCreateKeyExA@36, __imp__RegCreateKeyExA@36
@@ -1375,13 +1375,27 @@ implib KERNEL32.DLL, SetLocaleInfoA, _SetLocaleInfoA@12, __imp__SetLocaleInfoA@1
 implib KERNEL32.DLL, SetLocaleInfoW, _SetLocaleInfoW@12, __imp__SetLocaleInfoW@12
 implib KERNEL32.DLL, SetMailslotInfo, _SetMailslotInfo@8, __imp__SetMailslotInfo@8
 implib KERNEL32.DLL, SetMessageWaitingIndicator, _SetMessageWaitingIndicator@8, __imp__SetMessageWaitingIndicator@8
+implib KERNEL32.DLL, SetNamedPipeAttribute, _SetNamedPipeAttribute@20, __imp__SetNamedPipeAttribute@20
 implib KERNEL32.DLL, SetNamedPipeHandleState, _SetNamedPipeHandleState@16, __imp__SetNamedPipeHandleState@16
 implib KERNEL32.DLL, SetPriorityClass, _SetPriorityClass@8, __imp__SetPriorityClass@8
 implib KERNEL32.DLL, SetProcessAffinityMask, _SetProcessAffinityMask@8, __imp__SetProcessAffinityMask@8
+implib KERNEL32.DLL, SetProcessAffinityUpdateMode, _SetProcessAffinityUpdateMode@8, __imp__SetProcessAffinityUpdateMode@8
+implib KERNEL32.DLL, SetProcessDEPPolicy, _SetProcessDEPPolicy@4, __imp__SetProcessDEPPolicy@4
+implib KERNEL32.DLL, SetProcessDefaultCpuSets, _SetProcessDefaultCpuSets@12, __imp__SetProcessDefaultCpuSets@12
+implib KERNEL32.DLL, SetProcessDynamicEHContinuationTargets, _SetProcessDynamicEHContinuationTargets@12, __imp__SetProcessDynamicEHContinuationTargets@12
+implib KERNEL32.DLL, SetProcessDynamicEnforcedCetCompatibleRanges, _SetProcessDynamicEnforcedCetCompatibleRanges@12, __imp__SetProcessDynamicEnforcedCetCompatibleRanges@12
+implib KERNEL32.DLL, SetProcessInformation, _SetProcessInformation@16, __imp__SetProcessInformation@16
+implib KERNEL32.DLL, SetProcessMitigationPolicy, _SetProcessMitigationPolicy@12, __imp__SetProcessMitigationPolicy@12
+implib KERNEL32.DLL, SetProcessPreferredUILanguages, _SetProcessPreferredUILanguages@12, __imp__SetProcessPreferredUILanguages@12
 implib KERNEL32.DLL, SetProcessPriorityBoost, _SetProcessPriorityBoost@8, __imp__SetProcessPriorityBoost@8
 implib KERNEL32.DLL, SetProcessShutdownParameters, _SetProcessShutdownParameters@8, __imp__SetProcessShutdownParameters@8
 implib KERNEL32.DLL, SetProcessWorkingSetSize, _SetProcessWorkingSetSize@12, __imp__SetProcessWorkingSetSize@12
+implib KERNEL32.DLL, SetProcessWorkingSetSizeEx, _SetProcessWorkingSetSizeEx@16, __imp__SetProcessWorkingSetSizeEx@16
+implib KERNEL32.DLL, SetProtectedPolicy, _SetProtectedPolicy@12, __imp__SetProtectedPolicy@12
+implib KERNEL32.DLL, SetSearchPathMode, _SetSearchPathMode@4, __imp__SetSearchPathMode@4
 implib KERNEL32.DLL, SetStdHandle, _SetStdHandle@8, __imp__SetStdHandle@8
+implib KERNEL32.DLL, SetStdHandleEx, _SetStdHandleEx@12, __imp__SetStdHandleEx@12
+implib KERNEL32.DLL, SetSystemFileCacheSize, _SetSystemFileCacheSize@12, __imp__SetSystemFileCacheSize@12
 implib KERNEL32.DLL, SetSystemPowerState, _SetSystemPowerState@8, __imp__SetSystemPowerState@8
 implib KERNEL32.DLL, SetSystemTime, _SetSystemTime@4, __imp__SetSystemTime@4
 implib KERNEL32.DLL, SetSystemTimeAdjustment, _SetSystemTimeAdjustment@8, __imp__SetSystemTimeAdjustment@8
@@ -1390,22 +1404,42 @@ implib KERNEL32.DLL, SetTapePosition, _SetTapePosition@24, __imp__SetTapePositio
 implib KERNEL32.DLL, SetTermsrvAppInstallMode, _SetTermsrvAppInstallMode@4, __imp__SetTermsrvAppInstallMode@4
 implib KERNEL32.DLL, SetThreadAffinityMask, _SetThreadAffinityMask@8, __imp__SetThreadAffinityMask@8
 implib KERNEL32.DLL, SetThreadContext, _SetThreadContext@8, __imp__SetThreadContext@8
+implib KERNEL32.DLL, SetThreadDescription, _SetThreadDescription@8, __imp__SetThreadDescription@8
+implib KERNEL32.DLL, SetThreadErrorMode, _SetThreadErrorMode@8, __imp__SetThreadErrorMode@8
 implib KERNEL32.DLL, SetThreadExecutionState, _SetThreadExecutionState@4, __imp__SetThreadExecutionState@4
+implib KERNEL32.DLL, SetThreadGroupAffinity, _SetThreadGroupAffinity@12, __imp__SetThreadGroupAffinity@12
 implib KERNEL32.DLL, SetThreadIdealProcessor, _SetThreadIdealProcessor@8, __imp__SetThreadIdealProcessor@8
+implib KERNEL32.DLL, SetThreadIdealProcessorEx, _SetThreadIdealProcessorEx@12, __imp__SetThreadIdealProcessorEx@12
+implib KERNEL32.DLL, SetThreadInformation, _SetThreadInformation@16, __imp__SetThreadInformation@16
 implib KERNEL32.DLL, SetThreadLocale, _SetThreadLocale@4, __imp__SetThreadLocale@4
+implib KERNEL32.DLL, SetThreadPreferredUILanguages, _SetThreadPreferredUILanguages@12, __imp__SetThreadPreferredUILanguages@12
 implib KERNEL32.DLL, SetThreadPriority, _SetThreadPriority@8, __imp__SetThreadPriority@8
 implib KERNEL32.DLL, SetThreadPriorityBoost, _SetThreadPriorityBoost@8, __imp__SetThreadPriorityBoost@8
+implib KERNEL32.DLL, SetThreadSelectedCpuSets, _SetThreadSelectedCpuSets@12, __imp__SetThreadSelectedCpuSets@12
+implib KERNEL32.DLL, SetThreadStackGuarantee, _SetThreadStackGuarantee@4, __imp__SetThreadStackGuarantee@4
+implib KERNEL32.DLL, SetThreadToken, _SetThreadToken@8, __imp__SetThreadToken@8
 implib KERNEL32.DLL, SetThreadUILanguage, _SetThreadUILanguage@4, __imp__SetThreadUILanguage@4
+implib KERNEL32.DLL, SetThreadpoolStackInformation, _SetThreadpoolStackInformation@8, __imp__SetThreadpoolStackInformation@8
+implib KERNEL32.DLL, SetThreadpoolThreadMaximum, _SetThreadpoolThreadMaximum@8, __imp__SetThreadpoolThreadMaximum@8
+implib KERNEL32.DLL, SetThreadpoolThreadMinimum, _SetThreadpoolThreadMinimum@8, __imp__SetThreadpoolThreadMinimum@8
+implib KERNEL32.DLL, SetThreadpoolTimer, _SetThreadpoolTimer@16, __imp__SetThreadpoolTimer@16
+implib KERNEL32.DLL, SetThreadpoolTimerEx, _SetThreadpoolTimerEx@16, __imp__SetThreadpoolTimerEx@16
+implib KERNEL32.DLL, SetThreadpoolWait, _SetThreadpoolWait@12, __imp__SetThreadpoolWait@12
+implib KERNEL32.DLL, SetThreadpoolWaitEx, _SetThreadpoolWaitEx@16, __imp__SetThreadpoolWaitEx@16
 implib KERNEL32.DLL, SetTimeZoneInformation, _SetTimeZoneInformation@4, __imp__SetTimeZoneInformation@4
 implib KERNEL32.DLL, SetTimerQueueTimer, _SetTimerQueueTimer@24, __imp__SetTimerQueueTimer@24
 implib KERNEL32.DLL, SetUnhandledExceptionFilter, _SetUnhandledExceptionFilter@4, __imp__SetUnhandledExceptionFilter@4
 implib KERNEL32.DLL, SetUserGeoID, _SetUserGeoID@4, __imp__SetUserGeoID@4
+implib KERNEL32.DLL, SetUserGeoName, _SetUserGeoName@4, __imp__SetUserGeoName@4
 implib KERNEL32.DLL, SetVDMCurrentDirectories, _SetVDMCurrentDirectories@8, __imp__SetVDMCurrentDirectories@8
 implib KERNEL32.DLL, SetVolumeLabelA, _SetVolumeLabelA@8, __imp__SetVolumeLabelA@8
 implib KERNEL32.DLL, SetVolumeLabelW, _SetVolumeLabelW@8, __imp__SetVolumeLabelW@8
 implib KERNEL32.DLL, SetVolumeMountPointA, _SetVolumeMountPointA@8, __imp__SetVolumeMountPointA@8
 implib KERNEL32.DLL, SetVolumeMountPointW, _SetVolumeMountPointW@8, __imp__SetVolumeMountPointW@8
+implib KERNEL32.DLL, SetVolumeMountPointWStub, _SetVolumeMountPointWStub@8, __imp__SetVolumeMountPointWStub@8
 implib KERNEL32.DLL, SetWaitableTimer, _SetWaitableTimer@24, __imp__SetWaitableTimer@24
+implib KERNEL32.DLL, SetWaitableTimerEx, _SetWaitableTimerEx@28, __imp__SetWaitableTimerEx@28
+implib KERNEL32.DLL, SetXStateFeaturesMask, _SetXStateFeaturesMask@12, __imp__SetXStateFeaturesMask@12
 implib KERNEL32.DLL, SetupComm, _SetupComm@12, __imp__SetupComm@12
 implib KERNEL32.DLL, ShowConsoleCursor, _ShowConsoleCursor@8, __imp__ShowConsoleCursor@8
 implib KERNEL32.DLL, SignalObjectAndWait, _SignalObjectAndWait@16, __imp__SignalObjectAndWait@16
@@ -1414,15 +1448,33 @@ implib KERNEL32.DLL, Sleep, _Sleep@4, __imp__Sleep@4
 implib KERNEL32.DLL, SleepConditionVariableCS, _SleepConditionVariableCS@12, __imp__SleepConditionVariableCS@12
 implib KERNEL32.DLL, SleepConditionVariableSRW, _SleepConditionVariableSRW@16, __imp__SleepConditionVariableSRW@16
 implib KERNEL32.DLL, SleepEx, _SleepEx@8, __imp__SleepEx@8
+implib KERNEL32.DLL, SortCloseHandle, _SortCloseHandle@4, __imp__SortCloseHandle@4
+implib KERNEL32.DLL, SortGetHandle, _SortGetHandle@12, __imp__SortGetHandle@12
+implib KERNEL32.DLL, StartThreadpoolIo, _StartThreadpoolIo@4, __imp__StartThreadpoolIo@4
+implib KERNEL32.DLL, SubmitThreadpoolWork, _SubmitThreadpoolWork@4, __imp__SubmitThreadpoolWork@4
 implib KERNEL32.DLL, SuspendThread, _SuspendThread@4, __imp__SuspendThread@4
 implib KERNEL32.DLL, SwitchToFiber, _SwitchToFiber@4, __imp__SwitchToFiber@4
 implib KERNEL32.DLL, SwitchToThread, _SwitchToThread@0, __imp__SwitchToThread@0
 implib KERNEL32.DLL, SystemTimeToFileTime, _SystemTimeToFileTime@8, __imp__SystemTimeToFileTime@8
 implib KERNEL32.DLL, SystemTimeToTzSpecificLocalTime, _SystemTimeToTzSpecificLocalTime@12, __imp__SystemTimeToTzSpecificLocalTime@12
+implib KERNEL32.DLL, SystemTimeToTzSpecificLocalTimeEx, _SystemTimeToTzSpecificLocalTimeEx@12, __imp__SystemTimeToTzSpecificLocalTimeEx@12
 implib KERNEL32.DLL, TerminateJobObject, _TerminateJobObject@8, __imp__TerminateJobObject@8
 implib KERNEL32.DLL, TerminateProcess, _TerminateProcess@8, __imp__TerminateProcess@8
 implib KERNEL32.DLL, TerminateThread, _TerminateThread@8, __imp__TerminateThread@8
 implib KERNEL32.DLL, TermsrvAppInstallMode, _TermsrvAppInstallMode@0, __imp__TermsrvAppInstallMode@0
+implib KERNEL32.DLL, TermsrvConvertSysRootToUserDir, _TermsrvConvertSysRootToUserDir@8, __imp__TermsrvConvertSysRootToUserDir@8
+implib KERNEL32.DLL, TermsrvCreateRegEntry, _TermsrvCreateRegEntry@20, __imp__TermsrvCreateRegEntry@20
+implib KERNEL32.DLL, TermsrvDeleteKey, _TermsrvDeleteKey@4, __imp__TermsrvDeleteKey@4
+implib KERNEL32.DLL, TermsrvDeleteValue, _TermsrvDeleteValue@8, __imp__TermsrvDeleteValue@8
+implib KERNEL32.DLL, TermsrvGetPreSetValue, _TermsrvGetPreSetValue@16, __imp__TermsrvGetPreSetValue@16
+implib KERNEL32.DLL, TermsrvGetWindowsDirectoryA, _TermsrvGetWindowsDirectoryA@8, __imp__TermsrvGetWindowsDirectoryA@8
+implib KERNEL32.DLL, TermsrvGetWindowsDirectoryW, _TermsrvGetWindowsDirectoryW@8, __imp__TermsrvGetWindowsDirectoryW@8
+implib KERNEL32.DLL, TermsrvOpenRegEntry, _TermsrvOpenRegEntry@12, __imp__TermsrvOpenRegEntry@12
+implib KERNEL32.DLL, TermsrvOpenUserClasses, _TermsrvOpenUserClasses@8, __imp__TermsrvOpenUserClasses@8
+implib KERNEL32.DLL, TermsrvRestoreKey, _TermsrvRestoreKey@12, __imp__TermsrvRestoreKey@12
+implib KERNEL32.DLL, TermsrvSetKeySecurity, _TermsrvSetKeySecurity@12, __imp__TermsrvSetKeySecurity@12
+implib KERNEL32.DLL, TermsrvSetValueKey, _TermsrvSetValueKey@24, __imp__TermsrvSetValueKey@24
+implib KERNEL32.DLL, TermsrvSyncUserIniFileExt, _TermsrvSyncUserIniFileExt@4, __imp__TermsrvSyncUserIniFileExt@4
 implib KERNEL32.DLL, Thread32First, _Thread32First@8, __imp__Thread32First@8
 implib KERNEL32.DLL, Thread32Next, _Thread32Next@8, __imp__Thread32Next@8
 implib KERNEL32.DLL, TlsAlloc, _TlsAlloc@0, __imp__TlsAlloc@0
@@ -1433,17 +1485,28 @@ implib KERNEL32.DLL, Toolhelp32ReadProcessMemory, _Toolhelp32ReadProcessMemory@2
 implib KERNEL32.DLL, TransactNamedPipe, _TransactNamedPipe@28, __imp__TransactNamedPipe@28
 implib KERNEL32.DLL, TransmitCommChar, _TransmitCommChar@8, __imp__TransmitCommChar@8
 implib KERNEL32.DLL, TrimVirtualBuffer, _TrimVirtualBuffer@4, __imp__TrimVirtualBuffer@4
+implib KERNEL32.DLL, TryAcquireSRWLockExclusive, _TryAcquireSRWLockExclusive@4, __imp__TryAcquireSRWLockExclusive@4
+implib KERNEL32.DLL, TryAcquireSRWLockShared, _TryAcquireSRWLockShared@4, __imp__TryAcquireSRWLockShared@4
 implib KERNEL32.DLL, TryEnterCriticalSection, _TryEnterCriticalSection@4, __imp__TryEnterCriticalSection@4
+implib KERNEL32.DLL, TrySubmitThreadpoolCallback, _TrySubmitThreadpoolCallback@12, __imp__TrySubmitThreadpoolCallback@12
 implib KERNEL32.DLL, TzSpecificLocalTimeToSystemTime, _TzSpecificLocalTimeToSystemTime@12, __imp__TzSpecificLocalTimeToSystemTime@12
+implib KERNEL32.DLL, TzSpecificLocalTimeToSystemTimeEx, _TzSpecificLocalTimeToSystemTimeEx@12, __imp__TzSpecificLocalTimeToSystemTimeEx@12
 implib KERNEL32.DLL, UTRegister, _UTRegister@28, __imp__UTRegister@28
 implib KERNEL32.DLL, UTUnRegister, _UTUnRegister@4, __imp__UTUnRegister@4
 implib KERNEL32.DLL, UnhandledExceptionFilter, _UnhandledExceptionFilter@4, __imp__UnhandledExceptionFilter@4
 implib KERNEL32.DLL, UnlockFile, _UnlockFile@20, __imp__UnlockFile@20
 implib KERNEL32.DLL, UnlockFileEx, _UnlockFileEx@20, __imp__UnlockFileEx@20
 implib KERNEL32.DLL, UnmapViewOfFile, _UnmapViewOfFile@4, __imp__UnmapViewOfFile@4
+implib KERNEL32.DLL, UnmapViewOfFileEx, _UnmapViewOfFileEx@8, __imp__UnmapViewOfFileEx@8
+implib KERNEL32.DLL, UnregisterApplicationRecoveryCallback, _UnregisterApplicationRecoveryCallback@0, __imp__UnregisterApplicationRecoveryCallback@0
+implib KERNEL32.DLL, UnregisterApplicationRestart, _UnregisterApplicationRestart@0, __imp__UnregisterApplicationRestart@0
+implib KERNEL32.DLL, UnregisterBadMemoryNotification, _UnregisterBadMemoryNotification@4, __imp__UnregisterBadMemoryNotification@4
 implib KERNEL32.DLL, UnregisterConsoleIME, _UnregisterConsoleIME@0, __imp__UnregisterConsoleIME@0
 implib KERNEL32.DLL, UnregisterWait, _UnregisterWait@4, __imp__UnregisterWait@4
 implib KERNEL32.DLL, UnregisterWaitEx, _UnregisterWaitEx@8, __imp__UnregisterWaitEx@8
+implib KERNEL32.DLL, UnregisterWaitUntilOOBECompleted, _UnregisterWaitUntilOOBECompleted@4, __imp__UnregisterWaitUntilOOBECompleted@4
+implib KERNEL32.DLL, UpdateCalendarDayOfWeek, _UpdateCalendarDayOfWeek@4, __imp__UpdateCalendarDayOfWeek@4
+implib KERNEL32.DLL, UpdateProcThreadAttribute, _UpdateProcThreadAttribute@28, __imp__UpdateProcThreadAttribute@28
 implib KERNEL32.DLL, UpdateResourceA, _UpdateResourceA@24, __imp__UpdateResourceA@24
 implib KERNEL32.DLL, UpdateResourceW, _UpdateResourceW@24, __imp__UpdateResourceW@24
 implib KERNEL32.DLL, VDMConsoleOperation, _VDMConsoleOperation@8, __imp__VDMConsoleOperation@8
@@ -1454,10 +1517,12 @@ implib KERNEL32.DLL, VerLanguageNameA, _VerLanguageNameA@12, __imp__VerLanguageN
 implib KERNEL32.DLL, VerLanguageNameW, _VerLanguageNameW@12, __imp__VerLanguageNameW@12
 implib KERNEL32.DLL, VerSetConditionMask, _VerSetConditionMask@16, __imp__VerSetConditionMask@16
 implib KERNEL32.DLL, VerifyConsoleIoHandle, _VerifyConsoleIoHandle@4, __imp__VerifyConsoleIoHandle@4
+implib KERNEL32.DLL, VerifyScripts, _VerifyScripts@20, __imp__VerifyScripts@20
 implib KERNEL32.DLL, VerifyVersionInfoA, _VerifyVersionInfoA@16, __imp__VerifyVersionInfoA@16
 implib KERNEL32.DLL, VerifyVersionInfoW, _VerifyVersionInfoW@16, __imp__VerifyVersionInfoW@16
 implib KERNEL32.DLL, VirtualAlloc, _VirtualAlloc@16, __imp__VirtualAlloc@16
 implib KERNEL32.DLL, VirtualAllocEx, _VirtualAllocEx@20, __imp__VirtualAllocEx@20
+implib KERNEL32.DLL, VirtualAllocExNuma, _VirtualAllocExNuma@24, __imp__VirtualAllocExNuma@24
 implib KERNEL32.DLL, VirtualBufferExceptionHandler, _VirtualBufferExceptionHandler@12, __imp__VirtualBufferExceptionHandler@12
 implib KERNEL32.DLL, VirtualFree, _VirtualFree@12, __imp__VirtualFree@12
 implib KERNEL32.DLL, VirtualFreeEx, _VirtualFreeEx@16, __imp__VirtualFreeEx@16
@@ -1470,16 +1535,58 @@ implib KERNEL32.DLL, VirtualUnlock, _VirtualUnlock@8, __imp__VirtualUnlock@8
 implib KERNEL32.DLL, WTSGetActiveConsoleSessionId, _WTSGetActiveConsoleSessionId@0, __imp__WTSGetActiveConsoleSessionId@0
 implib KERNEL32.DLL, WaitCommEvent, _WaitCommEvent@12, __imp__WaitCommEvent@12
 implib KERNEL32.DLL, WaitForDebugEvent, _WaitForDebugEvent@8, __imp__WaitForDebugEvent@8
+implib KERNEL32.DLL, WaitForDebugEventEx, _WaitForDebugEventEx@8, __imp__WaitForDebugEventEx@8
 implib KERNEL32.DLL, WaitForMultipleObjects, _WaitForMultipleObjects@16, __imp__WaitForMultipleObjects@16
 implib KERNEL32.DLL, WaitForMultipleObjectsEx, _WaitForMultipleObjectsEx@20, __imp__WaitForMultipleObjectsEx@20
 implib KERNEL32.DLL, WaitForSingleObject, _WaitForSingleObject@8, __imp__WaitForSingleObject@8
 implib KERNEL32.DLL, WaitForSingleObjectEx, _WaitForSingleObjectEx@12, __imp__WaitForSingleObjectEx@12
+implib KERNEL32.DLL, WaitForThreadpoolIoCallbacks, _WaitForThreadpoolIoCallbacks@8, __imp__WaitForThreadpoolIoCallbacks@8
+implib KERNEL32.DLL, WaitForThreadpoolTimerCallbacks, _WaitForThreadpoolTimerCallbacks@8, __imp__WaitForThreadpoolTimerCallbacks@8
+implib KERNEL32.DLL, WaitForThreadpoolWaitCallbacks, _WaitForThreadpoolWaitCallbacks@8, __imp__WaitForThreadpoolWaitCallbacks@8
+implib KERNEL32.DLL, WaitForThreadpoolWorkCallbacks, _WaitForThreadpoolWorkCallbacks@8, __imp__WaitForThreadpoolWorkCallbacks@8
 implib KERNEL32.DLL, WaitNamedPipeA, _WaitNamedPipeA@8, __imp__WaitNamedPipeA@8
 implib KERNEL32.DLL, WaitNamedPipeW, _WaitNamedPipeW@8, __imp__WaitNamedPipeW@8
 implib KERNEL32.DLL, WakeAllConditionVariable, _WakeAllConditionVariable@4, __imp__WakeAllConditionVariable@4
 implib KERNEL32.DLL, WakeConditionVariable, _WakeConditionVariable@4, __imp__WakeConditionVariable@4
+implib KERNEL32.DLL, WerGetFlags, _WerGetFlags@8, __imp__WerGetFlags@8
+implib KERNEL32.DLL, WerGetFlagsWorker, _WerGetFlagsWorker@8, __imp__WerGetFlagsWorker@8
+implib KERNEL32.DLL, WerRegisterAdditionalProcess, _WerRegisterAdditionalProcess@8, __imp__WerRegisterAdditionalProcess@8
+implib KERNEL32.DLL, WerRegisterAppLocalDump, _WerRegisterAppLocalDump@4, __imp__WerRegisterAppLocalDump@4
+implib KERNEL32.DLL, WerRegisterCustomMetadata, _WerRegisterCustomMetadata@8, __imp__WerRegisterCustomMetadata@8
+implib KERNEL32.DLL, WerRegisterExcludedMemoryBlock, _WerRegisterExcludedMemoryBlock@8, __imp__WerRegisterExcludedMemoryBlock@8
+implib KERNEL32.DLL, WerRegisterFile, _WerRegisterFile@12, __imp__WerRegisterFile@12
+implib KERNEL32.DLL, WerRegisterFileWorker, _WerRegisterFileWorker@12, __imp__WerRegisterFileWorker@12
+implib KERNEL32.DLL, WerRegisterMemoryBlock, _WerRegisterMemoryBlock@8, __imp__WerRegisterMemoryBlock@8
+implib KERNEL32.DLL, WerRegisterMemoryBlockWorker, _WerRegisterMemoryBlockWorker@8, __imp__WerRegisterMemoryBlockWorker@8
+implib KERNEL32.DLL, WerRegisterRuntimeExceptionModule, _WerRegisterRuntimeExceptionModule@8, __imp__WerRegisterRuntimeExceptionModule@8
+implib KERNEL32.DLL, WerRegisterRuntimeExceptionModuleWorker, _WerRegisterRuntimeExceptionModuleWorker@8, __imp__WerRegisterRuntimeExceptionModuleWorker@8
+implib KERNEL32.DLL, WerSetFlags, _WerSetFlags@4, __imp__WerSetFlags@4
+implib KERNEL32.DLL, WerSetFlagsWorker, _WerSetFlagsWorker@4, __imp__WerSetFlagsWorker@4
+implib KERNEL32.DLL, WerUnregisterAdditionalProcess, _WerUnregisterAdditionalProcess@4, __imp__WerUnregisterAdditionalProcess@4
+implib KERNEL32.DLL, WerUnregisterAppLocalDump, _WerUnregisterAppLocalDump@0, __imp__WerUnregisterAppLocalDump@0
+implib KERNEL32.DLL, WerUnregisterCustomMetadata, _WerUnregisterCustomMetadata@4, __imp__WerUnregisterCustomMetadata@4
+implib KERNEL32.DLL, WerUnregisterExcludedMemoryBlock, _WerUnregisterExcludedMemoryBlock@4, __imp__WerUnregisterExcludedMemoryBlock@4
+implib KERNEL32.DLL, WerUnregisterFile, _WerUnregisterFile@4, __imp__WerUnregisterFile@4
+implib KERNEL32.DLL, WerUnregisterFileWorker, _WerUnregisterFileWorker@4, __imp__WerUnregisterFileWorker@4
+implib KERNEL32.DLL, WerUnregisterMemoryBlock, _WerUnregisterMemoryBlock@4, __imp__WerUnregisterMemoryBlock@4
+implib KERNEL32.DLL, WerUnregisterMemoryBlockWorker, _WerUnregisterMemoryBlockWorker@4, __imp__WerUnregisterMemoryBlockWorker@4
+implib KERNEL32.DLL, WerUnregisterRuntimeExceptionModule, _WerUnregisterRuntimeExceptionModule@8, __imp__WerUnregisterRuntimeExceptionModule@8
+implib KERNEL32.DLL, WerUnregisterRuntimeExceptionModuleWorker, _WerUnregisterRuntimeExceptionModuleWorker@8, __imp__WerUnregisterRuntimeExceptionModuleWorker@8
+implib KERNEL32.DLL, WerpGetDebugger, _WerpGetDebugger@8, __imp__WerpGetDebugger@8
+implib KERNEL32.DLL, WerpInitiateRemoteRecovery, _WerpInitiateRemoteRecovery@4, __imp__WerpInitiateRemoteRecovery@4
+implib KERNEL32.DLL, WerpLaunchAeDebug, _WerpLaunchAeDebug@20, __imp__WerpLaunchAeDebug@20
+implib KERNEL32.DLL, WerpNotifyLoadStringResourceWorker, _WerpNotifyLoadStringResourceWorker@16, __imp__WerpNotifyLoadStringResourceWorker@16
+implib KERNEL32.DLL, WerpNotifyUseStringResourceWorker, _WerpNotifyUseStringResourceWorker@4, __imp__WerpNotifyUseStringResourceWorker@4
 implib KERNEL32.DLL, WideCharToMultiByte, _WideCharToMultiByte@32, __imp__WideCharToMultiByte@32
 implib KERNEL32.DLL, WinExec, _WinExec@8, __imp__WinExec@8
+implib KERNEL32.DLL, Wow64DisableWow64FsRedirection, _Wow64DisableWow64FsRedirection@4, __imp__Wow64DisableWow64FsRedirection@4
+implib KERNEL32.DLL, Wow64EnableWow64FsRedirection, _Wow64EnableWow64FsRedirection@4, __imp__Wow64EnableWow64FsRedirection@4
+implib KERNEL32.DLL, Wow64GetThreadContext, _Wow64GetThreadContext@8, __imp__Wow64GetThreadContext@8
+implib KERNEL32.DLL, Wow64GetThreadSelectorEntry, _Wow64GetThreadSelectorEntry@12, __imp__Wow64GetThreadSelectorEntry@12
+implib KERNEL32.DLL, Wow64RevertWow64FsRedirection, _Wow64RevertWow64FsRedirection@4, __imp__Wow64RevertWow64FsRedirection@4
+implib KERNEL32.DLL, Wow64SetThreadContext, _Wow64SetThreadContext@8, __imp__Wow64SetThreadContext@8
+implib KERNEL32.DLL, Wow64SuspendThread, _Wow64SuspendThread@4, __imp__Wow64SuspendThread@4
+implib KERNEL32.DLL, Wow64Transition
 implib KERNEL32.DLL, WriteConsoleA, _WriteConsoleA@20, __imp__WriteConsoleA@20
 implib KERNEL32.DLL, WriteConsoleInputA, _WriteConsoleInputA@16, __imp__WriteConsoleInputA@16
 implib KERNEL32.DLL, WriteConsoleInputVDMA, _WriteConsoleInputVDMA@16, __imp__WriteConsoleInputVDMA@16
@@ -1507,6 +1614,7 @@ implib KERNEL32.DLL, WriteProfileStringA, _WriteProfileStringA@12, __imp__WriteP
 implib KERNEL32.DLL, WriteProfileStringW, _WriteProfileStringW@12, __imp__WriteProfileStringW@12
 implib KERNEL32.DLL, WriteTapemark, _WriteTapemark@16, __imp__WriteTapemark@16
 implib KERNEL32.DLL, ZombifyActCtx, _ZombifyActCtx@4, __imp__ZombifyActCtx@4
+implib KERNEL32.DLL, ZombifyActCtxWorker, _ZombifyActCtxWorker@4, __imp__ZombifyActCtxWorker@4
 implib KERNEL32.DLL, _hread, __hread@12, __imp___hread@12
 implib KERNEL32.DLL, _hwrite, __hwrite@12, __imp___hwrite@12
 implib KERNEL32.DLL, _lclose, __lclose@4, __imp___lclose@4
@@ -1533,5 +1641,12 @@ implib KERNEL32.DLL, lstrcpynW, _lstrcpynW@12, __imp__lstrcpynW@12
 implib KERNEL32.DLL, lstrlen, _lstrlen@4, __imp__lstrlen@4
 implib KERNEL32.DLL, lstrlenA, _lstrlenA@4, __imp__lstrlenA@4
 implib KERNEL32.DLL, lstrlenW, _lstrlenW@4, __imp__lstrlenW@4
+
+; These functions should be imported from winmm. Uncomment the following entries if you really need to import them from kernel32 instead.
+; implib KERNEL32.DLL, timeBeginPeriod, _timeBeginPeriod@4, __imp__timeBeginPeriod@4
+; implib KERNEL32.DLL, timeEndPeriod, _timeEndPeriod@4, __imp__timeEndPeriod@4
+; implib KERNEL32.DLL, timeGetDevCaps, _timeGetDevCaps@8, __imp__timeGetDevCaps@8
+; implib KERNEL32.DLL, timeGetSystemTime, _timeGetSystemTime@8, __imp__timeGetSystemTime@8
+; implib KERNEL32.DLL, timeGetTime, _timeGetTime@0, __imp__timeGetTime@0
 
 endlib
