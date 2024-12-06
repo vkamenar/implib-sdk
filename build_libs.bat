@@ -3,7 +3,7 @@ VERIFY errors 2>nul
 SETLOCAL ENABLEEXTENSIONS
 IF ERRORLEVEL 1 GOTO :EOF
 TITLE ImpLib SDK
-echo Compiling the import libraries from src\Win32
+echo Compiling the import libraries
 echo Please, be patient - it takes some minutes to compile...
 echo.
 
