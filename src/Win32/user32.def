@@ -856,8 +856,15 @@ implib user32.dll, SetMenuItemInfoA, _SetMenuItemInfoA@16, __imp__SetMenuItemInf
 implib user32.dll, SetMenuItemInfoW, _SetMenuItemInfoW@16, __imp__SetMenuItemInfoW@16
 implib user32.dll, SetMessageExtraInfo, _SetMessageExtraInfo@4, __imp__SetMessageExtraInfo@4
 implib user32.dll, SetMessageQueue, _SetMessageQueue@4, __imp__SetMessageQueue@4
+implib user32.dll, SetMirrorRendering, _SetMirrorRendering@8, __imp__SetMirrorRendering@8
 implib user32.dll, SetParent, _SetParent@8, __imp__SetParent@8
+implib user32.dll, SetPhysicalCursorPos, _SetPhysicalCursorPos@8, __imp__SetPhysicalCursorPos@8
+implib user32.dll, SetPointerDeviceInputSpace, _SetPointerDeviceInputSpace@12, __imp__SetPointerDeviceInputSpace@12
+implib user32.dll, SetProcessDPIAware, _SetProcessDPIAware@0, __imp__SetProcessDPIAware@0
 implib user32.dll, SetProcessDefaultLayout, _SetProcessDefaultLayout@4, __imp__SetProcessDefaultLayout@4
+implib user32.dll, SetProcessDpiAwarenessContext, _SetProcessDpiAwarenessContext@4, __imp__SetProcessDpiAwarenessContext@4
+implib user32.dll, SetProcessDpiAwarenessInternal, _SetProcessDpiAwarenessInternal@4, __imp__SetProcessDpiAwarenessInternal@4
+implib user32.dll, SetProcessRestrictionExemption, _SetProcessRestrictionExemption@4, __imp__SetProcessRestrictionExemption@4
 implib user32.dll, SetProcessWindowStation, _SetProcessWindowStation@4, __imp__SetProcessWindowStation@4
 implib user32.dll, SetProgmanWindow, _SetProgmanWindow@4, __imp__SetProgmanWindow@4
 implib user32.dll, SetPropA, _SetPropA@12, __imp__SetPropA@12
@@ -867,6 +874,7 @@ implib user32.dll, SetRectEmpty, _SetRectEmpty@4, __imp__SetRectEmpty@4
 implib user32.dll, SetScrollInfo, _SetScrollInfo@16, __imp__SetScrollInfo@16
 implib user32.dll, SetScrollPos, _SetScrollPos@16, __imp__SetScrollPos@16
 implib user32.dll, SetScrollRange, _SetScrollRange@20, __imp__SetScrollRange@20
+implib user32.dll, SetShellChangeNotifyWindow, _SetShellChangeNotifyWindow@4, __imp__SetShellChangeNotifyWindow@4
 implib user32.dll, SetShellWindow, _SetShellWindow@4, __imp__SetShellWindow@4
 implib user32.dll, SetShellWindowEx, _SetShellWindowEx@8, __imp__SetShellWindowEx@8
 implib user32.dll, SetSysColors, _SetSysColors@12, __imp__SetSysColors@12
@@ -876,23 +884,33 @@ implib user32.dll, SetSystemMenu, _SetSystemMenu@8, __imp__SetSystemMenu@8
 implib user32.dll, SetSystemTimer, _SetSystemTimer@16, __imp__SetSystemTimer@16
 implib user32.dll, SetTaskmanWindow, _SetTaskmanWindow@4, __imp__SetTaskmanWindow@4
 implib user32.dll, SetThreadDesktop, _SetThreadDesktop@4, __imp__SetThreadDesktop@4
+implib user32.dll, SetThreadDpiAwarenessContext, _SetThreadDpiAwarenessContext@4, __imp__SetThreadDpiAwarenessContext@4
+implib user32.dll, SetThreadDpiHostingBehavior, _SetThreadDpiHostingBehavior@4, __imp__SetThreadDpiHostingBehavior@4
+implib user32.dll, SetThreadInputBlocked, _SetThreadInputBlocked@8, __imp__SetThreadInputBlocked@8
 implib user32.dll, SetTimer, _SetTimer@16, __imp__SetTimer@16
 implib user32.dll, SetUserObjectInformationA, _SetUserObjectInformationA@16, __imp__SetUserObjectInformationA@16
 implib user32.dll, SetUserObjectInformationW, _SetUserObjectInformationW@16, __imp__SetUserObjectInformationW@16
 implib user32.dll, SetUserObjectSecurity, _SetUserObjectSecurity@12, __imp__SetUserObjectSecurity@12
 implib user32.dll, SetWinEventHook, _SetWinEventHook@28, __imp__SetWinEventHook@28
+implib user32.dll, SetWindowBand, _SetWindowBand@12, __imp__SetWindowBand@12
+implib user32.dll, SetWindowCompositionAttribute, _SetWindowCompositionAttribute@8, __imp__SetWindowCompositionAttribute@8
+implib user32.dll, SetWindowCompositionTransition, _SetWindowCompositionTransition@28, __imp__SetWindowCompositionTransition@28
 implib user32.dll, SetWindowContextHelpId, _SetWindowContextHelpId@8, __imp__SetWindowContextHelpId@8
+implib user32.dll, SetWindowDisplayAffinity, _SetWindowDisplayAffinity@8, __imp__SetWindowDisplayAffinity@8
+implib user32.dll, SetWindowFeedbackSetting, _SetWindowFeedbackSetting@20, __imp__SetWindowFeedbackSetting@20
 implib user32.dll, SetWindowLongA, _SetWindowLongA@12, __imp__SetWindowLongA@12
 implib user32.dll, SetWindowLongW, _SetWindowLongW@12, __imp__SetWindowLongW@12
 implib user32.dll, SetWindowPlacement, _SetWindowPlacement@8, __imp__SetWindowPlacement@8
 implib user32.dll, SetWindowPos, _SetWindowPos@28, __imp__SetWindowPos@28
 implib user32.dll, SetWindowRgn, _SetWindowRgn@12, __imp__SetWindowRgn@12
+implib user32.dll, SetWindowRgnEx, _SetWindowRgnEx@12, __imp__SetWindowRgnEx@12
 implib user32.dll, SetWindowStationUser, _SetWindowStationUser@16, __imp__SetWindowStationUser@16
 implib user32.dll, SetWindowTextA, _SetWindowTextA@8, __imp__SetWindowTextA@8
 implib user32.dll, SetWindowTextW, _SetWindowTextW@8, __imp__SetWindowTextW@8
 implib user32.dll, SetWindowWord, _SetWindowWord@12, __imp__SetWindowWord@12
 implib user32.dll, SetWindowsHookA, _SetWindowsHookA@8, __imp__SetWindowsHookA@8
 implib user32.dll, SetWindowsHookExA, _SetWindowsHookExA@16, __imp__SetWindowsHookExA@16
+implib user32.dll, SetWindowsHookExAW, _SetWindowsHookExAW@20, __imp__SetWindowsHookExAW@20
 implib user32.dll, SetWindowsHookExW, _SetWindowsHookExW@16, __imp__SetWindowsHookExW@16
 implib user32.dll, SetWindowsHookW, _SetWindowsHookW@8, __imp__SetWindowsHookW@8
 implib user32.dll, ShowCaret, _ShowCaret@4, __imp__ShowCaret@4
@@ -900,14 +918,23 @@ implib user32.dll, ShowCursor, _ShowCursor@4, __imp__ShowCursor@4
 implib user32.dll, ShowOwnedPopups, _ShowOwnedPopups@8, __imp__ShowOwnedPopups@8
 implib user32.dll, ShowScrollBar, _ShowScrollBar@12, __imp__ShowScrollBar@12
 implib user32.dll, ShowStartGlass, _ShowStartGlass@4, __imp__ShowStartGlass@4
+implib user32.dll, ShowSystemCursor, _ShowSystemCursor@4, __imp__ShowSystemCursor@4
 implib user32.dll, ShowWindow, _ShowWindow@8, __imp__ShowWindow@8
 implib user32.dll, ShowWindowAsync, _ShowWindowAsync@8, __imp__ShowWindowAsync@8
+implib user32.dll, ShutdownBlockReasonCreate, _ShutdownBlockReasonCreate@8, __imp__ShutdownBlockReasonCreate@8
+implib user32.dll, ShutdownBlockReasonDestroy, _ShutdownBlockReasonDestroy@4, __imp__ShutdownBlockReasonDestroy@4
+implib user32.dll, ShutdownBlockReasonQuery, _ShutdownBlockReasonQuery@12, __imp__ShutdownBlockReasonQuery@12
+implib user32.dll, SignalRedirectionStartComplete, _SignalRedirectionStartComplete@0, __imp__SignalRedirectionStartComplete@0
+implib user32.dll, SkipPointerFrameMessages, _SkipPointerFrameMessages@4, __imp__SkipPointerFrameMessages@4
 implib user32.dll, SoftModalMessageBox, _SoftModalMessageBox@4, __imp__SoftModalMessageBox@4
+implib user32.dll, SoundSentry, _SoundSentry@0, __imp__SoundSentry@0
 implib user32.dll, SubtractRect, _SubtractRect@12, __imp__SubtractRect@12
 implib user32.dll, SwapMouseButton, _SwapMouseButton@4, __imp__SwapMouseButton@4
 implib user32.dll, SwitchDesktop, _SwitchDesktop@4, __imp__SwitchDesktop@4
+implib user32.dll, SwitchDesktopWithFade, _SwitchDesktopWithFade@12, __imp__SwitchDesktopWithFade@12
 implib user32.dll, SwitchToThisWindow, _SwitchToThisWindow@8, __imp__SwitchToThisWindow@8
 implib user32.dll, SystemParametersInfoA, _SystemParametersInfoA@16, __imp__SystemParametersInfoA@16
+implib user32.dll, SystemParametersInfoForDpi, _SystemParametersInfoForDpi@20, __imp__SystemParametersInfoForDpi@20
 implib user32.dll, SystemParametersInfoW, _SystemParametersInfoW@16, __imp__SystemParametersInfoW@16
 implib user32.dll, TabbedTextOutA, _TabbedTextOutA@32, __imp__TabbedTextOutA@32
 implib user32.dll, TabbedTextOutW, _TabbedTextOutW@32, __imp__TabbedTextOutW@32
@@ -926,6 +953,7 @@ implib user32.dll, TranslateAcceleratorW, _TranslateAcceleratorW@12, __imp__Tran
 implib user32.dll, TranslateMDISysAccel, _TranslateMDISysAccel@8, __imp__TranslateMDISysAccel@8
 implib user32.dll, TranslateMessage, _TranslateMessage@4, __imp__TranslateMessage@4
 implib user32.dll, TranslateMessageEx, _TranslateMessageEx@8, __imp__TranslateMessageEx@8
+implib user32.dll, UndelegateInput, _UndelegateInput@8, __imp__UndelegateInput@8
 implib user32.dll, UnhookWinEvent, _UnhookWinEvent@4, __imp__UnhookWinEvent@4
 implib user32.dll, UnhookWindowsHook, _UnhookWindowsHook@8, __imp__UnhookWindowsHook@8
 implib user32.dll, UnhookWindowsHookEx, _UnhookWindowsHookEx@4, __imp__UnhookWindowsHookEx@4
@@ -938,10 +966,22 @@ implib user32.dll, UnregisterClassW, _UnregisterClassW@8, __imp__UnregisterClass
 implib user32.dll, UnregisterDeviceNotification, _UnregisterDeviceNotification@4, __imp__UnregisterDeviceNotification@4
 implib user32.dll, UnregisterHotKey, _UnregisterHotKey@8, __imp__UnregisterHotKey@8
 implib user32.dll, UnregisterMessagePumpHook, _UnregisterMessagePumpHook@0, __imp__UnregisterMessagePumpHook@0
+implib user32.dll, UnregisterPointerInputTarget, _UnregisterPointerInputTarget@8, __imp__UnregisterPointerInputTarget@8
+implib user32.dll, UnregisterPointerInputTargetEx, _UnregisterPointerInputTargetEx@8, __imp__UnregisterPointerInputTargetEx@8
+implib user32.dll, UnregisterPowerSettingNotification, _UnregisterPowerSettingNotification@4, __imp__UnregisterPowerSettingNotification@4
+implib user32.dll, UnregisterSessionPort, _UnregisterSessionPort@0, __imp__UnregisterSessionPort@0
+implib user32.dll, UnregisterSuspendResumeNotification, _UnregisterSuspendResumeNotification@4, __imp__UnregisterSuspendResumeNotification@4
+implib user32.dll, UnregisterTouchWindow, _UnregisterTouchWindow@4, __imp__UnregisterTouchWindow@4
 implib user32.dll, UnregisterUserApiHook, _UnregisterUserApiHook@0, __imp__UnregisterUserApiHook@0
+implib user32.dll, UpdateDefaultDesktopThumbnail, _UpdateDefaultDesktopThumbnail@20, __imp__UpdateDefaultDesktopThumbnail@20
 implib user32.dll, UpdateLayeredWindow, _UpdateLayeredWindow@36, __imp__UpdateLayeredWindow@36
-implib user32.dll, UpdatePerUserSystemParameters, _UpdatePerUserSystemParameters@8, __imp__UpdatePerUserSystemParameters@8
+implib user32.dll, UpdateLayeredWindowIndirect, _UpdateLayeredWindowIndirect@8, __imp__UpdateLayeredWindowIndirect@8
+
+; Older Windows versions and ReactOS support the @8 version of this undocumented function.
+implib user32.dll, UpdatePerUserSystemParameters, _UpdatePerUserSystemParameters@4, __imp__UpdatePerUserSystemParameters@4
+
 implib user32.dll, UpdateWindow, _UpdateWindow@4, __imp__UpdateWindow@4
+implib user32.dll, UpdateWindowInputSinkHints, _UpdateWindowInputSinkHints@8, __imp__UpdateWindowInputSinkHints@8
 implib user32.dll, User32InitializeImmEntryTable, _User32InitializeImmEntryTable@4, __imp__User32InitializeImmEntryTable@4
 implib user32.dll, UserClientDllInitialize, _UserClientDllInitialize@12, __imp__UserClientDllInitialize@12
 implib user32.dll, UserHandleGrantAccess, _UserHandleGrantAccess@12, __imp__UserHandleGrantAccess@12
@@ -962,12 +1002,18 @@ implib user32.dll, WINNLSEnableIME, _WINNLSEnableIME@8, __imp__WINNLSEnableIME@8
 implib user32.dll, WINNLSGetEnableStatus, _WINNLSGetEnableStatus@4, __imp__WINNLSGetEnableStatus@4
 implib user32.dll, WINNLSGetIMEHotkey, _WINNLSGetIMEHotkey@4, __imp__WINNLSGetIMEHotkey@4
 implib user32.dll, WaitForInputIdle, _WaitForInputIdle@8, __imp__WaitForInputIdle@8
+implib user32.dll, WaitForRedirectionStartComplete, _WaitForRedirectionStartComplete@0, __imp__WaitForRedirectionStartComplete@0
 implib user32.dll, WaitMessage, _WaitMessage@0, __imp__WaitMessage@0
 implib user32.dll, Win32PoolAllocationStats, _Win32PoolAllocationStats@24, __imp__Win32PoolAllocationStats@24
 implib user32.dll, WinHelpA, _WinHelpA@16, __imp__WinHelpA@16
 implib user32.dll, WinHelpW, _WinHelpW@16, __imp__WinHelpW@16
 implib user32.dll, WindowFromDC, _WindowFromDC@4, __imp__WindowFromDC@4
+implib user32.dll, WindowFromPhysicalPoint, _WindowFromPhysicalPoint@8, __imp__WindowFromPhysicalPoint@8
 implib user32.dll, WindowFromPoint, _WindowFromPoint@8, __imp__WindowFromPoint@8
+implib user32.dll, Wow64Transition
+implib user32.dll, _UserTestTokenForInteractive, __UserTestTokenForInteractive@8, __imp___UserTestTokenForInteractive@8
+implib user32.dll, gSharedInfo
+implib user32.dll, gapfnScSendMessage
 implib user32.dll, keybd_event, _keybd_event@16, __imp__keybd_event@16
 implib user32.dll, mouse_event, _mouse_event@20, __imp__mouse_event@20
 implib user32.dll, wsprintfA, _wsprintfA
