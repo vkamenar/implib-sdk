@@ -12,3 +12,5 @@ The ImpLib SDK is free even for commercial use and redistribution of any kind, a
 ## Installation
 
 Unpack the ImpLib SDK release into any directory. Then launch the ```build_libs.bat```. This batch file builds or rebuilds all the sample import libraries. The building process may take several minutes to complete due to the large size of the sample libraries. The output libraries are stored into the lib subdirectory.
+
+If you add new import library definitions or modify the sample files, just rerun ```build_libs.bat```. Only new or moified files will be recompiled.
