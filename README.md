@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14429853.svg)](https://doi.org/10.5281/zenodo.14429853)
+
 # ImpLib SDK
 
 <img src="https://implib.sourceforge.io/logo.png" align="left" hspace="8" vspace="8" alt="ImpLib SDK"/>ImpLib SDK combines free programming tools for authoring custom import libraries Windows DLL. The SDK supports advanced features, like *cdecl2stdcall* conversion, importing by ordinal, removing *original thunk*, accessing internal undocumented functions. There are many non-standard use cases, like interfacing a DLL with *cdecl* calling convention from Visual Basic 6, prototyping a set of DLL functions for PureBasic, mangling the symbolic aliases for an existing 
