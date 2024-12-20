@@ -1,6 +1,6 @@
 /*
 	DLL2DEF source code
-	Copyright (c) 2006-2024, Vladimir Kamenar.
+	Copyright (c) 2006-2025, Vladimir Kamenar.
 	All rights reserved.
 */
 
@@ -19,13 +19,13 @@ enum ERR_CODES{
 };
 
 /* Error messages */
-char error_msgs[][33] = {
-	"\": File locked or not found     \n",
-	"\": Error opening the output file\n",
-	"\": Not a valid PE image         \n",
-	"\": No export found              \n",
-	"\": Not enough memory            \n",
-	"\": Not a valid filename         \n"
+char error_msgs[][34] = {
+	"\": File locked or not found      \n",
+	"\": Error opening the output file \n",
+	"\": Unreadable or invalid PE image\n",
+	"\": No export found               \n",
+	"\": Not enough memory             \n",
+	"\": Not a valid filename          \n"
 };
 
 /* Syntax mods */
@@ -57,9 +57,29 @@ DWORD do_RVA_2_FileOffset(RVA_2_FileOffset_node *sections, DWORD RVA){
 
 /* A simple memcpy replacement if linking without CRT */
 void cmemcpy(char *dest, char *src, int n){
-	for(int i = 0; i < n; i++){
+	for(int i = 0; i < n; i++)
 		dest[i] = src[i];
+}
+
+/* A simple sprintf replacement to avoid a dependency on user32!_wsprintf */
+int cprintf(char *dest, char *mask, int n){
+
+	/* An ordinal can't be >6 digits */
+	int x, len = n <= 9 ? 1 : n <= 99 ? 2 : n <= 999 ? 3 : n <= 9999 ? 4 : n <= 99999 ? 5 : 6;
+
+	char *outp = dest, c;
+	while(c = *mask++){
+		if(c == '%'){ /* A single instance of a '%' in the mask is expected */
+			outp += len;
+			x = 0;
+			while(len-- > 0){
+				*(outp - ++x) = (char)(0x30 + n % 10);
+				n /= 10;
+			}
+		}else
+			*outp++ = c;
 	}
+	return outp - dest;
 }
 
 /* Process a single PE file (DLL) and dump it's export */
@@ -101,7 +121,7 @@ WORD ordinal;
 		}
 	}
 
-	/* Read in a piece of the MSDOS header */
+	/* Read in a fragment of the MSDOS header */
 	if(!ReadFile(hFile, buf, 0x40, &aux, 0) || aux != 0x40)
 		return ERR_BAD_FORMAT;
 
@@ -227,7 +247,7 @@ WORD ordinal;
 		ordinals_array += 2;
 		pub_name_len = strlen(pub_name);
 		if(!pub_name_len)
-			pub_name_len = wsprintf(pub_name, "ord.%d", ordinal + ordinal_base);
+			pub_name_len = cprintf(pub_name, "ord.%", ordinal + ordinal_base);
 		if(!compact){
 
 			/* ; DLLNAME.NAME ORD:# */
@@ -237,9 +257,9 @@ WORD ordinal;
 			buf[2 + dll_name_len] = '.';
 			if(pub_name_len){
 				cmemcpy(&buf[3 + dll_name_len], pub_name, pub_name_len);
-				aux = wsprintf(&buf[3 + dll_name_len + pub_name_len], " ORD:%d\r\n", ordinal + ordinal_base);
+				aux = cprintf(&buf[3 + dll_name_len + pub_name_len], " ORD:%\r\n", ordinal + ordinal_base);
 			}else
-				aux = wsprintf(&buf[3 + dll_name_len], "#%d\r\n", ordinal + ordinal_base);
+				aux = cprintf(&buf[3 + dll_name_len], "#%\r\n", ordinal + ordinal_base);
 			WriteFile(hOut, buf, 3 + dll_name_len + pub_name_len + aux, &aux, 0);
 
 			/* Get the symbol's RVA (just to check if it's a forwarder chain) */
@@ -349,8 +369,9 @@ HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 		else if(!strcmp(args, "COMPACT"))
 			compact = 1;
 		else{
-			WriteFile(hOut, args - 1, aux + 1, &aux, 0);
-			WriteFile(hOut, " is not a valid option. Ignoring.\n", 34, &aux, 0);
+			cmemcpy(buf, args - 1, aux + 1);
+			cmemcpy(buf + aux + 1, " is not a valid option. Ignoring.\n", 34);
+			WriteFile(hOut, buf, aux + 35, &aux, 0);
 		}
 		args = cursor;
 		while(*args == ' ' || *args == '\t')
@@ -368,17 +389,15 @@ HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 			ends--;
 		if(*output)
 			output++;
-		*(ends + 1) = 0;
-		aux = ends + 1 - args;
+		*ends++ = 0;
+		aux = ends - args;
 	}else{
 		output = args;
 		while(*output && *output != ' ' && *output != '\t')
 			output++;
 		aux = output - args;
-		if(*output){
-			*output = 0;
-			output++;
-		}
+		if(*output)
+			*output++ = 0;
 	}
 	while(*output == ' ' || *output == '\t' || *output == '\"')
 		output++;
@@ -428,12 +447,16 @@ HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 	if(hHeap)
 		HeapDestroy(hHeap);
 	if(i){
-		WriteFile(hOut, "-ERR \"", 6, &aux, 0);
-		if(i == ERR_OUTPUT)
-			WriteFile(hOut, output, strlen(output), &aux, 0);
-		else
-			WriteFile(hOut, args, strlen(args), &aux, 0);
-		WriteFile(hOut, error_msgs[i - 1], 33, &aux, 0);
+		cursor = buf;
+		cmemcpy(cursor, "-ERR \"", 6);
+		cursor += 6;
+		if(i != ERR_OUTPUT)
+			output = args;
+		aux = strlen(output);
+		cmemcpy(cursor, output, aux);
+		cursor += aux;
+		cmemcpy(cursor, error_msgs[i - 1], 34);
+		WriteFile(hOut, buf, cursor + 34 - buf, &aux, 0);
 	}
 
 Exit:
