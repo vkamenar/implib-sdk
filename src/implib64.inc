@@ -16,7 +16,7 @@
 ;               match exactly the required DLL exported symbol.
 ;    pubname  : Optional public name. This symbolic name allows calling an external
 ;               function directly (not using a thunk). If not specified, 'name'
-;               prefixed with '__imp__' is used as the pubname.
+;               prefixed with '__imp_' is used as the pubname.
 ;    thunk    : Optional thunk name. A thunk function consists of a single
 ;               jmp [pubname] instruction. If not specified, 'name' is assumed
 ;               to be the thunk name as well.
@@ -64,6 +64,7 @@ IMAGE_CNT_INITIALIZED_DATA    = 40h
 IMAGE_LNK_COMDAT              = 1000h
 IMAGE_ALIGN_2BYTES            = 200000h
 IMAGE_ALIGN_4BYTES            = 300000h
+IMAGE_ALIGN_8BYTES            = 400000h
 IMAGE_MEM_EXECUTE             = 20000000h
 IMAGE_MEM_READ                = 40000000h
 IMAGE_MEM_WRITE               = 80000000h
@@ -73,7 +74,7 @@ IMAGE_SYM_CLASS_SECTION       = 104
 IMAGE_SYM_DTYPE_FUNCTION      = 20h
 IMAGE_SYM_ABSOLUTE            = -1
 IMAGE_REL_AMD64_REL32         = 4
-IMAGE_REL_I386_DIR32NB        = 7
+IMAGE_REL_AMD64_ADDR32NB      = 3
 IMAGE_COMDAT_SELECT_NODUPLICATES = 1
 IMAGE_COMDAT_SELECT_ASSOCIATIVE  = 5
 
@@ -335,29 +336,26 @@ macro implib dllname*,name*,thunk,pubname {
 		dd dllname#.descr_data1-dllname#.descr,dllname#.descr_rel-dllname#.descr
 		dd 0,2+KEEP_ORIGINAL_THUNK,IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_4BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		db '.idata$6'
-		dd 0,0,dllname#.descr_data1-dllname#.descr_data2+1,dllname#.descr_data2-dllname#.descr
-		dd dllname#.descr_rel2-dllname#.descr,0,0
-		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
+		dd 0,0,(dllname#.descr_data1-dllname#.descr_data2+2) and -2,dllname#.descr_data2-dllname#.descr,0
+		dd 0,0,IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 	dllname#.descr_data2 db `dllname
-	dllname#.descr_data1 dd 0,0,0,0
+	dllname#.descr_data1 dq 0,0
 		if KEEP_ORIGINAL_THUNK
 		dllname#.descr_rel:
 			dd 0,3+USE_COMPID
-			dw IMAGE_REL_I386_DIR32NB
+			dw IMAGE_REL_AMD64_ADDR32NB
 		else
 			dd 0
 		dllname#.descr_rel:
 		end if
-	dllname#.descr_rel2:
 		dd 12,2+USE_COMPID
-		dw IMAGE_REL_I386_DIR32NB
+		dw IMAGE_REL_AMD64_ADDR32NB
 		dd 16,3+USE_COMPID+KEEP_ORIGINAL_THUNK
-		dw IMAGE_REL_I386_DIR32NB
+		dw IMAGE_REL_AMD64_ADDR32NB
 	dllname#.descr_sym_tbl:
 		add_compid
 		dd 0,29,0,1
-		db IMAGE_SYM_CLASS_EXTERNAL
-		db 0
+		db IMAGE_SYM_CLASS_EXTERNAL,0
 		db '.idata$2'
 		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_MEM_READ or IMAGE_MEM_WRITE,1
 		db IMAGE_SYM_CLASS_SECTION,0
@@ -406,19 +404,18 @@ macro implib dllname*,name*,thunk,pubname {
 		dd dllname#.descr_sym_tbl2-dllname#.descr2,1+USE_COMPID
 		dw 0,IMAGE_FILE_LINE_NUMS_STRIPPED
 		db '.idata$5'
-		dd 0,0,4,dllname#.descr2_data-dllname#.descr2,0,0,0
-		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_4BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
+		dd 0,0,8,48,0,0,0
+		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_8BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		if KEEP_ORIGINAL_THUNK
 			db '.idata$4'
-			dd 0,0,4,dllname#.descr2_data-dllname#.descr2,0,0,0
-			dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_4BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
+			dd 0,0,8,48,0,0,0
+			dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_8BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		end if
 	dllname#.descr_sym_tbl2:
 		add_compid
 	dllname#.descr2_data:
 		dd 0,4,0,1
-		db IMAGE_SYM_CLASS_EXTERNAL
-		db 0
+		db IMAGE_SYM_CLASS_EXTERNAL,0
 		dd dllname#.descr_strtbl2_end-$
 		dllname#.descr_strtbl3 db 07Fh
 		times namelen db 0
@@ -493,10 +490,9 @@ dllname#name#.lnk_memberN:
 	end if
 	dw 0,IMAGE_FILE_LINE_NUMS_STRIPPED
 	db '.text',0,0,0
-	dd 0,0
-	dd 8
+	dd 0,0,8
 	dd dllname#name#.thunk-dllname#name#.lnk_memberN,dllname#name#.rel1-dllname#name#.lnk_memberN
-	dd 0,1,IMAGE_CNT_CODE or IMAGE_LNK_COMDAT or IMAGE_ALIGN_4BYTES or IMAGE_MEM_READ or IMAGE_MEM_EXECUTE
+	dd 0,1,IMAGE_CNT_CODE or IMAGE_LNK_COMDAT or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_EXECUTE
 	db '.idata$5'
 	dd 0,0,4,dllname#name#.rel2-dllname#name#.lnk_memberN
 	if byordinal=0
@@ -529,7 +525,7 @@ dllname#name#.lnk_memberN:
 			else
 				dd 6+USE_COMPID
 			end if
-			dw IMAGE_REL_I386_DIR32NB
+			dw IMAGE_REL_AMD64_ADDR32NB
 		dllname#name#.rel1 dd 2
 			dd 5+USE_COMPID
 			dw IMAGE_REL_AMD64_REL32
@@ -556,8 +552,7 @@ dllname#name#.symbol_table:
 	add_compid
 	db '.text',0,0,0
 	dd 0,1
-	db IMAGE_SYM_CLASS_STATIC
-	db 1
+	db IMAGE_SYM_CLASS_STATIC,1
 	dd 6,1,0
 	dw 0
 	dd IMAGE_COMDAT_SELECT_NODUPLICATES
@@ -565,8 +560,7 @@ dllname#name#.symbol_table:
 	dw 1,IMAGE_SYM_DTYPE_FUNCTION,IMAGE_SYM_CLASS_EXTERNAL
 	db '.idata$5'
 	dd 0,2
-	db IMAGE_SYM_CLASS_STATIC
-	db 1
+	db IMAGE_SYM_CLASS_STATIC,1
 	dd 4,1,0
 	dw 0
 	dd IMAGE_COMDAT_SELECT_NODUPLICATES
@@ -597,7 +591,7 @@ if pubname eqtype 0
 	dllname#name#.publicname_end:
 	dllname#name#.thunkname db `thunk,0
 else
-	db '__imp__'
+	db '__imp_'
 	if thunk eqtype 0
 		db `name,0
 		dllname#name#.publicname_end:

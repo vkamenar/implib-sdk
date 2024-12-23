@@ -1,6 +1,6 @@
-; IMPLIB.INC v1.9.1
+; IMPLIB.INC v2.0.0
 ; =================
-; (c) 2006 Vladimir Kamenar
+; (c) 2006-2025 Vladimir Kamenar
 
 ; FASM macros for building custom import libraries for Windows DLL (32-bit).
 ; These macros can be combined in a single library:
@@ -21,7 +21,7 @@
 ;    module   : Visual Basic module name.
 ;    pubname  : Optional public name. This symbolic name allows calling an external
 ;               function directly (not using a thunk). If not specified, 'name'
-;               prefixed with '__imp__' is used as the pubname.
+;               prefixed with '__imp_' is used as the pubname.
 ;    thunk    : Optional thunk name. A thunk function consists of a single
 ;               jmp [pubname] instruction. If not specified, 'name' is assumed
 ;               to be the thunk name as well.
@@ -64,7 +64,7 @@ PBCALL  = 2
 str_tbl_size  = 0
 last_dll_name = 0
 long_dll_name = 0
-num_symbols_indexed         = 0
+num_symbols_indexed = 0
 IMAGE_FILE_MACHINE_I386     = 14Ch
 IMAGE_FILE_32BIT_MACHINE    = 100h
 IMAGE_CNT_CODE              = 20h
@@ -343,11 +343,10 @@ macro implib dllname*,name*,thunk,pubname {
 		dd dllname#.descr_data1-dllname#.descr,dllname#.descr_rel-dllname#.descr
 		dd 0,2+KEEP_ORIGINAL_THUNK,IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_4BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		db '.idata$6'
-		dd 0,0,dllname#.descr_data1-dllname#.descr_data2+1,dllname#.descr_data2-dllname#.descr
-		dd dllname#.descr_rel2-dllname#.descr,0,0
-		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
+		dd 0,0,(dllname#.descr_data1-dllname#.descr_data2+2) and -2,dllname#.descr_data2-dllname#.descr,0
+		dd 0,0,IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 	dllname#.descr_data2 db `dllname
-	dllname#.descr_data1 dd 0,0,0,0
+	dllname#.descr_data1 dq 0,0
 		if KEEP_ORIGINAL_THUNK
 		dllname#.descr_rel:
 			dd 0,3+USE_COMPID
@@ -356,7 +355,6 @@ macro implib dllname*,name*,thunk,pubname {
 			dd 0
 		dllname#.descr_rel:
 		end if
-	dllname#.descr_rel2:
 		dd 12,2+USE_COMPID
 		dw IMAGE_REL_I386_DIR32NB
 		dd 16,3+USE_COMPID+KEEP_ORIGINAL_THUNK
@@ -414,19 +412,17 @@ macro implib dllname*,name*,thunk,pubname {
 		dd dllname#.descr_sym_tbl2-dllname#.descr2,1+USE_COMPID
 		dw 0,IMAGE_FILE_32BIT_MACHINE
 		db '.idata$5'
-		dd 0,0,4,dllname#.descr2_data-dllname#.descr2,0,0,0
+		dd 0,0,4,48,0,0,0
 		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_4BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		if KEEP_ORIGINAL_THUNK
 			db '.idata$4'
-			dd 0,0,4,dllname#.descr2_data-dllname#.descr2,0,0,0
+			dd 0,0,4,48,0,0,0
 			dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_4BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		end if
 	dllname#.descr_sym_tbl2:
 		add_compid
-	dllname#.descr2_data:
 		dd 0,4,0,1
-		db IMAGE_SYM_CLASS_EXTERNAL
-		db 0
+		db IMAGE_SYM_CLASS_EXTERNAL,0
 		dd dllname#.descr_strtbl2_end-$
 		dllname#.descr_strtbl3 db 07Fh
 		times namelen db 0
@@ -605,15 +601,13 @@ if pubname eqtype 0
 	dllname#name#.publicname_end:
 	dllname#name#.thunkname db `thunk,0
 else
-	db '__imp__'
+	db '__imp_'
 	if thunk eqtype 0
-		db `name,0
-		dllname#name#.publicname_end:
 		dllname#name#.thunkname db `thunk,0
 	else
 		dllname#name#.thunkname db `name,0
-		dllname#name#.publicname_end:
 	end if
+	dllname#name#.publicname_end:
 end if
 dllname#name#.strtbl_2 db '__IMPORT_DESCRIPTOR_'
 	times namelen db 0
@@ -675,11 +669,10 @@ macro pbimplib dllname*,cconv*,argcount*,name*,pb_name,pubname {
 		dd dllname#.descr_data1-dllname#.descr,dllname#.descr_rel-dllname#.descr
 		dd 0,2+KEEP_ORIGINAL_THUNK,IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_4BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		db '.idata$6'
-		dd 0,0,dllname#.descr_data1-dllname#.descr_data2+1,dllname#.descr_data2-dllname#.descr
-		dd dllname#.descr_rel2-dllname#.descr,0,0
-		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
+		dd 0,0,(dllname#.descr_data1-dllname#.descr_data2+2) and -2,dllname#.descr_data2-dllname#.descr,0
+		dd 0,0,IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 	dllname#.descr_data2 db `dllname
-	dllname#.descr_data1 dd 0,0,0,0
+	dllname#.descr_data1 dq 0,0
 		if KEEP_ORIGINAL_THUNK
 		dllname#.descr_rel:
 			dd 0,3+USE_COMPID
@@ -688,7 +681,6 @@ macro pbimplib dllname*,cconv*,argcount*,name*,pb_name,pubname {
 			dd 0
 		dllname#.descr_rel:
 		end if
-	dllname#.descr_rel2:
 		dd 12,2+USE_COMPID
 		dw IMAGE_REL_I386_DIR32NB
 		dd 16,3+USE_COMPID+KEEP_ORIGINAL_THUNK
@@ -746,19 +738,17 @@ macro pbimplib dllname*,cconv*,argcount*,name*,pb_name,pubname {
 		dd dllname#.descr_sym_tbl2-dllname#.descr2,1+USE_COMPID
 		dw 0,IMAGE_FILE_32BIT_MACHINE
 		db '.idata$5'
-		dd 0,0,4,dllname#.descr2_data-dllname#.descr2,0,0,0
+		dd 0,0,4,48,0,0,0
 		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_4BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		if KEEP_ORIGINAL_THUNK
 			db '.idata$4'
-			dd 0,0,4,dllname#.descr2_data-dllname#.descr2,0,0,0
+			dd 0,0,4,48,0,0,0
 			dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_4BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		end if
 	dllname#.descr_sym_tbl2:
 		add_compid
-	dllname#.descr2_data:
 		dd 0,4,0,1
-		db IMAGE_SYM_CLASS_EXTERNAL
-		db 0
+		db IMAGE_SYM_CLASS_EXTERNAL,0
 		dd dllname#.descr_strtbl2_end-$
 		dllname#.descr_strtbl3 db 07Fh
 		times namelen db 0
@@ -1021,11 +1011,9 @@ dllname#name#.strtbl dd dllname#name#.strtbl_end-$
 dllname#name#.publicname:
 if pubname eqtype 0
 	db `pubname,0
-	dllname#name#.publicname_end:
 	dllname#name#.thunkname db '_PB_',`pb_name,0
 else
-	db '__imp__',`name,0
-	dllname#name#.publicname_end:
+	db '__imp_',`name,0
 	dllname#name#.thunkname:
 	if pb_name eqtype 0
 		db '_PB_',`pb_name,0
@@ -1039,7 +1027,7 @@ dllname#name#.strtbl_2 db '__IMPORT_DESCRIPTOR_'
 	db 0
 dllname#name#.strtbl_end:
 	add_2_dir dllname#name#.thunkname,dllname#name#.strtbl_2-dllname#name#.thunkname
-	add_2_dir dllname#name#.publicname,dllname#name#.publicname_end-dllname#name#.publicname
+	add_2_dir dllname#name#.publicname,dllname#name#.thunkname-dllname#name#.publicname
 }
 
 macro vbimplib module*,dllname*,cconv*,argcount*,name*,vb_name,pubname {
@@ -1093,11 +1081,10 @@ macro vbimplib module*,dllname*,cconv*,argcount*,name*,vb_name,pubname {
 		dd dllname#.descr_data1-dllname#.descr,dllname#.descr_rel-dllname#.descr
 		dd 0,2+KEEP_ORIGINAL_THUNK,IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_4BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		db '.idata$6'
-		dd 0,0,dllname#.descr_data1-dllname#.descr_data2+1,dllname#.descr_data2-dllname#.descr
-		dd dllname#.descr_rel2-dllname#.descr,0,0
-		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
+		dd 0,0,(dllname#.descr_data1-dllname#.descr_data2+2) and -2,dllname#.descr_data2-dllname#.descr,0
+		dd 0,0,IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 	dllname#.descr_data2 db `dllname
-	dllname#.descr_data1 dd 0,0,0,0
+	dllname#.descr_data1 dq 0,0
 		if KEEP_ORIGINAL_THUNK
 		dllname#.descr_rel:
 			dd 0,3+USE_COMPID
@@ -1106,7 +1093,6 @@ macro vbimplib module*,dllname*,cconv*,argcount*,name*,vb_name,pubname {
 			dd 0
 		dllname#.descr_rel:
 		end if
-	dllname#.descr_rel2:
 		dd 12,2+USE_COMPID
 		dw IMAGE_REL_I386_DIR32NB
 		dd 16,3+USE_COMPID+KEEP_ORIGINAL_THUNK
@@ -1164,19 +1150,17 @@ macro vbimplib module*,dllname*,cconv*,argcount*,name*,vb_name,pubname {
 		dd dllname#.descr_sym_tbl2-dllname#.descr2,1+USE_COMPID
 		dw 0,IMAGE_FILE_32BIT_MACHINE
 		db '.idata$5'
-		dd 0,0,4,dllname#.descr2_data-dllname#.descr2,0,0,0
+		dd 0,0,4,48,0,0,0
 		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_4BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		if KEEP_ORIGINAL_THUNK
 			db '.idata$4'
-			dd 0,0,4,dllname#.descr2_data-dllname#.descr2,0,0,0
+			dd 0,0,4,48,0,0,0
 			dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_4BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		end if
 	dllname#.descr_sym_tbl2:
 		add_compid
-	dllname#.descr2_data:
 		dd 0,4,0,1
-		db IMAGE_SYM_CLASS_EXTERNAL
-		db 0
+		db IMAGE_SYM_CLASS_EXTERNAL,0
 		dd dllname#.descr_strtbl2_end-$
 		dllname#.descr_strtbl3 db 07Fh
 		times namelen db 0
@@ -1440,7 +1424,7 @@ dllname#name#.publicname:
 if pubname eqtype 0
 	db `pubname,0
 else
-	db '__imp__',`name,0
+	db '__imp_',`name,0
 end if
 dllname#name#.thunkname:
 if vb_name eqtype 0
