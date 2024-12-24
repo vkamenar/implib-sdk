@@ -1,314 +1,314 @@
 include '..\implib.inc'
 
-implib crypt32.dll, CertAddCRLContextToStore, _CertAddCRLContextToStore@16, __imp__CertAddCRLContextToStore@16
-implib crypt32.dll, CertAddCRLLinkToStore, _CertAddCRLLinkToStore@16, __imp__CertAddCRLLinkToStore@16
-implib crypt32.dll, CertAddCTLContextToStore, _CertAddCTLContextToStore@16, __imp__CertAddCTLContextToStore@16
-implib crypt32.dll, CertAddCTLLinkToStore, _CertAddCTLLinkToStore@16, __imp__CertAddCTLLinkToStore@16
-implib crypt32.dll, CertAddCertificateContextToStore, _CertAddCertificateContextToStore@16, __imp__CertAddCertificateContextToStore@16
-implib crypt32.dll, CertAddCertificateLinkToStore, _CertAddCertificateLinkToStore@16, __imp__CertAddCertificateLinkToStore@16
-implib crypt32.dll, CertAddEncodedCRLToStore, _CertAddEncodedCRLToStore@24, __imp__CertAddEncodedCRLToStore@24
-implib crypt32.dll, CertAddEncodedCTLToStore, _CertAddEncodedCTLToStore@24, __imp__CertAddEncodedCTLToStore@24
-implib crypt32.dll, CertAddEncodedCertificateToStore, _CertAddEncodedCertificateToStore@24, __imp__CertAddEncodedCertificateToStore@24
-implib crypt32.dll, CertAddEncodedCertificateToSystemStoreA, _CertAddEncodedCertificateToSystemStoreA@12, __imp__CertAddEncodedCertificateToSystemStoreA@12
-implib crypt32.dll, CertAddEncodedCertificateToSystemStoreW, _CertAddEncodedCertificateToSystemStoreW@12, __imp__CertAddEncodedCertificateToSystemStoreW@12
-implib crypt32.dll, CertAddEnhancedKeyUsageIdentifier, _CertAddEnhancedKeyUsageIdentifier@8, __imp__CertAddEnhancedKeyUsageIdentifier@8
-implib crypt32.dll, CertAddRefServerOcspResponse, _CertAddRefServerOcspResponse@4, __imp__CertAddRefServerOcspResponse@4
-implib crypt32.dll, CertAddRefServerOcspResponseContext, _CertAddRefServerOcspResponseContext@4, __imp__CertAddRefServerOcspResponseContext@4
-implib crypt32.dll, CertAddSerializedElementToStore, _CertAddSerializedElementToStore@32, __imp__CertAddSerializedElementToStore@32
-implib crypt32.dll, CertAddStoreToCollection, _CertAddStoreToCollection@16, __imp__CertAddStoreToCollection@16
-implib crypt32.dll, CertAlgIdToOID, _CertAlgIdToOID@4, __imp__CertAlgIdToOID@4
-implib crypt32.dll, CertCloseServerOcspResponse, _CertCloseServerOcspResponse@8, __imp__CertCloseServerOcspResponse@8
-implib crypt32.dll, CertCloseStore, _CertCloseStore@8, __imp__CertCloseStore@8
-implib crypt32.dll, CertCompareCertificate, _CertCompareCertificate@12, __imp__CertCompareCertificate@12
-implib crypt32.dll, CertCompareCertificateName, _CertCompareCertificateName@12, __imp__CertCompareCertificateName@12
-implib crypt32.dll, CertCompareIntegerBlob, _CertCompareIntegerBlob@8, __imp__CertCompareIntegerBlob@8
-implib crypt32.dll, CertComparePublicKeyInfo, _CertComparePublicKeyInfo@12, __imp__CertComparePublicKeyInfo@12
-implib crypt32.dll, CertControlStore, _CertControlStore@16, __imp__CertControlStore@16
-implib crypt32.dll, CertCreateCRLContext, _CertCreateCRLContext@12, __imp__CertCreateCRLContext@12
-implib crypt32.dll, CertCreateCTLContext, _CertCreateCTLContext@12, __imp__CertCreateCTLContext@12
-implib crypt32.dll, CertCreateCTLEntryFromCertificateContextProperties, _CertCreateCTLEntryFromCertificateContextProperties@28, __imp__CertCreateCTLEntryFromCertificateContextProperties@28
-implib crypt32.dll, CertCreateCertificateChainEngine, _CertCreateCertificateChainEngine@8, __imp__CertCreateCertificateChainEngine@8
-implib crypt32.dll, CertCreateCertificateContext, _CertCreateCertificateContext@12, __imp__CertCreateCertificateContext@12
-implib crypt32.dll, CertCreateContext, _CertCreateContext@24, __imp__CertCreateContext@24
-implib crypt32.dll, CertCreateSelfSignCertificate, _CertCreateSelfSignCertificate@32, __imp__CertCreateSelfSignCertificate@32
-implib crypt32.dll, CertDeleteCRLFromStore, _CertDeleteCRLFromStore@4, __imp__CertDeleteCRLFromStore@4
-implib crypt32.dll, CertDeleteCTLFromStore, _CertDeleteCTLFromStore@4, __imp__CertDeleteCTLFromStore@4
-implib crypt32.dll, CertDeleteCertificateFromStore, _CertDeleteCertificateFromStore@4, __imp__CertDeleteCertificateFromStore@4
-implib crypt32.dll, CertDuplicateCRLContext, _CertDuplicateCRLContext@4, __imp__CertDuplicateCRLContext@4
-implib crypt32.dll, CertDuplicateCTLContext, _CertDuplicateCTLContext@4, __imp__CertDuplicateCTLContext@4
-implib crypt32.dll, CertDuplicateCertificateChain, _CertDuplicateCertificateChain@4, __imp__CertDuplicateCertificateChain@4
-implib crypt32.dll, CertDuplicateCertificateContext, _CertDuplicateCertificateContext@4, __imp__CertDuplicateCertificateContext@4
-implib crypt32.dll, CertDuplicateStore, _CertDuplicateStore@4, __imp__CertDuplicateStore@4
-implib crypt32.dll, CertEnumCRLContextProperties, _CertEnumCRLContextProperties@8, __imp__CertEnumCRLContextProperties@8
-implib crypt32.dll, CertEnumCRLsInStore, _CertEnumCRLsInStore@8, __imp__CertEnumCRLsInStore@8
-implib crypt32.dll, CertEnumCTLContextProperties, _CertEnumCTLContextProperties@8, __imp__CertEnumCTLContextProperties@8
-implib crypt32.dll, CertEnumCTLsInStore, _CertEnumCTLsInStore@8, __imp__CertEnumCTLsInStore@8
-implib crypt32.dll, CertEnumCertificateContextProperties, _CertEnumCertificateContextProperties@8, __imp__CertEnumCertificateContextProperties@8
-implib crypt32.dll, CertEnumCertificatesInStore, _CertEnumCertificatesInStore@8, __imp__CertEnumCertificatesInStore@8
-implib crypt32.dll, CertEnumPhysicalStore, _CertEnumPhysicalStore@16, __imp__CertEnumPhysicalStore@16
-implib crypt32.dll, CertEnumSubjectInSortedCTL, _CertEnumSubjectInSortedCTL@16, __imp__CertEnumSubjectInSortedCTL@16
-implib crypt32.dll, CertEnumSystemStore, _CertEnumSystemStore@16, __imp__CertEnumSystemStore@16
-implib crypt32.dll, CertEnumSystemStoreLocation, _CertEnumSystemStoreLocation@12, __imp__CertEnumSystemStoreLocation@12
-implib crypt32.dll, CertFindAttribute, _CertFindAttribute@12, __imp__CertFindAttribute@12
-implib crypt32.dll, CertFindCRLInStore, _CertFindCRLInStore@24, __imp__CertFindCRLInStore@24
-implib crypt32.dll, CertFindCTLInStore, _CertFindCTLInStore@24, __imp__CertFindCTLInStore@24
-implib crypt32.dll, CertFindCertificateInCRL, _CertFindCertificateInCRL@20, __imp__CertFindCertificateInCRL@20
-implib crypt32.dll, CertFindCertificateInStore, _CertFindCertificateInStore@24, __imp__CertFindCertificateInStore@24
-implib crypt32.dll, CertFindChainInStore, _CertFindChainInStore@24, __imp__CertFindChainInStore@24
-implib crypt32.dll, CertFindExtension, _CertFindExtension@12, __imp__CertFindExtension@12
-implib crypt32.dll, CertFindRDNAttr, _CertFindRDNAttr@8, __imp__CertFindRDNAttr@8
-implib crypt32.dll, CertFindSubjectInCTL, _CertFindSubjectInCTL@20, __imp__CertFindSubjectInCTL@20
-implib crypt32.dll, CertFindSubjectInSortedCTL, _CertFindSubjectInSortedCTL@20, __imp__CertFindSubjectInSortedCTL@20
-implib crypt32.dll, CertFreeCRLContext, _CertFreeCRLContext@4, __imp__CertFreeCRLContext@4
-implib crypt32.dll, CertFreeCTLContext, _CertFreeCTLContext@4, __imp__CertFreeCTLContext@4
-implib crypt32.dll, CertFreeCertificateChain, _CertFreeCertificateChain@4, __imp__CertFreeCertificateChain@4
-implib crypt32.dll, CertFreeCertificateChainEngine, _CertFreeCertificateChainEngine@4, __imp__CertFreeCertificateChainEngine@4
-implib crypt32.dll, CertFreeCertificateChainList, _CertFreeCertificateChainList@4, __imp__CertFreeCertificateChainList@4
-implib crypt32.dll, CertFreeCertificateContext, _CertFreeCertificateContext@4, __imp__CertFreeCertificateContext@4
-implib crypt32.dll, CertFreeServerOcspResponseContext, _CertFreeServerOcspResponseContext@4, __imp__CertFreeServerOcspResponseContext@4
-implib crypt32.dll, CertGetCRLContextProperty, _CertGetCRLContextProperty@16, __imp__CertGetCRLContextProperty@16
-implib crypt32.dll, CertGetCRLFromStore, _CertGetCRLFromStore@16, __imp__CertGetCRLFromStore@16
-implib crypt32.dll, CertGetCTLContextProperty, _CertGetCTLContextProperty@16, __imp__CertGetCTLContextProperty@16
-implib crypt32.dll, CertGetCertificateChain, _CertGetCertificateChain@32, __imp__CertGetCertificateChain@32
-implib crypt32.dll, CertGetCertificateContextProperty, _CertGetCertificateContextProperty@16, __imp__CertGetCertificateContextProperty@16
-implib crypt32.dll, CertGetEnhancedKeyUsage, _CertGetEnhancedKeyUsage@16, __imp__CertGetEnhancedKeyUsage@16
-implib crypt32.dll, CertGetIntendedKeyUsage, _CertGetIntendedKeyUsage@16, __imp__CertGetIntendedKeyUsage@16
-implib crypt32.dll, CertGetIssuerCertificateFromStore, _CertGetIssuerCertificateFromStore@16, __imp__CertGetIssuerCertificateFromStore@16
-implib crypt32.dll, CertGetNameStringA, _CertGetNameStringA@24, __imp__CertGetNameStringA@24
-implib crypt32.dll, CertGetNameStringW, _CertGetNameStringW@24, __imp__CertGetNameStringW@24
-implib crypt32.dll, CertGetPublicKeyLength, _CertGetPublicKeyLength@8, __imp__CertGetPublicKeyLength@8
-implib crypt32.dll, CertGetServerOcspResponseContext, _CertGetServerOcspResponseContext@12, __imp__CertGetServerOcspResponseContext@12
-implib crypt32.dll, CertGetStoreProperty, _CertGetStoreProperty@16, __imp__CertGetStoreProperty@16
-implib crypt32.dll, CertGetSubjectCertificateFromStore, _CertGetSubjectCertificateFromStore@12, __imp__CertGetSubjectCertificateFromStore@12
-implib crypt32.dll, CertGetValidUsages, _CertGetValidUsages@20, __imp__CertGetValidUsages@20
-implib crypt32.dll, CertIsRDNAttrsInCertificateName, _CertIsRDNAttrsInCertificateName@16, __imp__CertIsRDNAttrsInCertificateName@16
-implib crypt32.dll, CertIsStrongHashToSign, _CertIsStrongHashToSign@12, __imp__CertIsStrongHashToSign@12
-implib crypt32.dll, CertIsValidCRLForCertificate, _CertIsValidCRLForCertificate@16, __imp__CertIsValidCRLForCertificate@16
-implib crypt32.dll, CertIsWeakHash, _CertIsWeakHash@24, __imp__CertIsWeakHash@24
-implib crypt32.dll, CertNameToStrA, _CertNameToStrA@20, __imp__CertNameToStrA@20
-implib crypt32.dll, CertNameToStrW, _CertNameToStrW@20, __imp__CertNameToStrW@20
-implib crypt32.dll, CertOIDToAlgId, _CertOIDToAlgId@4, __imp__CertOIDToAlgId@4
-implib crypt32.dll, CertOpenServerOcspResponse, _CertOpenServerOcspResponse@12, __imp__CertOpenServerOcspResponse@12
-implib crypt32.dll, CertOpenStore, _CertOpenStore@20, __imp__CertOpenStore@20
-implib crypt32.dll, CertOpenSystemStoreA, _CertOpenSystemStoreA@8, __imp__CertOpenSystemStoreA@8
-implib crypt32.dll, CertOpenSystemStoreW, _CertOpenSystemStoreW@8, __imp__CertOpenSystemStoreW@8
-implib crypt32.dll, CertRDNValueToStrA, _CertRDNValueToStrA@16, __imp__CertRDNValueToStrA@16
-implib crypt32.dll, CertRDNValueToStrW, _CertRDNValueToStrW@16, __imp__CertRDNValueToStrW@16
-implib crypt32.dll, CertRegisterPhysicalStore, _CertRegisterPhysicalStore@20, __imp__CertRegisterPhysicalStore@20
-implib crypt32.dll, CertRegisterSystemStore, _CertRegisterSystemStore@16, __imp__CertRegisterSystemStore@16
-implib crypt32.dll, CertRemoveEnhancedKeyUsageIdentifier, _CertRemoveEnhancedKeyUsageIdentifier@8, __imp__CertRemoveEnhancedKeyUsageIdentifier@8
-implib crypt32.dll, CertRemoveStoreFromCollection, _CertRemoveStoreFromCollection@8, __imp__CertRemoveStoreFromCollection@8
-implib crypt32.dll, CertResyncCertificateChainEngine, _CertResyncCertificateChainEngine@4, __imp__CertResyncCertificateChainEngine@4
-implib crypt32.dll, CertRetrieveLogoOrBiometricInfo, _CertRetrieveLogoOrBiometricInfo@36, __imp__CertRetrieveLogoOrBiometricInfo@36
-implib crypt32.dll, CertSaveStore, _CertSaveStore@24, __imp__CertSaveStore@24
-implib crypt32.dll, CertSelectCertificateChains, _CertSelectCertificateChains@32, __imp__CertSelectCertificateChains@32
-implib crypt32.dll, CertSerializeCRLStoreElement, _CertSerializeCRLStoreElement@16, __imp__CertSerializeCRLStoreElement@16
-implib crypt32.dll, CertSerializeCTLStoreElement, _CertSerializeCTLStoreElement@16, __imp__CertSerializeCTLStoreElement@16
-implib crypt32.dll, CertSerializeCertificateStoreElement, _CertSerializeCertificateStoreElement@16, __imp__CertSerializeCertificateStoreElement@16
-implib crypt32.dll, CertSetCRLContextProperty, _CertSetCRLContextProperty@16, __imp__CertSetCRLContextProperty@16
-implib crypt32.dll, CertSetCTLContextProperty, _CertSetCTLContextProperty@16, __imp__CertSetCTLContextProperty@16
-implib crypt32.dll, CertSetCertificateContextPropertiesFromCTLEntry, _CertSetCertificateContextPropertiesFromCTLEntry@12, __imp__CertSetCertificateContextPropertiesFromCTLEntry@12
-implib crypt32.dll, CertSetCertificateContextProperty, _CertSetCertificateContextProperty@16, __imp__CertSetCertificateContextProperty@16
-implib crypt32.dll, CertSetEnhancedKeyUsage, _CertSetEnhancedKeyUsage@8, __imp__CertSetEnhancedKeyUsage@8
-implib crypt32.dll, CertSetStoreProperty, _CertSetStoreProperty@16, __imp__CertSetStoreProperty@16
-implib crypt32.dll, CertStrToNameA, _CertStrToNameA@28, __imp__CertStrToNameA@28
-implib crypt32.dll, CertStrToNameW, _CertStrToNameW@28, __imp__CertStrToNameW@28
-implib crypt32.dll, CertUnregisterPhysicalStore, _CertUnregisterPhysicalStore@12, __imp__CertUnregisterPhysicalStore@12
-implib crypt32.dll, CertUnregisterSystemStore, _CertUnregisterSystemStore@8, __imp__CertUnregisterSystemStore@8
-implib crypt32.dll, CertVerifyCRLRevocation, _CertVerifyCRLRevocation@16, __imp__CertVerifyCRLRevocation@16
-implib crypt32.dll, CertVerifyCRLTimeValidity, _CertVerifyCRLTimeValidity@8, __imp__CertVerifyCRLTimeValidity@8
-implib crypt32.dll, CertVerifyCTLUsage, _CertVerifyCTLUsage@28, __imp__CertVerifyCTLUsage@28
-implib crypt32.dll, CertVerifyCertificateChainPolicy, _CertVerifyCertificateChainPolicy@16, __imp__CertVerifyCertificateChainPolicy@16
-implib crypt32.dll, CertVerifyRevocation, _CertVerifyRevocation@28, __imp__CertVerifyRevocation@28
-implib crypt32.dll, CertVerifySubjectCertificateContext, _CertVerifySubjectCertificateContext@12, __imp__CertVerifySubjectCertificateContext@12
-implib crypt32.dll, CertVerifyTimeValidity, _CertVerifyTimeValidity@8, __imp__CertVerifyTimeValidity@8
-implib crypt32.dll, CertVerifyValidityNesting, _CertVerifyValidityNesting@8, __imp__CertVerifyValidityNesting@8
-implib crypt32.dll, CreateFileU, _CreateFileU@28, __imp__CreateFileU@28
-implib crypt32.dll, CryptAcquireCertificatePrivateKey, _CryptAcquireCertificatePrivateKey@24, __imp__CryptAcquireCertificatePrivateKey@24
-implib crypt32.dll, CryptAcquireContextU, _CryptAcquireContextU@20, __imp__CryptAcquireContextU@20
-implib crypt32.dll, CryptBinaryToStringA, _CryptBinaryToStringA@20, __imp__CryptBinaryToStringA@20
-implib crypt32.dll, CryptBinaryToStringW, _CryptBinaryToStringW@20, __imp__CryptBinaryToStringW@20
-implib crypt32.dll, CryptCloseAsyncHandle, _CryptCloseAsyncHandle@4, __imp__CryptCloseAsyncHandle@4
-implib crypt32.dll, CryptCreateAsyncHandle, _CryptCreateAsyncHandle@8, __imp__CryptCreateAsyncHandle@8
-implib crypt32.dll, CryptCreateKeyIdentifierFromCSP, _CryptCreateKeyIdentifierFromCSP@32, __imp__CryptCreateKeyIdentifierFromCSP@32
-implib crypt32.dll, CryptDecodeMessage, _CryptDecodeMessage@52, __imp__CryptDecodeMessage@52
-implib crypt32.dll, CryptDecodeObject, _CryptDecodeObject@28, __imp__CryptDecodeObject@28
-implib crypt32.dll, CryptDecodeObjectEx, _CryptDecodeObjectEx@32, __imp__CryptDecodeObjectEx@32
-implib crypt32.dll, CryptDecryptAndVerifyMessageSignature, _CryptDecryptAndVerifyMessageSignature@36, __imp__CryptDecryptAndVerifyMessageSignature@36
-implib crypt32.dll, CryptDecryptMessage, _CryptDecryptMessage@24, __imp__CryptDecryptMessage@24
-implib crypt32.dll, CryptEncodeObject, _CryptEncodeObject@20, __imp__CryptEncodeObject@20
-implib crypt32.dll, CryptEncodeObjectEx, _CryptEncodeObjectEx@28, __imp__CryptEncodeObjectEx@28
-implib crypt32.dll, CryptEncryptMessage, _CryptEncryptMessage@28, __imp__CryptEncryptMessage@28
-implib crypt32.dll, CryptEnumKeyIdentifierProperties, _CryptEnumKeyIdentifierProperties@28, __imp__CryptEnumKeyIdentifierProperties@28
-implib crypt32.dll, CryptEnumOIDFunction, _CryptEnumOIDFunction@24, __imp__CryptEnumOIDFunction@24
-implib crypt32.dll, CryptEnumOIDInfo, _CryptEnumOIDInfo@16, __imp__CryptEnumOIDInfo@16
-implib crypt32.dll, CryptEnumProvidersU, _CryptEnumProvidersU@24, __imp__CryptEnumProvidersU@24
-implib crypt32.dll, CryptExportPKCS8, _CryptExportPKCS8@28, __imp__CryptExportPKCS8@28
-implib crypt32.dll, CryptExportPublicKeyInfo, _CryptExportPublicKeyInfo@20, __imp__CryptExportPublicKeyInfo@20
-implib crypt32.dll, CryptExportPublicKeyInfoEx, _CryptExportPublicKeyInfoEx@32, __imp__CryptExportPublicKeyInfoEx@32
-implib crypt32.dll, CryptExportPublicKeyInfoFromBCryptKeyHandle, _CryptExportPublicKeyInfoFromBCryptKeyHandle@28, __imp__CryptExportPublicKeyInfoFromBCryptKeyHandle@28
-implib crypt32.dll, CryptFindCertificateKeyProvInfo, _CryptFindCertificateKeyProvInfo@12, __imp__CryptFindCertificateKeyProvInfo@12
-implib crypt32.dll, CryptFindLocalizedName, _CryptFindLocalizedName@4, __imp__CryptFindLocalizedName@4
-implib crypt32.dll, CryptFindOIDInfo, _CryptFindOIDInfo@12, __imp__CryptFindOIDInfo@12
-implib crypt32.dll, CryptFormatObject, _CryptFormatObject@36, __imp__CryptFormatObject@36
-implib crypt32.dll, CryptFreeOIDFunctionAddress, _CryptFreeOIDFunctionAddress@8, __imp__CryptFreeOIDFunctionAddress@8
-implib crypt32.dll, CryptGetAsyncParam, _CryptGetAsyncParam@16, __imp__CryptGetAsyncParam@16
-implib crypt32.dll, CryptGetDefaultOIDDllList, _CryptGetDefaultOIDDllList@16, __imp__CryptGetDefaultOIDDllList@16
-implib crypt32.dll, CryptGetDefaultOIDFunctionAddress, _CryptGetDefaultOIDFunctionAddress@24, __imp__CryptGetDefaultOIDFunctionAddress@24
-implib crypt32.dll, CryptGetKeyIdentifierProperty, _CryptGetKeyIdentifierProperty@28, __imp__CryptGetKeyIdentifierProperty@28
-implib crypt32.dll, CryptGetMessageCertificates, _CryptGetMessageCertificates@20, __imp__CryptGetMessageCertificates@20
-implib crypt32.dll, CryptGetMessageSignerCount, _CryptGetMessageSignerCount@12, __imp__CryptGetMessageSignerCount@12
-implib crypt32.dll, CryptGetOIDFunctionAddress, _CryptGetOIDFunctionAddress@24, __imp__CryptGetOIDFunctionAddress@24
-implib crypt32.dll, CryptGetOIDFunctionValue, _CryptGetOIDFunctionValue@28, __imp__CryptGetOIDFunctionValue@28
-implib crypt32.dll, CryptHashCertificate, _CryptHashCertificate@28, __imp__CryptHashCertificate@28
-implib crypt32.dll, CryptHashCertificate2, _CryptHashCertificate2@28, __imp__CryptHashCertificate2@28
-implib crypt32.dll, CryptHashMessage, _CryptHashMessage@36, __imp__CryptHashMessage@36
-implib crypt32.dll, CryptHashPublicKeyInfo, _CryptHashPublicKeyInfo@28, __imp__CryptHashPublicKeyInfo@28
-implib crypt32.dll, CryptHashToBeSigned, _CryptHashToBeSigned@24, __imp__CryptHashToBeSigned@24
-implib crypt32.dll, CryptImportPKCS8, _CryptImportPKCS8@36, __imp__CryptImportPKCS8@36
-implib crypt32.dll, CryptImportPublicKeyInfo, _CryptImportPublicKeyInfo@16, __imp__CryptImportPublicKeyInfo@16
-implib crypt32.dll, CryptImportPublicKeyInfoEx, _CryptImportPublicKeyInfoEx@28, __imp__CryptImportPublicKeyInfoEx@28
-implib crypt32.dll, CryptImportPublicKeyInfoEx2, _CryptImportPublicKeyInfoEx2@20, __imp__CryptImportPublicKeyInfoEx2@20
-implib crypt32.dll, CryptInitOIDFunctionSet, _CryptInitOIDFunctionSet@8, __imp__CryptInitOIDFunctionSet@8
-implib crypt32.dll, CryptInstallDefaultContext, _CryptInstallDefaultContext@24, __imp__CryptInstallDefaultContext@24
-implib crypt32.dll, CryptInstallOIDFunctionAddress, _CryptInstallOIDFunctionAddress@24, __imp__CryptInstallOIDFunctionAddress@24
-implib crypt32.dll, CryptLoadSip, _CryptLoadSip@12, __imp__CryptLoadSip@12
-implib crypt32.dll, CryptMemAlloc, _CryptMemAlloc@4, __imp__CryptMemAlloc@4
-implib crypt32.dll, CryptMemFree, _CryptMemFree@4, __imp__CryptMemFree@4
-implib crypt32.dll, CryptMemRealloc, _CryptMemRealloc@8, __imp__CryptMemRealloc@8
-implib crypt32.dll, CryptMsgCalculateEncodedLength, _CryptMsgCalculateEncodedLength@24, __imp__CryptMsgCalculateEncodedLength@24
-implib crypt32.dll, CryptMsgClose, _CryptMsgClose@4, __imp__CryptMsgClose@4
-implib crypt32.dll, CryptMsgControl, _CryptMsgControl@16, __imp__CryptMsgControl@16
-implib crypt32.dll, CryptMsgCountersign, _CryptMsgCountersign@16, __imp__CryptMsgCountersign@16
-implib crypt32.dll, CryptMsgCountersignEncoded, _CryptMsgCountersignEncoded@28, __imp__CryptMsgCountersignEncoded@28
-implib crypt32.dll, CryptMsgDuplicate, _CryptMsgDuplicate@4, __imp__CryptMsgDuplicate@4
-implib crypt32.dll, CryptMsgEncodeAndSignCTL, _CryptMsgEncodeAndSignCTL@24, __imp__CryptMsgEncodeAndSignCTL@24
-implib crypt32.dll, CryptMsgGetAndVerifySigner, _CryptMsgGetAndVerifySigner@24, __imp__CryptMsgGetAndVerifySigner@24
-implib crypt32.dll, CryptMsgGetParam, _CryptMsgGetParam@20, __imp__CryptMsgGetParam@20
-implib crypt32.dll, CryptMsgOpenToDecode, _CryptMsgOpenToDecode@24, __imp__CryptMsgOpenToDecode@24
-implib crypt32.dll, CryptMsgOpenToEncode, _CryptMsgOpenToEncode@24, __imp__CryptMsgOpenToEncode@24
-implib crypt32.dll, CryptMsgSignCTL, _CryptMsgSignCTL@28, __imp__CryptMsgSignCTL@28
-implib crypt32.dll, CryptMsgUpdate, _CryptMsgUpdate@16, __imp__CryptMsgUpdate@16
-implib crypt32.dll, CryptMsgVerifyCountersignatureEncoded, _CryptMsgVerifyCountersignatureEncoded@28, __imp__CryptMsgVerifyCountersignatureEncoded@28
-implib crypt32.dll, CryptMsgVerifyCountersignatureEncodedEx, _CryptMsgVerifyCountersignatureEncodedEx@40, __imp__CryptMsgVerifyCountersignatureEncodedEx@40
-implib crypt32.dll, CryptObjectLocatorFree, _CryptObjectLocatorFree@4, __imp__CryptObjectLocatorFree@4
-implib crypt32.dll, CryptObjectLocatorGet, _CryptObjectLocatorGet@12, __imp__CryptObjectLocatorGet@12
-implib crypt32.dll, CryptObjectLocatorGetContent, _CryptObjectLocatorGetContent@4, __imp__CryptObjectLocatorGetContent@4
-implib crypt32.dll, CryptObjectLocatorGetUpdated, _CryptObjectLocatorGetUpdated@4, __imp__CryptObjectLocatorGetUpdated@4
-implib crypt32.dll, CryptObjectLocatorInitialize, _CryptObjectLocatorInitialize@20, __imp__CryptObjectLocatorInitialize@20
-implib crypt32.dll, CryptObjectLocatorIsChanged, _CryptObjectLocatorIsChanged@4, __imp__CryptObjectLocatorIsChanged@4
-implib crypt32.dll, CryptObjectLocatorRelease, _CryptObjectLocatorRelease@8, __imp__CryptObjectLocatorRelease@8
-implib crypt32.dll, CryptProtectData, _CryptProtectData@28, __imp__CryptProtectData@28
-implib crypt32.dll, CryptProtectMemory, _CryptProtectMemory@12, __imp__CryptProtectMemory@12
-implib crypt32.dll, CryptQueryObject, _CryptQueryObject@44, __imp__CryptQueryObject@44
-implib crypt32.dll, CryptRegisterDefaultOIDFunction, _CryptRegisterDefaultOIDFunction@16, __imp__CryptRegisterDefaultOIDFunction@16
-implib crypt32.dll, CryptRegisterOIDFunction, _CryptRegisterOIDFunction@20, __imp__CryptRegisterOIDFunction@20
-implib crypt32.dll, CryptRegisterOIDInfo, _CryptRegisterOIDInfo@8, __imp__CryptRegisterOIDInfo@8
-implib crypt32.dll, CryptRetrieveTimeStamp, _CryptRetrieveTimeStamp@40, __imp__CryptRetrieveTimeStamp@40
-implib crypt32.dll, CryptSIPAddProvider, _CryptSIPAddProvider@4, __imp__CryptSIPAddProvider@4
-implib crypt32.dll, CryptSIPCreateIndirectData, _CryptSIPCreateIndirectData@12, __imp__CryptSIPCreateIndirectData@12
-implib crypt32.dll, CryptSIPGetCaps, _CryptSIPGetCaps@8, __imp__CryptSIPGetCaps@8
-implib crypt32.dll, CryptSIPGetSealedDigest, _CryptSIPGetSealedDigest@20, __imp__CryptSIPGetSealedDigest@20
-implib crypt32.dll, CryptSIPGetSignedDataMsg, _CryptSIPGetSignedDataMsg@20, __imp__CryptSIPGetSignedDataMsg@20
-implib crypt32.dll, CryptSIPLoad, _CryptSIPLoad@12, __imp__CryptSIPLoad@12
-implib crypt32.dll, CryptSIPPutSignedDataMsg, _CryptSIPPutSignedDataMsg@20, __imp__CryptSIPPutSignedDataMsg@20
-implib crypt32.dll, CryptSIPRemoveProvider, _CryptSIPRemoveProvider@4, __imp__CryptSIPRemoveProvider@4
-implib crypt32.dll, CryptSIPRemoveSignedDataMsg, _CryptSIPRemoveSignedDataMsg@8, __imp__CryptSIPRemoveSignedDataMsg@8
-implib crypt32.dll, CryptSIPRetrieveSubjectGuid, _CryptSIPRetrieveSubjectGuid@12, __imp__CryptSIPRetrieveSubjectGuid@12
-implib crypt32.dll, CryptSIPRetrieveSubjectGuidForCatalogFile, _CryptSIPRetrieveSubjectGuidForCatalogFile@12, __imp__CryptSIPRetrieveSubjectGuidForCatalogFile@12
-implib crypt32.dll, CryptSIPVerifyIndirectData, _CryptSIPVerifyIndirectData@8, __imp__CryptSIPVerifyIndirectData@8
-implib crypt32.dll, CryptSetAsyncParam, _CryptSetAsyncParam@16, __imp__CryptSetAsyncParam@16
-implib crypt32.dll, CryptSetKeyIdentifierProperty, _CryptSetKeyIdentifierProperty@24, __imp__CryptSetKeyIdentifierProperty@24
-implib crypt32.dll, CryptSetOIDFunctionValue, _CryptSetOIDFunctionValue@28, __imp__CryptSetOIDFunctionValue@28
-implib crypt32.dll, CryptSetProviderU, _CryptSetProviderU@8, __imp__CryptSetProviderU@8
-implib crypt32.dll, CryptSignAndEncodeCertificate, _CryptSignAndEncodeCertificate@36, __imp__CryptSignAndEncodeCertificate@36
-implib crypt32.dll, CryptSignAndEncryptMessage, _CryptSignAndEncryptMessage@32, __imp__CryptSignAndEncryptMessage@32
-implib crypt32.dll, CryptSignCertificate, _CryptSignCertificate@36, __imp__CryptSignCertificate@36
-implib crypt32.dll, CryptSignHashU, _CryptSignHashU@24, __imp__CryptSignHashU@24
-implib crypt32.dll, CryptSignMessage, _CryptSignMessage@28, __imp__CryptSignMessage@28
-implib crypt32.dll, CryptSignMessageWithKey, _CryptSignMessageWithKey@20, __imp__CryptSignMessageWithKey@20
-implib crypt32.dll, CryptStringToBinaryA, _CryptStringToBinaryA@28, __imp__CryptStringToBinaryA@28
-implib crypt32.dll, CryptStringToBinaryW, _CryptStringToBinaryW@28, __imp__CryptStringToBinaryW@28
-implib crypt32.dll, CryptUninstallDefaultContext, _CryptUninstallDefaultContext@12, __imp__CryptUninstallDefaultContext@12
-implib crypt32.dll, CryptUnprotectData, _CryptUnprotectData@28, __imp__CryptUnprotectData@28
-implib crypt32.dll, CryptUnprotectMemory, _CryptUnprotectMemory@12, __imp__CryptUnprotectMemory@12
-implib crypt32.dll, CryptUnregisterDefaultOIDFunction, _CryptUnregisterDefaultOIDFunction@12, __imp__CryptUnregisterDefaultOIDFunction@12
-implib crypt32.dll, CryptUnregisterOIDFunction, _CryptUnregisterOIDFunction@12, __imp__CryptUnregisterOIDFunction@12
-implib crypt32.dll, CryptUnregisterOIDInfo, _CryptUnregisterOIDInfo@4, __imp__CryptUnregisterOIDInfo@4
-implib crypt32.dll, CryptUpdateProtectedState, _CryptUpdateProtectedState@20, __imp__CryptUpdateProtectedState@20
-implib crypt32.dll, CryptVerifyCertificateSignature, _CryptVerifyCertificateSignature@20, __imp__CryptVerifyCertificateSignature@20
-implib crypt32.dll, CryptVerifyCertificateSignatureEx, _CryptVerifyCertificateSignatureEx@32, __imp__CryptVerifyCertificateSignatureEx@32
-implib crypt32.dll, CryptVerifyDetachedMessageHash, _CryptVerifyDetachedMessageHash@32, __imp__CryptVerifyDetachedMessageHash@32
-implib crypt32.dll, CryptVerifyDetachedMessageSignature, _CryptVerifyDetachedMessageSignature@32, __imp__CryptVerifyDetachedMessageSignature@32
-implib crypt32.dll, CryptVerifyMessageHash, _CryptVerifyMessageHash@28, __imp__CryptVerifyMessageHash@28
-implib crypt32.dll, CryptVerifyMessageSignature, _CryptVerifyMessageSignature@28, __imp__CryptVerifyMessageSignature@28
-implib crypt32.dll, CryptVerifyMessageSignatureWithKey, _CryptVerifyMessageSignatureWithKey@24, __imp__CryptVerifyMessageSignatureWithKey@24
-implib crypt32.dll, CryptVerifySignatureU, _CryptVerifySignatureU@24, __imp__CryptVerifySignatureU@24
-implib crypt32.dll, CryptVerifyTimeStampSignature, _CryptVerifyTimeStampSignature@32, __imp__CryptVerifyTimeStampSignature@32
-implib crypt32.dll, I_CertChainEngineIsDisallowedCertificate, _I_CertChainEngineIsDisallowedCertificate@8, __imp__I_CertChainEngineIsDisallowedCertificate@8
-implib crypt32.dll, I_CertDiagControl, _I_CertDiagControl@12, __imp__I_CertDiagControl@12
-implib crypt32.dll, I_CertFinishSslHandshake, _I_CertFinishSslHandshake@16, __imp__I_CertFinishSslHandshake@16
-implib crypt32.dll, I_CertProcessSslHandshake, _I_CertProcessSslHandshake@24, __imp__I_CertProcessSslHandshake@24
-implib crypt32.dll, I_CertProtectFunction, _I_CertProtectFunction@28, __imp__I_CertProtectFunction@28
-implib crypt32.dll, I_CertSrvProtectFunction, _I_CertSrvProtectFunction@40, __imp__I_CertSrvProtectFunction@40
-implib crypt32.dll, I_CertSyncStore, _I_CertSyncStore@8, __imp__I_CertSyncStore@8
-implib crypt32.dll, I_CertUpdateStore, _I_CertUpdateStore@16, __imp__I_CertUpdateStore@16
-implib crypt32.dll, I_CertWnfEnableFlushCache, _I_CertWnfEnableFlushCache@0, __imp__I_CertWnfEnableFlushCache@0
-implib crypt32.dll, I_CryptAddRefLruEntry, _I_CryptAddRefLruEntry@4, __imp__I_CryptAddRefLruEntry@4
-implib crypt32.dll, I_CryptAddSmartCardCertToStore, _I_CryptAddSmartCardCertToStore@20, __imp__I_CryptAddSmartCardCertToStore@20
-implib crypt32.dll, I_CryptAllocTls, _I_CryptAllocTls@0, __imp__I_CryptAllocTls@0
-implib crypt32.dll, I_CryptAllocTlsEx, _I_CryptAllocTlsEx@4, __imp__I_CryptAllocTlsEx@4
-implib crypt32.dll, I_CryptCreateLruCache, _I_CryptCreateLruCache@8, __imp__I_CryptCreateLruCache@8
-implib crypt32.dll, I_CryptCreateLruEntry, _I_CryptCreateLruEntry@16, __imp__I_CryptCreateLruEntry@16
-implib crypt32.dll, I_CryptDetachTls, _I_CryptDetachTls@4, __imp__I_CryptDetachTls@4
-implib crypt32.dll, I_CryptDisableLruOfEntries, _I_CryptDisableLruOfEntries@4, __imp__I_CryptDisableLruOfEntries@4
-implib crypt32.dll, I_CryptEnableLruOfEntries, _I_CryptEnableLruOfEntries@8, __imp__I_CryptEnableLruOfEntries@8
-implib crypt32.dll, I_CryptEnumMatchingLruEntries, _I_CryptEnumMatchingLruEntries@4, __imp__I_CryptEnumMatchingLruEntries@4
-implib crypt32.dll, I_CryptFindLruEntry, _I_CryptFindLruEntry@8, __imp__I_CryptFindLruEntry@8
-implib crypt32.dll, I_CryptFindLruEntryData, _I_CryptFindLruEntryData@12, __imp__I_CryptFindLruEntryData@12
-implib crypt32.dll, I_CryptFindSmartCardCertInStore, _I_CryptFindSmartCardCertInStore@16, __imp__I_CryptFindSmartCardCertInStore@16
-implib crypt32.dll, I_CryptFlushLruCache, _I_CryptFlushLruCache@12, __imp__I_CryptFlushLruCache@12
-implib crypt32.dll, I_CryptFreeLruCache, _I_CryptFreeLruCache@12, __imp__I_CryptFreeLruCache@12
-implib crypt32.dll, I_CryptFreeTls, _I_CryptFreeTls@8, __imp__I_CryptFreeTls@8
-implib crypt32.dll, I_CryptGetAsn1Decoder, _I_CryptGetAsn1Decoder@4, __imp__I_CryptGetAsn1Decoder@4
-implib crypt32.dll, I_CryptGetAsn1Encoder, _I_CryptGetAsn1Encoder@4, __imp__I_CryptGetAsn1Encoder@4
-implib crypt32.dll, I_CryptGetDefaultCryptProv, _I_CryptGetDefaultCryptProv@4, __imp__I_CryptGetDefaultCryptProv@4
-implib crypt32.dll, I_CryptGetDefaultCryptProvForEncrypt, _I_CryptGetDefaultCryptProvForEncrypt@12, __imp__I_CryptGetDefaultCryptProvForEncrypt@12
-implib crypt32.dll, I_CryptGetFileVersion, _I_CryptGetFileVersion@12, __imp__I_CryptGetFileVersion@12
-implib crypt32.dll, I_CryptGetLruEntryData, _I_CryptGetLruEntryData@4, __imp__I_CryptGetLruEntryData@4
-implib crypt32.dll, I_CryptGetLruEntryIdentifier, _I_CryptGetLruEntryIdentifier@4, __imp__I_CryptGetLruEntryIdentifier@4
-implib crypt32.dll, I_CryptGetOssGlobal, _I_CryptGetOssGlobal@4, __imp__I_CryptGetOssGlobal@4
-implib crypt32.dll, I_CryptGetTls, _I_CryptGetTls@4, __imp__I_CryptGetTls@4
-implib crypt32.dll, I_CryptInsertLruEntry, _I_CryptInsertLruEntry@8, __imp__I_CryptInsertLruEntry@8
-implib crypt32.dll, I_CryptInstallAsn1Module, _I_CryptInstallAsn1Module@12, __imp__I_CryptInstallAsn1Module@12
-implib crypt32.dll, I_CryptInstallOssGlobal, _I_CryptInstallOssGlobal@12, __imp__I_CryptInstallOssGlobal@12
-implib crypt32.dll, I_CryptReadTrustedPublisherDWORDValueFromRegistry, _I_CryptReadTrustedPublisherDWORDValueFromRegistry@8, __imp__I_CryptReadTrustedPublisherDWORDValueFromRegistry@8
-implib crypt32.dll, I_CryptRegisterSmartCardStore, _I_CryptRegisterSmartCardStore@20, __imp__I_CryptRegisterSmartCardStore@20
-implib crypt32.dll, I_CryptReleaseLruEntry, _I_CryptReleaseLruEntry@4, __imp__I_CryptReleaseLruEntry@4
-implib crypt32.dll, I_CryptRemoveLruEntry, _I_CryptRemoveLruEntry@12, __imp__I_CryptRemoveLruEntry@12
-implib crypt32.dll, I_CryptSetTls, _I_CryptSetTls@8, __imp__I_CryptSetTls@8
-implib crypt32.dll, I_CryptTouchLruEntry, _I_CryptTouchLruEntry@8, __imp__I_CryptTouchLruEntry@8
-implib crypt32.dll, I_CryptUninstallAsn1Module, _I_CryptUninstallAsn1Module@4, __imp__I_CryptUninstallAsn1Module@4
-implib crypt32.dll, I_CryptUninstallOssGlobal, _I_CryptUninstallOssGlobal@4, __imp__I_CryptUninstallOssGlobal@4
-implib crypt32.dll, I_CryptUnregisterSmartCardStore, _I_CryptUnregisterSmartCardStore@4, __imp__I_CryptUnregisterSmartCardStore@4
-implib crypt32.dll, I_CryptWalkAllLruCacheEntries, _I_CryptWalkAllLruCacheEntries@12, __imp__I_CryptWalkAllLruCacheEntries@12
-implib crypt32.dll, I_PFXDecrypt, _I_PFXDecrypt@36, __imp__I_PFXDecrypt@36
-implib crypt32.dll, I_PFXHMAC, _I_PFXHMAC@40, __imp__I_PFXHMAC@40
-implib crypt32.dll, I_PFXImportCertStoreEx, _I_PFXImportCertStoreEx@20, __imp__I_PFXImportCertStoreEx@20
-implib crypt32.dll, PFXExportCertStore, _PFXExportCertStore@16, __imp__PFXExportCertStore@16
-implib crypt32.dll, PFXExportCertStore2, _PFXExportCertStore2@16, __imp__PFXExportCertStore2@16
-implib crypt32.dll, PFXExportCertStoreEx, _PFXExportCertStoreEx@20, __imp__PFXExportCertStoreEx@20
-implib crypt32.dll, PFXImportCertStore, _PFXImportCertStore@12, __imp__PFXImportCertStore@12
-implib crypt32.dll, PFXIsPFXBlob, _PFXIsPFXBlob@4, __imp__PFXIsPFXBlob@4
-implib crypt32.dll, PFXVerifyPassword, _PFXVerifyPassword@12, __imp__PFXVerifyPassword@12
-implib crypt32.dll, RegCreateHKCUKeyExU, _RegCreateHKCUKeyExU@36, __imp__RegCreateHKCUKeyExU@36
-implib crypt32.dll, RegCreateKeyExU, _RegCreateKeyExU@36, __imp__RegCreateKeyExU@36
-implib crypt32.dll, RegDeleteValueU, _RegDeleteValueU@8, __imp__RegDeleteValueU@8
-implib crypt32.dll, RegEnumValueU, _RegEnumValueU@32, __imp__RegEnumValueU@32
-implib crypt32.dll, RegOpenHKCUKeyExU, _RegOpenHKCUKeyExU@20, __imp__RegOpenHKCUKeyExU@20
-implib crypt32.dll, RegOpenKeyExU, _RegOpenKeyExU@20, __imp__RegOpenKeyExU@20
-implib crypt32.dll, RegQueryInfoKeyU, _RegQueryInfoKeyU@48, __imp__RegQueryInfoKeyU@48
-implib crypt32.dll, RegQueryValueExU, _RegQueryValueExU@24, __imp__RegQueryValueExU@24
-implib crypt32.dll, RegSetValueExU, _RegSetValueExU@24, __imp__RegSetValueExU@24
+implib crypt32.dll, CertAddCRLContextToStore, _CertAddCRLContextToStore@16
+implib crypt32.dll, CertAddCRLLinkToStore, _CertAddCRLLinkToStore@16
+implib crypt32.dll, CertAddCTLContextToStore, _CertAddCTLContextToStore@16
+implib crypt32.dll, CertAddCTLLinkToStore, _CertAddCTLLinkToStore@16
+implib crypt32.dll, CertAddCertificateContextToStore, _CertAddCertificateContextToStore@16
+implib crypt32.dll, CertAddCertificateLinkToStore, _CertAddCertificateLinkToStore@16
+implib crypt32.dll, CertAddEncodedCRLToStore, _CertAddEncodedCRLToStore@24
+implib crypt32.dll, CertAddEncodedCTLToStore, _CertAddEncodedCTLToStore@24
+implib crypt32.dll, CertAddEncodedCertificateToStore, _CertAddEncodedCertificateToStore@24
+implib crypt32.dll, CertAddEncodedCertificateToSystemStoreA, _CertAddEncodedCertificateToSystemStoreA@12
+implib crypt32.dll, CertAddEncodedCertificateToSystemStoreW, _CertAddEncodedCertificateToSystemStoreW@12
+implib crypt32.dll, CertAddEnhancedKeyUsageIdentifier, _CertAddEnhancedKeyUsageIdentifier@8
+implib crypt32.dll, CertAddRefServerOcspResponse, _CertAddRefServerOcspResponse@4
+implib crypt32.dll, CertAddRefServerOcspResponseContext, _CertAddRefServerOcspResponseContext@4
+implib crypt32.dll, CertAddSerializedElementToStore, _CertAddSerializedElementToStore@32
+implib crypt32.dll, CertAddStoreToCollection, _CertAddStoreToCollection@16
+implib crypt32.dll, CertAlgIdToOID, _CertAlgIdToOID@4
+implib crypt32.dll, CertCloseServerOcspResponse, _CertCloseServerOcspResponse@8
+implib crypt32.dll, CertCloseStore, _CertCloseStore@8
+implib crypt32.dll, CertCompareCertificate, _CertCompareCertificate@12
+implib crypt32.dll, CertCompareCertificateName, _CertCompareCertificateName@12
+implib crypt32.dll, CertCompareIntegerBlob, _CertCompareIntegerBlob@8
+implib crypt32.dll, CertComparePublicKeyInfo, _CertComparePublicKeyInfo@12
+implib crypt32.dll, CertControlStore, _CertControlStore@16
+implib crypt32.dll, CertCreateCRLContext, _CertCreateCRLContext@12
+implib crypt32.dll, CertCreateCTLContext, _CertCreateCTLContext@12
+implib crypt32.dll, CertCreateCTLEntryFromCertificateContextProperties, _CertCreateCTLEntryFromCertificateContextProperties@28
+implib crypt32.dll, CertCreateCertificateChainEngine, _CertCreateCertificateChainEngine@8
+implib crypt32.dll, CertCreateCertificateContext, _CertCreateCertificateContext@12
+implib crypt32.dll, CertCreateContext, _CertCreateContext@24
+implib crypt32.dll, CertCreateSelfSignCertificate, _CertCreateSelfSignCertificate@32
+implib crypt32.dll, CertDeleteCRLFromStore, _CertDeleteCRLFromStore@4
+implib crypt32.dll, CertDeleteCTLFromStore, _CertDeleteCTLFromStore@4
+implib crypt32.dll, CertDeleteCertificateFromStore, _CertDeleteCertificateFromStore@4
+implib crypt32.dll, CertDuplicateCRLContext, _CertDuplicateCRLContext@4
+implib crypt32.dll, CertDuplicateCTLContext, _CertDuplicateCTLContext@4
+implib crypt32.dll, CertDuplicateCertificateChain, _CertDuplicateCertificateChain@4
+implib crypt32.dll, CertDuplicateCertificateContext, _CertDuplicateCertificateContext@4
+implib crypt32.dll, CertDuplicateStore, _CertDuplicateStore@4
+implib crypt32.dll, CertEnumCRLContextProperties, _CertEnumCRLContextProperties@8
+implib crypt32.dll, CertEnumCRLsInStore, _CertEnumCRLsInStore@8
+implib crypt32.dll, CertEnumCTLContextProperties, _CertEnumCTLContextProperties@8
+implib crypt32.dll, CertEnumCTLsInStore, _CertEnumCTLsInStore@8
+implib crypt32.dll, CertEnumCertificateContextProperties, _CertEnumCertificateContextProperties@8
+implib crypt32.dll, CertEnumCertificatesInStore, _CertEnumCertificatesInStore@8
+implib crypt32.dll, CertEnumPhysicalStore, _CertEnumPhysicalStore@16
+implib crypt32.dll, CertEnumSubjectInSortedCTL, _CertEnumSubjectInSortedCTL@16
+implib crypt32.dll, CertEnumSystemStore, _CertEnumSystemStore@16
+implib crypt32.dll, CertEnumSystemStoreLocation, _CertEnumSystemStoreLocation@12
+implib crypt32.dll, CertFindAttribute, _CertFindAttribute@12
+implib crypt32.dll, CertFindCRLInStore, _CertFindCRLInStore@24
+implib crypt32.dll, CertFindCTLInStore, _CertFindCTLInStore@24
+implib crypt32.dll, CertFindCertificateInCRL, _CertFindCertificateInCRL@20
+implib crypt32.dll, CertFindCertificateInStore, _CertFindCertificateInStore@24
+implib crypt32.dll, CertFindChainInStore, _CertFindChainInStore@24
+implib crypt32.dll, CertFindExtension, _CertFindExtension@12
+implib crypt32.dll, CertFindRDNAttr, _CertFindRDNAttr@8
+implib crypt32.dll, CertFindSubjectInCTL, _CertFindSubjectInCTL@20
+implib crypt32.dll, CertFindSubjectInSortedCTL, _CertFindSubjectInSortedCTL@20
+implib crypt32.dll, CertFreeCRLContext, _CertFreeCRLContext@4
+implib crypt32.dll, CertFreeCTLContext, _CertFreeCTLContext@4
+implib crypt32.dll, CertFreeCertificateChain, _CertFreeCertificateChain@4
+implib crypt32.dll, CertFreeCertificateChainEngine, _CertFreeCertificateChainEngine@4
+implib crypt32.dll, CertFreeCertificateChainList, _CertFreeCertificateChainList@4
+implib crypt32.dll, CertFreeCertificateContext, _CertFreeCertificateContext@4
+implib crypt32.dll, CertFreeServerOcspResponseContext, _CertFreeServerOcspResponseContext@4
+implib crypt32.dll, CertGetCRLContextProperty, _CertGetCRLContextProperty@16
+implib crypt32.dll, CertGetCRLFromStore, _CertGetCRLFromStore@16
+implib crypt32.dll, CertGetCTLContextProperty, _CertGetCTLContextProperty@16
+implib crypt32.dll, CertGetCertificateChain, _CertGetCertificateChain@32
+implib crypt32.dll, CertGetCertificateContextProperty, _CertGetCertificateContextProperty@16
+implib crypt32.dll, CertGetEnhancedKeyUsage, _CertGetEnhancedKeyUsage@16
+implib crypt32.dll, CertGetIntendedKeyUsage, _CertGetIntendedKeyUsage@16
+implib crypt32.dll, CertGetIssuerCertificateFromStore, _CertGetIssuerCertificateFromStore@16
+implib crypt32.dll, CertGetNameStringA, _CertGetNameStringA@24
+implib crypt32.dll, CertGetNameStringW, _CertGetNameStringW@24
+implib crypt32.dll, CertGetPublicKeyLength, _CertGetPublicKeyLength@8
+implib crypt32.dll, CertGetServerOcspResponseContext, _CertGetServerOcspResponseContext@12
+implib crypt32.dll, CertGetStoreProperty, _CertGetStoreProperty@16
+implib crypt32.dll, CertGetSubjectCertificateFromStore, _CertGetSubjectCertificateFromStore@12
+implib crypt32.dll, CertGetValidUsages, _CertGetValidUsages@20
+implib crypt32.dll, CertIsRDNAttrsInCertificateName, _CertIsRDNAttrsInCertificateName@16
+implib crypt32.dll, CertIsStrongHashToSign, _CertIsStrongHashToSign@12
+implib crypt32.dll, CertIsValidCRLForCertificate, _CertIsValidCRLForCertificate@16
+implib crypt32.dll, CertIsWeakHash, _CertIsWeakHash@24
+implib crypt32.dll, CertNameToStrA, _CertNameToStrA@20
+implib crypt32.dll, CertNameToStrW, _CertNameToStrW@20
+implib crypt32.dll, CertOIDToAlgId, _CertOIDToAlgId@4
+implib crypt32.dll, CertOpenServerOcspResponse, _CertOpenServerOcspResponse@12
+implib crypt32.dll, CertOpenStore, _CertOpenStore@20
+implib crypt32.dll, CertOpenSystemStoreA, _CertOpenSystemStoreA@8
+implib crypt32.dll, CertOpenSystemStoreW, _CertOpenSystemStoreW@8
+implib crypt32.dll, CertRDNValueToStrA, _CertRDNValueToStrA@16
+implib crypt32.dll, CertRDNValueToStrW, _CertRDNValueToStrW@16
+implib crypt32.dll, CertRegisterPhysicalStore, _CertRegisterPhysicalStore@20
+implib crypt32.dll, CertRegisterSystemStore, _CertRegisterSystemStore@16
+implib crypt32.dll, CertRemoveEnhancedKeyUsageIdentifier, _CertRemoveEnhancedKeyUsageIdentifier@8
+implib crypt32.dll, CertRemoveStoreFromCollection, _CertRemoveStoreFromCollection@8
+implib crypt32.dll, CertResyncCertificateChainEngine, _CertResyncCertificateChainEngine@4
+implib crypt32.dll, CertRetrieveLogoOrBiometricInfo, _CertRetrieveLogoOrBiometricInfo@36
+implib crypt32.dll, CertSaveStore, _CertSaveStore@24
+implib crypt32.dll, CertSelectCertificateChains, _CertSelectCertificateChains@32
+implib crypt32.dll, CertSerializeCRLStoreElement, _CertSerializeCRLStoreElement@16
+implib crypt32.dll, CertSerializeCTLStoreElement, _CertSerializeCTLStoreElement@16
+implib crypt32.dll, CertSerializeCertificateStoreElement, _CertSerializeCertificateStoreElement@16
+implib crypt32.dll, CertSetCRLContextProperty, _CertSetCRLContextProperty@16
+implib crypt32.dll, CertSetCTLContextProperty, _CertSetCTLContextProperty@16
+implib crypt32.dll, CertSetCertificateContextPropertiesFromCTLEntry, _CertSetCertificateContextPropertiesFromCTLEntry@12
+implib crypt32.dll, CertSetCertificateContextProperty, _CertSetCertificateContextProperty@16
+implib crypt32.dll, CertSetEnhancedKeyUsage, _CertSetEnhancedKeyUsage@8
+implib crypt32.dll, CertSetStoreProperty, _CertSetStoreProperty@16
+implib crypt32.dll, CertStrToNameA, _CertStrToNameA@28
+implib crypt32.dll, CertStrToNameW, _CertStrToNameW@28
+implib crypt32.dll, CertUnregisterPhysicalStore, _CertUnregisterPhysicalStore@12
+implib crypt32.dll, CertUnregisterSystemStore, _CertUnregisterSystemStore@8
+implib crypt32.dll, CertVerifyCRLRevocation, _CertVerifyCRLRevocation@16
+implib crypt32.dll, CertVerifyCRLTimeValidity, _CertVerifyCRLTimeValidity@8
+implib crypt32.dll, CertVerifyCTLUsage, _CertVerifyCTLUsage@28
+implib crypt32.dll, CertVerifyCertificateChainPolicy, _CertVerifyCertificateChainPolicy@16
+implib crypt32.dll, CertVerifyRevocation, _CertVerifyRevocation@28
+implib crypt32.dll, CertVerifySubjectCertificateContext, _CertVerifySubjectCertificateContext@12
+implib crypt32.dll, CertVerifyTimeValidity, _CertVerifyTimeValidity@8
+implib crypt32.dll, CertVerifyValidityNesting, _CertVerifyValidityNesting@8
+implib crypt32.dll, CreateFileU, _CreateFileU@28
+implib crypt32.dll, CryptAcquireCertificatePrivateKey, _CryptAcquireCertificatePrivateKey@24
+implib crypt32.dll, CryptAcquireContextU, _CryptAcquireContextU@20
+implib crypt32.dll, CryptBinaryToStringA, _CryptBinaryToStringA@20
+implib crypt32.dll, CryptBinaryToStringW, _CryptBinaryToStringW@20
+implib crypt32.dll, CryptCloseAsyncHandle, _CryptCloseAsyncHandle@4
+implib crypt32.dll, CryptCreateAsyncHandle, _CryptCreateAsyncHandle@8
+implib crypt32.dll, CryptCreateKeyIdentifierFromCSP, _CryptCreateKeyIdentifierFromCSP@32
+implib crypt32.dll, CryptDecodeMessage, _CryptDecodeMessage@52
+implib crypt32.dll, CryptDecodeObject, _CryptDecodeObject@28
+implib crypt32.dll, CryptDecodeObjectEx, _CryptDecodeObjectEx@32
+implib crypt32.dll, CryptDecryptAndVerifyMessageSignature, _CryptDecryptAndVerifyMessageSignature@36
+implib crypt32.dll, CryptDecryptMessage, _CryptDecryptMessage@24
+implib crypt32.dll, CryptEncodeObject, _CryptEncodeObject@20
+implib crypt32.dll, CryptEncodeObjectEx, _CryptEncodeObjectEx@28
+implib crypt32.dll, CryptEncryptMessage, _CryptEncryptMessage@28
+implib crypt32.dll, CryptEnumKeyIdentifierProperties, _CryptEnumKeyIdentifierProperties@28
+implib crypt32.dll, CryptEnumOIDFunction, _CryptEnumOIDFunction@24
+implib crypt32.dll, CryptEnumOIDInfo, _CryptEnumOIDInfo@16
+implib crypt32.dll, CryptEnumProvidersU, _CryptEnumProvidersU@24
+implib crypt32.dll, CryptExportPKCS8, _CryptExportPKCS8@28
+implib crypt32.dll, CryptExportPublicKeyInfo, _CryptExportPublicKeyInfo@20
+implib crypt32.dll, CryptExportPublicKeyInfoEx, _CryptExportPublicKeyInfoEx@32
+implib crypt32.dll, CryptExportPublicKeyInfoFromBCryptKeyHandle, _CryptExportPublicKeyInfoFromBCryptKeyHandle@28
+implib crypt32.dll, CryptFindCertificateKeyProvInfo, _CryptFindCertificateKeyProvInfo@12
+implib crypt32.dll, CryptFindLocalizedName, _CryptFindLocalizedName@4
+implib crypt32.dll, CryptFindOIDInfo, _CryptFindOIDInfo@12
+implib crypt32.dll, CryptFormatObject, _CryptFormatObject@36
+implib crypt32.dll, CryptFreeOIDFunctionAddress, _CryptFreeOIDFunctionAddress@8
+implib crypt32.dll, CryptGetAsyncParam, _CryptGetAsyncParam@16
+implib crypt32.dll, CryptGetDefaultOIDDllList, _CryptGetDefaultOIDDllList@16
+implib crypt32.dll, CryptGetDefaultOIDFunctionAddress, _CryptGetDefaultOIDFunctionAddress@24
+implib crypt32.dll, CryptGetKeyIdentifierProperty, _CryptGetKeyIdentifierProperty@28
+implib crypt32.dll, CryptGetMessageCertificates, _CryptGetMessageCertificates@20
+implib crypt32.dll, CryptGetMessageSignerCount, _CryptGetMessageSignerCount@12
+implib crypt32.dll, CryptGetOIDFunctionAddress, _CryptGetOIDFunctionAddress@24
+implib crypt32.dll, CryptGetOIDFunctionValue, _CryptGetOIDFunctionValue@28
+implib crypt32.dll, CryptHashCertificate, _CryptHashCertificate@28
+implib crypt32.dll, CryptHashCertificate2, _CryptHashCertificate2@28
+implib crypt32.dll, CryptHashMessage, _CryptHashMessage@36
+implib crypt32.dll, CryptHashPublicKeyInfo, _CryptHashPublicKeyInfo@28
+implib crypt32.dll, CryptHashToBeSigned, _CryptHashToBeSigned@24
+implib crypt32.dll, CryptImportPKCS8, _CryptImportPKCS8@36
+implib crypt32.dll, CryptImportPublicKeyInfo, _CryptImportPublicKeyInfo@16
+implib crypt32.dll, CryptImportPublicKeyInfoEx, _CryptImportPublicKeyInfoEx@28
+implib crypt32.dll, CryptImportPublicKeyInfoEx2, _CryptImportPublicKeyInfoEx2@20
+implib crypt32.dll, CryptInitOIDFunctionSet, _CryptInitOIDFunctionSet@8
+implib crypt32.dll, CryptInstallDefaultContext, _CryptInstallDefaultContext@24
+implib crypt32.dll, CryptInstallOIDFunctionAddress, _CryptInstallOIDFunctionAddress@24
+implib crypt32.dll, CryptLoadSip, _CryptLoadSip@12
+implib crypt32.dll, CryptMemAlloc, _CryptMemAlloc@4
+implib crypt32.dll, CryptMemFree, _CryptMemFree@4
+implib crypt32.dll, CryptMemRealloc, _CryptMemRealloc@8
+implib crypt32.dll, CryptMsgCalculateEncodedLength, _CryptMsgCalculateEncodedLength@24
+implib crypt32.dll, CryptMsgClose, _CryptMsgClose@4
+implib crypt32.dll, CryptMsgControl, _CryptMsgControl@16
+implib crypt32.dll, CryptMsgCountersign, _CryptMsgCountersign@16
+implib crypt32.dll, CryptMsgCountersignEncoded, _CryptMsgCountersignEncoded@28
+implib crypt32.dll, CryptMsgDuplicate, _CryptMsgDuplicate@4
+implib crypt32.dll, CryptMsgEncodeAndSignCTL, _CryptMsgEncodeAndSignCTL@24
+implib crypt32.dll, CryptMsgGetAndVerifySigner, _CryptMsgGetAndVerifySigner@24
+implib crypt32.dll, CryptMsgGetParam, _CryptMsgGetParam@20
+implib crypt32.dll, CryptMsgOpenToDecode, _CryptMsgOpenToDecode@24
+implib crypt32.dll, CryptMsgOpenToEncode, _CryptMsgOpenToEncode@24
+implib crypt32.dll, CryptMsgSignCTL, _CryptMsgSignCTL@28
+implib crypt32.dll, CryptMsgUpdate, _CryptMsgUpdate@16
+implib crypt32.dll, CryptMsgVerifyCountersignatureEncoded, _CryptMsgVerifyCountersignatureEncoded@28
+implib crypt32.dll, CryptMsgVerifyCountersignatureEncodedEx, _CryptMsgVerifyCountersignatureEncodedEx@40
+implib crypt32.dll, CryptObjectLocatorFree, _CryptObjectLocatorFree@4
+implib crypt32.dll, CryptObjectLocatorGet, _CryptObjectLocatorGet@12
+implib crypt32.dll, CryptObjectLocatorGetContent, _CryptObjectLocatorGetContent@4
+implib crypt32.dll, CryptObjectLocatorGetUpdated, _CryptObjectLocatorGetUpdated@4
+implib crypt32.dll, CryptObjectLocatorInitialize, _CryptObjectLocatorInitialize@20
+implib crypt32.dll, CryptObjectLocatorIsChanged, _CryptObjectLocatorIsChanged@4
+implib crypt32.dll, CryptObjectLocatorRelease, _CryptObjectLocatorRelease@8
+implib crypt32.dll, CryptProtectData, _CryptProtectData@28
+implib crypt32.dll, CryptProtectMemory, _CryptProtectMemory@12
+implib crypt32.dll, CryptQueryObject, _CryptQueryObject@44
+implib crypt32.dll, CryptRegisterDefaultOIDFunction, _CryptRegisterDefaultOIDFunction@16
+implib crypt32.dll, CryptRegisterOIDFunction, _CryptRegisterOIDFunction@20
+implib crypt32.dll, CryptRegisterOIDInfo, _CryptRegisterOIDInfo@8
+implib crypt32.dll, CryptRetrieveTimeStamp, _CryptRetrieveTimeStamp@40
+implib crypt32.dll, CryptSIPAddProvider, _CryptSIPAddProvider@4
+implib crypt32.dll, CryptSIPCreateIndirectData, _CryptSIPCreateIndirectData@12
+implib crypt32.dll, CryptSIPGetCaps, _CryptSIPGetCaps@8
+implib crypt32.dll, CryptSIPGetSealedDigest, _CryptSIPGetSealedDigest@20
+implib crypt32.dll, CryptSIPGetSignedDataMsg, _CryptSIPGetSignedDataMsg@20
+implib crypt32.dll, CryptSIPLoad, _CryptSIPLoad@12
+implib crypt32.dll, CryptSIPPutSignedDataMsg, _CryptSIPPutSignedDataMsg@20
+implib crypt32.dll, CryptSIPRemoveProvider, _CryptSIPRemoveProvider@4
+implib crypt32.dll, CryptSIPRemoveSignedDataMsg, _CryptSIPRemoveSignedDataMsg@8
+implib crypt32.dll, CryptSIPRetrieveSubjectGuid, _CryptSIPRetrieveSubjectGuid@12
+implib crypt32.dll, CryptSIPRetrieveSubjectGuidForCatalogFile, _CryptSIPRetrieveSubjectGuidForCatalogFile@12
+implib crypt32.dll, CryptSIPVerifyIndirectData, _CryptSIPVerifyIndirectData@8
+implib crypt32.dll, CryptSetAsyncParam, _CryptSetAsyncParam@16
+implib crypt32.dll, CryptSetKeyIdentifierProperty, _CryptSetKeyIdentifierProperty@24
+implib crypt32.dll, CryptSetOIDFunctionValue, _CryptSetOIDFunctionValue@28
+implib crypt32.dll, CryptSetProviderU, _CryptSetProviderU@8
+implib crypt32.dll, CryptSignAndEncodeCertificate, _CryptSignAndEncodeCertificate@36
+implib crypt32.dll, CryptSignAndEncryptMessage, _CryptSignAndEncryptMessage@32
+implib crypt32.dll, CryptSignCertificate, _CryptSignCertificate@36
+implib crypt32.dll, CryptSignHashU, _CryptSignHashU@24
+implib crypt32.dll, CryptSignMessage, _CryptSignMessage@28
+implib crypt32.dll, CryptSignMessageWithKey, _CryptSignMessageWithKey@20
+implib crypt32.dll, CryptStringToBinaryA, _CryptStringToBinaryA@28
+implib crypt32.dll, CryptStringToBinaryW, _CryptStringToBinaryW@28
+implib crypt32.dll, CryptUninstallDefaultContext, _CryptUninstallDefaultContext@12
+implib crypt32.dll, CryptUnprotectData, _CryptUnprotectData@28
+implib crypt32.dll, CryptUnprotectMemory, _CryptUnprotectMemory@12
+implib crypt32.dll, CryptUnregisterDefaultOIDFunction, _CryptUnregisterDefaultOIDFunction@12
+implib crypt32.dll, CryptUnregisterOIDFunction, _CryptUnregisterOIDFunction@12
+implib crypt32.dll, CryptUnregisterOIDInfo, _CryptUnregisterOIDInfo@4
+implib crypt32.dll, CryptUpdateProtectedState, _CryptUpdateProtectedState@20
+implib crypt32.dll, CryptVerifyCertificateSignature, _CryptVerifyCertificateSignature@20
+implib crypt32.dll, CryptVerifyCertificateSignatureEx, _CryptVerifyCertificateSignatureEx@32
+implib crypt32.dll, CryptVerifyDetachedMessageHash, _CryptVerifyDetachedMessageHash@32
+implib crypt32.dll, CryptVerifyDetachedMessageSignature, _CryptVerifyDetachedMessageSignature@32
+implib crypt32.dll, CryptVerifyMessageHash, _CryptVerifyMessageHash@28
+implib crypt32.dll, CryptVerifyMessageSignature, _CryptVerifyMessageSignature@28
+implib crypt32.dll, CryptVerifyMessageSignatureWithKey, _CryptVerifyMessageSignatureWithKey@24
+implib crypt32.dll, CryptVerifySignatureU, _CryptVerifySignatureU@24
+implib crypt32.dll, CryptVerifyTimeStampSignature, _CryptVerifyTimeStampSignature@32
+implib crypt32.dll, I_CertChainEngineIsDisallowedCertificate, _I_CertChainEngineIsDisallowedCertificate@8
+implib crypt32.dll, I_CertDiagControl, _I_CertDiagControl@12
+implib crypt32.dll, I_CertFinishSslHandshake, _I_CertFinishSslHandshake@16
+implib crypt32.dll, I_CertProcessSslHandshake, _I_CertProcessSslHandshake@24
+implib crypt32.dll, I_CertProtectFunction, _I_CertProtectFunction@28
+implib crypt32.dll, I_CertSrvProtectFunction, _I_CertSrvProtectFunction@40
+implib crypt32.dll, I_CertSyncStore, _I_CertSyncStore@8
+implib crypt32.dll, I_CertUpdateStore, _I_CertUpdateStore@16
+implib crypt32.dll, I_CertWnfEnableFlushCache, _I_CertWnfEnableFlushCache@0
+implib crypt32.dll, I_CryptAddRefLruEntry, _I_CryptAddRefLruEntry@4
+implib crypt32.dll, I_CryptAddSmartCardCertToStore, _I_CryptAddSmartCardCertToStore@20
+implib crypt32.dll, I_CryptAllocTls, _I_CryptAllocTls@0
+implib crypt32.dll, I_CryptAllocTlsEx, _I_CryptAllocTlsEx@4
+implib crypt32.dll, I_CryptCreateLruCache, _I_CryptCreateLruCache@8
+implib crypt32.dll, I_CryptCreateLruEntry, _I_CryptCreateLruEntry@16
+implib crypt32.dll, I_CryptDetachTls, _I_CryptDetachTls@4
+implib crypt32.dll, I_CryptDisableLruOfEntries, _I_CryptDisableLruOfEntries@4
+implib crypt32.dll, I_CryptEnableLruOfEntries, _I_CryptEnableLruOfEntries@8
+implib crypt32.dll, I_CryptEnumMatchingLruEntries, _I_CryptEnumMatchingLruEntries@4
+implib crypt32.dll, I_CryptFindLruEntry, _I_CryptFindLruEntry@8
+implib crypt32.dll, I_CryptFindLruEntryData, _I_CryptFindLruEntryData@12
+implib crypt32.dll, I_CryptFindSmartCardCertInStore, _I_CryptFindSmartCardCertInStore@16
+implib crypt32.dll, I_CryptFlushLruCache, _I_CryptFlushLruCache@12
+implib crypt32.dll, I_CryptFreeLruCache, _I_CryptFreeLruCache@12
+implib crypt32.dll, I_CryptFreeTls, _I_CryptFreeTls@8
+implib crypt32.dll, I_CryptGetAsn1Decoder, _I_CryptGetAsn1Decoder@4
+implib crypt32.dll, I_CryptGetAsn1Encoder, _I_CryptGetAsn1Encoder@4
+implib crypt32.dll, I_CryptGetDefaultCryptProv, _I_CryptGetDefaultCryptProv@4
+implib crypt32.dll, I_CryptGetDefaultCryptProvForEncrypt, _I_CryptGetDefaultCryptProvForEncrypt@12
+implib crypt32.dll, I_CryptGetFileVersion, _I_CryptGetFileVersion@12
+implib crypt32.dll, I_CryptGetLruEntryData, _I_CryptGetLruEntryData@4
+implib crypt32.dll, I_CryptGetLruEntryIdentifier, _I_CryptGetLruEntryIdentifier@4
+implib crypt32.dll, I_CryptGetOssGlobal, _I_CryptGetOssGlobal@4
+implib crypt32.dll, I_CryptGetTls, _I_CryptGetTls@4
+implib crypt32.dll, I_CryptInsertLruEntry, _I_CryptInsertLruEntry@8
+implib crypt32.dll, I_CryptInstallAsn1Module, _I_CryptInstallAsn1Module@12
+implib crypt32.dll, I_CryptInstallOssGlobal, _I_CryptInstallOssGlobal@12
+implib crypt32.dll, I_CryptReadTrustedPublisherDWORDValueFromRegistry, _I_CryptReadTrustedPublisherDWORDValueFromRegistry@8
+implib crypt32.dll, I_CryptRegisterSmartCardStore, _I_CryptRegisterSmartCardStore@20
+implib crypt32.dll, I_CryptReleaseLruEntry, _I_CryptReleaseLruEntry@4
+implib crypt32.dll, I_CryptRemoveLruEntry, _I_CryptRemoveLruEntry@12
+implib crypt32.dll, I_CryptSetTls, _I_CryptSetTls@8
+implib crypt32.dll, I_CryptTouchLruEntry, _I_CryptTouchLruEntry@8
+implib crypt32.dll, I_CryptUninstallAsn1Module, _I_CryptUninstallAsn1Module@4
+implib crypt32.dll, I_CryptUninstallOssGlobal, _I_CryptUninstallOssGlobal@4
+implib crypt32.dll, I_CryptUnregisterSmartCardStore, _I_CryptUnregisterSmartCardStore@4
+implib crypt32.dll, I_CryptWalkAllLruCacheEntries, _I_CryptWalkAllLruCacheEntries@12
+implib crypt32.dll, I_PFXDecrypt, _I_PFXDecrypt@36
+implib crypt32.dll, I_PFXHMAC, _I_PFXHMAC@40
+implib crypt32.dll, I_PFXImportCertStoreEx, _I_PFXImportCertStoreEx@20
+implib crypt32.dll, PFXExportCertStore, _PFXExportCertStore@16
+implib crypt32.dll, PFXExportCertStore2, _PFXExportCertStore2@16
+implib crypt32.dll, PFXExportCertStoreEx, _PFXExportCertStoreEx@20
+implib crypt32.dll, PFXImportCertStore, _PFXImportCertStore@12
+implib crypt32.dll, PFXIsPFXBlob, _PFXIsPFXBlob@4
+implib crypt32.dll, PFXVerifyPassword, _PFXVerifyPassword@12
+implib crypt32.dll, RegCreateHKCUKeyExU, _RegCreateHKCUKeyExU@36
+implib crypt32.dll, RegCreateKeyExU, _RegCreateKeyExU@36
+implib crypt32.dll, RegDeleteValueU, _RegDeleteValueU@8
+implib crypt32.dll, RegEnumValueU, _RegEnumValueU@32
+implib crypt32.dll, RegOpenHKCUKeyExU, _RegOpenHKCUKeyExU@20
+implib crypt32.dll, RegOpenKeyExU, _RegOpenKeyExU@20
+implib crypt32.dll, RegQueryInfoKeyU, _RegQueryInfoKeyU@48
+implib crypt32.dll, RegQueryValueExU, _RegQueryValueExU@24
+implib crypt32.dll, RegSetValueExU, _RegSetValueExU@24
 
 endlib
