@@ -1,140 +1,140 @@
 include '..\implib.inc'
 
-implib comctl32.dll, ord.401, _AddMRUStringW@8, __imp__AddMRUStringW@8
-implib comctl32.dll, ord.400, _CreateMRUListW@4, __imp__CreateMRUListW@4
-implib comctl32.dll, ord.8, _CreateMappedBitmap@20, __imp__CreateMappedBitmap@20
-implib comctl32.dll, CreatePropertySheetPage, _CreatePropertySheetPage@4, __imp__CreatePropertySheetPage@4
-implib comctl32.dll, CreatePropertySheetPageA, _CreatePropertySheetPageA@4, __imp__CreatePropertySheetPageA@4
-implib comctl32.dll, CreatePropertySheetPageW, _CreatePropertySheetPageW@4, __imp__CreatePropertySheetPageW@4
-implib comctl32.dll, CreateStatusWindow, _CreateStatusWindow@16, __imp__CreateStatusWindow@16
-implib comctl32.dll, CreateStatusWindowA, _CreateStatusWindowA@16, __imp__CreateStatusWindowA@16
-implib comctl32.dll, CreateStatusWindowW, _CreateStatusWindowW@16, __imp__CreateStatusWindowW@16
-implib comctl32.dll, CreateToolbar, _CreateToolbar@32, __imp__CreateToolbar@32
-implib comctl32.dll, CreateToolbarEx, _CreateToolbarEx@52, __imp__CreateToolbarEx@52
-implib comctl32.dll, CreateUpDownControl, _CreateUpDownControl@48, __imp__CreateUpDownControl@48
-implib comctl32.dll, ord.383, _DoReaderMode@4, __imp__DoReaderMode@4
-implib comctl32.dll, ord.331, _DPA_Clone@8, __imp__DPA_Clone@8
-implib comctl32.dll, DPA_Create, _DPA_Create@4, __imp__DPA_Create@4
-implib comctl32.dll, ord.340, _DPA_CreateEx@8, __imp__DPA_CreateEx@8
-implib comctl32.dll, DPA_DeleteAllPtrs, _DPA_DeleteAllPtrs@4, __imp__DPA_DeleteAllPtrs@4
-implib comctl32.dll, DPA_DeletePtr, _DPA_DeletePtr@8, __imp__DPA_DeletePtr@8
-implib comctl32.dll, DPA_Destroy, _DPA_Destroy@4, __imp__DPA_Destroy@4
-implib comctl32.dll, DPA_DestroyCallback, _DPA_DestroyCallback@12, __imp__DPA_DestroyCallback@12
-implib comctl32.dll, DPA_EnumCallback, _DPA_EnumCallback@12, __imp__DPA_EnumCallback@12
-implib comctl32.dll, DPA_GetPtr, _DPA_GetPtr@8, __imp__DPA_GetPtr@8
-implib comctl32.dll, ord.333, _DPA_GetPtrIndex@8, __imp__DPA_GetPtrIndex@8
-implib comctl32.dll, DPA_GetSize, _DPA_GetSize@4, __imp__DPA_GetSize@4
-implib comctl32.dll, DPA_Grow, _DPA_Grow@8, __imp__DPA_Grow@8
-implib comctl32.dll, DPA_InsertPtr, _DPA_InsertPtr@12, __imp__DPA_InsertPtr@12
-implib comctl32.dll, ord.9, _DPA_LoadStream@16, __imp__DPA_LoadStream@16
-implib comctl32.dll, ord.11, _DPA_Merge@24, __imp__DPA_Merge@24
-implib comctl32.dll, ord.10, _DPA_SaveStream@16, __imp__DPA_SaveStream@16
-implib comctl32.dll, DPA_Search, _DPA_Search@24, __imp__DPA_Search@24
-implib comctl32.dll, DPA_SetPtr, _DPA_SetPtr@12, __imp__DPA_SetPtr@12
-implib comctl32.dll, DPA_Sort, _DPA_Sort@12, __imp__DPA_Sort@12
-implib comctl32.dll, DrawShadowText, _DrawShadowText@36, __imp__DrawShadowText@36
-implib comctl32.dll, ord.416, _DrawTextExPrivWrap@24, __imp__DrawTextExPrivWrap@24
-implib comctl32.dll, ord.415, _DrawTextWrap@24, __imp__DrawTextWrap@24
-implib comctl32.dll, DSA_Clone, _DSA_Clone@4, __imp__DSA_Clone@4
-implib comctl32.dll, DSA_Create, _DSA_Create@8, __imp__DSA_Create@8
-implib comctl32.dll, DSA_DeleteAllItems, _DSA_DeleteAllItems@4, __imp__DSA_DeleteAllItems@4
-implib comctl32.dll, ord.326, _DSA_DeleteItem@8, __imp__DSA_DeleteItem@8
-implib comctl32.dll, DSA_Destroy, _DSA_Destroy@4, __imp__DSA_Destroy@4
-implib comctl32.dll, DSA_DestroyCallback, _DSA_DestroyCallback@12, __imp__DSA_DestroyCallback@12
-implib comctl32.dll, DSA_EnumCallback, _DSA_EnumCallback@12, __imp__DSA_EnumCallback@12
-implib comctl32.dll, ord.322, _DSA_GetItem@12, __imp__DSA_GetItem@12
-implib comctl32.dll, DSA_GetItemPtr, _DSA_GetItemPtr@8, __imp__DSA_GetItemPtr@8
-implib comctl32.dll, DSA_GetSize, _DSA_GetSize@4, __imp__DSA_GetSize@4
-implib comctl32.dll, DSA_InsertItem, _DSA_InsertItem@12, __imp__DSA_InsertItem@12
-implib comctl32.dll, ord.325, _DSA_SetItem@12, __imp__DSA_SetItem@12
-implib comctl32.dll, DSA_Sort, _DSA_Sort@12, __imp__DSA_Sort@12
-implib comctl32.dll, DefSubclassProc, _DefSubclassProc@16, __imp__DefSubclassProc@16
-implib comctl32.dll, DestroyPropertySheetPage, _DestroyPropertySheetPage@4, __imp__DestroyPropertySheetPage@4
-implib comctl32.dll, DllGetVersion, _COMCTL32_DllGetVersion@4, __imp__COMCTL32_DllGetVersion@4
-implib comctl32.dll, DllInstall, _COMCTL32_DllInstall@8, __imp__COMCTL32_DllInstall@8
-implib comctl32.dll, DrawInsert, _DrawInsert@12, __imp__DrawInsert@12
-implib comctl32.dll, DrawStatusText, _DrawStatusText@16, __imp__DrawStatusText@16
-implib comctl32.dll, DrawStatusTextA, _DrawStatusTextA@16, __imp__DrawStatusTextA@16
-implib comctl32.dll, DrawStatusTextW, _DrawStatusTextW@16, __imp__DrawStatusTextW@16
-implib comctl32.dll, ord.403, _EnumMRUListW@16, __imp__EnumMRUListW@16
-implib comctl32.dll, ord.417, _ExtTextOutWrap@32, __imp__ExtTextOutWrap@32
-implib comctl32.dll, FlatSB_EnableScrollBar, _FlatSB_EnableScrollBar@12, __imp__FlatSB_EnableScrollBar@12
-implib comctl32.dll, FlatSB_GetScrollInfo, _FlatSB_GetScrollInfo@12, __imp__FlatSB_GetScrollInfo@12
-implib comctl32.dll, FlatSB_GetScrollPos, _FlatSB_GetScrollPos@8, __imp__FlatSB_GetScrollPos@8
-implib comctl32.dll, FlatSB_GetScrollProp, _FlatSB_GetScrollProp@12, __imp__FlatSB_GetScrollProp@12
-implib comctl32.dll, FlatSB_GetScrollRange, _FlatSB_GetScrollRange@16, __imp__FlatSB_GetScrollRange@16
-implib comctl32.dll, FlatSB_SetScrollInfo, _FlatSB_SetScrollInfo@16, __imp__FlatSB_SetScrollInfo@16
-implib comctl32.dll, FlatSB_SetScrollPos, _FlatSB_SetScrollPos@16, __imp__FlatSB_SetScrollPos@16
-implib comctl32.dll, FlatSB_SetScrollProp, _FlatSB_SetScrollProp@16, __imp__FlatSB_SetScrollProp@16
-implib comctl32.dll, FlatSB_SetScrollRange, _FlatSB_SetScrollRange@20, __imp__FlatSB_SetScrollRange@20
-implib comctl32.dll, FlatSB_ShowScrollBar, _FlatSB_ShowScrollBar@12, __imp__FlatSB_ShowScrollBar@12
-implib comctl32.dll, ord.152, _FreeMRUList@4, __imp__FreeMRUList@4
-implib comctl32.dll, GetEffectiveClientRect, _GetEffectiveClientRect@12, __imp__GetEffectiveClientRect@12
-implib comctl32.dll, GetMUILanguage, _GetMUILanguage@0, __imp__GetMUILanguage@0
-implib comctl32.dll, ord.420, _GetTextExtentPoint32Wrap@16, __imp__GetTextExtentPoint32Wrap@16
-implib comctl32.dll, GetWindowSubclass, _GetWindowSubclass@16, __imp__GetWindowSubclass@16
-implib comctl32.dll, ImageList_Add, _ImageList_Add@12, __imp__ImageList_Add@12
-implib comctl32.dll, ImageList_AddIcon, _ImageList_AddIcon@8, __imp__ImageList_AddIcon@8
-implib comctl32.dll, ImageList_AddMasked, _ImageList_AddMasked@12, __imp__ImageList_AddMasked@12
-implib comctl32.dll, ImageList_BeginDrag, _ImageList_BeginDrag@16, __imp__ImageList_BeginDrag@16
-implib comctl32.dll, ImageList_Copy, _ImageList_Copy@20, __imp__ImageList_Copy@20
-implib comctl32.dll, ImageList_Create, _ImageList_Create@20, __imp__ImageList_Create@20
-implib comctl32.dll, ImageList_Destroy, _ImageList_Destroy@4, __imp__ImageList_Destroy@4
-implib comctl32.dll, ImageList_DragEnter, _ImageList_DragEnter@12, __imp__ImageList_DragEnter@12
-implib comctl32.dll, ImageList_DragLeave, _ImageList_DragLeave@4, __imp__ImageList_DragLeave@4
-implib comctl32.dll, ImageList_DragMove, _ImageList_DragMove@8, __imp__ImageList_DragMove@8
-implib comctl32.dll, ImageList_DragShowNolock, _ImageList_DragShowNolock@4, __imp__ImageList_DragShowNolock@4
-implib comctl32.dll, ImageList_Draw, _ImageList_Draw@24, __imp__ImageList_Draw@24
-implib comctl32.dll, ImageList_DrawEx, _ImageList_DrawEx@40, __imp__ImageList_DrawEx@40
-implib comctl32.dll, ImageList_DrawIndirect, _ImageList_DrawIndirect@4, __imp__ImageList_DrawIndirect@4
-implib comctl32.dll, ImageList_Duplicate, _ImageList_Duplicate@4, __imp__ImageList_Duplicate@4
-implib comctl32.dll, ImageList_EndDrag, _ImageList_EndDrag@0, __imp__ImageList_EndDrag@0
-implib comctl32.dll, ImageList_GetBkColor, _ImageList_GetBkColor@4, __imp__ImageList_GetBkColor@4
-implib comctl32.dll, ImageList_GetDragImage, _ImageList_GetDragImage@8, __imp__ImageList_GetDragImage@8
-implib comctl32.dll, ImageList_GetFlags, _ImageList_GetFlags@4, __imp__ImageList_GetFlags@4
-implib comctl32.dll, ImageList_GetIcon, _ImageList_GetIcon@12, __imp__ImageList_GetIcon@12
-implib comctl32.dll, ImageList_GetIconSize, _ImageList_GetIconSize@12, __imp__ImageList_GetIconSize@12
-implib comctl32.dll, ImageList_GetImageCount, _ImageList_GetImageCount@4, __imp__ImageList_GetImageCount@4
-implib comctl32.dll, ImageList_GetImageInfo, _ImageList_GetImageInfo@12, __imp__ImageList_GetImageInfo@12
-implib comctl32.dll, ImageList_GetImageRect, _ImageList_GetImageRect@12, __imp__ImageList_GetImageRect@12
-implib comctl32.dll, ImageList_LoadImage, _ImageList_LoadImage@28, __imp__ImageList_LoadImage@28
-implib comctl32.dll, ImageList_LoadImageA, _ImageList_LoadImageA@28, __imp__ImageList_LoadImageA@28
-implib comctl32.dll, ImageList_LoadImageW, _ImageList_LoadImageW@28, __imp__ImageList_LoadImageW@28
-implib comctl32.dll, ImageList_Merge, _ImageList_Merge@24, __imp__ImageList_Merge@24
-implib comctl32.dll, ImageList_Read, _ImageList_Read@4, __imp__ImageList_Read@4
-implib comctl32.dll, ImageList_Remove, _ImageList_Remove@8, __imp__ImageList_Remove@8
-implib comctl32.dll, ImageList_Replace, _ImageList_Replace@16, __imp__ImageList_Replace@16
-implib comctl32.dll, ImageList_ReplaceIcon, _ImageList_ReplaceIcon@12, __imp__ImageList_ReplaceIcon@12
-implib comctl32.dll, ImageList_SetBkColor, _ImageList_SetBkColor@8, __imp__ImageList_SetBkColor@8
-implib comctl32.dll, ImageList_SetDragCursorImage, _ImageList_SetDragCursorImage@16, __imp__ImageList_SetDragCursorImage@16
-implib comctl32.dll, ImageList_SetFilter, _ImageList_SetFilter@12, __imp__ImageList_SetFilter@12
-implib comctl32.dll, ImageList_SetFlags, _ImageList_SetFlags@8, __imp__ImageList_SetFlags@8
-implib comctl32.dll, ImageList_SetIconSize, _ImageList_SetIconSize@12, __imp__ImageList_SetIconSize@12
-implib comctl32.dll, ImageList_SetImageCount, _ImageList_SetImageCount@8, __imp__ImageList_SetImageCount@8
-implib comctl32.dll, ImageList_SetOverlayImage, _ImageList_SetOverlayImage@12, __imp__ImageList_SetOverlayImage@12
-implib comctl32.dll, ImageList_Write, _ImageList_Write@8, __imp__ImageList_Write@8
-implib comctl32.dll, InitCommonControls, _InitCommonControls@0, __imp__InitCommonControls@0
-implib comctl32.dll, InitCommonControlsEx, _InitCommonControlsEx@4, __imp__InitCommonControlsEx@4
-implib comctl32.dll, InitMUILanguage, _InitMUILanguage@4, __imp__InitMUILanguage@4
-implib comctl32.dll, InitializeFlatSB, _InitializeFlatSB@4, __imp__InitializeFlatSB@4
-implib comctl32.dll, LBItemFromPt, _LBItemFromPt@16, __imp__LBItemFromPt@16
-implib comctl32.dll, LoadIconMetric, _LoadIconMetric@16, __imp__LoadIconMetric@16
-implib comctl32.dll, LoadIconWithScaleDown, _LoadIconWithScaleDown@20, __imp__LoadIconWithScaleDown@20
-implib comctl32.dll, MakeDragList, _MakeDragList@4, __imp__MakeDragList@4
-implib comctl32.dll, MenuHelp, _MenuHelp@28, __imp__MenuHelp@28
-implib comctl32.dll, ord.414, _MirrorIcon@8, __imp__MirrorIcon@8
-implib comctl32.dll, PropertySheet, _PropertySheet@4, __imp__PropertySheet@4
-implib comctl32.dll, PropertySheetA, _PropertySheetA@4, __imp__PropertySheetA@4
-implib comctl32.dll, PropertySheetW, _PropertySheetW@4, __imp__PropertySheetW@4
-implib comctl32.dll, RegisterClassNameW, _RegisterClassNameW@4, __imp__RegisterClassNameW@4
-implib comctl32.dll, RemoveWindowSubclass, _RemoveWindowSubclass@12, __imp__RemoveWindowSubclass@12
-implib comctl32.dll, SetWindowSubclass, _SetWindowSubclass@16, __imp__SetWindowSubclass@16
-implib comctl32.dll, ShowHideMenuCtl, _ShowHideMenuCtl@12, __imp__ShowHideMenuCtl@12
-implib comctl32.dll, ord.233, _Str_GetPtrA@12, __imp__Str_GetPtrA@12
-implib comctl32.dll, ord.235, _Str_GetPtrW@12, __imp__Str_GetPtrW@12
-implib comctl32.dll, ord.234, _Str_SetPtrA@8, __imp__Str_SetPtrA@8
-implib comctl32.dll, Str_SetPtrW, _Str_SetPtrW@8, __imp__Str_SetPtrW@8
-implib comctl32.dll, UninitializeFlatSB, _UninitializeFlatSB@4, __imp__UninitializeFlatSB@4
-implib comctl32.dll, _TrackMouseEvent, __TrackMouseEvent@4, __imp___TrackMouseEvent@4
+implib comctl32.dll, ord.401, _AddMRUStringW@8
+implib comctl32.dll, ord.400, _CreateMRUListW@4
+implib comctl32.dll, ord.8, _CreateMappedBitmap@20
+implib comctl32.dll, CreatePropertySheetPage, _CreatePropertySheetPage@4
+implib comctl32.dll, CreatePropertySheetPageA, _CreatePropertySheetPageA@4
+implib comctl32.dll, CreatePropertySheetPageW, _CreatePropertySheetPageW@4
+implib comctl32.dll, CreateStatusWindow, _CreateStatusWindow@16
+implib comctl32.dll, CreateStatusWindowA, _CreateStatusWindowA@16
+implib comctl32.dll, CreateStatusWindowW, _CreateStatusWindowW@16
+implib comctl32.dll, CreateToolbar, _CreateToolbar@32
+implib comctl32.dll, CreateToolbarEx, _CreateToolbarEx@52
+implib comctl32.dll, CreateUpDownControl, _CreateUpDownControl@48
+implib comctl32.dll, ord.383, _DoReaderMode@4
+implib comctl32.dll, ord.331, _DPA_Clone@8
+implib comctl32.dll, DPA_Create, _DPA_Create@4
+implib comctl32.dll, ord.340, _DPA_CreateEx@8
+implib comctl32.dll, DPA_DeleteAllPtrs, _DPA_DeleteAllPtrs@4
+implib comctl32.dll, DPA_DeletePtr, _DPA_DeletePtr@8
+implib comctl32.dll, DPA_Destroy, _DPA_Destroy@4
+implib comctl32.dll, DPA_DestroyCallback, _DPA_DestroyCallback@12
+implib comctl32.dll, DPA_EnumCallback, _DPA_EnumCallback@12
+implib comctl32.dll, DPA_GetPtr, _DPA_GetPtr@8
+implib comctl32.dll, ord.333, _DPA_GetPtrIndex@8
+implib comctl32.dll, DPA_GetSize, _DPA_GetSize@4
+implib comctl32.dll, DPA_Grow, _DPA_Grow@8
+implib comctl32.dll, DPA_InsertPtr, _DPA_InsertPtr@12
+implib comctl32.dll, ord.9, _DPA_LoadStream@16
+implib comctl32.dll, ord.11, _DPA_Merge@24
+implib comctl32.dll, ord.10, _DPA_SaveStream@16
+implib comctl32.dll, DPA_Search, _DPA_Search@24
+implib comctl32.dll, DPA_SetPtr, _DPA_SetPtr@12
+implib comctl32.dll, DPA_Sort, _DPA_Sort@12
+implib comctl32.dll, DrawShadowText, _DrawShadowText@36
+implib comctl32.dll, ord.416, _DrawTextExPrivWrap@24
+implib comctl32.dll, ord.415, _DrawTextWrap@24
+implib comctl32.dll, DSA_Clone, _DSA_Clone@4
+implib comctl32.dll, DSA_Create, _DSA_Create@8
+implib comctl32.dll, DSA_DeleteAllItems, _DSA_DeleteAllItems@4
+implib comctl32.dll, ord.326, _DSA_DeleteItem@8
+implib comctl32.dll, DSA_Destroy, _DSA_Destroy@4
+implib comctl32.dll, DSA_DestroyCallback, _DSA_DestroyCallback@12
+implib comctl32.dll, DSA_EnumCallback, _DSA_EnumCallback@12
+implib comctl32.dll, ord.322, _DSA_GetItem@12
+implib comctl32.dll, DSA_GetItemPtr, _DSA_GetItemPtr@8
+implib comctl32.dll, DSA_GetSize, _DSA_GetSize@4
+implib comctl32.dll, DSA_InsertItem, _DSA_InsertItem@12
+implib comctl32.dll, ord.325, _DSA_SetItem@12
+implib comctl32.dll, DSA_Sort, _DSA_Sort@12
+implib comctl32.dll, DefSubclassProc, _DefSubclassProc@16
+implib comctl32.dll, DestroyPropertySheetPage, _DestroyPropertySheetPage@4
+implib comctl32.dll, DllGetVersion, _COMCTL32_DllGetVersion@4
+implib comctl32.dll, DllInstall, _COMCTL32_DllInstall@8
+implib comctl32.dll, DrawInsert, _DrawInsert@12
+implib comctl32.dll, DrawStatusText, _DrawStatusText@16
+implib comctl32.dll, DrawStatusTextA, _DrawStatusTextA@16
+implib comctl32.dll, DrawStatusTextW, _DrawStatusTextW@16
+implib comctl32.dll, ord.403, _EnumMRUListW@16
+implib comctl32.dll, ord.417, _ExtTextOutWrap@32
+implib comctl32.dll, FlatSB_EnableScrollBar, _FlatSB_EnableScrollBar@12
+implib comctl32.dll, FlatSB_GetScrollInfo, _FlatSB_GetScrollInfo@12
+implib comctl32.dll, FlatSB_GetScrollPos, _FlatSB_GetScrollPos@8
+implib comctl32.dll, FlatSB_GetScrollProp, _FlatSB_GetScrollProp@12
+implib comctl32.dll, FlatSB_GetScrollRange, _FlatSB_GetScrollRange@16
+implib comctl32.dll, FlatSB_SetScrollInfo, _FlatSB_SetScrollInfo@16
+implib comctl32.dll, FlatSB_SetScrollPos, _FlatSB_SetScrollPos@16
+implib comctl32.dll, FlatSB_SetScrollProp, _FlatSB_SetScrollProp@16
+implib comctl32.dll, FlatSB_SetScrollRange, _FlatSB_SetScrollRange@20
+implib comctl32.dll, FlatSB_ShowScrollBar, _FlatSB_ShowScrollBar@12
+implib comctl32.dll, ord.152, _FreeMRUList@4
+implib comctl32.dll, GetEffectiveClientRect, _GetEffectiveClientRect@12
+implib comctl32.dll, GetMUILanguage, _GetMUILanguage@0
+implib comctl32.dll, ord.420, _GetTextExtentPoint32Wrap@16
+implib comctl32.dll, GetWindowSubclass, _GetWindowSubclass@16
+implib comctl32.dll, ImageList_Add, _ImageList_Add@12
+implib comctl32.dll, ImageList_AddIcon, _ImageList_AddIcon@8
+implib comctl32.dll, ImageList_AddMasked, _ImageList_AddMasked@12
+implib comctl32.dll, ImageList_BeginDrag, _ImageList_BeginDrag@16
+implib comctl32.dll, ImageList_Copy, _ImageList_Copy@20
+implib comctl32.dll, ImageList_Create, _ImageList_Create@20
+implib comctl32.dll, ImageList_Destroy, _ImageList_Destroy@4
+implib comctl32.dll, ImageList_DragEnter, _ImageList_DragEnter@12
+implib comctl32.dll, ImageList_DragLeave, _ImageList_DragLeave@4
+implib comctl32.dll, ImageList_DragMove, _ImageList_DragMove@8
+implib comctl32.dll, ImageList_DragShowNolock, _ImageList_DragShowNolock@4
+implib comctl32.dll, ImageList_Draw, _ImageList_Draw@24
+implib comctl32.dll, ImageList_DrawEx, _ImageList_DrawEx@40
+implib comctl32.dll, ImageList_DrawIndirect, _ImageList_DrawIndirect@4
+implib comctl32.dll, ImageList_Duplicate, _ImageList_Duplicate@4
+implib comctl32.dll, ImageList_EndDrag, _ImageList_EndDrag@0
+implib comctl32.dll, ImageList_GetBkColor, _ImageList_GetBkColor@4
+implib comctl32.dll, ImageList_GetDragImage, _ImageList_GetDragImage@8
+implib comctl32.dll, ImageList_GetFlags, _ImageList_GetFlags@4
+implib comctl32.dll, ImageList_GetIcon, _ImageList_GetIcon@12
+implib comctl32.dll, ImageList_GetIconSize, _ImageList_GetIconSize@12
+implib comctl32.dll, ImageList_GetImageCount, _ImageList_GetImageCount@4
+implib comctl32.dll, ImageList_GetImageInfo, _ImageList_GetImageInfo@12
+implib comctl32.dll, ImageList_GetImageRect, _ImageList_GetImageRect@12
+implib comctl32.dll, ImageList_LoadImage, _ImageList_LoadImage@28
+implib comctl32.dll, ImageList_LoadImageA, _ImageList_LoadImageA@28
+implib comctl32.dll, ImageList_LoadImageW, _ImageList_LoadImageW@28
+implib comctl32.dll, ImageList_Merge, _ImageList_Merge@24
+implib comctl32.dll, ImageList_Read, _ImageList_Read@4
+implib comctl32.dll, ImageList_Remove, _ImageList_Remove@8
+implib comctl32.dll, ImageList_Replace, _ImageList_Replace@16
+implib comctl32.dll, ImageList_ReplaceIcon, _ImageList_ReplaceIcon@12
+implib comctl32.dll, ImageList_SetBkColor, _ImageList_SetBkColor@8
+implib comctl32.dll, ImageList_SetDragCursorImage, _ImageList_SetDragCursorImage@16
+implib comctl32.dll, ImageList_SetFilter, _ImageList_SetFilter@12
+implib comctl32.dll, ImageList_SetFlags, _ImageList_SetFlags@8
+implib comctl32.dll, ImageList_SetIconSize, _ImageList_SetIconSize@12
+implib comctl32.dll, ImageList_SetImageCount, _ImageList_SetImageCount@8
+implib comctl32.dll, ImageList_SetOverlayImage, _ImageList_SetOverlayImage@12
+implib comctl32.dll, ImageList_Write, _ImageList_Write@8
+implib comctl32.dll, InitCommonControls, _InitCommonControls@0
+implib comctl32.dll, InitCommonControlsEx, _InitCommonControlsEx@4
+implib comctl32.dll, InitMUILanguage, _InitMUILanguage@4
+implib comctl32.dll, InitializeFlatSB, _InitializeFlatSB@4
+implib comctl32.dll, LBItemFromPt, _LBItemFromPt@16
+implib comctl32.dll, LoadIconMetric, _LoadIconMetric@16
+implib comctl32.dll, LoadIconWithScaleDown, _LoadIconWithScaleDown@20
+implib comctl32.dll, MakeDragList, _MakeDragList@4
+implib comctl32.dll, MenuHelp, _MenuHelp@28
+implib comctl32.dll, ord.414, _MirrorIcon@8
+implib comctl32.dll, PropertySheet, _PropertySheet@4
+implib comctl32.dll, PropertySheetA, _PropertySheetA@4
+implib comctl32.dll, PropertySheetW, _PropertySheetW@4
+implib comctl32.dll, RegisterClassNameW, _RegisterClassNameW@4
+implib comctl32.dll, RemoveWindowSubclass, _RemoveWindowSubclass@12
+implib comctl32.dll, SetWindowSubclass, _SetWindowSubclass@16
+implib comctl32.dll, ShowHideMenuCtl, _ShowHideMenuCtl@12
+implib comctl32.dll, ord.233, _Str_GetPtrA@12
+implib comctl32.dll, ord.235, _Str_GetPtrW@12
+implib comctl32.dll, ord.234, _Str_SetPtrA@8
+implib comctl32.dll, Str_SetPtrW, _Str_SetPtrW@8
+implib comctl32.dll, UninitializeFlatSB, _UninitializeFlatSB@4
+implib comctl32.dll, _TrackMouseEvent, __TrackMouseEvent@4
 
 endlib
