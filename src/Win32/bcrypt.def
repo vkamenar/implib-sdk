@@ -1,62 +1,62 @@
 include '..\implib.inc'
 
-implib bcrypt.dll, BCryptAddContextFunction, _BCryptAddContextFunction@20, __imp__BCryptAddContextFunction@20
-implib bcrypt.dll, BCryptAddContextFunctionProvider, _BCryptAddContextFunctionProvider@24, __imp__BCryptAddContextFunctionProvider@24
-implib bcrypt.dll, BCryptCloseAlgorithmProvider, _BCryptCloseAlgorithmProvider@8, __imp__BCryptCloseAlgorithmProvider@8
-implib bcrypt.dll, BCryptConfigureContext, _BCryptConfigureContext@12, __imp__BCryptConfigureContext@12
-implib bcrypt.dll, BCryptConfigureContextFunction, _BCryptConfigureContextFunction@20, __imp__BCryptConfigureContextFunction@20
-implib bcrypt.dll, BCryptCreateContext, _BCryptCreateContext@12, __imp__BCryptCreateContext@12
-implib bcrypt.dll, BCryptCreateHash, _BCryptCreateHash@28, __imp__BCryptCreateHash@28
-implib bcrypt.dll, BCryptCreateMultiHash, _BCryptCreateMultiHash@32, __imp__BCryptCreateMultiHash@32
-implib bcrypt.dll, BCryptDecrypt, _BCryptDecrypt@40, __imp__BCryptDecrypt@40
-implib bcrypt.dll, BCryptDeleteContext, _BCryptDeleteContext@8, __imp__BCryptDeleteContext@8
-implib bcrypt.dll, BCryptDeriveKey, _BCryptDeriveKey@28, __imp__BCryptDeriveKey@28
-implib bcrypt.dll, BCryptDeriveKeyCapi, _BCryptDeriveKeyCapi@20, __imp__BCryptDeriveKeyCapi@20
-implib bcrypt.dll, BCryptDeriveKeyPBKDF2, _BCryptDeriveKeyPBKDF2@40, __imp__BCryptDeriveKeyPBKDF2@40
-implib bcrypt.dll, BCryptDestroyHash, _BCryptDestroyHash@4, __imp__BCryptDestroyHash@4
-implib bcrypt.dll, BCryptDestroyKey, _BCryptDestroyKey@4, __imp__BCryptDestroyKey@4
-implib bcrypt.dll, BCryptDestroySecret, _BCryptDestroySecret@4, __imp__BCryptDestroySecret@4
-implib bcrypt.dll, BCryptDuplicateHash, _BCryptDuplicateHash@20, __imp__BCryptDuplicateHash@20
-implib bcrypt.dll, BCryptDuplicateKey, _BCryptDuplicateKey@20, __imp__BCryptDuplicateKey@20
-implib bcrypt.dll, BCryptEncrypt, _BCryptEncrypt@40, __imp__BCryptEncrypt@40
-implib bcrypt.dll, BCryptEnumAlgorithms, _BCryptEnumAlgorithms@16, __imp__BCryptEnumAlgorithms@16
-implib bcrypt.dll, BCryptEnumContextFunctionProviders, _BCryptEnumContextFunctionProviders@24, __imp__BCryptEnumContextFunctionProviders@24
-implib bcrypt.dll, BCryptEnumContextFunctions, _BCryptEnumContextFunctions@20, __imp__BCryptEnumContextFunctions@20
-implib bcrypt.dll, BCryptEnumContexts, _BCryptEnumContexts@12, __imp__BCryptEnumContexts@12
-implib bcrypt.dll, BCryptEnumProviders, _BCryptEnumProviders@16, __imp__BCryptEnumProviders@16
-implib bcrypt.dll, BCryptEnumRegisteredProviders, _BCryptEnumRegisteredProviders@8, __imp__BCryptEnumRegisteredProviders@8
-implib bcrypt.dll, BCryptExportKey, _BCryptExportKey@28, __imp__BCryptExportKey@28
-implib bcrypt.dll, BCryptFinalizeKeyPair, _BCryptFinalizeKeyPair@8, __imp__BCryptFinalizeKeyPair@8
-implib bcrypt.dll, BCryptFinishHash, _BCryptFinishHash@8, __imp__BCryptFinishHash@8
-implib bcrypt.dll, BCryptFreeBuffer, _BCryptFreeBuffer@4, __imp__BCryptFreeBuffer@4
-implib bcrypt.dll, BCryptGenRandom, _BCryptGenRandom@16, __imp__BCryptGenRandom@16
-implib bcrypt.dll, BCryptGenerateKeyPair, _BCryptGenerateKeyPair@16, __imp__BCryptGenerateKeyPair@16
-implib bcrypt.dll, BCryptGenerateSymmetricKey, _BCryptGenerateSymmetricKey@28, __imp__BCryptGenerateSymmetricKey@28
-implib bcrypt.dll, BCryptGetFipsAlgorithmMode, _BCryptGetFipsAlgorithmMode@4, __imp__BCryptGetFipsAlgorithmMode@4
-implib bcrypt.dll, BCryptGetProperty, _BCryptGetProperty@24, __imp__BCryptGetProperty@24
-implib bcrypt.dll, BCryptHash, _BCryptHash@28, __imp__BCryptHash@28
-implib bcrypt.dll, BCryptHashData, _BCryptHashData@16, __imp__BCryptHashData@16
-implib bcrypt.dll, BCryptImportKey, _BCryptImportKey@36, __imp__BCryptImportKey@36
-implib bcrypt.dll, BCryptImportKeyPair, _BCryptImportKeyPair@28, __imp__BCryptImportKeyPair@28
-implib bcrypt.dll, BCryptKeyDerivation, _BCryptKeyDerivation@24, __imp__BCryptKeyDerivation@24
-implib bcrypt.dll, BCryptOpenAlgorithmProvider, _BCryptOpenAlgorithmProvider@16, __imp__BCryptOpenAlgorithmProvider@16
-implib bcrypt.dll, BCryptProcessMultiOperations, _BCryptProcessMultiOperations@20, __imp__BCryptProcessMultiOperations@20
-implib bcrypt.dll, BCryptQueryContextConfiguration, _BCryptQueryContextConfiguration@16, __imp__BCryptQueryContextConfiguration@16
-implib bcrypt.dll, BCryptQueryContextFunctionConfiguration, _BCryptQueryContextFunctionConfiguration@24, __imp__BCryptQueryContextFunctionConfiguration@24
-implib bcrypt.dll, BCryptQueryContextFunctionProperty, _BCryptQueryContextFunctionProperty@28, __imp__BCryptQueryContextFunctionProperty@28
-implib bcrypt.dll, BCryptQueryProviderRegistration, _BCryptQueryProviderRegistration@20, __imp__BCryptQueryProviderRegistration@20
-implib bcrypt.dll, BCryptRegisterConfigChangeNotify, _BCryptRegisterConfigChangeNotify@4, __imp__BCryptRegisterConfigChangeNotify@4
-implib bcrypt.dll, BCryptRegisterProvider, _BCryptRegisterProvider@12, __imp__BCryptRegisterProvider@12
-implib bcrypt.dll, BCryptRemoveContextFunction, _BCryptRemoveContextFunction@16, __imp__BCryptRemoveContextFunction@16
-implib bcrypt.dll, BCryptRemoveContextFunctionProvider, _BCryptRemoveContextFunctionProvider@20, __imp__BCryptRemoveContextFunctionProvider@20
-implib bcrypt.dll, BCryptResolveProviders, _BCryptResolveProviders@32, __imp__BCryptResolveProviders@32
-implib bcrypt.dll, BCryptSecretAgreement, _BCryptSecretAgreement@16, __imp__BCryptSecretAgreement@16
-implib bcrypt.dll, BCryptSetAuditingInterface, _BCryptSetAuditingInterface@4, __imp__BCryptSetAuditingInterface@4
-implib bcrypt.dll, BCryptSetContextFunctionProperty, _BCryptSetContextFunctionProperty@28, __imp__BCryptSetContextFunctionProperty@28
-implib bcrypt.dll, BCryptSetProperty, _BCryptSetProperty@20, __imp__BCryptSetProperty@20
-implib bcrypt.dll, BCryptSignHash, _BCryptSignHash@32, __imp__BCryptSignHash@32
-implib bcrypt.dll, BCryptUnregisterConfigChangeNotify, _BCryptUnregisterConfigChangeNotify@4, __imp__BCryptUnregisterConfigChangeNotify@4
-implib bcrypt.dll, BCryptUnregisterProvider, _BCryptUnregisterProvider@4, __imp__BCryptUnregisterProvider@4
-implib bcrypt.dll, BCryptVerifySignature, _BCryptVerifySignature@28, __imp__BCryptVerifySignature@28
+implib bcrypt.dll, BCryptAddContextFunction, _BCryptAddContextFunction@20
+implib bcrypt.dll, BCryptAddContextFunctionProvider, _BCryptAddContextFunctionProvider@24
+implib bcrypt.dll, BCryptCloseAlgorithmProvider, _BCryptCloseAlgorithmProvider@8
+implib bcrypt.dll, BCryptConfigureContext, _BCryptConfigureContext@12
+implib bcrypt.dll, BCryptConfigureContextFunction, _BCryptConfigureContextFunction@20
+implib bcrypt.dll, BCryptCreateContext, _BCryptCreateContext@12
+implib bcrypt.dll, BCryptCreateHash, _BCryptCreateHash@28
+implib bcrypt.dll, BCryptCreateMultiHash, _BCryptCreateMultiHash@32
+implib bcrypt.dll, BCryptDecrypt, _BCryptDecrypt@40
+implib bcrypt.dll, BCryptDeleteContext, _BCryptDeleteContext@8
+implib bcrypt.dll, BCryptDeriveKey, _BCryptDeriveKey@28
+implib bcrypt.dll, BCryptDeriveKeyCapi, _BCryptDeriveKeyCapi@20
+implib bcrypt.dll, BCryptDeriveKeyPBKDF2, _BCryptDeriveKeyPBKDF2@40
+implib bcrypt.dll, BCryptDestroyHash, _BCryptDestroyHash@4
+implib bcrypt.dll, BCryptDestroyKey, _BCryptDestroyKey@4
+implib bcrypt.dll, BCryptDestroySecret, _BCryptDestroySecret@4
+implib bcrypt.dll, BCryptDuplicateHash, _BCryptDuplicateHash@20
+implib bcrypt.dll, BCryptDuplicateKey, _BCryptDuplicateKey@20
+implib bcrypt.dll, BCryptEncrypt, _BCryptEncrypt@40
+implib bcrypt.dll, BCryptEnumAlgorithms, _BCryptEnumAlgorithms@16
+implib bcrypt.dll, BCryptEnumContextFunctionProviders, _BCryptEnumContextFunctionProviders@24
+implib bcrypt.dll, BCryptEnumContextFunctions, _BCryptEnumContextFunctions@20
+implib bcrypt.dll, BCryptEnumContexts, _BCryptEnumContexts@12
+implib bcrypt.dll, BCryptEnumProviders, _BCryptEnumProviders@16
+implib bcrypt.dll, BCryptEnumRegisteredProviders, _BCryptEnumRegisteredProviders@8
+implib bcrypt.dll, BCryptExportKey, _BCryptExportKey@28
+implib bcrypt.dll, BCryptFinalizeKeyPair, _BCryptFinalizeKeyPair@8
+implib bcrypt.dll, BCryptFinishHash, _BCryptFinishHash@8
+implib bcrypt.dll, BCryptFreeBuffer, _BCryptFreeBuffer@4
+implib bcrypt.dll, BCryptGenRandom, _BCryptGenRandom@16
+implib bcrypt.dll, BCryptGenerateKeyPair, _BCryptGenerateKeyPair@16
+implib bcrypt.dll, BCryptGenerateSymmetricKey, _BCryptGenerateSymmetricKey@28
+implib bcrypt.dll, BCryptGetFipsAlgorithmMode, _BCryptGetFipsAlgorithmMode@4
+implib bcrypt.dll, BCryptGetProperty, _BCryptGetProperty@24
+implib bcrypt.dll, BCryptHash, _BCryptHash@28
+implib bcrypt.dll, BCryptHashData, _BCryptHashData@16
+implib bcrypt.dll, BCryptImportKey, _BCryptImportKey@36
+implib bcrypt.dll, BCryptImportKeyPair, _BCryptImportKeyPair@28
+implib bcrypt.dll, BCryptKeyDerivation, _BCryptKeyDerivation@24
+implib bcrypt.dll, BCryptOpenAlgorithmProvider, _BCryptOpenAlgorithmProvider@16
+implib bcrypt.dll, BCryptProcessMultiOperations, _BCryptProcessMultiOperations@20
+implib bcrypt.dll, BCryptQueryContextConfiguration, _BCryptQueryContextConfiguration@16
+implib bcrypt.dll, BCryptQueryContextFunctionConfiguration, _BCryptQueryContextFunctionConfiguration@24
+implib bcrypt.dll, BCryptQueryContextFunctionProperty, _BCryptQueryContextFunctionProperty@28
+implib bcrypt.dll, BCryptQueryProviderRegistration, _BCryptQueryProviderRegistration@20
+implib bcrypt.dll, BCryptRegisterConfigChangeNotify, _BCryptRegisterConfigChangeNotify@4
+implib bcrypt.dll, BCryptRegisterProvider, _BCryptRegisterProvider@12
+implib bcrypt.dll, BCryptRemoveContextFunction, _BCryptRemoveContextFunction@16
+implib bcrypt.dll, BCryptRemoveContextFunctionProvider, _BCryptRemoveContextFunctionProvider@20
+implib bcrypt.dll, BCryptResolveProviders, _BCryptResolveProviders@32
+implib bcrypt.dll, BCryptSecretAgreement, _BCryptSecretAgreement@16
+implib bcrypt.dll, BCryptSetAuditingInterface, _BCryptSetAuditingInterface@4
+implib bcrypt.dll, BCryptSetContextFunctionProperty, _BCryptSetContextFunctionProperty@28
+implib bcrypt.dll, BCryptSetProperty, _BCryptSetProperty@20
+implib bcrypt.dll, BCryptSignHash, _BCryptSignHash@32
+implib bcrypt.dll, BCryptUnregisterConfigChangeNotify, _BCryptUnregisterConfigChangeNotify@4
+implib bcrypt.dll, BCryptUnregisterProvider, _BCryptUnregisterProvider@4
+implib bcrypt.dll, BCryptVerifySignature, _BCryptVerifySignature@28
 
 endlib
