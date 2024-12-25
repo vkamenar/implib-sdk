@@ -416,7 +416,7 @@ macro implib dllname*,name*,thunk,pubname {
 		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_4BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		if KEEP_ORIGINAL_THUNK
 			db '.idata$4'
-			dd 0,0,4,48,0,0,0
+			dd 0,0,4,88,0,0,0
 			dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_4BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		end if
 	dllname#.descr_sym_tbl2:
@@ -467,42 +467,17 @@ dllname#name#.lnk_memberN:
 			end if
 		end if
 	end virtual
-	dw IMAGE_FILE_MACHINE_I386
-	if KEEP_ORIGINAL_THUNK
-		if byordinal=0
-			dw 4
-		else
-			dw 3
-		end if
-	else
-		if byordinal=0
-			dw 3
-		else
-			dw 2
-		end if
-	end if
+	dw IMAGE_FILE_MACHINE_I386,3+KEEP_ORIGINAL_THUNK-byordinal
 	dd %t,dllname#name#.symbol_table-dllname#name#.lnk_memberN
-	if KEEP_ORIGINAL_THUNK
-		if byordinal=0
-			dd 11+USE_COMPID
-		else
-			dd 9+USE_COMPID
-		end if
-	else
-		if byordinal=0
-			dd 9+USE_COMPID
-		else
-			dd 7+USE_COMPID
-		end if
-	end if
+	dd 9+KEEP_ORIGINAL_THUNK*2-byordinal*2+USE_COMPID
 	dw 0,IMAGE_FILE_32BIT_MACHINE
 	db '.text',0,0,0
-	dd 0,0
+	dq 0
 	dd 6
 	dd dllname#name#.thunk-dllname#name#.lnk_memberN,dllname#name#.rel1-dllname#name#.lnk_memberN
 	dd 0,1,IMAGE_CNT_CODE or IMAGE_LNK_COMDAT or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_EXECUTE
 	db '.idata$5'
-	dd 0,0,4,dllname#name#.rel2-dllname#name#.lnk_memberN
+	dd 0,0,4,28
 	if byordinal=0
 		dd dllname#name#.rel2-dllname#name#.lnk_memberN,0,1
 	else
@@ -511,7 +486,7 @@ dllname#name#.lnk_memberN:
 	dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_LNK_COMDAT or IMAGE_ALIGN_4BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 	if KEEP_ORIGINAL_THUNK
 		db '.idata$4'
-		dd 0,0,4,dllname#name#.rel2-dllname#name#.lnk_memberN
+		dd 0,0,4,28
 		if byordinal=0
 			dd dllname#name#.rel2-dllname#name#.lnk_memberN,0,1
 		else
@@ -742,7 +717,7 @@ macro pbimplib dllname*,cconv*,argcount*,name*,pb_name,pubname {
 		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_4BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		if KEEP_ORIGINAL_THUNK
 			db '.idata$4'
-			dd 0,0,4,48,0,0,0
+			dd 0,0,4,88,0,0,0
 			dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_4BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		end if
 	dllname#.descr_sym_tbl2:
@@ -793,37 +768,12 @@ dllname#name#.lnk_memberN:
 			end if
 		end if
 	end virtual
-	dw IMAGE_FILE_MACHINE_I386
-	if KEEP_ORIGINAL_THUNK
-		if byordinal=0
-			dw 4
-		else
-			dw 3
-		end if
-	else
-		if byordinal=0
-			dw 3
-		else
-			dw 2
-		end if
-	end if
+	dw IMAGE_FILE_MACHINE_I386,3+KEEP_ORIGINAL_THUNK-byordinal
 	dd %t,dllname#name#.symbol_table-dllname#name#.lnk_memberN
-	if KEEP_ORIGINAL_THUNK
-		if byordinal=0
-			dd 11+USE_COMPID
-		else
-			dd 9+USE_COMPID
-		end if
-	else
-		if byordinal=0
-			dd 9+USE_COMPID
-		else
-			dd 7+USE_COMPID
-		end if
-	end if
+	dd 9+KEEP_ORIGINAL_THUNK*2-byordinal*2+USE_COMPID
 	dw 0,IMAGE_FILE_32BIT_MACHINE
 	db '.text',0,0,0
-	dd 0,0
+	dq 0
 	if cconv=CDECL
 		if argcount>0
 			dd 12+argcount*4
@@ -1154,7 +1104,7 @@ macro vbimplib module*,dllname*,cconv*,argcount*,name*,vb_name,pubname {
 		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_4BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		if KEEP_ORIGINAL_THUNK
 			db '.idata$4'
-			dd 0,0,4,48,0,0,0
+			dd 0,0,4,88,0,0,0
 			dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_4BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		end if
 	dllname#.descr_sym_tbl2:
@@ -1205,37 +1155,12 @@ dllname#name#.lnk_memberN:
 			end if
 		end if
 	end virtual
-	dw IMAGE_FILE_MACHINE_I386
-	if KEEP_ORIGINAL_THUNK
-		if byordinal=0
-			dw 4
-		else
-			dw 3
-		end if
-	else
-		if byordinal=0
-			dw 3
-		else
-			dw 2
-		end if
-	end if
+	dw IMAGE_FILE_MACHINE_I386,3+KEEP_ORIGINAL_THUNK-byordinal
 	dd %t,dllname#name#.symbol_table-dllname#name#.lnk_memberN
-	if KEEP_ORIGINAL_THUNK
-		if byordinal=0
-			dd 11+USE_COMPID
-		else
-			dd 9+USE_COMPID
-		end if
-	else
-		if byordinal=0
-			dd 9+USE_COMPID
-		else
-			dd 7+USE_COMPID
-		end if
-	end if
+	dd 9+KEEP_ORIGINAL_THUNK*2-byordinal*2+USE_COMPID
 	dw 0,IMAGE_FILE_32BIT_MACHINE
 	db '.text',0,0,0
-	dd 0,0
+	dq 0
 	if cconv=CDECL
 		if argcount>0
 			dd 12+argcount*4

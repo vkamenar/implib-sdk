@@ -336,7 +336,7 @@ macro implib dllname*,name*,thunk,pubname {
 		dd dllname#.descr_data1-dllname#.descr,dllname#.descr_rel-dllname#.descr
 		dd 0,2+KEEP_ORIGINAL_THUNK,IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_4BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		db '.idata$6'
-		dd 0,0,(dllname#.descr_data1-dllname#.descr_data2+2) and -2,dllname#.descr_data2-dllname#.descr,0
+		dd 0,0,(dllname#.descr_data1-dllname#.descr_data2+2) and -2,dllname#.descr_data2-dllname#.descr,dllname#.descr_rel-dllname#.descr
 		dd 0,0,IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 	dllname#.descr_data2 db `dllname
 	dllname#.descr_data1 dq 0,0
@@ -408,7 +408,7 @@ macro implib dllname*,name*,thunk,pubname {
 		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_8BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		if KEEP_ORIGINAL_THUNK
 			db '.idata$4'
-			dd 0,0,8,48,0,0,0
+			dd 0,0,8,88,0,0,0
 			dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_8BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		end if
 	dllname#.descr_sym_tbl2:
@@ -460,56 +460,32 @@ dllname#name#.lnk_memberN:
 			end if
 		end if
 	end virtual
-	dw IMAGE_FILE_MACHINE_AMD64
-	if KEEP_ORIGINAL_THUNK
-		if byordinal=0
-			dw 4
-		else
-			dw 3
-		end if
-	else
-		if byordinal=0
-			dw 3
-		else
-			dw 2
-		end if
-	end if
+	dw IMAGE_FILE_MACHINE_AMD64,3+KEEP_ORIGINAL_THUNK-byordinal
 	dd %t,dllname#name#.symbol_table-dllname#name#.lnk_memberN
-	if KEEP_ORIGINAL_THUNK
-		if byordinal=0
-			dd 11+USE_COMPID
-		else
-			dd 9+USE_COMPID
-		end if
-	else
-		if byordinal=0
-			dd 9+USE_COMPID
-		else
-			dd 7+USE_COMPID
-		end if
-	end if
+	dd 9+KEEP_ORIGINAL_THUNK*2-byordinal*2+USE_COMPID
 	dw 0,IMAGE_FILE_LINE_NUMS_STRIPPED
 	db '.text',0,0,0
-	dd 0,0,8
+	dq 0
+	dd 6
 	dd dllname#name#.thunk-dllname#name#.lnk_memberN,dllname#name#.rel1-dllname#name#.lnk_memberN
 	dd 0,1,IMAGE_CNT_CODE or IMAGE_LNK_COMDAT or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_EXECUTE
 	db '.idata$5'
-	dd 0,0,4,dllname#name#.rel2-dllname#name#.lnk_memberN
+	dd 0,0,8,28
 	if byordinal=0
 		dd dllname#name#.rel2-dllname#name#.lnk_memberN,0,1
 	else
 		dd 0,0,0
 	end if
-	dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_LNK_COMDAT or IMAGE_ALIGN_4BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
+	dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_LNK_COMDAT or IMAGE_ALIGN_8BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 	if KEEP_ORIGINAL_THUNK
 		db '.idata$4'
-		dd 0,0,4,dllname#name#.rel2-dllname#name#.lnk_memberN
+		dd 0,0,8,28
 		if byordinal=0
 			dd dllname#name#.rel2-dllname#name#.lnk_memberN,0,1
 		else
 			dd 0,0,0
 		end if
-		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_LNK_COMDAT or IMAGE_ALIGN_4BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
+		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_LNK_COMDAT or IMAGE_ALIGN_8BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 	end if
 	if byordinal=0
 		db '.idata$6'
@@ -519,7 +495,6 @@ dllname#name#.lnk_memberN:
 		dllname#name#.thunk:
 			dw 25FFh ; jmp [pubname]
 		dllname#name#.rel2 dd 0
-			dw 9090h ; nop, nop (align /8)
 			if KEEP_ORIGINAL_THUNK
 				dd 8+USE_COMPID
 			else
@@ -542,7 +517,6 @@ dllname#name#.lnk_memberN:
 		dllname#name#.thunk:
 			dw 25FFh ; jmp [pubname]
 			dd 0
-			dw 9090h ; nop, nop (align /8)
 		dllname#name#.rel1 dd 2
 			dd 5+USE_COMPID
 			dw IMAGE_REL_AMD64_REL32
