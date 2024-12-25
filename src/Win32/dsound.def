@@ -1,16 +1,16 @@
 include '..\implib.inc'
 
-implib DSOUND.DLL, DirectSoundCaptureCreate, _DirectSoundCaptureCreate@12, __imp__DirectSoundCaptureCreate@12
-implib DSOUND.DLL, DirectSoundCaptureCreate8, _DirectSoundCaptureCreate8@12, __imp__DirectSoundCaptureCreate8@12
-implib DSOUND.DLL, DirectSoundCaptureEnumerateA, _DirectSoundCaptureEnumerateA@8, __imp__DirectSoundCaptureEnumerateA@8
-implib DSOUND.DLL, DirectSoundCaptureEnumerateW, _DirectSoundCaptureEnumerateW@8, __imp__DirectSoundCaptureEnumerateW@8
-implib DSOUND.DLL, ord.1, _DirectSoundCreate@12, __imp__DirectSoundCreate@12
-implib DSOUND.DLL, DirectSoundCreate8, _DirectSoundCreate8@12, __imp__DirectSoundCreate8@12
-implib DSOUND.DLL, DirectSoundEnumerateA, _DirectSoundEnumerateA@8, __imp__DirectSoundEnumerateA@8
-implib DSOUND.DLL, DirectSoundEnumerateW, _DirectSoundEnumerateW@8, __imp__DirectSoundEnumerateW@8
-implib DSOUND.DLL, DirectSoundFullDuplexCreate, _DirectSoundFullDuplexCreate8@40, __imp__DirectSoundFullDuplexCreate8@40
-implib DSOUND.DLL, DllCanUnloadNow, _DSOUND_DllCanUnloadNow@0, __imp__DSOUND_DllCanUnloadNow@0
-implib DSOUND.DLL, DllGetClassObject, _DSOUND_DllGetClassObject@12, __imp__DSOUND_DllGetClassObject@12
-implib DSOUND.DLL, GetDeviceID, _DSOUND_GetDeviceID@8, __imp__DSOUND_GetDeviceID@8
+implib DSOUND.DLL, DirectSoundCaptureCreate, _DirectSoundCaptureCreate@12
+implib DSOUND.DLL, DirectSoundCaptureCreate8, _DirectSoundCaptureCreate8@12
+implib DSOUND.DLL, DirectSoundCaptureEnumerateA, _DirectSoundCaptureEnumerateA@8
+implib DSOUND.DLL, DirectSoundCaptureEnumerateW, _DirectSoundCaptureEnumerateW@8
+implib DSOUND.DLL, ord.1, _DirectSoundCreate@12
+implib DSOUND.DLL, DirectSoundCreate8, _DirectSoundCreate8@12
+implib DSOUND.DLL, DirectSoundEnumerateA, _DirectSoundEnumerateA@8
+implib DSOUND.DLL, DirectSoundEnumerateW, _DirectSoundEnumerateW@8
+implib DSOUND.DLL, DirectSoundFullDuplexCreate, _DirectSoundFullDuplexCreate8@40
+implib DSOUND.DLL, DllCanUnloadNow, _DSOUND_DllCanUnloadNow@0
+implib DSOUND.DLL, DllGetClassObject, _DSOUND_DllGetClassObject@12
+implib DSOUND.DLL, GetDeviceID, _DSOUND_GetDeviceID@8
 
 endlib
