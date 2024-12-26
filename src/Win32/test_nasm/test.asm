@@ -6,7 +6,7 @@ EXTERN __imp__ExitProcess@4
 section .text
 ttl db "Test",0
 msg db "Hello, world!",0
-
+align 4
 GLOBAL _start
 _start:
 	push 0
