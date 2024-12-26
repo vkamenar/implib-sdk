@@ -1,501 +1,501 @@
 include '..\implib.inc'
 
-implib ole32.dll, BindMoniker, _BindMoniker@16, __imp__BindMoniker@16
-implib ole32.dll, CLIPFORMAT_UserFree, _CLIPFORMAT_UserFree@8, __imp__CLIPFORMAT_UserFree@8
-implib ole32.dll, CLIPFORMAT_UserFreeExt, _CLIPFORMAT_UserFreeExt@8, __imp__CLIPFORMAT_UserFreeExt@8
-implib ole32.dll, CLIPFORMAT_UserMarshal, _CLIPFORMAT_UserMarshal@12, __imp__CLIPFORMAT_UserMarshal@12
-implib ole32.dll, CLIPFORMAT_UserMarshalExt, _CLIPFORMAT_UserMarshalExt@12, __imp__CLIPFORMAT_UserMarshalExt@12
-implib ole32.dll, CLIPFORMAT_UserSize, _CLIPFORMAT_UserSize@12, __imp__CLIPFORMAT_UserSize@12
-implib ole32.dll, CLIPFORMAT_UserSizeExt, _CLIPFORMAT_UserSizeExt@12, __imp__CLIPFORMAT_UserSizeExt@12
-implib ole32.dll, CLIPFORMAT_UserUnmarshal, _CLIPFORMAT_UserUnmarshal@12, __imp__CLIPFORMAT_UserUnmarshal@12
-implib ole32.dll, CLIPFORMAT_UserUnmarshalExt, _CLIPFORMAT_UserUnmarshalExt@12, __imp__CLIPFORMAT_UserUnmarshalExt@12
-implib ole32.dll, CLSIDFromOle1Class, _CLSIDFromOle1Class@12, __imp__CLSIDFromOle1Class@12
-implib ole32.dll, CLSIDFromProgID, _CLSIDFromProgID@8, __imp__CLSIDFromProgID@8
-implib ole32.dll, CLSIDFromProgIDEx, _CLSIDFromProgIDEx@8, __imp__CLSIDFromProgIDEx@8
-implib ole32.dll, CLSIDFromString, _CLSIDFromString@8, __imp__CLSIDFromString@8
-implib ole32.dll, CStdAsyncStubBuffer2_Connect, _CStdAsyncStubBuffer2_Connect@8, __imp__CStdAsyncStubBuffer2_Connect@8
-implib ole32.dll, CStdAsyncStubBuffer2_Disconnect, _CStdAsyncStubBuffer2_Disconnect@4, __imp__CStdAsyncStubBuffer2_Disconnect@4
-implib ole32.dll, CStdAsyncStubBuffer2_Release, _CStdAsyncStubBuffer2_Release@4, __imp__CStdAsyncStubBuffer2_Release@4
-implib ole32.dll, CStdAsyncStubBuffer_AddRef, _CStdAsyncStubBuffer_AddRef@4, __imp__CStdAsyncStubBuffer_AddRef@4
-implib ole32.dll, CStdAsyncStubBuffer_Connect, _CStdAsyncStubBuffer_Connect@8, __imp__CStdAsyncStubBuffer_Connect@8
-implib ole32.dll, CStdAsyncStubBuffer_Disconnect, _CStdAsyncStubBuffer_Disconnect@4, __imp__CStdAsyncStubBuffer_Disconnect@4
-implib ole32.dll, CStdAsyncStubBuffer_Invoke, _CStdAsyncStubBuffer_Invoke@12, __imp__CStdAsyncStubBuffer_Invoke@12
-implib ole32.dll, CStdAsyncStubBuffer_QueryInterface, _CStdAsyncStubBuffer_QueryInterface@12, __imp__CStdAsyncStubBuffer_QueryInterface@12
-implib ole32.dll, CStdAsyncStubBuffer_Release, _CStdAsyncStubBuffer_Release@4, __imp__CStdAsyncStubBuffer_Release@4
-implib ole32.dll, CStdStubBuffer2_Connect, _CStdStubBuffer2_Connect@8, __imp__CStdStubBuffer2_Connect@8
-implib ole32.dll, CStdStubBuffer2_CountRefs, _CStdStubBuffer2_CountRefs@4, __imp__CStdStubBuffer2_CountRefs@4
-implib ole32.dll, CStdStubBuffer2_Disconnect, _CStdStubBuffer2_Disconnect@4, __imp__CStdStubBuffer2_Disconnect@4
-implib ole32.dll, CStdStubBuffer2_QueryInterface, _CStdStubBuffer2_QueryInterface@12, __imp__CStdStubBuffer2_QueryInterface@12
-implib ole32.dll, CheckInitDde, _CheckInitDde@4, __imp__CheckInitDde@4
-implib ole32.dll, CleanROTForApartment, _CleanROTForApartment@0, __imp__CleanROTForApartment@0
-implib ole32.dll, ClearQITableEntry, _ClearQITableEntry@4, __imp__ClearQITableEntry@4
-implib ole32.dll, ClipboardProcessUninitialize, _ClipboardProcessUninitialize@0, __imp__ClipboardProcessUninitialize@0
-implib ole32.dll, CoAddRefServerProcess, _CoAddRefServerProcess@0, __imp__CoAddRefServerProcess@0
-implib ole32.dll, CoAicGetTokenForCOM, _CoAicGetTokenForCOM@48, __imp__CoAicGetTokenForCOM@48
-implib ole32.dll, CoAllowSetForegroundWindow, _CoAllowSetForegroundWindow@8, __imp__CoAllowSetForegroundWindow@8
-implib ole32.dll, CoAllowUnmarshalerCLSID, _CoAllowUnmarshalerCLSID@4, __imp__CoAllowUnmarshalerCLSID@4
-implib ole32.dll, CoBuildVersion, _CoBuildVersion@0, __imp__CoBuildVersion@0
-implib ole32.dll, CoCancelCall, _CoCancelCall@8, __imp__CoCancelCall@8
-implib ole32.dll, CoCheckElevationEnabled, _CoCheckElevationEnabled@4, __imp__CoCheckElevationEnabled@4
-implib ole32.dll, CoCopyProxy, _CoCopyProxy@8, __imp__CoCopyProxy@8
-implib ole32.dll, CoCreateFreeThreadedMarshaler, _CoCreateFreeThreadedMarshaler@8, __imp__CoCreateFreeThreadedMarshaler@8
-implib ole32.dll, CoCreateGuid, _CoCreateGuid@4, __imp__CoCreateGuid@4
-implib ole32.dll, CoCreateInstance, _CoCreateInstance@20, __imp__CoCreateInstance@20
-implib ole32.dll, CoCreateInstanceEx, _CoCreateInstanceEx@24, __imp__CoCreateInstanceEx@24
-implib ole32.dll, CoCreateInstanceFromApp, _CoCreateInstanceFromApp@24, __imp__CoCreateInstanceFromApp@24
-implib ole32.dll, CoCreateObjectInContext, _CoCreateObjectInContext@16, __imp__CoCreateObjectInContext@16
-implib ole32.dll, CoDeactivateObject, _CoDeactivateObject@8, __imp__CoDeactivateObject@8
-implib ole32.dll, CoDecodeProxy, _CoDecodeProxy@12, __imp__CoDecodeProxy@12
-implib ole32.dll, CoDecrementMTAUsage, _CoDecrementMTAUsage@4, __imp__CoDecrementMTAUsage@4
-implib ole32.dll, CoDisableCallCancellation, _CoDisableCallCancellation@4, __imp__CoDisableCallCancellation@4
-implib ole32.dll, CoDisconnectContext, _CoDisconnectContext@4, __imp__CoDisconnectContext@4
-implib ole32.dll, CoDisconnectObject, _CoDisconnectObject@8, __imp__CoDisconnectObject@8
-implib ole32.dll, CoDosDateTimeToFileTime, _CoDosDateTimeToFileTime@12, __imp__CoDosDateTimeToFileTime@12
-implib ole32.dll, CoEnableCallCancellation, _CoEnableCallCancellation@4, __imp__CoEnableCallCancellation@4
-implib ole32.dll, CoFileTimeNow, _CoFileTimeNow@4, __imp__CoFileTimeNow@4
-implib ole32.dll, CoFileTimeToDosDateTime, _CoFileTimeToDosDateTime@12, __imp__CoFileTimeToDosDateTime@12
-implib ole32.dll, CoFreeAllLibraries, _CoFreeAllLibraries@0, __imp__CoFreeAllLibraries@0
-implib ole32.dll, CoFreeLibrary, _CoFreeLibrary@4, __imp__CoFreeLibrary@4
-implib ole32.dll, CoFreeUnusedLibraries, _CoFreeUnusedLibraries@0, __imp__CoFreeUnusedLibraries@0
-implib ole32.dll, CoFreeUnusedLibrariesEx, _CoFreeUnusedLibrariesEx@8, __imp__CoFreeUnusedLibrariesEx@8
-implib ole32.dll, CoGetActivationState, _CoGetActivationState@24, __imp__CoGetActivationState@24
-implib ole32.dll, CoGetApartmentID, _CoGetApartmentID@8, __imp__CoGetApartmentID@8
-implib ole32.dll, CoGetApartmentType, _CoGetApartmentType@8, __imp__CoGetApartmentType@8
-implib ole32.dll, CoGetCallContext, _CoGetCallContext@8, __imp__CoGetCallContext@8
-implib ole32.dll, CoGetCallState, _CoGetCallState@8, __imp__CoGetCallState@8
-implib ole32.dll, CoGetCallerTID, _CoGetCallerTID@4, __imp__CoGetCallerTID@4
-implib ole32.dll, CoGetCancelObject, _CoGetCancelObject@12, __imp__CoGetCancelObject@12
-implib ole32.dll, CoGetClassObject, _CoGetClassObject@20, __imp__CoGetClassObject@20
-implib ole32.dll, CoGetClassVersion, _CoGetClassVersion@12, __imp__CoGetClassVersion@12
-implib ole32.dll, CoGetComCatalog, _CoGetComCatalog@8, __imp__CoGetComCatalog@8
-implib ole32.dll, CoGetContextToken, _CoGetContextToken@4, __imp__CoGetContextToken@4
-implib ole32.dll, CoGetCurrentLogicalThreadId, _CoGetCurrentLogicalThreadId@4, __imp__CoGetCurrentLogicalThreadId@4
-implib ole32.dll, CoGetCurrentProcess, _CoGetCurrentProcess@0, __imp__CoGetCurrentProcess@0
-implib ole32.dll, CoGetDefaultContext, _CoGetDefaultContext@12, __imp__CoGetDefaultContext@12
-implib ole32.dll, CoGetInstanceFromFile, _CoGetInstanceFromFile@32, __imp__CoGetInstanceFromFile@32
-implib ole32.dll, CoGetInstanceFromIStorage, _CoGetInstanceFromIStorage@28, __imp__CoGetInstanceFromIStorage@28
-implib ole32.dll, CoGetInterceptor, _CoGetInterceptor@16, __imp__CoGetInterceptor@16
-implib ole32.dll, CoGetInterceptorForOle32, _CoGetInterceptorForOle32@16, __imp__CoGetInterceptorForOle32@16
-implib ole32.dll, CoGetInterceptorFromTypeInfo, _CoGetInterceptorFromTypeInfo@20, __imp__CoGetInterceptorFromTypeInfo@20
-implib ole32.dll, CoGetInterfaceAndReleaseStream, _CoGetInterfaceAndReleaseStream@12, __imp__CoGetInterfaceAndReleaseStream@12
-implib ole32.dll, CoGetMalloc, _CoGetMalloc@8, __imp__CoGetMalloc@8
-implib ole32.dll, CoGetMarshalSizeMax, _CoGetMarshalSizeMax@24, __imp__CoGetMarshalSizeMax@24
-implib ole32.dll, CoGetModuleType, _CoGetModuleType@8, __imp__CoGetModuleType@8
-implib ole32.dll, CoGetObject, _CoGetObject@16, __imp__CoGetObject@16
-implib ole32.dll, CoGetObjectContext, _CoGetObjectContext@8, __imp__CoGetObjectContext@8
-implib ole32.dll, CoGetPSClsid, _CoGetPSClsid@8, __imp__CoGetPSClsid@8
-implib ole32.dll, CoGetProcessIdentifier, _CoGetProcessIdentifier@4, __imp__CoGetProcessIdentifier@4
-implib ole32.dll, CoGetStandardMarshal, _CoGetStandardMarshal@24, __imp__CoGetStandardMarshal@24
-implib ole32.dll, CoGetState, _CoGetState@4, __imp__CoGetState@4
-implib ole32.dll, CoGetStdMarshalEx, _CoGetStdMarshalEx@12, __imp__CoGetStdMarshalEx@12
-implib ole32.dll, CoGetSystemSecurityPermissions, _CoGetSystemSecurityPermissions@8, __imp__CoGetSystemSecurityPermissions@8
-implib ole32.dll, CoGetSystemWow64DirectoryW, _CoGetSystemWow64DirectoryW@8, __imp__CoGetSystemWow64DirectoryW@8
-implib ole32.dll, CoGetTreatAsClass, _CoGetTreatAsClass@8, __imp__CoGetTreatAsClass@8
+implib ole32.dll, BindMoniker, _BindMoniker@16
+implib ole32.dll, CLIPFORMAT_UserFree, _CLIPFORMAT_UserFree@8
+implib ole32.dll, CLIPFORMAT_UserFreeExt, _CLIPFORMAT_UserFreeExt@8
+implib ole32.dll, CLIPFORMAT_UserMarshal, _CLIPFORMAT_UserMarshal@12
+implib ole32.dll, CLIPFORMAT_UserMarshalExt, _CLIPFORMAT_UserMarshalExt@12
+implib ole32.dll, CLIPFORMAT_UserSize, _CLIPFORMAT_UserSize@12
+implib ole32.dll, CLIPFORMAT_UserSizeExt, _CLIPFORMAT_UserSizeExt@12
+implib ole32.dll, CLIPFORMAT_UserUnmarshal, _CLIPFORMAT_UserUnmarshal@12
+implib ole32.dll, CLIPFORMAT_UserUnmarshalExt, _CLIPFORMAT_UserUnmarshalExt@12
+implib ole32.dll, CLSIDFromOle1Class, _CLSIDFromOle1Class@12
+implib ole32.dll, CLSIDFromProgID, _CLSIDFromProgID@8
+implib ole32.dll, CLSIDFromProgIDEx, _CLSIDFromProgIDEx@8
+implib ole32.dll, CLSIDFromString, _CLSIDFromString@8
+implib ole32.dll, CStdAsyncStubBuffer2_Connect, _CStdAsyncStubBuffer2_Connect@8
+implib ole32.dll, CStdAsyncStubBuffer2_Disconnect, _CStdAsyncStubBuffer2_Disconnect@4
+implib ole32.dll, CStdAsyncStubBuffer2_Release, _CStdAsyncStubBuffer2_Release@4
+implib ole32.dll, CStdAsyncStubBuffer_AddRef, _CStdAsyncStubBuffer_AddRef@4
+implib ole32.dll, CStdAsyncStubBuffer_Connect, _CStdAsyncStubBuffer_Connect@8
+implib ole32.dll, CStdAsyncStubBuffer_Disconnect, _CStdAsyncStubBuffer_Disconnect@4
+implib ole32.dll, CStdAsyncStubBuffer_Invoke, _CStdAsyncStubBuffer_Invoke@12
+implib ole32.dll, CStdAsyncStubBuffer_QueryInterface, _CStdAsyncStubBuffer_QueryInterface@12
+implib ole32.dll, CStdAsyncStubBuffer_Release, _CStdAsyncStubBuffer_Release@4
+implib ole32.dll, CStdStubBuffer2_Connect, _CStdStubBuffer2_Connect@8
+implib ole32.dll, CStdStubBuffer2_CountRefs, _CStdStubBuffer2_CountRefs@4
+implib ole32.dll, CStdStubBuffer2_Disconnect, _CStdStubBuffer2_Disconnect@4
+implib ole32.dll, CStdStubBuffer2_QueryInterface, _CStdStubBuffer2_QueryInterface@12
+implib ole32.dll, CheckInitDde, _CheckInitDde@4
+implib ole32.dll, CleanROTForApartment, _CleanROTForApartment@0
+implib ole32.dll, ClearQITableEntry, _ClearQITableEntry@4
+implib ole32.dll, ClipboardProcessUninitialize, _ClipboardProcessUninitialize@0
+implib ole32.dll, CoAddRefServerProcess, _CoAddRefServerProcess@0
+implib ole32.dll, CoAicGetTokenForCOM, _CoAicGetTokenForCOM@48
+implib ole32.dll, CoAllowSetForegroundWindow, _CoAllowSetForegroundWindow@8
+implib ole32.dll, CoAllowUnmarshalerCLSID, _CoAllowUnmarshalerCLSID@4
+implib ole32.dll, CoBuildVersion, _CoBuildVersion@0
+implib ole32.dll, CoCancelCall, _CoCancelCall@8
+implib ole32.dll, CoCheckElevationEnabled, _CoCheckElevationEnabled@4
+implib ole32.dll, CoCopyProxy, _CoCopyProxy@8
+implib ole32.dll, CoCreateFreeThreadedMarshaler, _CoCreateFreeThreadedMarshaler@8
+implib ole32.dll, CoCreateGuid, _CoCreateGuid@4
+implib ole32.dll, CoCreateInstance, _CoCreateInstance@20
+implib ole32.dll, CoCreateInstanceEx, _CoCreateInstanceEx@24
+implib ole32.dll, CoCreateInstanceFromApp, _CoCreateInstanceFromApp@24
+implib ole32.dll, CoCreateObjectInContext, _CoCreateObjectInContext@16
+implib ole32.dll, CoDeactivateObject, _CoDeactivateObject@8
+implib ole32.dll, CoDecodeProxy, _CoDecodeProxy@12
+implib ole32.dll, CoDecrementMTAUsage, _CoDecrementMTAUsage@4
+implib ole32.dll, CoDisableCallCancellation, _CoDisableCallCancellation@4
+implib ole32.dll, CoDisconnectContext, _CoDisconnectContext@4
+implib ole32.dll, CoDisconnectObject, _CoDisconnectObject@8
+implib ole32.dll, CoDosDateTimeToFileTime, _CoDosDateTimeToFileTime@12
+implib ole32.dll, CoEnableCallCancellation, _CoEnableCallCancellation@4
+implib ole32.dll, CoFileTimeNow, _CoFileTimeNow@4
+implib ole32.dll, CoFileTimeToDosDateTime, _CoFileTimeToDosDateTime@12
+implib ole32.dll, CoFreeAllLibraries, _CoFreeAllLibraries@0
+implib ole32.dll, CoFreeLibrary, _CoFreeLibrary@4
+implib ole32.dll, CoFreeUnusedLibraries, _CoFreeUnusedLibraries@0
+implib ole32.dll, CoFreeUnusedLibrariesEx, _CoFreeUnusedLibrariesEx@8
+implib ole32.dll, CoGetActivationState, _CoGetActivationState@24
+implib ole32.dll, CoGetApartmentID, _CoGetApartmentID@8
+implib ole32.dll, CoGetApartmentType, _CoGetApartmentType@8
+implib ole32.dll, CoGetCallContext, _CoGetCallContext@8
+implib ole32.dll, CoGetCallState, _CoGetCallState@8
+implib ole32.dll, CoGetCallerTID, _CoGetCallerTID@4
+implib ole32.dll, CoGetCancelObject, _CoGetCancelObject@12
+implib ole32.dll, CoGetClassObject, _CoGetClassObject@20
+implib ole32.dll, CoGetClassVersion, _CoGetClassVersion@12
+implib ole32.dll, CoGetComCatalog, _CoGetComCatalog@8
+implib ole32.dll, CoGetContextToken, _CoGetContextToken@4
+implib ole32.dll, CoGetCurrentLogicalThreadId, _CoGetCurrentLogicalThreadId@4
+implib ole32.dll, CoGetCurrentProcess, _CoGetCurrentProcess@0
+implib ole32.dll, CoGetDefaultContext, _CoGetDefaultContext@12
+implib ole32.dll, CoGetInstanceFromFile, _CoGetInstanceFromFile@32
+implib ole32.dll, CoGetInstanceFromIStorage, _CoGetInstanceFromIStorage@28
+implib ole32.dll, CoGetInterceptor, _CoGetInterceptor@16
+implib ole32.dll, CoGetInterceptorForOle32, _CoGetInterceptorForOle32@16
+implib ole32.dll, CoGetInterceptorFromTypeInfo, _CoGetInterceptorFromTypeInfo@20
+implib ole32.dll, CoGetInterfaceAndReleaseStream, _CoGetInterfaceAndReleaseStream@12
+implib ole32.dll, CoGetMalloc, _CoGetMalloc@8
+implib ole32.dll, CoGetMarshalSizeMax, _CoGetMarshalSizeMax@24
+implib ole32.dll, CoGetModuleType, _CoGetModuleType@8
+implib ole32.dll, CoGetObject, _CoGetObject@16
+implib ole32.dll, CoGetObjectContext, _CoGetObjectContext@8
+implib ole32.dll, CoGetPSClsid, _CoGetPSClsid@8
+implib ole32.dll, CoGetProcessIdentifier, _CoGetProcessIdentifier@4
+implib ole32.dll, CoGetStandardMarshal, _CoGetStandardMarshal@24
+implib ole32.dll, CoGetState, _CoGetState@4
+implib ole32.dll, CoGetStdMarshalEx, _CoGetStdMarshalEx@12
+implib ole32.dll, CoGetSystemSecurityPermissions, _CoGetSystemSecurityPermissions@8
+implib ole32.dll, CoGetSystemWow64DirectoryW, _CoGetSystemWow64DirectoryW@8
+implib ole32.dll, CoGetTreatAsClass, _CoGetTreatAsClass@8
 implib ole32.dll, CoHandlePriorityEventsFromMessagePump
-implib ole32.dll, CoImpersonateClient, _CoImpersonateClient@0, __imp__CoImpersonateClient@0
-implib ole32.dll, CoIncrementMTAUsage, _CoIncrementMTAUsage@4, __imp__CoIncrementMTAUsage@4
-implib ole32.dll, CoInitialize, _CoInitialize@4, __imp__CoInitialize@4
-implib ole32.dll, CoInitializeEx, _CoInitializeEx@8, __imp__CoInitializeEx@8
-implib ole32.dll, CoInitializeSecurity, _CoInitializeSecurity@36, __imp__CoInitializeSecurity@36
-implib ole32.dll, CoInitializeWOW, _CoInitializeWOW@8, __imp__CoInitializeWOW@8
-implib ole32.dll, CoInstall, _CoInstall@20, __imp__CoInstall@20
-implib ole32.dll, CoInvalidateRemoteMachineBindings, _CoInvalidateRemoteMachineBindings@4, __imp__CoInvalidateRemoteMachineBindings@4
-implib ole32.dll, CoIsHandlerConnected, _CoIsHandlerConnected@4, __imp__CoIsHandlerConnected@4
-implib ole32.dll, CoIsOle1Class, _CoIsOle1Class@4, __imp__CoIsOle1Class@4
-implib ole32.dll, CoLoadLibrary, _CoLoadLibrary@8, __imp__CoLoadLibrary@8
-implib ole32.dll, CoLockObjectExternal, _CoLockObjectExternal@12, __imp__CoLockObjectExternal@12
-implib ole32.dll, CoMarshalHresult, _CoMarshalHresult@8, __imp__CoMarshalHresult@8
-implib ole32.dll, CoMarshalInterThreadInterfaceInStream, _CoMarshalInterThreadInterfaceInStream@12, __imp__CoMarshalInterThreadInterfaceInStream@12
-implib ole32.dll, CoMarshalInterface, _CoMarshalInterface@24, __imp__CoMarshalInterface@24
-implib ole32.dll, CoPopServiceDomain, _CoPopServiceDomain@4, __imp__CoPopServiceDomain@4
-implib ole32.dll, CoPushServiceDomain, _CoPushServiceDomain@4, __imp__CoPushServiceDomain@4
-implib ole32.dll, CoQueryAuthenticationServices, _CoQueryAuthenticationServices@8, __imp__CoQueryAuthenticationServices@8
-implib ole32.dll, CoQueryClientBlanket, _CoQueryClientBlanket@28, __imp__CoQueryClientBlanket@28
-implib ole32.dll, CoQueryProxyBlanket, _CoQueryProxyBlanket@32, __imp__CoQueryProxyBlanket@32
-implib ole32.dll, CoQueryReleaseObject, _CoQueryReleaseObject@4, __imp__CoQueryReleaseObject@4
-implib ole32.dll, CoReactivateObject, _CoReactivateObject@8, __imp__CoReactivateObject@8
-implib ole32.dll, CoRegisterActivationFilter, _CoRegisterActivationFilter@4, __imp__CoRegisterActivationFilter@4
-implib ole32.dll, CoRegisterChannelHook, _CoRegisterChannelHook@8, __imp__CoRegisterChannelHook@8
-implib ole32.dll, CoRegisterClassObject, _CoRegisterClassObject@20, __imp__CoRegisterClassObject@20
-implib ole32.dll, CoRegisterInitializeSpy, _CoRegisterInitializeSpy@8, __imp__CoRegisterInitializeSpy@8
-implib ole32.dll, CoRegisterMallocSpy, _CoRegisterMallocSpy@4, __imp__CoRegisterMallocSpy@4
-implib ole32.dll, CoRegisterMessageFilter, _CoRegisterMessageFilter@8, __imp__CoRegisterMessageFilter@8
-implib ole32.dll, CoRegisterPSClsid, _CoRegisterPSClsid@8, __imp__CoRegisterPSClsid@8
-implib ole32.dll, CoRegisterSurrogate, _CoRegisterSurrogate@4, __imp__CoRegisterSurrogate@4
-implib ole32.dll, CoRegisterSurrogateEx, _CoRegisterSurrogateEx@8, __imp__CoRegisterSurrogateEx@8
-implib ole32.dll, CoReleaseMarshalData, _CoReleaseMarshalData@4, __imp__CoReleaseMarshalData@4
-implib ole32.dll, CoReleaseServerProcess, _CoReleaseServerProcess@0, __imp__CoReleaseServerProcess@0
-implib ole32.dll, CoResumeClassObjects, _CoResumeClassObjects@0, __imp__CoResumeClassObjects@0
-implib ole32.dll, CoRetireServer, _CoRetireServer@4, __imp__CoRetireServer@4
-implib ole32.dll, CoRevertToSelf, _CoRevertToSelf@0, __imp__CoRevertToSelf@0
-implib ole32.dll, CoRevokeClassObject, _CoRevokeClassObject@4, __imp__CoRevokeClassObject@4
-implib ole32.dll, CoRevokeInitializeSpy, _CoRevokeInitializeSpy@8, __imp__CoRevokeInitializeSpy@8
-implib ole32.dll, CoRevokeMallocSpy, _CoRevokeMallocSpy@0, __imp__CoRevokeMallocSpy@0
-implib ole32.dll, CoSetCancelObject, _CoSetCancelObject@4, __imp__CoSetCancelObject@4
+implib ole32.dll, CoImpersonateClient, _CoImpersonateClient@0
+implib ole32.dll, CoIncrementMTAUsage, _CoIncrementMTAUsage@4
+implib ole32.dll, CoInitialize, _CoInitialize@4
+implib ole32.dll, CoInitializeEx, _CoInitializeEx@8
+implib ole32.dll, CoInitializeSecurity, _CoInitializeSecurity@36
+implib ole32.dll, CoInitializeWOW, _CoInitializeWOW@8
+implib ole32.dll, CoInstall, _CoInstall@20
+implib ole32.dll, CoInvalidateRemoteMachineBindings, _CoInvalidateRemoteMachineBindings@4
+implib ole32.dll, CoIsHandlerConnected, _CoIsHandlerConnected@4
+implib ole32.dll, CoIsOle1Class, _CoIsOle1Class@4
+implib ole32.dll, CoLoadLibrary, _CoLoadLibrary@8
+implib ole32.dll, CoLockObjectExternal, _CoLockObjectExternal@12
+implib ole32.dll, CoMarshalHresult, _CoMarshalHresult@8
+implib ole32.dll, CoMarshalInterThreadInterfaceInStream, _CoMarshalInterThreadInterfaceInStream@12
+implib ole32.dll, CoMarshalInterface, _CoMarshalInterface@24
+implib ole32.dll, CoPopServiceDomain, _CoPopServiceDomain@4
+implib ole32.dll, CoPushServiceDomain, _CoPushServiceDomain@4
+implib ole32.dll, CoQueryAuthenticationServices, _CoQueryAuthenticationServices@8
+implib ole32.dll, CoQueryClientBlanket, _CoQueryClientBlanket@28
+implib ole32.dll, CoQueryProxyBlanket, _CoQueryProxyBlanket@32
+implib ole32.dll, CoQueryReleaseObject, _CoQueryReleaseObject@4
+implib ole32.dll, CoReactivateObject, _CoReactivateObject@8
+implib ole32.dll, CoRegisterActivationFilter, _CoRegisterActivationFilter@4
+implib ole32.dll, CoRegisterChannelHook, _CoRegisterChannelHook@8
+implib ole32.dll, CoRegisterClassObject, _CoRegisterClassObject@20
+implib ole32.dll, CoRegisterInitializeSpy, _CoRegisterInitializeSpy@8
+implib ole32.dll, CoRegisterMallocSpy, _CoRegisterMallocSpy@4
+implib ole32.dll, CoRegisterMessageFilter, _CoRegisterMessageFilter@8
+implib ole32.dll, CoRegisterPSClsid, _CoRegisterPSClsid@8
+implib ole32.dll, CoRegisterSurrogate, _CoRegisterSurrogate@4
+implib ole32.dll, CoRegisterSurrogateEx, _CoRegisterSurrogateEx@8
+implib ole32.dll, CoReleaseMarshalData, _CoReleaseMarshalData@4
+implib ole32.dll, CoReleaseServerProcess, _CoReleaseServerProcess@0
+implib ole32.dll, CoResumeClassObjects, _CoResumeClassObjects@0
+implib ole32.dll, CoRetireServer, _CoRetireServer@4
+implib ole32.dll, CoRevertToSelf, _CoRevertToSelf@0
+implib ole32.dll, CoRevokeClassObject, _CoRevokeClassObject@4
+implib ole32.dll, CoRevokeInitializeSpy, _CoRevokeInitializeSpy@8
+implib ole32.dll, CoRevokeMallocSpy, _CoRevokeMallocSpy@0
+implib ole32.dll, CoSetCancelObject, _CoSetCancelObject@4
 implib ole32.dll, CoSetMessageDispatcher
-implib ole32.dll, CoSetProxyBlanket, _CoSetProxyBlanket@32, __imp__CoSetProxyBlanket@32
-implib ole32.dll, CoSetState, _CoSetState@4, __imp__CoSetState@4
-implib ole32.dll, CoSuspendClassObjects, _CoSuspendClassObjects@0, __imp__CoSuspendClassObjects@0
-implib ole32.dll, CoSwitchCallContext, _CoSwitchCallContext@8, __imp__CoSwitchCallContext@8
-implib ole32.dll, CoTaskMemAlloc, _CoTaskMemAlloc@4, __imp__CoTaskMemAlloc@4
-implib ole32.dll, CoTaskMemFree, _CoTaskMemFree@4, __imp__CoTaskMemFree@4
-implib ole32.dll, CoTaskMemRealloc, _CoTaskMemRealloc@8, __imp__CoTaskMemRealloc@8
-implib ole32.dll, CoTestCancel, _CoTestCancel@0, __imp__CoTestCancel@0
-implib ole32.dll, CoTreatAsClass, _CoTreatAsClass@8, __imp__CoTreatAsClass@8
-implib ole32.dll, CoUninitialize, _CoUninitialize@0, __imp__CoUninitialize@0
-implib ole32.dll, CoUnloadingWOW, _CoUnloadingWOW@4, __imp__CoUnloadingWOW@4
-implib ole32.dll, CoUnmarshalHresult, _CoUnmarshalHresult@8, __imp__CoUnmarshalHresult@8
-implib ole32.dll, CoUnmarshalInterface, _CoUnmarshalInterface@12, __imp__CoUnmarshalInterface@12
-implib ole32.dll, CoVrfCheckThreadState, _CoVrfCheckThreadState@4, __imp__CoVrfCheckThreadState@4
-implib ole32.dll, CoVrfGetThreadState, _CoVrfGetThreadState@4, __imp__CoVrfGetThreadState@4
-implib ole32.dll, CoVrfReleaseThreadState, _CoVrfReleaseThreadState@4, __imp__CoVrfReleaseThreadState@4
-implib ole32.dll, CoWaitForMultipleHandles, _CoWaitForMultipleHandles@20, __imp__CoWaitForMultipleHandles@20
-implib ole32.dll, CoWaitForMultipleObjects, _CoWaitForMultipleObjects@20, __imp__CoWaitForMultipleObjects@20
-implib ole32.dll, ComPs_CStdStubBuffer_AddRef, _ComPs_CStdStubBuffer_AddRef@4, __imp__ComPs_CStdStubBuffer_AddRef@4
-implib ole32.dll, ComPs_CStdStubBuffer_Connect, _ComPs_CStdStubBuffer_Connect@8, __imp__ComPs_CStdStubBuffer_Connect@8
-implib ole32.dll, ComPs_CStdStubBuffer_CountRefs, _ComPs_CStdStubBuffer_CountRefs@4, __imp__ComPs_CStdStubBuffer_CountRefs@4
-implib ole32.dll, ComPs_CStdStubBuffer_DebugServerQueryInterface, _ComPs_CStdStubBuffer_DebugServerQueryInterface@8, __imp__ComPs_CStdStubBuffer_DebugServerQueryInterface@8
-implib ole32.dll, ComPs_CStdStubBuffer_DebugServerRelease, _ComPs_CStdStubBuffer_DebugServerRelease@8, __imp__ComPs_CStdStubBuffer_DebugServerRelease@8
-implib ole32.dll, ComPs_CStdStubBuffer_Disconnect, _ComPs_CStdStubBuffer_Disconnect@4, __imp__ComPs_CStdStubBuffer_Disconnect@4
-implib ole32.dll, ComPs_CStdStubBuffer_Invoke, _ComPs_CStdStubBuffer_Invoke@12, __imp__ComPs_CStdStubBuffer_Invoke@12
-implib ole32.dll, ComPs_CStdStubBuffer_IsIIDSupported, _ComPs_CStdStubBuffer_IsIIDSupported@8, __imp__ComPs_CStdStubBuffer_IsIIDSupported@8
-implib ole32.dll, ComPs_CStdStubBuffer_QueryInterface, _ComPs_CStdStubBuffer_QueryInterface@12, __imp__ComPs_CStdStubBuffer_QueryInterface@12
-implib ole32.dll, ComPs_IUnknown_AddRef_Proxy, _ComPs_IUnknown_AddRef_Proxy@4, __imp__ComPs_IUnknown_AddRef_Proxy@4
-implib ole32.dll, ComPs_IUnknown_QueryInterface_Proxy, _ComPs_IUnknown_QueryInterface_Proxy@12, __imp__ComPs_IUnknown_QueryInterface_Proxy@12
-implib ole32.dll, ComPs_IUnknown_Release_Proxy, _ComPs_IUnknown_Release_Proxy@4, __imp__ComPs_IUnknown_Release_Proxy@4
-implib ole32.dll, ComPs_NdrCStdStubBuffer2_Release, _ComPs_NdrCStdStubBuffer2_Release@8, __imp__ComPs_NdrCStdStubBuffer2_Release@8
-implib ole32.dll, ComPs_NdrCStdStubBuffer_Release, _ComPs_NdrCStdStubBuffer_Release@8, __imp__ComPs_NdrCStdStubBuffer_Release@8
+implib ole32.dll, CoSetProxyBlanket, _CoSetProxyBlanket@32
+implib ole32.dll, CoSetState, _CoSetState@4
+implib ole32.dll, CoSuspendClassObjects, _CoSuspendClassObjects@0
+implib ole32.dll, CoSwitchCallContext, _CoSwitchCallContext@8
+implib ole32.dll, CoTaskMemAlloc, _CoTaskMemAlloc@4
+implib ole32.dll, CoTaskMemFree, _CoTaskMemFree@4
+implib ole32.dll, CoTaskMemRealloc, _CoTaskMemRealloc@8
+implib ole32.dll, CoTestCancel, _CoTestCancel@0
+implib ole32.dll, CoTreatAsClass, _CoTreatAsClass@8
+implib ole32.dll, CoUninitialize, _CoUninitialize@0
+implib ole32.dll, CoUnloadingWOW, _CoUnloadingWOW@4
+implib ole32.dll, CoUnmarshalHresult, _CoUnmarshalHresult@8
+implib ole32.dll, CoUnmarshalInterface, _CoUnmarshalInterface@12
+implib ole32.dll, CoVrfCheckThreadState, _CoVrfCheckThreadState@4
+implib ole32.dll, CoVrfGetThreadState, _CoVrfGetThreadState@4
+implib ole32.dll, CoVrfReleaseThreadState, _CoVrfReleaseThreadState@4
+implib ole32.dll, CoWaitForMultipleHandles, _CoWaitForMultipleHandles@20
+implib ole32.dll, CoWaitForMultipleObjects, _CoWaitForMultipleObjects@20
+implib ole32.dll, ComPs_CStdStubBuffer_AddRef, _ComPs_CStdStubBuffer_AddRef@4
+implib ole32.dll, ComPs_CStdStubBuffer_Connect, _ComPs_CStdStubBuffer_Connect@8
+implib ole32.dll, ComPs_CStdStubBuffer_CountRefs, _ComPs_CStdStubBuffer_CountRefs@4
+implib ole32.dll, ComPs_CStdStubBuffer_DebugServerQueryInterface, _ComPs_CStdStubBuffer_DebugServerQueryInterface@8
+implib ole32.dll, ComPs_CStdStubBuffer_DebugServerRelease, _ComPs_CStdStubBuffer_DebugServerRelease@8
+implib ole32.dll, ComPs_CStdStubBuffer_Disconnect, _ComPs_CStdStubBuffer_Disconnect@4
+implib ole32.dll, ComPs_CStdStubBuffer_Invoke, _ComPs_CStdStubBuffer_Invoke@12
+implib ole32.dll, ComPs_CStdStubBuffer_IsIIDSupported, _ComPs_CStdStubBuffer_IsIIDSupported@8
+implib ole32.dll, ComPs_CStdStubBuffer_QueryInterface, _ComPs_CStdStubBuffer_QueryInterface@12
+implib ole32.dll, ComPs_IUnknown_AddRef_Proxy, _ComPs_IUnknown_AddRef_Proxy@4
+implib ole32.dll, ComPs_IUnknown_QueryInterface_Proxy, _ComPs_IUnknown_QueryInterface_Proxy@12
+implib ole32.dll, ComPs_IUnknown_Release_Proxy, _ComPs_IUnknown_Release_Proxy@4
+implib ole32.dll, ComPs_NdrCStdStubBuffer2_Release, _ComPs_NdrCStdStubBuffer2_Release@8
+implib ole32.dll, ComPs_NdrCStdStubBuffer_Release, _ComPs_NdrCStdStubBuffer_Release@8
 implib ole32.dll, ComPs_NdrClientCall2, _ComPs_NdrClientCall2
-implib ole32.dll, ComPs_NdrClientCall2_va, _ComPs_NdrClientCall2_va@12, __imp__ComPs_NdrClientCall2_va@12
-implib ole32.dll, ComPs_NdrDllCanUnloadNow, _ComPs_NdrDllCanUnloadNow@4, __imp__ComPs_NdrDllCanUnloadNow@4
-implib ole32.dll, ComPs_NdrDllGetClassObject, _ComPs_NdrDllGetClassObject@24, __imp__ComPs_NdrDllGetClassObject@24
-implib ole32.dll, ComPs_NdrDllRegisterProxy, _ComPs_NdrDllRegisterProxy@20, __imp__ComPs_NdrDllRegisterProxy@20
-implib ole32.dll, ComPs_NdrDllUnregisterProxy, _ComPs_NdrDllUnregisterProxy@20, __imp__ComPs_NdrDllUnregisterProxy@20
-implib ole32.dll, ComPs_NdrStubCall2, _ComPs_NdrStubCall2@16, __imp__ComPs_NdrStubCall2@16
-implib ole32.dll, ComPs_NdrStubForwardingFunction, _ComPs_NdrStubForwardingFunction@16, __imp__ComPs_NdrStubForwardingFunction@16
-implib ole32.dll, CreateAntiMoniker, _CreateAntiMoniker@4, __imp__CreateAntiMoniker@4
-implib ole32.dll, CreateBindCtx, _CreateBindCtx@8, __imp__CreateBindCtx@8
-implib ole32.dll, CreateClassMoniker, _CreateClassMoniker@8, __imp__CreateClassMoniker@8
-implib ole32.dll, CreateDataAdviseHolder, _CreateDataAdviseHolder@4, __imp__CreateDataAdviseHolder@4
-implib ole32.dll, CreateDataCache, _CreateDataCache@16, __imp__CreateDataCache@16
-implib ole32.dll, CreateErrorInfo, _CreateErrorInfo@4, __imp__CreateErrorInfo@4
-implib ole32.dll, CreateFileMoniker, _CreateFileMoniker@8, __imp__CreateFileMoniker@8
-implib ole32.dll, CreateGenericComposite, _CreateGenericComposite@12, __imp__CreateGenericComposite@12
-implib ole32.dll, CreateILockBytesOnHGlobal, _CreateILockBytesOnHGlobal@12, __imp__CreateILockBytesOnHGlobal@12
-implib ole32.dll, CreateItemMoniker, _CreateItemMoniker@12, __imp__CreateItemMoniker@12
-implib ole32.dll, CreateObjrefMoniker, _CreateObjrefMoniker@8, __imp__CreateObjrefMoniker@8
-implib ole32.dll, CreateOleAdviseHolder, _CreateOleAdviseHolder@4, __imp__CreateOleAdviseHolder@4
-implib ole32.dll, CreatePointerMoniker, _CreatePointerMoniker@8, __imp__CreatePointerMoniker@8
-implib ole32.dll, CreateStdProgressIndicator, _CreateStdProgressIndicator@16, __imp__CreateStdProgressIndicator@16
-implib ole32.dll, CreateStreamOnHGlobal, _CreateStreamOnHGlobal@12, __imp__CreateStreamOnHGlobal@12
-implib ole32.dll, DcomChannelSetHResult, _DcomChannelSetHResult@12, __imp__DcomChannelSetHResult@12
-implib ole32.dll, DdeBindToObject, _DdeBindToObject@20, __imp__DdeBindToObject@20
-implib ole32.dll, DeletePatternAndExtensionTables, _DeletePatternAndExtensionTables@0, __imp__DeletePatternAndExtensionTables@0
-implib ole32.dll, DestroyRunningObjectTable, _DestroyRunningObjectTable@0, __imp__DestroyRunningObjectTable@0
-implib ole32.dll, DllDebugObjectRPCHook, _DllDebugObjectRPCHook@8, __imp__DllDebugObjectRPCHook@8
-implib ole32.dll, DllGetClassObject, _DllGetClassObject@12, __imp__DllGetClassObject@12
-implib ole32.dll, DllGetClassObjectWOW, _DllGetClassObjectWOW@12, __imp__DllGetClassObjectWOW@12
-implib ole32.dll, DllRegisterServer, _DllRegisterServer@0, __imp__DllRegisterServer@0
-implib ole32.dll, DoDragDrop, _DoDragDrop@16, __imp__DoDragDrop@16
-implib ole32.dll, DragDropSetFDT, _DragDropSetFDT@4, __imp__DragDropSetFDT@4
-implib ole32.dll, EnableHookObject, _EnableHookObject@8, __imp__EnableHookObject@8
-implib ole32.dll, FindExt, _FindExt@4, __imp__FindExt@4
-implib ole32.dll, FmtIdToPropStgName, _FmtIdToPropStgName@8, __imp__FmtIdToPropStgName@8
-implib ole32.dll, FreePropVariantArray, _FreePropVariantArray@8, __imp__FreePropVariantArray@8
-implib ole32.dll, GetActiveObjectExt, _GetActiveObjectExt@12, __imp__GetActiveObjectExt@12
-implib ole32.dll, GetClassFile, _GetClassFile@8, __imp__GetClassFile@8
-implib ole32.dll, GetConvertStg, _GetConvertStg@4, __imp__GetConvertStg@4
-implib ole32.dll, GetDocumentBitStg, _GetDocumentBitStg@4, __imp__GetDocumentBitStg@4
-implib ole32.dll, GetErrorInfo, _GetErrorInfo@8, __imp__GetErrorInfo@8
-implib ole32.dll, GetHGlobalFromILockBytes, _GetHGlobalFromILockBytes@8, __imp__GetHGlobalFromILockBytes@8
-implib ole32.dll, GetHGlobalFromStream, _GetHGlobalFromStream@8, __imp__GetHGlobalFromStream@8
-implib ole32.dll, GetHookInterface, _GetHookInterface@4, __imp__GetHookInterface@4
-implib ole32.dll, GetObjectFromRotByPath, _GetObjectFromRotByPath@8, __imp__GetObjectFromRotByPath@8
-implib ole32.dll, GetRunningObjectTable, _GetRunningObjectTable@8, __imp__GetRunningObjectTable@8
-implib ole32.dll, HACCEL_UserFree, _HACCEL_UserFree@8, __imp__HACCEL_UserFree@8
-implib ole32.dll, HACCEL_UserMarshal, _HACCEL_UserMarshal@12, __imp__HACCEL_UserMarshal@12
-implib ole32.dll, HACCEL_UserSize, _HACCEL_UserSize@12, __imp__HACCEL_UserSize@12
-implib ole32.dll, HACCEL_UserUnmarshal, _HACCEL_UserUnmarshal@12, __imp__HACCEL_UserUnmarshal@12
-implib ole32.dll, HBITMAP_UserFree, _HBITMAP_UserFree@8, __imp__HBITMAP_UserFree@8
-implib ole32.dll, HBITMAP_UserMarshal, _HBITMAP_UserMarshal@12, __imp__HBITMAP_UserMarshal@12
-implib ole32.dll, HBITMAP_UserSize, _HBITMAP_UserSize@12, __imp__HBITMAP_UserSize@12
-implib ole32.dll, HBITMAP_UserUnmarshal, _HBITMAP_UserUnmarshal@12, __imp__HBITMAP_UserUnmarshal@12
-implib ole32.dll, HBRUSH_UserFree, _HBRUSH_UserFree@8, __imp__HBRUSH_UserFree@8
-implib ole32.dll, HBRUSH_UserMarshal, _HBRUSH_UserMarshal@12, __imp__HBRUSH_UserMarshal@12
-implib ole32.dll, HBRUSH_UserSize, _HBRUSH_UserSize@12, __imp__HBRUSH_UserSize@12
-implib ole32.dll, HBRUSH_UserUnmarshal, _HBRUSH_UserUnmarshal@12, __imp__HBRUSH_UserUnmarshal@12
-implib ole32.dll, HDC_UserFree, _HDC_UserFree@8, __imp__HDC_UserFree@8
-implib ole32.dll, HDC_UserMarshal, _HDC_UserMarshal@12, __imp__HDC_UserMarshal@12
-implib ole32.dll, HDC_UserSize, _HDC_UserSize@12, __imp__HDC_UserSize@12
-implib ole32.dll, HDC_UserUnmarshal, _HDC_UserUnmarshal@12, __imp__HDC_UserUnmarshal@12
-implib ole32.dll, HENHMETAFILE_UserFree, _HENHMETAFILE_UserFree@8, __imp__HENHMETAFILE_UserFree@8
-implib ole32.dll, HENHMETAFILE_UserMarshal, _HENHMETAFILE_UserMarshal@12, __imp__HENHMETAFILE_UserMarshal@12
-implib ole32.dll, HENHMETAFILE_UserSize, _HENHMETAFILE_UserSize@12, __imp__HENHMETAFILE_UserSize@12
-implib ole32.dll, HENHMETAFILE_UserUnmarshal, _HENHMETAFILE_UserUnmarshal@12, __imp__HENHMETAFILE_UserUnmarshal@12
-implib ole32.dll, HGLOBAL_UserFree, _HGLOBAL_UserFree@8, __imp__HGLOBAL_UserFree@8
-implib ole32.dll, HGLOBAL_UserMarshal, _HGLOBAL_UserMarshal@12, __imp__HGLOBAL_UserMarshal@12
-implib ole32.dll, HGLOBAL_UserSize, _HGLOBAL_UserSize@12, __imp__HGLOBAL_UserSize@12
-implib ole32.dll, HGLOBAL_UserUnmarshal, _HGLOBAL_UserUnmarshal@12, __imp__HGLOBAL_UserUnmarshal@12
-implib ole32.dll, HICON_UserFree, _HICON_UserFree@8, __imp__HICON_UserFree@8
-implib ole32.dll, HICON_UserMarshal, _HICON_UserMarshal@12, __imp__HICON_UserMarshal@12
-implib ole32.dll, HICON_UserSize, _HICON_UserSize@12, __imp__HICON_UserSize@12
-implib ole32.dll, HICON_UserUnmarshal, _HICON_UserUnmarshal@12, __imp__HICON_UserUnmarshal@12
-implib ole32.dll, HMENU_UserFree, _HMENU_UserFree@8, __imp__HMENU_UserFree@8
-implib ole32.dll, HMENU_UserMarshal, _HMENU_UserMarshal@12, __imp__HMENU_UserMarshal@12
-implib ole32.dll, HMENU_UserSize, _HMENU_UserSize@12, __imp__HMENU_UserSize@12
-implib ole32.dll, HMENU_UserUnmarshal, _HMENU_UserUnmarshal@12, __imp__HMENU_UserUnmarshal@12
-implib ole32.dll, HMETAFILEPICT_UserFree, _HMETAFILEPICT_UserFree@8, __imp__HMETAFILEPICT_UserFree@8
-implib ole32.dll, HMETAFILEPICT_UserMarshal, _HMETAFILEPICT_UserMarshal@12, __imp__HMETAFILEPICT_UserMarshal@12
-implib ole32.dll, HMETAFILEPICT_UserSize, _HMETAFILEPICT_UserSize@12, __imp__HMETAFILEPICT_UserSize@12
-implib ole32.dll, HMETAFILEPICT_UserUnmarshal, _HMETAFILEPICT_UserUnmarshal@12, __imp__HMETAFILEPICT_UserUnmarshal@12
-implib ole32.dll, HMETAFILE_UserFree, _HMETAFILE_UserFree@8, __imp__HMETAFILE_UserFree@8
-implib ole32.dll, HMETAFILE_UserMarshal, _HMETAFILE_UserMarshal@12, __imp__HMETAFILE_UserMarshal@12
-implib ole32.dll, HMETAFILE_UserSize, _HMETAFILE_UserSize@12, __imp__HMETAFILE_UserSize@12
-implib ole32.dll, HMETAFILE_UserUnmarshal, _HMETAFILE_UserUnmarshal@12, __imp__HMETAFILE_UserUnmarshal@12
-implib ole32.dll, HMONITOR_UserFree, _HMONITOR_UserFree@8, __imp__HMONITOR_UserFree@8
-implib ole32.dll, HMONITOR_UserMarshal, _HMONITOR_UserMarshal@12, __imp__HMONITOR_UserMarshal@12
-implib ole32.dll, HMONITOR_UserSize, _HMONITOR_UserSize@12, __imp__HMONITOR_UserSize@12
-implib ole32.dll, HMONITOR_UserUnmarshal, _HMONITOR_UserUnmarshal@12, __imp__HMONITOR_UserUnmarshal@12
-implib ole32.dll, HPALETTE_UserFree, _HPALETTE_UserFree@8, __imp__HPALETTE_UserFree@8
-implib ole32.dll, HPALETTE_UserFreeExt, _HPALETTE_UserFreeExt@8, __imp__HPALETTE_UserFreeExt@8
-implib ole32.dll, HPALETTE_UserMarshal, _HPALETTE_UserMarshal@12, __imp__HPALETTE_UserMarshal@12
-implib ole32.dll, HPALETTE_UserMarshalExt, _HPALETTE_UserMarshalExt@12, __imp__HPALETTE_UserMarshalExt@12
-implib ole32.dll, HPALETTE_UserSize, _HPALETTE_UserSize@12, __imp__HPALETTE_UserSize@12
-implib ole32.dll, HPALETTE_UserSizeExt, _HPALETTE_UserSizeExt@12, __imp__HPALETTE_UserSizeExt@12
-implib ole32.dll, HPALETTE_UserUnmarshal, _HPALETTE_UserUnmarshal@12, __imp__HPALETTE_UserUnmarshal@12
-implib ole32.dll, HPALETTE_UserUnmarshalExt, _HPALETTE_UserUnmarshalExt@12, __imp__HPALETTE_UserUnmarshalExt@12
-implib ole32.dll, HRGN_UserFree, _HRGN_UserFree@8, __imp__HRGN_UserFree@8
-implib ole32.dll, HRGN_UserMarshal, _HRGN_UserMarshal@12, __imp__HRGN_UserMarshal@12
-implib ole32.dll, HRGN_UserSize, _HRGN_UserSize@12, __imp__HRGN_UserSize@12
-implib ole32.dll, HRGN_UserUnmarshal, _HRGN_UserUnmarshal@12, __imp__HRGN_UserUnmarshal@12
-implib ole32.dll, HWND_UserFree, _HWND_UserFree@8, __imp__HWND_UserFree@8
-implib ole32.dll, HWND_UserFreeExt, _HWND_UserFreeExt@8, __imp__HWND_UserFreeExt@8
-implib ole32.dll, HWND_UserMarshal, _HWND_UserMarshal@12, __imp__HWND_UserMarshal@12
-implib ole32.dll, HWND_UserMarshalExt, _HWND_UserMarshalExt@12, __imp__HWND_UserMarshalExt@12
-implib ole32.dll, HWND_UserSize, _HWND_UserSize@12, __imp__HWND_UserSize@12
-implib ole32.dll, HWND_UserSizeExt, _HWND_UserSizeExt@12, __imp__HWND_UserSizeExt@12
-implib ole32.dll, HWND_UserUnmarshal, _HWND_UserUnmarshal@12, __imp__HWND_UserUnmarshal@12
-implib ole32.dll, HWND_UserUnmarshalExt, _HWND_UserUnmarshalExt@12, __imp__HWND_UserUnmarshalExt@12
-implib ole32.dll, HkOleRegisterObject, _HkOleRegisterObject@16, __imp__HkOleRegisterObject@16
-implib ole32.dll, IIDFromString, _IIDFromString@8, __imp__IIDFromString@8
-implib ole32.dll, IsAccelerator, _IsAccelerator@16, __imp__IsAccelerator@16
-implib ole32.dll, IsEqualGUID, _IsEqualGUID@8, __imp__IsEqualGUID@8
-implib ole32.dll, IsRoInitializeASTAAllowedInDesktop, _IsRoInitializeASTAAllowedInDesktop@4, __imp__IsRoInitializeASTAAllowedInDesktop@4
-implib ole32.dll, IsValidIid, _IsValidIid@4, __imp__IsValidIid@4
-implib ole32.dll, IsValidInterface, _IsValidInterface@4, __imp__IsValidInterface@4
-implib ole32.dll, IsValidPtrIn, _IsValidPtrIn@8, __imp__IsValidPtrIn@8
-implib ole32.dll, IsValidPtrOut, _IsValidPtrOut@8, __imp__IsValidPtrOut@8
-implib ole32.dll, MkParseDisplayName, _MkParseDisplayName@16, __imp__MkParseDisplayName@16
-implib ole32.dll, MonikerCommonPrefixWith, _MonikerCommonPrefixWith@12, __imp__MonikerCommonPrefixWith@12
-implib ole32.dll, MonikerLoadTypeLib, _MonikerLoadTypeLib@8, __imp__MonikerLoadTypeLib@8
-implib ole32.dll, MonikerRelativePathTo, _MonikerRelativePathTo@16, __imp__MonikerRelativePathTo@16
-implib ole32.dll, NdrOleInitializeExtension, _NdrOleInitializeExtension@8, __imp__NdrOleInitializeExtension@8
-implib ole32.dll, NdrProxyForwardingFunction10, _NdrProxyForwardingFunction10@0, __imp__NdrProxyForwardingFunction10@0
-implib ole32.dll, NdrProxyForwardingFunction11, _NdrProxyForwardingFunction11@0, __imp__NdrProxyForwardingFunction11@0
-implib ole32.dll, NdrProxyForwardingFunction12, _NdrProxyForwardingFunction12@0, __imp__NdrProxyForwardingFunction12@0
-implib ole32.dll, NdrProxyForwardingFunction13, _NdrProxyForwardingFunction13@0, __imp__NdrProxyForwardingFunction13@0
-implib ole32.dll, NdrProxyForwardingFunction14, _NdrProxyForwardingFunction14@0, __imp__NdrProxyForwardingFunction14@0
-implib ole32.dll, NdrProxyForwardingFunction15, _NdrProxyForwardingFunction15@0, __imp__NdrProxyForwardingFunction15@0
-implib ole32.dll, NdrProxyForwardingFunction16, _NdrProxyForwardingFunction16@0, __imp__NdrProxyForwardingFunction16@0
-implib ole32.dll, NdrProxyForwardingFunction17, _NdrProxyForwardingFunction17@0, __imp__NdrProxyForwardingFunction17@0
-implib ole32.dll, NdrProxyForwardingFunction18, _NdrProxyForwardingFunction18@0, __imp__NdrProxyForwardingFunction18@0
-implib ole32.dll, NdrProxyForwardingFunction19, _NdrProxyForwardingFunction19@0, __imp__NdrProxyForwardingFunction19@0
-implib ole32.dll, NdrProxyForwardingFunction20, _NdrProxyForwardingFunction20@0, __imp__NdrProxyForwardingFunction20@0
-implib ole32.dll, NdrProxyForwardingFunction21, _NdrProxyForwardingFunction21@0, __imp__NdrProxyForwardingFunction21@0
-implib ole32.dll, NdrProxyForwardingFunction22, _NdrProxyForwardingFunction22@0, __imp__NdrProxyForwardingFunction22@0
-implib ole32.dll, NdrProxyForwardingFunction23, _NdrProxyForwardingFunction23@0, __imp__NdrProxyForwardingFunction23@0
-implib ole32.dll, NdrProxyForwardingFunction24, _NdrProxyForwardingFunction24@0, __imp__NdrProxyForwardingFunction24@0
-implib ole32.dll, NdrProxyForwardingFunction25, _NdrProxyForwardingFunction25@0, __imp__NdrProxyForwardingFunction25@0
-implib ole32.dll, NdrProxyForwardingFunction26, _NdrProxyForwardingFunction26@0, __imp__NdrProxyForwardingFunction26@0
-implib ole32.dll, NdrProxyForwardingFunction27, _NdrProxyForwardingFunction27@0, __imp__NdrProxyForwardingFunction27@0
-implib ole32.dll, NdrProxyForwardingFunction28, _NdrProxyForwardingFunction28@0, __imp__NdrProxyForwardingFunction28@0
-implib ole32.dll, NdrProxyForwardingFunction29, _NdrProxyForwardingFunction29@0, __imp__NdrProxyForwardingFunction29@0
-implib ole32.dll, NdrProxyForwardingFunction3, _NdrProxyForwardingFunction3@0, __imp__NdrProxyForwardingFunction3@0
-implib ole32.dll, NdrProxyForwardingFunction30, _NdrProxyForwardingFunction30@0, __imp__NdrProxyForwardingFunction30@0
-implib ole32.dll, NdrProxyForwardingFunction31, _NdrProxyForwardingFunction31@0, __imp__NdrProxyForwardingFunction31@0
-implib ole32.dll, NdrProxyForwardingFunction32, _NdrProxyForwardingFunction32@0, __imp__NdrProxyForwardingFunction32@0
-implib ole32.dll, NdrProxyForwardingFunction4, _NdrProxyForwardingFunction4@0, __imp__NdrProxyForwardingFunction4@0
-implib ole32.dll, NdrProxyForwardingFunction5, _NdrProxyForwardingFunction5@0, __imp__NdrProxyForwardingFunction5@0
-implib ole32.dll, NdrProxyForwardingFunction6, _NdrProxyForwardingFunction6@0, __imp__NdrProxyForwardingFunction6@0
-implib ole32.dll, NdrProxyForwardingFunction7, _NdrProxyForwardingFunction7@0, __imp__NdrProxyForwardingFunction7@0
-implib ole32.dll, NdrProxyForwardingFunction8, _NdrProxyForwardingFunction8@0, __imp__NdrProxyForwardingFunction8@0
-implib ole32.dll, NdrProxyForwardingFunction9, _NdrProxyForwardingFunction9@0, __imp__NdrProxyForwardingFunction9@0
-implib ole32.dll, ObjectStublessClient10, _ObjectStublessClient10@0, __imp__ObjectStublessClient10@0
-implib ole32.dll, ObjectStublessClient11, _ObjectStublessClient11@0, __imp__ObjectStublessClient11@0
-implib ole32.dll, ObjectStublessClient12, _ObjectStublessClient12@0, __imp__ObjectStublessClient12@0
-implib ole32.dll, ObjectStublessClient13, _ObjectStublessClient13@0, __imp__ObjectStublessClient13@0
-implib ole32.dll, ObjectStublessClient14, _ObjectStublessClient14@0, __imp__ObjectStublessClient14@0
-implib ole32.dll, ObjectStublessClient15, _ObjectStublessClient15@0, __imp__ObjectStublessClient15@0
-implib ole32.dll, ObjectStublessClient16, _ObjectStublessClient16@0, __imp__ObjectStublessClient16@0
-implib ole32.dll, ObjectStublessClient17, _ObjectStublessClient17@0, __imp__ObjectStublessClient17@0
-implib ole32.dll, ObjectStublessClient18, _ObjectStublessClient18@0, __imp__ObjectStublessClient18@0
-implib ole32.dll, ObjectStublessClient19, _ObjectStublessClient19@0, __imp__ObjectStublessClient19@0
-implib ole32.dll, ObjectStublessClient20, _ObjectStublessClient20@0, __imp__ObjectStublessClient20@0
-implib ole32.dll, ObjectStublessClient21, _ObjectStublessClient21@0, __imp__ObjectStublessClient21@0
-implib ole32.dll, ObjectStublessClient22, _ObjectStublessClient22@0, __imp__ObjectStublessClient22@0
-implib ole32.dll, ObjectStublessClient23, _ObjectStublessClient23@0, __imp__ObjectStublessClient23@0
-implib ole32.dll, ObjectStublessClient24, _ObjectStublessClient24@0, __imp__ObjectStublessClient24@0
-implib ole32.dll, ObjectStublessClient25, _ObjectStublessClient25@0, __imp__ObjectStublessClient25@0
-implib ole32.dll, ObjectStublessClient26, _ObjectStublessClient26@0, __imp__ObjectStublessClient26@0
-implib ole32.dll, ObjectStublessClient27, _ObjectStublessClient27@0, __imp__ObjectStublessClient27@0
-implib ole32.dll, ObjectStublessClient28, _ObjectStublessClient28@0, __imp__ObjectStublessClient28@0
-implib ole32.dll, ObjectStublessClient29, _ObjectStublessClient29@0, __imp__ObjectStublessClient29@0
-implib ole32.dll, ObjectStublessClient3, _ObjectStublessClient3@0, __imp__ObjectStublessClient3@0
-implib ole32.dll, ObjectStublessClient30, _ObjectStublessClient30@0, __imp__ObjectStublessClient30@0
-implib ole32.dll, ObjectStublessClient31, _ObjectStublessClient31@0, __imp__ObjectStublessClient31@0
-implib ole32.dll, ObjectStublessClient32, _ObjectStublessClient32@0, __imp__ObjectStublessClient32@0
-implib ole32.dll, ObjectStublessClient4, _ObjectStublessClient4@0, __imp__ObjectStublessClient4@0
-implib ole32.dll, ObjectStublessClient5, _ObjectStublessClient5@0, __imp__ObjectStublessClient5@0
-implib ole32.dll, ObjectStublessClient6, _ObjectStublessClient6@0, __imp__ObjectStublessClient6@0
-implib ole32.dll, ObjectStublessClient7, _ObjectStublessClient7@0, __imp__ObjectStublessClient7@0
-implib ole32.dll, ObjectStublessClient8, _ObjectStublessClient8@0, __imp__ObjectStublessClient8@0
-implib ole32.dll, ObjectStublessClient9, _ObjectStublessClient9@0, __imp__ObjectStublessClient9@0
-implib ole32.dll, Ole32DllGetClassObject, _Ole32DllGetClassObject@12, __imp__Ole32DllGetClassObject@12
-implib ole32.dll, OleBuildVersion, _OleBuildVersion@0, __imp__OleBuildVersion@0
-implib ole32.dll, OleConvertIStorageToOLESTREAM, _OleConvertIStorageToOLESTREAM@8, __imp__OleConvertIStorageToOLESTREAM@8
-implib ole32.dll, OleConvertIStorageToOLESTREAMEx, _OleConvertIStorageToOLESTREAMEx@28, __imp__OleConvertIStorageToOLESTREAMEx@28
-implib ole32.dll, OleConvertOLESTREAMToIStorage, _OleConvertOLESTREAMToIStorage@12, __imp__OleConvertOLESTREAMToIStorage@12
-implib ole32.dll, OleConvertOLESTREAMToIStorage2, _OleConvertOLESTREAMToIStorage2@24, __imp__OleConvertOLESTREAMToIStorage2@24
-implib ole32.dll, OleConvertOLESTREAMToIStorageEx, _OleConvertOLESTREAMToIStorageEx@28, __imp__OleConvertOLESTREAMToIStorageEx@28
-implib ole32.dll, OleConvertOLESTREAMToIStorageEx2, _OleConvertOLESTREAMToIStorageEx2@40, __imp__OleConvertOLESTREAMToIStorageEx2@40
-implib ole32.dll, OleCreate, _OleCreate@28, __imp__OleCreate@28
-implib ole32.dll, OleCreateDefaultHandler, _OleCreateDefaultHandler@16, __imp__OleCreateDefaultHandler@16
-implib ole32.dll, OleCreateEmbeddingHelper, _OleCreateEmbeddingHelper@24, __imp__OleCreateEmbeddingHelper@24
-implib ole32.dll, OleCreateEx, _OleCreateEx@48, __imp__OleCreateEx@48
-implib ole32.dll, OleCreateFontIndirectExt, _OleCreateFontIndirectExt@12, __imp__OleCreateFontIndirectExt@12
-implib ole32.dll, OleCreateFromData, _OleCreateFromData@28, __imp__OleCreateFromData@28
-implib ole32.dll, OleCreateFromDataEx, _OleCreateFromDataEx@48, __imp__OleCreateFromDataEx@48
-implib ole32.dll, OleCreateFromFile, _OleCreateFromFile@32, __imp__OleCreateFromFile@32
-implib ole32.dll, OleCreateFromFileEx, _OleCreateFromFileEx@52, __imp__OleCreateFromFileEx@52
-implib ole32.dll, OleCreateLink, _OleCreateLink@28, __imp__OleCreateLink@28
-implib ole32.dll, OleCreateLinkEx, _OleCreateLinkEx@48, __imp__OleCreateLinkEx@48
-implib ole32.dll, OleCreateLinkFromData, _OleCreateLinkFromData@28, __imp__OleCreateLinkFromData@28
-implib ole32.dll, OleCreateLinkFromDataEx, _OleCreateLinkFromDataEx@48, __imp__OleCreateLinkFromDataEx@48
-implib ole32.dll, OleCreateLinkToFile, _OleCreateLinkToFile@28, __imp__OleCreateLinkToFile@28
-implib ole32.dll, OleCreateLinkToFileEx, _OleCreateLinkToFileEx@48, __imp__OleCreateLinkToFileEx@48
-implib ole32.dll, OleCreateMenuDescriptor, _OleCreateMenuDescriptor@8, __imp__OleCreateMenuDescriptor@8
-implib ole32.dll, OleCreatePictureIndirectExt, _OleCreatePictureIndirectExt@16, __imp__OleCreatePictureIndirectExt@16
-implib ole32.dll, OleCreatePropertyFrameIndirectExt, _OleCreatePropertyFrameIndirectExt@4, __imp__OleCreatePropertyFrameIndirectExt@4
-implib ole32.dll, OleCreateStaticFromData, _OleCreateStaticFromData@28, __imp__OleCreateStaticFromData@28
-implib ole32.dll, OleDestroyMenuDescriptor, _OleDestroyMenuDescriptor@4, __imp__OleDestroyMenuDescriptor@4
-implib ole32.dll, OleDoAutoConvert, _OleDoAutoConvert@8, __imp__OleDoAutoConvert@8
-implib ole32.dll, OleDraw, _OleDraw@16, __imp__OleDraw@16
-implib ole32.dll, OleDuplicateData, _OleDuplicateData@12, __imp__OleDuplicateData@12
-implib ole32.dll, OleFlushClipboard, _OleFlushClipboard@0, __imp__OleFlushClipboard@0
-implib ole32.dll, OleGetAutoConvert, _OleGetAutoConvert@8, __imp__OleGetAutoConvert@8
-implib ole32.dll, OleGetClipboard, _OleGetClipboard@4, __imp__OleGetClipboard@4
-implib ole32.dll, OleGetClipboardWithEnterpriseInfo, _OleGetClipboardWithEnterpriseInfo@20, __imp__OleGetClipboardWithEnterpriseInfo@20
-implib ole32.dll, OleGetIconOfClass, _OleGetIconOfClass@12, __imp__OleGetIconOfClass@12
-implib ole32.dll, OleGetIconOfFile, _OleGetIconOfFile@8, __imp__OleGetIconOfFile@8
-implib ole32.dll, OleGetPackageClipboardOwner, _OleGetPackageClipboardOwner@4, __imp__OleGetPackageClipboardOwner@4
-implib ole32.dll, OleIconToCursorExt, _OleIconToCursorExt@8, __imp__OleIconToCursorExt@8
-implib ole32.dll, OleInitialize, _OleInitialize@4, __imp__OleInitialize@4
-implib ole32.dll, OleInitializeWOW, _OleInitializeWOW@8, __imp__OleInitializeWOW@8
-implib ole32.dll, OleIsCurrentClipboard, _OleIsCurrentClipboard@4, __imp__OleIsCurrentClipboard@4
-implib ole32.dll, OleIsRunning, _OleIsRunning@4, __imp__OleIsRunning@4
-implib ole32.dll, OleLoad, _OleLoad@16, __imp__OleLoad@16
-implib ole32.dll, OleLoadFromStream, _OleLoadFromStream@12, __imp__OleLoadFromStream@12
-implib ole32.dll, OleLoadPictureExt, _OleLoadPictureExt@32, __imp__OleLoadPictureExt@32
-implib ole32.dll, OleLoadPictureFileExt, _OleLoadPictureFileExt@32, __imp__OleLoadPictureFileExt@32
-implib ole32.dll, OleLoadPicturePathExt, _OleLoadPicturePathExt@24, __imp__OleLoadPicturePathExt@24
-implib ole32.dll, OleLockRunning, _OleLockRunning@12, __imp__OleLockRunning@12
-implib ole32.dll, OleMetafilePictFromIconAndLabel, _OleMetafilePictFromIconAndLabel@16, __imp__OleMetafilePictFromIconAndLabel@16
-implib ole32.dll, OleNoteObjectVisible, _OleNoteObjectVisible@8, __imp__OleNoteObjectVisible@8
-implib ole32.dll, OleQueryCreateFromData, _OleQueryCreateFromData@4, __imp__OleQueryCreateFromData@4
-implib ole32.dll, OleQueryLinkFromData, _OleQueryLinkFromData@4, __imp__OleQueryLinkFromData@4
-implib ole32.dll, OleRegEnumFormatEtc, _OleRegEnumFormatEtc@12, __imp__OleRegEnumFormatEtc@12
-implib ole32.dll, OleRegEnumVerbs, _OleRegEnumVerbs@8, __imp__OleRegEnumVerbs@8
-implib ole32.dll, OleRegGetMiscStatus, _OleRegGetMiscStatus@12, __imp__OleRegGetMiscStatus@12
-implib ole32.dll, OleRegGetUserType, _OleRegGetUserType@12, __imp__OleRegGetUserType@12
-implib ole32.dll, OleReleaseEnumVerbCache, _OleReleaseEnumVerbCache@0, __imp__OleReleaseEnumVerbCache@0
-implib ole32.dll, OleRun, _OleRun@4, __imp__OleRun@4
-implib ole32.dll, OleSave, _OleSave@12, __imp__OleSave@12
-implib ole32.dll, OleSavePictureFileExt, _OleSavePictureFileExt@8, __imp__OleSavePictureFileExt@8
-implib ole32.dll, OleSaveToStream, _OleSaveToStream@8, __imp__OleSaveToStream@8
-implib ole32.dll, OleSetAutoConvert, _OleSetAutoConvert@8, __imp__OleSetAutoConvert@8
-implib ole32.dll, OleSetClipboard, _OleSetClipboard@4, __imp__OleSetClipboard@4
-implib ole32.dll, OleSetContainedObject, _OleSetContainedObject@8, __imp__OleSetContainedObject@8
-implib ole32.dll, OleSetMenuDescriptor, _OleSetMenuDescriptor@20, __imp__OleSetMenuDescriptor@20
-implib ole32.dll, OleTranslateAccelerator, _OleTranslateAccelerator@12, __imp__OleTranslateAccelerator@12
-implib ole32.dll, OleTranslateColorExt, _OleTranslateColorExt@12, __imp__OleTranslateColorExt@12
-implib ole32.dll, OleUninitialize, _OleUninitialize@0, __imp__OleUninitialize@0
-implib ole32.dll, OpenOrCreateStream, _OpenOrCreateStream@12, __imp__OpenOrCreateStream@12
-implib ole32.dll, ProgIDFromCLSID, _ProgIDFromCLSID@8, __imp__ProgIDFromCLSID@8
-implib ole32.dll, PropStgNameToFmtId, _PropStgNameToFmtId@8, __imp__PropStgNameToFmtId@8
-implib ole32.dll, PropSysAllocString, _PropSysAllocString@4, __imp__PropSysAllocString@4
-implib ole32.dll, PropSysFreeString, _PropSysFreeString@4, __imp__PropSysFreeString@4
-implib ole32.dll, PropVariantChangeType, _PropVariantChangeType@20, __imp__PropVariantChangeType@20
-implib ole32.dll, PropVariantClear, _PropVariantClear@4, __imp__PropVariantClear@4
-implib ole32.dll, PropVariantCopy, _PropVariantCopy@8, __imp__PropVariantCopy@8
-implib ole32.dll, ReadClassStg, _ReadClassStg@8, __imp__ReadClassStg@8
-implib ole32.dll, ReadClassStm, _ReadClassStm@8, __imp__ReadClassStm@8
-implib ole32.dll, ReadFmtUserTypeStg, _ReadFmtUserTypeStg@12, __imp__ReadFmtUserTypeStg@12
-implib ole32.dll, ReadOleStg, _ReadOleStg@24, __imp__ReadOleStg@24
-implib ole32.dll, ReadStorageProperties, _ReadStorageProperties@8, __imp__ReadStorageProperties@8
-implib ole32.dll, ReadStringStream, _ReadStringStream@8, __imp__ReadStringStream@8
-implib ole32.dll, RegisterActiveObjectExt, _RegisterActiveObjectExt@16, __imp__RegisterActiveObjectExt@16
-implib ole32.dll, RegisterDragDrop, _RegisterDragDrop@8, __imp__RegisterDragDrop@8
-implib ole32.dll, ReleaseStgMedium, _ReleaseStgMedium@4, __imp__ReleaseStgMedium@4
-implib ole32.dll, RevokeActiveObjectExt, _RevokeActiveObjectExt@8, __imp__RevokeActiveObjectExt@8
-implib ole32.dll, RevokeDragDrop, _RevokeDragDrop@4, __imp__RevokeDragDrop@4
-implib ole32.dll, RoGetAgileReference, _RoGetAgileReference@16, __imp__RoGetAgileReference@16
-implib ole32.dll, SNB_UserFree, _SNB_UserFree@8, __imp__SNB_UserFree@8
-implib ole32.dll, SNB_UserMarshal, _SNB_UserMarshal@12, __imp__SNB_UserMarshal@12
-implib ole32.dll, SNB_UserSize, _SNB_UserSize@12, __imp__SNB_UserSize@12
-implib ole32.dll, SNB_UserUnmarshal, _SNB_UserUnmarshal@12, __imp__SNB_UserUnmarshal@12
-implib ole32.dll, STGMEDIUM_UserFree, _STGMEDIUM_UserFree@8, __imp__STGMEDIUM_UserFree@8
-implib ole32.dll, STGMEDIUM_UserFreeExt, _STGMEDIUM_UserFreeExt@8, __imp__STGMEDIUM_UserFreeExt@8
-implib ole32.dll, STGMEDIUM_UserMarshal, _STGMEDIUM_UserMarshal@12, __imp__STGMEDIUM_UserMarshal@12
-implib ole32.dll, STGMEDIUM_UserMarshalExt, _STGMEDIUM_UserMarshalExt@12, __imp__STGMEDIUM_UserMarshalExt@12
-implib ole32.dll, STGMEDIUM_UserSize, _STGMEDIUM_UserSize@12, __imp__STGMEDIUM_UserSize@12
-implib ole32.dll, STGMEDIUM_UserSizeExt, _STGMEDIUM_UserSizeExt@12, __imp__STGMEDIUM_UserSizeExt@12
-implib ole32.dll, STGMEDIUM_UserUnmarshal, _STGMEDIUM_UserUnmarshal@12, __imp__STGMEDIUM_UserUnmarshal@12
-implib ole32.dll, STGMEDIUM_UserUnmarshalExt, _STGMEDIUM_UserUnmarshalExt@12, __imp__STGMEDIUM_UserUnmarshalExt@12
-implib ole32.dll, SetConvertStg, _SetConvertStg@8, __imp__SetConvertStg@8
-implib ole32.dll, SetDocumentBitStg, _SetDocumentBitStg@8, __imp__SetDocumentBitStg@8
-implib ole32.dll, SetErrorInfo, _SetErrorInfo@8, __imp__SetErrorInfo@8
-implib ole32.dll, SetOleautModule, _SetOleautModule@4, __imp__SetOleautModule@4
-implib ole32.dll, SetWOWThunkGlobalPtr, _SetWOWThunkGlobalPtr@4, __imp__SetWOWThunkGlobalPtr@4
-implib ole32.dll, StdTypesGetClassObject, _StdTypesGetClassObject@12, __imp__StdTypesGetClassObject@12
-implib ole32.dll, StdTypesRegisterServer, _StdTypesRegisterServer@0, __imp__StdTypesRegisterServer@0
-implib ole32.dll, StgConvertPropertyToVariant, _StgConvertPropertyToVariant@16, __imp__StgConvertPropertyToVariant@16
-implib ole32.dll, StgConvertVariantToProperty, _StgConvertVariantToProperty@28, __imp__StgConvertVariantToProperty@28
-implib ole32.dll, StgCreateDocfile, _StgCreateDocfile@16, __imp__StgCreateDocfile@16
-implib ole32.dll, StgCreateDocfileOnILockBytes, _StgCreateDocfileOnILockBytes@16, __imp__StgCreateDocfileOnILockBytes@16
-implib ole32.dll, StgCreatePropSetStg, _StgCreatePropSetStg@12, __imp__StgCreatePropSetStg@12
-implib ole32.dll, StgCreatePropStg, _StgCreatePropStg@24, __imp__StgCreatePropStg@24
-implib ole32.dll, StgCreateStorageEx, _StgCreateStorageEx@32, __imp__StgCreateStorageEx@32
-implib ole32.dll, StgGetIFillLockBytesOnFile, _StgGetIFillLockBytesOnFile@8, __imp__StgGetIFillLockBytesOnFile@8
-implib ole32.dll, StgGetIFillLockBytesOnILockBytes, _StgGetIFillLockBytesOnILockBytes@8, __imp__StgGetIFillLockBytesOnILockBytes@8
-implib ole32.dll, StgIsStorageFile, _StgIsStorageFile@4, __imp__StgIsStorageFile@4
-implib ole32.dll, StgIsStorageILockBytes, _StgIsStorageILockBytes@4, __imp__StgIsStorageILockBytes@4
-implib ole32.dll, StgOpenAsyncDocfileOnIFillLockBytes, _StgOpenAsyncDocfileOnIFillLockBytes@16, __imp__StgOpenAsyncDocfileOnIFillLockBytes@16
-implib ole32.dll, StgOpenPropStg, _StgOpenPropStg@20, __imp__StgOpenPropStg@20
-implib ole32.dll, StgOpenStorage, _StgOpenStorage@24, __imp__StgOpenStorage@24
-implib ole32.dll, StgOpenStorageEx, _StgOpenStorageEx@32, __imp__StgOpenStorageEx@32
-implib ole32.dll, StgOpenStorageOnHandle, _StgOpenStorageOnHandle@24, __imp__StgOpenStorageOnHandle@24
-implib ole32.dll, StgOpenStorageOnILockBytes, _StgOpenStorageOnILockBytes@24, __imp__StgOpenStorageOnILockBytes@24
-implib ole32.dll, StgPropertyLengthAsVariant, _StgPropertyLengthAsVariant@16, __imp__StgPropertyLengthAsVariant@16
-implib ole32.dll, StgSetTimes, _StgSetTimes@16, __imp__StgSetTimes@16
-implib ole32.dll, StoreQITableEntry, _StoreQITableEntry@8, __imp__StoreQITableEntry@8
-implib ole32.dll, StringFromCLSID, _StringFromCLSID@8, __imp__StringFromCLSID@8
-implib ole32.dll, StringFromGUID2, _StringFromGUID2@12, __imp__StringFromGUID2@12
-implib ole32.dll, StringFromIID, _StringFromIID@8, __imp__StringFromIID@8
-implib ole32.dll, UpdateDCOMSettings, _UpdateDCOMSettings@0, __imp__UpdateDCOMSettings@0
-implib ole32.dll, UpdateProcessTracing, _UpdateProcessTracing@8, __imp__UpdateProcessTracing@8
-implib ole32.dll, UtConvertDvtd16toDvtd32, _UtConvertDvtd16toDvtd32@12, __imp__UtConvertDvtd16toDvtd32@12
-implib ole32.dll, UtConvertDvtd32toDvtd16, _UtConvertDvtd32toDvtd16@12, __imp__UtConvertDvtd32toDvtd16@12
-implib ole32.dll, UtGetDvtd16Info, _UtGetDvtd16Info@8, __imp__UtGetDvtd16Info@8
-implib ole32.dll, UtGetDvtd32Info, _UtGetDvtd32Info@8, __imp__UtGetDvtd32Info@8
-implib ole32.dll, WdtpInterfacePointer_UserFree, _WdtpInterfacePointer_UserFree@4, __imp__WdtpInterfacePointer_UserFree@4
-implib ole32.dll, WdtpInterfacePointer_UserMarshal, _WdtpInterfacePointer_UserMarshal@20, __imp__WdtpInterfacePointer_UserMarshal@20
-implib ole32.dll, WdtpInterfacePointer_UserSize, _WdtpInterfacePointer_UserSize@20, __imp__WdtpInterfacePointer_UserSize@20
-implib ole32.dll, WdtpInterfacePointer_UserUnmarshal, _WdtpInterfacePointer_UserUnmarshal@16, __imp__WdtpInterfacePointer_UserUnmarshal@16
-implib ole32.dll, WriteClassStg, _WriteClassStg@8, __imp__WriteClassStg@8
-implib ole32.dll, WriteClassStm, _WriteClassStm@8, __imp__WriteClassStm@8
-implib ole32.dll, WriteFmtUserTypeStg, _WriteFmtUserTypeStg@12, __imp__WriteFmtUserTypeStg@12
-implib ole32.dll, WriteOleStg, _WriteOleStg@16, __imp__WriteOleStg@16
-implib ole32.dll, WriteStorageProperties, _WriteStorageProperties@16, __imp__WriteStorageProperties@16
-implib ole32.dll, WriteStringStream, _WriteStringStream@8, __imp__WriteStringStream@8
+implib ole32.dll, ComPs_NdrClientCall2_va, _ComPs_NdrClientCall2_va@12
+implib ole32.dll, ComPs_NdrDllCanUnloadNow, _ComPs_NdrDllCanUnloadNow@4
+implib ole32.dll, ComPs_NdrDllGetClassObject, _ComPs_NdrDllGetClassObject@24
+implib ole32.dll, ComPs_NdrDllRegisterProxy, _ComPs_NdrDllRegisterProxy@20
+implib ole32.dll, ComPs_NdrDllUnregisterProxy, _ComPs_NdrDllUnregisterProxy@20
+implib ole32.dll, ComPs_NdrStubCall2, _ComPs_NdrStubCall2@16
+implib ole32.dll, ComPs_NdrStubForwardingFunction, _ComPs_NdrStubForwardingFunction@16
+implib ole32.dll, CreateAntiMoniker, _CreateAntiMoniker@4
+implib ole32.dll, CreateBindCtx, _CreateBindCtx@8
+implib ole32.dll, CreateClassMoniker, _CreateClassMoniker@8
+implib ole32.dll, CreateDataAdviseHolder, _CreateDataAdviseHolder@4
+implib ole32.dll, CreateDataCache, _CreateDataCache@16
+implib ole32.dll, CreateErrorInfo, _CreateErrorInfo@4
+implib ole32.dll, CreateFileMoniker, _CreateFileMoniker@8
+implib ole32.dll, CreateGenericComposite, _CreateGenericComposite@12
+implib ole32.dll, CreateILockBytesOnHGlobal, _CreateILockBytesOnHGlobal@12
+implib ole32.dll, CreateItemMoniker, _CreateItemMoniker@12
+implib ole32.dll, CreateObjrefMoniker, _CreateObjrefMoniker@8
+implib ole32.dll, CreateOleAdviseHolder, _CreateOleAdviseHolder@4
+implib ole32.dll, CreatePointerMoniker, _CreatePointerMoniker@8
+implib ole32.dll, CreateStdProgressIndicator, _CreateStdProgressIndicator@16
+implib ole32.dll, CreateStreamOnHGlobal, _CreateStreamOnHGlobal@12
+implib ole32.dll, DcomChannelSetHResult, _DcomChannelSetHResult@12
+implib ole32.dll, DdeBindToObject, _DdeBindToObject@20
+implib ole32.dll, DeletePatternAndExtensionTables, _DeletePatternAndExtensionTables@0
+implib ole32.dll, DestroyRunningObjectTable, _DestroyRunningObjectTable@0
+implib ole32.dll, DllDebugObjectRPCHook, _DllDebugObjectRPCHook@8
+implib ole32.dll, DllGetClassObject, _DllGetClassObject@12
+implib ole32.dll, DllGetClassObjectWOW, _DllGetClassObjectWOW@12
+implib ole32.dll, DllRegisterServer, _DllRegisterServer@0
+implib ole32.dll, DoDragDrop, _DoDragDrop@16
+implib ole32.dll, DragDropSetFDT, _DragDropSetFDT@4
+implib ole32.dll, EnableHookObject, _EnableHookObject@8
+implib ole32.dll, FindExt, _FindExt@4
+implib ole32.dll, FmtIdToPropStgName, _FmtIdToPropStgName@8
+implib ole32.dll, FreePropVariantArray, _FreePropVariantArray@8
+implib ole32.dll, GetActiveObjectExt, _GetActiveObjectExt@12
+implib ole32.dll, GetClassFile, _GetClassFile@8
+implib ole32.dll, GetConvertStg, _GetConvertStg@4
+implib ole32.dll, GetDocumentBitStg, _GetDocumentBitStg@4
+implib ole32.dll, GetErrorInfo, _GetErrorInfo@8
+implib ole32.dll, GetHGlobalFromILockBytes, _GetHGlobalFromILockBytes@8
+implib ole32.dll, GetHGlobalFromStream, _GetHGlobalFromStream@8
+implib ole32.dll, GetHookInterface, _GetHookInterface@4
+implib ole32.dll, GetObjectFromRotByPath, _GetObjectFromRotByPath@8
+implib ole32.dll, GetRunningObjectTable, _GetRunningObjectTable@8
+implib ole32.dll, HACCEL_UserFree, _HACCEL_UserFree@8
+implib ole32.dll, HACCEL_UserMarshal, _HACCEL_UserMarshal@12
+implib ole32.dll, HACCEL_UserSize, _HACCEL_UserSize@12
+implib ole32.dll, HACCEL_UserUnmarshal, _HACCEL_UserUnmarshal@12
+implib ole32.dll, HBITMAP_UserFree, _HBITMAP_UserFree@8
+implib ole32.dll, HBITMAP_UserMarshal, _HBITMAP_UserMarshal@12
+implib ole32.dll, HBITMAP_UserSize, _HBITMAP_UserSize@12
+implib ole32.dll, HBITMAP_UserUnmarshal, _HBITMAP_UserUnmarshal@12
+implib ole32.dll, HBRUSH_UserFree, _HBRUSH_UserFree@8
+implib ole32.dll, HBRUSH_UserMarshal, _HBRUSH_UserMarshal@12
+implib ole32.dll, HBRUSH_UserSize, _HBRUSH_UserSize@12
+implib ole32.dll, HBRUSH_UserUnmarshal, _HBRUSH_UserUnmarshal@12
+implib ole32.dll, HDC_UserFree, _HDC_UserFree@8
+implib ole32.dll, HDC_UserMarshal, _HDC_UserMarshal@12
+implib ole32.dll, HDC_UserSize, _HDC_UserSize@12
+implib ole32.dll, HDC_UserUnmarshal, _HDC_UserUnmarshal@12
+implib ole32.dll, HENHMETAFILE_UserFree, _HENHMETAFILE_UserFree@8
+implib ole32.dll, HENHMETAFILE_UserMarshal, _HENHMETAFILE_UserMarshal@12
+implib ole32.dll, HENHMETAFILE_UserSize, _HENHMETAFILE_UserSize@12
+implib ole32.dll, HENHMETAFILE_UserUnmarshal, _HENHMETAFILE_UserUnmarshal@12
+implib ole32.dll, HGLOBAL_UserFree, _HGLOBAL_UserFree@8
+implib ole32.dll, HGLOBAL_UserMarshal, _HGLOBAL_UserMarshal@12
+implib ole32.dll, HGLOBAL_UserSize, _HGLOBAL_UserSize@12
+implib ole32.dll, HGLOBAL_UserUnmarshal, _HGLOBAL_UserUnmarshal@12
+implib ole32.dll, HICON_UserFree, _HICON_UserFree@8
+implib ole32.dll, HICON_UserMarshal, _HICON_UserMarshal@12
+implib ole32.dll, HICON_UserSize, _HICON_UserSize@12
+implib ole32.dll, HICON_UserUnmarshal, _HICON_UserUnmarshal@12
+implib ole32.dll, HMENU_UserFree, _HMENU_UserFree@8
+implib ole32.dll, HMENU_UserMarshal, _HMENU_UserMarshal@12
+implib ole32.dll, HMENU_UserSize, _HMENU_UserSize@12
+implib ole32.dll, HMENU_UserUnmarshal, _HMENU_UserUnmarshal@12
+implib ole32.dll, HMETAFILEPICT_UserFree, _HMETAFILEPICT_UserFree@8
+implib ole32.dll, HMETAFILEPICT_UserMarshal, _HMETAFILEPICT_UserMarshal@12
+implib ole32.dll, HMETAFILEPICT_UserSize, _HMETAFILEPICT_UserSize@12
+implib ole32.dll, HMETAFILEPICT_UserUnmarshal, _HMETAFILEPICT_UserUnmarshal@12
+implib ole32.dll, HMETAFILE_UserFree, _HMETAFILE_UserFree@8
+implib ole32.dll, HMETAFILE_UserMarshal, _HMETAFILE_UserMarshal@12
+implib ole32.dll, HMETAFILE_UserSize, _HMETAFILE_UserSize@12
+implib ole32.dll, HMETAFILE_UserUnmarshal, _HMETAFILE_UserUnmarshal@12
+implib ole32.dll, HMONITOR_UserFree, _HMONITOR_UserFree@8
+implib ole32.dll, HMONITOR_UserMarshal, _HMONITOR_UserMarshal@12
+implib ole32.dll, HMONITOR_UserSize, _HMONITOR_UserSize@12
+implib ole32.dll, HMONITOR_UserUnmarshal, _HMONITOR_UserUnmarshal@12
+implib ole32.dll, HPALETTE_UserFree, _HPALETTE_UserFree@8
+implib ole32.dll, HPALETTE_UserFreeExt, _HPALETTE_UserFreeExt@8
+implib ole32.dll, HPALETTE_UserMarshal, _HPALETTE_UserMarshal@12
+implib ole32.dll, HPALETTE_UserMarshalExt, _HPALETTE_UserMarshalExt@12
+implib ole32.dll, HPALETTE_UserSize, _HPALETTE_UserSize@12
+implib ole32.dll, HPALETTE_UserSizeExt, _HPALETTE_UserSizeExt@12
+implib ole32.dll, HPALETTE_UserUnmarshal, _HPALETTE_UserUnmarshal@12
+implib ole32.dll, HPALETTE_UserUnmarshalExt, _HPALETTE_UserUnmarshalExt@12
+implib ole32.dll, HRGN_UserFree, _HRGN_UserFree@8
+implib ole32.dll, HRGN_UserMarshal, _HRGN_UserMarshal@12
+implib ole32.dll, HRGN_UserSize, _HRGN_UserSize@12
+implib ole32.dll, HRGN_UserUnmarshal, _HRGN_UserUnmarshal@12
+implib ole32.dll, HWND_UserFree, _HWND_UserFree@8
+implib ole32.dll, HWND_UserFreeExt, _HWND_UserFreeExt@8
+implib ole32.dll, HWND_UserMarshal, _HWND_UserMarshal@12
+implib ole32.dll, HWND_UserMarshalExt, _HWND_UserMarshalExt@12
+implib ole32.dll, HWND_UserSize, _HWND_UserSize@12
+implib ole32.dll, HWND_UserSizeExt, _HWND_UserSizeExt@12
+implib ole32.dll, HWND_UserUnmarshal, _HWND_UserUnmarshal@12
+implib ole32.dll, HWND_UserUnmarshalExt, _HWND_UserUnmarshalExt@12
+implib ole32.dll, HkOleRegisterObject, _HkOleRegisterObject@16
+implib ole32.dll, IIDFromString, _IIDFromString@8
+implib ole32.dll, IsAccelerator, _IsAccelerator@16
+implib ole32.dll, IsEqualGUID, _IsEqualGUID@8
+implib ole32.dll, IsRoInitializeASTAAllowedInDesktop, _IsRoInitializeASTAAllowedInDesktop@4
+implib ole32.dll, IsValidIid, _IsValidIid@4
+implib ole32.dll, IsValidInterface, _IsValidInterface@4
+implib ole32.dll, IsValidPtrIn, _IsValidPtrIn@8
+implib ole32.dll, IsValidPtrOut, _IsValidPtrOut@8
+implib ole32.dll, MkParseDisplayName, _MkParseDisplayName@16
+implib ole32.dll, MonikerCommonPrefixWith, _MonikerCommonPrefixWith@12
+implib ole32.dll, MonikerLoadTypeLib, _MonikerLoadTypeLib@8
+implib ole32.dll, MonikerRelativePathTo, _MonikerRelativePathTo@16
+implib ole32.dll, NdrOleInitializeExtension, _NdrOleInitializeExtension@8
+implib ole32.dll, NdrProxyForwardingFunction10, _NdrProxyForwardingFunction10@0
+implib ole32.dll, NdrProxyForwardingFunction11, _NdrProxyForwardingFunction11@0
+implib ole32.dll, NdrProxyForwardingFunction12, _NdrProxyForwardingFunction12@0
+implib ole32.dll, NdrProxyForwardingFunction13, _NdrProxyForwardingFunction13@0
+implib ole32.dll, NdrProxyForwardingFunction14, _NdrProxyForwardingFunction14@0
+implib ole32.dll, NdrProxyForwardingFunction15, _NdrProxyForwardingFunction15@0
+implib ole32.dll, NdrProxyForwardingFunction16, _NdrProxyForwardingFunction16@0
+implib ole32.dll, NdrProxyForwardingFunction17, _NdrProxyForwardingFunction17@0
+implib ole32.dll, NdrProxyForwardingFunction18, _NdrProxyForwardingFunction18@0
+implib ole32.dll, NdrProxyForwardingFunction19, _NdrProxyForwardingFunction19@0
+implib ole32.dll, NdrProxyForwardingFunction20, _NdrProxyForwardingFunction20@0
+implib ole32.dll, NdrProxyForwardingFunction21, _NdrProxyForwardingFunction21@0
+implib ole32.dll, NdrProxyForwardingFunction22, _NdrProxyForwardingFunction22@0
+implib ole32.dll, NdrProxyForwardingFunction23, _NdrProxyForwardingFunction23@0
+implib ole32.dll, NdrProxyForwardingFunction24, _NdrProxyForwardingFunction24@0
+implib ole32.dll, NdrProxyForwardingFunction25, _NdrProxyForwardingFunction25@0
+implib ole32.dll, NdrProxyForwardingFunction26, _NdrProxyForwardingFunction26@0
+implib ole32.dll, NdrProxyForwardingFunction27, _NdrProxyForwardingFunction27@0
+implib ole32.dll, NdrProxyForwardingFunction28, _NdrProxyForwardingFunction28@0
+implib ole32.dll, NdrProxyForwardingFunction29, _NdrProxyForwardingFunction29@0
+implib ole32.dll, NdrProxyForwardingFunction3, _NdrProxyForwardingFunction3@0
+implib ole32.dll, NdrProxyForwardingFunction30, _NdrProxyForwardingFunction30@0
+implib ole32.dll, NdrProxyForwardingFunction31, _NdrProxyForwardingFunction31@0
+implib ole32.dll, NdrProxyForwardingFunction32, _NdrProxyForwardingFunction32@0
+implib ole32.dll, NdrProxyForwardingFunction4, _NdrProxyForwardingFunction4@0
+implib ole32.dll, NdrProxyForwardingFunction5, _NdrProxyForwardingFunction5@0
+implib ole32.dll, NdrProxyForwardingFunction6, _NdrProxyForwardingFunction6@0
+implib ole32.dll, NdrProxyForwardingFunction7, _NdrProxyForwardingFunction7@0
+implib ole32.dll, NdrProxyForwardingFunction8, _NdrProxyForwardingFunction8@0
+implib ole32.dll, NdrProxyForwardingFunction9, _NdrProxyForwardingFunction9@0
+implib ole32.dll, ObjectStublessClient10, _ObjectStublessClient10@0
+implib ole32.dll, ObjectStublessClient11, _ObjectStublessClient11@0
+implib ole32.dll, ObjectStublessClient12, _ObjectStublessClient12@0
+implib ole32.dll, ObjectStublessClient13, _ObjectStublessClient13@0
+implib ole32.dll, ObjectStublessClient14, _ObjectStublessClient14@0
+implib ole32.dll, ObjectStublessClient15, _ObjectStublessClient15@0
+implib ole32.dll, ObjectStublessClient16, _ObjectStublessClient16@0
+implib ole32.dll, ObjectStublessClient17, _ObjectStublessClient17@0
+implib ole32.dll, ObjectStublessClient18, _ObjectStublessClient18@0
+implib ole32.dll, ObjectStublessClient19, _ObjectStublessClient19@0
+implib ole32.dll, ObjectStublessClient20, _ObjectStublessClient20@0
+implib ole32.dll, ObjectStublessClient21, _ObjectStublessClient21@0
+implib ole32.dll, ObjectStublessClient22, _ObjectStublessClient22@0
+implib ole32.dll, ObjectStublessClient23, _ObjectStublessClient23@0
+implib ole32.dll, ObjectStublessClient24, _ObjectStublessClient24@0
+implib ole32.dll, ObjectStublessClient25, _ObjectStublessClient25@0
+implib ole32.dll, ObjectStublessClient26, _ObjectStublessClient26@0
+implib ole32.dll, ObjectStublessClient27, _ObjectStublessClient27@0
+implib ole32.dll, ObjectStublessClient28, _ObjectStublessClient28@0
+implib ole32.dll, ObjectStublessClient29, _ObjectStublessClient29@0
+implib ole32.dll, ObjectStublessClient3, _ObjectStublessClient3@0
+implib ole32.dll, ObjectStublessClient30, _ObjectStublessClient30@0
+implib ole32.dll, ObjectStublessClient31, _ObjectStublessClient31@0
+implib ole32.dll, ObjectStublessClient32, _ObjectStublessClient32@0
+implib ole32.dll, ObjectStublessClient4, _ObjectStublessClient4@0
+implib ole32.dll, ObjectStublessClient5, _ObjectStublessClient5@0
+implib ole32.dll, ObjectStublessClient6, _ObjectStublessClient6@0
+implib ole32.dll, ObjectStublessClient7, _ObjectStublessClient7@0
+implib ole32.dll, ObjectStublessClient8, _ObjectStublessClient8@0
+implib ole32.dll, ObjectStublessClient9, _ObjectStublessClient9@0
+implib ole32.dll, Ole32DllGetClassObject, _Ole32DllGetClassObject@12
+implib ole32.dll, OleBuildVersion, _OleBuildVersion@0
+implib ole32.dll, OleConvertIStorageToOLESTREAM, _OleConvertIStorageToOLESTREAM@8
+implib ole32.dll, OleConvertIStorageToOLESTREAMEx, _OleConvertIStorageToOLESTREAMEx@28
+implib ole32.dll, OleConvertOLESTREAMToIStorage, _OleConvertOLESTREAMToIStorage@12
+implib ole32.dll, OleConvertOLESTREAMToIStorage2, _OleConvertOLESTREAMToIStorage2@24
+implib ole32.dll, OleConvertOLESTREAMToIStorageEx, _OleConvertOLESTREAMToIStorageEx@28
+implib ole32.dll, OleConvertOLESTREAMToIStorageEx2, _OleConvertOLESTREAMToIStorageEx2@40
+implib ole32.dll, OleCreate, _OleCreate@28
+implib ole32.dll, OleCreateDefaultHandler, _OleCreateDefaultHandler@16
+implib ole32.dll, OleCreateEmbeddingHelper, _OleCreateEmbeddingHelper@24
+implib ole32.dll, OleCreateEx, _OleCreateEx@48
+implib ole32.dll, OleCreateFontIndirectExt, _OleCreateFontIndirectExt@12
+implib ole32.dll, OleCreateFromData, _OleCreateFromData@28
+implib ole32.dll, OleCreateFromDataEx, _OleCreateFromDataEx@48
+implib ole32.dll, OleCreateFromFile, _OleCreateFromFile@32
+implib ole32.dll, OleCreateFromFileEx, _OleCreateFromFileEx@52
+implib ole32.dll, OleCreateLink, _OleCreateLink@28
+implib ole32.dll, OleCreateLinkEx, _OleCreateLinkEx@48
+implib ole32.dll, OleCreateLinkFromData, _OleCreateLinkFromData@28
+implib ole32.dll, OleCreateLinkFromDataEx, _OleCreateLinkFromDataEx@48
+implib ole32.dll, OleCreateLinkToFile, _OleCreateLinkToFile@28
+implib ole32.dll, OleCreateLinkToFileEx, _OleCreateLinkToFileEx@48
+implib ole32.dll, OleCreateMenuDescriptor, _OleCreateMenuDescriptor@8
+implib ole32.dll, OleCreatePictureIndirectExt, _OleCreatePictureIndirectExt@16
+implib ole32.dll, OleCreatePropertyFrameIndirectExt, _OleCreatePropertyFrameIndirectExt@4
+implib ole32.dll, OleCreateStaticFromData, _OleCreateStaticFromData@28
+implib ole32.dll, OleDestroyMenuDescriptor, _OleDestroyMenuDescriptor@4
+implib ole32.dll, OleDoAutoConvert, _OleDoAutoConvert@8
+implib ole32.dll, OleDraw, _OleDraw@16
+implib ole32.dll, OleDuplicateData, _OleDuplicateData@12
+implib ole32.dll, OleFlushClipboard, _OleFlushClipboard@0
+implib ole32.dll, OleGetAutoConvert, _OleGetAutoConvert@8
+implib ole32.dll, OleGetClipboard, _OleGetClipboard@4
+implib ole32.dll, OleGetClipboardWithEnterpriseInfo, _OleGetClipboardWithEnterpriseInfo@20
+implib ole32.dll, OleGetIconOfClass, _OleGetIconOfClass@12
+implib ole32.dll, OleGetIconOfFile, _OleGetIconOfFile@8
+implib ole32.dll, OleGetPackageClipboardOwner, _OleGetPackageClipboardOwner@4
+implib ole32.dll, OleIconToCursorExt, _OleIconToCursorExt@8
+implib ole32.dll, OleInitialize, _OleInitialize@4
+implib ole32.dll, OleInitializeWOW, _OleInitializeWOW@8
+implib ole32.dll, OleIsCurrentClipboard, _OleIsCurrentClipboard@4
+implib ole32.dll, OleIsRunning, _OleIsRunning@4
+implib ole32.dll, OleLoad, _OleLoad@16
+implib ole32.dll, OleLoadFromStream, _OleLoadFromStream@12
+implib ole32.dll, OleLoadPictureExt, _OleLoadPictureExt@32
+implib ole32.dll, OleLoadPictureFileExt, _OleLoadPictureFileExt@32
+implib ole32.dll, OleLoadPicturePathExt, _OleLoadPicturePathExt@24
+implib ole32.dll, OleLockRunning, _OleLockRunning@12
+implib ole32.dll, OleMetafilePictFromIconAndLabel, _OleMetafilePictFromIconAndLabel@16
+implib ole32.dll, OleNoteObjectVisible, _OleNoteObjectVisible@8
+implib ole32.dll, OleQueryCreateFromData, _OleQueryCreateFromData@4
+implib ole32.dll, OleQueryLinkFromData, _OleQueryLinkFromData@4
+implib ole32.dll, OleRegEnumFormatEtc, _OleRegEnumFormatEtc@12
+implib ole32.dll, OleRegEnumVerbs, _OleRegEnumVerbs@8
+implib ole32.dll, OleRegGetMiscStatus, _OleRegGetMiscStatus@12
+implib ole32.dll, OleRegGetUserType, _OleRegGetUserType@12
+implib ole32.dll, OleReleaseEnumVerbCache, _OleReleaseEnumVerbCache@0
+implib ole32.dll, OleRun, _OleRun@4
+implib ole32.dll, OleSave, _OleSave@12
+implib ole32.dll, OleSavePictureFileExt, _OleSavePictureFileExt@8
+implib ole32.dll, OleSaveToStream, _OleSaveToStream@8
+implib ole32.dll, OleSetAutoConvert, _OleSetAutoConvert@8
+implib ole32.dll, OleSetClipboard, _OleSetClipboard@4
+implib ole32.dll, OleSetContainedObject, _OleSetContainedObject@8
+implib ole32.dll, OleSetMenuDescriptor, _OleSetMenuDescriptor@20
+implib ole32.dll, OleTranslateAccelerator, _OleTranslateAccelerator@12
+implib ole32.dll, OleTranslateColorExt, _OleTranslateColorExt@12
+implib ole32.dll, OleUninitialize, _OleUninitialize@0
+implib ole32.dll, OpenOrCreateStream, _OpenOrCreateStream@12
+implib ole32.dll, ProgIDFromCLSID, _ProgIDFromCLSID@8
+implib ole32.dll, PropStgNameToFmtId, _PropStgNameToFmtId@8
+implib ole32.dll, PropSysAllocString, _PropSysAllocString@4
+implib ole32.dll, PropSysFreeString, _PropSysFreeString@4
+implib ole32.dll, PropVariantChangeType, _PropVariantChangeType@20
+implib ole32.dll, PropVariantClear, _PropVariantClear@4
+implib ole32.dll, PropVariantCopy, _PropVariantCopy@8
+implib ole32.dll, ReadClassStg, _ReadClassStg@8
+implib ole32.dll, ReadClassStm, _ReadClassStm@8
+implib ole32.dll, ReadFmtUserTypeStg, _ReadFmtUserTypeStg@12
+implib ole32.dll, ReadOleStg, _ReadOleStg@24
+implib ole32.dll, ReadStorageProperties, _ReadStorageProperties@8
+implib ole32.dll, ReadStringStream, _ReadStringStream@8
+implib ole32.dll, RegisterActiveObjectExt, _RegisterActiveObjectExt@16
+implib ole32.dll, RegisterDragDrop, _RegisterDragDrop@8
+implib ole32.dll, ReleaseStgMedium, _ReleaseStgMedium@4
+implib ole32.dll, RevokeActiveObjectExt, _RevokeActiveObjectExt@8
+implib ole32.dll, RevokeDragDrop, _RevokeDragDrop@4
+implib ole32.dll, RoGetAgileReference, _RoGetAgileReference@16
+implib ole32.dll, SNB_UserFree, _SNB_UserFree@8
+implib ole32.dll, SNB_UserMarshal, _SNB_UserMarshal@12
+implib ole32.dll, SNB_UserSize, _SNB_UserSize@12
+implib ole32.dll, SNB_UserUnmarshal, _SNB_UserUnmarshal@12
+implib ole32.dll, STGMEDIUM_UserFree, _STGMEDIUM_UserFree@8
+implib ole32.dll, STGMEDIUM_UserFreeExt, _STGMEDIUM_UserFreeExt@8
+implib ole32.dll, STGMEDIUM_UserMarshal, _STGMEDIUM_UserMarshal@12
+implib ole32.dll, STGMEDIUM_UserMarshalExt, _STGMEDIUM_UserMarshalExt@12
+implib ole32.dll, STGMEDIUM_UserSize, _STGMEDIUM_UserSize@12
+implib ole32.dll, STGMEDIUM_UserSizeExt, _STGMEDIUM_UserSizeExt@12
+implib ole32.dll, STGMEDIUM_UserUnmarshal, _STGMEDIUM_UserUnmarshal@12
+implib ole32.dll, STGMEDIUM_UserUnmarshalExt, _STGMEDIUM_UserUnmarshalExt@12
+implib ole32.dll, SetConvertStg, _SetConvertStg@8
+implib ole32.dll, SetDocumentBitStg, _SetDocumentBitStg@8
+implib ole32.dll, SetErrorInfo, _SetErrorInfo@8
+implib ole32.dll, SetOleautModule, _SetOleautModule@4
+implib ole32.dll, SetWOWThunkGlobalPtr, _SetWOWThunkGlobalPtr@4
+implib ole32.dll, StdTypesGetClassObject, _StdTypesGetClassObject@12
+implib ole32.dll, StdTypesRegisterServer, _StdTypesRegisterServer@0
+implib ole32.dll, StgConvertPropertyToVariant, _StgConvertPropertyToVariant@16
+implib ole32.dll, StgConvertVariantToProperty, _StgConvertVariantToProperty@28
+implib ole32.dll, StgCreateDocfile, _StgCreateDocfile@16
+implib ole32.dll, StgCreateDocfileOnILockBytes, _StgCreateDocfileOnILockBytes@16
+implib ole32.dll, StgCreatePropSetStg, _StgCreatePropSetStg@12
+implib ole32.dll, StgCreatePropStg, _StgCreatePropStg@24
+implib ole32.dll, StgCreateStorageEx, _StgCreateStorageEx@32
+implib ole32.dll, StgGetIFillLockBytesOnFile, _StgGetIFillLockBytesOnFile@8
+implib ole32.dll, StgGetIFillLockBytesOnILockBytes, _StgGetIFillLockBytesOnILockBytes@8
+implib ole32.dll, StgIsStorageFile, _StgIsStorageFile@4
+implib ole32.dll, StgIsStorageILockBytes, _StgIsStorageILockBytes@4
+implib ole32.dll, StgOpenAsyncDocfileOnIFillLockBytes, _StgOpenAsyncDocfileOnIFillLockBytes@16
+implib ole32.dll, StgOpenPropStg, _StgOpenPropStg@20
+implib ole32.dll, StgOpenStorage, _StgOpenStorage@24
+implib ole32.dll, StgOpenStorageEx, _StgOpenStorageEx@32
+implib ole32.dll, StgOpenStorageOnHandle, _StgOpenStorageOnHandle@24
+implib ole32.dll, StgOpenStorageOnILockBytes, _StgOpenStorageOnILockBytes@24
+implib ole32.dll, StgPropertyLengthAsVariant, _StgPropertyLengthAsVariant@16
+implib ole32.dll, StgSetTimes, _StgSetTimes@16
+implib ole32.dll, StoreQITableEntry, _StoreQITableEntry@8
+implib ole32.dll, StringFromCLSID, _StringFromCLSID@8
+implib ole32.dll, StringFromGUID2, _StringFromGUID2@12
+implib ole32.dll, StringFromIID, _StringFromIID@8
+implib ole32.dll, UpdateDCOMSettings, _UpdateDCOMSettings@0
+implib ole32.dll, UpdateProcessTracing, _UpdateProcessTracing@8
+implib ole32.dll, UtConvertDvtd16toDvtd32, _UtConvertDvtd16toDvtd32@12
+implib ole32.dll, UtConvertDvtd32toDvtd16, _UtConvertDvtd32toDvtd16@12
+implib ole32.dll, UtGetDvtd16Info, _UtGetDvtd16Info@8
+implib ole32.dll, UtGetDvtd32Info, _UtGetDvtd32Info@8
+implib ole32.dll, WdtpInterfacePointer_UserFree, _WdtpInterfacePointer_UserFree@4
+implib ole32.dll, WdtpInterfacePointer_UserMarshal, _WdtpInterfacePointer_UserMarshal@20
+implib ole32.dll, WdtpInterfacePointer_UserSize, _WdtpInterfacePointer_UserSize@20
+implib ole32.dll, WdtpInterfacePointer_UserUnmarshal, _WdtpInterfacePointer_UserUnmarshal@16
+implib ole32.dll, WriteClassStg, _WriteClassStg@8
+implib ole32.dll, WriteClassStm, _WriteClassStm@8
+implib ole32.dll, WriteFmtUserTypeStg, _WriteFmtUserTypeStg@12
+implib ole32.dll, WriteOleStg, _WriteOleStg@16
+implib ole32.dll, WriteStorageProperties, _WriteStorageProperties@16
+implib ole32.dll, WriteStringStream, _WriteStringStream@8
 
 endlib
