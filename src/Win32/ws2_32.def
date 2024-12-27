@@ -1,184 +1,184 @@
 include '..\implib.inc'
 
-implib ws2_32.dll, FreeAddrInfoEx, _FreeAddrInfoEx@4, __imp__FreeAddrInfoEx@4
-implib ws2_32.dll, FreeAddrInfoExW, _FreeAddrInfoExW@4, __imp__FreeAddrInfoExW@4
-implib ws2_32.dll, FreeAddrInfoW, _FreeAddrInfoW@4, __imp__FreeAddrInfoW@4
-implib ws2_32.dll, GetAddrInfoExA, _GetAddrInfoExA@40, __imp__GetAddrInfoExA@40
-implib ws2_32.dll, GetAddrInfoExCancel, _GetAddrInfoExCancel@4, __imp__GetAddrInfoExCancel@4
-implib ws2_32.dll, GetAddrInfoExOverlappedResult, _GetAddrInfoExOverlappedResult@4, __imp__GetAddrInfoExOverlappedResult@4
-implib ws2_32.dll, GetAddrInfoExW, _GetAddrInfoExW@40, __imp__GetAddrInfoExW@40
-implib ws2_32.dll, GetAddrInfoW, _GetAddrInfoW@16, __imp__GetAddrInfoW@16
-implib ws2_32.dll, GetHostNameW, _GetHostNameW@8, __imp__GetHostNameW@8
-implib ws2_32.dll, GetNameInfoW, _GetNameInfoW@28, __imp__GetNameInfoW@28
-implib ws2_32.dll, InetNtopW, _InetNtopW@16, __imp__InetNtopW@16
-implib ws2_32.dll, InetPtonW, _InetPtonW@12, __imp__InetPtonW@12
-implib ws2_32.dll, SetAddrInfoExA, _SetAddrInfoExA@48, __imp__SetAddrInfoExA@48
-implib ws2_32.dll, SetAddrInfoExW, _SetAddrInfoExW@48, __imp__SetAddrInfoExW@48
-implib ws2_32.dll, WEP, _WEP@0, __imp__WEP@0
-implib ws2_32.dll, WPUCompleteOverlappedRequest, _WPUCompleteOverlappedRequest@20, __imp__WPUCompleteOverlappedRequest@20
-implib ws2_32.dll, WPUGetProviderPathEx, _WPUGetProviderPathEx@20, __imp__WPUGetProviderPathEx@20
-implib ws2_32.dll, WSAAccept, _WSAAccept@20, __imp__WSAAccept@20
-implib ws2_32.dll, WSAAddressToStringA, _WSAAddressToStringA@20, __imp__WSAAddressToStringA@20
-implib ws2_32.dll, WSAAddressToStringW, _WSAAddressToStringW@20, __imp__WSAAddressToStringW@20
-implib ws2_32.dll, WSAAdvertiseProvider, _WSAAdvertiseProvider@8, __imp__WSAAdvertiseProvider@8
-implib ws2_32.dll, WSAAsyncGetHostByAddr, _WSAAsyncGetHostByAddr@28, __imp__WSAAsyncGetHostByAddr@28
-implib ws2_32.dll, WSAAsyncGetHostByName, _WSAAsyncGetHostByName@20, __imp__WSAAsyncGetHostByName@20
-implib ws2_32.dll, WSAAsyncGetProtoByName, _WSAAsyncGetProtoByName@20, __imp__WSAAsyncGetProtoByName@20
-implib ws2_32.dll, WSAAsyncGetProtoByNumber, _WSAAsyncGetProtoByNumber@20, __imp__WSAAsyncGetProtoByNumber@20
-implib ws2_32.dll, WSAAsyncGetServByName, _WSAAsyncGetServByName@24, __imp__WSAAsyncGetServByName@24
-implib ws2_32.dll, WSAAsyncGetServByPort, _WSAAsyncGetServByPort@24, __imp__WSAAsyncGetServByPort@24
-implib ws2_32.dll, WSAAsyncSelect, _WSAAsyncSelect@16, __imp__WSAAsyncSelect@16
-implib ws2_32.dll, WSACancelAsyncRequest, _WSACancelAsyncRequest@4, __imp__WSACancelAsyncRequest@4
-implib ws2_32.dll, WSACancelBlockingCall, _WSACancelBlockingCall@0, __imp__WSACancelBlockingCall@0
-implib ws2_32.dll, WSACleanup, _WSACleanup@0, __imp__WSACleanup@0
-implib ws2_32.dll, WSACloseEvent, _WSACloseEvent@4, __imp__WSACloseEvent@4
-implib ws2_32.dll, WSAConnect, _WSAConnect@28, __imp__WSAConnect@28
-implib ws2_32.dll, WSAConnectByList, _WSAConnectByList@32, __imp__WSAConnectByList@32
-implib ws2_32.dll, WSAConnectByNameA, _WSAConnectByNameA@36, __imp__WSAConnectByNameA@36
-implib ws2_32.dll, WSAConnectByNameW, _WSAConnectByNameW@36, __imp__WSAConnectByNameW@36
-implib ws2_32.dll, WSACreateEvent, _WSACreateEvent@0, __imp__WSACreateEvent@0
-implib ws2_32.dll, WSADuplicateSocketA, _WSADuplicateSocketA@12, __imp__WSADuplicateSocketA@12
-implib ws2_32.dll, WSADuplicateSocketW, _WSADuplicateSocketW@12, __imp__WSADuplicateSocketW@12
-implib ws2_32.dll, WSAEnumNameSpaceProvidersA, _WSAEnumNameSpaceProvidersA@8, __imp__WSAEnumNameSpaceProvidersA@8
-implib ws2_32.dll, WSAEnumNameSpaceProvidersExA, _WSAEnumNameSpaceProvidersExA@8, __imp__WSAEnumNameSpaceProvidersExA@8
-implib ws2_32.dll, WSAEnumNameSpaceProvidersExW, _WSAEnumNameSpaceProvidersExW@8, __imp__WSAEnumNameSpaceProvidersExW@8
-implib ws2_32.dll, WSAEnumNameSpaceProvidersW, _WSAEnumNameSpaceProvidersW@8, __imp__WSAEnumNameSpaceProvidersW@8
-implib ws2_32.dll, WSAEnumNetworkEvents, _WSAEnumNetworkEvents@12, __imp__WSAEnumNetworkEvents@12
-implib ws2_32.dll, WSAEnumProtocolsA, _WSAEnumProtocolsA@12, __imp__WSAEnumProtocolsA@12
-implib ws2_32.dll, WSAEnumProtocolsW, _WSAEnumProtocolsW@12, __imp__WSAEnumProtocolsW@12
-implib ws2_32.dll, WSAEventSelect, _WSAEventSelect@12, __imp__WSAEventSelect@12
-implib ws2_32.dll, WSAGetLastError, _WSAGetLastError@0, __imp__WSAGetLastError@0
-implib ws2_32.dll, WSAGetOverlappedResult, _WSAGetOverlappedResult@20, __imp__WSAGetOverlappedResult@20
-implib ws2_32.dll, WSAGetQOSByName, _WSAGetQOSByName@12, __imp__WSAGetQOSByName@12
-implib ws2_32.dll, WSAGetServiceClassInfoA, _WSAGetServiceClassInfoA@16, __imp__WSAGetServiceClassInfoA@16
-implib ws2_32.dll, WSAGetServiceClassInfoW, _WSAGetServiceClassInfoW@16, __imp__WSAGetServiceClassInfoW@16
-implib ws2_32.dll, WSAGetServiceClassNameByClassIdA, _WSAGetServiceClassNameByClassIdA@12, __imp__WSAGetServiceClassNameByClassIdA@12
-implib ws2_32.dll, WSAGetServiceClassNameByClassIdW, _WSAGetServiceClassNameByClassIdW@12, __imp__WSAGetServiceClassNameByClassIdW@12
-implib ws2_32.dll, WSAHtonl, _WSAHtonl@12, __imp__WSAHtonl@12
-implib ws2_32.dll, WSAHtons, _WSAHtons@12, __imp__WSAHtons@12
-implib ws2_32.dll, WSAInstallServiceClassA, _WSAInstallServiceClassA@4, __imp__WSAInstallServiceClassA@4
-implib ws2_32.dll, WSAInstallServiceClassW, _WSAInstallServiceClassW@4, __imp__WSAInstallServiceClassW@4
-implib ws2_32.dll, WSAIoctl, _WSAIoctl@36, __imp__WSAIoctl@36
-implib ws2_32.dll, WSAIsBlocking, _WSAIsBlocking@0, __imp__WSAIsBlocking@0
-implib ws2_32.dll, WSAJoinLeaf, _WSAJoinLeaf@32, __imp__WSAJoinLeaf@32
-implib ws2_32.dll, WSALookupServiceBeginA, _WSALookupServiceBeginA@12, __imp__WSALookupServiceBeginA@12
-implib ws2_32.dll, WSALookupServiceBeginW, _WSALookupServiceBeginW@12, __imp__WSALookupServiceBeginW@12
-implib ws2_32.dll, WSALookupServiceEnd, _WSALookupServiceEnd@4, __imp__WSALookupServiceEnd@4
-implib ws2_32.dll, WSALookupServiceNextA, _WSALookupServiceNextA@16, __imp__WSALookupServiceNextA@16
-implib ws2_32.dll, WSALookupServiceNextW, _WSALookupServiceNextW@16, __imp__WSALookupServiceNextW@16
-implib ws2_32.dll, WSANSPIoctl, _WSANSPIoctl@32, __imp__WSANSPIoctl@32
-implib ws2_32.dll, WSANtohl, _WSANtohl@12, __imp__WSANtohl@12
-implib ws2_32.dll, WSANtohs, _WSANtohs@12, __imp__WSANtohs@12
-implib ws2_32.dll, WSAPoll, _WSAPoll@12, __imp__WSAPoll@12
-implib ws2_32.dll, WSAProviderCompleteAsyncCall, _WSAProviderCompleteAsyncCall@8, __imp__WSAProviderCompleteAsyncCall@8
-implib ws2_32.dll, WSAProviderConfigChange, _WSAProviderConfigChange@12, __imp__WSAProviderConfigChange@12
-implib ws2_32.dll, WSARecv, _WSARecv@28, __imp__WSARecv@28
-implib ws2_32.dll, WSARecvDisconnect, _WSARecvDisconnect@8, __imp__WSARecvDisconnect@8
-implib ws2_32.dll, WSARecvFrom, _WSARecvFrom@36, __imp__WSARecvFrom@36
-implib ws2_32.dll, WSARemoveServiceClass, _WSARemoveServiceClass@4, __imp__WSARemoveServiceClass@4
-implib ws2_32.dll, WSAResetEvent, _WSAResetEvent@4, __imp__WSAResetEvent@4
-implib ws2_32.dll, WSASend, _WSASend@28, __imp__WSASend@28
-implib ws2_32.dll, WSASendDisconnect, _WSASendDisconnect@8, __imp__WSASendDisconnect@8
-implib ws2_32.dll, WSASendMsg, _WSASendMsg@24, __imp__WSASendMsg@24
-implib ws2_32.dll, WSASendTo, _WSASendTo@36, __imp__WSASendTo@36
-implib ws2_32.dll, WSASetBlockingHook, _WSASetBlockingHook@4, __imp__WSASetBlockingHook@4
-implib ws2_32.dll, WSASetEvent, _WSASetEvent@4, __imp__WSASetEvent@4
-implib ws2_32.dll, WSASetLastError, _WSASetLastError@4, __imp__WSASetLastError@4
-implib ws2_32.dll, WSASetServiceA, _WSASetServiceA@12, __imp__WSASetServiceA@12
-implib ws2_32.dll, WSASetServiceW, _WSASetServiceW@12, __imp__WSASetServiceW@12
-implib ws2_32.dll, WSASocketA, _WSASocketA@24, __imp__WSASocketA@24
-implib ws2_32.dll, WSASocketW, _WSASocketW@24, __imp__WSASocketW@24
-implib ws2_32.dll, WSAStartup, _WSAStartup@8, __imp__WSAStartup@8
-implib ws2_32.dll, WSAStringToAddressA, _WSAStringToAddressA@20, __imp__WSAStringToAddressA@20
-implib ws2_32.dll, WSAStringToAddressW, _WSAStringToAddressW@20, __imp__WSAStringToAddressW@20
-implib ws2_32.dll, WSAUnadvertiseProvider, _WSAUnadvertiseProvider@4, __imp__WSAUnadvertiseProvider@4
-implib ws2_32.dll, WSAUnhookBlockingHook, _WSAUnhookBlockingHook@0, __imp__WSAUnhookBlockingHook@0
-implib ws2_32.dll, WSAWaitForMultipleEvents, _WSAWaitForMultipleEvents@20, __imp__WSAWaitForMultipleEvents@20
-implib ws2_32.dll, WSApSetPostRoutine, _WSApSetPostRoutine@4, __imp__WSApSetPostRoutine@4
-implib ws2_32.dll, WSCDeinstallProvider, _WSCDeinstallProvider@8, __imp__WSCDeinstallProvider@8
-implib ws2_32.dll, WSCDeinstallProviderEx, _WSCDeinstallProviderEx@12, __imp__WSCDeinstallProviderEx@12
-implib ws2_32.dll, WSCEnableNSProvider, _WSCEnableNSProvider@8, __imp__WSCEnableNSProvider@8
-implib ws2_32.dll, WSCEnumProtocols, _WSCEnumProtocols@16, __imp__WSCEnumProtocols@16
-implib ws2_32.dll, WSCEnumProtocolsEx, _WSCEnumProtocolsEx@20, __imp__WSCEnumProtocolsEx@20
-implib ws2_32.dll, WSCGetApplicationCategory, _WSCGetApplicationCategory@24, __imp__WSCGetApplicationCategory@24
-implib ws2_32.dll, WSCGetApplicationCategoryEx, _WSCGetApplicationCategoryEx@28, __imp__WSCGetApplicationCategoryEx@28
-implib ws2_32.dll, WSCGetProviderInfo, _WSCGetProviderInfo@24, __imp__WSCGetProviderInfo@24
-implib ws2_32.dll, WSCGetProviderPath, _WSCGetProviderPath@16, __imp__WSCGetProviderPath@16
-implib ws2_32.dll, WSCInstallNameSpace, _WSCInstallNameSpace@20, __imp__WSCInstallNameSpace@20
-implib ws2_32.dll, WSCInstallNameSpaceEx, _WSCInstallNameSpaceEx@24, __imp__WSCInstallNameSpaceEx@24
-implib ws2_32.dll, WSCInstallNameSpaceEx2, _WSCInstallNameSpaceEx2@28, __imp__WSCInstallNameSpaceEx2@28
-implib ws2_32.dll, WSCInstallProvider, _WSCInstallProvider@20, __imp__WSCInstallProvider@20
-implib ws2_32.dll, WSCInstallProviderAndChains, _WSCInstallProviderAndChains@32, __imp__WSCInstallProviderAndChains@32
-implib ws2_32.dll, WSCInstallProviderEx, _WSCInstallProviderEx@28, __imp__WSCInstallProviderEx@28
-implib ws2_32.dll, WSCSetApplicationCategory, _WSCSetApplicationCategory@28, __imp__WSCSetApplicationCategory@28
-implib ws2_32.dll, WSCSetApplicationCategoryEx, _WSCSetApplicationCategoryEx@32, __imp__WSCSetApplicationCategoryEx@32
-implib ws2_32.dll, WSCSetProviderInfo, _WSCSetProviderInfo@24, __imp__WSCSetProviderInfo@24
-implib ws2_32.dll, WSCUnInstallNameSpace, _WSCUnInstallNameSpace@4, __imp__WSCUnInstallNameSpace@4
-implib ws2_32.dll, WSCUnInstallNameSpaceEx2, _WSCUnInstallNameSpaceEx2@8, __imp__WSCUnInstallNameSpaceEx2@8
-implib ws2_32.dll, WSCUpdateProvider, _WSCUpdateProvider@20, __imp__WSCUpdateProvider@20
-implib ws2_32.dll, WSCUpdateProviderEx, _WSCUpdateProviderEx@24, __imp__WSCUpdateProviderEx@24
-implib ws2_32.dll, WSCWriteNameSpaceOrder, _WSCWriteNameSpaceOrder@8, __imp__WSCWriteNameSpaceOrder@8
-implib ws2_32.dll, WSCWriteProviderOrder, _WSCWriteProviderOrder@8, __imp__WSCWriteProviderOrder@8
-implib ws2_32.dll, WSCWriteProviderOrderEx, _WSCWriteProviderOrderEx@12, __imp__WSCWriteProviderOrderEx@12
-implib ws2_32.dll, WahCloseApcHelper, _WahCloseApcHelper@4, __imp__WahCloseApcHelper@4
-implib ws2_32.dll, WahCloseHandleHelper, _WahCloseHandleHelper@4, __imp__WahCloseHandleHelper@4
-implib ws2_32.dll, WahCloseNotificationHandleHelper, _WahCloseNotificationHandleHelper@4, __imp__WahCloseNotificationHandleHelper@4
-implib ws2_32.dll, WahCloseSocketHandle, _WahCloseSocketHandle@8, __imp__WahCloseSocketHandle@8
-implib ws2_32.dll, WahCloseThread, _WahCloseThread@8, __imp__WahCloseThread@8
-implib ws2_32.dll, WahCompleteRequest, _WahCompleteRequest@20, __imp__WahCompleteRequest@20
-implib ws2_32.dll, WahCreateHandleContextTable, _WahCreateHandleContextTable@4, __imp__WahCreateHandleContextTable@4
-implib ws2_32.dll, WahCreateNotificationHandle, _WahCreateNotificationHandle@8, __imp__WahCreateNotificationHandle@8
-implib ws2_32.dll, WahCreateSocketHandle, _WahCreateSocketHandle@8, __imp__WahCreateSocketHandle@8
-implib ws2_32.dll, WahDestroyHandleContextTable, _WahDestroyHandleContextTable@4, __imp__WahDestroyHandleContextTable@4
-implib ws2_32.dll, WahDisableNonIFSHandleSupport, _WahDisableNonIFSHandleSupport@0, __imp__WahDisableNonIFSHandleSupport@0
-implib ws2_32.dll, WahEnableNonIFSHandleSupport, _WahEnableNonIFSHandleSupport@0, __imp__WahEnableNonIFSHandleSupport@0
-implib ws2_32.dll, WahEnumerateHandleContexts, _WahEnumerateHandleContexts@12, __imp__WahEnumerateHandleContexts@12
-implib ws2_32.dll, WahInsertHandleContext, _WahInsertHandleContext@8, __imp__WahInsertHandleContext@8
-implib ws2_32.dll, WahNotifyAllProcesses, _WahNotifyAllProcesses@4, __imp__WahNotifyAllProcesses@4
-implib ws2_32.dll, WahOpenApcHelper, _WahOpenApcHelper@4, __imp__WahOpenApcHelper@4
-implib ws2_32.dll, WahOpenCurrentThread, _WahOpenCurrentThread@8, __imp__WahOpenCurrentThread@8
-implib ws2_32.dll, WahOpenHandleHelper, _WahOpenHandleHelper4, __imp__WahOpenHandleHelper4
-implib ws2_32.dll, WahOpenNotificationHandleHelper, _WahOpenNotificationHandleHelper@4, __imp__WahOpenNotificationHandleHelper@4
-implib ws2_32.dll, WahQueueUserApc, _WahQueueUserApc@16, __imp__WahQueueUserApc@16
-implib ws2_32.dll, WahReferenceContextByHandle, _WahReferenceContextByHandle@8, __imp__WahReferenceContextByHandle@8
-implib ws2_32.dll, WahRemoveHandleContext, _WahRemoveHandleContext@8, __imp__WahRemoveHandleContext@8
-implib ws2_32.dll, WahWaitForNotification, _WahWaitForNotification@16, __imp__WahWaitForNotification@16
-implib ws2_32.dll, WahWriteLSPEvent, _WahWriteLSPEvent@8, __imp__WahWriteLSPEvent@8
-implib ws2_32.dll, __WSAFDIsSet, ___WSAFDIsSet@8, __imp____WSAFDIsSet@8
-implib ws2_32.dll, accept, _accept@12, __imp__accept@12
-implib ws2_32.dll, bind, _bind@12, __imp__bind@12
-implib ws2_32.dll, closesocket, _closesocket@4, __imp__closesocket@4
-implib ws2_32.dll, connect, _connect@12, __imp__connect@12
-implib ws2_32.dll, freeaddrinfo, _freeaddrinfo@4, __imp__freeaddrinfo@4
-implib ws2_32.dll, getaddrinfo, _getaddrinfo@16, __imp__getaddrinfo@16
-implib ws2_32.dll, gethostbyaddr, _gethostbyaddr@12, __imp__gethostbyaddr@12
-implib ws2_32.dll, gethostbyname, _gethostbyname@4, __imp__gethostbyname@4
-implib ws2_32.dll, gethostname, _gethostname@8, __imp__gethostname@8
-implib ws2_32.dll, getnameinfo, _getnameinfo@28, __imp__getnameinfo@28
-implib ws2_32.dll, getpeername, _getpeername@12, __imp__getpeername@12
-implib ws2_32.dll, getprotobyname, _getprotobyname@4, __imp__getprotobyname@4
-implib ws2_32.dll, getprotobynumber, _getprotobynumber@4, __imp__getprotobynumber@4
-implib ws2_32.dll, getservbyname, _getservbyname@8, __imp__getservbyname@8
-implib ws2_32.dll, getservbyport, _getservbyport@8, __imp__getservbyport@8
-implib ws2_32.dll, getsockname, _getsockname@12, __imp__getsockname@12
-implib ws2_32.dll, getsockopt, _getsockopt@20, __imp__getsockopt@20
-implib ws2_32.dll, htonl, _htonl@4, __imp__htonl@4
-implib ws2_32.dll, htons, _htons@4, __imp__htons@4
-implib ws2_32.dll, inet_addr, _inet_addr@4, __imp__inet_addr@4
-implib ws2_32.dll, inet_ntoa, _inet_ntoa@4, __imp__inet_ntoa@4
-implib ws2_32.dll, inet_ntop, _inet_ntop@16, __imp__inet_ntop@16
-implib ws2_32.dll, inet_pton, _inet_pton@12, __imp__inet_pton@12
-implib ws2_32.dll, ioctlsocket, _ioctlsocket@12, __imp__ioctlsocket@12
-implib ws2_32.dll, listen, _listen@8, __imp__listen@8
-implib ws2_32.dll, ntohl, _ntohl@4, __imp__ntohl@4
-implib ws2_32.dll, ntohs, _ntohs@4, __imp__ntohs@4
-implib ws2_32.dll, recv, _recv@16, __imp__recv@16
-implib ws2_32.dll, recvfrom, _recvfrom@24, __imp__recvfrom@24
-implib ws2_32.dll, select, _select@20, __imp__select@20
-implib ws2_32.dll, send, _send@16, __imp__send@16
-implib ws2_32.dll, sendto, _sendto@24, __imp__sendto@24
-implib ws2_32.dll, setsockopt, _setsockopt@20, __imp__setsockopt@20
-implib ws2_32.dll, shutdown, _shutdown@8, __imp__shutdown@8
-implib ws2_32.dll, socket, _socket@12, __imp__socket@12
+implib ws2_32.dll, FreeAddrInfoEx, _FreeAddrInfoEx@4
+implib ws2_32.dll, FreeAddrInfoExW, _FreeAddrInfoExW@4
+implib ws2_32.dll, FreeAddrInfoW, _FreeAddrInfoW@4
+implib ws2_32.dll, GetAddrInfoExA, _GetAddrInfoExA@40
+implib ws2_32.dll, GetAddrInfoExCancel, _GetAddrInfoExCancel@4
+implib ws2_32.dll, GetAddrInfoExOverlappedResult, _GetAddrInfoExOverlappedResult@4
+implib ws2_32.dll, GetAddrInfoExW, _GetAddrInfoExW@40
+implib ws2_32.dll, GetAddrInfoW, _GetAddrInfoW@16
+implib ws2_32.dll, GetHostNameW, _GetHostNameW@8
+implib ws2_32.dll, GetNameInfoW, _GetNameInfoW@28
+implib ws2_32.dll, InetNtopW, _InetNtopW@16
+implib ws2_32.dll, InetPtonW, _InetPtonW@12
+implib ws2_32.dll, SetAddrInfoExA, _SetAddrInfoExA@48
+implib ws2_32.dll, SetAddrInfoExW, _SetAddrInfoExW@48
+implib ws2_32.dll, WEP, _WEP@0
+implib ws2_32.dll, WPUCompleteOverlappedRequest, _WPUCompleteOverlappedRequest@20
+implib ws2_32.dll, WPUGetProviderPathEx, _WPUGetProviderPathEx@20
+implib ws2_32.dll, WSAAccept, _WSAAccept@20
+implib ws2_32.dll, WSAAddressToStringA, _WSAAddressToStringA@20
+implib ws2_32.dll, WSAAddressToStringW, _WSAAddressToStringW@20
+implib ws2_32.dll, WSAAdvertiseProvider, _WSAAdvertiseProvider@8
+implib ws2_32.dll, WSAAsyncGetHostByAddr, _WSAAsyncGetHostByAddr@28
+implib ws2_32.dll, WSAAsyncGetHostByName, _WSAAsyncGetHostByName@20
+implib ws2_32.dll, WSAAsyncGetProtoByName, _WSAAsyncGetProtoByName@20
+implib ws2_32.dll, WSAAsyncGetProtoByNumber, _WSAAsyncGetProtoByNumber@20
+implib ws2_32.dll, WSAAsyncGetServByName, _WSAAsyncGetServByName@24
+implib ws2_32.dll, WSAAsyncGetServByPort, _WSAAsyncGetServByPort@24
+implib ws2_32.dll, WSAAsyncSelect, _WSAAsyncSelect@16
+implib ws2_32.dll, WSACancelAsyncRequest, _WSACancelAsyncRequest@4
+implib ws2_32.dll, WSACancelBlockingCall, _WSACancelBlockingCall@0
+implib ws2_32.dll, WSACleanup, _WSACleanup@0
+implib ws2_32.dll, WSACloseEvent, _WSACloseEvent@4
+implib ws2_32.dll, WSAConnect, _WSAConnect@28
+implib ws2_32.dll, WSAConnectByList, _WSAConnectByList@32
+implib ws2_32.dll, WSAConnectByNameA, _WSAConnectByNameA@36
+implib ws2_32.dll, WSAConnectByNameW, _WSAConnectByNameW@36
+implib ws2_32.dll, WSACreateEvent, _WSACreateEvent@0
+implib ws2_32.dll, WSADuplicateSocketA, _WSADuplicateSocketA@12
+implib ws2_32.dll, WSADuplicateSocketW, _WSADuplicateSocketW@12
+implib ws2_32.dll, WSAEnumNameSpaceProvidersA, _WSAEnumNameSpaceProvidersA@8
+implib ws2_32.dll, WSAEnumNameSpaceProvidersExA, _WSAEnumNameSpaceProvidersExA@8
+implib ws2_32.dll, WSAEnumNameSpaceProvidersExW, _WSAEnumNameSpaceProvidersExW@8
+implib ws2_32.dll, WSAEnumNameSpaceProvidersW, _WSAEnumNameSpaceProvidersW@8
+implib ws2_32.dll, WSAEnumNetworkEvents, _WSAEnumNetworkEvents@12
+implib ws2_32.dll, WSAEnumProtocolsA, _WSAEnumProtocolsA@12
+implib ws2_32.dll, WSAEnumProtocolsW, _WSAEnumProtocolsW@12
+implib ws2_32.dll, WSAEventSelect, _WSAEventSelect@12
+implib ws2_32.dll, WSAGetLastError, _WSAGetLastError@0
+implib ws2_32.dll, WSAGetOverlappedResult, _WSAGetOverlappedResult@20
+implib ws2_32.dll, WSAGetQOSByName, _WSAGetQOSByName@12
+implib ws2_32.dll, WSAGetServiceClassInfoA, _WSAGetServiceClassInfoA@16
+implib ws2_32.dll, WSAGetServiceClassInfoW, _WSAGetServiceClassInfoW@16
+implib ws2_32.dll, WSAGetServiceClassNameByClassIdA, _WSAGetServiceClassNameByClassIdA@12
+implib ws2_32.dll, WSAGetServiceClassNameByClassIdW, _WSAGetServiceClassNameByClassIdW@12
+implib ws2_32.dll, WSAHtonl, _WSAHtonl@12
+implib ws2_32.dll, WSAHtons, _WSAHtons@12
+implib ws2_32.dll, WSAInstallServiceClassA, _WSAInstallServiceClassA@4
+implib ws2_32.dll, WSAInstallServiceClassW, _WSAInstallServiceClassW@4
+implib ws2_32.dll, WSAIoctl, _WSAIoctl@36
+implib ws2_32.dll, WSAIsBlocking, _WSAIsBlocking@0
+implib ws2_32.dll, WSAJoinLeaf, _WSAJoinLeaf@32
+implib ws2_32.dll, WSALookupServiceBeginA, _WSALookupServiceBeginA@12
+implib ws2_32.dll, WSALookupServiceBeginW, _WSALookupServiceBeginW@12
+implib ws2_32.dll, WSALookupServiceEnd, _WSALookupServiceEnd@4
+implib ws2_32.dll, WSALookupServiceNextA, _WSALookupServiceNextA@16
+implib ws2_32.dll, WSALookupServiceNextW, _WSALookupServiceNextW@16
+implib ws2_32.dll, WSANSPIoctl, _WSANSPIoctl@32
+implib ws2_32.dll, WSANtohl, _WSANtohl@12
+implib ws2_32.dll, WSANtohs, _WSANtohs@12
+implib ws2_32.dll, WSAPoll, _WSAPoll@12
+implib ws2_32.dll, WSAProviderCompleteAsyncCall, _WSAProviderCompleteAsyncCall@8
+implib ws2_32.dll, WSAProviderConfigChange, _WSAProviderConfigChange@12
+implib ws2_32.dll, WSARecv, _WSARecv@28
+implib ws2_32.dll, WSARecvDisconnect, _WSARecvDisconnect@8
+implib ws2_32.dll, WSARecvFrom, _WSARecvFrom@36
+implib ws2_32.dll, WSARemoveServiceClass, _WSARemoveServiceClass@4
+implib ws2_32.dll, WSAResetEvent, _WSAResetEvent@4
+implib ws2_32.dll, WSASend, _WSASend@28
+implib ws2_32.dll, WSASendDisconnect, _WSASendDisconnect@8
+implib ws2_32.dll, WSASendMsg, _WSASendMsg@24
+implib ws2_32.dll, WSASendTo, _WSASendTo@36
+implib ws2_32.dll, WSASetBlockingHook, _WSASetBlockingHook@4
+implib ws2_32.dll, WSASetEvent, _WSASetEvent@4
+implib ws2_32.dll, WSASetLastError, _WSASetLastError@4
+implib ws2_32.dll, WSASetServiceA, _WSASetServiceA@12
+implib ws2_32.dll, WSASetServiceW, _WSASetServiceW@12
+implib ws2_32.dll, WSASocketA, _WSASocketA@24
+implib ws2_32.dll, WSASocketW, _WSASocketW@24
+implib ws2_32.dll, WSAStartup, _WSAStartup@8
+implib ws2_32.dll, WSAStringToAddressA, _WSAStringToAddressA@20
+implib ws2_32.dll, WSAStringToAddressW, _WSAStringToAddressW@20
+implib ws2_32.dll, WSAUnadvertiseProvider, _WSAUnadvertiseProvider@4
+implib ws2_32.dll, WSAUnhookBlockingHook, _WSAUnhookBlockingHook@0
+implib ws2_32.dll, WSAWaitForMultipleEvents, _WSAWaitForMultipleEvents@20
+implib ws2_32.dll, WSApSetPostRoutine, _WSApSetPostRoutine@4
+implib ws2_32.dll, WSCDeinstallProvider, _WSCDeinstallProvider@8
+implib ws2_32.dll, WSCDeinstallProviderEx, _WSCDeinstallProviderEx@12
+implib ws2_32.dll, WSCEnableNSProvider, _WSCEnableNSProvider@8
+implib ws2_32.dll, WSCEnumProtocols, _WSCEnumProtocols@16
+implib ws2_32.dll, WSCEnumProtocolsEx, _WSCEnumProtocolsEx@20
+implib ws2_32.dll, WSCGetApplicationCategory, _WSCGetApplicationCategory@24
+implib ws2_32.dll, WSCGetApplicationCategoryEx, _WSCGetApplicationCategoryEx@28
+implib ws2_32.dll, WSCGetProviderInfo, _WSCGetProviderInfo@24
+implib ws2_32.dll, WSCGetProviderPath, _WSCGetProviderPath@16
+implib ws2_32.dll, WSCInstallNameSpace, _WSCInstallNameSpace@20
+implib ws2_32.dll, WSCInstallNameSpaceEx, _WSCInstallNameSpaceEx@24
+implib ws2_32.dll, WSCInstallNameSpaceEx2, _WSCInstallNameSpaceEx2@28
+implib ws2_32.dll, WSCInstallProvider, _WSCInstallProvider@20
+implib ws2_32.dll, WSCInstallProviderAndChains, _WSCInstallProviderAndChains@32
+implib ws2_32.dll, WSCInstallProviderEx, _WSCInstallProviderEx@28
+implib ws2_32.dll, WSCSetApplicationCategory, _WSCSetApplicationCategory@28
+implib ws2_32.dll, WSCSetApplicationCategoryEx, _WSCSetApplicationCategoryEx@32
+implib ws2_32.dll, WSCSetProviderInfo, _WSCSetProviderInfo@24
+implib ws2_32.dll, WSCUnInstallNameSpace, _WSCUnInstallNameSpace@4
+implib ws2_32.dll, WSCUnInstallNameSpaceEx2, _WSCUnInstallNameSpaceEx2@8
+implib ws2_32.dll, WSCUpdateProvider, _WSCUpdateProvider@20
+implib ws2_32.dll, WSCUpdateProviderEx, _WSCUpdateProviderEx@24
+implib ws2_32.dll, WSCWriteNameSpaceOrder, _WSCWriteNameSpaceOrder@8
+implib ws2_32.dll, WSCWriteProviderOrder, _WSCWriteProviderOrder@8
+implib ws2_32.dll, WSCWriteProviderOrderEx, _WSCWriteProviderOrderEx@12
+implib ws2_32.dll, WahCloseApcHelper, _WahCloseApcHelper@4
+implib ws2_32.dll, WahCloseHandleHelper, _WahCloseHandleHelper@4
+implib ws2_32.dll, WahCloseNotificationHandleHelper, _WahCloseNotificationHandleHelper@4
+implib ws2_32.dll, WahCloseSocketHandle, _WahCloseSocketHandle@8
+implib ws2_32.dll, WahCloseThread, _WahCloseThread@8
+implib ws2_32.dll, WahCompleteRequest, _WahCompleteRequest@20
+implib ws2_32.dll, WahCreateHandleContextTable, _WahCreateHandleContextTable@4
+implib ws2_32.dll, WahCreateNotificationHandle, _WahCreateNotificationHandle@8
+implib ws2_32.dll, WahCreateSocketHandle, _WahCreateSocketHandle@8
+implib ws2_32.dll, WahDestroyHandleContextTable, _WahDestroyHandleContextTable@4
+implib ws2_32.dll, WahDisableNonIFSHandleSupport, _WahDisableNonIFSHandleSupport@0
+implib ws2_32.dll, WahEnableNonIFSHandleSupport, _WahEnableNonIFSHandleSupport@0
+implib ws2_32.dll, WahEnumerateHandleContexts, _WahEnumerateHandleContexts@12
+implib ws2_32.dll, WahInsertHandleContext, _WahInsertHandleContext@8
+implib ws2_32.dll, WahNotifyAllProcesses, _WahNotifyAllProcesses@4
+implib ws2_32.dll, WahOpenApcHelper, _WahOpenApcHelper@4
+implib ws2_32.dll, WahOpenCurrentThread, _WahOpenCurrentThread@8
+implib ws2_32.dll, WahOpenHandleHelper, _WahOpenHandleHelper4
+implib ws2_32.dll, WahOpenNotificationHandleHelper, _WahOpenNotificationHandleHelper@4
+implib ws2_32.dll, WahQueueUserApc, _WahQueueUserApc@16
+implib ws2_32.dll, WahReferenceContextByHandle, _WahReferenceContextByHandle@8
+implib ws2_32.dll, WahRemoveHandleContext, _WahRemoveHandleContext@8
+implib ws2_32.dll, WahWaitForNotification, _WahWaitForNotification@16
+implib ws2_32.dll, WahWriteLSPEvent, _WahWriteLSPEvent@8
+implib ws2_32.dll, __WSAFDIsSet, ___WSAFDIsSet@8
+implib ws2_32.dll, accept, _accept@12
+implib ws2_32.dll, bind, _bind@12
+implib ws2_32.dll, closesocket, _closesocket@4
+implib ws2_32.dll, connect, _connect@12
+implib ws2_32.dll, freeaddrinfo, _freeaddrinfo@4
+implib ws2_32.dll, getaddrinfo, _getaddrinfo@16
+implib ws2_32.dll, gethostbyaddr, _gethostbyaddr@12
+implib ws2_32.dll, gethostbyname, _gethostbyname@4
+implib ws2_32.dll, gethostname, _gethostname@8
+implib ws2_32.dll, getnameinfo, _getnameinfo@28
+implib ws2_32.dll, getpeername, _getpeername@12
+implib ws2_32.dll, getprotobyname, _getprotobyname@4
+implib ws2_32.dll, getprotobynumber, _getprotobynumber@4
+implib ws2_32.dll, getservbyname, _getservbyname@8
+implib ws2_32.dll, getservbyport, _getservbyport@8
+implib ws2_32.dll, getsockname, _getsockname@12
+implib ws2_32.dll, getsockopt, _getsockopt@20
+implib ws2_32.dll, htonl, _htonl@4
+implib ws2_32.dll, htons, _htons@4
+implib ws2_32.dll, inet_addr, _inet_addr@4
+implib ws2_32.dll, inet_ntoa, _inet_ntoa@4
+implib ws2_32.dll, inet_ntop, _inet_ntop@16
+implib ws2_32.dll, inet_pton, _inet_pton@12
+implib ws2_32.dll, ioctlsocket, _ioctlsocket@12
+implib ws2_32.dll, listen, _listen@8
+implib ws2_32.dll, ntohl, _ntohl@4
+implib ws2_32.dll, ntohs, _ntohs@4
+implib ws2_32.dll, recv, _recv@16
+implib ws2_32.dll, recvfrom, _recvfrom@24
+implib ws2_32.dll, select, _select@20
+implib ws2_32.dll, send, _send@16
+implib ws2_32.dll, sendto, _sendto@24
+implib ws2_32.dll, setsockopt, _setsockopt@20
+implib ws2_32.dll, shutdown, _shutdown@8
+implib ws2_32.dll, socket, _socket@12
 
 endlib
