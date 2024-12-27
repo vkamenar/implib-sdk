@@ -1,26 +1,26 @@
 include '..\implib.inc'
 
-implib url.dll, AddMIMEFileTypesPS, _AddMIMEFileTypesPS@8, __imp__AddMIMEFileTypesPS@8
-implib url.dll, AutodialHookCallback, _AutodialHookCallback@8, __imp__AutodialHookCallback@8
-implib url.dll, DllCanUnloadNow, _URL_DllCanUnloadNow@0, __imp__URL_DllCanUnloadNow@0
-implib url.dll, DllGetClassObject, _URL_DllGetClassObject@12, __imp__URL_DllGetClassObject@12
-implib url.dll, FileProtocolHandler, _FileProtocolHandler@16, __imp__FileProtocolHandler@16
-implib url.dll, FileProtocolHandlerA, _FileProtocolHandlerA@16, __imp__FileProtocolHandlerA@16
-implib url.dll, InetIsOffline, _InetIsOffline@4, __imp__InetIsOffline@4
-implib url.dll, MIMEAssociationDialogA, _MIMEAssociationDialogA@24, __imp__MIMEAssociationDialogA@24
-implib url.dll, MIMEAssociationDialogW, _MIMEAssociationDialogW@24, __imp__MIMEAssociationDialogW@24
-implib url.dll, MailToProtocolHandler, _MailToProtocolHandler@16, __imp__MailToProtocolHandler@16
-implib url.dll, MailToProtocolHandlerA, _MailToProtocolHandlerA@16, __imp__MailToProtocolHandlerA@16
-implib url.dll, NewsProtocolHandler, _NewsProtocolHandler@16, __imp__NewsProtocolHandler@16
-implib url.dll, NewsProtocolHandlerA, _NewsProtocolHandlerA@16, __imp__NewsProtocolHandlerA@16
-implib url.dll, OpenURL, _OpenURL@16, __imp__OpenURL@16
-implib url.dll, OpenURLA, _OpenURLA@16, __imp__OpenURLA@16
-implib url.dll, SetInetOffline, _SetInetOffline@4, __imp__SetInetOffline@4
-implib url.dll, TelnetProtocolHandler, _TelnetProtocolHandler@16, __imp__TelnetProtocolHandler@16
-implib url.dll, TelnetProtocolHandlerA, _TelnetProtocolHandlerA@16, __imp__TelnetProtocolHandlerA@16
-implib url.dll, TranslateURLA, _TranslateURLA@12, __imp__TranslateURLA@12
-implib url.dll, TranslateURLW, _TranslateURLW@12, __imp__TranslateURLW@12
-implib url.dll, URLAssociationDialogA, _URLAssociationDialogA@24, __imp__URLAssociationDialogA@24
-implib url.dll, URLAssociationDialogW, _URLAssociationDialogW@24, __imp__URLAssociationDialogW@24
+implib url.dll, AddMIMEFileTypesPS, _AddMIMEFileTypesPS@8
+implib url.dll, AutodialHookCallback, _AutodialHookCallback@8
+implib url.dll, DllCanUnloadNow, _URL_DllCanUnloadNow@0
+implib url.dll, DllGetClassObject, _URL_DllGetClassObject@12
+implib url.dll, FileProtocolHandler, _FileProtocolHandler@16
+implib url.dll, FileProtocolHandlerA, _FileProtocolHandlerA@16
+implib url.dll, InetIsOffline, _InetIsOffline@4
+implib url.dll, MIMEAssociationDialogA, _MIMEAssociationDialogA@24
+implib url.dll, MIMEAssociationDialogW, _MIMEAssociationDialogW@24
+implib url.dll, MailToProtocolHandler, _MailToProtocolHandler@16
+implib url.dll, MailToProtocolHandlerA, _MailToProtocolHandlerA@16
+implib url.dll, NewsProtocolHandler, _NewsProtocolHandler@16
+implib url.dll, NewsProtocolHandlerA, _NewsProtocolHandlerA@16
+implib url.dll, OpenURL, _OpenURL@16
+implib url.dll, OpenURLA, _OpenURLA@16
+implib url.dll, SetInetOffline, _SetInetOffline@4
+implib url.dll, TelnetProtocolHandler, _TelnetProtocolHandler@16
+implib url.dll, TelnetProtocolHandlerA, _TelnetProtocolHandlerA@16
+implib url.dll, TranslateURLA, _TranslateURLA@12
+implib url.dll, TranslateURLW, _TranslateURLW@12
+implib url.dll, URLAssociationDialogA, _URLAssociationDialogA@24
+implib url.dll, URLAssociationDialogW, _URLAssociationDialogW@24
 
 endlib
