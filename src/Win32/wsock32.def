@@ -1,79 +1,79 @@
 include '..\implib.inc'
 
-implib wsock32.dll, AcceptEx, _AcceptEx@32, __imp__AcceptEx@32
-implib wsock32.dll, EnumProtocolsA, _EnumProtocolsA@12, __imp__EnumProtocolsA@12
-implib wsock32.dll, EnumProtocolsW, _EnumProtocolsW@12, __imp__EnumProtocolsW@12
-implib wsock32.dll, GetAcceptExSockaddrs, _GetAcceptExSockaddrs@32, __imp__GetAcceptExSockaddrs@32
-implib wsock32.dll, GetAddressByNameA, _GetAddressByNameA@40, __imp__GetAddressByNameA@40
-implib wsock32.dll, GetAddressByNameW, _GetAddressByNameW@40, __imp__GetAddressByNameW@40
-implib wsock32.dll, GetNameByTypeA, _GetNameByTypeA@12, __imp__GetNameByTypeA@12
-implib wsock32.dll, GetNameByTypeW, _GetNameByTypeW@12, __imp__GetNameByTypeW@12
-implib wsock32.dll, GetServiceA, _GetServiceA@28, __imp__GetServiceA@28
-implib wsock32.dll, GetServiceW, _GetServiceW@28, __imp__GetServiceW@28
-implib wsock32.dll, GetTypeByNameA, _GetTypeByNameA@8, __imp__GetTypeByNameA@8
-implib wsock32.dll, GetTypeByNameW, _GetTypeByNameW@8, __imp__GetTypeByNameW@8
-implib wsock32.dll, MigrateWinsockConfiguration, _MigrateWinsockConfiguration@12, __imp__MigrateWinsockConfiguration@12
-implib wsock32.dll, NPLoadNameSpaces, _NPLoadNameSpaces@12, __imp__NPLoadNameSpaces@12
-implib wsock32.dll, SetServiceA, _SetServiceA@24, __imp__SetServiceA@24
-implib wsock32.dll, SetServiceW, _SetServiceW@24, __imp__SetServiceW@24
-implib wsock32.dll, TransmitFile, _TransmitFile@28, __imp__TransmitFile@28
-implib wsock32.dll, WEP, _WEP@0, __imp__WEP@0
-implib wsock32.dll, WSAAsyncGetHostByAddr, _WSAAsyncGetHostByAddr@28, __imp__WSAAsyncGetHostByAddr@28
-implib wsock32.dll, WSAAsyncGetHostByName, _WSAAsyncGetHostByName@20, __imp__WSAAsyncGetHostByName@20
-implib wsock32.dll, WSAAsyncGetProtoByName, _WSAAsyncGetProtoByName@20, __imp__WSAAsyncGetProtoByName@20
-implib wsock32.dll, WSAAsyncGetProtoByNumber, _WSAAsyncGetProtoByNumber@20, __imp__WSAAsyncGetProtoByNumber@20
-implib wsock32.dll, WSAAsyncGetServByName, _WSAAsyncGetServByName@24, __imp__WSAAsyncGetServByName@24
-implib wsock32.dll, WSAAsyncGetServByPort, _WSAAsyncGetServByPort@24, __imp__WSAAsyncGetServByPort@24
-implib wsock32.dll, WSAAsyncSelect, _WSAAsyncSelect@16, __imp__WSAAsyncSelect@16
-implib wsock32.dll, WSACancelAsyncRequest, _WSACancelAsyncRequest@4, __imp__WSACancelAsyncRequest@4
-implib wsock32.dll, WSACancelBlockingCall, _WSACancelBlockingCall@0, __imp__WSACancelBlockingCall@0
-implib wsock32.dll, WSACleanup, _WSACleanup@0, __imp__WSACleanup@0
-implib wsock32.dll, WSAGetLastError, _WSAGetLastError@0, __imp__WSAGetLastError@0
-implib wsock32.dll, WSAIsBlocking, _WSAIsBlocking@0, __imp__WSAIsBlocking@0
-implib wsock32.dll, WSARecvEx, _WSARecvEx@16, __imp__WSARecvEx@16
-implib wsock32.dll, WSASetBlockingHook, _WSASetBlockingHook@4, __imp__WSASetBlockingHook@4
-implib wsock32.dll, WSASetLastError, _WSASetLastError@4, __imp__WSASetLastError@4
-implib wsock32.dll, WSAStartup, _WSAStartup@8, __imp__WSAStartup@8
-implib wsock32.dll, WSAUnhookBlockingHook, _WSAUnhookBlockingHook@0, __imp__WSAUnhookBlockingHook@0
-implib wsock32.dll, WSApSetPostRoutine, _WSApSetPostRoutine@4, __imp__WSApSetPostRoutine@4
-implib wsock32.dll, __WSAFDIsSet, ___WSAFDIsSet@8, __imp____WSAFDIsSet@8
-implib wsock32.dll, accept, _accept@12, __imp__accept@12
-implib wsock32.dll, bind, _bind@12, __imp__bind@12
-implib wsock32.dll, closesocket, _closesocket@4, __imp__closesocket@4
-implib wsock32.dll, connect, _connect@12, __imp__connect@12
-implib wsock32.dll, dn_expand, _dn_expand@20, __imp__dn_expand@20
-implib wsock32.dll, gethostbyaddr, _gethostbyaddr@12, __imp__gethostbyaddr@12
-implib wsock32.dll, gethostbyname, _gethostbyname@4, __imp__gethostbyname@4
-implib wsock32.dll, gethostname, _gethostname@8, __imp__gethostname@8
-implib wsock32.dll, getnetbyname, _getnetbyname@4, __imp__getnetbyname@4
-implib wsock32.dll, getpeername, _getpeername@12, __imp__getpeername@12
-implib wsock32.dll, getprotobyname, _getprotobyname@4, __imp__getprotobyname@4
-implib wsock32.dll, getprotobynumber, _getprotobynumber@4, __imp__getprotobynumber@4
-implib wsock32.dll, getservbyname, _getservbyname@8, __imp__getservbyname@8
-implib wsock32.dll, getservbyport, _getservbyport@8, __imp__getservbyport@8
-implib wsock32.dll, getsockname, _getsockname@12, __imp__getsockname@12
-implib wsock32.dll, getsockopt, _getsockopt@20, __imp__getsockopt@20
-implib wsock32.dll, htonl, _htonl@4, __imp__htonl@4
-implib wsock32.dll, htons, _htons@4, __imp__htons@4
-implib wsock32.dll, inet_addr, _inet_addr@4, __imp__inet_addr@4
-implib wsock32.dll, inet_network, _inet_network@4, __imp__inet_network@4
-implib wsock32.dll, inet_ntoa, _inet_ntoa@4, __imp__inet_ntoa@4
-implib wsock32.dll, ioctlsocket, _ioctlsocket@12, __imp__ioctlsocket@12
-implib wsock32.dll, listen, _listen@8, __imp__listen@8
-implib wsock32.dll, ntohl, _ntohl@4, __imp__ntohl@4
-implib wsock32.dll, ntohs, _ntohs@4, __imp__ntohs@4
-implib wsock32.dll, rcmd, _rcmd@24, __imp__rcmd@24
-implib wsock32.dll, recv, _recv@16, __imp__recv@16
-implib wsock32.dll, recvfrom, _recvfrom@24, __imp__recvfrom@24
-implib wsock32.dll, rexec, _rexec@24, __imp__rexec@24
-implib wsock32.dll, rresvport, _rresvport@4, __imp__rresvport@4
-implib wsock32.dll, s_perror, _s_perror@8, __imp__s_perror@8
-implib wsock32.dll, select, _select@20, __imp__select@20
-implib wsock32.dll, send, _send@16, __imp__send@16
-implib wsock32.dll, sendto, _sendto@24, __imp__sendto@24
-implib wsock32.dll, sethostname, _sethostname@8, __imp__sethostname@8
-implib wsock32.dll, setsockopt, _setsockopt@20, __imp__setsockopt@20
-implib wsock32.dll, shutdown, _shutdown@8, __imp__shutdown@8
-implib wsock32.dll, socket, _socket@12, __imp__socket@12
+implib wsock32.dll, AcceptEx, _AcceptEx@32
+implib wsock32.dll, EnumProtocolsA, _EnumProtocolsA@12
+implib wsock32.dll, EnumProtocolsW, _EnumProtocolsW@12
+implib wsock32.dll, GetAcceptExSockaddrs, _GetAcceptExSockaddrs@32
+implib wsock32.dll, GetAddressByNameA, _GetAddressByNameA@40
+implib wsock32.dll, GetAddressByNameW, _GetAddressByNameW@40
+implib wsock32.dll, GetNameByTypeA, _GetNameByTypeA@12
+implib wsock32.dll, GetNameByTypeW, _GetNameByTypeW@12
+implib wsock32.dll, GetServiceA, _GetServiceA@28
+implib wsock32.dll, GetServiceW, _GetServiceW@28
+implib wsock32.dll, GetTypeByNameA, _GetTypeByNameA@8
+implib wsock32.dll, GetTypeByNameW, _GetTypeByNameW@8
+implib wsock32.dll, MigrateWinsockConfiguration, _MigrateWinsockConfiguration@12
+implib wsock32.dll, NPLoadNameSpaces, _NPLoadNameSpaces@12
+implib wsock32.dll, SetServiceA, _SetServiceA@24
+implib wsock32.dll, SetServiceW, _SetServiceW@24
+implib wsock32.dll, TransmitFile, _TransmitFile@28
+implib wsock32.dll, WEP, _WEP@0
+implib wsock32.dll, WSAAsyncGetHostByAddr, _WSAAsyncGetHostByAddr@28
+implib wsock32.dll, WSAAsyncGetHostByName, _WSAAsyncGetHostByName@20
+implib wsock32.dll, WSAAsyncGetProtoByName, _WSAAsyncGetProtoByName@20
+implib wsock32.dll, WSAAsyncGetProtoByNumber, _WSAAsyncGetProtoByNumber@20
+implib wsock32.dll, WSAAsyncGetServByName, _WSAAsyncGetServByName@24
+implib wsock32.dll, WSAAsyncGetServByPort, _WSAAsyncGetServByPort@24
+implib wsock32.dll, WSAAsyncSelect, _WSAAsyncSelect@16
+implib wsock32.dll, WSACancelAsyncRequest, _WSACancelAsyncRequest@4
+implib wsock32.dll, WSACancelBlockingCall, _WSACancelBlockingCall@0
+implib wsock32.dll, WSACleanup, _WSACleanup@0
+implib wsock32.dll, WSAGetLastError, _WSAGetLastError@0
+implib wsock32.dll, WSAIsBlocking, _WSAIsBlocking@0
+implib wsock32.dll, WSARecvEx, _WSARecvEx@16
+implib wsock32.dll, WSASetBlockingHook, _WSASetBlockingHook@4
+implib wsock32.dll, WSASetLastError, _WSASetLastError@4
+implib wsock32.dll, WSAStartup, _WSAStartup@8
+implib wsock32.dll, WSAUnhookBlockingHook, _WSAUnhookBlockingHook@0
+implib wsock32.dll, WSApSetPostRoutine, _WSApSetPostRoutine@4
+implib wsock32.dll, __WSAFDIsSet, ___WSAFDIsSet@8
+implib wsock32.dll, accept, _accept@12
+implib wsock32.dll, bind, _bind@12
+implib wsock32.dll, closesocket, _closesocket@4
+implib wsock32.dll, connect, _connect@12
+implib wsock32.dll, dn_expand, _dn_expand@20
+implib wsock32.dll, gethostbyaddr, _gethostbyaddr@12
+implib wsock32.dll, gethostbyname, _gethostbyname@4
+implib wsock32.dll, gethostname, _gethostname@8
+implib wsock32.dll, getnetbyname, _getnetbyname@4
+implib wsock32.dll, getpeername, _getpeername@12
+implib wsock32.dll, getprotobyname, _getprotobyname@4
+implib wsock32.dll, getprotobynumber, _getprotobynumber@4
+implib wsock32.dll, getservbyname, _getservbyname@8
+implib wsock32.dll, getservbyport, _getservbyport@8
+implib wsock32.dll, getsockname, _getsockname@12
+implib wsock32.dll, getsockopt, _getsockopt@20
+implib wsock32.dll, htonl, _htonl@4
+implib wsock32.dll, htons, _htons@4
+implib wsock32.dll, inet_addr, _inet_addr@4
+implib wsock32.dll, inet_network, _inet_network@4
+implib wsock32.dll, inet_ntoa, _inet_ntoa@4
+implib wsock32.dll, ioctlsocket, _ioctlsocket@12
+implib wsock32.dll, listen, _listen@8
+implib wsock32.dll, ntohl, _ntohl@4
+implib wsock32.dll, ntohs, _ntohs@4
+implib wsock32.dll, rcmd, _rcmd@24
+implib wsock32.dll, recv, _recv@16
+implib wsock32.dll, recvfrom, _recvfrom@24
+implib wsock32.dll, rexec, _rexec@24
+implib wsock32.dll, rresvport, _rresvport@4
+implib wsock32.dll, s_perror, _s_perror@8
+implib wsock32.dll, select, _select@20
+implib wsock32.dll, send, _send@16
+implib wsock32.dll, sendto, _sendto@24
+implib wsock32.dll, sethostname, _sethostname@8
+implib wsock32.dll, setsockopt, _setsockopt@20
+implib wsock32.dll, shutdown, _shutdown@8
+implib wsock32.dll, socket, _socket@12
 
 endlib
