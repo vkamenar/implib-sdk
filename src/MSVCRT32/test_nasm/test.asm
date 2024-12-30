@@ -4,7 +4,7 @@ EXTERN __imp__printf
 
 section .text
 format db "Hello, world!",0
-
+align 4
 GLOBAL _start
 _start:
 	push format
