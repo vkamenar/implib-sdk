@@ -190,7 +190,7 @@ if ~ defined LINKER_MEMBER_2_REMOVE
 		load chr2 byte from new_str
 		while strcmp_r=0 & chr>=chr2
 			if chr=chr2 & chr=0
-				display '-ERR: [',`new_str,'] Duplicate symbol',13,10
+				display '-WNG: [',`new_str,'] Duplicate symbol',13,10
 			end if
 			if chr>chr2
 				strcmp_r=1
@@ -452,7 +452,7 @@ dllname#name#.lnk_memberN:
 					load chr byte from %+3
 					chr=chr-'0'
 					if chr>9
-						display '-ERR: Bad ordinal value: ' # `name,13,10
+						display '-WNG: Bad ordinal value: ' # `name,13,10
 					else
 						ordinal_value=ordinal_value*10+chr
 					end if
