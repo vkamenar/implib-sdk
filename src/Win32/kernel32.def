@@ -27,10 +27,10 @@ include '..\implib.inc'
 ;implib KERNEL32.DLL, AppPolicyGetClrCompat, _AppPolicyGetClrCompat@8
 ;implib KERNEL32.DLL, AppPolicyGetCreateFileAccess, _AppPolicyGetCreateFileAccess@8
 ;implib KERNEL32.DLL, AppPolicyGetLifecycleManagement, _AppPolicyGetLifecycleManagement@8
-;implib KERNEL32.DLL, AppPolicyGetMediaFoundationCodecLoading, _AppPolicyGetMediaFoundationCodecLoading@8
-;implib KERNEL32.DLL, AppPolicyGetProcessTerminationMethod, _AppPolicyGetProcessTerminationMethod@8
-;implib KERNEL32.DLL, AppPolicyGetShowDeveloperDiagnostic, _AppPolicyGetShowDeveloperDiagnostic@8
-;implib KERNEL32.DLL, AppPolicyGetThreadInitializationType, _AppPolicyGetThreadInitializationType@8
+implib KERNEL32.DLL, AppPolicyGetMediaFoundationCodecLoading, _AppPolicyGetMediaFoundationCodecLoading@8
+implib KERNEL32.DLL, AppPolicyGetProcessTerminationMethod, _AppPolicyGetProcessTerminationMethod@8
+implib KERNEL32.DLL, AppPolicyGetShowDeveloperDiagnostic, _AppPolicyGetShowDeveloperDiagnostic@8
+implib KERNEL32.DLL, AppPolicyGetThreadInitializationType, _AppPolicyGetThreadInitializationType@8
 implib KERNEL32.DLL, AppPolicyGetWindowingModel, _AppPolicyGetWindowingModel@8
 implib KERNEL32.DLL, AppXGetOSMaxVersionTested, _AppXGetOSMaxVersionTested@8
 implib KERNEL32.DLL, ApplicationRecoveryFinished, _ApplicationRecoveryFinished@4
@@ -43,19 +43,24 @@ implib KERNEL32.DLL, BackupSeek, _BackupSeek@24
 implib KERNEL32.DLL, BackupWrite, _BackupWrite@28
 implib KERNEL32.DLL, BaseCheckAppcompatCache, _BaseCheckAppcompatCache@16
 implib KERNEL32.DLL, BaseCheckAppcompatCacheEx, _BaseCheckAppcompatCacheEx@24
-implib KERNEL32.DLL, BaseCheckAppcompatCacheExWorker, _BaseCheckAppcompatCacheExWorker@36
-implib KERNEL32.DLL, BaseCheckAppcompatCacheWorker, _BaseCheckAppcompatCacheWorker@16
+
+; Stub functions available since kernel32 v6.2
+; implib KERNEL32.DLL, BaseCheckAppcompatCacheExWorker, _BaseCheckAppcompatCacheExWorker@36
+; implib KERNEL32.DLL, BaseCheckAppcompatCacheWorker, _BaseCheckAppcompatCacheWorker@16
+; implib KERNEL32.DLL, BaseCleanupAppcompatCacheSupportWorker, _BaseCleanupAppcompatCacheSupportWorker@4
+; implib KERNEL32.DLL, BaseDumpAppcompatCacheWorker, _BaseDumpAppcompatCacheWorker@0
+; implib KERNEL32.DLL, BaseInitAppcompatCacheSupportWorker, _BaseInitAppcompatCacheSupportWorker@0
+
 implib KERNEL32.DLL, BaseCheckElevation, _BaseCheckElevation@48
 
 ; BaseCleanupAppcompatCache available in kernel32 v5.1
 ; implib KERNEL32.DLL, BaseCleanupAppcompatCache, _BaseCleanupAppcompatCache@0
 
 implib KERNEL32.DLL, BaseCleanupAppcompatCacheSupport, _BaseCleanupAppcompatCacheSupport@4
-implib KERNEL32.DLL, BaseCleanupAppcompatCacheSupportWorker, _BaseCleanupAppcompatCacheSupportWorker@4
+
 implib KERNEL32.DLL, BaseDestroyVDMEnvironment, _BaseDestroyVDMEnvironment@8
 implib KERNEL32.DLL, BaseDllReadWriteIniFile, _BaseDllReadWriteIniFile@32
 implib KERNEL32.DLL, BaseDumpAppcompatCache, _BaseDumpAppcompatCache@0
-implib KERNEL32.DLL, BaseDumpAppcompatCacheWorker, _BaseDumpAppcompatCacheWorker@0
 implib KERNEL32.DLL, BaseElevationPostProcessing, _BaseElevationPostProcessing@12
 implib KERNEL32.DLL, BaseFlushAppcompatCache, _BaseFlushAppcompatCache@0
 implib KERNEL32.DLL, BaseFlushAppcompatCacheWorker, _BaseFlushAppcompatCacheWorker@0
@@ -69,9 +74,6 @@ implib KERNEL32.DLL, BaseGetNamedObjectDirectory, _BaseGetNamedObjectDirectory@4
 ; implib KERNEL32.DLL, BaseInitAppcompatCache, _BaseInitAppcompatCache@0
 
 implib KERNEL32.DLL, BaseInitAppcompatCacheSupport, _BaseInitAppcompatCacheSupport@0
-
-; Stub function available since kernel32 v6.2
-; implib KERNEL32.DLL, BaseInitAppcompatCacheSupportWorker, _BaseInitAppcompatCacheSupportWorker@0
 
 ; Stub functions available since kernel32 v5.2 and v6.2 respectively
 ; implib KERNEL32.DLL, BaseIsAppcompatInfrastructureDisabled, _BaseIsAppcompatInfrastructureDisabled@0
@@ -272,7 +274,7 @@ implib KERNEL32.DLL, CreateSemaphoreExA, _CreateSemaphoreExA@24
 implib KERNEL32.DLL, CreateSemaphoreExW, _CreateSemaphoreExW@24
 implib KERNEL32.DLL, CreateSemaphoreW, _CreateSemaphoreW@16
 
-; CreateSocketHandle returns ERROR_CALL_NOT_IMPLEMENTED in Windows 10
+; CreateSocketHandle triggers ERROR_CALL_NOT_IMPLEMENTED in Windows 10
 ; implib KERNEL32.DLL, CreateSocketHandle, _CreateSocketHandle@0
 
 implib KERNEL32.DLL, CreateSymbolicLinkA, _CreateSymbolicLinkA@12
@@ -663,7 +665,7 @@ implib KERNEL32.DLL, GetGeoInfoA, _GetGeoInfoA@20
 implib KERNEL32.DLL, GetGeoInfoEx, _GetGeoInfoEx@16
 implib KERNEL32.DLL, GetGeoInfoW, _GetGeoInfoW@20
 
-; GetHandleContext returns ERROR_CALL_NOT_IMPLEMENTED in Windows 10
+; GetHandleContext triggers ERROR_CALL_NOT_IMPLEMENTED in Windows 10
 ; implib KERNEL32.DLL, GetHandleContext, _GetHandleContext@4
 
 implib KERNEL32.DLL, GetHandleInformation, _GetHandleInformation@8
@@ -1616,7 +1618,7 @@ implib KERNEL32.DLL, UnregisterApplicationRecoveryCallback, _UnregisterApplicati
 implib KERNEL32.DLL, UnregisterApplicationRestart, _UnregisterApplicationRestart@0
 implib KERNEL32.DLL, UnregisterBadMemoryNotification, _UnregisterBadMemoryNotification@4
 
-; UnregisterConsoleIME returns ERROR_CALL_NOT_IMPLEMENTED in Windows 10
+; UnregisterConsoleIME triggers ERROR_CALL_NOT_IMPLEMENTED in Windows 10
 ; implib KERNEL32.DLL, UnregisterConsoleIME, _UnregisterConsoleIME@0
 
 implib KERNEL32.DLL, UnregisterWait, _UnregisterWait@4
