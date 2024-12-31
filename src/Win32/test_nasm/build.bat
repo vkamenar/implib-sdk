@@ -26,7 +26,7 @@ IF EXIST "%POLINK%.exe" GOTO LINKFOUND
 ECHO Polink linker not found.
 GOTO EXIT
 :LINKFOUND
-"%POLINK%" /ENTRY:start /SUBSYSTEM:WINDOWS /MERGE:.data=.text /LIBPATH:..\..\..\lib\stripped test.obj kernel32.lib user32.lib
+"%POLINK%" /ENTRY:start /SUBSYSTEM:WINDOWS /MERGE:.data=.text /LIBPATH:..\..\..\lib\Win32\stripped test.obj kernel32.lib user32.lib
 :EXIT
 pause
 ENDLOCAL
