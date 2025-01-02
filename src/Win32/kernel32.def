@@ -19,14 +19,14 @@ include '..\implib.inc'
 ;implib KERNEL32.DLL, AddScopedPolicyIDAce, _AddScopedPolicyIDAce@20
 ;implib KERNEL32.DLL, AddSecureMemoryCacheCallback, _AddSecureMemoryCacheCallback@4
 ;implib KERNEL32.DLL, AddVectoredContinueHandler, _AddVectoredContinueHandler@8
-;implib KERNEL32.DLL, AddVectoredExceptionHandler, _AddVectoredExceptionHandler@8
-;implib KERNEL32.DLL, AdjustCalendarDate, _AdjustCalendarDate@12
-;implib KERNEL32.DLL, AllocConsole, _AllocConsole@0
-;implib KERNEL32.DLL, AllocateUserPhysicalPages, _AllocateUserPhysicalPages@12
-;implib KERNEL32.DLL, AllocateUserPhysicalPagesNuma, _AllocateUserPhysicalPagesNuma@16
-;implib KERNEL32.DLL, AppPolicyGetClrCompat, _AppPolicyGetClrCompat@8
-;implib KERNEL32.DLL, AppPolicyGetCreateFileAccess, _AppPolicyGetCreateFileAccess@8
-;implib KERNEL32.DLL, AppPolicyGetLifecycleManagement, _AppPolicyGetLifecycleManagement@8
+implib KERNEL32.DLL, AddVectoredExceptionHandler, _AddVectoredExceptionHandler@8
+implib KERNEL32.DLL, AdjustCalendarDate, _AdjustCalendarDate@12
+implib KERNEL32.DLL, AllocConsole, _AllocConsole@0
+implib KERNEL32.DLL, AllocateUserPhysicalPages, _AllocateUserPhysicalPages@12
+implib KERNEL32.DLL, AllocateUserPhysicalPagesNuma, _AllocateUserPhysicalPagesNuma@16
+implib KERNEL32.DLL, AppPolicyGetClrCompat, _AppPolicyGetClrCompat@8
+implib KERNEL32.DLL, AppPolicyGetCreateFileAccess, _AppPolicyGetCreateFileAccess@8
+implib KERNEL32.DLL, AppPolicyGetLifecycleManagement, _AppPolicyGetLifecycleManagement@8
 implib KERNEL32.DLL, AppPolicyGetMediaFoundationCodecLoading, _AppPolicyGetMediaFoundationCodecLoading@8
 implib KERNEL32.DLL, AppPolicyGetProcessTerminationMethod, _AppPolicyGetProcessTerminationMethod@8
 implib KERNEL32.DLL, AppPolicyGetShowDeveloperDiagnostic, _AppPolicyGetShowDeveloperDiagnostic@8
@@ -113,7 +113,10 @@ implib KERNEL32.DLL, BasepGetPackageActivationTokenForSxS, _BasepGetPackageActiv
 implib KERNEL32.DLL, BasepInitAppCompatData, _BasepInitAppCompatData@12
 implib KERNEL32.DLL, BasepIsProcessAllowed, _BasepIsProcessAllowed@4
 implib KERNEL32.DLL, BasepMapModuleHandle, _BasepMapModuleHandle@8
-implib KERNEL32.DLL, BasepNotifyLoadStringResource, _BasepNotifyLoadStringResource@16
+
+; Stub function available since kernel32 v6.2
+; implib KERNEL32.DLL, BasepNotifyLoadStringResource, _BasepNotifyLoadStringResource@16
+
 implib KERNEL32.DLL, BasepPostSuccessAppXExtension, _BasepPostSuccessAppXExtension@8
 implib KERNEL32.DLL, BasepProcessInvalidImage, _BasepProcessInvalidImage@84
 implib KERNEL32.DLL, BasepQueryAppCompat, _BasepQueryAppCompat@72
@@ -133,7 +136,10 @@ implib KERNEL32.DLL, BuildCommDCBW, _BuildCommDCBW@8
 implib KERNEL32.DLL, CallNamedPipeA, _CallNamedPipeA@28
 implib KERNEL32.DLL, CallNamedPipeW, _CallNamedPipeW@28
 implib KERNEL32.DLL, CallbackMayRunLong, _CallbackMayRunLong@4
-implib KERNEL32.DLL, CancelDeviceWakeupRequest, _CancelDeviceWakeupRequest@4
+
+; CancelDeviceWakeupRequest triggers STATUS_NOT_IMPLEMENTED in Windows 10
+; implib KERNEL32.DLL, CancelDeviceWakeupRequest, _CancelDeviceWakeupRequest@4
+
 implib KERNEL32.DLL, CancelIo, _CancelIo@4
 implib KERNEL32.DLL, CancelIoEx, _CancelIoEx@8
 implib KERNEL32.DLL, CancelSynchronousIo, _CancelSynchronousIo@4
@@ -172,7 +178,10 @@ implib KERNEL32.DLL, CloseThreadpoolIo, _CloseThreadpoolIo@4
 implib KERNEL32.DLL, CloseThreadpoolTimer, _CloseThreadpoolTimer@4
 implib KERNEL32.DLL, CloseThreadpoolWait, _CloseThreadpoolWait@4
 implib KERNEL32.DLL, CloseThreadpoolWork, _CloseThreadpoolWork@4
-implib KERNEL32.DLL, CmdBatNotification, _CmdBatNotification@4
+
+; Stub function available since kernel32 v3.51
+; implib KERNEL32.DLL, CmdBatNotification, _CmdBatNotification@4
+
 implib KERNEL32.DLL, CommConfigDialogA, _CommConfigDialogA@12
 implib KERNEL32.DLL, CommConfigDialogW, _CommConfigDialogW@12
 implib KERNEL32.DLL, CompareCalendarDates, _CompareCalendarDates@12
@@ -199,7 +208,10 @@ implib KERNEL32.DLL, CopyFileExW, _CopyFileExW@24
 implib KERNEL32.DLL, CopyFileTransactedA, _CopyFileTransactedA@28
 implib KERNEL32.DLL, CopyFileTransactedW, _CopyFileTransactedW@28
 implib KERNEL32.DLL, CopyFileW, _CopyFileW@12
-implib KERNEL32.DLL, CopyLZFile, _CopyLZFile@8
+
+; CopyLZFile is an alias for LZCopy
+; implib KERNEL32.DLL, CopyLZFile, _CopyLZFile@8
+
 implib KERNEL32.DLL, CreateActCtxA, _CreateActCtxA@4
 implib KERNEL32.DLL, CreateActCtxW, _CreateActCtxW@4
 implib KERNEL32.DLL, CreateActCtxWWorker, _CreateActCtxWWorker@4
@@ -1355,8 +1367,11 @@ implib KERNEL32.DLL, ReplaceFile, _ReplaceFile@24
 implib KERNEL32.DLL, ReplaceFileA, _ReplaceFileA@24
 implib KERNEL32.DLL, ReplaceFileW, _ReplaceFileW@24
 implib KERNEL32.DLL, ReplacePartitionUnit, _ReplacePartitionUnit@12
-implib KERNEL32.DLL, RequestDeviceWakeup, _RequestDeviceWakeup@4
-implib KERNEL32.DLL, RequestWakeupLatency, _RequestWakeupLatency@4
+
+; RequestDeviceWakeup and RequestWakeupLatency trigger STATUS_NOT_IMPLEMENTED in Windows 10
+; implib KERNEL32.DLL, RequestDeviceWakeup, _RequestDeviceWakeup@4
+; implib KERNEL32.DLL, RequestWakeupLatency, _RequestWakeupLatency@4
+
 implib KERNEL32.DLL, ResetEvent, _ResetEvent@4
 implib KERNEL32.DLL, ResetWriteWatch, _ResetWriteWatch@8
 implib KERNEL32.DLL, ResizePseudoConsole, _ResizePseudoConsole@8
@@ -1608,7 +1623,10 @@ implib KERNEL32.DLL, TrySubmitThreadpoolCallback, _TrySubmitThreadpoolCallback@1
 implib KERNEL32.DLL, TzSpecificLocalTimeToSystemTime, _TzSpecificLocalTimeToSystemTime@12
 implib KERNEL32.DLL, TzSpecificLocalTimeToSystemTimeEx, _TzSpecificLocalTimeToSystemTimeEx@12
 implib KERNEL32.DLL, UTRegister, _UTRegister@28
-implib KERNEL32.DLL, UTUnRegister, _UTUnRegister@4
+
+; Stub function available since kernel32 v4.0
+; implib KERNEL32.DLL, UTUnRegister, _UTUnRegister@4
+
 implib KERNEL32.DLL, UnhandledExceptionFilter, _UnhandledExceptionFilter@4
 implib KERNEL32.DLL, UnlockFile, _UnlockFile@20
 implib KERNEL32.DLL, UnlockFileEx, _UnlockFileEx@20
@@ -1700,7 +1718,10 @@ implib KERNEL32.DLL, WerUnregisterRuntimeExceptionModuleWorker, _WerUnregisterRu
 implib KERNEL32.DLL, WerpGetDebugger, _WerpGetDebugger@8
 implib KERNEL32.DLL, WerpInitiateRemoteRecovery, _WerpInitiateRemoteRecovery@4
 implib KERNEL32.DLL, WerpLaunchAeDebug, _WerpLaunchAeDebug@20
-implib KERNEL32.DLL, WerpNotifyLoadStringResourceWorker, _WerpNotifyLoadStringResourceWorker@16
+
+; Stub function available since kernel32 v6.2
+; implib KERNEL32.DLL, WerpNotifyLoadStringResourceWorker, _WerpNotifyLoadStringResourceWorker@16
+
 implib KERNEL32.DLL, WerpNotifyUseStringResourceWorker, _WerpNotifyUseStringResourceWorker@4
 implib KERNEL32.DLL, WideCharToMultiByte, _WideCharToMultiByte@32
 implib KERNEL32.DLL, WinExec, _WinExec@8
