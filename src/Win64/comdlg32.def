@@ -1,0 +1,32 @@
+include '..\implib64.inc'
+
+implib comdlg32.dll, ChooseColorA
+implib comdlg32.dll, ChooseColorW
+implib comdlg32.dll, ChooseFontA
+implib comdlg32.dll, ChooseFontW
+implib comdlg32.dll, CommDlgExtendedError
+implib comdlg32.dll, DllCanUnloadNow
+implib comdlg32.dll, DllGetClassObject
+implib comdlg32.dll, FindTextA
+implib comdlg32.dll, FindTextW
+implib comdlg32.dll, GetFileTitleA
+implib comdlg32.dll, GetFileTitleW
+implib comdlg32.dll, GetOpenFileNameA
+implib comdlg32.dll, GetOpenFileNameW
+implib comdlg32.dll, GetSaveFileNameA
+implib comdlg32.dll, GetSaveFileNameW
+implib comdlg32.dll, LoadAlterBitmap
+implib comdlg32.dll, PageSetupDlgA
+implib comdlg32.dll, PageSetupDlgW
+implib comdlg32.dll, PrintDlgA
+implib comdlg32.dll, PrintDlgExA
+implib comdlg32.dll, PrintDlgExW
+implib comdlg32.dll, PrintDlgW
+implib comdlg32.dll, ReplaceTextA
+implib comdlg32.dll, ReplaceTextW
+implib comdlg32.dll, Ssync_ANSI_UNICODE_Struct_For_WOW
+implib comdlg32.dll, WantArrows
+implib comdlg32.dll, dwLBSubclass
+implib comdlg32.dll, dwOKSubclass
+
+endlib
