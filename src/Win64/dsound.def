@@ -1,0 +1,16 @@
+include '..\implib64.inc'
+
+implib dsound.dll, DirectSoundCaptureCreate
+implib dsound.dll, DirectSoundCaptureCreate8
+implib dsound.dll, DirectSoundCaptureEnumerateA
+implib dsound.dll, DirectSoundCaptureEnumerateW
+implib dsound.dll, DirectSoundCreate
+implib dsound.dll, DirectSoundCreate8
+implib dsound.dll, DirectSoundEnumerateA
+implib dsound.dll, DirectSoundEnumerateW
+implib dsound.dll, DirectSoundFullDuplexCreate
+implib dsound.dll, DllCanUnloadNow
+implib dsound.dll, DllGetClassObject
+implib dsound.dll, GetDeviceID
+
+endlib
