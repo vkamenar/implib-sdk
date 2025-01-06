@@ -1,0 +1,21 @@
+include '..\implib64.inc'
+
+implib url.dll, AddMIMEFileTypesPS
+implib url.dll, AutodialHookCallback
+implib url.dll, FileProtocolHandler
+implib url.dll, FileProtocolHandlerA
+implib url.dll, InetIsOffline
+implib url.dll, MIMEAssociationDialogA
+implib url.dll, MIMEAssociationDialogW
+implib url.dll, MailToProtocolHandler
+implib url.dll, MailToProtocolHandlerA
+implib url.dll, OpenURL
+implib url.dll, OpenURLA
+implib url.dll, TelnetProtocolHandler
+implib url.dll, TelnetProtocolHandlerA
+implib url.dll, TranslateURLA
+implib url.dll, TranslateURLW
+implib url.dll, URLAssociationDialogA
+implib url.dll, URLAssociationDialogW
+
+endlib
