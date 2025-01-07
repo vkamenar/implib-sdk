@@ -4,8 +4,8 @@ include '..\implib.inc'
 ;implib KERNEL32.DLL, AcquireSRWLockShared, _AcquireSRWLockShared@4
 ;implib KERNEL32.DLL, ActivateActCtx, _ActivateActCtx@8
 ;implib KERNEL32.DLL, ActivateActCtxWorker, _ActivateActCtxWorker@8
-;implib KERNEL32.DLL, AddAtomA, _AddAtomA@4
-;implib KERNEL32.DLL, AddAtomW, _AddAtomW@4
+implib KERNEL32.DLL, AddAtomA, _AddAtomA@4
+implib KERNEL32.DLL, AddAtomW, _AddAtomW@4
 ;implib KERNEL32.DLL, AddConsoleAliasA, _AddConsoleAliasA@12
 ;implib KERNEL32.DLL, AddConsoleAliasW, _AddConsoleAliasW@12
 ;implib KERNEL32.DLL, AddDllDirectory, _AddDllDirectory@4
@@ -16,9 +16,9 @@ include '..\implib.inc'
 ;implib KERNEL32.DLL, AddRefActCtxWorker, _AddRefActCtxWorker@4
 ;implib KERNEL32.DLL, AddResourceAttributeAce, _AddResourceAttributeAce@28
 ;implib KERNEL32.DLL, AddSIDToBoundaryDescriptor, _AddSIDToBoundaryDescriptor@8
-;implib KERNEL32.DLL, AddScopedPolicyIDAce, _AddScopedPolicyIDAce@20
-;implib KERNEL32.DLL, AddSecureMemoryCacheCallback, _AddSecureMemoryCacheCallback@4
-;implib KERNEL32.DLL, AddVectoredContinueHandler, _AddVectoredContinueHandler@8
+implib KERNEL32.DLL, AddScopedPolicyIDAce, _AddScopedPolicyIDAce@20
+implib KERNEL32.DLL, AddSecureMemoryCacheCallback, _AddSecureMemoryCacheCallback@4
+implib KERNEL32.DLL, AddVectoredContinueHandler, _AddVectoredContinueHandler@8
 implib KERNEL32.DLL, AddVectoredExceptionHandler, _AddVectoredExceptionHandler@8
 implib KERNEL32.DLL, AdjustCalendarDate, _AdjustCalendarDate@12
 implib KERNEL32.DLL, AllocConsole, _AllocConsole@0
@@ -166,7 +166,7 @@ implib KERNEL32.DLL, CloseHandle, _CloseHandle@4
 implib KERNEL32.DLL, ClosePackageInfo, _ClosePackageInfo@4
 implib KERNEL32.DLL, ClosePrivateNamespace, _ClosePrivateNamespace@8
 
-; Stub available since kernel32 v3.51
+; Stub function available since kernel32 v3.51
 ; implib KERNEL32.DLL, CloseProfileUserMapping, _CloseProfileUserMapping@0
 
 implib KERNEL32.DLL, ClosePseudoConsole, _ClosePseudoConsole@4
@@ -509,7 +509,10 @@ implib KERNEL32.DLL, GetApplicationRestartSettingsWorker, _GetApplicationRestart
 implib KERNEL32.DLL, GetApplicationUserModelId, _GetApplicationUserModelId@12
 implib KERNEL32.DLL, GetAtomNameA, _GetAtomNameA@12
 implib KERNEL32.DLL, GetAtomNameW, _GetAtomNameW@12
-implib KERNEL32.DLL, GetBinaryType, _GetBinaryType@8
+
+; GetBinaryType is an alias for GetBinaryTypeA
+; implib KERNEL32.DLL, GetBinaryType, _GetBinaryType@8
+
 implib KERNEL32.DLL, GetBinaryTypeA, _GetBinaryTypeA@8
 implib KERNEL32.DLL, GetBinaryTypeW, _GetBinaryTypeW@8
 
@@ -903,7 +906,10 @@ implib KERNEL32.DLL, GlobalAddAtomExA, _GlobalAddAtomExA@8
 implib KERNEL32.DLL, GlobalAddAtomExW, _GlobalAddAtomExW@8
 implib KERNEL32.DLL, GlobalAddAtomW, _GlobalAddAtomW@4
 implib KERNEL32.DLL, GlobalAlloc, _GlobalAlloc@8
-implib KERNEL32.DLL, GlobalCompact, _GlobalCompact@4
+
+; GlobalCompact is an alias for LocalCompact
+; implib KERNEL32.DLL, GlobalCompact, _GlobalCompact@4
+
 implib KERNEL32.DLL, GlobalDeleteAtom, _GlobalDeleteAtom@4
 implib KERNEL32.DLL, GlobalFindAtomA, _GlobalFindAtomA@4
 implib KERNEL32.DLL, GlobalFindAtomW, _GlobalFindAtomW@4
@@ -918,10 +924,16 @@ implib KERNEL32.DLL, GlobalMemoryStatus, _GlobalMemoryStatus@4
 implib KERNEL32.DLL, GlobalMemoryStatusEx, _GlobalMemoryStatusEx@4
 implib KERNEL32.DLL, GlobalReAlloc, _GlobalReAlloc@12
 implib KERNEL32.DLL, GlobalSize, _GlobalSize@4
-implib KERNEL32.DLL, GlobalUnWire, _GlobalUnWire@4
+
+; GlobalUnWire is an alias for GlobalUnlock
+; implib KERNEL32.DLL, GlobalUnWire, _GlobalUnWire@4
+
 implib KERNEL32.DLL, GlobalUnfix, _GlobalUnfix@4
 implib KERNEL32.DLL, GlobalUnlock, _GlobalUnlock@4
-implib KERNEL32.DLL, GlobalWire, _GlobalWire@4
+
+; GlobalWire is an alias for GlobalLock
+; implib KERNEL32.DLL, GlobalWire, _GlobalWire@4
+
 implib KERNEL32.DLL, Heap32First, _Heap32First@12
 implib KERNEL32.DLL, Heap32ListFirst, _Heap32ListFirst@8
 implib KERNEL32.DLL, Heap32ListNext, _Heap32ListNext@8
@@ -1064,14 +1076,17 @@ implib KERNEL32.DLL, LZClose, _LZClose@4
 
 implib KERNEL32.DLL, LZCopy, _LZCopy@8
 implib KERNEL32.DLL, LZCreateFileW, _LZCreateFileW@20
-implib KERNEL32.DLL, LZDone, _LZDone@0
+
+; Stub function available since kernel32 v5.1
+; implib KERNEL32.DLL, LZDone, _LZDone@0
+
 implib KERNEL32.DLL, LZInit, _LZInit@4
 implib KERNEL32.DLL, LZOpenFileA, _LZOpenFileA@12
 implib KERNEL32.DLL, LZOpenFileW, _LZOpenFileW@12
 implib KERNEL32.DLL, LZRead, _LZRead@12
 implib KERNEL32.DLL, LZSeek, _LZSeek@12
 
-; Stub available since kernel32 v5.1
+; Stub function available since kernel32 v5.1
 ; implib KERNEL32.DLL, LZStart, _LZStart@0
 
 implib KERNEL32.DLL, LeaveCriticalSection, _LeaveCriticalSection@4
@@ -1173,7 +1188,7 @@ implib KERNEL32.DLL, OpenProcess, _OpenProcess@12
 ; OpenProcessToken should be imported from advapi32. Uncomment the following entry if you really need to import it from kernel32 instead.
 ; implib KERNEL32.DLL, OpenProcessToken, _OpenProcessToken@12
 
-; Stub available since kernel32 v3.51
+; Stub function available since kernel32 v3.51
 ; implib KERNEL32.DLL, OpenProfileUserMapping, _OpenProfileUserMapping@0
 
 implib KERNEL32.DLL, OpenSemaphoreA, _OpenSemaphoreA@12
@@ -1363,7 +1378,10 @@ implib KERNEL32.DLL, RemoveLocalAlternateComputerNameW, _RemoveLocalAlternateCom
 implib KERNEL32.DLL, RemoveSecureMemoryCacheCallback, _RemoveSecureMemoryCacheCallback@4
 implib KERNEL32.DLL, RemoveVectoredContinueHandler, _RemoveVectoredContinueHandler@4
 implib KERNEL32.DLL, RemoveVectoredExceptionHandler, _RemoveVectoredExceptionHandler@4
-implib KERNEL32.DLL, ReplaceFile, _ReplaceFile@24
+
+; ReplaceFile is an alias for ReplaceFileW
+; implib KERNEL32.DLL, ReplaceFile, _ReplaceFile@24
+
 implib KERNEL32.DLL, ReplaceFileA, _ReplaceFileA@24
 implib KERNEL32.DLL, ReplaceFileW, _ReplaceFileW@24
 implib KERNEL32.DLL, ReplacePartitionUnit, _ReplacePartitionUnit@12
