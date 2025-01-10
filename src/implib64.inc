@@ -50,38 +50,38 @@ USE_COMPID equ 0
 
 ; === CONFIG END =======================================================
 
-STDCALL = 0
-CDECL   = 1
-PBCALL  = 2
-str_tbl_size  = 0
-last_dll_name = 0
-long_dll_name = 0
-num_symbols_indexed = 0
-IMAGE_FILE_MACHINE_AMD64      = 8664h
-IMAGE_FILE_LINE_NUMS_STRIPPED = 4
-IMAGE_CNT_CODE                = 20h
-IMAGE_CNT_INITIALIZED_DATA    = 40h
-IMAGE_LNK_COMDAT              = 1000h
-IMAGE_ALIGN_2BYTES            = 200000h
-IMAGE_ALIGN_4BYTES            = 300000h
-IMAGE_ALIGN_8BYTES            = 400000h
-IMAGE_MEM_EXECUTE             = 20000000h
-IMAGE_MEM_READ                = 40000000h
-IMAGE_MEM_WRITE               = 80000000h
-IMAGE_SYM_CLASS_EXTERNAL      = 2
-IMAGE_SYM_CLASS_STATIC        = 3
-IMAGE_SYM_CLASS_SECTION       = 104
-IMAGE_SYM_DTYPE_FUNCTION      = 20h
-IMAGE_SYM_ABSOLUTE            = -1
-IMAGE_REL_AMD64_REL32         = 4
-IMAGE_REL_AMD64_ADDR32NB      = 3
-IMAGE_COMDAT_SELECT_NODUPLICATES = 1
-IMAGE_COMDAT_SELECT_ASSOCIATIVE  = 5
+STDCALL=0
+CDECL=1
+PBCALL=2
+str_tbl_size=0
+last_dll_name=0
+long_dll_name=0
+syms_indexed=0
+syms=0
+IMAGE_FILE_MACHINE_AMD64=8664h
+IMAGE_FILE_LINE_NUMS_STRIPPED=4
+IMAGE_CNT_CODE=20h
+IMAGE_CNT_INITIALIZED_DATA=40h
+IMAGE_LNK_COMDAT=1000h
+IMAGE_ALIGN_2BYTES=200000h
+IMAGE_ALIGN_4BYTES=300000h
+IMAGE_ALIGN_8BYTES=400000h
+IMAGE_MEM_EXECUTE=20000000h
+IMAGE_MEM_READ=40000000h
+IMAGE_MEM_WRITE=80000000h
+IMAGE_SYM_CLASS_EXTERNAL=2
+IMAGE_SYM_CLASS_STATIC=3
+IMAGE_SYM_CLASS_SECTION=104
+IMAGE_SYM_DTYPE_FUNCTION=20h
+IMAGE_SYM_ABSOLUTE=-1
+IMAGE_REL_AMD64_REL32=4
+IMAGE_REL_AMD64_ADDR32NB=3
+IMAGE_COMDAT_SELECT_NODUPLICATES=1
+IMAGE_COMDAT_SELECT_ASSOCIATIVE=5
 
 use64
 org 0
 
-; Print timestamp
 macro print_timestamp {
 	timestmp=%t
 	t0='0'+timestmp mod 10
@@ -174,11 +174,11 @@ macro add_2_dir new_str*,new_str_size* {
 	if new_str_size<=1
 		display '-ERR: Empty string not allowed',13,10
 	end if
-	num_symbols_indexed=num_symbols_indexed+1
+	syms_indexed=syms_indexed+1
 if ~ defined LINKER_MEMBER_2_REMOVE
 	str_found2=sym_arr2
 	obj_cursor=obj_tbl2-4
-	repeat num_symbols_indexed
+	repeat syms_indexed
 		str_found1=str_found2
 		chr=1
 		while chr
@@ -200,7 +200,7 @@ if ~ defined LINKER_MEMBER_2_REMOVE
 		end while
 		obj_cursor=obj_cursor+4
 		if strcmp_r
-			do_memcpy obj_cursor,obj_cursor+4,obj_tbl2+(num_symbols_indexed-1)*4-obj_cursor
+			do_memcpy obj_cursor,obj_cursor+4,obj_tbl2+(syms_indexed-1)*4-obj_cursor
 			do_memcpy str_found1,str_found1+new_str_size,sym_arr2+str_tbl_size-str_found1
 			break
 		end if
@@ -303,7 +303,7 @@ macro implib dllname*,name*,thunk,pubname {
 		end if
 	end if
 	end virtual
-
+	syms=syms+1
 	if ~ defined dllname#.alreadydefined
 		get_next_even_addr
 		if dllname#.len < 16
@@ -622,6 +622,29 @@ null_import_descr_sym_tbl:
 null_import_descr_sym:
 	db '__NULL_IMPORT_DESCRIPTOR',0
 	add_2_dir null_import_descr_sym, $-null_import_descr_sym
-	num_syms=num_symbols_indexed
+	num_syms=syms_indexed
 	symarr_size=str_tbl_size
+	display 'DLL symbols indexed: '
+	if syms>9999999
+		display '0'+(syms/10000000)mod 10
+	end if
+	if syms>999999
+		display '0'+(syms/1000000)mod 10
+	end if
+	if syms>99999
+		display '0'+(syms/100000)mod 10
+	end if
+	if syms>9999
+		display '0'+(syms/10000)mod 10
+	end if
+	if syms>999
+		display '0'+(syms/1000)mod 10
+	end if
+	if syms>99
+		display '0'+(syms/100)mod 10
+	end if
+	if syms>9
+		display '0'+(syms/10)mod 10
+	end if
+	display '0'+syms mod 10,13,10
 }
