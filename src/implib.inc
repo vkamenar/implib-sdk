@@ -1423,7 +1423,7 @@ null_import_descr_sym:
 		display '0'+(syms/10)mod 10
 	end if
 	display '0'+syms mod 10,13,10
-	if syms>1509
-		display '-WNG: More than 1509 symbols. If using 32-bit MS linker, LNK1102 may appear when loading this library.',13,10
+	if lnk_member1_size>93952
+		display '-WNG: If using 32-bit MS linker, error LNK1102 may appear when loading this library due to its size.',13,10
 	end if
 }
