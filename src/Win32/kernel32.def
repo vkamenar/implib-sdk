@@ -1,21 +1,21 @@
 include '..\implib.inc'
 
-;implib KERNEL32.DLL, AcquireSRWLockExclusive, _AcquireSRWLockExclusive@4
-;implib KERNEL32.DLL, AcquireSRWLockShared, _AcquireSRWLockShared@4
-;implib KERNEL32.DLL, ActivateActCtx, _ActivateActCtx@8
-;implib KERNEL32.DLL, ActivateActCtxWorker, _ActivateActCtxWorker@8
+implib KERNEL32.DLL, AcquireSRWLockExclusive, _AcquireSRWLockExclusive@4
+implib KERNEL32.DLL, AcquireSRWLockShared, _AcquireSRWLockShared@4
+implib KERNEL32.DLL, ActivateActCtx, _ActivateActCtx@8
+implib KERNEL32.DLL, ActivateActCtxWorker, _ActivateActCtxWorker@8
 implib KERNEL32.DLL, AddAtomA, _AddAtomA@4
 implib KERNEL32.DLL, AddAtomW, _AddAtomW@4
-;implib KERNEL32.DLL, AddConsoleAliasA, _AddConsoleAliasA@12
-;implib KERNEL32.DLL, AddConsoleAliasW, _AddConsoleAliasW@12
-;implib KERNEL32.DLL, AddDllDirectory, _AddDllDirectory@4
-;implib KERNEL32.DLL, AddIntegrityLabelToBoundaryDescriptor, _AddIntegrityLabelToBoundaryDescriptor@8
-;implib KERNEL32.DLL, AddLocalAlternateComputerNameA, _AddLocalAlternateComputerNameA@8
-;implib KERNEL32.DLL, AddLocalAlternateComputerNameW, _AddLocalAlternateComputerNameW@8
-;implib KERNEL32.DLL, AddRefActCtx, _AddRefActCtx@4
-;implib KERNEL32.DLL, AddRefActCtxWorker, _AddRefActCtxWorker@4
-;implib KERNEL32.DLL, AddResourceAttributeAce, _AddResourceAttributeAce@28
-;implib KERNEL32.DLL, AddSIDToBoundaryDescriptor, _AddSIDToBoundaryDescriptor@8
+implib KERNEL32.DLL, AddConsoleAliasA, _AddConsoleAliasA@12
+implib KERNEL32.DLL, AddConsoleAliasW, _AddConsoleAliasW@12
+implib KERNEL32.DLL, AddDllDirectory, _AddDllDirectory@4
+implib KERNEL32.DLL, AddIntegrityLabelToBoundaryDescriptor, _AddIntegrityLabelToBoundaryDescriptor@8
+implib KERNEL32.DLL, AddLocalAlternateComputerNameA, _AddLocalAlternateComputerNameA@8
+implib KERNEL32.DLL, AddLocalAlternateComputerNameW, _AddLocalAlternateComputerNameW@8
+implib KERNEL32.DLL, AddRefActCtx, _AddRefActCtx@4
+implib KERNEL32.DLL, AddRefActCtxWorker, _AddRefActCtxWorker@4
+implib KERNEL32.DLL, AddResourceAttributeAce, _AddResourceAttributeAce@28
+implib KERNEL32.DLL, AddSIDToBoundaryDescriptor, _AddSIDToBoundaryDescriptor@8
 implib KERNEL32.DLL, AddScopedPolicyIDAce, _AddScopedPolicyIDAce@20
 implib KERNEL32.DLL, AddSecureMemoryCacheCallback, _AddSecureMemoryCacheCallback@4
 implib KERNEL32.DLL, AddVectoredContinueHandler, _AddVectoredContinueHandler@8
@@ -66,7 +66,10 @@ implib KERNEL32.DLL, BaseFlushAppcompatCache, _BaseFlushAppcompatCache@0
 implib KERNEL32.DLL, BaseFlushAppcompatCacheWorker, _BaseFlushAppcompatCacheWorker@0
 implib KERNEL32.DLL, BaseFormatObjectAttributes, _BaseFormatObjectAttributes@16
 implib KERNEL32.DLL, BaseFormatTimeOut, _BaseFormatTimeOut@8
-implib KERNEL32.DLL, BaseFreeAppCompatDataForProcessWorker, _BaseFreeAppCompatDataForProcessWorker@4
+
+; BaseFreeAppCompatDataForProcessWorker is an alias for SortCloseHandle
+; implib KERNEL32.DLL, BaseFreeAppCompatDataForProcessWorker, _BaseFreeAppCompatDataForProcessWorker@4
+
 implib KERNEL32.DLL, BaseGenerateAppCompatData, _BaseGenerateAppCompatData@24
 implib KERNEL32.DLL, BaseGetNamedObjectDirectory, _BaseGetNamedObjectDirectory@4
 
@@ -267,7 +270,7 @@ implib KERNEL32.DLL, CreatePrivateNamespaceA, _CreatePrivateNamespaceA@12
 implib KERNEL32.DLL, CreatePrivateNamespaceW, _CreatePrivateNamespaceW@12
 implib KERNEL32.DLL, CreateProcessA, _CreateProcessA@40
 
-; These functions should be imported from advapi32. Uncomment the following entries if you really need to import them from kernel32 instead.
+; These functions should be imported from advapi32. Uncomment the following entries if you really need to import them from kernel32.
 ; implib KERNEL32.DLL, CreateProcessAsUserA, _CreateProcessAsUserA@44
 ; implib KERNEL32.DLL, CreateProcessAsUserW, _CreateProcessAsUserW@44
 
@@ -817,7 +820,10 @@ implib KERNEL32.DLL, GetStateFolder, _GetStateFolder@16
 implib KERNEL32.DLL, GetStdHandle, _GetStdHandle@4
 implib KERNEL32.DLL, GetStringScripts, _GetStringScripts@20
 implib KERNEL32.DLL, GetStringTypeA, _GetStringTypeA@20
-implib KERNEL32.DLL, GetStringTypeExA, _GetStringTypeExA@20
+
+; GetStringTypeExA is an alias for GetStringTypeA
+; implib KERNEL32.DLL, GetStringTypeExA, _GetStringTypeExA@20
+
 implib KERNEL32.DLL, GetStringTypeExW, _GetStringTypeExW@20
 implib KERNEL32.DLL, GetStringTypeW, _GetStringTypeW@16
 implib KERNEL32.DLL, GetSystemAppDataKey, _GetSystemAppDataKey@16
@@ -988,22 +994,27 @@ implib KERNEL32.DLL, InitializeSListHead, _InitializeSListHead@4
 implib KERNEL32.DLL, InitializeSRWLock, _InitializeSRWLock@4
 implib KERNEL32.DLL, InitializeSynchronizationBarrier, _InitializeSynchronizationBarrier@12
 implib KERNEL32.DLL, InstallELAMCertificateInfo, _InstallELAMCertificateInfo@4
-; implib KERNEL32.DLL, InterlockedCompareExchange, _InterlockedCompareExchange@12
-; implib KERNEL32.DLL, InterlockedCompareExchange64, _InterlockedCompareExchange64@20
+implib KERNEL32.DLL, InterlockedCompareExchange, _InterlockedCompareExchange@12
+implib KERNEL32.DLL, InterlockedCompareExchange64, _InterlockedCompareExchange64@20
 ; implib KERNEL32.DLL, InterlockedCompareExchangePointer, _InterlockedCompareExchangePointer@12
-; implib KERNEL32.DLL, InterlockedDecrement, _InterlockedDecrement@4
-; implib KERNEL32.DLL, InterlockedExchange, _InterlockedExchange@8
-; implib KERNEL32.DLL, InterlockedExchangeAdd, _InterlockedExchangeAdd@8
+implib KERNEL32.DLL, InterlockedDecrement, _InterlockedDecrement@4
+implib KERNEL32.DLL, InterlockedExchange, _InterlockedExchange@8
+implib KERNEL32.DLL, InterlockedExchangeAdd, _InterlockedExchangeAdd@8
 implib KERNEL32.DLL, InterlockedFlushSList, _InterlockedFlushSList@4
-; implib KERNEL32.DLL, InterlockedIncrement, _InterlockedIncrement@4
+implib KERNEL32.DLL, InterlockedIncrement, _InterlockedIncrement@4
 implib KERNEL32.DLL, InterlockedPopEntrySList, _InterlockedPopEntrySList@4
 implib KERNEL32.DLL, InterlockedPushEntrySList, _InterlockedPushEntrySList@8
 implib KERNEL32.DLL, InterlockedPushListSList, _InterlockedPushListSList@8
 implib KERNEL32.DLL, InterlockedPushListSListEx, _InterlockedPushListSListEx@16
 implib KERNEL32.DLL, InvalidateConsoleDIBits, _InvalidateConsoleDIBits@8
 implib KERNEL32.DLL, IsBadCodePtr, _IsBadCodePtr@4
-implib KERNEL32.DLL, IsBadHugeReadPtr, _IsBadHugeReadPtr@8
-implib KERNEL32.DLL, IsBadHugeWritePtr, _IsBadHugeWritePtr@8
+
+; IsBadHugeReadPtr is an alias for IsBadReadPtr
+; implib KERNEL32.DLL, IsBadHugeReadPtr, _IsBadHugeReadPtr@8
+
+; IsBadHugeWritePtr is an alias for IsBadWritePtr
+; implib KERNEL32.DLL, IsBadHugeWritePtr, _IsBadHugeWritePtr@8
+
 implib KERNEL32.DLL, IsBadReadPtr, _IsBadReadPtr@8
 implib KERNEL32.DLL, IsBadStringPtrA, _IsBadStringPtrA@8
 implib KERNEL32.DLL, IsBadStringPtrW, _IsBadStringPtrW@8
@@ -1165,7 +1176,9 @@ implib KERNEL32.DLL, NtVdm64CreateProcessInternalW, _NtVdm64CreateProcessInterna
 implib KERNEL32.DLL, OOBEComplete, _OOBEComplete@4
 implib KERNEL32.DLL, OfferVirtualMemory, _OfferVirtualMemory@12
 implib KERNEL32.DLL, OpenConsoleW, _OpenConsoleW@16
-implib KERNEL32.DLL, OpenConsoleWStub, _OpenConsoleWStub@16
+
+; OpenConsoleWStub is an alias for OpenConsoleW
+; implib KERNEL32.DLL, OpenConsoleWStub, _OpenConsoleWStub@16
 
 ; OpenDataFile available in kernel32 from v5.0 to v5.2
 ; implib KERNEL32.DLL, OpenDataFile, _OpenDataFile@8
@@ -1235,9 +1248,16 @@ implib KERNEL32.DLL, PssWalkMarkerFree, _PssWalkMarkerFree@4
 implib KERNEL32.DLL, PssWalkMarkerGetPosition, _PssWalkMarkerGetPosition@8
 implib KERNEL32.DLL, PssWalkMarkerRewind, _PssWalkMarkerRewind@4
 implib KERNEL32.DLL, PssWalkMarkerSeek, _PssWalkMarkerSeek@8
-implib KERNEL32.DLL, PssWalkMarkerSeekToBeginning, _PssWalkMarkerSeekToBeginning@4
-implib KERNEL32.DLL, PssWalkMarkerSetPosition, _PssWalkMarkerSetPosition@8
-implib KERNEL32.DLL, PssWalkMarkerTell, _PssWalkMarkerTell@8
+
+; PssWalkMarkerSeekToBeginning is an alias for PssWalkMarkerRewind
+; implib KERNEL32.DLL, PssWalkMarkerSeekToBeginning, _PssWalkMarkerSeekToBeginning@4
+
+; PssWalkMarkerSetPosition is an alias for PssWalkMarkerSeek
+; implib KERNEL32.DLL, PssWalkMarkerSetPosition, _PssWalkMarkerSetPosition@8
+
+; PssWalkMarkerTell is an alias for PssWalkMarkerGetPosition
+; implib KERNEL32.DLL, PssWalkMarkerTell, _PssWalkMarkerTell@8
+
 implib KERNEL32.DLL, PssWalkSnapshot, _PssWalkSnapshot@20
 implib KERNEL32.DLL, PulseEvent, _PulseEvent@4
 implib KERNEL32.DLL, PurgeComm, _PurgeComm@8
@@ -1305,7 +1325,7 @@ implib KERNEL32.DLL, ReadProcessMemory, _ReadProcessMemory@20
 implib KERNEL32.DLL, ReadThreadProfilingData, _ReadThreadProfilingData@12
 implib KERNEL32.DLL, ReclaimVirtualMemory, _ReclaimVirtualMemory@8
 
-; These functions should be imported from advapi32. Uncomment the following entries if you really need to import them from kernel32 instead.
+; These functions should be imported from advapi32. Uncomment the following entries if you really need to import them from kernel32.
 ; implib KERNEL32.DLL, RegCloseKey, _RegCloseKey@4
 ; implib KERNEL32.DLL, RegCopyTreeW, _RegCopyTreeW@12
 ; implib KERNEL32.DLL, RegCreateKeyExA, _RegCreateKeyExA@36
@@ -1351,7 +1371,10 @@ implib KERNEL32.DLL, ReclaimVirtualMemory, _ReclaimVirtualMemory@8
 implib KERNEL32.DLL, RegisterApplicationRecoveryCallback, _RegisterApplicationRecoveryCallback@16
 implib KERNEL32.DLL, RegisterApplicationRestart, _RegisterApplicationRestart@8
 implib KERNEL32.DLL, RegisterBadMemoryNotification, _RegisterBadMemoryNotification@4
-implib KERNEL32.DLL, RegisterConsoleIME, _RegisterConsoleIME@8
+
+; RegisterConsoleIME triggers ERROR_CALL_NOT_IMPLEMENTED in Windows 10
+; implib KERNEL32.DLL, RegisterConsoleIME, _RegisterConsoleIME@8
+
 implib KERNEL32.DLL, RegisterConsoleOS2, _RegisterConsoleOS2@4
 implib KERNEL32.DLL, RegisterConsoleVDM, _RegisterConsoleVDM@44
 implib KERNEL32.DLL, RegisterWaitForInputIdle, _RegisterWaitForInputIdle@4
@@ -1451,7 +1474,10 @@ implib KERNEL32.DLL, SetConsoleInputExeNameA, _SetConsoleInputExeNameA@4
 implib KERNEL32.DLL, SetConsoleInputExeNameW, _SetConsoleInputExeNameW@4
 implib KERNEL32.DLL, SetConsoleKeyShortcuts, _SetConsoleKeyShortcuts@16
 implib KERNEL32.DLL, SetConsoleLocalEUDC, _SetConsoleLocalEUDC@16
-implib KERNEL32.DLL, SetConsoleMaximumWindowSize, _SetConsoleMaximumWindowSize@8
+
+; Stub function available since kernel32 v3.51
+; implib KERNEL32.DLL, SetConsoleMaximumWindowSize, _SetConsoleMaximumWindowSize@8
+
 implib KERNEL32.DLL, SetConsoleMenuClose, _SetConsoleMenuClose@4
 implib KERNEL32.DLL, SetConsoleMode, _SetConsoleMode@8
 implib KERNEL32.DLL, SetConsoleNlsMode, _SetConsoleNlsMode@8
@@ -1504,8 +1530,13 @@ implib KERNEL32.DLL, SetFirmwareEnvironmentVariableA, _SetFirmwareEnvironmentVar
 implib KERNEL32.DLL, SetFirmwareEnvironmentVariableExA, _SetFirmwareEnvironmentVariableExA@20
 implib KERNEL32.DLL, SetFirmwareEnvironmentVariableExW, _SetFirmwareEnvironmentVariableExW@20
 implib KERNEL32.DLL, SetFirmwareEnvironmentVariableW, _SetFirmwareEnvironmentVariableW@16
-implib KERNEL32.DLL, SetHandleContext, _SetHandleContext@8
-implib KERNEL32.DLL, SetHandleCount, _SetHandleCount@4
+
+; SetHandleContext triggers ERROR_CALL_NOT_IMPLEMENTED in Windows 10
+; implib KERNEL32.DLL, SetHandleContext, _SetHandleContext@8
+
+; SetHandleCount has no effect in Win32
+; implib KERNEL32.DLL, SetHandleCount, _SetHandleCount@4
+
 implib KERNEL32.DLL, SetHandleInformation, _SetHandleInformation@12
 implib KERNEL32.DLL, SetInformationJobObject, _SetInformationJobObject@16
 implib KERNEL32.DLL, SetIoRateControlInformationJobObject, _SetIoRateControlInformationJobObject@8
@@ -1517,7 +1548,10 @@ implib KERNEL32.DLL, SetLocalTime, _SetLocalTime@4
 implib KERNEL32.DLL, SetLocaleInfoA, _SetLocaleInfoA@12
 implib KERNEL32.DLL, SetLocaleInfoW, _SetLocaleInfoW@12
 implib KERNEL32.DLL, SetMailslotInfo, _SetMailslotInfo@8
-implib KERNEL32.DLL, SetMessageWaitingIndicator, _SetMessageWaitingIndicator@8
+
+; SetMessageWaitingIndicator triggers ERROR_INVALID_FUNCTION in Windows 10
+; implib KERNEL32.DLL, SetMessageWaitingIndicator, _SetMessageWaitingIndicator@8
+
 implib KERNEL32.DLL, SetNamedPipeAttribute, _SetNamedPipeAttribute@20
 implib KERNEL32.DLL, SetNamedPipeHandleState, _SetNamedPipeHandleState@16
 implib KERNEL32.DLL, SetPriorityClass, _SetPriorityClass@8
@@ -1582,7 +1616,10 @@ implib KERNEL32.DLL, SetVolumeLabelA, _SetVolumeLabelA@8
 implib KERNEL32.DLL, SetVolumeLabelW, _SetVolumeLabelW@8
 implib KERNEL32.DLL, SetVolumeMountPointA, _SetVolumeMountPointA@8
 implib KERNEL32.DLL, SetVolumeMountPointW, _SetVolumeMountPointW@8
-implib KERNEL32.DLL, SetVolumeMountPointWStub, _SetVolumeMountPointWStub@8
+
+; SetVolumeMountPointWStub is an alias for SetVolumeMountPointW
+; implib KERNEL32.DLL, SetVolumeMountPointWStub, _SetVolumeMountPointWStub@8
+
 implib KERNEL32.DLL, SetWaitableTimer, _SetWaitableTimer@24
 implib KERNEL32.DLL, SetWaitableTimerEx, _SetWaitableTimerEx@28
 implib KERNEL32.DLL, SetXStateFeaturesMask, _SetXStateFeaturesMask@12
@@ -1674,7 +1711,10 @@ implib KERNEL32.DLL, VDMOperationStarted, _VDMOperationStarted@4
 implib KERNEL32.DLL, VerLanguageNameA, _VerLanguageNameA@12
 implib KERNEL32.DLL, VerLanguageNameW, _VerLanguageNameW@12
 implib KERNEL32.DLL, VerSetConditionMask, _VerSetConditionMask@16
-implib KERNEL32.DLL, VerifyConsoleIoHandle, _VerifyConsoleIoHandle@4
+
+; Stub function available since kernel32 v3.51
+; implib KERNEL32.DLL, VerifyConsoleIoHandle, _VerifyConsoleIoHandle@4
+
 implib KERNEL32.DLL, VerifyScripts, _VerifyScripts@20
 implib KERNEL32.DLL, VerifyVersionInfoA, _VerifyVersionInfoA@16
 implib KERNEL32.DLL, VerifyVersionInfoW, _VerifyVersionInfoW@16
@@ -1710,7 +1750,10 @@ implib KERNEL32.DLL, WaitNamedPipeW, _WaitNamedPipeW@8
 implib KERNEL32.DLL, WakeAllConditionVariable, _WakeAllConditionVariable@4
 implib KERNEL32.DLL, WakeConditionVariable, _WakeConditionVariable@4
 implib KERNEL32.DLL, WerGetFlags, _WerGetFlags@8
-implib KERNEL32.DLL, WerGetFlagsWorker, _WerGetFlagsWorker@8
+
+; WerGetFlagsWorker is an alias for WerGetFlags
+; implib KERNEL32.DLL, WerGetFlagsWorker, _WerGetFlagsWorker@8
+
 implib KERNEL32.DLL, WerRegisterAdditionalProcess, _WerRegisterAdditionalProcess@8
 implib KERNEL32.DLL, WerRegisterAppLocalDump, _WerRegisterAppLocalDump@4
 implib KERNEL32.DLL, WerRegisterCustomMetadata, _WerRegisterCustomMetadata@8
@@ -1722,7 +1765,10 @@ implib KERNEL32.DLL, WerRegisterMemoryBlockWorker, _WerRegisterMemoryBlockWorker
 implib KERNEL32.DLL, WerRegisterRuntimeExceptionModule, _WerRegisterRuntimeExceptionModule@8
 implib KERNEL32.DLL, WerRegisterRuntimeExceptionModuleWorker, _WerRegisterRuntimeExceptionModuleWorker@8
 implib KERNEL32.DLL, WerSetFlags, _WerSetFlags@4
-implib KERNEL32.DLL, WerSetFlagsWorker, _WerSetFlagsWorker@4
+
+; WerSetFlagsWorker is an alias for WerSetFlags
+; implib KERNEL32.DLL, WerSetFlagsWorker, _WerSetFlagsWorker@4
+
 implib KERNEL32.DLL, WerUnregisterAdditionalProcess, _WerUnregisterAdditionalProcess@4
 implib KERNEL32.DLL, WerUnregisterAppLocalDump, _WerUnregisterAppLocalDump@0
 implib KERNEL32.DLL, WerUnregisterCustomMetadata, _WerUnregisterCustomMetadata@4
@@ -1737,20 +1783,26 @@ implib KERNEL32.DLL, WerpGetDebugger, _WerpGetDebugger@8
 implib KERNEL32.DLL, WerpInitiateRemoteRecovery, _WerpInitiateRemoteRecovery@4
 implib KERNEL32.DLL, WerpLaunchAeDebug, _WerpLaunchAeDebug@20
 
-; Stub function available since kernel32 v6.2
+; Stub functions available since kernel32 v6.2
 ; implib KERNEL32.DLL, WerpNotifyLoadStringResourceWorker, _WerpNotifyLoadStringResourceWorker@16
+; implib KERNEL32.DLL, WerpNotifyUseStringResourceWorker, _WerpNotifyUseStringResourceWorker@4
 
-implib KERNEL32.DLL, WerpNotifyUseStringResourceWorker, _WerpNotifyUseStringResourceWorker@4
 implib KERNEL32.DLL, WideCharToMultiByte, _WideCharToMultiByte@32
 implib KERNEL32.DLL, WinExec, _WinExec@8
 implib KERNEL32.DLL, Wow64DisableWow64FsRedirection, _Wow64DisableWow64FsRedirection@4
 implib KERNEL32.DLL, Wow64EnableWow64FsRedirection, _Wow64EnableWow64FsRedirection@4
 implib KERNEL32.DLL, Wow64GetThreadContext, _Wow64GetThreadContext@8
-implib KERNEL32.DLL, Wow64GetThreadSelectorEntry, _Wow64GetThreadSelectorEntry@12
+
+; Wow64GetThreadSelectorEntry triggers STATUS_NOT_SUPPORTED in Windows 10
+; implib KERNEL32.DLL, Wow64GetThreadSelectorEntry, _Wow64GetThreadSelectorEntry@12
+
 implib KERNEL32.DLL, Wow64RevertWow64FsRedirection, _Wow64RevertWow64FsRedirection@4
 implib KERNEL32.DLL, Wow64SetThreadContext, _Wow64SetThreadContext@8
 implib KERNEL32.DLL, Wow64SuspendThread, _Wow64SuspendThread@4
+
+; Wow64Transition is not a function, but a DATA symbol
 ; implib KERNEL32.DLL, Wow64Transition
+
 implib KERNEL32.DLL, WriteConsoleA, _WriteConsoleA@20
 implib KERNEL32.DLL, WriteConsoleInputA, _WriteConsoleInputA@16
 implib KERNEL32.DLL, WriteConsoleInputVDMA, _WriteConsoleInputVDMA@16
@@ -1779,7 +1831,10 @@ implib KERNEL32.DLL, WriteProfileStringW, _WriteProfileStringW@12
 implib KERNEL32.DLL, WriteTapemark, _WriteTapemark@16
 implib KERNEL32.DLL, ZombifyActCtx, _ZombifyActCtx@4
 implib KERNEL32.DLL, ZombifyActCtxWorker, _ZombifyActCtxWorker@4
-implib KERNEL32.DLL, _hread, __hread@12
+
+; _hread is an alias for _lread
+; implib KERNEL32.DLL, _hread, __hread@12
+
 implib KERNEL32.DLL, _hwrite, __hwrite@12
 implib KERNEL32.DLL, _lclose, __lclose@4
 implib KERNEL32.DLL, _lcreat, __lcreat@8
@@ -1806,7 +1861,7 @@ implib KERNEL32.DLL, lstrlen, _lstrlen@4
 implib KERNEL32.DLL, lstrlenA, _lstrlenA@4
 implib KERNEL32.DLL, lstrlenW, _lstrlenW@4
 
-; These functions should be imported from winmm. Uncomment the following entries if you really need to import them from kernel32 instead.
+; These functions should be imported from winmm. Uncomment the following entries if you really need to import them from kernel32.
 ; implib KERNEL32.DLL, timeBeginPeriod, _timeBeginPeriod@4
 ; implib KERNEL32.DLL, timeEndPeriod, _timeEndPeriod@4
 ; implib KERNEL32.DLL, timeGetDevCaps, _timeGetDevCaps@8
