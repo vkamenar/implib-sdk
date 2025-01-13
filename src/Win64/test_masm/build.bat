@@ -6,9 +6,8 @@ REM If you have MASM64 installed, set the installation path:
 SET MASM=C:\Tools\MASM64
 
 REM === CONFIG END ===================================================
-TITLE ImpLib SDK
+TITLE ImpLib SDK (MASM Win64 example)
 echo Building a Win64 executable with MASM64 and either the MS linker or polink
-echo.
 IF EXIST "%MASM%\ml64.exe" GOTO MASMFOUND
 SET MASM=%MASM%\bin
 IF EXIST "%MASM%\ml64.exe" GOTO MASMFOUND
