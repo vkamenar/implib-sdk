@@ -6,9 +6,8 @@ REM If you have MASM (or MASM32) installed, set the installation path:
 SET MASM=C:\Tools\MASM
 
 REM === CONFIG END ===================================================
-TITLE ImpLib SDK
-echo Building an executable using the MSVCRT library with MASM and the MS linker
-echo.
+TITLE ImpLib SDK (MASM MSVCRT example)
+echo Building a Win32 executable using the MSVCRT library with MASM and the MS linker
 IF EXIST "%MASM%\ml.exe" GOTO MASMFOUND
 SET MASM=%MASM%\bin
 IF EXIST "%MASM%\ml.exe" GOTO MASMFOUND
