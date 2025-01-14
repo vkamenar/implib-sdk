@@ -17,6 +17,7 @@ ECHO MASM not found. Please, specify the correct path, if MASM64 is installed.
 GOTO EXIT
 :MASMFOUND
 "%MASM%\ml64" /c test.asm
+IF %ERRORLEVEL% NEQ 0 GOTO EXIT
 SET LNKEXE="%MASM%\link"
 IF EXIST "%LNKEXE%.exe" GOTO LINKFOUND
 SET LNKEXE="%MASM%\polink"
