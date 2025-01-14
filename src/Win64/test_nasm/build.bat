@@ -20,6 +20,7 @@ ECHO NASM not found. Please, specify the correct path, if NASM is installed.
 GOTO EXIT
 :NASMFOUND
 "%NASMEXE%" -fwin64 test.asm
+IF %ERRORLEVEL% NEQ 0 GOTO EXIT
 SET POLINK="%NASM%\polink"
 IF EXIST "%POLINK%.exe" GOTO POLINKFOUND
 SET POLINK="%NASM%\bin\polink"
