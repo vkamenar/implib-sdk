@@ -15,6 +15,7 @@ ECHO MASM not found. Please, specify the correct path, if MASM or MASM32 is inst
 GOTO EXIT
 :MASMFOUND
 "%MASM%\ml" /c /coff test.asm
+IF %ERRORLEVEL% NEQ 0 GOTO EXIT
 SET MSLNK="%MASM%\link32"
 IF EXIST "%MSLNK%.exe" GOTO LINKFOUND
 SET MSLNK="%MASM%\link"
