@@ -14,8 +14,8 @@ The ImpLib SDK is free even for commercial use and redistribution of any kind, a
 
 ## Installation and Usage
 
-Unpack the ImpLib SDK release into any directory. Then launch ```build_libs.bat```. This batch file builds or rebuilds all the sample import libraries. The building process may take several minutes to complete due to the large size of the sample files.
+Unpack the ImpLib SDK release into any directory. Then launch ```build_libs.bat```. This batch file builds or rebuilds all the sample import libraries: MSVCRT, Win32 and Win64 system API libraries. The building process may take several minutes to complete due to the large size of the sample files.
 
-The output libraries are stored into the ```lib``` subdirectory. Two import libraries are created for each input file: a regular import library including *original thunk* and a stripped version without *original thunk*.
+The output libraries are stored under the ```lib``` subdirectory. Two import libraries are created for each input file: a regular import library including *original thunk* and a "stripped" version without *original thunk*. The latter is stored into the ```stripped``` subdirectory.
 
 If you add new import library definitions or modify the sample files, just rerun ```build_libs.bat```. Only new or modified files will be recompiled.
