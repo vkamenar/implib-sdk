@@ -250,14 +250,14 @@ WORD ordinal;
 			pub_name_len = cprintf(pub_name, "ord.%", ordinal + ordinal_base);
 		if(!compact){
 
-			/* ; DLLNAME.NAME ORD:# */
+			/* ; DLLNAME.NAME ord.# */
 			buf[0] = ';';
 			buf[1] = ' ';
 			cmemcpy(buf + 2, dll_name, dll_name_len);
 			buf[2 + dll_name_len] = '.';
 			if(pub_name_len){
 				cmemcpy(&buf[3 + dll_name_len], pub_name, pub_name_len);
-				aux = cprintf(&buf[3 + dll_name_len + pub_name_len], " ORD:%\r\n", ordinal + ordinal_base);
+				aux = cprintf(&buf[3 + dll_name_len + pub_name_len], " ord.%\r\n", ordinal + ordinal_base);
 			}else
 				aux = cprintf(&buf[3 + dll_name_len], "#%\r\n", ordinal + ordinal_base);
 			WriteFile(hOut, buf, 3 + dll_name_len + pub_name_len + aux, &aux, 0);
