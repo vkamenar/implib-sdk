@@ -11,7 +11,7 @@ SET GCCEXE="%GCC%\gcc"
 IF EXIST "%GCCEXE%.exe" GOTO GCCFOUND
 SET GCCEXE="%GCC%\bin\gcc"
 IF EXIST "%GCCEXE%.exe" GOTO GCCFOUND
-ECHO GCC not found. Please, specify the correct path, if MInGW32 is installed.
+ECHO GCC not found. Please, specify the correct path, if MinGW32 is installed.
 GOTO EXIT
 :GCCFOUND
 "%GCCEXE%" -c test.c -o test.o
