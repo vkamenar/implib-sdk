@@ -2,6 +2,10 @@ include '..\implib.inc'
 
 implib KERNEL32.DLL, AcquireSRWLockExclusive, _AcquireSRWLockExclusive@4
 implib KERNEL32.DLL, AcquireSRWLockShared, _AcquireSRWLockShared@4
+
+; Stub function available in kernel32 v6.2
+; implib KERNEL32.DLL, AcquireStateLock, _AcquireStateLock@0
+
 implib KERNEL32.DLL, ActivateActCtx, _ActivateActCtx@8
 implib KERNEL32.DLL, ActivateActCtxWorker, _ActivateActCtxWorker@8
 implib KERNEL32.DLL, AddAtomA, _AddAtomA@4
@@ -22,8 +26,33 @@ implib KERNEL32.DLL, AddVectoredContinueHandler, _AddVectoredContinueHandler@8
 implib KERNEL32.DLL, AddVectoredExceptionHandler, _AddVectoredExceptionHandler@8
 implib KERNEL32.DLL, AdjustCalendarDate, _AdjustCalendarDate@12
 implib KERNEL32.DLL, AllocConsole, _AllocConsole@0
+
+; Functions available in kernel32 from v4.0 to v4.90
+; implib KERNEL32.DLL, AllocLSCallback, _AllocLSCallback@0
+; implib KERNEL32.DLL, AllocMappedBuffer
+; implib KERNEL32.DLL, AllocSLCallback, _AllocSLCallback@8
+
 implib KERNEL32.DLL, AllocateUserPhysicalPages, _AllocateUserPhysicalPages@12
 implib KERNEL32.DLL, AllocateUserPhysicalPagesNuma, _AllocateUserPhysicalPagesNuma@16
+
+; Stub functions available in kernel32 v6.2
+; implib KERNEL32.DLL, AppContainerDeriveSidFromMoniker, _AppContainerDeriveSidFromMoniker@0
+; implib KERNEL32.DLL, AppContainerFreeMemory, _AppContainerFreeMemory@0
+; implib KERNEL32.DLL, AppContainerLookupDisplayNameMrtReference, _AppContainerLookupDisplayNameMrtReference@0
+; implib KERNEL32.DLL, AppContainerLookupMoniker, _AppContainerLookupMoniker@0
+; implib KERNEL32.DLL, AppContainerRegisterSid, _AppContainerRegisterSid@0
+; implib KERNEL32.DLL, AppContainerUnregisterSid, _AppContainerUnregisterSid@0
+; implib KERNEL32.DLL, AppXFreeMemory, _AppXFreeMemory@0
+; implib KERNEL32.DLL, AppXGetApplicationData, _AppXGetApplicationData@0
+; implib KERNEL32.DLL, AppXGetDevelopmentMode, _AppXGetDevelopmentMode@0
+; implib KERNEL32.DLL, AppXGetOSMinVersion, _AppXGetOSMinVersion@0
+; implib KERNEL32.DLL, AppXGetPackageCapabilities, _AppXGetPackageCapabilities@0
+; implib KERNEL32.DLL, AppXGetPackageSid, _AppXGetPackageSid@0
+; implib KERNEL32.DLL, AppXGetPackageState, _AppXGetPackageState@0
+; implib KERNEL32.DLL, AppXLookupDisplayName, _AppXLookupDisplayName@0
+; implib KERNEL32.DLL, AppXLookupMoniker, _AppXLookupMoniker@0
+; implib KERNEL32.DLL, AppXSetPackageState, _AppXSetPackageState@0
+
 implib KERNEL32.DLL, AppPolicyGetClrCompat, _AppPolicyGetClrCompat@8
 implib KERNEL32.DLL, AppPolicyGetCreateFileAccess, _AppPolicyGetCreateFileAccess@8
 implib KERNEL32.DLL, AppPolicyGetLifecycleManagement, _AppPolicyGetLifecycleManagement@8
