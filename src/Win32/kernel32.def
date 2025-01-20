@@ -70,6 +70,10 @@ implib KERNEL32.DLL, AttachConsole, _AttachConsole@4
 implib KERNEL32.DLL, BackupRead, _BackupRead@28
 implib KERNEL32.DLL, BackupSeek, _BackupSeek@24
 implib KERNEL32.DLL, BackupWrite, _BackupWrite@28
+
+; Stub function available in kernel32 from v3.51 to v5.0
+; implib KERNEL32.DLL, BaseAttachCompleteThunk, _BaseAttachCompleteThunk@0
+
 implib KERNEL32.DLL, BaseCheckAppcompatCache, _BaseCheckAppcompatCache@16
 implib KERNEL32.DLL, BaseCheckAppcompatCacheEx, _BaseCheckAppcompatCacheEx@24
 
@@ -81,6 +85,9 @@ implib KERNEL32.DLL, BaseCheckAppcompatCacheEx, _BaseCheckAppcompatCacheEx@24
 ; implib KERNEL32.DLL, BaseInitAppcompatCacheSupportWorker, _BaseInitAppcompatCacheSupportWorker@0
 
 implib KERNEL32.DLL, BaseCheckElevation, _BaseCheckElevation@48
+
+; BaseCheckRunApp is available in kernel32 from v5.2 to v6.3
+; implib KERNEL32.DLL, BaseCheckRunApp, _BaseCheckRunApp@40
 
 ; BaseCleanupAppcompatCache available in kernel32 v5.1
 ; implib KERNEL32.DLL, BaseCleanupAppcompatCache, _BaseCleanupAppcompatCache@0
