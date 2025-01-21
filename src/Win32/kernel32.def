@@ -4,7 +4,7 @@ implib KERNEL32.DLL, AcquireSRWLockExclusive, _AcquireSRWLockExclusive@4
 implib KERNEL32.DLL, AcquireSRWLockShared, _AcquireSRWLockShared@4
 
 ; Stub function available in kernel32 v6.2
-; implib KERNEL32.DLL, AcquireStateLock, _AcquireStateLock@0
+; implib KERNEL32.DLL, AcquireStateLock
 
 implib KERNEL32.DLL, ActivateActCtx, _ActivateActCtx@8
 implib KERNEL32.DLL, ActivateActCtxWorker, _ActivateActCtxWorker@8
@@ -36,22 +36,22 @@ implib KERNEL32.DLL, AllocateUserPhysicalPages, _AllocateUserPhysicalPages@12
 implib KERNEL32.DLL, AllocateUserPhysicalPagesNuma, _AllocateUserPhysicalPagesNuma@16
 
 ; Stub functions available in kernel32 v6.2
-; implib KERNEL32.DLL, AppContainerDeriveSidFromMoniker, _AppContainerDeriveSidFromMoniker@0
-; implib KERNEL32.DLL, AppContainerFreeMemory, _AppContainerFreeMemory@0
-; implib KERNEL32.DLL, AppContainerLookupDisplayNameMrtReference, _AppContainerLookupDisplayNameMrtReference@0
-; implib KERNEL32.DLL, AppContainerLookupMoniker, _AppContainerLookupMoniker@0
-; implib KERNEL32.DLL, AppContainerRegisterSid, _AppContainerRegisterSid@0
-; implib KERNEL32.DLL, AppContainerUnregisterSid, _AppContainerUnregisterSid@0
-; implib KERNEL32.DLL, AppXFreeMemory, _AppXFreeMemory@0
-; implib KERNEL32.DLL, AppXGetApplicationData, _AppXGetApplicationData@0
-; implib KERNEL32.DLL, AppXGetDevelopmentMode, _AppXGetDevelopmentMode@0
-; implib KERNEL32.DLL, AppXGetOSMinVersion, _AppXGetOSMinVersion@0
-; implib KERNEL32.DLL, AppXGetPackageCapabilities, _AppXGetPackageCapabilities@0
-; implib KERNEL32.DLL, AppXGetPackageSid, _AppXGetPackageSid@0
-; implib KERNEL32.DLL, AppXGetPackageState, _AppXGetPackageState@0
-; implib KERNEL32.DLL, AppXLookupDisplayName, _AppXLookupDisplayName@0
-; implib KERNEL32.DLL, AppXLookupMoniker, _AppXLookupMoniker@0
-; implib KERNEL32.DLL, AppXSetPackageState, _AppXSetPackageState@0
+; implib KERNEL32.DLL, AppContainerDeriveSidFromMoniker
+; implib KERNEL32.DLL, AppContainerFreeMemory
+; implib KERNEL32.DLL, AppContainerLookupDisplayNameMrtReference
+; implib KERNEL32.DLL, AppContainerLookupMoniker
+; implib KERNEL32.DLL, AppContainerRegisterSid
+; implib KERNEL32.DLL, AppContainerUnregisterSid
+; implib KERNEL32.DLL, AppXFreeMemory
+; implib KERNEL32.DLL, AppXGetApplicationData
+; implib KERNEL32.DLL, AppXGetDevelopmentMode
+; implib KERNEL32.DLL, AppXGetOSMinVersion
+; implib KERNEL32.DLL, AppXGetPackageCapabilities
+; implib KERNEL32.DLL, AppXGetPackageSid
+; implib KERNEL32.DLL, AppXGetPackageState
+; implib KERNEL32.DLL, AppXLookupDisplayName
+; implib KERNEL32.DLL, AppXLookupMoniker
+; implib KERNEL32.DLL, AppXSetPackageState
 
 implib KERNEL32.DLL, AppPolicyGetClrCompat, _AppPolicyGetClrCompat@8
 implib KERNEL32.DLL, AppPolicyGetCreateFileAccess, _AppPolicyGetCreateFileAccess@8
@@ -72,7 +72,7 @@ implib KERNEL32.DLL, BackupSeek, _BackupSeek@24
 implib KERNEL32.DLL, BackupWrite, _BackupWrite@28
 
 ; Stub function available in kernel32 from v3.51 to v5.0
-; implib KERNEL32.DLL, BaseAttachCompleteThunk, _BaseAttachCompleteThunk@0
+; implib KERNEL32.DLL, BaseAttachCompleteThunk
 
 implib KERNEL32.DLL, BaseCheckAppcompatCache, _BaseCheckAppcompatCache@16
 implib KERNEL32.DLL, BaseCheckAppcompatCacheEx, _BaseCheckAppcompatCacheEx@24
@@ -90,7 +90,7 @@ implib KERNEL32.DLL, BaseCheckElevation, _BaseCheckElevation@48
 ; implib KERNEL32.DLL, BaseCheckRunApp, _BaseCheckRunApp@40
 
 ; BaseCleanupAppcompatCache available in kernel32 v5.1
-; implib KERNEL32.DLL, BaseCleanupAppcompatCache, _BaseCleanupAppcompatCache@0
+; implib KERNEL32.DLL, BaseCleanupAppcompatCache
 
 implib KERNEL32.DLL, BaseCleanupAppcompatCacheSupport, _BaseCleanupAppcompatCacheSupport@4
 
@@ -110,18 +110,18 @@ implib KERNEL32.DLL, BaseGenerateAppCompatData, _BaseGenerateAppCompatData@24
 implib KERNEL32.DLL, BaseGetNamedObjectDirectory, _BaseGetNamedObjectDirectory@4
 
 ; BaseInitAppcompatCache available in kernel32 v5.1
-; implib KERNEL32.DLL, BaseInitAppcompatCache, _BaseInitAppcompatCache@0
+; implib KERNEL32.DLL, BaseInitAppcompatCache
 
 implib KERNEL32.DLL, BaseInitAppcompatCacheSupport, _BaseInitAppcompatCacheSupport@0
 
 ; Stub functions available since kernel32 v5.2 and v6.2 respectively
-; implib KERNEL32.DLL, BaseIsAppcompatInfrastructureDisabled, _BaseIsAppcompatInfrastructureDisabled@0
-; implib KERNEL32.DLL, BaseIsAppcompatInfrastructureDisabledWorker, _BaseIsAppcompatInfrastructureDisabledWorker@0
+; implib KERNEL32.DLL, BaseIsAppcompatInfrastructureDisabled
+; implib KERNEL32.DLL, BaseIsAppcompatInfrastructureDisabledWorker
 
 implib KERNEL32.DLL, BaseIsDosApplication, _BaseIsDosApplication@8
 
 ; BaseProcessInitPostImport available in kernel32 v5.1 and v5.2
-; implib KERNEL32.DLL, BaseProcessInitPostImport, _BaseProcessInitPostImport@0
+; implib KERNEL32.DLL, BaseProcessInitPostImport
 
 implib KERNEL32.DLL, BaseQueryModuleData, _BaseQueryModuleData@20
 implib KERNEL32.DLL, BaseReadAppCompatDataForProcessWorker, _BaseReadAppCompatDataForProcessWorker@12
@@ -135,9 +135,17 @@ implib KERNEL32.DLL, BaseWriteErrorElevationRequiredEvent, _BaseWriteErrorElevat
 implib KERNEL32.DLL, Basep8BitStringToDynamicUnicodeString, _Basep8BitStringToDynamicUnicodeString@8
 implib KERNEL32.DLL, BasepAllocateActivationContextActivationBlock, _BasepAllocateActivationContextActivationBlock@16
 implib KERNEL32.DLL, BasepAnsiStringToDynamicUnicodeString, _BasepAnsiStringToDynamicUnicodeString@8
+
+; BasepAppCompatHookDLL available in kernel32 v6.2
+; implib KERNEL32.DLL, BasepAppCompatHookDLL
+
 implib KERNEL32.DLL, BasepAppContainerEnvironmentExtension, _BasepAppContainerEnvironmentExtension@12
 implib KERNEL32.DLL, BasepAppXExtension, _BasepAppXExtension@24
 implib KERNEL32.DLL, BasepCheckAppCompat, _BasepCheckAppCompat@16
+
+; BasepCheckBadapp is available in kernel32 from v5.2 to v6.3
+; implib KERNEL32.DLL, BasepCheckBadapp, _BasepCheckBadapp@36
+
 implib KERNEL32.DLL, BasepCheckWebBladeHashes, _BasepCheckWebBladeHashes@4
 implib KERNEL32.DLL, BasepCheckWinSaferRestrictions, _BasepCheckWinSaferRestrictions@24
 implib KERNEL32.DLL, BasepConstructSxsCreateProcessMessage, _BasepConstructSxsCreateProcessMessage@80
@@ -176,6 +184,9 @@ implib KERNEL32.DLL, CallNamedPipeA, _CallNamedPipeA@28
 implib KERNEL32.DLL, CallNamedPipeW, _CallNamedPipeW@28
 implib KERNEL32.DLL, CallbackMayRunLong, _CallbackMayRunLong@4
 
+; CalloutOnFiberStack available in kernel32 v6.3
+; implib KERNEL32.DLL, CalloutOnFiberStack, _CalloutOnFiberStack@12
+
 ; CancelDeviceWakeupRequest triggers STATUS_NOT_IMPLEMENTED in Windows 10
 ; implib KERNEL32.DLL, CancelDeviceWakeupRequest, _CancelDeviceWakeupRequest@4
 
@@ -206,10 +217,20 @@ implib KERNEL32.DLL, ClosePackageInfo, _ClosePackageInfo@4
 implib KERNEL32.DLL, ClosePrivateNamespace, _ClosePrivateNamespace@8
 
 ; Stub function available since kernel32 v3.51
-; implib KERNEL32.DLL, CloseProfileUserMapping, _CloseProfileUserMapping@0
+; implib KERNEL32.DLL, CloseProfileUserMapping
 
 implib KERNEL32.DLL, ClosePseudoConsole, _ClosePseudoConsole@4
 implib KERNEL32.DLL, CloseState, _CloseState@4
+
+; Stub functions available in kernel32 v6.2
+; implib KERNEL32.DLL, CloseStateAtom
+; implib KERNEL32.DLL, CloseStateChangeNotification
+; implib KERNEL32.DLL, CloseStateContainer
+; implib KERNEL32.DLL, CloseStateLock
+
+; Stub function available in kernel32 from v4.0 to v4.90
+; implib KERNEL32.DLL, CloseSystemHandle
+
 implib KERNEL32.DLL, CloseThreadpool, _CloseThreadpool@4
 implib KERNEL32.DLL, CloseThreadpoolCleanupGroup, _CloseThreadpoolCleanupGroup@4
 implib KERNEL32.DLL, CloseThreadpoolCleanupGroupMembers, _CloseThreadpoolCleanupGroupMembers@12
@@ -314,7 +335,7 @@ implib KERNEL32.DLL, CreateProcessInternalA, _CreateProcessInternalA@48
 implib KERNEL32.DLL, CreateProcessInternalW, _CreateProcessInternalW@48
 
 ; CreateProcessInternalWSecure available in kernel32 v5.0 (Win2000 SP4) and v5.1 (WinXP SP2)
-; implib KERNEL32.DLL, CreateProcessInternalWSecure, _CreateProcessInternalWSecure@0
+; implib KERNEL32.DLL, CreateProcessInternalWSecure
 
 implib KERNEL32.DLL, CreateProcessW, _CreateProcessW@40
 implib KERNEL32.DLL, CreatePseudoConsole, _CreatePseudoConsole@20
