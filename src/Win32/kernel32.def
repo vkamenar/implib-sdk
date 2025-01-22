@@ -244,6 +244,10 @@ implib KERNEL32.DLL, CloseThreadpoolWork, _CloseThreadpoolWork@4
 
 implib KERNEL32.DLL, CommConfigDialogA, _CommConfigDialogA@12
 implib KERNEL32.DLL, CommConfigDialogW, _CommConfigDialogW@12
+
+; Stub function available in kernel32 v6.2
+; implib KERNEL32.DLL, CommitStateAtom
+
 implib KERNEL32.DLL, CompareCalendarDates, _CompareCalendarDates@12
 implib KERNEL32.DLL, CompareFileTime, _CompareFileTime@8
 implib KERNEL32.DLL, CompareStringA, _CompareStringA@24
@@ -260,7 +264,15 @@ implib KERNEL32.DLL, ConvertNLSDayOfWeekToWin32DayOfWeek, _ConvertNLSDayOfWeekTo
 implib KERNEL32.DLL, ConvertSystemTimeToCalDateTime, _ConvertSystemTimeToCalDateTime@12
 implib KERNEL32.DLL, ConvertThreadToFiber, _ConvertThreadToFiber@4
 implib KERNEL32.DLL, ConvertThreadToFiberEx, _ConvertThreadToFiberEx@8
+
+; ConvertToGlobalHandle available in kernel32 from v4.0 to v4.90
+; implib KERNEL32.DLL, ConvertToGlobalHandle, _ConvertToGlobalHandle@4
+
 implib KERNEL32.DLL, CopyContext, _CopyContext@12
+
+; CopyExtendedContext available in kernel32 v6.1 (before Windows 7 SP1)
+; implib KERNEL32.DLL, CopyExtendedContext, _CopyExtendedContext@12
+
 implib KERNEL32.DLL, CopyFile2, _CopyFile2@12
 implib KERNEL32.DLL, CopyFileA, _CopyFileA@12
 implib KERNEL32.DLL, CopyFileExA, _CopyFileExA@24
