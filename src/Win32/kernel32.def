@@ -321,6 +321,10 @@ implib KERNEL32.DLL, CreateIoCompletionPort, _CreateIoCompletionPort@16
 implib KERNEL32.DLL, CreateJobObjectA, _CreateJobObjectA@8
 implib KERNEL32.DLL, CreateJobObjectW, _CreateJobObjectW@8
 implib KERNEL32.DLL, CreateJobSet, _CreateJobSet@12
+
+; CreateKernelThread available in kernel32 from v4.0 to v4.90
+; implib KERNEL32.DLL, CreateKernelThread
+
 implib KERNEL32.DLL, CreateMailslotA, _CreateMailslotA@16
 implib KERNEL32.DLL, CreateMailslotW, _CreateMailslotW@16
 implib KERNEL32.DLL, CreateMemoryResourceNotification, _CreateMemoryResourceNotification@4
@@ -360,6 +364,13 @@ implib KERNEL32.DLL, CreateSemaphoreW, _CreateSemaphoreW@16
 
 ; CreateSocketHandle triggers ERROR_CALL_NOT_IMPLEMENTED in Windows 10
 ; implib KERNEL32.DLL, CreateSocketHandle, _CreateSocketHandle@0
+
+; Stub functions available in kernel32 v6.2
+; implib KERNEL32.DLL, CreateStateAtom
+; implib KERNEL32.DLL, CreateStateChangeNotification
+; implib KERNEL32.DLL, CreateStateContainer
+; implib KERNEL32.DLL, CreateStateLock
+; implib KERNEL32.DLL, CreateStateSubcontainer
 
 implib KERNEL32.DLL, CreateSymbolicLinkA, _CreateSymbolicLinkA@12
 implib KERNEL32.DLL, CreateSymbolicLinkTransactedA, _CreateSymbolicLinkTransactedA@16
