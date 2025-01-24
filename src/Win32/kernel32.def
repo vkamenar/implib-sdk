@@ -1,11 +1,144 @@
 include '..\implib.inc'
 
+; The following symbols are commented out to limit the size of the library.
+; They are either stubs or available in specific kernel32 versions only.
+; Feel free to uncomment the necessary symbols and recompile the library.
+
+; *** FUnction available in kernel32 v6.3 only ***
+; implib KERNEL32.DLL, CalloutOnFiberStack, _CalloutOnFiberStack@12
+
+; *** Functions available in kernel32 v6.2 only ***
+; implib KERNEL32.DLL, AcquireStateLock
+; implib KERNEL32.DLL, AppContainerDeriveSidFromMoniker
+; implib KERNEL32.DLL, AppContainerFreeMemory
+; implib KERNEL32.DLL, AppContainerLookupDisplayNameMrtReference
+; implib KERNEL32.DLL, AppContainerLookupMoniker
+; implib KERNEL32.DLL, AppContainerRegisterSid
+; implib KERNEL32.DLL, AppContainerUnregisterSid
+; implib KERNEL32.DLL, AppXFreeMemory
+; implib KERNEL32.DLL, AppXGetApplicationData
+; implib KERNEL32.DLL, AppXGetDevelopmentMode
+; implib KERNEL32.DLL, AppXGetOSMinVersion
+; implib KERNEL32.DLL, AppXGetPackageCapabilities
+; implib KERNEL32.DLL, AppXGetPackageSid
+; implib KERNEL32.DLL, AppXGetPackageState
+; implib KERNEL32.DLL, AppXLookupDisplayName
+; implib KERNEL32.DLL, AppXLookupMoniker
+; implib KERNEL32.DLL, AppXSetPackageState
+; implib KERNEL32.DLL, BasepAppCompatHookDLL
+; implib KERNEL32.DLL, CloseStateAtom
+; implib KERNEL32.DLL, CloseStateChangeNotification
+; implib KERNEL32.DLL, CloseStateContainer
+; implib KERNEL32.DLL, CloseStateLock
+; implib KERNEL32.DLL, CommitStateAtom
+; implib KERNEL32.DLL, CreateStateAtom
+; implib KERNEL32.DLL, CreateStateChangeNotification
+; implib KERNEL32.DLL, CreateStateContainer
+; implib KERNEL32.DLL, CreateStateLock
+; implib KERNEL32.DLL, CreateStateSubcontainer
+; implib KERNEL32.DLL, DeleteStateAtomValue
+; implib KERNEL32.DLL, DeleteStateContainer
+; implib KERNEL32.DLL, DeleteStateContainerValue
+
+; *** Function available in kernel32 v6.1 (before Windows 7 SP1) ***
+; implib KERNEL32.DLL, CopyExtendedContext, _CopyExtendedContext@12
+
+; *** Stub functions available since kernel32 v6.2 ***
+; implib KERNEL32.DLL, BaseCheckAppcompatCacheExWorker, _BaseCheckAppcompatCacheExWorker@36
+; implib KERNEL32.DLL, BaseCheckAppcompatCacheWorker, _BaseCheckAppcompatCacheWorker@16
+; implib KERNEL32.DLL, BaseCleanupAppcompatCacheSupportWorker, _BaseCleanupAppcompatCacheSupportWorker@4
+; implib KERNEL32.DLL, BaseDumpAppcompatCacheWorker, _BaseDumpAppcompatCacheWorker@0
+; implib KERNEL32.DLL, BaseInitAppcompatCacheSupportWorker, _BaseInitAppcompatCacheSupportWorker@0
+; implib KERNEL32.DLL, BaseIsAppcompatInfrastructureDisabledWorker
+; implib KERNEL32.DLL, BasepNotifyLoadStringResource, _BasepNotifyLoadStringResource@16
+; implib KERNEL32.DLL, WerpNotifyLoadStringResourceWorker, _WerpNotifyLoadStringResourceWorker@16
+; implib KERNEL32.DLL, WerpNotifyUseStringResourceWorker, _WerpNotifyUseStringResourceWorker@4
+
+; *** Stub function available since kernel32 v5.2 ***
+; implib KERNEL32.DLL, BaseIsAppcompatInfrastructureDisabled
+
+; *** Functions available in kernel32 from v5.2 to v6.3 ***
+; implib KERNEL32.DLL, BaseCheckRunApp, _BaseCheckRunApp@40
+; implib KERNEL32.DLL, BasepCheckBadapp, _BasepCheckBadapp@36
+
+; *** Function available in kernel32 from v5.1 to v6.1 ***
+; implib KERNEL32.DLL, SetClientTimeZoneInformation, _SetClientTimeZoneInformation@4
+
+; *** Function available in kernel32 from v5.1 (WinXP SP1) to v6.0 ***
+; implib KERNEL32.DLL, GetCPFileNameFromRegistry, _GetCPFileNameFromRegistry@12
+
+; *** Functions available in kernel32 v5.1 and v5.2 ***
+; implib KERNEL32.DLL, BaseProcessInitPostImport
+; implib KERNEL32.DLL, CreateNlsSecurityDescriptor, _CreateNlsSecurityDescriptor@12
+; implib KERNEL32.DLL, IsValidUILanguage, _IsValidUILanguage@4
+
+; *** Functions available in kernel32 v5.1 only ***
+; implib KERNEL32.DLL, BaseCleanupAppcompatCache
+; implib KERNEL32.DLL, BaseInitAppcompatCache
+; implib KERNEL32.DLL, GetNumaAvailableMemory, _GetNumaAvailableMemory@12
+; implib KERNEL32.DLL, GetNumaProcessorMap, _GetNumaProcessorMap@12
+; implib KERNEL32.DLL, NumaVirtualQueryNode, _NumaVirtualQueryNode@16
+
+; *** Stub functions available since kernel32 v5.1 ***
+; implib KERNEL32.DLL, LZDone, _LZDone@0
+; implib KERNEL32.DLL, LZStart, _LZStart@0
+
+; *** Function available in kernel32 from v5.0 to v6.0 ***
+; implib KERNEL32.DLL, NlsConvertIntegerToString, _NlsConvertIntegerToString@20
+
+; *** Functions available in kernel32 from v5.0 to v5.2 ***
+; implib KERNEL32.DLL, GetDefaultSortkeySize, _GetDefaultSortkeySize@4
+; implib KERNEL32.DLL, GetLinguistLangSize, _GetLinguistLangSize@4
+; implib KERNEL32.DLL, GetNlsSectionName, _GetNlsSectionName@24
+; implib KERNEL32.DLL, NlsResetProcessLocale, _NlsResetProcessLocale@0
+; implib KERNEL32.DLL, OpenDataFile, _OpenDataFile@8
+; implib KERNEL32.DLL, SetCPGlobal, _SetCPGlobal@4
+; implib KERNEL32.DLL, ValidateLCType, _ValidateLCType@16
+; implib KERNEL32.DLL, ValidateLocale, _ValidateLocale@4
+
+; *** Function available in kernel32 v5.0 (Win2000 SP4) and v5.1 (WinXP SP2) ***
+; implib KERNEL32.DLL, CreateProcessInternalWSecure
+
+; *** Functions available in kernel32 from v4.0 to v4.90 ***
+; implib KERNEL32.DLL, AllocLSCallback, _AllocLSCallback@0
+; implib KERNEL32.DLL, AllocMappedBuffer
+; implib KERNEL32.DLL, AllocSLCallback, _AllocSLCallback@8
+; implib KERNEL32.DLL, CloseSystemHandle
+; implib KERNEL32.DLL, ConvertToGlobalHandle, _ConvertToGlobalHandle@4
+; implib KERNEL32.DLL, CreateKernelThread
+; implib KERNEL32.DLL, DisposeLZ32Handle
+; implib KERNEL32.DLL, DosFileHandleToWin32Handle
+
+; *** Stub function available since kernel32 v4.0 ***
+; implib KERNEL32.DLL, UTUnRegister, _UTUnRegister@4
+
+; *** Functions available in kernel32 from v3.51 to v5.2 ***
+; implib KERNEL32.DLL, CreateVirtualBuffer, _CreateVirtualBuffer@12
+; implib KERNEL32.DLL, ExtendVirtualBuffer, _ExtendVirtualBuffer@8
+; implib KERNEL32.DLL, FreeVirtualBuffer, _FreeVirtualBuffer@4
+; implib KERNEL32.DLL, HeapCreateTagsW, _HeapCreateTagsW@16
+; implib KERNEL32.DLL, HeapExtend, _HeapExtend@16
+; implib KERNEL32.DLL, HeapQueryTagW, _HeapQueryTagW@20
+; implib KERNEL32.DLL, HeapUsage, _HeapUsage@20
+; implib KERNEL32.DLL, SetConsoleCommandHistoryMode, _SetConsoleCommandHistoryMode@4
+; implib KERNEL32.DLL, TrimVirtualBuffer, _TrimVirtualBuffer@4
+; implib KERNEL32.DLL, VirtualBufferExceptionHandler, _VirtualBufferExceptionHandler@12
+
+; *** Function available in kernel32 from v3.51 to v5.1 (NT) ***
+; implib KERNEL32.DLL, QueryWin31IniFilesMappedToRegistry, _QueryWin31IniFilesMappedToRegistry@16
+
+; *** Stub function available in kernel32 from v3.51 to v5.0 ***
+; implib KERNEL32.DLL, BaseAttachCompleteThunk
+
+; *** Stub functions available since kernel32 v3.51 ***
+; implib KERNEL32.DLL, CloseProfileUserMapping
+; implib KERNEL32.DLL, CmdBatNotification, _CmdBatNotification@4
+; implib KERNEL32.DLL, OpenProfileUserMapping, _OpenProfileUserMapping@0
+; implib KERNEL32.DLL, SetConsoleMaximumWindowSize, _SetConsoleMaximumWindowSize@8
+; implib KERNEL32.DLL, VerifyConsoleIoHandle, _VerifyConsoleIoHandle@4
+
 implib KERNEL32.DLL, AcquireSRWLockExclusive, _AcquireSRWLockExclusive@4
 implib KERNEL32.DLL, AcquireSRWLockShared, _AcquireSRWLockShared@4
-
-; Stub function available in kernel32 v6.2
-; implib KERNEL32.DLL, AcquireStateLock
-
 implib KERNEL32.DLL, ActivateActCtx, _ActivateActCtx@8
 implib KERNEL32.DLL, ActivateActCtxWorker, _ActivateActCtxWorker@8
 implib KERNEL32.DLL, AddAtomA, _AddAtomA@4
@@ -26,33 +159,8 @@ implib KERNEL32.DLL, AddVectoredContinueHandler, _AddVectoredContinueHandler@8
 implib KERNEL32.DLL, AddVectoredExceptionHandler, _AddVectoredExceptionHandler@8
 implib KERNEL32.DLL, AdjustCalendarDate, _AdjustCalendarDate@12
 implib KERNEL32.DLL, AllocConsole, _AllocConsole@0
-
-; Functions available in kernel32 from v4.0 to v4.90
-; implib KERNEL32.DLL, AllocLSCallback, _AllocLSCallback@0
-; implib KERNEL32.DLL, AllocMappedBuffer
-; implib KERNEL32.DLL, AllocSLCallback, _AllocSLCallback@8
-
 implib KERNEL32.DLL, AllocateUserPhysicalPages, _AllocateUserPhysicalPages@12
 implib KERNEL32.DLL, AllocateUserPhysicalPagesNuma, _AllocateUserPhysicalPagesNuma@16
-
-; Stub functions available in kernel32 v6.2
-; implib KERNEL32.DLL, AppContainerDeriveSidFromMoniker
-; implib KERNEL32.DLL, AppContainerFreeMemory
-; implib KERNEL32.DLL, AppContainerLookupDisplayNameMrtReference
-; implib KERNEL32.DLL, AppContainerLookupMoniker
-; implib KERNEL32.DLL, AppContainerRegisterSid
-; implib KERNEL32.DLL, AppContainerUnregisterSid
-; implib KERNEL32.DLL, AppXFreeMemory
-; implib KERNEL32.DLL, AppXGetApplicationData
-; implib KERNEL32.DLL, AppXGetDevelopmentMode
-; implib KERNEL32.DLL, AppXGetOSMinVersion
-; implib KERNEL32.DLL, AppXGetPackageCapabilities
-; implib KERNEL32.DLL, AppXGetPackageSid
-; implib KERNEL32.DLL, AppXGetPackageState
-; implib KERNEL32.DLL, AppXLookupDisplayName
-; implib KERNEL32.DLL, AppXLookupMoniker
-; implib KERNEL32.DLL, AppXSetPackageState
-
 implib KERNEL32.DLL, AppPolicyGetClrCompat, _AppPolicyGetClrCompat@8
 implib KERNEL32.DLL, AppPolicyGetCreateFileAccess, _AppPolicyGetCreateFileAccess@8
 implib KERNEL32.DLL, AppPolicyGetLifecycleManagement, _AppPolicyGetLifecycleManagement@8
@@ -70,30 +178,10 @@ implib KERNEL32.DLL, AttachConsole, _AttachConsole@4
 implib KERNEL32.DLL, BackupRead, _BackupRead@28
 implib KERNEL32.DLL, BackupSeek, _BackupSeek@24
 implib KERNEL32.DLL, BackupWrite, _BackupWrite@28
-
-; Stub function available in kernel32 from v3.51 to v5.0
-; implib KERNEL32.DLL, BaseAttachCompleteThunk
-
 implib KERNEL32.DLL, BaseCheckAppcompatCache, _BaseCheckAppcompatCache@16
 implib KERNEL32.DLL, BaseCheckAppcompatCacheEx, _BaseCheckAppcompatCacheEx@24
-
-; Stub functions available since kernel32 v6.2
-; implib KERNEL32.DLL, BaseCheckAppcompatCacheExWorker, _BaseCheckAppcompatCacheExWorker@36
-; implib KERNEL32.DLL, BaseCheckAppcompatCacheWorker, _BaseCheckAppcompatCacheWorker@16
-; implib KERNEL32.DLL, BaseCleanupAppcompatCacheSupportWorker, _BaseCleanupAppcompatCacheSupportWorker@4
-; implib KERNEL32.DLL, BaseDumpAppcompatCacheWorker, _BaseDumpAppcompatCacheWorker@0
-; implib KERNEL32.DLL, BaseInitAppcompatCacheSupportWorker, _BaseInitAppcompatCacheSupportWorker@0
-
 implib KERNEL32.DLL, BaseCheckElevation, _BaseCheckElevation@48
-
-; BaseCheckRunApp is available in kernel32 from v5.2 to v6.3
-; implib KERNEL32.DLL, BaseCheckRunApp, _BaseCheckRunApp@40
-
-; BaseCleanupAppcompatCache available in kernel32 v5.1
-; implib KERNEL32.DLL, BaseCleanupAppcompatCache
-
 implib KERNEL32.DLL, BaseCleanupAppcompatCacheSupport, _BaseCleanupAppcompatCacheSupport@4
-
 implib KERNEL32.DLL, BaseDestroyVDMEnvironment, _BaseDestroyVDMEnvironment@8
 implib KERNEL32.DLL, BaseDllReadWriteIniFile, _BaseDllReadWriteIniFile@32
 implib KERNEL32.DLL, BaseDumpAppcompatCache, _BaseDumpAppcompatCache@0
@@ -108,21 +196,8 @@ implib KERNEL32.DLL, BaseFormatTimeOut, _BaseFormatTimeOut@8
 
 implib KERNEL32.DLL, BaseGenerateAppCompatData, _BaseGenerateAppCompatData@24
 implib KERNEL32.DLL, BaseGetNamedObjectDirectory, _BaseGetNamedObjectDirectory@4
-
-; BaseInitAppcompatCache available in kernel32 v5.1
-; implib KERNEL32.DLL, BaseInitAppcompatCache
-
 implib KERNEL32.DLL, BaseInitAppcompatCacheSupport, _BaseInitAppcompatCacheSupport@0
-
-; Stub functions available since kernel32 v5.2 and v6.2 respectively
-; implib KERNEL32.DLL, BaseIsAppcompatInfrastructureDisabled
-; implib KERNEL32.DLL, BaseIsAppcompatInfrastructureDisabledWorker
-
 implib KERNEL32.DLL, BaseIsDosApplication, _BaseIsDosApplication@8
-
-; BaseProcessInitPostImport available in kernel32 v5.1 and v5.2
-; implib KERNEL32.DLL, BaseProcessInitPostImport
-
 implib KERNEL32.DLL, BaseQueryModuleData, _BaseQueryModuleData@20
 implib KERNEL32.DLL, BaseReadAppCompatDataForProcessWorker, _BaseReadAppCompatDataForProcessWorker@12
 implib KERNEL32.DLL, BaseSetLastNTError, _BaseSetLastNTError@4
@@ -135,17 +210,9 @@ implib KERNEL32.DLL, BaseWriteErrorElevationRequiredEvent, _BaseWriteErrorElevat
 implib KERNEL32.DLL, Basep8BitStringToDynamicUnicodeString, _Basep8BitStringToDynamicUnicodeString@8
 implib KERNEL32.DLL, BasepAllocateActivationContextActivationBlock, _BasepAllocateActivationContextActivationBlock@16
 implib KERNEL32.DLL, BasepAnsiStringToDynamicUnicodeString, _BasepAnsiStringToDynamicUnicodeString@8
-
-; BasepAppCompatHookDLL available in kernel32 v6.2
-; implib KERNEL32.DLL, BasepAppCompatHookDLL
-
 implib KERNEL32.DLL, BasepAppContainerEnvironmentExtension, _BasepAppContainerEnvironmentExtension@12
 implib KERNEL32.DLL, BasepAppXExtension, _BasepAppXExtension@24
 implib KERNEL32.DLL, BasepCheckAppCompat, _BasepCheckAppCompat@16
-
-; BasepCheckBadapp is available in kernel32 from v5.2 to v6.3
-; implib KERNEL32.DLL, BasepCheckBadapp, _BasepCheckBadapp@36
-
 implib KERNEL32.DLL, BasepCheckWebBladeHashes, _BasepCheckWebBladeHashes@4
 implib KERNEL32.DLL, BasepCheckWinSaferRestrictions, _BasepCheckWinSaferRestrictions@24
 implib KERNEL32.DLL, BasepConstructSxsCreateProcessMessage, _BasepConstructSxsCreateProcessMessage@80
@@ -160,10 +227,6 @@ implib KERNEL32.DLL, BasepGetPackageActivationTokenForSxS, _BasepGetPackageActiv
 implib KERNEL32.DLL, BasepInitAppCompatData, _BasepInitAppCompatData@12
 implib KERNEL32.DLL, BasepIsProcessAllowed, _BasepIsProcessAllowed@4
 implib KERNEL32.DLL, BasepMapModuleHandle, _BasepMapModuleHandle@8
-
-; Stub function available since kernel32 v6.2
-; implib KERNEL32.DLL, BasepNotifyLoadStringResource, _BasepNotifyLoadStringResource@16
-
 implib KERNEL32.DLL, BasepPostSuccessAppXExtension, _BasepPostSuccessAppXExtension@8
 implib KERNEL32.DLL, BasepProcessInvalidImage, _BasepProcessInvalidImage@84
 implib KERNEL32.DLL, BasepQueryAppCompat, _BasepQueryAppCompat@72
@@ -183,9 +246,6 @@ implib KERNEL32.DLL, BuildCommDCBW, _BuildCommDCBW@8
 implib KERNEL32.DLL, CallNamedPipeA, _CallNamedPipeA@28
 implib KERNEL32.DLL, CallNamedPipeW, _CallNamedPipeW@28
 implib KERNEL32.DLL, CallbackMayRunLong, _CallbackMayRunLong@4
-
-; CalloutOnFiberStack available in kernel32 v6.3
-; implib KERNEL32.DLL, CalloutOnFiberStack, _CalloutOnFiberStack@12
 
 ; CancelDeviceWakeupRequest triggers STATUS_NOT_IMPLEMENTED in Windows 10
 ; implib KERNEL32.DLL, CancelDeviceWakeupRequest, _CancelDeviceWakeupRequest@4
@@ -215,22 +275,8 @@ implib KERNEL32.DLL, CloseConsoleHandle, _CloseConsoleHandle@4
 implib KERNEL32.DLL, CloseHandle, _CloseHandle@4
 implib KERNEL32.DLL, ClosePackageInfo, _ClosePackageInfo@4
 implib KERNEL32.DLL, ClosePrivateNamespace, _ClosePrivateNamespace@8
-
-; Stub function available since kernel32 v3.51
-; implib KERNEL32.DLL, CloseProfileUserMapping
-
 implib KERNEL32.DLL, ClosePseudoConsole, _ClosePseudoConsole@4
 implib KERNEL32.DLL, CloseState, _CloseState@4
-
-; Stub functions available in kernel32 v6.2
-; implib KERNEL32.DLL, CloseStateAtom
-; implib KERNEL32.DLL, CloseStateChangeNotification
-; implib KERNEL32.DLL, CloseStateContainer
-; implib KERNEL32.DLL, CloseStateLock
-
-; Stub function available in kernel32 from v4.0 to v4.90
-; implib KERNEL32.DLL, CloseSystemHandle
-
 implib KERNEL32.DLL, CloseThreadpool, _CloseThreadpool@4
 implib KERNEL32.DLL, CloseThreadpoolCleanupGroup, _CloseThreadpoolCleanupGroup@4
 implib KERNEL32.DLL, CloseThreadpoolCleanupGroupMembers, _CloseThreadpoolCleanupGroupMembers@12
@@ -238,16 +284,8 @@ implib KERNEL32.DLL, CloseThreadpoolIo, _CloseThreadpoolIo@4
 implib KERNEL32.DLL, CloseThreadpoolTimer, _CloseThreadpoolTimer@4
 implib KERNEL32.DLL, CloseThreadpoolWait, _CloseThreadpoolWait@4
 implib KERNEL32.DLL, CloseThreadpoolWork, _CloseThreadpoolWork@4
-
-; Stub function available since kernel32 v3.51
-; implib KERNEL32.DLL, CmdBatNotification, _CmdBatNotification@4
-
 implib KERNEL32.DLL, CommConfigDialogA, _CommConfigDialogA@12
 implib KERNEL32.DLL, CommConfigDialogW, _CommConfigDialogW@12
-
-; Stub function available in kernel32 v6.2
-; implib KERNEL32.DLL, CommitStateAtom
-
 implib KERNEL32.DLL, CompareCalendarDates, _CompareCalendarDates@12
 implib KERNEL32.DLL, CompareFileTime, _CompareFileTime@8
 implib KERNEL32.DLL, CompareStringA, _CompareStringA@24
@@ -264,15 +302,7 @@ implib KERNEL32.DLL, ConvertNLSDayOfWeekToWin32DayOfWeek, _ConvertNLSDayOfWeekTo
 implib KERNEL32.DLL, ConvertSystemTimeToCalDateTime, _ConvertSystemTimeToCalDateTime@12
 implib KERNEL32.DLL, ConvertThreadToFiber, _ConvertThreadToFiber@4
 implib KERNEL32.DLL, ConvertThreadToFiberEx, _ConvertThreadToFiberEx@8
-
-; ConvertToGlobalHandle available in kernel32 from v4.0 to v4.90
-; implib KERNEL32.DLL, ConvertToGlobalHandle, _ConvertToGlobalHandle@4
-
 implib KERNEL32.DLL, CopyContext, _CopyContext@12
-
-; CopyExtendedContext available in kernel32 v6.1 (before Windows 7 SP1)
-; implib KERNEL32.DLL, CopyExtendedContext, _CopyExtendedContext@12
-
 implib KERNEL32.DLL, CopyFile2, _CopyFile2@12
 implib KERNEL32.DLL, CopyFileA, _CopyFileA@12
 implib KERNEL32.DLL, CopyFileExA, _CopyFileExA@24
@@ -321,10 +351,6 @@ implib KERNEL32.DLL, CreateIoCompletionPort, _CreateIoCompletionPort@16
 implib KERNEL32.DLL, CreateJobObjectA, _CreateJobObjectA@8
 implib KERNEL32.DLL, CreateJobObjectW, _CreateJobObjectW@8
 implib KERNEL32.DLL, CreateJobSet, _CreateJobSet@12
-
-; CreateKernelThread available in kernel32 from v4.0 to v4.90
-; implib KERNEL32.DLL, CreateKernelThread
-
 implib KERNEL32.DLL, CreateMailslotA, _CreateMailslotA@16
 implib KERNEL32.DLL, CreateMailslotW, _CreateMailslotW@16
 implib KERNEL32.DLL, CreateMemoryResourceNotification, _CreateMemoryResourceNotification@4
@@ -334,10 +360,6 @@ implib KERNEL32.DLL, CreateMutexExW, _CreateMutexExW@16
 implib KERNEL32.DLL, CreateMutexW, _CreateMutexW@12
 implib KERNEL32.DLL, CreateNamedPipeA, _CreateNamedPipeA@32
 implib KERNEL32.DLL, CreateNamedPipeW, _CreateNamedPipeW@32
-
-; CreateNlsSecurityDescriptor available in kernel32 v5.1 (WinXP SP1) and v5.2
-; implib KERNEL32.DLL, CreateNlsSecurityDescriptor, _CreateNlsSecurityDescriptor@12
-
 implib KERNEL32.DLL, CreatePipe, _CreatePipe@16
 implib KERNEL32.DLL, CreatePrivateNamespaceA, _CreatePrivateNamespaceA@12
 implib KERNEL32.DLL, CreatePrivateNamespaceW, _CreatePrivateNamespaceW@12
@@ -349,10 +371,6 @@ implib KERNEL32.DLL, CreateProcessA, _CreateProcessA@40
 
 implib KERNEL32.DLL, CreateProcessInternalA, _CreateProcessInternalA@48
 implib KERNEL32.DLL, CreateProcessInternalW, _CreateProcessInternalW@48
-
-; CreateProcessInternalWSecure available in kernel32 v5.0 (Win2000 SP4) and v5.1 (WinXP SP2)
-; implib KERNEL32.DLL, CreateProcessInternalWSecure
-
 implib KERNEL32.DLL, CreateProcessW, _CreateProcessW@40
 implib KERNEL32.DLL, CreatePseudoConsole, _CreatePseudoConsole@20
 implib KERNEL32.DLL, CreateRemoteThread, _CreateRemoteThread@28
@@ -364,13 +382,6 @@ implib KERNEL32.DLL, CreateSemaphoreW, _CreateSemaphoreW@16
 
 ; CreateSocketHandle triggers ERROR_CALL_NOT_IMPLEMENTED in Windows 10
 ; implib KERNEL32.DLL, CreateSocketHandle, _CreateSocketHandle@0
-
-; Stub functions available in kernel32 v6.2
-; implib KERNEL32.DLL, CreateStateAtom
-; implib KERNEL32.DLL, CreateStateChangeNotification
-; implib KERNEL32.DLL, CreateStateContainer
-; implib KERNEL32.DLL, CreateStateLock
-; implib KERNEL32.DLL, CreateStateSubcontainer
 
 implib KERNEL32.DLL, CreateSymbolicLinkA, _CreateSymbolicLinkA@12
 implib KERNEL32.DLL, CreateSymbolicLinkTransactedA, _CreateSymbolicLinkTransactedA@16
@@ -387,10 +398,6 @@ implib KERNEL32.DLL, CreateThreadpoolWork, _CreateThreadpoolWork@12
 implib KERNEL32.DLL, CreateTimerQueue, _CreateTimerQueue@0
 implib KERNEL32.DLL, CreateTimerQueueTimer, _CreateTimerQueueTimer@28
 implib KERNEL32.DLL, CreateToolhelp32Snapshot, _CreateToolhelp32Snapshot@8
-
-; CreateVirtualBuffer available in kernel32 from v3.51 to v5.2 (before Windows Server 2003 SP1)
-; implib KERNEL32.DLL, CreateVirtualBuffer, _CreateVirtualBuffer@12
-
 implib KERNEL32.DLL, CreateWaitableTimerA, _CreateWaitableTimerA@12
 implib KERNEL32.DLL, CreateWaitableTimerExA, _CreateWaitableTimerExA@16
 implib KERNEL32.DLL, CreateWaitableTimerExW, _CreateWaitableTimerExW@16
@@ -495,10 +502,6 @@ implib KERNEL32.DLL, ExpandEnvironmentStringsA, _ExpandEnvironmentStringsA@12
 implib KERNEL32.DLL, ExpandEnvironmentStringsW, _ExpandEnvironmentStringsW@12
 implib KERNEL32.DLL, ExpungeConsoleCommandHistoryA, _ExpungeConsoleCommandHistoryA@4
 implib KERNEL32.DLL, ExpungeConsoleCommandHistoryW, _ExpungeConsoleCommandHistoryW@4
-
-; ExtendVirtualBuffer available in kernel32 from v3.51 to v5.2 (before Windows Server 2003 SP1)
-; implib KERNEL32.DLL, ExtendVirtualBuffer, _ExtendVirtualBuffer@8
-
 implib KERNEL32.DLL, FatalAppExitA, _FatalAppExitA@8
 implib KERNEL32.DLL, FatalAppExitW, _FatalAppExitW@8
 implib KERNEL32.DLL, FatalExit, _FatalExit@4
@@ -575,10 +578,6 @@ implib KERNEL32.DLL, FreeLibraryWhenCallbackReturns, _FreeLibraryWhenCallbackRet
 implib KERNEL32.DLL, FreeMemoryJobObject, _FreeMemoryJobObject@4
 implib KERNEL32.DLL, FreeResource, _FreeResource@4
 implib KERNEL32.DLL, FreeUserPhysicalPages, _FreeUserPhysicalPages@12
-
-; FreeVirtualBuffer available in kernel32 from v3.51 to v5.2 (before Windows Server 2003 SP1)
-; implib KERNEL32.DLL, FreeVirtualBuffer, _FreeVirtualBuffer@4
-
 implib KERNEL32.DLL, GenerateConsoleCtrlEvent, _GenerateConsoleCtrlEvent@8
 implib KERNEL32.DLL, GetACP, _GetACP@0
 implib KERNEL32.DLL, GetActiveProcessorCount, _GetActiveProcessorCount@4
@@ -598,10 +597,6 @@ implib KERNEL32.DLL, GetAtomNameW, _GetAtomNameW@12
 
 implib KERNEL32.DLL, GetBinaryTypeA, _GetBinaryTypeA@8
 implib KERNEL32.DLL, GetBinaryTypeW, _GetBinaryTypeW@8
-
-; GetCPFileNameFromRegistry available in kernel32 from v5.1 (WinXP SP1) to v6.0
-; implib KERNEL32.DLL, GetCPFileNameFromRegistry, _GetCPFileNameFromRegistry@12
-
 implib KERNEL32.DLL, GetCPInfo, _GetCPInfo@8
 implib KERNEL32.DLL, GetCPInfoExA, _GetCPInfoExA@12
 implib KERNEL32.DLL, GetCPInfoExW, _GetCPInfoExW@12
@@ -702,10 +697,6 @@ implib KERNEL32.DLL, GetDateFormatW, _GetDateFormatW@24
 implib KERNEL32.DLL, GetDateFormatWWorker, _GetDateFormatWWorker@28
 implib KERNEL32.DLL, GetDefaultCommConfigA, _GetDefaultCommConfigA@12
 implib KERNEL32.DLL, GetDefaultCommConfigW, _GetDefaultCommConfigW@12
-
-; GetDefaultSortkeySize available in kernel32 from v5.0 to v5.2
-; implib KERNEL32.DLL, GetDefaultSortkeySize, _GetDefaultSortkeySize@4
-
 implib KERNEL32.DLL, GetDevicePowerState, _GetDevicePowerState@8
 implib KERNEL32.DLL, GetDiskFreeSpaceA, _GetDiskFreeSpaceA@20
 implib KERNEL32.DLL, GetDiskFreeSpaceExA, _GetDiskFreeSpaceExA@16
@@ -770,10 +761,6 @@ implib KERNEL32.DLL, GetHandleInformation, _GetHandleInformation@8
 implib KERNEL32.DLL, GetLargePageMinimum, _GetLargePageMinimum@0
 implib KERNEL32.DLL, GetLargestConsoleWindowSize, _GetLargestConsoleWindowSize@4
 implib KERNEL32.DLL, GetLastError, _GetLastError@0
-
-; GetLinguistLangSize available in kernel32 from v5.0 to v5.2
-; implib KERNEL32.DLL, GetLinguistLangSize, _GetLinguistLangSize@4
-
 implib KERNEL32.DLL, GetLocalTime, _GetLocalTime@4
 implib KERNEL32.DLL, GetLocaleInfoA, _GetLocaleInfoA@16
 implib KERNEL32.DLL, GetLocaleInfoEx, _GetLocaleInfoEx@16
@@ -811,23 +798,12 @@ implib KERNEL32.DLL, GetNamedPipeServerProcessId, _GetNamedPipeServerProcessId@8
 implib KERNEL32.DLL, GetNamedPipeServerSessionId, _GetNamedPipeServerSessionId@8
 implib KERNEL32.DLL, GetNativeSystemInfo, _GetNativeSystemInfo@4
 implib KERNEL32.DLL, GetNextVDMCommand, _GetNextVDMCommand@4
-
-; GetNlsSectionName available in kernel32 from v5.0 to v5.2
-; implib KERNEL32.DLL, GetNlsSectionName, _GetNlsSectionName@24
-
-; GetNumaAvailableMemory available in kernel32 v5.1
-; implib KERNEL32.DLL, GetNumaAvailableMemory, _GetNumaAvailableMemory@12
-
 implib KERNEL32.DLL, GetNumaAvailableMemoryNode, _GetNumaAvailableMemoryNode@8
 implib KERNEL32.DLL, GetNumaAvailableMemoryNodeEx, _GetNumaAvailableMemoryNodeEx@8
 implib KERNEL32.DLL, GetNumaHighestNodeNumber, _GetNumaHighestNodeNumber@4
 implib KERNEL32.DLL, GetNumaNodeNumberFromHandle, _GetNumaNodeNumberFromHandle@8
 implib KERNEL32.DLL, GetNumaNodeProcessorMask, _GetNumaNodeProcessorMask@8
 implib KERNEL32.DLL, GetNumaNodeProcessorMaskEx, _GetNumaNodeProcessorMaskEx@8
-
-; GetNumaProcessorMap available in kernel32 v5.1
-; implib KERNEL32.DLL, GetNumaProcessorMap, _GetNumaProcessorMap@12
-
 implib KERNEL32.DLL, GetNumaProcessorNode, _GetNumaProcessorNode@8
 implib KERNEL32.DLL, GetNumaProcessorNodeEx, _GetNumaProcessorNodeEx@8
 implib KERNEL32.DLL, GetNumaProximityNode, _GetNumaProximityNode@8
@@ -1027,31 +1003,15 @@ implib KERNEL32.DLL, Heap32Next, _Heap32Next@4
 implib KERNEL32.DLL, HeapAlloc, _HeapAlloc@12
 implib KERNEL32.DLL, HeapCompact, _HeapCompact@8
 implib KERNEL32.DLL, HeapCreate, _HeapCreate@12
-
-; HeapCreateTagsW available in kernel32 from v3.51 to v5.2 (NT)
-; implib KERNEL32.DLL, HeapCreateTagsW, _HeapCreateTagsW@16
-
 implib KERNEL32.DLL, HeapDestroy, _HeapDestroy@4
-
-; HeapExtend available in kernel32 from v3.51 to v5.2 (NT)
-; implib KERNEL32.DLL, HeapExtend, _HeapExtend@16
-
 implib KERNEL32.DLL, HeapFree, _HeapFree@12
 implib KERNEL32.DLL, HeapLock, _HeapLock@4
 implib KERNEL32.DLL, HeapQueryInformation, _HeapQueryInformation@20
-
-; HeapQueryTagW available in kernel32 from v3.51 to v5.2 (NT)
-; implib KERNEL32.DLL, HeapQueryTagW, _HeapQueryTagW@20
-
 implib KERNEL32.DLL, HeapReAlloc, _HeapReAlloc@16
 implib KERNEL32.DLL, HeapSetInformation, _HeapSetInformation@16
 implib KERNEL32.DLL, HeapSize, _HeapSize@12
 implib KERNEL32.DLL, HeapSummary, _HeapSummary@12
 implib KERNEL32.DLL, HeapUnlock, _HeapUnlock@4
-
-; HeapUsage available in kernel32 from v3.51 to v5.2 (NT)
-; implib KERNEL32.DLL, HeapUsage, _HeapUsage@20
-
 implib KERNEL32.DLL, HeapValidate, _HeapValidate@12
 implib KERNEL32.DLL, HeapWalk, _HeapWalk@8
 implib KERNEL32.DLL, IdnToAscii, _IdnToAscii@20
@@ -1122,10 +1082,6 @@ implib KERNEL32.DLL, IsValidLanguageGroup, _IsValidLanguageGroup@8
 implib KERNEL32.DLL, IsValidLocale, _IsValidLocale@8
 implib KERNEL32.DLL, IsValidLocaleName, _IsValidLocaleName@4
 implib KERNEL32.DLL, IsValidNLSVersion, _IsValidNLSVersion@12
-
-; IsValidUILanguage available in kernel32 v5.1 and v5.2
-; implib KERNEL32.DLL, IsValidUILanguage, _IsValidUILanguage@4
-
 implib KERNEL32.DLL, IsWow64GuestMachineSupported, _IsWow64GuestMachineSupported@8
 implib KERNEL32.DLL, IsWow64Process, _IsWow64Process@8
 implib KERNEL32.DLL, IsWow64Process2, _IsWow64Process2@12
@@ -1167,19 +1123,11 @@ implib KERNEL32.DLL, LZClose, _LZClose@4
 
 implib KERNEL32.DLL, LZCopy, _LZCopy@8
 implib KERNEL32.DLL, LZCreateFileW, _LZCreateFileW@20
-
-; Stub function available since kernel32 v5.1
-; implib KERNEL32.DLL, LZDone, _LZDone@0
-
 implib KERNEL32.DLL, LZInit, _LZInit@4
 implib KERNEL32.DLL, LZOpenFileA, _LZOpenFileA@12
 implib KERNEL32.DLL, LZOpenFileW, _LZOpenFileW@12
 implib KERNEL32.DLL, LZRead, _LZRead@12
 implib KERNEL32.DLL, LZSeek, _LZSeek@12
-
-; Stub function available since kernel32 v5.1
-; implib KERNEL32.DLL, LZStart, _LZStart@0
-
 implib KERNEL32.DLL, LeaveCriticalSection, _LeaveCriticalSection@4
 implib KERNEL32.DLL, LeaveCriticalSectionWhenCallbackReturns, _LeaveCriticalSectionWhenCallbackReturns@8
 implib KERNEL32.DLL, LoadAppInitDlls, _LoadAppInitDlls@0
@@ -1234,34 +1182,19 @@ implib KERNEL32.DLL, MultiByteToWideChar, _MultiByteToWideChar@24
 implib KERNEL32.DLL, NeedCurrentDirectoryForExePathA, _NeedCurrentDirectoryForExePathA@4
 implib KERNEL32.DLL, NeedCurrentDirectoryForExePathW, _NeedCurrentDirectoryForExePathW@4
 implib KERNEL32.DLL, NlsCheckPolicy, _NlsCheckPolicy@8
-
-; NlsConvertIntegerToString available in kernel32 from v5.0 to v6.0
-; implib KERNEL32.DLL, NlsConvertIntegerToString, _NlsConvertIntegerToString@20
-
 implib KERNEL32.DLL, NlsGetCacheUpdateCount, _NlsGetCacheUpdateCount@0
-
-; NlsResetProcessLocale available in kernel32 from v5.0 to v5.2
-; implib KERNEL32.DLL, NlsResetProcessLocale, _NlsResetProcessLocale@0
-
 implib KERNEL32.DLL, NlsUpdateLocale, _NlsUpdateLocale@8
 implib KERNEL32.DLL, NlsUpdateSystemLocale, _NlsUpdateSystemLocale@8
 implib KERNEL32.DLL, NormalizeString, _NormalizeString@20
 implib KERNEL32.DLL, NotifyMountMgr, _NotifyMountMgr@12
 implib KERNEL32.DLL, NotifyUILanguageChange, _NotifyUILanguageChange@20
 implib KERNEL32.DLL, NtVdm64CreateProcessInternalW, _NtVdm64CreateProcessInternalW@48
-
-; NumaVirtualQueryNode available in kernel32 v5.1
-; implib KERNEL32.DLL, NumaVirtualQueryNode, _NumaVirtualQueryNode@16
-
 implib KERNEL32.DLL, OOBEComplete, _OOBEComplete@4
 implib KERNEL32.DLL, OfferVirtualMemory, _OfferVirtualMemory@12
 implib KERNEL32.DLL, OpenConsoleW, _OpenConsoleW@16
 
 ; OpenConsoleWStub is an alias for OpenConsoleW
 ; implib KERNEL32.DLL, OpenConsoleWStub, _OpenConsoleWStub@16
-
-; OpenDataFile available in kernel32 from v5.0 to v5.2
-; implib KERNEL32.DLL, OpenDataFile, _OpenDataFile@8
 
 implib KERNEL32.DLL, OpenEventA, _OpenEventA@12
 implib KERNEL32.DLL, OpenEventW, _OpenEventW@12
@@ -1280,9 +1213,6 @@ implib KERNEL32.DLL, OpenProcess, _OpenProcess@12
 
 ; OpenProcessToken should be imported from advapi32. Uncomment the following entry if you really need to import it from kernel32 instead.
 ; implib KERNEL32.DLL, OpenProcessToken, _OpenProcessToken@12
-
-; Stub function available since kernel32 v3.51
-; implib KERNEL32.DLL, OpenProfileUserMapping, _OpenProfileUserMapping@0
 
 implib KERNEL32.DLL, OpenSemaphoreA, _OpenSemaphoreA@12
 implib KERNEL32.DLL, OpenSemaphoreW, _OpenSemaphoreW@12
@@ -1364,10 +1294,6 @@ implib KERNEL32.DLL, QueryThreadCycleTime, _QueryThreadCycleTime@8
 implib KERNEL32.DLL, QueryThreadProfiling, _QueryThreadProfiling@8
 implib KERNEL32.DLL, QueryThreadpoolStackInformation, _QueryThreadpoolStackInformation@8
 implib KERNEL32.DLL, QueryUnbiasedInterruptTime, _QueryUnbiasedInterruptTime@4
-
-; QueryWin31IniFilesMappedToRegistry available in kernel32 from v3.51 to v5.1 (NT)
-; implib KERNEL32.DLL, QueryWin31IniFilesMappedToRegistry, _QueryWin31IniFilesMappedToRegistry@16
-
 implib KERNEL32.DLL, QueueUserAPC, _QueueUserAPC@12
 implib KERNEL32.DLL, QueueUserAPC2, _QueueUserAPC2@16
 implib KERNEL32.DLL, QueueUserWorkItem, _QueueUserWorkItem@12
@@ -1512,17 +1438,9 @@ implib KERNEL32.DLL, ScrollConsoleScreenBufferA, _ScrollConsoleScreenBufferA@20
 implib KERNEL32.DLL, ScrollConsoleScreenBufferW, _ScrollConsoleScreenBufferW@20
 implib KERNEL32.DLL, SearchPathA, _SearchPathA@24
 implib KERNEL32.DLL, SearchPathW, _SearchPathW@24
-
-; SetCPGlobal available in kernel32 from v5.0 to v5.2
-; implib KERNEL32.DLL, SetCPGlobal, _SetCPGlobal@4
-
 implib KERNEL32.DLL, SetCachedSigningLevel, _SetCachedSigningLevel@16
 implib KERNEL32.DLL, SetCalendarInfoA, _SetCalendarInfoA@16
 implib KERNEL32.DLL, SetCalendarInfoW, _SetCalendarInfoW@16
-
-; SetClientTimeZoneInformation available in kernel32 from v5.1 to v6.1
-; implib KERNEL32.DLL, SetClientTimeZoneInformation, _SetClientTimeZoneInformation@4
-
 implib KERNEL32.DLL, SetComPlusPackageInstallStatus, _SetComPlusPackageInstallStatus@4
 implib KERNEL32.DLL, SetCommBreak, _SetCommBreak@4
 implib KERNEL32.DLL, SetCommConfig, _SetCommConfig@12
@@ -1536,10 +1454,6 @@ implib KERNEL32.DLL, SetComputerNameExW, _SetComputerNameExW@8
 implib KERNEL32.DLL, SetComputerNameW, _SetComputerNameW@4
 implib KERNEL32.DLL, SetConsoleActiveScreenBuffer, _SetConsoleActiveScreenBuffer@4
 implib KERNEL32.DLL, SetConsoleCP, _SetConsoleCP@4
-
-; SetConsoleCommandHistoryMode available in kernel32 from v3.51 to v5.2 (NT)
-; implib KERNEL32.DLL, SetConsoleCommandHistoryMode, _SetConsoleCommandHistoryMode@4
-
 implib KERNEL32.DLL, SetConsoleCtrlHandler, _SetConsoleCtrlHandler@8
 implib KERNEL32.DLL, SetConsoleCursor, _SetConsoleCursor@8
 implib KERNEL32.DLL, SetConsoleCursorInfo, _SetConsoleCursorInfo@8
@@ -1554,10 +1468,6 @@ implib KERNEL32.DLL, SetConsoleInputExeNameA, _SetConsoleInputExeNameA@4
 implib KERNEL32.DLL, SetConsoleInputExeNameW, _SetConsoleInputExeNameW@4
 implib KERNEL32.DLL, SetConsoleKeyShortcuts, _SetConsoleKeyShortcuts@16
 implib KERNEL32.DLL, SetConsoleLocalEUDC, _SetConsoleLocalEUDC@16
-
-; Stub function available since kernel32 v3.51
-; implib KERNEL32.DLL, SetConsoleMaximumWindowSize, _SetConsoleMaximumWindowSize@8
-
 implib KERNEL32.DLL, SetConsoleMenuClose, _SetConsoleMenuClose@4
 implib KERNEL32.DLL, SetConsoleMode, _SetConsoleMode@8
 implib KERNEL32.DLL, SetConsoleNlsMode, _SetConsoleNlsMode@8
@@ -1747,10 +1657,6 @@ implib KERNEL32.DLL, TlsSetValue, _TlsSetValue@8
 implib KERNEL32.DLL, Toolhelp32ReadProcessMemory, _Toolhelp32ReadProcessMemory@20
 implib KERNEL32.DLL, TransactNamedPipe, _TransactNamedPipe@28
 implib KERNEL32.DLL, TransmitCommChar, _TransmitCommChar@8
-
-; TrimVirtualBuffer available in kernel32 from v3.51 to v5.2 (before Windows Server 2003 SP1)
-; implib KERNEL32.DLL, TrimVirtualBuffer, _TrimVirtualBuffer@4
-
 implib KERNEL32.DLL, TryAcquireSRWLockExclusive, _TryAcquireSRWLockExclusive@4
 implib KERNEL32.DLL, TryAcquireSRWLockShared, _TryAcquireSRWLockShared@4
 implib KERNEL32.DLL, TryEnterCriticalSection, _TryEnterCriticalSection@4
@@ -1758,10 +1664,6 @@ implib KERNEL32.DLL, TrySubmitThreadpoolCallback, _TrySubmitThreadpoolCallback@1
 implib KERNEL32.DLL, TzSpecificLocalTimeToSystemTime, _TzSpecificLocalTimeToSystemTime@12
 implib KERNEL32.DLL, TzSpecificLocalTimeToSystemTimeEx, _TzSpecificLocalTimeToSystemTimeEx@12
 implib KERNEL32.DLL, UTRegister, _UTRegister@28
-
-; Stub function available since kernel32 v4.0
-; implib KERNEL32.DLL, UTUnRegister, _UTUnRegister@4
-
 implib KERNEL32.DLL, UnhandledExceptionFilter, _UnhandledExceptionFilter@4
 implib KERNEL32.DLL, UnlockFile, _UnlockFile@20
 implib KERNEL32.DLL, UnlockFileEx, _UnlockFileEx@20
@@ -1783,28 +1685,15 @@ implib KERNEL32.DLL, UpdateResourceA, _UpdateResourceA@24
 implib KERNEL32.DLL, UpdateResourceW, _UpdateResourceW@24
 implib KERNEL32.DLL, VDMConsoleOperation, _VDMConsoleOperation@8
 implib KERNEL32.DLL, VDMOperationStarted, _VDMOperationStarted@4
-
-; ValidateLCType and ValidateLocale available in kernel32 from v5.0 to v5.2
-; implib KERNEL32.DLL, ValidateLCType, _ValidateLCType@16
-; implib KERNEL32.DLL, ValidateLocale, _ValidateLocale@4
-
 implib KERNEL32.DLL, VerLanguageNameA, _VerLanguageNameA@12
 implib KERNEL32.DLL, VerLanguageNameW, _VerLanguageNameW@12
 implib KERNEL32.DLL, VerSetConditionMask, _VerSetConditionMask@16
-
-; Stub function available since kernel32 v3.51
-; implib KERNEL32.DLL, VerifyConsoleIoHandle, _VerifyConsoleIoHandle@4
-
 implib KERNEL32.DLL, VerifyScripts, _VerifyScripts@20
 implib KERNEL32.DLL, VerifyVersionInfoA, _VerifyVersionInfoA@16
 implib KERNEL32.DLL, VerifyVersionInfoW, _VerifyVersionInfoW@16
 implib KERNEL32.DLL, VirtualAlloc, _VirtualAlloc@16
 implib KERNEL32.DLL, VirtualAllocEx, _VirtualAllocEx@20
 implib KERNEL32.DLL, VirtualAllocExNuma, _VirtualAllocExNuma@24
-
-; VirtualBufferExceptionHandler available in kernel32 from v3.51 to v5.2 (before Windows Server 2003 SP1)
-; implib KERNEL32.DLL, VirtualBufferExceptionHandler, _VirtualBufferExceptionHandler@12
-
 implib KERNEL32.DLL, VirtualFree, _VirtualFree@12
 implib KERNEL32.DLL, VirtualFreeEx, _VirtualFreeEx@16
 implib KERNEL32.DLL, VirtualLock, _VirtualLock@8
@@ -1862,11 +1751,6 @@ implib KERNEL32.DLL, WerUnregisterRuntimeExceptionModuleWorker, _WerUnregisterRu
 implib KERNEL32.DLL, WerpGetDebugger, _WerpGetDebugger@8
 implib KERNEL32.DLL, WerpInitiateRemoteRecovery, _WerpInitiateRemoteRecovery@4
 implib KERNEL32.DLL, WerpLaunchAeDebug, _WerpLaunchAeDebug@20
-
-; Stub functions available since kernel32 v6.2
-; implib KERNEL32.DLL, WerpNotifyLoadStringResourceWorker, _WerpNotifyLoadStringResourceWorker@16
-; implib KERNEL32.DLL, WerpNotifyUseStringResourceWorker, _WerpNotifyUseStringResourceWorker@4
-
 implib KERNEL32.DLL, WideCharToMultiByte, _WideCharToMultiByte@32
 implib KERNEL32.DLL, WinExec, _WinExec@8
 implib KERNEL32.DLL, Wow64DisableWow64FsRedirection, _Wow64DisableWow64FsRedirection@4
