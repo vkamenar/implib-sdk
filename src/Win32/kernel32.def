@@ -39,6 +39,9 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, DeleteStateAtomValue
 ; implib KERNEL32.DLL, DeleteStateContainer
 ; implib KERNEL32.DLL, DeleteStateContainerValue
+; implib KERNEL32.DLL, DuplicateStateContainerHandle
+; implib KERNEL32.DLL, EnumerateStateAtomValues
+; implib KERNEL32.DLL, EnumerateStateContainerItems
 
 ; *** Function available in kernel32 v6.1 (before Windows 7 SP1) ***
 ; implib KERNEL32.DLL, CopyExtendedContext, _CopyExtendedContext@12
@@ -136,6 +139,58 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, OpenProfileUserMapping, _OpenProfileUserMapping@0
 ; implib KERNEL32.DLL, SetConsoleMaximumWindowSize, _SetConsoleMaximumWindowSize@8
 ; implib KERNEL32.DLL, VerifyConsoleIoHandle, _VerifyConsoleIoHandle@4
+
+; These functions should be imported from advapi32. Uncomment the following entries if you really need to import them from kernel32.
+; implib KERNEL32.DLL, CreateProcessAsUserA, _CreateProcessAsUserA@44
+; implib KERNEL32.DLL, CreateProcessAsUserW, _CreateProcessAsUserW@44
+; implib KERNEL32.DLL, RegCloseKey, _RegCloseKey@4
+; implib KERNEL32.DLL, RegCopyTreeW, _RegCopyTreeW@12
+; implib KERNEL32.DLL, RegCreateKeyExA, _RegCreateKeyExA@36
+; implib KERNEL32.DLL, RegCreateKeyExW, _RegCreateKeyExW@36
+; implib KERNEL32.DLL, RegDeleteKeyExA, _RegDeleteKeyExA@16
+; implib KERNEL32.DLL, RegDeleteKeyExW, _RegDeleteKeyExW@16
+; implib KERNEL32.DLL, RegDeleteTreeA, _RegDeleteTreeA@8
+; implib KERNEL32.DLL, RegDeleteTreeW, _RegDeleteTreeW@8
+; implib KERNEL32.DLL, RegDeleteValueA, _RegDeleteValueA@8
+; implib KERNEL32.DLL, RegDeleteValueW, _RegDeleteValueW@8
+; implib KERNEL32.DLL, RegDisablePredefinedCacheEx, _RegDisablePredefinedCacheEx@0
+; implib KERNEL32.DLL, RegEnumKeyExA, _RegEnumKeyExA@32
+; implib KERNEL32.DLL, RegEnumKeyExW, _RegEnumKeyExW@32
+; implib KERNEL32.DLL, RegEnumValueA, _RegEnumValueA@32
+; implib KERNEL32.DLL, RegEnumValueW, _RegEnumValueW@32
+; implib KERNEL32.DLL, RegFlushKey, _RegFlushKey@4
+; implib KERNEL32.DLL, RegGetKeySecurity, _RegGetKeySecurity@16
+; implib KERNEL32.DLL, RegGetValueA, _RegGetValueA@28
+; implib KERNEL32.DLL, RegGetValueW, _RegGetValueW@28
+; implib KERNEL32.DLL, RegLoadKeyA, _RegLoadKeyA@12
+; implib KERNEL32.DLL, RegLoadKeyW, _RegLoadKeyW@12
+; implib KERNEL32.DLL, RegLoadMUIStringA, _RegLoadMUIStringA@28
+; implib KERNEL32.DLL, RegLoadMUIStringW, _RegLoadMUIStringW@28
+; implib KERNEL32.DLL, RegNotifyChangeKeyValue, _RegNotifyChangeKeyValue@20
+; implib KERNEL32.DLL, RegOpenCurrentUser, _RegOpenCurrentUser@8
+; implib KERNEL32.DLL, RegOpenKeyExA, _RegOpenKeyExA@20
+; implib KERNEL32.DLL, RegOpenKeyExW, _RegOpenKeyExW@20
+; implib KERNEL32.DLL, RegOpenUserClassesRoot, _RegOpenUserClassesRoot@16
+; implib KERNEL32.DLL, RegQueryInfoKeyA, _RegQueryInfoKeyA@48
+; implib KERNEL32.DLL, RegQueryInfoKeyW, _RegQueryInfoKeyW@48
+; implib KERNEL32.DLL, RegQueryValueExA, _RegQueryValueExA@24
+; implib KERNEL32.DLL, RegQueryValueExW, _RegQueryValueExW@24
+; implib KERNEL32.DLL, RegRestoreKeyA, _RegRestoreKeyA@12
+; implib KERNEL32.DLL, RegRestoreKeyW, _RegRestoreKeyW@12
+; implib KERNEL32.DLL, RegSaveKeyExA, _RegSaveKeyExA@16
+; implib KERNEL32.DLL, RegSaveKeyExW, _RegSaveKeyExW@16
+; implib KERNEL32.DLL, RegSetKeySecurity, _RegSetKeySecurity@12
+; implib KERNEL32.DLL, RegSetValueExA, _RegSetValueExA@24
+; implib KERNEL32.DLL, RegSetValueExW, _RegSetValueExW@24
+; implib KERNEL32.DLL, RegUnLoadKeyA, _RegUnLoadKeyA@8
+; implib KERNEL32.DLL, RegUnLoadKeyW, _RegUnLoadKeyW@8
+
+; These functions should be imported from winmm. Uncomment the following entries if you really need to import them from kernel32.
+; implib KERNEL32.DLL, timeBeginPeriod, _timeBeginPeriod@4
+; implib KERNEL32.DLL, timeEndPeriod, _timeEndPeriod@4
+; implib KERNEL32.DLL, timeGetDevCaps, _timeGetDevCaps@8
+; implib KERNEL32.DLL, timeGetSystemTime, _timeGetSystemTime@8
+; implib KERNEL32.DLL, timeGetTime, _timeGetTime@0
 
 implib KERNEL32.DLL, AcquireSRWLockExclusive, _AcquireSRWLockExclusive@4
 implib KERNEL32.DLL, AcquireSRWLockShared, _AcquireSRWLockShared@4
@@ -364,11 +419,6 @@ implib KERNEL32.DLL, CreatePipe, _CreatePipe@16
 implib KERNEL32.DLL, CreatePrivateNamespaceA, _CreatePrivateNamespaceA@12
 implib KERNEL32.DLL, CreatePrivateNamespaceW, _CreatePrivateNamespaceW@12
 implib KERNEL32.DLL, CreateProcessA, _CreateProcessA@40
-
-; These functions should be imported from advapi32. Uncomment the following entries if you really need to import them from kernel32.
-; implib KERNEL32.DLL, CreateProcessAsUserA, _CreateProcessAsUserA@44
-; implib KERNEL32.DLL, CreateProcessAsUserW, _CreateProcessAsUserW@44
-
 implib KERNEL32.DLL, CreateProcessInternalA, _CreateProcessInternalA@48
 implib KERNEL32.DLL, CreateProcessInternalW, _CreateProcessInternalW@48
 implib KERNEL32.DLL, CreateProcessW, _CreateProcessW@40
@@ -1330,50 +1380,6 @@ implib KERNEL32.DLL, ReadFileScatter, _ReadFileScatter@20
 implib KERNEL32.DLL, ReadProcessMemory, _ReadProcessMemory@20
 implib KERNEL32.DLL, ReadThreadProfilingData, _ReadThreadProfilingData@12
 implib KERNEL32.DLL, ReclaimVirtualMemory, _ReclaimVirtualMemory@8
-
-; These functions should be imported from advapi32. Uncomment the following entries if you really need to import them from kernel32.
-; implib KERNEL32.DLL, RegCloseKey, _RegCloseKey@4
-; implib KERNEL32.DLL, RegCopyTreeW, _RegCopyTreeW@12
-; implib KERNEL32.DLL, RegCreateKeyExA, _RegCreateKeyExA@36
-; implib KERNEL32.DLL, RegCreateKeyExW, _RegCreateKeyExW@36
-; implib KERNEL32.DLL, RegDeleteKeyExA, _RegDeleteKeyExA@16
-; implib KERNEL32.DLL, RegDeleteKeyExW, _RegDeleteKeyExW@16
-; implib KERNEL32.DLL, RegDeleteTreeA, _RegDeleteTreeA@8
-; implib KERNEL32.DLL, RegDeleteTreeW, _RegDeleteTreeW@8
-; implib KERNEL32.DLL, RegDeleteValueA, _RegDeleteValueA@8
-; implib KERNEL32.DLL, RegDeleteValueW, _RegDeleteValueW@8
-; implib KERNEL32.DLL, RegDisablePredefinedCacheEx, _RegDisablePredefinedCacheEx@0
-; implib KERNEL32.DLL, RegEnumKeyExA, _RegEnumKeyExA@32
-; implib KERNEL32.DLL, RegEnumKeyExW, _RegEnumKeyExW@32
-; implib KERNEL32.DLL, RegEnumValueA, _RegEnumValueA@32
-; implib KERNEL32.DLL, RegEnumValueW, _RegEnumValueW@32
-; implib KERNEL32.DLL, RegFlushKey, _RegFlushKey@4
-; implib KERNEL32.DLL, RegGetKeySecurity, _RegGetKeySecurity@16
-; implib KERNEL32.DLL, RegGetValueA, _RegGetValueA@28
-; implib KERNEL32.DLL, RegGetValueW, _RegGetValueW@28
-; implib KERNEL32.DLL, RegLoadKeyA, _RegLoadKeyA@12
-; implib KERNEL32.DLL, RegLoadKeyW, _RegLoadKeyW@12
-; implib KERNEL32.DLL, RegLoadMUIStringA, _RegLoadMUIStringA@28
-; implib KERNEL32.DLL, RegLoadMUIStringW, _RegLoadMUIStringW@28
-; implib KERNEL32.DLL, RegNotifyChangeKeyValue, _RegNotifyChangeKeyValue@20
-; implib KERNEL32.DLL, RegOpenCurrentUser, _RegOpenCurrentUser@8
-; implib KERNEL32.DLL, RegOpenKeyExA, _RegOpenKeyExA@20
-; implib KERNEL32.DLL, RegOpenKeyExW, _RegOpenKeyExW@20
-; implib KERNEL32.DLL, RegOpenUserClassesRoot, _RegOpenUserClassesRoot@16
-; implib KERNEL32.DLL, RegQueryInfoKeyA, _RegQueryInfoKeyA@48
-; implib KERNEL32.DLL, RegQueryInfoKeyW, _RegQueryInfoKeyW@48
-; implib KERNEL32.DLL, RegQueryValueExA, _RegQueryValueExA@24
-; implib KERNEL32.DLL, RegQueryValueExW, _RegQueryValueExW@24
-; implib KERNEL32.DLL, RegRestoreKeyA, _RegRestoreKeyA@12
-; implib KERNEL32.DLL, RegRestoreKeyW, _RegRestoreKeyW@12
-; implib KERNEL32.DLL, RegSaveKeyExA, _RegSaveKeyExA@16
-; implib KERNEL32.DLL, RegSaveKeyExW, _RegSaveKeyExW@16
-; implib KERNEL32.DLL, RegSetKeySecurity, _RegSetKeySecurity@12
-; implib KERNEL32.DLL, RegSetValueExA, _RegSetValueExA@24
-; implib KERNEL32.DLL, RegSetValueExW, _RegSetValueExW@24
-; implib KERNEL32.DLL, RegUnLoadKeyA, _RegUnLoadKeyA@8
-; implib KERNEL32.DLL, RegUnLoadKeyW, _RegUnLoadKeyW@8
-
 implib KERNEL32.DLL, RegisterApplicationRecoveryCallback, _RegisterApplicationRecoveryCallback@16
 implib KERNEL32.DLL, RegisterApplicationRestart, _RegisterApplicationRestart@8
 implib KERNEL32.DLL, RegisterBadMemoryNotification, _RegisterBadMemoryNotification@4
@@ -1824,12 +1830,5 @@ implib KERNEL32.DLL, lstrcpynW, _lstrcpynW@12
 implib KERNEL32.DLL, lstrlen, _lstrlen@4
 implib KERNEL32.DLL, lstrlenA, _lstrlenA@4
 implib KERNEL32.DLL, lstrlenW, _lstrlenW@4
-
-; These functions should be imported from winmm. Uncomment the following entries if you really need to import them from kernel32.
-; implib KERNEL32.DLL, timeBeginPeriod, _timeBeginPeriod@4
-; implib KERNEL32.DLL, timeEndPeriod, _timeEndPeriod@4
-; implib KERNEL32.DLL, timeGetDevCaps, _timeGetDevCaps@8
-; implib KERNEL32.DLL, timeGetSystemTime, _timeGetSystemTime@8
-; implib KERNEL32.DLL, timeGetTime, _timeGetTime@0
 
 endlib
