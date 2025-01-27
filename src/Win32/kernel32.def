@@ -112,6 +112,26 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, DisposeLZ32Handle
 ; implib KERNEL32.DLL, DosFileHandleToWin32Handle
 
+; *** These functions in kernel32 from v4.0 to v4.90 manage the stack frame for the thunk code ***
+; implib KERNEL32.DLL, FT_Exit0
+; implib KERNEL32.DLL, FT_Exit4
+; implib KERNEL32.DLL, FT_Exit8
+; implib KERNEL32.DLL, FT_Exit12
+; implib KERNEL32.DLL, FT_Exit16
+; implib KERNEL32.DLL, FT_Exit20
+; implib KERNEL32.DLL, FT_Exit24
+; implib KERNEL32.DLL, FT_Exit28
+; implib KERNEL32.DLL, FT_Exit32
+; implib KERNEL32.DLL, FT_Exit36
+; implib KERNEL32.DLL, FT_Exit40
+; implib KERNEL32.DLL, FT_Exit44
+; implib KERNEL32.DLL, FT_Exit48
+; implib KERNEL32.DLL, FT_Exit52
+; implib KERNEL32.DLL, FT_Exit56
+; implib KERNEL32.DLL, FT_Prolog
+; implib KERNEL32.DLL, FT_PrologPrime
+; implib KERNEL32.DLL, FT_Thunk
+
 ; *** Stub function available since kernel32 v4.0 ***
 ; implib KERNEL32.DLL, UTUnRegister, _UTUnRegister@4
 
