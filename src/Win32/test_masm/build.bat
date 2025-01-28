@@ -23,7 +23,7 @@ IF EXIST "%MSLNK%.exe" GOTO LINKFOUND
 ECHO Linker not found.
 GOTO EXIT
 :LINKFOUND
-"%MSLNK%" /SUBSYSTEM:WINDOWS /MERGE:.rdata=.text /LIBPATH:..\..\..\lib\Win32\stripped -ignore:4078 test.obj
+"%MSLNK%" /SAFESEH:NO /SUBSYSTEM:WINDOWS /MERGE:.rdata=.text /LIBPATH:..\..\..\lib\Win32\stripped -ignore:4078 test.obj
 :EXIT
 pause
 ENDLOCAL
