@@ -42,10 +42,13 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, DuplicateStateContainerHandle
 ; implib KERNEL32.DLL, EnumerateStateAtomValues
 ; implib KERNEL32.DLL, EnumerateStateContainerItems
+; implib KERNEL32.DLL, GetHivePath
 
 ; *** Functions available in kernel32 v6.1 (before Windows 7 SP1) ***
 ; implib KERNEL32.DLL, CopyExtendedContext, _CopyExtendedContext@12
 ; implib KERNEL32.DLL, GetEnabledExtendedFeatures, _GetEnabledExtendedFeatures@8
+; implib KERNEL32.DLL, GetExtendedContextLength, _GetExtendedContextLength@8
+; implib KERNEL32.DLL, GetExtendedFeaturesMask, _GetExtendedFeaturesMask@4
 
 ; *** Stub functions available since kernel32 v6.2 ***
 ; implib KERNEL32.DLL, BaseCheckAppcompatCacheExWorker, _BaseCheckAppcompatCacheExWorker@36
@@ -118,6 +121,8 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, FreeSLCallback
 ; implib KERNEL32.DLL, GDIReallyCares
 ; implib KERNEL32.DLL, GetDaylightFlag
+; implib KERNEL32.DLL, GetLSCallbackTarget
+; implib KERNEL32.DLL, GetLSCallbackTemplate
 
 ; *** Function available in kernel32 from v4.10 to v4.90 ***
 ; implib KERNEL32.DLL, GetCryptApiExponentValue
