@@ -106,6 +106,9 @@ include '..\implib.inc'
 ; *** Function available in kernel32 v5.0 (Win2000 SP4) and v5.1 (WinXP SP2) ***
 ; implib KERNEL32.DLL, CreateProcessInternalWSecure
 
+; *** Function available in kernel32 v4.90 only ***
+; implib KERNEL32.DLL, GetModuleNameFromProc
+
 ; *** Functions available in kernel32 from v4.0 to v4.90 ***
 ; implib KERNEL32.DLL, AllocLSCallback, _AllocLSCallback@0
 ; implib KERNEL32.DLL, AllocMappedBuffer
@@ -123,6 +126,7 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, GetDaylightFlag
 ; implib KERNEL32.DLL, GetLSCallbackTarget
 ; implib KERNEL32.DLL, GetLSCallbackTemplate
+; implib KERNEL32.DLL, GetPK16SysVar
 
 ; *** Function available in kernel32 from v4.10 to v4.90 ***
 ; implib KERNEL32.DLL, GetCryptApiExponentValue
