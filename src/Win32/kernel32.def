@@ -127,6 +127,9 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, GetLSCallbackTarget
 ; implib KERNEL32.DLL, GetLSCallbackTemplate
 ; implib KERNEL32.DLL, GetPK16SysVar
+; implib KERNEL32.DLL, GetProcAddress16
+; implib KERNEL32.DLL, GetProcessDword
+; implib KERNEL32.DLL, GetProcessFlags
 
 ; *** Function available in kernel32 from v4.10 to v4.90 ***
 ; implib KERNEL32.DLL, GetCryptApiExponentValue
