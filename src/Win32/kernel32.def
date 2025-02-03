@@ -8,41 +8,43 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, CalloutOnFiberStack, _CalloutOnFiberStack@12
 
 ; *** Functions available in kernel32 v6.2 only ***
-; implib KERNEL32.DLL, AcquireStateLock
-; implib KERNEL32.DLL, AppContainerDeriveSidFromMoniker
-; implib KERNEL32.DLL, AppContainerFreeMemory
-; implib KERNEL32.DLL, AppContainerLookupDisplayNameMrtReference
-; implib KERNEL32.DLL, AppContainerLookupMoniker
-; implib KERNEL32.DLL, AppContainerRegisterSid
-; implib KERNEL32.DLL, AppContainerUnregisterSid
-; implib KERNEL32.DLL, AppXFreeMemory
-; implib KERNEL32.DLL, AppXGetApplicationData
-; implib KERNEL32.DLL, AppXGetDevelopmentMode
-; implib KERNEL32.DLL, AppXGetOSMinVersion
-; implib KERNEL32.DLL, AppXGetPackageCapabilities
-; implib KERNEL32.DLL, AppXGetPackageSid
+; implib KERNEL32.DLL, AcquireStateLock, _AcquireStateLock@12
+; implib KERNEL32.DLL, AppContainerDeriveSidFromMoniker, _AppContainerDeriveSidFromMoniker@8
+; implib KERNEL32.DLL, AppContainerFreeMemory, _AppContainerFreeMemory@4
+; implib KERNEL32.DLL, AppContainerLookupDisplayNameMrtReference, _AppContainerLookupDisplayNameMrtReference@8
+; implib KERNEL32.DLL, AppContainerLookupMoniker, _AppContainerLookupMoniker@8
+; implib KERNEL32.DLL, AppContainerRegisterSid, _AppContainerRegisterSid@12
+; implib KERNEL32.DLL, AppContainerUnregisterSid, _AppContainerUnregisterSid@4
+; implib KERNEL32.DLL, AppXFreeMemory, _AppXFreeMemory@4
+; implib KERNEL32.DLL, AppXGetApplicationData, _AppXGetApplicationData@32
+; implib KERNEL32.DLL, AppXGetDevelopmentMode, _AppXGetDevelopmentMode@8
+; implib KERNEL32.DLL, AppXGetOSMinVersion, _AppXGetOSMinVersion@8
+; implib KERNEL32.DLL, AppXGetPackageCapabilities, _AppXGetPackageCapabilities@16
+; implib KERNEL32.DLL, AppXGetPackageSid, _AppXGetPackageSid@8
 ; implib KERNEL32.DLL, AppXGetPackageState
-; implib KERNEL32.DLL, AppXLookupDisplayName
-; implib KERNEL32.DLL, AppXLookupMoniker
+; implib KERNEL32.DLL, AppXLookupDisplayName, _AppXLookupDisplayName@8
+; implib KERNEL32.DLL, AppXLookupMoniker, _AppXLookupMoniker@8
 ; implib KERNEL32.DLL, AppXSetPackageState
 ; implib KERNEL32.DLL, BasepAppCompatHookDLL
-; implib KERNEL32.DLL, CloseStateAtom
-; implib KERNEL32.DLL, CloseStateChangeNotification
-; implib KERNEL32.DLL, CloseStateContainer
-; implib KERNEL32.DLL, CloseStateLock
-; implib KERNEL32.DLL, CommitStateAtom
-; implib KERNEL32.DLL, CreateStateAtom
-; implib KERNEL32.DLL, CreateStateChangeNotification
-; implib KERNEL32.DLL, CreateStateContainer
-; implib KERNEL32.DLL, CreateStateLock
-; implib KERNEL32.DLL, CreateStateSubcontainer
-; implib KERNEL32.DLL, DeleteStateAtomValue
-; implib KERNEL32.DLL, DeleteStateContainer
-; implib KERNEL32.DLL, DeleteStateContainerValue
-; implib KERNEL32.DLL, DuplicateStateContainerHandle
-; implib KERNEL32.DLL, EnumerateStateAtomValues
-; implib KERNEL32.DLL, EnumerateStateContainerItems
-; implib KERNEL32.DLL, GetHivePath
+; implib KERNEL32.DLL, CloseStateAtom, _CloseStateAtom@4
+; implib KERNEL32.DLL, CloseStateChangeNotification, _CloseStateChangeNotification@4
+; implib KERNEL32.DLL, CloseStateContainer, _CloseStateContainer@4
+; implib KERNEL32.DLL, CloseStateLock, _CloseStateLock@4
+; implib KERNEL32.DLL, CommitStateAtom, _CommitStateAtom@12
+; implib KERNEL32.DLL, CreateStateAtom, _CreateStateAtom@0
+; implib KERNEL32.DLL, CreateStateChangeNotification, _CreateStateChangeNotification@4
+; implib KERNEL32.DLL, CreateStateContainer, _CreateStateContainer@16
+; implib KERNEL32.DLL, CreateStateLock, _CreateStateLock@4
+; implib KERNEL32.DLL, CreateStateSubcontainer, _CreateStateSubcontainer@12
+; implib KERNEL32.DLL, DeleteStateAtomValue, _DeleteStateAtomValue@8
+; implib KERNEL32.DLL, DeleteStateContainer, _DeleteStateContainer@8
+; implib KERNEL32.DLL, DeleteStateContainerValue, _DeleteStateContainerValue@8
+; implib KERNEL32.DLL, DuplicateStateContainerHandle, _DuplicateStateContainerHandle@4
+; implib KERNEL32.DLL, EnumerateStateAtomValues, _EnumerateStateAtomValues@12
+; implib KERNEL32.DLL, EnumerateStateContainerItems, _EnumerateStateContainerItems@16
+; implib KERNEL32.DLL, GetHivePath, _GetHivePath@16
+; implib KERNEL32.DLL, GetRoamingLastObservedChangeTime, _GetRoamingLastObservedChangeTime@8
+; implib KERNEL32.DLL, GetSerializedAtomBytes, _GetSerializedAtomBytes@12
 
 ; *** Functions available in kernel32 v6.1 (before Windows 7 SP1) ***
 ; implib KERNEL32.DLL, CopyExtendedContext, _CopyExtendedContext@12
@@ -50,19 +52,22 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, GetExtendedContextLength, _GetExtendedContextLength@8
 ; implib KERNEL32.DLL, GetExtendedFeaturesMask, _GetExtendedFeaturesMask@4
 
+; *** Function available in kernel32 v6.1 (from Windows 7 SP1 only) ***
+; implib KERNEL32.DLL, GetProcessUserModeExceptionPolicy, _GetProcessUserModeExceptionPolicy@4
+
 ; *** Stub functions available since kernel32 v6.2 ***
 ; implib KERNEL32.DLL, BaseCheckAppcompatCacheExWorker, _BaseCheckAppcompatCacheExWorker@36
 ; implib KERNEL32.DLL, BaseCheckAppcompatCacheWorker, _BaseCheckAppcompatCacheWorker@16
 ; implib KERNEL32.DLL, BaseCleanupAppcompatCacheSupportWorker, _BaseCleanupAppcompatCacheSupportWorker@4
 ; implib KERNEL32.DLL, BaseDumpAppcompatCacheWorker, _BaseDumpAppcompatCacheWorker@0
 ; implib KERNEL32.DLL, BaseInitAppcompatCacheSupportWorker, _BaseInitAppcompatCacheSupportWorker@0
-; implib KERNEL32.DLL, BaseIsAppcompatInfrastructureDisabledWorker
+; implib KERNEL32.DLL, BaseIsAppcompatInfrastructureDisabledWorker, _BaseIsAppcompatInfrastructureDisabledWorker@0
 ; implib KERNEL32.DLL, BasepNotifyLoadStringResource, _BasepNotifyLoadStringResource@16
 ; implib KERNEL32.DLL, WerpNotifyLoadStringResourceWorker, _WerpNotifyLoadStringResourceWorker@16
 ; implib KERNEL32.DLL, WerpNotifyUseStringResourceWorker, _WerpNotifyUseStringResourceWorker@4
 
 ; *** Stub function available since kernel32 v5.2 ***
-; implib KERNEL32.DLL, BaseIsAppcompatInfrastructureDisabled
+; implib KERNEL32.DLL, BaseIsAppcompatInfrastructureDisabled, _BaseIsAppcompatInfrastructureDisabled@0
 
 ; *** Functions available in kernel32 from v5.2 to v6.3 ***
 ; implib KERNEL32.DLL, BaseCheckRunApp, _BaseCheckRunApp@40
@@ -130,6 +135,9 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, GetProcAddress16
 ; implib KERNEL32.DLL, GetProcessDword
 ; implib KERNEL32.DLL, GetProcessFlags
+; implib KERNEL32.DLL, GetProductName
+; implib KERNEL32.DLL, GetSLCallbackTarget
+; implib KERNEL32.DLL, GetSLCallbackTemplate
 
 ; *** Function available in kernel32 from v4.10 to v4.90 ***
 ; implib KERNEL32.DLL, GetCryptApiExponentValue
