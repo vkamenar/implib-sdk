@@ -45,6 +45,10 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, GetHivePath, _GetHivePath@16
 ; implib KERNEL32.DLL, GetRoamingLastObservedChangeTime, _GetRoamingLastObservedChangeTime@8
 ; implib KERNEL32.DLL, GetSerializedAtomBytes, _GetSerializedAtomBytes@12
+; implib KERNEL32.DLL, GetStateContainerDepth, _GetStateContainerDepth@8
+; implib KERNEL32.DLL, GetStateRootFolder, _GetStateRootFolder@12
+; implib KERNEL32.DLL, GetStateSettingsFolder, _GetStateSettingsFolder@12
+; implib KERNEL32.DLL, GetStateVersion, _GetStateVersion@12
 
 ; *** Functions available in kernel32 v6.1 (before Windows 7 SP1) ***
 ; implib KERNEL32.DLL, CopyExtendedContext, _CopyExtendedContext@12
