@@ -145,6 +145,8 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, GetSLCallbackTemplate
 ; implib KERNEL32.DLL, GetThunkBuff
 ; implib KERNEL32.DLL, GetThunkStuff
+; implib KERNEL32.DLL, GetWin16DOSEnv
+; implib KERNEL32.DLL, GetpWin16Lock
 
 ; *** Function available in kernel32 from v4.10 to v4.90 ***
 ; implib KERNEL32.DLL, GetCryptApiExponentValue
