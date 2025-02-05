@@ -59,7 +59,7 @@
       <Culture>0x240a</Culture>
     </ResourceCompile>
     <Link>
-      <AdditionalOptions>-ignore:4078 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/EMITPOGOPHASEINFO /DYNAMICBASE:NO -ignore:4078 %(AdditionalOptions)</AdditionalOptions>
       <AdditionalDependencies>user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>./dll2def.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
