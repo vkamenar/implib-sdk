@@ -27,7 +27,7 @@ GOTO EXIT
 REM Optional file size optimization flags:
 REM   To remove the debug directory (undocumented flag): /EMITPOGOPHASEINFO
 REM   To remove the .reloc section: /DYNAMICBASE:NO
-"%MSLNK%" /SAFESEH:NO /SUBSYSTEM:WINDOWS /LIBPATH:..\..\..\lib\Win32\stripped -ignore:4078 test.obj
+"%MSLNK%" /SAFESEH:NO /SUBSYSTEM:WINDOWS /LIBPATH:..\..\..\lib\Win32\stripped test.obj
 
 :EXIT
 pause
