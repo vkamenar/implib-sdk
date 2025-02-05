@@ -24,7 +24,12 @@ ECHO LLD linker not found.
 GOTO EXIT
 :LLDLNKFOUND
 echo Linking the Win32 executable using the LLD linker
+
+REM Optional file size optimization flags:
+REM   To remove the .reloc section: /FIXED
+REM   To merge .rdata section into .text: /MERGE:.rdata=.text
 "%LLDLINK%" /SAFESEH:NO /SUBSYSTEM:WINDOWS /ENTRY:start /LIBPATH:..\..\..\lib\Win32 test.o kernel32.lib user32.lib
+
 :EXIT
 pause
 ENDLOCAL
