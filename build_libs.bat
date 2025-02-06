@@ -17,8 +17,8 @@ GOTO :EOF
  SET P=%~p1
  FOR %%f IN ("%P:~0,-1%") DO SET P="%%~nxf"
  SET P=%P:"=%
- CALL :DO_BLD %1 lib\%P%\%F%.lib 1 including
- CALL :DO_BLD %1 lib\%P%\stripped\%F%.lib 0 without
+ CALL :DO_BLD %1 lib\%P%\%F%.lib 0 MS
+ CALL :DO_BLD %1 lib\%P%\lld\%F%.lib 1 LLD
  GOTO :EOF
 
 :DO_BLD
@@ -27,10 +27,10 @@ GOTO :EOF
  GOTO :EOF
 :FASM
  SET /p impline=< %1
- echo Compiling %2, %4 original thunk
+ echo Compiling %2, %4-compatible format
  (
   echo %impline%
-  echo KEEP_ORIGINAL_THUNK equ %3
+  echo RENAME_AR_MEMBERS equ %3
   more +1 %1
  ) >"%~1.tmp"
  bin\FASM "%~1.tmp" %2
