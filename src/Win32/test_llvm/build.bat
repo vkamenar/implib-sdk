@@ -28,7 +28,7 @@ echo Linking the Win32 executable using the LLD linker
 REM Optional file size optimization flags:
 REM   To remove the .reloc section: /FIXED
 REM   To merge .rdata section into .text: /MERGE:.rdata=.text
-"%LLDLINK%" /SAFESEH:NO /SUBSYSTEM:WINDOWS /ENTRY:start /LIBPATH:..\..\..\lib\Win32 test.o kernel32.lib user32.lib
+"%LLDLINK%" /SAFESEH:NO /SUBSYSTEM:WINDOWS /ENTRY:start /LIBPATH:..\..\..\lib\Win32\lld test.o kernel32.lib user32.lib
 
 :EXIT
 pause
