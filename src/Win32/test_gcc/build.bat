@@ -33,7 +33,7 @@ echo Linking the Win32 executable using the GNU Linker (LD)
 REM Optional file size optimization flags:
 REM   To remove symbol tables (debug directory): -s
 REM   To remove the .reloc section: --disable-reloc-section
-"%LDLINK%" -m i386pe -subsystem windows -o test.exe -e _start -L..\..\..\lib\Win32 test.o -lkernel32 -luser32
+"%LDLINK%" -m i386pe -subsystem windows -o test.exe -e _start -L..\..\..\lib\Win32\lld test.o -lkernel32 -luser32
 
 :EXIT
 pause
