@@ -3,7 +3,7 @@ SETLOCAL
 REM === CONFIG BEGIN =================================================
 
 REM If you have MASM (or MASM32) installed, set the installation path:
-SET MASM="C:\Tools\MASM32"
+SET MASM="C:\MASM32"
 
 REM === CONFIG END ===================================================
 TITLE ImpLib SDK (MASM Win32 example)
@@ -27,7 +27,7 @@ GOTO EXIT
 REM Optional file size optimization flags:
 REM   To remove the debug directory (undocumented flag): /EMITPOGOPHASEINFO
 REM   To remove the .reloc section: /DYNAMICBASE:NO
-"%MSLNK%" /SAFESEH:NO /SUBSYSTEM:WINDOWS /LIBPATH:..\..\..\lib\Win32\stripped test.obj
+"%MSLNK%" /SAFESEH:NO /SUBSYSTEM:WINDOWS /LIBPATH:..\..\..\lib\Win32 test.obj
 
 :EXIT
 pause
