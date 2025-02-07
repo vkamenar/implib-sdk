@@ -3,7 +3,7 @@ SETLOCAL
 REM === CONFIG BEGIN =====================================
 
 REM If MinGW32 is installed, set the installation path here:
-SET GCC="C:\Tools\mingw32"
+SET GCC="C:\mingw32"
 
 REM === CONFIG END =======================================
 TITLE ImpLib SDK (GCC Win32 example)
@@ -33,7 +33,7 @@ echo Linking the Win32 executable using the GNU Linker (LD)
 REM Optional file size optimization flags:
 REM   To remove symbol tables (debug directory): -s
 REM   To remove the .reloc section: --disable-reloc-section
-"%LDLINK%" -m i386pe -subsystem windows -o test.exe -e _start -L..\..\..\lib\Win32\stripped test.o -lkernel32 -luser32
+"%LDLINK%" -m i386pe -subsystem windows -o test.exe -e _start -L..\..\..\lib\Win32 test.o -lkernel32 -luser32
 
 :EXIT
 pause
