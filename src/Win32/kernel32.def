@@ -126,25 +126,25 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, CloseSystemHandle
 ; implib KERNEL32.DLL, ConvertToGlobalHandle, _ConvertToGlobalHandle@4
 ; implib KERNEL32.DLL, CreateKernelThread
-; implib KERNEL32.DLL, DisposeLZ32Handle
-; implib KERNEL32.DLL, DosFileHandleToWin32Handle
+; implib KERNEL32.DLL, DisposeLZ32Handle, _DisposeLZ32Handle@4
+; implib KERNEL32.DLL, DosFileHandleToWin32Handle, _DosFileHandleToWin32Handle@4
 ; implib KERNEL32.DLL, FreeLSCallback
-; implib KERNEL32.DLL, FreeLibrary16
+; implib KERNEL32.DLL, FreeLibrary16, _FreeLibrary16@4
 ; implib KERNEL32.DLL, FreeMappedBuffer
 ; implib KERNEL32.DLL, FreeSLCallback
-; implib KERNEL32.DLL, GDIReallyCares
+; implib KERNEL32.DLL, GDIReallyCares, _GDIReallyCares@4
 ; implib KERNEL32.DLL, GetDaylightFlag
 ; implib KERNEL32.DLL, GetLSCallbackTarget
 ; implib KERNEL32.DLL, GetLSCallbackTemplate
-; implib KERNEL32.DLL, GetPK16SysVar
-; implib KERNEL32.DLL, GetProcAddress16
-; implib KERNEL32.DLL, GetProcessDword
+; implib KERNEL32.DLL, GetPK16SysVar, _GetPK16SysVar@0
+; implib KERNEL32.DLL, GetProcAddress16, _GetProcAddress16@8
+; implib KERNEL32.DLL, GetProcessDword, _GetProcessDword@8
 ; implib KERNEL32.DLL, GetProcessFlags
 ; implib KERNEL32.DLL, GetProductName
 ; implib KERNEL32.DLL, GetSLCallbackTarget
 ; implib KERNEL32.DLL, GetSLCallbackTemplate
-; implib KERNEL32.DLL, GetThunkBuff
-; implib KERNEL32.DLL, GetThunkStuff
+; implib KERNEL32.DLL, GetThunkBuff, _GetThunkBuff@0
+; implib KERNEL32.DLL, GetThunkStuff, _GetThunkStuff@8
 ; implib KERNEL32.DLL, GetWin16DOSEnv
 ; implib KERNEL32.DLL, GetpWin16Lock, _GetpWin16Lock@4
 ; implib KERNEL32.DLL, GlobalAlloc16, _GlobalAlloc16@8
@@ -156,6 +156,8 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, GlobalUnfix16, _GlobalUnfix16@4
 ; implib KERNEL32.DLL, GlobalUnlock16, _GlobalUnlock16@4
 ; implib KERNEL32.DLL, GlobalWire16, _GlobalWire16@4
+; implib KERNEL32.DLL, HeapSetFlags
+; implib KERNEL32.DLL, HouseCleanLogicallyDeadHandles, _HouseCleanLogicallyDeadHandles@0
 
 ; *** Function available in kernel32 from v4.10 to v4.90 ***
 ; implib KERNEL32.DLL, GetCryptApiExponentValue
