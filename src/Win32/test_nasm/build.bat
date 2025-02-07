@@ -4,7 +4,7 @@ REM === CONFIG BEGIN =====================================
 
 REM If you have MinGW32 or a standalone NASM installation,
 REM set the installation path here:
-SET NASM=C:\Tools\mingw32
+SET NASM=C:\NASM
 
 REM === CONFIG END =======================================
 TITLE ImpLib SDK (NASM Win32 example)
@@ -33,11 +33,15 @@ ECHO No linker found (neither Polink nor LD).
 GOTO EXIT
 :POLINKFOUND
 echo Linking the Win32 executable using Polink
-"%POLINK%" /ENTRY:start /SUBSYSTEM:WINDOWS /MERGE:.data=.text /LIBPATH:..\..\..\lib\Win32\stripped test.obj kernel32.lib user32.lib
+"%POLINK%" /ENTRY:start /SUBSYSTEM:WINDOWS /MERGE:.data=.text /LIBPATH:..\..\..\lib\Win32 test.obj kernel32.lib user32.lib
 GOTO EXIT
 :LDLINKFOUND
 echo Linking the Win32 executable using the GNU Linker (LD)
-"%LDLINK%" -m i386pe -subsystem windows -o test.exe -e _start -L..\..\..\lib\Win32\stripped test.obj -lkernel32 -luser32
+
+REM Optional file size optimization flags:
+REM   To remove symbol tables (debug directory): -s
+REM   To remove the .reloc section: --disable-reloc-section
+"%LDLINK%" -m i386pe -subsystem windows -o test.exe -e _start -L..\..\..\lib\Win32 test.obj -lkernel32 -luser32
 :EXIT
 pause
 ENDLOCAL
