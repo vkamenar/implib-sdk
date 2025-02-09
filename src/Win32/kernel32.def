@@ -56,6 +56,7 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, GetEnabledExtendedFeatures, _GetEnabledExtendedFeatures@8
 ; implib KERNEL32.DLL, GetExtendedContextLength, _GetExtendedContextLength@8
 ; implib KERNEL32.DLL, GetExtendedFeaturesMask, _GetExtendedFeaturesMask@4
+; implib KERNEL32.DLL, InitializeExtendedContext, _InitializeExtendedContext@12
 
 ; *** Function available in kernel32 v6.1 (from Windows 7 SP1 only) ***
 ; implib KERNEL32.DLL, GetProcessUserModeExceptionPolicy, _GetProcessUserModeExceptionPolicy@4
@@ -158,6 +159,7 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, GlobalWire16, _GlobalWire16@4
 ; implib KERNEL32.DLL, HeapSetFlags
 ; implib KERNEL32.DLL, HouseCleanLogicallyDeadHandles, _HouseCleanLogicallyDeadHandles@0
+; implib KERNEL32.DLL, InvalidateNLSCache, _InvalidateNLSCache@0
 
 ; *** Function available in kernel32 from v4.10 to v4.90 ***
 ; implib KERNEL32.DLL, GetCryptApiExponentValue
