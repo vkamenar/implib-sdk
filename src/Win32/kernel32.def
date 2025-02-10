@@ -122,44 +122,47 @@ include '..\implib.inc'
 
 ; *** Functions available in kernel32 from v4.0 to v4.90 ***
 ; implib KERNEL32.DLL, AllocLSCallback, _AllocLSCallback@0
-; implib KERNEL32.DLL, AllocMappedBuffer
+; implib KERNEL32.DLL, ord.38, AllocMappedBuffer
 ; implib KERNEL32.DLL, AllocSLCallback, _AllocSLCallback@8
 ; implib KERNEL32.DLL, CloseSystemHandle
 ; implib KERNEL32.DLL, ConvertToGlobalHandle, _ConvertToGlobalHandle@4
 ; implib KERNEL32.DLL, CreateKernelThread
-; implib KERNEL32.DLL, DisposeLZ32Handle, _DisposeLZ32Handle@4
-; implib KERNEL32.DLL, DosFileHandleToWin32Handle, _DosFileHandleToWin32Handle@4
+; implib KERNEL32.DLL, ord.22, _DisposeLZ32Handle@4
+; implib KERNEL32.DLL, ord.20, _DosFileHandleToWin32Handle@4
 ; implib KERNEL32.DLL, FreeLSCallback
-; implib KERNEL32.DLL, FreeLibrary16, _FreeLibrary16@4
-; implib KERNEL32.DLL, FreeMappedBuffer
+; implib KERNEL32.DLL, ord.36, _FreeLibrary16@4
+; implib KERNEL32.DLL, ord.39, FreeMappedBuffer
 ; implib KERNEL32.DLL, FreeSLCallback
-; implib KERNEL32.DLL, GDIReallyCares, _GDIReallyCares@4
+; implib KERNEL32.DLL, ord.23, _GDIReallyCares@4
 ; implib KERNEL32.DLL, GetDaylightFlag
 ; implib KERNEL32.DLL, GetLSCallbackTarget
 ; implib KERNEL32.DLL, GetLSCallbackTemplate
-; implib KERNEL32.DLL, GetPK16SysVar, _GetPK16SysVar@0
-; implib KERNEL32.DLL, GetProcAddress16, _GetProcAddress16@8
-; implib KERNEL32.DLL, GetProcessDword, _GetProcessDword@8
+; implib KERNEL32.DLL, ord.92, _GetPK16SysVar@0
+; implib KERNEL32.DLL, ord.37, _GetProcAddress16@8
+; implib KERNEL32.DLL, ord.18, _GetProcessDword@8
 ; implib KERNEL32.DLL, GetProcessFlags
 ; implib KERNEL32.DLL, GetProductName
 ; implib KERNEL32.DLL, GetSLCallbackTarget
 ; implib KERNEL32.DLL, GetSLCallbackTemplate
-; implib KERNEL32.DLL, GetThunkBuff, _GetThunkBuff@0
-; implib KERNEL32.DLL, GetThunkStuff, _GetThunkStuff@8
-; implib KERNEL32.DLL, GetWin16DOSEnv
-; implib KERNEL32.DLL, GetpWin16Lock, _GetpWin16Lock@4
-; implib KERNEL32.DLL, GlobalAlloc16, _GlobalAlloc16@8
-; implib KERNEL32.DLL, GlobalFix16, _GlobalFix16@4
-; implib KERNEL32.DLL, GlobalFree16, _GlobalFree16@4
-; implib KERNEL32.DLL, GlobalLock16, _GlobalLock16@4
-; implib KERNEL32.DLL, GlobalSize16, _GlobalSize16@4
-; implib KERNEL32.DLL, GlobalUnWire16, _GlobalUnWire16@4
-; implib KERNEL32.DLL, GlobalUnfix16, _GlobalUnfix16@4
-; implib KERNEL32.DLL, GlobalUnlock16, _GlobalUnlock16@4
-; implib KERNEL32.DLL, GlobalWire16, _GlobalWire16@4
+; implib KERNEL32.DLL, ord.52, _GetThunkBuff@0
+; implib KERNEL32.DLL, ord.53, _GetThunkStuff@8
+; implib KERNEL32.DLL, ord.34, _GetWin16DOSEnv@0
+; implib KERNEL32.DLL, ord.93, _GetpWin16Lock@4
+; implib KERNEL32.DLL, ord.24, _GlobalAlloc16@8
+; implib KERNEL32.DLL, ord.27, _GlobalFix16@4
+; implib KERNEL32.DLL, ord.31, _GlobalFree16@4
+; implib KERNEL32.DLL, ord.25, _GlobalLock16@4
+; implib KERNEL32.DLL, ord.32, _GlobalSize16@4
+; implib KERNEL32.DLL, ord.30, _GlobalUnWire16@4
+; implib KERNEL32.DLL, ord.28, _GlobalUnfix16@4
+; implib KERNEL32.DLL, ord.26, _GlobalUnlock16@4
+; implib KERNEL32.DLL, ord.29, _GlobalWire16@4
 ; implib KERNEL32.DLL, HeapSetFlags
-; implib KERNEL32.DLL, HouseCleanLogicallyDeadHandles, _HouseCleanLogicallyDeadHandles@0
+; implib KERNEL32.DLL, ord.33, _HouseCleanLogicallyDeadHandles@0
 ; implib KERNEL32.DLL, InvalidateNLSCache, _InvalidateNLSCache@0
+; implib KERNEL32.DLL, IsLSCallback
+; implib KERNEL32.DLL, IsSLCallback
+; implib KERNEL32.DLL, ord.71, IsThreadId
 
 ; *** Function available in kernel32 from v4.10 to v4.90 ***
 ; implib KERNEL32.DLL, GetCryptApiExponentValue
@@ -181,7 +184,7 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, FT_Exit52
 ; implib KERNEL32.DLL, FT_Exit56
 ; implib KERNEL32.DLL, FT_Prolog
-; implib KERNEL32.DLL, FT_PrologPrime
+; implib KERNEL32.DLL, ord.89, FT_PrologPrime
 ; implib KERNEL32.DLL, FT_Thunk
 
 ; *** Stub function available since kernel32 v4.0 ***
