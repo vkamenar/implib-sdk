@@ -3,7 +3,7 @@ SETLOCAL
 REM === CONFIG BEGIN =================================================
 
 REM If you have MASM (or MASM32) installed, set the installation path:
-SET MASM=C:\Tools\MASM
+SET MASM=C:\MASM32
 
 REM === CONFIG END ===================================================
 TITLE ImpLib SDK (MASM MSVCRT example)
@@ -23,7 +23,12 @@ IF EXIST "%MSLNK%.exe" GOTO LINKFOUND
 ECHO Linker not found.
 GOTO EXIT
 :LINKFOUND
-"%MSLNK%" /SUBSYSTEM:CONSOLE /MERGE:.rdata=.text /LIBPATH:..\..\..\lib\MSVCRT32\stripped -ignore:4078 test.obj
+
+REM Optional file size optimization flags:
+REM   To remove the debug directory (undocumented flag): /EMITPOGOPHASEINFO
+REM   To remove the .reloc section: /DYNAMICBASE:NO
+"%MSLNK%" /SAFESEH:NO /SUBSYSTEM:CONSOLE /LIBPATH:..\..\..\lib\MSVCRT32 test.obj
+
 :EXIT
 pause
 ENDLOCAL
