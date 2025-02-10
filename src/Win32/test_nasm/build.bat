@@ -33,7 +33,10 @@ ECHO No linker found (neither Polink nor LD).
 GOTO EXIT
 :POLINKFOUND
 echo Linking the Win32 executable using Polink
-"%POLINK%" /ENTRY:start /SUBSYSTEM:WINDOWS /MERGE:.data=.text /LIBPATH:..\..\..\lib\Win32 test.obj kernel32.lib user32.lib
+
+REM Optional file size optimization flags:
+REM   Merge '.data' section to '.text': /MERGE:.data=.text
+"%POLINK%" /ENTRY:start /SUBSYSTEM:WINDOWS /LIBPATH:..\..\..\lib\Win32 test.obj kernel32.lib user32.lib
 GOTO EXIT
 :LDLINKFOUND
 echo Linking the Win32 executable using the GNU Linker (LD)
@@ -41,7 +44,7 @@ echo Linking the Win32 executable using the GNU Linker (LD)
 REM Optional file size optimization flags:
 REM   To remove symbol tables (debug directory): -s
 REM   To remove the .reloc section: --disable-reloc-section
-"%LDLINK%" -m i386pe -subsystem windows -o test.exe -e _start -L..\..\..\lib\Win32 test.obj -lkernel32 -luser32
+"%LDLINK%" -m i386pe -subsystem windows -o test.exe -e _start -L..\..\..\lib\Win32\lld test.obj -lkernel32 -luser32
 :EXIT
 pause
 ENDLOCAL
