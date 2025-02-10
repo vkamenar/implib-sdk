@@ -255,7 +255,6 @@ if ~defined LINKER_MEMBER_2_REMOVE
 	print_ts
 	db '            0       ' ; owner id, group id, file mode (not used in Win)
 	pack_sz lnk_member2_size
-	; 2nd linker member
 lnk_member2:
 	dd num_syms ; number of object files
 	label obj_tbl2 dword
@@ -495,7 +494,7 @@ macro implib dllname,name,thunk,pubname{
 				db '/'
 				times 14-namelen db ' '
 			else
-				db `dllname # '/'
+				db `dllname,'/'
 				times 15-dllnamelen db ' '
 			end if
 		else
@@ -558,13 +557,10 @@ dllname#name#.lnk_memberN:
 		dd dllname#name#.data3-dllname#name#.lnk_memberN,0,0,0
 		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_LNK_COMDAT or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		dllname#name#.thunk:
-			; jmp [pubname]
-			dw 25FFh
-		dllname#name#.rel2 dd 0
-			dd 6+KEEP_ORIGINAL_THUNK*2+USE_COMPID ; --> .idata$6
+			dw 25FFh ; +00000000 jmp [pubname]
+		dllname#name#.rel2 dd 0,6+KEEP_ORIGINAL_THUNK*2+USE_COMPID ; --> .idata$6
 			dw IMAGE_REL_I386_DIR32NB
-		dllname#name#.rel1 dd 2
-			dd 5+USE_COMPID ; --> public name
+		dllname#name#.rel1 dd 2,5+USE_COMPID ; --> public name
 			db IMAGE_REL_I386_DIR32
 		dllname#name#.data3 db 0,0,`name,0
 			if $-dllname#name#.data3 and 1
@@ -572,10 +568,8 @@ dllname#name#.lnk_memberN:
 			end if
 	else
 		dllname#name#.thunk:
-			; jmp [pubname]
-			dw 25FFh,0,0
-		dllname#name#.rel1 dd 2
-			dd 5+USE_COMPID ; --> public name
+			dw 25FFh,0,0 ; jmp [pubname]
+		dllname#name#.rel1 dd 2,5+USE_COMPID ; --> public name
 			dw IMAGE_REL_I386_DIR32
 		dllname#name#.rel2 dd 80000000h+ordinal_value
 	end if
@@ -660,7 +654,7 @@ macro pbimplib dllname,cconv,argcount,name,pb_name,pubname{
 	if ~defined dllname#.alreadydefined
 		nxt_even_addr
 		if dllname#.len < 16
-			db `dllname # '/'
+			db `dllname,'/'
 			if dllname#.len<15
 				times 15-dllname#.len db ' '
 			end if
@@ -737,7 +731,7 @@ macro pbimplib dllname,cconv,argcount,name,pb_name,pubname{
 	dllname#.descr_strtbl_end:
 		nxt_even_addr
 		if dllname#.len < 16
-			db `dllname # '/'
+			db `dllname,'/'
 			if dllname#.len<15
 				times 15-dllname#.len db ' '
 			end if
@@ -775,7 +769,7 @@ macro pbimplib dllname,cconv,argcount,name,pb_name,pubname{
 	define dllname#.alreadydefined 1
 	nxt_even_addr
 	if dllname#.len < 16
-		db `dllname # '/'
+		db `dllname,'/'
 		if dllname#.len<15
 			times 15-dllname#.len db ' '
 		end if
@@ -799,7 +793,7 @@ dllname#name#.lnk_memberN:
 					load chr from %+3
 					chr=chr-'0'
 					if chr>9
-						display '-WNG: Bad ordinal value: ' # `name,13,10
+						display '-WNG: Bad ordinal value: ',`name,13,10
 					else
 						ordinal_value=ordinal_value*10+chr
 					end if
@@ -1020,41 +1014,52 @@ dllname#name#.strtbl_end:
 }
 
 macro vbimplib module,dllname,cconv,argcount,name,vb_name,pubname{
-	virtual at 0
-	db `dllname
-	dllname#.len = $
-	namelen = $
-	if dllname#.len > 3
-		load D from $-4
-		if D = '.'
-			namelen = $-4
-		end if
+	if RENAME_AR_MEMBERS
+		RENAME_AR_MEMBERS equ 0
+		display '-WNG: RENAME_AR_MEMBERS is ignored, it is not compatible with VB.',13,10
 	end if
-	end virtual
-	syms=syms+1
 	if argcount>31 | argcount<0
-		display '-ERR: argument [argcount] should be in the range [0..31]',13,10
+		argcount=0
+		display '-WNG: [argcount] should be in the range [0..31]. Defaulting to 0.',13,10
 	end if
 	if cconv>PBCALL | cconv<STDCALL
-		display '-WNG: argument [cconv] has an invalid value. Defaulting to STDCALL.',13,10
+		display '-WNG: [cconv] has an invalid value. Defaulting to STDCALL.',13,10
+	end if
+	virtual at 0
+		db `dllname
+		dllnamelen=$
+		namelen=$
+		if $>3
+			load D from $-4
+			if D='.'
+				namelen=$-4
+			end if
+		end if
+	end virtual
+	syms=syms+1
+	longname=1
+	if dllnamelen<16
+		longname=0
 	end if
 	if ~defined dllname#.alreadydefined
+
+		; __IMPORT_DESCRIPTOR_<DLL>
 		nxt_even_addr
-		if dllname#.len < 16
-			db `dllname # '/'
-			if dllname#.len<15
-				times 15-dllname#.len db ' '
-			end if
+		dllname_spot=$
+		if ~longname
+			times dllnamelen+1 db '/'
+			times 15-dllnamelen db ' '
 		else
-				long_dll_name=1
-				db '//              '     ; name
-				print_ts
-				db '            0       ' ; owner id, group id, file mode (not used in Win)
-				pack_sz lnk_longfname_size
-				lnk_longfname db `dllname,0
-				lnk_longfname_size=$-lnk_longfname
-				nxt_even_addr
-				db '/0              '
+
+			; Long names table
+			db '//                                              '
+			pack_sz longnames_size
+		longnames_sz:
+			longnames_arr=$
+			times longnames_len db 0
+			longnames_size=$-longnames_sz
+			nxt_even_addr
+			add2long dllnamelen,'h'
 		end if
 		print_ts
 		db '            0       ' ; owner id, group id, file mode (not used in Win)
@@ -1063,108 +1068,104 @@ macro vbimplib module,dllname,cconv,argcount,name,vb_name,pubname{
 		dw IMAGE_FILE_MACHINE_I386,2
 		dd %t,dllname#.descr_sym_tbl-dllname#.descr
 		coffhdr
-		dd dllname#.descr_data1-dllname#.descr,dllname#.descr_rel-dllname#.descr
+		dd dllname#.null_import_descr_data-dllname#.descr,dllname#.descr_rel-dllname#.descr
 		dd 0,2+KEEP_ORIGINAL_THUNK,IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		db '.idata$6'
-		dd 0,0,(dllname#.descr_data1-dllname#.descr_data2+2) and -2,dllname#.descr_data2-dllname#.descr,0
+		dd 0,0,(dllname#.null_import_descr_data-dllname#.descr_dllname+2) and -2,dllname#.descr_dllname-dllname#.descr,0
 		dd 0,0,IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
-	dllname#.descr_data2 db `dllname
-	dllname#.descr_data1 dq 0,0
+	dllname#.descr_dllname db `dllname
+		do_cpy dllname#.descr_dllname,dllname_spot,dllnamelen
+	dllname#.null_import_descr_data dq 0,0
 		if KEEP_ORIGINAL_THUNK
 		dllname#.descr_rel:
-			dd 0,3+USE_COMPID
+			dd 0,3+USE_COMPID ; Import lookup table RVA (characteristics) --> .idata$4
 			dw IMAGE_REL_I386_DIR32NB
 		else
 			dd 0
 		dllname#.descr_rel:
 		end if
-		dd 12,2+USE_COMPID
+		dd 12,2+USE_COMPID ; DLL name RVA --> .idata$6
 		dw IMAGE_REL_I386_DIR32NB
-		dd 16,3+USE_COMPID+KEEP_ORIGINAL_THUNK
+		dd 16,3+USE_COMPID+KEEP_ORIGINAL_THUNK ; Import address table RVA (thunk table) --> .idata$5
 		dw IMAGE_REL_I386_DIR32NB
 	dllname#.descr_sym_tbl:
 		addcompid
 		dd 0,29,0,1
-		db IMAGE_SYM_CLASS_EXTERNAL
-		db 0
+		dw IMAGE_SYM_CLASS_EXTERNAL
 		db '.idata$2'
 		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_MEM_READ or IMAGE_MEM_WRITE,1
-		db IMAGE_SYM_CLASS_SECTION,0
+		dw IMAGE_SYM_CLASS_SECTION
 		db '.idata$6'
 		dd 0,2
-		db IMAGE_SYM_CLASS_STATIC,0
+		dw IMAGE_SYM_CLASS_STATIC
 		if KEEP_ORIGINAL_THUNK
 			db '.idata$4'
 			dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_MEM_READ or IMAGE_MEM_WRITE,0
-			db IMAGE_SYM_CLASS_SECTION,0
+			dw IMAGE_SYM_CLASS_SECTION
 		end if
 		db '.idata$5'
 		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_MEM_READ or IMAGE_MEM_WRITE,0
-		db IMAGE_SYM_CLASS_SECTION,0
+		dw IMAGE_SYM_CLASS_SECTION
 		dd 0,4,0,0
-		db IMAGE_SYM_CLASS_EXTERNAL,0
+		dw IMAGE_SYM_CLASS_EXTERNAL
 		dd 0,dllname#.descr_strtbl_1-dllname#.descr_strtbl,0,0
-		db IMAGE_SYM_CLASS_EXTERNAL,0
+		dw IMAGE_SYM_CLASS_EXTERNAL
 	dllname#.descr_strtbl dd dllname#.descr_strtbl_end-$
 		db '__NULL_IMPORT_DESCRIPTOR',0
-	dllname#.descr_strtbl2 db '__head_'
-		times namelen db 0
-		do_cpy dllname#.descr_data2,dllname#.descr_strtbl2+7,namelen
-		db 0
+	dllname#.descr_strtbl2 db '__IMPORT_DESCRIPTOR_'
+		times namelen+1 db 0
+		do_cpy dllname#.descr_dllname,dllname#.descr_strtbl2+20,namelen
 		add2dir dllname#.descr_strtbl2,$-dllname#.descr_strtbl2
 		dllname#.descr_strtbl_1 db 07Fh
 		times namelen db 0
-		do_cpy dllname#.descr_data2, dllname#.descr_strtbl_1+1, namelen
+		do_cpy dllname#.descr_dllname,dllname#.descr_strtbl_1+1,namelen
 		db '_NULL_THUNK_DATA',0
 	dllname#.descr_strtbl_end:
+
+		; [7Fh]<DLL>_NULL_THUNK_DATA
 		nxt_even_addr
-		if dllname#.len < 16
-			db `dllname # '/'
-			if dllname#.len<15
-				times 15-dllname#.len db ' '
-			end if
+		if ~longname
+			db `dllname,'/'
+			times 15-dllnamelen db ' '
 		else
-			db '/0              ' ; long DLL name
+			add2long
 		end if
 		print_ts
 		db '            0       ' ; owner id, group id, file mode (not used in Win)
 		pack_sz (dllname#.descr_strtbl2_end-dllname#.descr2)
 	dllname#.descr2:
 		dw IMAGE_FILE_MACHINE_I386,1+KEEP_ORIGINAL_THUNK
-		dd %t
-		dd dllname#.descr_sym_tbl2-dllname#.descr2,1+USE_COMPID
+		dd %t,dllname#.descr_sym_tbl2-dllname#.descr2,1+USE_COMPID
 		dw 0,IMAGE_FILE_32BIT_MACHINE
 		db '.idata$5'
-		dd 0,0,4,48,0,0,0
-		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
+		dd 0,0,4,48,0,0,0,IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		if KEEP_ORIGINAL_THUNK
 			db '.idata$4'
-			dd 0,0,4,88,0,0,0
-			dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
+			dd 0,0,4,88,0,0,0,IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		end if
 	dllname#.descr_sym_tbl2:
 		addcompid
 		dd 0,4,0,1
-		db IMAGE_SYM_CLASS_EXTERNAL,0
+		dw IMAGE_SYM_CLASS_EXTERNAL
 		dd dllname#.descr_strtbl2_end-$
 		dllname#.descr_strtbl3 db 07Fh
 		times namelen db 0
-		do_cpy dllname#.descr_data2, dllname#.descr_strtbl3+1, namelen
+		do_cpy dllname#.descr_dllname,dllname#.descr_strtbl3+1,namelen
 		db '_NULL_THUNK_DATA',0
 	dllname#.descr_strtbl2_end:
 		add2dir dllname#.descr_strtbl3,$-dllname#.descr_strtbl3
+		define dllname#.alreadydefined 1
 	end if
-	define dllname#.alreadydefined 1
+
 	nxt_even_addr
-	if dllname#.len < 16
-		db `dllname # '/'
-		if dllname#.len<15
-			times 15-dllname#.len db ' '
-		end if
+	if ~longname
+		db `dllname,'/'
+		times 15-dllnamelen db ' '
 	else
-		db '/0              ' ; long DLL name
+		add2long
 	end if
 	print_ts
+
 	db '            0       ' ; owner id, group id, file mode (not used in Win)
 	pack_sz (dllname#name#.strtbl_end-dllname#name#.lnk_memberN)
 dllname#name#.lnk_memberN:
@@ -1181,7 +1182,7 @@ dllname#name#.lnk_memberN:
 					load chr from %+3
 					chr=chr-'0'
 					if chr>9
-						display '-WNG: Bad ordinal value: ' # `name,13,10
+						display '-WNG: Bad ordinal value: ',`name,13,10
 					else
 						ordinal_value=ordinal_value*10+chr
 					end if
@@ -1195,148 +1196,90 @@ dllname#name#.lnk_memberN:
 	dw 0,IMAGE_FILE_32BIT_MACHINE
 	db '.text',0,0,0
 	dq 0
-	if cconv=CDECL
-		if argcount>0
-			dd 12+argcount*4
-		else
-			dd 6
-		end if
-	else
-		if cconv=PBCALL
-			if argcount>0
-				dd 7
-			else
-				dd 6
-			end if
-		else
-			dd 6
-		end if
+	xx=6
+	if cconv=CDECL & argcount>0
+		xx=12+argcount*4
 	end if
-	dd dllname#name#.thunk-dllname#name#.lnk_memberN,dllname#name#.rel1-dllname#name#.lnk_memberN
-	dd 0,1,IMAGE_CNT_CODE or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_EXECUTE
+	if cconv=PBCALL & argcount>0
+		xx=7
+	end if
+	dd xx,dllname#name#.thunk-dllname#name#.lnk_memberN,dllname#name#.rel1-dllname#name#.lnk_memberN
+	dd 0,1,IMAGE_CNT_CODE or IMAGE_LNK_COMDAT or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_EXECUTE
 	db '.idata$5'
-	dd 0,0,4,dllname#name#.rel2-dllname#name#.lnk_memberN
+	dd 0,0,4,28
 	if byordinal=0
 		dd dllname#name#.rel2-dllname#name#.lnk_memberN,0,1
 	else
 		dd 0,0,0
 	end if
-	dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
+	dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_LNK_COMDAT or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 	if KEEP_ORIGINAL_THUNK
 		db '.idata$4'
-		dd 0,0,4,dllname#name#.rel2-dllname#name#.lnk_memberN
+		dd 0,0,4,28
 		if byordinal=0
 			dd dllname#name#.rel2-dllname#name#.lnk_memberN,0,1
 		else
 			dd 0,0,0
 		end if
-		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
+		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_LNK_COMDAT or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
+	end if
+	xx=2
+	if cconv=CDECL
+		xx=2+argcount*4
+	else if cconv=PBCALL & argcount>0
+		xx=5
 	end if
 	if byordinal=0
 		db '.idata$6'
-		dd 0,0,dllname#name#.data3_end-dllname#name#.data3
+		dd 0,0,dllname#name#.symbol_table-dllname#name#.data3
 		dd dllname#name#.data3-dllname#name#.lnk_memberN,0,0,0
-		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
+		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_LNK_COMDAT or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		dllname#name#.thunk:
 			if cconv=CDECL
 				if argcount>0
-					; push [esp+argcount*4]
-					times argcount db 0FFh,74h,24h,argcount*4
-					; call [pubname]
-					dw 15FFh
-					dd 0
+					times argcount db 0FFh,74h,24h,argcount*4 ; push [esp+argcount*4]
+					dw 15FFh,0,0           ; call [pubname]
 					db 83h,0C4h,argcount*4 ; add esp,argcount*4
-					db 0C2h,argcount*4,0   ; retn argcount*4
+					db 0C2h,argcount*4     ; +00 retn argcount*4
 				else
-					; jmp [pubname]
-					dw 25FFh
+					dw 25FFh               ; +00000000 jmp [pubname]
+
 				end if
 			else
-				if cconv=PBCALL
-					if argcount>0
-						db 5Ah ; pop edx
-						db 58h ; pop eax
-						db 52h ; push edx
-					end if
+				if cconv=PBCALL & argcount>0
+					db 5Ah,58h,52h         ; pop edx / pop eax / push edx
 				end if
-				; jmp [pubname]
-				dw 25FFh
+				dw 25FFh                       ; +00000000 jmp [pubname]
 			end if
 		dllname#name#.rel2 dd 0
-			if KEEP_ORIGINAL_THUNK
-				dd 8+USE_COMPID
-			else
-				dd 6+USE_COMPID
-			end if
+			dd 6+KEEP_ORIGINAL_THUNK*2+USE_COMPID ; --> .idata$6
 			dw IMAGE_REL_I386_DIR32NB
-		dllname#name#.rel1:
-			if cconv=CDECL
-				dd 2+argcount*4
-			else
-				if cconv=PBCALL
-					if argcount>0
-						dd 5
-					else
-						dd 2
-					end if
-				else
-					dd 2
-				end if
-			end if
-			dd 5+USE_COMPID
-			dw IMAGE_REL_I386_DIR32
+		dllname#name#.rel1 dd xx
+			dd 5+USE_COMPID ; --> public name
+			db IMAGE_REL_I386_DIR32
 		dllname#name#.data3 db 0,0,`name,0
-			virtual
-				align 2
-				skip_bytes=$-$$
-			end virtual
-			if skip_bytes
+			if $-dllname#name#.data3 and 1
 				db 0
 			end if
-		dllname#name#.data3_end:
 	else
 		dllname#name#.thunk:
 			if cconv=CDECL
 				if argcount>0
-					; push [esp+argcount*4]
-					times argcount db 0FFh,74h,24h,argcount*4
-					; call [pubname]
-					dw 15FFh
-					dd 0
+					times argcount db 0FFh,74h,24h,argcount*4 ; push [esp+argcount*4]
+					dw 15FFh,0,0           ; call [pubname]
 					db 83h,0C4h,argcount*4 ; add esp,argcount*4
 					db 0C2h,argcount*4,0   ; retn argcount*4
 				else
-					; jmp [pubname]
-					dw 25FFh
-					dd 0
+					dw 25FFh,0,0           ; jmp [pubname]
 				end if
 			else
-				if cconv=PBCALL
-					if argcount>0
-						db 5Ah ; pop edx
-						db 58h ; pop eax
-						db 52h ; push edx
-					end if
+				if cconv=PBCALL &  argcount>0
+					db 5Ah,58h,52h         ; pop edx / pop eax / push edx
 				end if
-				; jmp [pubname]
-				dw 25FFh
-				dd 0
+				dw 25FFh,0,0                   ; jmp [pubname]
 			end if
-		dllname#name#.rel1:
-			if cconv=CDECL
-				dd 2+argcount*4
-			else
-				if cconv=PBCALL
-					if argcount>0
-						dd 5
-					else
-						dd 2
-					end if
-				else
-					dd 2
-				end if
-			end if
-			dd 5+USE_COMPID
+		dllname#name#.rel1 dd xx
+			dd 5+USE_COMPID ; --> public name
 			dw IMAGE_REL_I386_DIR32
 		dllname#name#.rel2 dd 80000000h+ordinal_value
 	end if
@@ -1344,20 +1287,18 @@ dllname#name#.symbol_table:
 	addcompid
 	db '.text',0,0,0
 	dd 0,1
-	db IMAGE_SYM_CLASS_STATIC
-	db 1
+	db IMAGE_SYM_CLASS_STATIC,1
 	dd 6,1,0
 	dw 0
-	dd 0
+	dd IMAGE_COMDAT_SELECT_NODUPLICATES
 	dd 0,dllname#name#.thunkname-dllname#name#.strtbl,0
-	dw 1,0,IMAGE_SYM_CLASS_EXTERNAL
+	dw 1,IMAGE_SYM_DTYPE_FUNCTION,IMAGE_SYM_CLASS_EXTERNAL
 	db '.idata$5'
 	dd 0,2
-	db IMAGE_SYM_CLASS_STATIC
-	db 1
+	db IMAGE_SYM_CLASS_STATIC,1
 	dd 4,1,0
 	dw 0
-	dd 0
+	dd IMAGE_COMDAT_SELECT_NODUPLICATES
 	dd 0,4,0,2
 	dw IMAGE_SYM_CLASS_EXTERNAL
 	if KEEP_ORIGINAL_THUNK
@@ -1366,18 +1307,18 @@ dllname#name#.symbol_table:
 		db IMAGE_SYM_CLASS_STATIC,1
 		dd 4,1,0
 		dw 2
-		dd 0
+		dd IMAGE_COMDAT_SELECT_ASSOCIATIVE
 	end if
 	if byordinal=0
 		db '.idata$6'
 		dd 0,3+KEEP_ORIGINAL_THUNK
 		db IMAGE_SYM_CLASS_STATIC,1
-		dd dllname#name#.data3_end-dllname#name#.data3,0,0
+		dd dllname#name#.symbol_table-dllname#name#.data3,0,0
 		dw 2
-		dd 0
+		dd IMAGE_COMDAT_SELECT_ASSOCIATIVE
 	end if
 	dd 0,dllname#name#.strtbl_2-dllname#name#.strtbl,0,0
-	db IMAGE_SYM_CLASS_EXTERNAL,0
+	dw IMAGE_SYM_CLASS_EXTERNAL
 dllname#name#.strtbl dd dllname#name#.strtbl_end-$
 dllname#name#.publicname:
 if pubname eqtype 0
@@ -1392,13 +1333,11 @@ else
 	db '?',`name
 end if
 	db '@',`module,'@@AAGXXZ',0
-dllname#name#.thunkname_end:
-dllname#name#.strtbl_2 db '__head_'
-	times namelen db 0
-	do_cpy dllname#.descr_data2, dllname#name#.strtbl_2+7, namelen
-	db 0
+dllname#name#.strtbl_2 db '__IMPORT_DESCRIPTOR_'
+	times namelen+1 db 0
+	do_cpy dllname#.descr_dllname,dllname#name#.strtbl_2+20,namelen
 dllname#name#.strtbl_end:
-	add2dir dllname#name#.thunkname,dllname#name#.thunkname_end-dllname#name#.thunkname
+	add2dir dllname#name#.thunkname,dllname#name#.strtbl_2-dllname#name#.thunkname
 	add2dir dllname#name#.publicname,dllname#name#.thunkname-dllname#name#.publicname
 }
 
