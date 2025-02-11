@@ -1,13 +1,13 @@
-; IMPLIB64.INC v2.0.0
+; IMPLIB64.INC v2.0.1
 ; ===================
 ; (c) 2006-2025 Vladimir Kamenar
 
 ; FASM macros for building custom import libraries for Windows DLL (64-bit).
 ; These macros can be combined in a single library:
 ; implib   - a general purpose symbol definition macro.
-; pbimplib - a modified version, intended for PureBasic Userlib.
-; MACRO implib   dllname*, name*, thunk, pubname
-; MACRO pbimplib dllname*, cconv*, argcount*, name*, pb_name, pubname
+; pbimplib - mod intended for PureBasic Userlib.
+; MACRO implib   dllname, name, thunk, pubname
+; MACRO pbimplib dllname, cconv, argcount, name, pb_name, pubname
 ; Parameters:
 ;    dllname  : DLL file name.
 ;    cconv    : Calling convention. Possible values: STDCALL, CDECL, PBCALL
@@ -27,28 +27,23 @@
 ;    implib   kernel32.dll, ExitProcess, ExitProcess, __imp_ExitProcess
 ;    pbimplib openal64.dll, CDECL, 2, ord.1, alGenBuffers
 
-; === CONFIG BEGIN =====================================================
+; === CONFIG BEGIN ==================================================
 
-; Set to 0 to disable original thunk (lookup table). Doing so reduces the IAT size
-; in the final executable by 4 x n bytes, n being the number of imported symbols.
-; However, you won't be able to bind (using BIND.EXE from PSDK) an IAT without
-; original thunk! So, stripping the lookups is recommended only when importing
-; from standart API DLLs, like KERNEL32, USER32 and so on.
+; Set to 0 to disable original thunk (lookup table) to reduce the IAT size in
+; the final executable by 8 x n bytes, n being the number of imported symbols.
+; You won't be able to bind (using BIND.EXE from PSDK) an IAT without original
+; thunk! So, removing the lookups is recommended only when importing from
+; standart API DLLs, like KERNEL32, USER32 and so on.
 KEEP_ORIGINAL_THUNK equ 1
-
-; Optional header is never required in object files. Very old MS LINK versions may
-; use it for some reason. The following option is included for compatibility.
-USE_OPTIONAL_HEADER equ 0
 
 ; An additional @comp.id symbol per object file is appended by MS LINK,
 ; possibly to watermark the import library.
 USE_COMPID equ 0
 
-; Disable the 2nd linker member for compatibility with the latest GNU AR
-; tool. For some reason it prefers using the deprecated 1st linker member.
-; LINKER_MEMBER_2_REMOVE equ 1
+; Disable the 2nd linker member.
+LINKER_MEMBER_2_REMOVE equ 1
 
-; === CONFIG END =======================================================
+; === CONFIG END ====================================================
 
 STDCALL=0
 CDECL=1
@@ -267,26 +262,9 @@ lnk_member2:
 	lnk_member2_size=$-lnk_member2
 end if
 
-macro coff_header {
-	dd 6+KEEP_ORIGINAL_THUNK+USE_COMPID ; number of symbols
-	; size of optional header
-	if USE_OPTIONAL_HEADER
-		dw 0E0h
-	else
-		dw 0
-	end if
-	dw IMAGE_FILE_LINE_NUMS_STRIPPED ; characteristics
-	if USE_OPTIONAL_HEADER
-		dw 10Bh
-		db 0,0,0,0,0,0,0,0,0
-		dd 1000h,200h,4
-		dq 0,0,0
-		dd 3,100000h,1000h,100000h,1000h,0,1
-		dq 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-	end if
-
-	; *** Section table
-	; Section #1
+macro coff_header{
+	dd 6+KEEP_ORIGINAL_THUNK+USE_COMPID
+	dw 0,IMAGE_FILE_LINE_NUMS_STRIPPED
 	db '.idata$2' ; name
 	dd 0,0,20     ; virtual size, virtual address, size of raw data
 }
