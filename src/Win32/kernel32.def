@@ -79,6 +79,9 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, BaseCheckRunApp, _BaseCheckRunApp@40
 ; implib KERNEL32.DLL, BasepCheckBadapp, _BasepCheckBadapp@36
 
+; *** Function available in kernel32 from v5.2 to v6.1 ***
+; implib KERNEL32.DLL, IsTimeZoneRedirectionEnabled, _IsTimeZoneRedirectionEnabled@0
+
 ; *** Function available in kernel32 from v5.1 to v6.1 ***
 ; implib KERNEL32.DLL, SetClientTimeZoneInformation, _SetClientTimeZoneInformation@4
 
@@ -163,9 +166,13 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, IsLSCallback
 ; implib KERNEL32.DLL, IsSLCallback
 ; implib KERNEL32.DLL, ord.71, IsThreadId
+; implib KERNEL32.DLL, K32Thk1632Epilog, _K32Thk1632Epilog@0
+; implib KERNEL32.DLL, K32Thk1632Prolog, _K32Thk1632Prolog@0
 
 ; *** Function available in kernel32 from v4.10 to v4.90 ***
 ; implib KERNEL32.DLL, GetCryptApiExponentValue
+; implib KERNEL32.DLL, K32_NtCreateFile
+; implib KERNEL32.DLL, K32_RtlNtStatusToDosError, _K32_RtlNtStatusToDosError@4
 
 ; *** These functions in kernel32 from v4.0 to v4.90 manage the stack frame for the thunk code ***
 ; implib KERNEL32.DLL, FT_Exit0
