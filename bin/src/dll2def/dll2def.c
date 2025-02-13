@@ -2,6 +2,23 @@
 	DLL2DEF source code
 	Copyright (c) 2006-2025, Vladimir Kamenar.
 	All rights reserved.
+
+	This tool is a command-line utility to extract the dynamic-link library symbols
+	in plain text format. DLL2DEF supports both 32 and 64-bit DLL.
+
+	The DLL2DEF tool expects a DLL name and the DEF file name, for example:
+		dll2def \windows\system32\kernel32.dll kernel32.def
+
+	The DEF file name is optional. If not specified, a DEF-file with the same name
+	as the DLL will be generated.
+
+	Optional switches:
+		/COMPACT - don't include comments with misc information
+		/PB      - generate a DEF file for PureBasic
+		/VB      - generate a DEF file for Visual Basic 6
+
+	Please, check the user guide for more information:
+		https://implib.sourceforge.io/EN.HTM
 */
 
 #define WINDOWS_IGNORE_PACKING_MISMATCH /* workaroud for C2118 in W10 SDK */
