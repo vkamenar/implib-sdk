@@ -60,7 +60,7 @@
     </ResourceCompile>
     <Link>
       <AdditionalOptions>/EMITPOGOPHASEINFO /DYNAMICBASE:NO -ignore:4078 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>./dll2def.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <SubSystem>Console</SubSystem>
@@ -70,8 +70,6 @@
       <TargetMachine>MachineX86</TargetMachine>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
-      <SectionAlignment>
-      </SectionAlignment>
     </Link>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
