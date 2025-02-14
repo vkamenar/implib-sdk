@@ -70,7 +70,6 @@ HANDLE hFind, hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 void* pMem;
 char *cur, *start, *dst, *bk;
 unsigned int stage, tmp, quote;
-
 	hFind = FindFirstFile("LNK.EXE", &fdata);
 	if(hFind != INVALID_HANDLE_VALUE)
 		FindClose(hFind);
@@ -95,8 +94,8 @@ unsigned int stage, tmp, quote;
 		cur = buf;
 		if(*cur == '"')
 			cur++;
-		*(long*)start = 'KNL\\';
-		*(long*)(start + 4) = 'EXE.';
+		*(unsigned int*)start = 'KNL\\';
+		*(unsigned int*)(start + 4) = 'EXE.';
 		*(start + 8) = 0;
 		if(!CopyFile(cur, "LNK.EXE", 0)){
 			WriteFile(hOut, err2, sizeof(err2) - 1, &stage, 0); // LNK.EXE not found
@@ -105,7 +104,7 @@ unsigned int stage, tmp, quote;
 		copy_LNK++;
 	}
 	start = cur = GetCommandLine();
-	pMem = HeapAlloc(GetProcessHeap(), 0, strlen(cur) + 24);
+	pMem = HeapAlloc(GetProcessHeap(), 0, strlen(cur) + 16);
 	if(!pMem){
 		WriteFile(hOut, err3, sizeof(err3) - 1, &stage, 0); // Not enough heap memory
 		return -1;
@@ -119,27 +118,31 @@ unsigned int stage, tmp, quote;
 		if(stage){
 			if(*cur == '"')
 				quote ^= 1;
-			else if(!quote && *cur == ' '){
-				cmemcpy(dst, start, (tmp = ++cur - start));
-				dst += tmp;
-				start = cur;
-			}else if((*((unsigned int*)cur) | 0x20202020) == 'jbo.'){
-				cmemcpy(buf, start, (tmp = cur + 1 - start));
-				*((unsigned int*)(buf + tmp)) = 'bil';
-				bk = buf;
-				while(*bk <= '"')
-					bk++;
-				cur += 4;
-				if((hFind = FindFirstFile(bk, &fdata)) != INVALID_HANDLE_VALUE){
-					FindClose(hFind);
-					tmp += 3;
-					start = buf;
-				}else
-					tmp = cur - start;
-				cmemcpy(dst, start, tmp);
-				dst += tmp;
-				start = cur;
-				continue;
+			else{
+				if(!quote && *cur == ' '){
+					cmemcpy(dst, start, (tmp = ++cur - start));
+					dst += tmp;
+					start = cur;
+					continue;
+				}
+				if((*((unsigned int*)cur) | 0x20202020) == 'jbo.'){
+					cmemcpy(buf, start, (tmp = cur + 1 - start));
+					*((unsigned int*)(buf + tmp)) = 'bil';
+					bk = buf;
+					while(*bk <= '"')
+						bk++;
+					cur += 4;
+					if((hFind = FindFirstFile(bk, &fdata)) != INVALID_HANDLE_VALUE){
+						FindClose(hFind);
+						tmp += 3;
+						start = buf;
+					}else
+						tmp = cur - start;
+					cmemcpy(dst, start, tmp);
+					dst += tmp;
+					start = cur;
+					continue;
+				}
 			}
 		}else if((*((unsigned int*)cur) | 0x20202020) == 'knil'){
 			cur += 4;
@@ -152,7 +155,11 @@ unsigned int stage, tmp, quote;
 		}
 		cur++;
 	}
-	cmemcpy(dst, start, cur + 1 - start);
+	cmemcpy(dst, start, (tmp = cur - start));
+	dst += tmp;
+	*((unsigned int*)dst) = 'PO/ ';
+	*((unsigned int*)(dst + 4)) = 'ON:T';
+	*((unsigned int*)(dst + 8)) = 'FER';
 	stage = 0;
 
 	// Run the real linker
