@@ -638,8 +638,9 @@ dllname#name#.strtbl_end:
 }
 
 macro pbimplib dllname,cconv,argcount,name,pb_name,pubname{
-	if argcount>31 | argcount<0
-		argcount=0
+	argc=argcount
+	if argc>31 | argc<0
+		argc=0
 		display '-WNG: [argcount] should be in the range [0..31]. Defaulting to 0.',13,10
 	end if
 	if cconv>PBCALL | cconv<STDCALL
@@ -865,10 +866,10 @@ dllname#name#.lnk_memberN:
 	dw 0,IMAGE_FILE_32BIT_MACHINE
 	db '.text',0,0,0
 	xx=6
-	if cconv=CDECL & argcount>0
-		xx=12+argcount*4
+	if cconv=CDECL & argc>0
+		xx=12+argc*4
 	end if
-	if cconv=PBCALL & argcount>0
+	if cconv=PBCALL & argc>0
 		xx=7
 	end if
 	dd 0,0,xx,dllname#name#.thunk-dllname#name#.lnk_memberN,dllname#name#.rel1-dllname#name#.lnk_memberN
@@ -893,8 +894,8 @@ dllname#name#.lnk_memberN:
 	end if
 	xx=2
 	if cconv=CDECL
-		xx=2+argcount*4
-	else if cconv=PBCALL & argcount>0
+		xx=2+argc*4
+	else if cconv=PBCALL & argc>0
 		xx=5
 	end if
 	if byordinal=0
@@ -904,16 +905,16 @@ dllname#name#.lnk_memberN:
 		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_LNK_COMDAT or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		dllname#name#.thunk:
 			if cconv=CDECL
-				if argcount>0
-					times argcount db 0FFh,74h,24h,argcount*4 ; push [esp+argcount*4]
-					dw 15FFh,0,0           ; call [pubname]
-					db 83h,0C4h,argcount*4 ; add esp,argcount*4
-					db 0C2h,argcount*4     ; +00 retn argcount*4
+				if argc>0
+					times argc db 0FFh,74h,24h,argc*4 ; push [esp+argc*4]
+					dw 15FFh,0,0       ; call [pubname]
+					db 83h,0C4h,argc*4 ; add esp,argc*4
+					db 0C2h,argc*4     ; +00 retn argc*4
 				else
-					dw 25FFh               ; +00000000 jmp [pubname]
+					dw 25FFh           ; +00000000 jmp [pubname]
 				end if
 			else
-				if cconv=PBCALL & argcount>0
+				if cconv=PBCALL & argc>0
 					db 5Ah,58h,52h ; pop edx / pop eax / push edx
 				end if
 				dw 25FFh ; +00000000 jmp [pubname]
@@ -927,16 +928,16 @@ dllname#name#.lnk_memberN:
 	else
 		dllname#name#.thunk:
 			if cconv=CDECL
-				if argcount>0
-					times argcount db 0FFh,74h,24h,argcount*4 ; push [esp+argcount*4]
-					dw 15FFh,0,0           ; call [pubname]
-					db 83h,0C4h,argcount*4 ; add esp,argcount*4
-					db 0C2h,argcount*4,0   ; retn argcount*4
+				if argc>0
+					times argc db 0FFh,74h,24h,argc*4 ; push [esp+argc*4]
+					dw 15FFh,0,0       ; call [pubname]
+					db 83h,0C4h,argc*4 ; add esp,argc*4
+					db 0C2h,argc*4,0   ; retn argc*4
 				else
-					dw 25FFh,0,0           ; jmp [pubname]
+					dw 25FFh,0,0       ; jmp [pubname]
 				end if
 			else
-				if cconv=PBCALL & argcount>0
+				if cconv=PBCALL & argc>0
 					db 5Ah,58h,52h ; pop edx / pop eax / push edx
 				end if
 				dw 25FFh,0,0 ; jmp [pubname]
@@ -1008,8 +1009,9 @@ macro vbimplib module,dllname,cconv,argcount,name,vb_name,pubname{
 		RENAME_AR_MEMBERS equ 0
 		display '-WNG: RENAME_AR_MEMBERS is ignored, it is not compatible with VB.',13,10
 	end if
-	if argcount>31 | argcount<0
-		argcount=0
+	argc=argcount
+	if argc>31 | argc<0
+		argc=0
 		display '-WNG: [argcount] should be in the range [0..31]. Defaulting to 0.',13,10
 	end if
 	if cconv>PBCALL | cconv<STDCALL
@@ -1156,10 +1158,10 @@ dllname#name#.lnk_memberN:
 	dw 0,IMAGE_FILE_32BIT_MACHINE
 	db '.text',0,0,0
 	xx=6
-	if cconv=CDECL & argcount>0
-		xx=12+argcount*4
+	if cconv=CDECL & argc>0
+		xx=12+argc*4
 	end if
-	if cconv=PBCALL & argcount>0
+	if cconv=PBCALL & argc>0
 		xx=7
 	end if
 	dd 0,0,xx,dllname#name#.thunk-dllname#name#.lnk_memberN,dllname#name#.rel1-dllname#name#.lnk_memberN
@@ -1184,8 +1186,8 @@ dllname#name#.lnk_memberN:
 	end if
 	xx=2
 	if cconv=CDECL
-		xx=2+argcount*4
-	else if cconv=PBCALL & argcount>0
+		xx=2+argc*4
+	else if cconv=PBCALL & argc>0
 		xx=5
 	end if
 	if byordinal=0
@@ -1195,19 +1197,19 @@ dllname#name#.lnk_memberN:
 		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_LNK_COMDAT or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		dllname#name#.thunk:
 			if cconv=CDECL
-				if argcount>0
-					times argcount db 0FFh,74h,24h,argcount*4 ; push [esp+argcount*4]
-					dw 15FFh,0,0           ; call [pubname]
-					db 83h,0C4h,argcount*4 ; add esp,argcount*4
-					db 0C2h,argcount*4     ; +00 retn argcount*4
+				if argc>0
+					times argc db 0FFh,74h,24h,argc*4 ; push [esp+argc*4]
+					dw 15FFh,0,0       ; call [pubname]
+					db 83h,0C4h,argc*4 ; add esp,argc*4
+					db 0C2h,argc*4     ; +00 retn argc*4
 				else
-					dw 25FFh               ; +00000000 jmp [pubname]
+					dw 25FFh           ; +00000000 jmp [pubname]
 				end if
 			else
-				if cconv=PBCALL & argcount>0
-					db 5Ah,58h,52h         ; pop edx / pop eax / push edx
+				if cconv=PBCALL & argc>0
+					db 5Ah,58h,52h ; pop edx / pop eax / push edx
 				end if
-				dw 25FFh                       ; +00000000 jmp [pubname]
+				dw 25FFh ; +00000000 jmp [pubname]
 			end if
 		dllname#name#.rel2 dd 0
 			dd 6+KEEP_ORIGINAL_THUNK*2+USE_COMPID ; --> .idata$6
@@ -1219,19 +1221,19 @@ dllname#name#.lnk_memberN:
 	else
 		dllname#name#.thunk:
 			if cconv=CDECL
-				if argcount>0
-					times argcount db 0FFh,74h,24h,argcount*4 ; push [esp+argcount*4]
-					dw 15FFh,0,0           ; call [pubname]
-					db 83h,0C4h,argcount*4 ; add esp,argcount*4
-					db 0C2h,argcount*4,0   ; retn argcount*4
+				if argc>0
+					times argc db 0FFh,74h,24h,argc*4 ; push [esp+argc*4]
+					dw 15FFh,0,0       ; call [pubname]
+					db 83h,0C4h,argc*4 ; add esp,argc*4
+					db 0C2h,argc*4,0   ; retn argc*4
 				else
-					dw 25FFh,0,0           ; jmp [pubname]
+					dw 25FFh,0,0       ; jmp [pubname]
 				end if
 			else
-				if cconv=PBCALL &  argcount>0
-					db 5Ah,58h,52h         ; pop edx / pop eax / push edx
+				if cconv=PBCALL & argc>0
+					db 5Ah,58h,52h ; pop edx / pop eax / push edx
 				end if
-				dw 25FFh,0,0                   ; jmp [pubname]
+				dw 25FFh,0,0 ; jmp [pubname]
 			end if
 		dllname#name#.rel1 dd xx
 			dd 5+USE_COMPID ; --> public name
