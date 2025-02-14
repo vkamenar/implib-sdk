@@ -127,7 +127,7 @@ include '..\implib.inc'
 
 ; *** Functions available in kernel32 from v4.0 to v4.90 ***
 ; implib KERNEL32.DLL, AllocLSCallback, _AllocLSCallback@0
-; implib KERNEL32.DLL, ord.38, AllocMappedBuffer
+; implib KERNEL32.DLL, ord.38, _AllocMappedBuffer@0
 ; implib KERNEL32.DLL, AllocSLCallback, _AllocSLCallback@8
 ; implib KERNEL32.DLL, CloseSystemHandle
 ; implib KERNEL32.DLL, ConvertToGlobalHandle, _ConvertToGlobalHandle@4
@@ -136,16 +136,16 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, ord.20, _DosFileHandleToWin32Handle@4
 ; implib KERNEL32.DLL, FreeLSCallback
 ; implib KERNEL32.DLL, ord.36, _FreeLibrary16@4
-; implib KERNEL32.DLL, ord.39, FreeMappedBuffer
-; implib KERNEL32.DLL, FreeSLCallback
+; implib KERNEL32.DLL, ord.39, _FreeMappedBuffer@0
+; implib KERNEL32.DLL, FreeSLCallback, _FreeSLCallback@4
 ; implib KERNEL32.DLL, ord.23, _GDIReallyCares@4
-; implib KERNEL32.DLL, GetDaylightFlag
+; implib KERNEL32.DLL, GetDaylightFlag, _GetDaylightFlag@0
 ; implib KERNEL32.DLL, GetLSCallbackTarget
 ; implib KERNEL32.DLL, GetLSCallbackTemplate
 ; implib KERNEL32.DLL, ord.92, _GetPK16SysVar@0
 ; implib KERNEL32.DLL, ord.37, _GetProcAddress16@8
 ; implib KERNEL32.DLL, ord.18, _GetProcessDword@8
-; implib KERNEL32.DLL, GetProcessFlags
+; implib KERNEL32.DLL, GetProcessFlags, _GetProcessFlags@4
 ; implib KERNEL32.DLL, GetProductName
 ; implib KERNEL32.DLL, GetSLCallbackTarget
 ; implib KERNEL32.DLL, GetSLCallbackTemplate
@@ -171,6 +171,18 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, K32Thk1632Epilog, _K32Thk1632Epilog@0
 ; implib KERNEL32.DLL, K32Thk1632Prolog, _K32Thk1632Prolog@0
 ; implib KERNEL32.DLL, ord.35, _LoadLibrary16@4
+; implib KERNEL32.DLL, ord.42, _LogApiThkLSF@4
+; implib KERNEL32.DLL, ord.44, _LogApiThkSL@4
+; implib KERNEL32.DLL, ord.47, _LogCBThkSL@4
+; implib KERNEL32.DLL, MakeCriticalSectionGlobal, _MakeCriticalSectionGlobal@4
+; implib KERNEL32.DLL, MapHInstLS, _MapHInstLS@0
+; implib KERNEL32.DLL, MapHInstLS_PN, _MapHInstLS_PN@0
+; implib KERNEL32.DLL, MapHInstSL, _MapHInstSL@0
+; implib KERNEL32.DLL, MapHInstSL_PN, _MapHInstSL_PN@0
+; implib KERNEL32.DLL, MapHModuleLS, _MapHModuleLS@4
+; implib KERNEL32.DLL, MapHModuleSL, _MapHModuleSL@4
+; implib KERNEL32.DLL, MapSL, _MapSL@4
+; implib KERNEL32.DLL, MapSLFix, _MapSLFix@4
 
 ; *** Function available in kernel32 from v4.10 to v4.90 ***
 ; implib KERNEL32.DLL, GetCryptApiExponentValue
