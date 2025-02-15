@@ -74,6 +74,10 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, WerpNotifyLoadStringResourceWorker, _WerpNotifyLoadStringResourceWorker@16
 ; implib KERNEL32.DLL, WerpNotifyUseStringResourceWorker, _WerpNotifyUseStringResourceWorker@4
 
+; *** Functions available in kernel32 v6.X ***
+; implib KERNEL32.DLL, NlsEventDataDescCreate, _NlsEventDataDescCreate@16
+; implib KERNEL32.DLL, NlsWriteEtwEvent, _NlsWriteEtwEvent@20
+
 ; *** Stub function available since kernel32 v5.2 ***
 ; implib KERNEL32.DLL, BaseIsAppcompatInfrastructureDisabled, _BaseIsAppcompatInfrastructureDisabled@0
 
@@ -183,6 +187,8 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, MapHModuleSL, _MapHModuleSL@4
 ; implib KERNEL32.DLL, MapSL, _MapSL@4
 ; implib KERNEL32.DLL, MapSLFix, _MapSLFix@4
+; implib KERNEL32.DLL, NotifyNLSUserCache
+; implib KERNEL32.DLL, ord.40, OT_32ThkLSF
 
 ; *** Function available in kernel32 from v4.10 to v4.90 ***
 ; implib KERNEL32.DLL, GetCryptApiExponentValue
