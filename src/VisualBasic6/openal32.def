@@ -1,0 +1,119 @@
+; Make an import lib for Visual Basic 6: OpenAL versions 1.0 and 1.1
+
+include '..\implib.inc'
+
+KEEP_ORIGINAL_THUNK equ 0 ; Remove original thunk
+RENAME_AR_MEMBERS   equ 0 ; Don't rename the object files
+
+; Buffer-related
+vbimplib openal32, openal32.dll, CDECL, 2, alGenBuffers
+vbimplib openal32, openal32.dll, CDECL, 2, alDeleteBuffers
+vbimplib openal32, openal32.dll, CDECL, 1, alIsBuffer
+vbimplib openal32, openal32.dll, CDECL, 5, alBufferData
+vbimplib openal32, openal32.dll, CDECL, 3, alBufferf
+vbimplib openal32, openal32.dll, CDECL, 5, alBuffer3f
+vbimplib openal32, openal32.dll, CDECL, 3, alBufferfv
+vbimplib openal32, openal32.dll, CDECL, 3, alBufferi
+vbimplib openal32, openal32.dll, CDECL, 5, alBuffer3i
+vbimplib openal32, openal32.dll, CDECL, 3, alBufferiv
+vbimplib openal32, openal32.dll, CDECL, 3, alGetBufferf
+vbimplib openal32, openal32.dll, CDECL, 5, alGetBuffer3f
+vbimplib openal32, openal32.dll, CDECL, 3, alGetBufferfv
+vbimplib openal32, openal32.dll, CDECL, 3, alGetBufferi
+vbimplib openal32, openal32.dll, CDECL, 5, alGetBuffer3i
+vbimplib openal32, openal32.dll, CDECL, 3, alGetBufferiv
+
+; Source-related
+vbimplib openal32, openal32.dll, CDECL, 2, alGenSources
+vbimplib openal32, openal32.dll, CDECL, 2, alDeleteSources
+vbimplib openal32, openal32.dll, CDECL, 1, alIsSource
+vbimplib openal32, openal32.dll, CDECL, 3, alSourcef
+vbimplib openal32, openal32.dll, CDECL, 5, alSource3f
+vbimplib openal32, openal32.dll, CDECL, 3, alSourcefv
+vbimplib openal32, openal32.dll, CDECL, 3, alSourcei
+vbimplib openal32, openal32.dll, CDECL, 5, alSource3i
+vbimplib openal32, openal32.dll, CDECL, 3, alSourceiv
+vbimplib openal32, openal32.dll, CDECL, 3, alGetSourcef
+vbimplib openal32, openal32.dll, CDECL, 5, alGetSource3f
+vbimplib openal32, openal32.dll, CDECL, 3, alGetSourcefv
+vbimplib openal32, openal32.dll, CDECL, 3, alGetSourcei
+vbimplib openal32, openal32.dll, CDECL, 5, alGetSource3i
+vbimplib openal32, openal32.dll, CDECL, 3, alGetSourceiv
+vbimplib openal32, openal32.dll, CDECL, 1, alSourcePlay
+vbimplib openal32, openal32.dll, CDECL, 2, alSourcePlayv
+vbimplib openal32, openal32.dll, CDECL, 1, alSourcePause
+vbimplib openal32, openal32.dll, CDECL, 2, alSourcePausev
+vbimplib openal32, openal32.dll, CDECL, 1, alSourceStop
+vbimplib openal32, openal32.dll, CDECL, 2, alSourceStopv
+vbimplib openal32, openal32.dll, CDECL, 1, alSourceRewind
+vbimplib openal32, openal32.dll, CDECL, 2, alSourceRewindv
+vbimplib openal32, openal32.dll, CDECL, 3, alSourceQueueBuffers
+vbimplib openal32, openal32.dll, CDECL, 3, alSourceUnqueueBuffers
+
+; Listener-related
+vbimplib openal32, openal32.dll, CDECL, 2, alListenerf
+vbimplib openal32, openal32.dll, CDECL, 4, alListener3f
+vbimplib openal32, openal32.dll, CDECL, 2, alListenerfv
+vbimplib openal32, openal32.dll, CDECL, 2, alListeneri
+vbimplib openal32, openal32.dll, CDECL, 4, alListener3i
+vbimplib openal32, openal32.dll, CDECL, 2, alListeneriv
+vbimplib openal32, openal32.dll, CDECL, 2, alGetListenerf
+vbimplib openal32, openal32.dll, CDECL, 4, alGetListener3f
+vbimplib openal32, openal32.dll, CDECL, 2, alGetListenerfv
+vbimplib openal32, openal32.dll, CDECL, 2, alGetListeneri
+vbimplib openal32, openal32.dll, CDECL, 4, alGetListener3i
+vbimplib openal32, openal32.dll, CDECL, 2, alGetListeneriv
+
+; State-related
+vbimplib openal32, openal32.dll, CDECL, 1, alEnable
+vbimplib openal32, openal32.dll, CDECL, 1, alDisable
+vbimplib openal32, openal32.dll, CDECL, 1, alIsEnabled
+vbimplib openal32, openal32.dll, CDECL, 1, alGetBoolean
+vbimplib openal32, openal32.dll, CDECL, 1, alGetDouble
+vbimplib openal32, openal32.dll, CDECL, 1, alGetFloat
+vbimplib openal32, openal32.dll, CDECL, 1, alGetInteger
+vbimplib openal32, openal32.dll, CDECL, 2, alGetBooleanv
+vbimplib openal32, openal32.dll, CDECL, 2, alGetDoublev
+vbimplib openal32, openal32.dll, CDECL, 2, alGetFloatv
+vbimplib openal32, openal32.dll, CDECL, 2, alGetIntegerv
+vbimplib openal32, openal32.dll, CDECL, 4, alcGetIntegerv
+vbimplib openal32, openal32.dll, CDECL, 1, alGetString
+vbimplib openal32, openal32.dll, CDECL, 2, alcGetString
+vbimplib openal32, openal32.dll, CDECL, 1, alDistanceModel
+vbimplib openal32, openal32.dll, CDECL, 1, alDopplerFactor
+vbimplib openal32, openal32.dll, CDECL, 1, alDopplerVelocity ; Deprecated in v1.1: use alSpeedOfSound instead!
+vbimplib openal32, openal32.dll, CDECL, 1, alSpeedOfSound
+
+; Error-related
+vbimplib openal32, openal32.dll, CDECL, 0, alGetError
+vbimplib openal32, openal32.dll, CDECL, 1, alcGetError
+
+; Extension-related
+vbimplib openal32, openal32.dll, CDECL, 1, alIsExtensionPresent
+vbimplib openal32, openal32.dll, CDECL, 2, alcIsExtensionPresent
+vbimplib openal32, openal32.dll, CDECL, 1, alGetProcAddress
+vbimplib openal32, openal32.dll, CDECL, 2, alcGetProcAddress
+vbimplib openal32, openal32.dll, CDECL, 1, alGetEnumValue
+vbimplib openal32, openal32.dll, CDECL, 2, alcGetEnumValue
+
+; Context-related
+vbimplib openal32, openal32.dll, CDECL, 2, alcCreateContext
+vbimplib openal32, openal32.dll, CDECL, 1, alcMakeContextCurrent
+vbimplib openal32, openal32.dll, CDECL, 1, alcProcessContext
+vbimplib openal32, openal32.dll, CDECL, 1, alcSuspendContext
+vbimplib openal32, openal32.dll, CDECL, 1, alcDestroyContext
+vbimplib openal32, openal32.dll, CDECL, 0, alcGetCurrentContext
+vbimplib openal32, openal32.dll, CDECL, 1, alcGetContextsDevice
+
+; Device-related
+vbimplib openal32, openal32.dll, CDECL, 1, alcOpenDevice
+vbimplib openal32, openal32.dll, CDECL, 1, alcCloseDevice
+
+; Capture-related
+vbimplib openal32, openal32.dll, CDECL, 4, alcCaptureOpenDevice
+vbimplib openal32, openal32.dll, CDECL, 1, alcCaptureCloseDevice
+vbimplib openal32, openal32.dll, CDECL, 1, alcCaptureStart
+vbimplib openal32, openal32.dll, CDECL, 1, alcCaptureStop
+vbimplib openal32, openal32.dll, CDECL, 3, alcCaptureSamples
+
+endlib
