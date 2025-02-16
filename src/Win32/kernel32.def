@@ -49,7 +49,9 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, GetStateRootFolder, _GetStateRootFolder@12
 ; implib KERNEL32.DLL, GetStateSettingsFolder, _GetStateSettingsFolder@12
 ; implib KERNEL32.DLL, GetStateVersion, _GetStateVersion@12
-; implib KERNEL32.DLL, GetSystemAppDataFolder
+; implib KERNEL32.DLL, GetSystemAppDataFolder, _GetSystemAppDataFolder@12
+; implib KERNEL32.DLL, OpenStateAtom, _OpenStateAtom@8
+; implib KERNEL32.DLL, OverrideRoamingDataModificationTimesInRange, _OverrideRoamingDataModificationTimesInRange@16
 
 ; *** Functions available in kernel32 v6.1 (before Windows 7 SP1) ***
 ; implib KERNEL32.DLL, CopyExtendedContext, _CopyExtendedContext@12
@@ -189,6 +191,8 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, MapSLFix, _MapSLFix@4
 ; implib KERNEL32.DLL, NotifyNLSUserCache
 ; implib KERNEL32.DLL, ord.40, OT_32ThkLSF
+; implib KERNEL32.DLL, OpenVxDHandle, _OpenVxDHandle@4
+; implib KERNEL32.DLL, ord.91, _PK16FNF@4
 
 ; *** Function available in kernel32 from v4.10 to v4.90 ***
 ; implib KERNEL32.DLL, GetCryptApiExponentValue
