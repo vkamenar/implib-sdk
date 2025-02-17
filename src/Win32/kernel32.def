@@ -52,6 +52,9 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, GetSystemAppDataFolder, _GetSystemAppDataFolder@12
 ; implib KERNEL32.DLL, OpenStateAtom, _OpenStateAtom@8
 ; implib KERNEL32.DLL, OverrideRoamingDataModificationTimesInRange, _OverrideRoamingDataModificationTimesInRange@16
+; implib KERNEL32.DLL, PublishStateChangeNotification, _PublishStateChangeNotification@4
+; implib KERNEL32.DLL, QueryStateAtomValueInfo, _QueryStateAtomValueInfo@12
+; implib KERNEL32.DLL, QueryStateContainerItemInfo, _QueryStateContainerItemInfo@12
 
 ; *** Functions available in kernel32 v6.1 (before Windows 7 SP1) ***
 ; implib KERNEL32.DLL, CopyExtendedContext, _CopyExtendedContext@12
@@ -193,6 +196,10 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, ord.40, OT_32ThkLSF
 ; implib KERNEL32.DLL, OpenVxDHandle, _OpenVxDHandle@4
 ; implib KERNEL32.DLL, ord.91, _PK16FNF@4
+; implib KERNEL32.DLL, QT_Thunk, _QT_Thunk@0
+; implib KERNEL32.DLL, ord.90, _QT_ThunkPrime@0
+; implib KERNEL32.DLL, QueryNumberOfEventLogRecords
+; implib KERNEL32.DLL, QueryOldestEventLogRecord
 
 ; *** Function available in kernel32 from v4.10 to v4.90 ***
 ; implib KERNEL32.DLL, GetCryptApiExponentValue
@@ -215,8 +222,8 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, FT_Exit48
 ; implib KERNEL32.DLL, FT_Exit52
 ; implib KERNEL32.DLL, FT_Exit56
-; implib KERNEL32.DLL, FT_Prolog
-; implib KERNEL32.DLL, ord.89, FT_PrologPrime
+; implib KERNEL32.DLL, FT_Prolog, _FT_Prolog@0
+; implib KERNEL32.DLL, ord.89, _FT_PrologPrime@0
 ; implib KERNEL32.DLL, FT_Thunk
 
 ; *** Stub function available since kernel32 v4.0 ***
