@@ -1,1 +1,2 @@
+# Exclude the VB6 sample application from the language statistics
 src/VisualBasic6/* linguist-vendored
