@@ -55,6 +55,12 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, PublishStateChangeNotification, _PublishStateChangeNotification@4
 ; implib KERNEL32.DLL, QueryStateAtomValueInfo, _QueryStateAtomValueInfo@12
 ; implib KERNEL32.DLL, QueryStateContainerItemInfo, _QueryStateContainerItemInfo@12
+; implib KERNEL32.DLL, ReadStateAtomValue, _ReadStateAtomValue@20
+; implib KERNEL32.DLL, ReadStateContainerValue, _ReadStateContainerValue@20
+
+; *** Functions available in kernel32 v6.1 only ***
+; implib KERNEL32.DLL, RegKrnGetGlobalState, _RegKrnGetGlobalState@0
+; implib KERNEL32.DLL, RegKrnInitialize, _RegKrnInitialize@12
 
 ; *** Functions available in kernel32 v6.1 (before Windows 7 SP1) ***
 ; implib KERNEL32.DLL, CopyExtendedContext, _CopyExtendedContext@12
@@ -200,11 +206,13 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, ord.90, _QT_ThunkPrime@0
 ; implib KERNEL32.DLL, QueryNumberOfEventLogRecords
 ; implib KERNEL32.DLL, QueryOldestEventLogRecord
+; implib KERNEL32.DLL, ord.99, RefreshDaylightInformation
 
 ; *** Function available in kernel32 from v4.10 to v4.90 ***
 ; implib KERNEL32.DLL, GetCryptApiExponentValue
 ; implib KERNEL32.DLL, K32_NtCreateFile
 ; implib KERNEL32.DLL, K32_RtlNtStatusToDosError, _K32_RtlNtStatusToDosError@4
+; implib KERNEL32.DLL, ord.104, RPCHACKORAMA
 
 ; *** These functions in kernel32 from v4.0 to v4.90 manage the stack frame for the thunk code ***
 ; implib KERNEL32.DLL, FT_Exit0
