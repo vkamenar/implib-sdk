@@ -1,2 +1,3 @@
-# Exclude the VB6 sample application from the language statistics
+# Exclude batch files and the VB6 sample application from the language statistics
+*.bat linguist-vendored
 src/VisualBasic6/* linguist-vendored
