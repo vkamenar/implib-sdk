@@ -8,14 +8,17 @@ Attribute VB_Name = "openal32"
 
 ' bad value
 Const AL_INVALID As Long = -1
+Const ALC_INVALID As Long = 0
 
 Const AL_NONE As Long = 0
 
 ' Boolean False
 Const AL_FALSE As Long = 0
+Const ALC_FALSE As Long = 0
 
 ' Boolean True
 Const AL_TRUE As Long = 1
+Const ALC_TRUE As Long = 1
 
 ' Indicate Source has relative coordinates
 Const AL_SOURCE_RELATIVE As Long = &H202
@@ -117,16 +120,25 @@ Const AL_PROCESSED As Long = &H2012
 
 ' Errors: No Error
 Const AL_NO_ERROR As Long = AL_FALSE
+Const ALC_NO_ERROR As Long = ALC_FALSE
 
 ' Invalid name paramater passed to AL call
 Const AL_INVALID_NAME As Long = &HA001
 
+' The specified device is not a valid output device
+Const ALC_INVALID_DEVICE As Long = &HA001
+
 ' Invalid enum passed to AL call
 Const AL_ILLEGAL_ENUM As Long = &HA002
 Const AL_INVALID_ENUM As Long = &HA002
+Const ALC_INVALID_ENUM As Long = &HA003
+
+' The specified context is invalid
+Const ALC_INVALID_CONTEXT As Long = &HA002
 
 ' Invalid value passed to AL call
 Const AL_INVALID_VALUE As Long = &HA003
+Const ALC_INVALID_VALUE As Long = &HA004
 
 ' Illegal call
 Const AL_ILLEGAL_COMMAND As Long = &HA004
@@ -134,6 +146,7 @@ Const AL_INVALID_OPERATION As Long = &HA004
 
 ' Requested operation resulted in AL running out of memory
 Const AL_OUT_OF_MEMORY As Long = &HA005
+Const ALC_OUT_OF_MEMORY As Long = &HA005
 
 ' Context strings: Vendor Name
 Const AL_VENDOR As Long = &HB001
@@ -161,6 +174,49 @@ Const AL_LINEAR_DISTANCE As Long = &HD003
 Const AL_LINEAR_DISTANCE_CLAMPED As Long = &HD004
 Const AL_EXPONENT_DISTANCE As Long = &HD005
 Const AL_EXPONENT_DISTANCE_CLAMPED As Long = &HD006
+
+' Output frequency in Hz
+Const ALC_FREQUENCY As Long = &H1007
+
+' Rate of context processing
+Const ALC_REFRESH As Long = &H1008
+
+' Flag indicating a synchronous context
+Const ALC_SYNC As Long = &H1009
+
+' Num of requested mono (3D) sources
+Const ALC_MONO_SOURCES As Long = &H1010
+
+' Num of requested stereo sources
+Const ALC_STEREO_SOURCES As Long = &H1011
+
+' The name of the default output device
+Const ALC_DEFAULT_DEVICE_SPECIFIER As Long = &H1004
+
+' The name of the specified output device
+Const ALC_DEVICE_SPECIFIER As Long = &H1005
+
+' The available context extensions
+Const ALC_EXTENSIONS As Long = &H1006
+
+Const ALC_MAJOR_VERSION As Long = &H1000
+Const ALC_MINOR_VERSION As Long = &H1001
+Const ALC_ATTRIBUTES_SIZE As Long = &H1002
+Const ALC_ALL_ATTRIBUTES As Long = &H1003
+
+' Use with alcGetString with a NULL device ID to retrieve the name of the default device
+Const ALC_DEFAULT_ALL_DEVICES_SPECIFIER As Long = &H1012
+
+' Use with alcGetString and a NULL device pointer to retrieve the names of all devices and audio output paths
+Const ALC_ALL_DEVICES_SPECIFIER As Long = &H1013
+
+' Return the name of the specified capture device or a list of all available devices (if a NULL device pointer is supplied)
+Const ALC_CAPTURE_DEVICE_SPECIFIER As Long = &H310
+
+' Use with alcGetString with a NULL device ID to retrieve the name of the default capture device
+Const ALC_CAPTURE_DEFAULT_DEVICE_SPECIFIER As Long = &H311
+
+Const ALC_CAPTURE_SAMPLES As Long = &H312
 
 ' Enable a feature of the OpenAL driver
 ' Note: There are no capabilities in OpenAL 1.1 to be used with this function, but it may be used by an extension
