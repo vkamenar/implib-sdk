@@ -1159,7 +1159,11 @@ dllname#name#.lnk_memberN:
 	db '.text',0,0,0
 	xx=6
 	if cconv=CDECL & argc>0
-		xx=12+argc*4
+		if argc=1
+			xx=14
+		else
+			xx=12+argc*4
+		end if
 	end if
 	if cconv=PBCALL & argc>0
 		xx=7
@@ -1199,11 +1203,15 @@ dllname#name#.lnk_memberN:
 			if cconv=CDECL
 				if argc>0
 					times argc db 0FFh,74h,24h,argc*4 ; push [esp+argc*4]
-					dw 15FFh,0,0       ; call [pubname]
-					db 83h,0C4h,argc*4 ; add esp,argc*4
-					db 0C2h,argc*4     ; +00 retn argc*4
+					dw 15FFh,0,0 ; call [pubname]
+					if argc=1
+						db 59h ; pop ecx
+					else
+						db 83h,0C4h,argc*4 ; add esp,argc*4
+					end if
+					db 0C2h,argc*4 ; +00 retn argc*4
 				else
-					dw 25FFh           ; +00000000 jmp [pubname]
+					dw 25FFh ; +00000000 jmp [pubname]
 				end if
 			else
 				if cconv=PBCALL & argc>0
@@ -1223,11 +1231,15 @@ dllname#name#.lnk_memberN:
 			if cconv=CDECL
 				if argc>0
 					times argc db 0FFh,74h,24h,argc*4 ; push [esp+argc*4]
-					dw 15FFh,0,0       ; call [pubname]
-					db 83h,0C4h,argc*4 ; add esp,argc*4
-					db 0C2h,argc*4,0   ; retn argc*4
+					dw 15FFh,0,0 ; call [pubname]
+					if argc=1
+						db 59h ; pop ecx
+					else
+						db 83h,0C4h,argc*4 ; add esp,argc*4
+					end if
+					db 0C2h,argc*4,0 ; retn argc*4
 				else
-					dw 25FFh,0,0       ; jmp [pubname]
+					dw 25FFh,0,0 ; jmp [pubname]
 				end if
 			else
 				if cconv=PBCALL & argc>0
