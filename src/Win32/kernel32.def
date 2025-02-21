@@ -4,10 +4,10 @@ include '..\implib.inc'
 ; They are either stubs or available in specific kernel32 versions only.
 ; Feel free to uncomment the necessary symbols and recompile the library.
 
-; *** FUnction available in kernel32 v6.3 only ***
+; *** FUnction available in kernel32 v6.3 only
 ; implib KERNEL32.DLL, CalloutOnFiberStack, _CalloutOnFiberStack@12
 
-; *** Functions available in kernel32 v6.2 only ***
+; *** Functions available in kernel32 v6.2 only
 ; implib KERNEL32.DLL, AcquireStateLock, _AcquireStateLock@12
 ; implib KERNEL32.DLL, AppContainerDeriveSidFromMoniker, _AppContainerDeriveSidFromMoniker@8
 ; implib KERNEL32.DLL, AppContainerFreeMemory, _AppContainerFreeMemory@4
@@ -57,12 +57,16 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, QueryStateContainerItemInfo, _QueryStateContainerItemInfo@12
 ; implib KERNEL32.DLL, ReadStateAtomValue, _ReadStateAtomValue@20
 ; implib KERNEL32.DLL, ReadStateContainerValue, _ReadStateContainerValue@20
+; implib KERNEL32.DLL, RegisterStateChangeNotification, _RegisterStateChangeNotification@8
+; implib KERNEL32.DLL, RegisterStateLock, _RegisterStateLock@4
+; implib KERNEL32.DLL, ReleaseStateLock, _ReleaseStateLock@4
+; implib KERNEL32.DLL, ResetState, _ResetState@4
 
-; *** Functions available in kernel32 v6.1 only ***
+; *** Functions available in kernel32 v6.1 only
 ; implib KERNEL32.DLL, RegKrnGetGlobalState, _RegKrnGetGlobalState@0
 ; implib KERNEL32.DLL, RegKrnInitialize, _RegKrnInitialize@12
 
-; *** Functions available in kernel32 v6.1 (before Windows 7 SP1) ***
+; *** Functions available in kernel32 v6.1 (before Windows 7 SP1)
 ; implib KERNEL32.DLL, CopyExtendedContext, _CopyExtendedContext@12
 ; implib KERNEL32.DLL, GetEnabledExtendedFeatures, _GetEnabledExtendedFeatures@8
 ; implib KERNEL32.DLL, GetExtendedContextLength, _GetExtendedContextLength@8
@@ -71,10 +75,10 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, LocateExtendedFeature, _LocateExtendedFeature@12
 ; implib KERNEL32.DLL, LocateLegacyContext, _LocateLegacyContext@8
 
-; *** Function available in kernel32 v6.1 (from Windows 7 SP1 only) ***
+; *** Function available in kernel32 v6.1 (from Windows 7 SP1 only)
 ; implib KERNEL32.DLL, GetProcessUserModeExceptionPolicy, _GetProcessUserModeExceptionPolicy@4
 
-; *** Stub functions available since kernel32 v6.2 ***
+; *** Stub functions available since kernel32 v6.2
 ; implib KERNEL32.DLL, BaseCheckAppcompatCacheExWorker, _BaseCheckAppcompatCacheExWorker@36
 ; implib KERNEL32.DLL, BaseCheckAppcompatCacheWorker, _BaseCheckAppcompatCacheWorker@16
 ; implib KERNEL32.DLL, BaseCleanupAppcompatCacheSupportWorker, _BaseCleanupAppcompatCacheSupportWorker@4
@@ -85,46 +89,46 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, WerpNotifyLoadStringResourceWorker, _WerpNotifyLoadStringResourceWorker@16
 ; implib KERNEL32.DLL, WerpNotifyUseStringResourceWorker, _WerpNotifyUseStringResourceWorker@4
 
-; *** Functions available in kernel32 v6.X ***
+; *** Functions available in kernel32 v6.X
 ; implib KERNEL32.DLL, NlsEventDataDescCreate, _NlsEventDataDescCreate@16
 ; implib KERNEL32.DLL, NlsWriteEtwEvent, _NlsWriteEtwEvent@20
 
-; *** Stub function available since kernel32 v5.2 ***
+; *** Stub function available since kernel32 v5.2
 ; implib KERNEL32.DLL, BaseIsAppcompatInfrastructureDisabled, _BaseIsAppcompatInfrastructureDisabled@0
 
-; *** Functions available in kernel32 from v5.2 to v6.3 ***
+; *** Functions available in kernel32 from v5.2 to v6.3
 ; implib KERNEL32.DLL, BaseCheckRunApp, _BaseCheckRunApp@40
 ; implib KERNEL32.DLL, BasepCheckBadapp, _BasepCheckBadapp@36
 
-; *** Function available in kernel32 from v5.2 to v6.1 ***
+; *** Function available in kernel32 from v5.2 to v6.1
 ; implib KERNEL32.DLL, IsTimeZoneRedirectionEnabled, _IsTimeZoneRedirectionEnabled@0
 
-; *** Function available in kernel32 from v5.1 to v6.1 ***
+; *** Function available in kernel32 from v5.1 to v6.1
 ; implib KERNEL32.DLL, SetClientTimeZoneInformation, _SetClientTimeZoneInformation@4
 
-; *** Function available in kernel32 from v5.1 (WinXP SP1) to v6.0 ***
+; *** Function available in kernel32 from v5.1 (WinXP SP1) to v6.0
 ; implib KERNEL32.DLL, GetCPFileNameFromRegistry, _GetCPFileNameFromRegistry@12
 
-; *** Functions available in kernel32 v5.1 and v5.2 ***
+; *** Functions available in kernel32 v5.1 and v5.2
 ; implib KERNEL32.DLL, BaseProcessInitPostImport
 ; implib KERNEL32.DLL, CreateNlsSecurityDescriptor, _CreateNlsSecurityDescriptor@12
 ; implib KERNEL32.DLL, IsValidUILanguage, _IsValidUILanguage@4
 
-; *** Functions available in kernel32 v5.1 only ***
+; *** Functions available in kernel32 v5.1 only
 ; implib KERNEL32.DLL, BaseCleanupAppcompatCache
 ; implib KERNEL32.DLL, BaseInitAppcompatCache
 ; implib KERNEL32.DLL, GetNumaAvailableMemory, _GetNumaAvailableMemory@12
 ; implib KERNEL32.DLL, GetNumaProcessorMap, _GetNumaProcessorMap@12
 ; implib KERNEL32.DLL, NumaVirtualQueryNode, _NumaVirtualQueryNode@16
 
-; *** Stub functions available since kernel32 v5.1 ***
+; *** Stub functions available since kernel32 v5.1
 ; implib KERNEL32.DLL, LZDone, _LZDone@0
 ; implib KERNEL32.DLL, LZStart, _LZStart@0
 
-; *** Function available in kernel32 from v5.0 to v6.0 ***
+; *** Function available in kernel32 from v5.0 to v6.0
 ; implib KERNEL32.DLL, NlsConvertIntegerToString, _NlsConvertIntegerToString@20
 
-; *** Functions available in kernel32 from v5.0 to v5.2 ***
+; *** Functions available in kernel32 from v5.0 to v5.2
 ; implib KERNEL32.DLL, GetDefaultSortkeySize, _GetDefaultSortkeySize@4
 ; implib KERNEL32.DLL, GetLinguistLangSize, _GetLinguistLangSize@4
 ; implib KERNEL32.DLL, GetNlsSectionName, _GetNlsSectionName@24
@@ -134,13 +138,13 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, ValidateLCType, _ValidateLCType@16
 ; implib KERNEL32.DLL, ValidateLocale, _ValidateLocale@4
 
-; *** Function available in kernel32 v5.0 (Win2000 SP4) and v5.1 (WinXP SP2) ***
+; *** Function available in kernel32 v5.0 (Win2000 SP4) and v5.1 (WinXP SP2)
 ; implib KERNEL32.DLL, CreateProcessInternalWSecure
 
-; *** Function available in kernel32 v4.90 only ***
+; *** Function available in kernel32 v4.90 only
 ; implib KERNEL32.DLL, GetModuleNameFromProc
 
-; *** Functions available in kernel32 from v4.0 to v4.90 ***
+; *** Functions available in kernel32 from v4.0 to v4.90
 ; implib KERNEL32.DLL, AllocLSCallback, _AllocLSCallback@0
 ; implib KERNEL32.DLL, ord.38, _AllocMappedBuffer@0
 ; implib KERNEL32.DLL, AllocSLCallback, _AllocSLCallback@8
@@ -207,14 +211,19 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, QueryNumberOfEventLogRecords
 ; implib KERNEL32.DLL, QueryOldestEventLogRecord
 ; implib KERNEL32.DLL, ord.99, RefreshDaylightInformation
+; implib KERNEL32.DLL, RegisterServiceProcess, _RegisterServiceProcess@8
+; implib KERNEL32.DLL, ReinitializeCriticalSection, _ReinitializeCriticalSection@4
+; implib KERNEL32.DLL, ord.48, _ReleaseThunkLock@4
 
-; *** Function available in kernel32 from v4.10 to v4.90 ***
+; *** Function available in kernel32 from v4.10 to v4.90
 ; implib KERNEL32.DLL, GetCryptApiExponentValue
 ; implib KERNEL32.DLL, K32_NtCreateFile
 ; implib KERNEL32.DLL, K32_RtlNtStatusToDosError, _K32_RtlNtStatusToDosError@4
 ; implib KERNEL32.DLL, ord.104, RPCHACKORAMA
+; implib KERNEL32.DLL, RegisterSysMsgHandler
+; implib KERNEL32.DLL, ResetNLSUserInfoCache
 
-; *** These functions in kernel32 from v4.0 to v4.90 manage the stack frame for the thunk code ***
+; *** These functions in kernel32 from v4.0 to v4.90 manage the stack frame for the thunk code
 ; implib KERNEL32.DLL, FT_Exit0
 ; implib KERNEL32.DLL, FT_Exit4
 ; implib KERNEL32.DLL, FT_Exit8
@@ -234,10 +243,10 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, ord.89, _FT_PrologPrime@0
 ; implib KERNEL32.DLL, FT_Thunk
 
-; *** Stub function available since kernel32 v4.0 ***
+; *** Stub function available since kernel32 v4.0
 ; implib KERNEL32.DLL, UTUnRegister, _UTUnRegister@4
 
-; *** Functions available in kernel32 from v3.51 to v5.2 ***
+; *** Functions available in kernel32 from v3.51 to v5.2
 ; implib KERNEL32.DLL, CreateVirtualBuffer, _CreateVirtualBuffer@12
 ; implib KERNEL32.DLL, ExtendVirtualBuffer, _ExtendVirtualBuffer@8
 ; implib KERNEL32.DLL, FreeVirtualBuffer, _FreeVirtualBuffer@4
@@ -249,20 +258,20 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, TrimVirtualBuffer, _TrimVirtualBuffer@4
 ; implib KERNEL32.DLL, VirtualBufferExceptionHandler, _VirtualBufferExceptionHandler@12
 
-; *** Function available in kernel32 from v3.51 to v5.1 (NT) ***
+; *** Function available in kernel32 from v3.51 to v5.1 (NT)
 ; implib KERNEL32.DLL, QueryWin31IniFilesMappedToRegistry, _QueryWin31IniFilesMappedToRegistry@16
 
-; *** Stub function available in kernel32 from v3.51 to v5.0 ***
+; *** Stub function available in kernel32 from v3.51 to v5.0
 ; implib KERNEL32.DLL, BaseAttachCompleteThunk
 
-; *** Stub functions available since kernel32 v3.51 ***
+; *** Stub functions available since kernel32 v3.51
 ; implib KERNEL32.DLL, CloseProfileUserMapping
 ; implib KERNEL32.DLL, CmdBatNotification, _CmdBatNotification@4
 ; implib KERNEL32.DLL, OpenProfileUserMapping, _OpenProfileUserMapping@0
 ; implib KERNEL32.DLL, SetConsoleMaximumWindowSize, _SetConsoleMaximumWindowSize@8
 ; implib KERNEL32.DLL, VerifyConsoleIoHandle, _VerifyConsoleIoHandle@4
 
-; These functions should be imported from advapi32. Uncomment the following entries if you really need to import them from kernel32.
+; *** These functions should be imported from advapi32. Uncomment the following entries if you need to import them from kernel32.
 ; implib KERNEL32.DLL, CreateProcessAsUserA, _CreateProcessAsUserA@44
 ; implib KERNEL32.DLL, CreateProcessAsUserW, _CreateProcessAsUserW@44
 ; implib KERNEL32.DLL, RegCloseKey, _RegCloseKey@4
@@ -307,7 +316,7 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, RegUnLoadKeyA, _RegUnLoadKeyA@8
 ; implib KERNEL32.DLL, RegUnLoadKeyW, _RegUnLoadKeyW@8
 
-; These functions should be imported from winmm. Uncomment the following entries if you really need to import them from kernel32.
+; *** These functions should be imported from winmm. Uncomment the following entries if you need to import them from kernel32.
 ; implib KERNEL32.DLL, timeBeginPeriod, _timeBeginPeriod@4
 ; implib KERNEL32.DLL, timeEndPeriod, _timeEndPeriod@4
 ; implib KERNEL32.DLL, timeGetDevCaps, _timeGetDevCaps@8
