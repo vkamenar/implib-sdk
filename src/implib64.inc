@@ -31,24 +31,22 @@
 
 ; Set to 0 to disable original thunk (lookup table) to reduce the IAT size in
 ; the final executable by 8 x n bytes, n being the number of imported symbols.
-; You won't be able to bind (using BIND.EXE from PSDK) an IAT without original
-; thunk! So, removing the lookups is recommended only when importing from
-; standart API DLLs, like KERNEL32, USER32 and so on.
+; You won't be able to bind (using BIND.EXE from PSDK) an IAT without original thunk!
 KEEP_ORIGINAL_THUNK equ 1
 
-; An additional @comp.id symbol per object file is appended by MS LINK,
-; possibly to watermark the import library.
+; A @comp.id symbol is appended by the MS linker, possibly for watermarking.
 USE_COMPID equ 0
+
+; Rename archive members for compatibility with LLVM linker.
+RENAME_AR_MEMBERS equ 0
 
 ; Disable the 2nd linker member.
 LINKER_MEMBER_2_REMOVE equ 1
 
 ; === CONFIG END ====================================================
 
-STDCALL=0
-CDECL=1
-PBCALL=2
 str_tbl_size=0
+lng_tbl_size=0
 last_dll_name=0
 long_dll_name=0
 syms_indexed=0
@@ -77,37 +75,19 @@ IMAGE_COMDAT_SELECT_ASSOCIATIVE=5
 use64
 org 0
 
-macro print_timestamp {
-	timestmp=%t
-	t0='0'+timestmp mod 10
-	t1='0'+(timestmp/10) mod 10
-	t2='0'+(timestmp/100) mod 10
-	t3='0'+(timestmp/1000) mod 10
-	t4='0'+(timestmp/10000) mod 10
-	t5='0'+(timestmp/100000) mod 10
-	t6='0'+(timestmp/1000000) mod 10
-	t7='0'+(timestmp/10000000) mod 10
-	t8='0'+(timestmp/100000000) mod 10
-	t9='0'+(timestmp/1000000000) mod 10
-	tA='0'+(timestmp/10000000000) mod 10
-	tB='0'+(timestmp/100000000000) mod 10
-	if tB>'0'
-		db tB,tA,t9,t8,t7,t6,t5,t4,t3,t2,t1,t0
-	else
-		if tA>'0'
-			db tA,t9,t8,t7,t6,t5,t4,t3,t2,t1,t0,' '
-		else
-			if t9>'0'
-				db t9,t8,t7,t6,t5,t4,t3,t2,t1,t0,'  '
-			else
-				if t8>'0'
-					db t8,t7,t6,t5,t4,t3,t2,t1,t0,'   '
-				else
-					db t7,t6,t5,t4,t3,t2,t1,t0,'    '
-				end if
-			end if
+macro print_ts{
+	xx=%t
+	yy=1000000000000
+	zz=11
+	repeat 11
+		yy=yy/10
+		if xx>=yy
+			db '0'+(xx/yy)mod 10
+			zz=zz-1
 		end if
-	end if
+	end repeat
+	db '0'+xx mod 10
+	times zz db ' '
 }
 
 ; Get next object's size in bytes and store it in text format
@@ -231,7 +211,7 @@ macro get_next_even_addr {
 	db '!<arch>',0Ah
 	; 1st header
 	db '/               '     ; name
-	print_timestamp           ; modification timestamp
+	print_ts                  ; modification timestamp
 	db '            0       ' ; owner id, group id, file mode (not used in Win)
 	pack_size lnk_member1_size
 	; 1st linker member (deprecated, but still in use)
@@ -247,7 +227,7 @@ if ~ defined LINKER_MEMBER_2_REMOVE
 	; 2nd header
 	get_next_even_addr
 	db '/               '     ; name
-	print_timestamp           ; modification timestamp
+	print_ts                  ; modification timestamp
 	db '            0       ' ; owner id, group id, file mode (not used in Win)
 	pack_size lnk_member2_size
 	; 2nd linker member
@@ -295,7 +275,7 @@ macro implib dllname*,name*,thunk,pubname {
 			else
 				long_dll_name=1
 				db '//              '     ; name
-				print_timestamp           ; modification timestamp
+				print_ts                  ; modification timestamp
 				db '            0       ' ; owner id, group id, file mode (not used in Win)
 				pack_size lnk_longfname_size
 				lnk_longfname db `dllname,0
@@ -304,7 +284,7 @@ macro implib dllname*,name*,thunk,pubname {
 				db '/0              '
 			end if
 		end if
-		print_timestamp
+		print_ts
 		db '            0       ' ; owner id, group id, file mode (not used in Win)
 		pack_size (dllname#.descr_strtbl_end-dllname#.descr)
 	dllname#.descr:
@@ -373,7 +353,7 @@ macro implib dllname*,name*,thunk,pubname {
 		else
 			db '/0              ' ; long DLL name
 		end if
-		print_timestamp
+		print_ts
 		db '            0       ' ; owner id, group id, file mode (not used in Win)
 		pack_size (dllname#.descr_strtbl2_end-dllname#.descr2)
 	dllname#.descr2:
@@ -413,7 +393,7 @@ macro implib dllname*,name*,thunk,pubname {
 	else
 		db '/0              ' ; long DLL name
 	end if
-	print_timestamp
+	print_ts
 	db '            0       ' ; owner id, group id, file mode (not used in Win)
 	pack_size (dllname#name#.strtbl_end-dllname#name#.lnk_memberN)
 dllname#name#.lnk_memberN:
@@ -576,7 +556,7 @@ macro endlib {
 	if last_dll_name
 		do_memcpy last_dll_name, null_dll_name, 16
 	end if
-	print_timestamp
+	print_ts
 	db '            0       '
 	if USE_COMPID
 		db '145'
@@ -603,26 +583,12 @@ null_import_descr_sym:
 	num_syms=syms_indexed
 	symarr_size=str_tbl_size
 	display 'DLL symbols indexed: '
-	if syms>9999999
-		display '0'+(syms/10000000)mod 10
-	end if
-	if syms>999999
-		display '0'+(syms/1000000)mod 10
-	end if
-	if syms>99999
-		display '0'+(syms/100000)mod 10
-	end if
-	if syms>9999
-		display '0'+(syms/10000)mod 10
-	end if
-	if syms>999
-		display '0'+(syms/1000)mod 10
-	end if
-	if syms>99
-		display '0'+(syms/100)mod 10
-	end if
-	if syms>9
-		display '0'+(syms/10)mod 10
-	end if
+	yy=100000000
+	repeat 7
+		yy=yy/10
+		if syms>=yy
+			display '0'+(syms/yy)mod 10
+		end if
+	end repeat
 	display '0'+syms mod 10,13,10
 }
