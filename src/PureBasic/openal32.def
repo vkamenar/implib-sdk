@@ -2,8 +2,8 @@
 
 include '..\implib.inc'
 
-; Strip original thunk
-KEEP_ORIGINAL_THUNK equ 0
+KEEP_ORIGINAL_THUNK equ 0 ; Remove original thunk
+RENAME_AR_MEMBERS   equ 1 ; For compatibility with the LLVM linker
 
 ; Buffer-related
 pbimplib openal32.dll, CDECL, 2, alGenBuffers, alGenBuffers@8
