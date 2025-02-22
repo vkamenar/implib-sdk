@@ -33,23 +33,20 @@
 ;    implib   dsound.dll,   ord.1, _DirectSoundCreate@12
 ;    implib   kernel32.dll, ExitProcess, _ExitProcess@4, __imp__ExitProcess@4
 ;    pbimplib openal32.dll, CDECL, 2, ord.1, alGenBuffers
-;    vbimplib vbopenal, openal32.dll, CDECL, 2, alGenBuffers
+;    vbimplib openal32, openal32.dll, CDECL, 2, alGenBuffers
 
 ; === CONFIG BEGIN ==================================================
 
 ; Set to 0 to disable original thunk (lookup table) to reduce the IAT size in
 ; the final executable by 4 x n bytes, n being the number of imported symbols.
-; You won't be able to bind (using BIND.EXE from PSDK) an IAT without original
-; thunk! So, removing the lookups is recommended only when importing from
-; standart API DLLs, like KERNEL32, USER32 and so on.
+; You won't be able to bind (using BIND.EXE from PSDK) an IAT without original thunk!
 KEEP_ORIGINAL_THUNK equ 1
 
 ; Optional header is not required in object files. Very old MS LINK versions
 ; may use it. The following option is included for compatibility.
 USE_OPTIONAL_HEADER equ 0
 
-; An additional @comp.id symbol per object file is appended by MS LINK,
-; possibly to watermark the import library.
+; A @comp.id symbol is appended by the MS linker, possibly for watermarking.
 USE_COMPID equ 0
 
 ; Rename archive members for compatibility with LLVM linker.
@@ -257,7 +254,7 @@ macro chkordinal name{
 					load chr from %+3
 					chr=chr-'0'
 					if chr>9
-						display '-WNG: Bad ordinal: ',`name,13,10
+						display '-WNG: Bad ordinal ',`name,13,10
 					else
 						ordinal_value=ordinal_value*10+chr
 					end if
@@ -641,10 +638,10 @@ macro pbimplib dllname,cconv,argcount,name,pb_name,pubname{
 	argc=argcount
 	if argc>31 | argc<0
 		argc=0
-		display '-WNG: [argcount] should be in the range [0..31]. Defaulting to 0.',13,10
+		display '-WNG: [argcount] should be in the range [0..31], defaulting to 0',13,10
 	end if
 	if cconv>PBCALL | cconv<STDCALL
-		display '-WNG: [cconv] has an invalid value. Defaulting to STDCALL.',13,10
+		display '-WNG: [cconv] has an invalid value, defaulting to STDCALL',13,10
 	end if
 	islongname dllname
 	syms=syms+1
@@ -867,7 +864,11 @@ dllname#name#.lnk_memberN:
 	db '.text',0,0,0
 	xx=6
 	if cconv=CDECL & argc>0
-		xx=12+argc*4
+		if argc=1
+			xx=14
+		else
+			xx=12+argc*4
+		end if
 	end if
 	if cconv=PBCALL & argc>0
 		xx=7
@@ -907,11 +908,15 @@ dllname#name#.lnk_memberN:
 			if cconv=CDECL
 				if argc>0
 					times argc db 0FFh,74h,24h,argc*4 ; push [esp+argc*4]
-					dw 15FFh,0,0       ; call [pubname]
-					db 83h,0C4h,argc*4 ; add esp,argc*4
-					db 0C2h,argc*4     ; +00 retn argc*4
+					dw 15FFh,0,0 ; call [pubname]
+					if argc=1
+						db 59h ; pop ecx
+					else
+						db 83h,0C4h,argc*4 ; add esp,argc*4
+					end if
+					db 0C2h,argc*4 ; +00 retn argc*4
 				else
-					dw 25FFh           ; +00000000 jmp [pubname]
+					dw 25FFh ; +00000000 jmp [pubname]
 				end if
 			else
 				if cconv=PBCALL & argc>0
@@ -930,11 +935,15 @@ dllname#name#.lnk_memberN:
 			if cconv=CDECL
 				if argc>0
 					times argc db 0FFh,74h,24h,argc*4 ; push [esp+argc*4]
-					dw 15FFh,0,0       ; call [pubname]
-					db 83h,0C4h,argc*4 ; add esp,argc*4
-					db 0C2h,argc*4,0   ; retn argc*4
+					dw 15FFh,0,0 ; call [pubname]
+					if argc=1
+						db 59h ; pop ecx
+					else
+						db 83h,0C4h,argc*4 ; add esp,argc*4
+					end if
+					db 0C2h,argc*4,0 ; retn argc*4
 				else
-					dw 25FFh,0,0       ; jmp [pubname]
+					dw 25FFh,0,0 ; jmp [pubname]
 				end if
 			else
 				if cconv=PBCALL & argc>0
@@ -1007,15 +1016,15 @@ dllname#name#.strtbl_end:
 macro vbimplib module,dllname,cconv,argcount,name,vb_name,pubname{
 	if RENAME_AR_MEMBERS
 		RENAME_AR_MEMBERS equ 0
-		display '-WNG: RENAME_AR_MEMBERS is ignored, it is not compatible with VB.',13,10
+		display '-WNG: RENAME_AR_MEMBERS ignored, it is not compatible with VB',13,10
 	end if
 	argc=argcount
 	if argc>31 | argc<0
 		argc=0
-		display '-WNG: [argcount] should be in the range [0..31]. Defaulting to 0.',13,10
+		display '-WNG: [argcount] should be in the range [0..31], defaulting to 0',13,10
 	end if
 	if cconv>PBCALL | cconv<STDCALL
-		display '-WNG: [cconv] has an invalid value. Defaulting to STDCALL.',13,10
+		display '-WNG: [cconv] has an invalid value, defaulting to STDCALL',13,10
 	end if
 	islongname dllname
 	syms=syms+1
@@ -1354,6 +1363,6 @@ macro endlib{
 	end repeat
 	display '0'+syms mod 10,13,10
 	if lnk_member1_size>93952
-		display '-WNG: If using 32-bit MS linker, error LNK1102 may appear when loading this library due to its size.',13,10
+		display '-WNG: If using 32-bit MS linker, error LNK1102 may appear when loading this library due to its size',13,10
 	end if
 }
