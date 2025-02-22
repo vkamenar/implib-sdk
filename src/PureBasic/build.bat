@@ -1,32 +1,31 @@
 @echo off
-SETLOCAL
-REM === CONFIG BEGIN ===========================================
-
-REM PureBasic installation path.
-SET PB_HOME=C:\Program Files (x86)\PureBasic
-
-REM === CONFIG END =============================================
-TITLE Building Pbopenal...
+TITLE ImpLib SDK sample project: PureBasic with OpenAL
 PUSHD "%~dp0"
-
-REM Convert to short path format. Othewise the LibraryMaker will fail.
-for %%x in ("%PB_HOME%\") do set SH_PBHOME=%%~dpsx
-
-IF EXIST "%SH_PBHOME%\Compilers\fasm.exe" GOTO FASMFOUND
-ECHO PureBasic not found. To generate the User-Lib, install PureBasic
-ECHO and set PB_HOME configuration option to the location where PureBasic
-ECHO is installed.
-GOTO EXIT
-:FASMFOUND
-"%SH_PBHOME%\Compilers\fasm" openal32.def Pbopenal.lib
+echo Compiling the OpenAL32 import library for PureBasic
+echo.
+..\..\bin\FASM openal32.def Pbopenal.lib
 IF %ERRORLEVEL% NEQ 0 GOTO EXIT
 
-REM Run LibraryMaker to convert the import library to User-Lib format
-IF EXIST "%SH_PBHOME%\SDK\LibraryMaker.exe" GOTO PBFOUND
-ECHO PureBasic SDK not found.
+echo.
+SET PB_HOME="C:\Program Files\PureBasic"
+IF EXIST "%PB_HOME%\SDK\LibraryMaker.exe" GOTO PBFOUND
+SET PB_HOME="C:\Program Files (x86)\PureBasic"
+IF EXIST "%PB_HOME%\SDK\LibraryMaker.exe" GOTO PBFOUND
+FOR /f "tokens=2*" %%i IN ('reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\PureBasic (x64)_is1" /s 2^>nul ^| find "InstallLocation"') DO SET PB_HOME=%%j
+IF EXIST "%PB_HOME%\SDK\LibraryMaker.exe" GOTO PBFOUND
+FOR /f "tokens=2*" %%i IN ('reg query "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\PureBasic_is1" /s 2^>nul ^| find "InstallLocation"') DO SET PB_HOME=%%j
+IF EXIST "%PB_HOME%\SDK\LibraryMaker.exe" GOTO PBFOUND
+ECHO -ERR: PureBasic not found. It is required to generate the User-Lib.
 GOTO EXIT
 :PBFOUND
+REM Convert to short path format. Othewise the LibraryMaker will fail.
+for %%x in ("%PB_HOME%\") do set SH_PBHOME=%%~dpsx
+echo Generating the User-Lib for PureBasic.
+echo.
 %SH_PBHOME%\SDK\LibraryMaker .\PBopenal.desc
+IF %ERRORLEVEL% NEQ 0 GOTO EXIT
+
+copy /Y PBopenal "%PB_HOME%\PureLibraries\UserLibraries\PBopenal"
 
 :EXIT
 pause
