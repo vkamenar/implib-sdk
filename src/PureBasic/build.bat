@@ -7,11 +7,7 @@ echo.
 IF %ERRORLEVEL% NEQ 0 GOTO EXIT
 
 echo.
-SET PB_HOME="C:\Program Files\PureBasic"
-IF EXIST "%PB_HOME%\SDK\LibraryMaker.exe" GOTO PBFOUND
 SET PB_HOME="C:\Program Files (x86)\PureBasic"
-IF EXIST "%PB_HOME%\SDK\LibraryMaker.exe" GOTO PBFOUND
-FOR /f "tokens=2*" %%i IN ('reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\PureBasic (x64)_is1" /s 2^>nul ^| find "InstallLocation"') DO SET PB_HOME=%%j
 IF EXIST "%PB_HOME%\SDK\LibraryMaker.exe" GOTO PBFOUND
 FOR /f "tokens=2*" %%i IN ('reg query "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\PureBasic_is1" /s 2^>nul ^| find "InstallLocation"') DO SET PB_HOME=%%j
 IF EXIST "%PB_HOME%\SDK\LibraryMaker.exe" GOTO PBFOUND
@@ -24,9 +20,13 @@ echo Generating the User-Lib for PureBasic.
 echo.
 %SH_PBHOME%\SDK\LibraryMaker .\PBopenal.desc
 IF %ERRORLEVEL% NEQ 0 GOTO EXIT
-
 copy /Y PBopenal "%PB_HOME%\PureLibraries\UserLibraries\PBopenal"
+IF %ERRORLEVEL% NEQ 0 GOTO EXIT
 
+echo.
+echo Compiling the sample PureBasic application
+echo.
+%SH_PBHOME%\Compilers\pbcompilerc /CONSOLE -z /EXE test.exe pb_openal.pb
 :EXIT
 pause
 POPD
