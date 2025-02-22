@@ -214,6 +214,15 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, RegisterServiceProcess, _RegisterServiceProcess@8
 ; implib KERNEL32.DLL, ReinitializeCriticalSection, _ReinitializeCriticalSection@4
 ; implib KERNEL32.DLL, ord.48, _ReleaseThunkLock@4
+; implib KERNEL32.DLL, ord.49, _RestoreThunkLock@4
+; implib KERNEL32.DLL, ord.84, _RtlConvertLongToLargeInteger@4
+; implib KERNEL32.DLL, ord.85, _RtlConvertUlongToLargeInteger@4
+; implib KERNEL32.DLL, ord.76, RtlEnlargedIntegerDivide
+; implib KERNEL32.DLL, ord.73, _RtlEnlargedIntegerMultiply@8
+; implib KERNEL32.DLL, ord.75, _RtlEnlargedUnsignedDivide@16
+; implib KERNEL32.DLL, ord.74, _RtlEnlargedUnsignedMultiply@8
+; implib KERNEL32.DLL, ord.78, _RtlExtendedIntegerMultiply@12
+; implib KERNEL32.DLL, ord.77, _RtlExtendedMagicDivide@20
 
 ; *** Function available in kernel32 from v4.10 to v4.90
 ; implib KERNEL32.DLL, GetCryptApiExponentValue
