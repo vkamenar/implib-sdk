@@ -1,16 +1,22 @@
-; Enumerate
-; ---------
-; Shows how to use the OpenAL device enumeration extension to locate
-; all of the OpenAL devices on the user's system. The code also shows
-; how to determine the capabilities of each device, including what
-; version of OpenAL each device supports.
+; This sample project shows how to use the OpenAL (Open Audio Library) API
+; with PureBasic (32 bit). The ImpLib SDK compiles an import library for
+; the OpenAL32 DLL, which uses the CDECL calling convention. Then, the
+; import library is converted to the User-Lib format using the PureBasic SDK.
 
-; Copy the Pbopenal library to [PureBasic]\PureLibraries\UserLibraries
-; before compiling this sample program for the first time.
+; This project uses the device enumeration extension to locate all of the
+; OpenAL devices on the user's system. The code also shows how to determine
+; the capabilities of each device, including what version of OpenAL each
+; device supports.
 
-; Make sure you have OpenAL properly installed before running this
-; program. You can download the redistributable OpenAL installer from
-; the official OpenAL website: https://www.openal.org/downloads/
+; Just run the batch file build.bat to build/rebuild the sample application.
+
+; Make sure you have OpenAL properly installed before running the program.
+; You can download the redistributable OpenAL installer from the official
+; OpenAL website:
+;   https://www.openal.org/downloads/
+
+; For more advanced samples refer to the PureBasic OpenAL SDK:
+;   https://implib.sourceforge.io/PBOpenAL.htm
 
 IncludeFile "openal.pbi"
 
