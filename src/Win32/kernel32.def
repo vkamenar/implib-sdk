@@ -223,6 +223,12 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, ord.74, _RtlEnlargedUnsignedMultiply@8
 ; implib KERNEL32.DLL, ord.78, _RtlExtendedIntegerMultiply@12
 ; implib KERNEL32.DLL, ord.77, _RtlExtendedMagicDivide@20
+; implib KERNEL32.DLL, ord.72, _RtlLargeIntegerAdd@16
+; implib KERNEL32.DLL, ord.81, _RtlLargeIntegerArithmeticShift@12
+; implib KERNEL32.DLL, ord.82, _RtlLargeIntegerNegate@8
+; implib KERNEL32.DLL, ord.79, _RtlLargeIntegerShiftLeft@12
+; implib KERNEL32.DLL, ord.80, _RtlLargeIntegerShiftRight@12
+; implib KERNEL32.DLL, ord.83, _RtlLargeIntegerSubtract@16
 
 ; *** Function available in kernel32 from v4.10 to v4.90
 ; implib KERNEL32.DLL, GetCryptApiExponentValue
