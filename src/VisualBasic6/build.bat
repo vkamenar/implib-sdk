@@ -7,9 +7,9 @@ echo.
 IF %ERRORLEVEL% NEQ 0 GOTO EXIT
 
 echo.
-SET VB6="\Program Files\Microsoft Visual Studio\VB98"
+SET VB6=%ProgramFiles(X86)%\Microsoft Visual Studio\VB98
 IF EXIST "%VB6%\vb6.exe" GOTO VB6FOUND
-SET VB6="\Program Files (x86)\Microsoft Visual Studio\VB98"
+SET VB6=%ProgramFiles%\Microsoft Visual Studio\VB98
 IF EXIST "%VB6%\vb6.exe" GOTO VB6FOUND
 FOR /f "tokens=2*" %%i IN ('reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VisualBasic.ClassModule\shell\open\command" /s 2^>nul ^| find "REG_SZ"') DO SET VB6=%%j
 SET VB6=%VB6:~0,-13%
