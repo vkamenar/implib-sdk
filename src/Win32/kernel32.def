@@ -229,16 +229,10 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, ord.79, _RtlLargeIntegerShiftLeft@12
 ; implib KERNEL32.DLL, ord.80, _RtlLargeIntegerShiftRight@12
 ; implib KERNEL32.DLL, ord.83, _RtlLargeIntegerSubtract@16
+; implib KERNEL32.DLL, ord.88, SSCall
+; implib KERNEL32.DLL, ord.87, _SSOnBigStack@0
 
-; *** Function available in kernel32 from v4.10 to v4.90
-; implib KERNEL32.DLL, GetCryptApiExponentValue
-; implib KERNEL32.DLL, K32_NtCreateFile
-; implib KERNEL32.DLL, K32_RtlNtStatusToDosError, _K32_RtlNtStatusToDosError@4
-; implib KERNEL32.DLL, ord.104, RPCHACKORAMA
-; implib KERNEL32.DLL, RegisterSysMsgHandler
-; implib KERNEL32.DLL, ResetNLSUserInfoCache
-
-; *** These functions in kernel32 from v4.0 to v4.90 manage the stack frame for the thunk code
+; *** These functions, available in kernel32 from v4.0 to v4.90, manage the stack frame for the thunk code
 ; implib KERNEL32.DLL, FT_Exit0
 ; implib KERNEL32.DLL, FT_Exit4
 ; implib KERNEL32.DLL, FT_Exit8
@@ -257,6 +251,37 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, FT_Prolog, _FT_Prolog@0
 ; implib KERNEL32.DLL, ord.89, _FT_PrologPrime@0
 ; implib KERNEL32.DLL, FT_Thunk
+
+; *** These functions, available in kernel32 from v4.0 to v4.90, manage the memory addresses mapping
+;     when calling 16-bit code (16:16 format) from 32-bit code (0:32 protected mode)
+; implib KERNEL32.DLL, SMapLS
+; implib KERNEL32.DLL, SMapLS_IP_EBP_8
+; implib KERNEL32.DLL, SMapLS_IP_EBP_12
+; implib KERNEL32.DLL, SMapLS_IP_EBP_16
+; implib KERNEL32.DLL, SMapLS_IP_EBP_20
+; implib KERNEL32.DLL, SMapLS_IP_EBP_24
+; implib KERNEL32.DLL, SMapLS_IP_EBP_28
+; implib KERNEL32.DLL, SMapLS_IP_EBP_32
+; implib KERNEL32.DLL, SMapLS_IP_EBP_36
+; implib KERNEL32.DLL, SMapLS_IP_EBP_40
+; implib KERNEL32.DLL, SUnMapLS
+; implib KERNEL32.DLL, SUnMapLS_IP_EBP_12
+; implib KERNEL32.DLL, SUnMapLS_IP_EBP_16
+; implib KERNEL32.DLL, SUnMapLS_IP_EBP_20
+; implib KERNEL32.DLL, SUnMapLS_IP_EBP_24
+; implib KERNEL32.DLL, SUnMapLS_IP_EBP_28
+; implib KERNEL32.DLL, SUnMapLS_IP_EBP_32
+; implib KERNEL32.DLL, SUnMapLS_IP_EBP_36
+; implib KERNEL32.DLL, SUnMapLS_IP_EBP_40
+; implib KERNEL32.DLL, SUnMapLS_IP_EBP_8
+
+; *** Function available in kernel32 from v4.10 to v4.90
+; implib KERNEL32.DLL, GetCryptApiExponentValue
+; implib KERNEL32.DLL, K32_NtCreateFile
+; implib KERNEL32.DLL, K32_RtlNtStatusToDosError, _K32_RtlNtStatusToDosError@4
+; implib KERNEL32.DLL, ord.104, RPCHACKORAMA
+; implib KERNEL32.DLL, RegisterSysMsgHandler
+; implib KERNEL32.DLL, ResetNLSUserInfoCache
 
 ; *** Stub function available since kernel32 v4.0
 ; implib KERNEL32.DLL, UTUnRegister, _UTUnRegister@4
