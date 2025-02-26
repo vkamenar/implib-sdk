@@ -4,7 +4,7 @@ include '..\implib.inc'
 ; They are either stubs or available in specific kernel32 versions only.
 ; Feel free to uncomment the necessary symbols and recompile the library.
 
-; *** FUnction available in kernel32 v6.3 only
+; *** Function available in kernel32 v6.3 only
 ; implib KERNEL32.DLL, CalloutOnFiberStack, _CalloutOnFiberStack@12
 
 ; *** Functions available in kernel32 v6.2 only
@@ -64,6 +64,9 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, SetRoamingLastObservedChangeTime, _SetRoamingLastObservedChangeTime@8
 ; implib KERNEL32.DLL, SetStateVersion, _SetStateVersion@8
 ; implib KERNEL32.DLL, SubscribeStateChangeNotification, _SubscribeStateChangeNotification@12
+; implib KERNEL32.DLL, UnregisterStateChangeNotification, _UnregisterStateChangeNotification@4
+; implib KERNEL32.DLL, UnregisterStateLock, _UnregisterStateLock@8
+; implib KERNEL32.DLL, UnsubscribeStateChangeNotification, _UnsubscribeStateChangeNotification@4
 
 ; *** Functions available in kernel32 v6.1 only
 ; implib KERNEL32.DLL, RegKrnGetGlobalState, _RegKrnGetGlobalState@0
@@ -244,6 +247,7 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, ord.19, ThunkTheTemplateHandle
 ; implib KERNEL32.DLL, TlsAllocInternal, _TlsAllocInternal@0
 ; implib KERNEL32.DLL, TlsFreeInternal, _TlsFreeInternal@4
+; implib KERNEL32.DLL, UninitializeCriticalSection, _UninitializeCriticalSection@4
 
 ; *** These functions, available in kernel32 from v4.0 to v4.90, manage the stack frame for the thunk code
 ; implib KERNEL32.DLL, FT_Exit0
@@ -287,6 +291,8 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, SUnMapLS_IP_EBP_36
 ; implib KERNEL32.DLL, SUnMapLS_IP_EBP_40
 ; implib KERNEL32.DLL, SUnMapLS_IP_EBP_8
+; implib KERNEL32.DLL, UnMapLS, _UnMapLS@4
+; implib KERNEL32.DLL, UnMapLSFixArray
 
 ; *** Function available in kernel32 from v4.10 to v4.90
 ; implib KERNEL32.DLL, ord.120, GetCryptApiExponentValue
