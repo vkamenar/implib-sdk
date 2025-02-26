@@ -150,7 +150,6 @@
 #AL_EXTENSIONS = $B004
 
 ; *** Global tweakage
-
 ; Doppler scale
 #AL_DOPPLER_FACTOR = $C000
 
@@ -231,7 +230,6 @@
 #AL_AUXILIARY_SEND_FILTER_GAINHF_AUTO = $2000C
 
 ; *** Effect object definitions to be used with alEffect functions
-
 ; Reverb parameters
 #AL_REVERB_DENSITY = 1
 #AL_REVERB_DIFFUSION = 2
@@ -349,7 +347,6 @@
 #AL_EFFECTSLOT_NULL = 0
 
 ; *** Filter object definitions to be used with alFilter functions
-
 ; Lowpass parameters
 #AL_LOWPASS_GAIN = 1
 #AL_LOWPASS_GAINHF = 2
@@ -375,7 +372,6 @@
 #AL_FILTER_BANDPASS = 3
 
 ; *** Filter ranges and defaults
-
 ; Lowpass filter
 #LOWPASS_MIN_GAIN = 0
 #LOWPASS_MAX_GAIN = 1.0
@@ -404,7 +400,6 @@
 #BANDPASS_DEFAULT_GAINLF = 1.0
 
 ; *** Effect parameter structures, value definitions, ranges and defaults
-
 ; AL reverb effect parameter ranges and defaults
 #AL_REVERB_MIN_DENSITY = 0
 #AL_REVERB_MAX_DENSITY = 1.0
@@ -690,7 +685,6 @@
 #AL_DEFAULT_METERS_PER_UNIT = 1.0
 
 ; *** Effect object definitions to be used with alEffect functions (Creative)
-
 ; AL EAXReverb effect parameters
 #AL_EAXREVERB_DENSITY = 1
 #AL_EAXREVERB_DIFFUSION = 2
@@ -720,7 +714,6 @@
 #AL_EFFECT_EAXREVERB = $8000
 
 ; *** Effect parameter structures, value definitions, ranges and defaults (Creative)
-
 ; AL reverb effect parameter ranges and defaults
 #AL_EAXREVERB_MIN_DENSITY = 0
 #AL_EAXREVERB_MAX_DENSITY = 1.0
