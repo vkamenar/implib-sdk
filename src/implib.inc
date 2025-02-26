@@ -259,6 +259,10 @@ macro chkordinal name{
 						ordinal_value=ordinal_value*10+chr
 					end if
 				end repeat
+				if ordinal_value>0FFFFh
+					ordinal_value=ordinal_value and 0FFFFh
+					display '-WNG: Ordinal ',`name,' truncated to 16-bit',13,10
+				end if
 			end if
 		end if
 	end virtual
@@ -419,8 +423,6 @@ macro implib dllname,name,thunk,pubname{
 		else
 			dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_MEM_READ or IMAGE_MEM_WRITE,0
 			dw IMAGE_SYM_CLASS_SECTION
-		end if
-		if ~RENAME_AR_MEMBERS
 			dd 0,4,0,0
 			dw IMAGE_SYM_CLASS_EXTERNAL
 		end if
@@ -746,8 +748,6 @@ macro pbimplib dllname,cconv,argcount,name,pb_name,pubname{
 		else
 			dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_MEM_READ or IMAGE_MEM_WRITE,0
 			dw IMAGE_SYM_CLASS_SECTION
-		end if
-		if ~RENAME_AR_MEMBERS
 			dd 0,4,0,0
 			dw IMAGE_SYM_CLASS_EXTERNAL
 		end if
@@ -1345,7 +1345,7 @@ macro endlib{
 	null_imp_descr_sym_tbl:
 		addcompid
 		dd 0,4,0,1
-		db IMAGE_SYM_CLASS_EXTERNAL,0
+		dw IMAGE_SYM_CLASS_EXTERNAL
 		dd 1Dh
 		db '__NULL_IMPORT_DESCRIPTOR',0
 		add2dir $-25,25
