@@ -1,7 +1,7 @@
 Attribute VB_Name = "openal32"
 ' This module represents the OpenAL (Open Audio Library) 32-bit API.
 ' The OpenAL constants and function prototypes are listed below.
-' These constants and prototypes are based on the original OpenAL v1.0/v1.1 SDK.
+' These constants and prototypes are based on the original OpenAL SDK v1.0/v1.1.
 
 ' At link time (when VB6 invokes the MS linker to generate the native executable), the VB6LINK tool included in
 ' the ImpLib SDK replaces this module with the OpenAL import library to link the executable to the openal32.dll.
@@ -691,9 +691,108 @@ Const AL_MAX_AUXILIARY_SEND_FILTER_GAINHF_AUTO As Long = 1
 Const AL_DEFAULT_AUXILIARY_SEND_FILTER_GAINHF_AUTO As Long = 1
 
 ' Listener parameter value definitions, ranges and defaults
-Const AL_MIN_METERS_PER_UNIT As Single = -1.401298E-45
-Const AL_MAX_METERS_PER_UNIT As Single = 3.4028235E+38
+Const AL_MIN_METERS_PER_UNIT As Single = 1.175494e-38
+Const AL_MAX_METERS_PER_UNIT As Single = 3.402823e+38
 Const AL_DEFAULT_METERS_PER_UNIT As Single = 1.0
+
+' *** Effect object definitions to be used with alEffect functions (Creative)
+
+' AL EAXReverb effect parameters
+Const AL_EAXREVERB_DENSITY As Long = 1
+Const AL_EAXREVERB_DIFFUSION As Long = 2
+Const AL_EAXREVERB_GAIN As Long = 3
+Const AL_EAXREVERB_GAINHF As Long = 4
+Const AL_EAXREVERB_GAINLF As Long = 5
+Const AL_EAXREVERB_DECAY_TIME As Long = 6
+Const AL_EAXREVERB_DECAY_HFRATIO As Long = 7
+Const AL_EAXREVERB_DECAY_LFRATIO As Long = 8
+Const AL_EAXREVERB_REFLECTIONS_GAIN As Long = 9
+Const AL_EAXREVERB_REFLECTIONS_DELAY As Long = &HA
+Const AL_EAXREVERB_REFLECTIONS_PAN As Long = &HB
+Const AL_EAXREVERB_LATE_REVERB_GAIN As Long = &HC
+Const AL_EAXREVERB_LATE_REVERB_DELAY As Long = &HD
+Const AL_EAXREVERB_LATE_REVERB_PAN As Long = &HE
+Const AL_EAXREVERB_ECHO_TIME As Long = &HF
+Const AL_EAXREVERB_ECHO_DEPTH As Long = &H10
+Const AL_EAXREVERB_MODULATION_TIME As Long = &H11
+Const AL_EAXREVERB_MODULATION_DEPTH As Long = &H12
+Const AL_EAXREVERB_AIR_ABSORPTION_GAINHF As Long = &H13 
+Const AL_EAXREVERB_HFREFERENCE As Long = &H14 
+Const AL_EAXREVERB_LFREFERENCE As Long = &H15 
+Const AL_EAXREVERB_ROOM_ROLLOFF_FACTOR As Long = &H16
+Const AL_EAXREVERB_DECAY_HFLIMIT As Long = &H17
+
+' Effect type definitions to be used with AL_EFFECT_TYPE
+Const AL_EFFECT_EAXREVERB As Long = &H8000
+
+' *** Effect parameter structures, value definitions, ranges and defaults (Creative)
+
+' AL reverb effect parameter ranges and defaults
+Const AL_EAXREVERB_MIN_DENSITY As Single = 0.0
+Const AL_EAXREVERB_MAX_DENSITY As Single = 1.0
+Const AL_EAXREVERB_DEFAULT_DENSITY As Single = 1.0
+Const AL_EAXREVERB_MIN_DIFFUSION As Single = 0.0
+Const AL_EAXREVERB_MAX_DIFFUSION As Single = 1.0
+Const AL_EAXREVERB_DEFAULT_DIFFUSION As Single = 1.0
+Const AL_EAXREVERB_MIN_GAIN As Single = 0.0
+Const AL_EAXREVERB_MAX_GAIN As Single = 1.0
+Const AL_EAXREVERB_DEFAULT_GAIN As Single = 0.32
+Const AL_EAXREVERB_MIN_GAINHF As Single = 0.0
+Const AL_EAXREVERB_MAX_GAINHF As Single = 1.0
+Const AL_EAXREVERB_DEFAULT_GAINHF As Single = 0.89
+Const AL_EAXREVERB_MIN_GAINLF As Single = 0.0
+Const AL_EAXREVERB_MAX_GAINLF As Single = 1.0
+Const AL_EAXREVERB_DEFAULT_GAINLF As Single = 1.0
+Const AL_EAXREVERB_MIN_DECAY_TIME As Single = 0.1
+Const AL_EAXREVERB_MAX_DECAY_TIME As Single = 20.0
+Const AL_EAXREVERB_DEFAULT_DECAY_TIME As Single = 1.49
+Const AL_EAXREVERB_MIN_DECAY_HFRATIO As Single = 0.1
+Const AL_EAXREVERB_MAX_DECAY_HFRATIO As Single = 2.0
+Const AL_EAXREVERB_DEFAULT_DECAY_HFRATIO As Single = 0.83
+Const AL_EAXREVERB_MIN_DECAY_LFRATIO As Single = 0.1
+Const AL_EAXREVERB_MAX_DECAY_LFRATIO As Single = 2.0
+Const AL_EAXREVERB_DEFAULT_DECAY_LFRATIO As Single = 1.0
+Const AL_EAXREVERB_MIN_REFLECTIONS_GAIN As Single = 0.0
+Const AL_EAXREVERB_MAX_REFLECTIONS_GAIN As Single = 3.16
+Const AL_EAXREVERB_DEFAULT_REFLECTIONS_GAIN As Single = 0.05
+Const AL_EAXREVERB_MIN_REFLECTIONS_DELAY As Single = 0.0
+Const AL_EAXREVERB_MAX_REFLECTIONS_DELAY As Single = 0.3
+Const AL_EAXREVERB_DEFAULT_REFLECTIONS_DELAY As Single = 0.007
+Const AL_EAXREVERB_DEFAULT_REFLECTIONS_PAN_XYZ As Single = 0.0
+Const AL_EAXREVERB_MIN_LATE_REVERB_GAIN As Single = 0.0
+Const AL_EAXREVERB_MAX_LATE_REVERB_GAIN As Single = 10.0
+Const AL_EAXREVERB_DEFAULT_LATE_REVERB_GAIN As Single = 1.26
+Const AL_EAXREVERB_MIN_LATE_REVERB_DELAY As Single = 0.0
+Const AL_EAXREVERB_MAX_LATE_REVERB_DELAY As Single = 0.1
+Const AL_EAXREVERB_DEFAULT_LATE_REVERB_DELAY As Single = 0.011
+Const AL_EAXREVERB_DEFAULT_LATE_REVERB_PAN_XYZ As Single = 0.0
+Const AL_EAXREVERB_MIN_ECHO_TIME As Single = 0.075
+Const AL_EAXREVERB_MAX_ECHO_TIME As Single = 0.25
+Const AL_EAXREVERB_DEFAULT_ECHO_TIME As Single = 0.25
+Const AL_EAXREVERB_MIN_ECHO_DEPTH As Single = 0.0
+Const AL_EAXREVERB_MAX_ECHO_DEPTH As Single = 1.0
+Const AL_EAXREVERB_DEFAULT_ECHO_DEPTH As Single = 0.0
+Const AL_EAXREVERB_MIN_MODULATION_TIME As Single = 0.04
+Const AL_EAXREVERB_MAX_MODULATION_TIME As Single = 4.0
+Const AL_EAXREVERB_DEFAULT_MODULATION_TIME As Single = 0.25
+Const AL_EAXREVERB_MIN_MODULATION_DEPTH As Single = 0.0
+Const AL_EAXREVERB_MAX_MODULATION_DEPTH As Single = 1.0
+Const AL_EAXREVERB_DEFAULT_MODULATION_DEPTH As Single = 0.0
+Const AL_EAXREVERB_MIN_AIR_ABSORPTION_GAINHF As Single = 0.892
+Const AL_EAXREVERB_MAX_AIR_ABSORPTION_GAINHF As Single = 1.0
+Const AL_EAXREVERB_DEFAULT_AIR_ABSORPTION_GAINHF As Single = 0.994
+Const AL_EAXREVERB_MIN_HFREFERENCE As Single = 1000.0
+Const AL_EAXREVERB_MAX_HFREFERENCE As Single = 20000.0
+Const AL_EAXREVERB_DEFAULT_HFREFERENCE As Single = 5000.0
+Const AL_EAXREVERB_MIN_LFREFERENCE As Single = 20.0
+Const AL_EAXREVERB_MAX_LFREFERENCE As Single = 1000.0
+Const AL_EAXREVERB_DEFAULT_LFREFERENCE As Single = 250.0
+Const AL_EAXREVERB_MIN_ROOM_ROLLOFF_FACTOR As Single = 0.0
+Const AL_EAXREVERB_MAX_ROOM_ROLLOFF_FACTOR As Single = 10.0
+Const AL_EAXREVERB_DEFAULT_ROOM_ROLLOFF_FACTOR As Single = 0.0
+Const AL_EAXREVERB_MIN_DECAY_HFLIMIT As Long = 0
+Const AL_EAXREVERB_MAX_DECAY_HFLIMIT As Long = 1
+Const AL_EAXREVERB_DEFAULT_DECAY_HFLIMIT As Long = 1
 
 ' Enable a feature of the OpenAL driver
 ' Note: There are no capabilities in OpenAL 1.1 to be used with this function, but it may be used by an extension
