@@ -248,6 +248,33 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, TlsAllocInternal, _TlsAllocInternal@0
 ; implib KERNEL32.DLL, TlsFreeInternal, _TlsFreeInternal@4
 ; implib KERNEL32.DLL, UninitializeCriticalSection, _UninitializeCriticalSection@4
+; implib KERNEL32.DLL, ord.1, VxDCall
+; implib KERNEL32.DLL, ord.2, VxDCall1
+; implib KERNEL32.DLL, ord.3, VxDCall2
+; implib KERNEL32.DLL, ord.4, VxDCall3
+; implib KERNEL32.DLL, ord.5, VxDCall4
+; implib KERNEL32.DLL, ord.6, VxDCall5
+; implib KERNEL32.DLL, ord.7, VxDCall6
+; implib KERNEL32.DLL, ord.8, VxDCall7
+; implib KERNEL32.DLL, ord.9, VxDCall8
+; implib KERNEL32.DLL, ord.51, W32S_BackTo32
+; implib KERNEL32.DLL, ord.54, _WOWCallback16@8
+; implib KERNEL32.DLL, ord.55, _WOWCallback16Ex@20
+; implib KERNEL32.DLL, ord.67, _WOWDirectedYield16@4
+; implib KERNEL32.DLL, ord.70, _WOWGetDescriptor@8
+; implib KERNEL32.DLL, ord.56, _WOWGetVDMPointer@12
+; implib KERNEL32.DLL, ord.68, _WOWGetVDMPointerFix@12
+; implib KERNEL32.DLL, ord.69, _WOWGetVDMPointerUnfix@4
+; implib KERNEL32.DLL, ord.59, _WOWGlobalAlloc16@8
+; implib KERNEL32.DLL, ord.63, _WOWGlobalAllocLock16@12
+; implib KERNEL32.DLL, ord.62, _WOWGlobalFree16@4
+; implib KERNEL32.DLL, ord.60, _WOWGlobalLock16@4
+; implib KERNEL32.DLL, ord.65, _WOWGlobalLockSize16@8
+; implib KERNEL32.DLL, ord.61, _WOWGlobalUnlock16@4
+; implib KERNEL32.DLL, ord.64, _WOWGlobalUnlockFree16@4
+; implib KERNEL32.DLL, ord.58, _WOWHandle16@8
+; implib KERNEL32.DLL, ord.57, _WOWHandle32@8
+; implib KERNEL32.DLL, ord.66, _WOWYield16@0
 
 ; *** These functions, available in kernel32 from v4.0 to v4.90, manage the stack frame for the thunk code
 ; implib KERNEL32.DLL, FT_Exit0
