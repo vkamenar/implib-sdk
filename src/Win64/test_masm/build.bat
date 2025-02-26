@@ -33,7 +33,7 @@ GOTO EXIT
 :POLINKFOUND
 echo Linking the Win64 executable using Polink
 
-REM Optional file size optimization flags:
+REM Optional file size optimization flag:
 REM   Merge '.data' section to '.text': /MERGE:.data=.text
 "%LNKEXE%" /ENTRY:start /SUBSYSTEM:CONSOLE /MACHINE:X64 /LIBPATH:..\..\..\lib\Win64 test.obj
 
