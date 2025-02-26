@@ -63,6 +63,7 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, ResetState, _ResetState@4
 ; implib KERNEL32.DLL, SetRoamingLastObservedChangeTime, _SetRoamingLastObservedChangeTime@8
 ; implib KERNEL32.DLL, SetStateVersion, _SetStateVersion@8
+; implib KERNEL32.DLL, SubscribeStateChangeNotification, _SubscribeStateChangeNotification@12
 
 ; *** Functions available in kernel32 v6.1 only
 ; implib KERNEL32.DLL, RegKrnGetGlobalState, _RegKrnGetGlobalState@0
@@ -236,6 +237,13 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, ord.88, SSCall
 ; implib KERNEL32.DLL, ord.87, _SSOnBigStack@0
 ; implib KERNEL32.DLL, SetDaylightFlag
+; implib KERNEL32.DLL, ThunkConnect32, _ThunkConnect32@24
+; implib KERNEL32.DLL, ord.43, _ThunkInitLS@20
+; implib KERNEL32.DLL, ord.41, _ThunkInitLSF@20
+; implib KERNEL32.DLL, ord.46, _ThunkInitSL@20
+; implib KERNEL32.DLL, ord.19, ThunkTheTemplateHandle
+; implib KERNEL32.DLL, TlsAllocInternal, _TlsAllocInternal@0
+; implib KERNEL32.DLL, TlsFreeInternal, _TlsFreeInternal@4
 
 ; *** These functions, available in kernel32 from v4.0 to v4.90, manage the stack frame for the thunk code
 ; implib KERNEL32.DLL, FT_Exit0
@@ -288,6 +296,11 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, RegisterSysMsgHandler
 ; implib KERNEL32.DLL, ResetNLSUserInfoCache
 ; implib KERNEL32.DLL, ord.122, SetTaskmonControl
+; implib KERNEL32.DLL, SignalSysMsgHandlers
+; implib KERNEL32.DLL, ord.100, _TerminateThreadEx@12
+; implib KERNEL32.DLL, ord.121, ThunkConnect32NonLocking
+; implib KERNEL32.DLL, ord.102, TlsAllocGlobal
+; implib KERNEL32.DLL, ord.103, TlsFreeGlobal
 
 ; *** Stub function available since kernel32 v4.0
 ; implib KERNEL32.DLL, UTUnRegister, _UTUnRegister@4
