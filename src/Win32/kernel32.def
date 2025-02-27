@@ -67,6 +67,8 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, UnregisterStateChangeNotification, _UnregisterStateChangeNotification@4
 ; implib KERNEL32.DLL, UnregisterStateLock, _UnregisterStateLock@8
 ; implib KERNEL32.DLL, UnsubscribeStateChangeNotification, _UnsubscribeStateChangeNotification@4
+; implib KERNEL32.DLL, WriteStateAtomValue, _WriteStateAtomValue@20
+; implib KERNEL32.DLL, WriteStateContainerValue, _WriteStateContainerValue@24
 
 ; *** Functions available in kernel32 v6.1 only
 ; implib KERNEL32.DLL, RegKrnGetGlobalState, _RegKrnGetGlobalState@0
@@ -281,6 +283,14 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, ord.57, _WOWHandle32@8
 ; implib KERNEL32.DLL, ord.66, _WOWYield16@0
 ; implib KERNEL32.DLL, ord.21, _Win32HandleToDosFileHandle@4
+; implib KERNEL32.DLL, ord.94, __CheckNotSysLevel@4
+; implib KERNEL32.DLL, ord.95, __ConfirmSysLevel@4
+; implib KERNEL32.DLL, ord.96, __ConfirmWin16Lock@0
+; implib KERNEL32.DLL, _DebugOut
+; implib KERNEL32.DLL, _DebugPrintf
+; implib KERNEL32.DLL, ord.97, __EnterSysLevel@4
+; implib KERNEL32.DLL, ord.98, __LeaveSysLevel@4
+; implib KERNEL32.DLL, ord.86, _LeaveSysLevel_NoThk
 
 ; *** These functions, available in kernel32 from v4.0 to v4.90, manage the stack frame for the thunk code
 ; implib KERNEL32.DLL, FT_Exit0
