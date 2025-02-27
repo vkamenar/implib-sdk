@@ -100,6 +100,11 @@ include '..\implib.inc'
 ; *** Functions available in kernel32 v6.X
 ; implib KERNEL32.DLL, NlsEventDataDescCreate, _NlsEventDataDescCreate@16
 ; implib KERNEL32.DLL, NlsWriteEtwEvent, _NlsWriteEtwEvent@20
+; implib KERNEL32.DLL, WerpCleanupMessageMapping, _WerpCleanupMessageMapping@0
+; implib KERNEL32.DLL, WerpNotifyLoadStringResource, _WerpNotifyLoadStringResource@16
+; implib KERNEL32.DLL, WerpNotifyLoadStringResourceEx, _WerpNotifyLoadStringResourceEx@20
+; implib KERNEL32.DLL, WerpNotifyUseStringResource, _WerpNotifyUseStringResource@4
+; implib KERNEL32.DLL, WerpStringLookup, _WerpStringLookup@8
 
 ; *** Stub function available since kernel32 v5.2
 ; implib KERNEL32.DLL, BaseIsAppcompatInfrastructureDisabled, _BaseIsAppcompatInfrastructureDisabled@0
@@ -275,6 +280,7 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, ord.58, _WOWHandle16@8
 ; implib KERNEL32.DLL, ord.57, _WOWHandle32@8
 ; implib KERNEL32.DLL, ord.66, _WOWYield16@0
+; implib KERNEL32.DLL, ord.21, _Win32HandleToDosFileHandle@4
 
 ; *** These functions, available in kernel32 from v4.0 to v4.90, manage the stack frame for the thunk code
 ; implib KERNEL32.DLL, FT_Exit0
