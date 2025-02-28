@@ -291,6 +291,14 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, ord.97, __EnterSysLevel@4
 ; implib KERNEL32.DLL, ord.98, __LeaveSysLevel@4
 ; implib KERNEL32.DLL, ord.86, _LeaveSysLevel_NoThk
+; implib KERNEL32.DLL, dprintf
+; implib KERNEL32.DLL, ord.10, _k32CharToOemA@8
+; implib KERNEL32.DLL, ord.11, _k32CharToOemBuffA@12
+; implib KERNEL32.DLL, ord.14, _k32LoadStringA@16
+; implib KERNEL32.DLL, ord.12, _k32OemToCharA@8
+; implib KERNEL32.DLL, ord.13, _k32OemToCharBuffA@12
+; implib KERNEL32.DLL, ord.15, _k32wsprintfA@8
+; implib KERNEL32.DLL, ord.16, _k32wvsprintfA@12
 
 ; *** These functions, available in kernel32 from v4.0 to v4.90, manage the stack frame for the thunk code
 ; implib KERNEL32.DLL, FT_Exit0
@@ -350,6 +358,20 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, ord.121, ThunkConnect32NonLocking
 ; implib KERNEL32.DLL, ord.102, TlsAllocGlobal
 ; implib KERNEL32.DLL, ord.103, TlsFreeGlobal
+; implib KERNEL32.DLL, ord.117, k32iswctype
+; implib KERNEL32.DLL, ord.118, k32towupper
+; implib KERNEL32.DLL, ord.114, k32wcscmp
+; implib KERNEL32.DLL, ord.106, k32wcsicmp
+; implib KERNEL32.DLL, ord.115, k32wcsncmp
+; implib KERNEL32.DLL, ord.107, k32wcsupr
+; implib KERNEL32.DLL, ord.108, lstrchrA
+; implib KERNEL32.DLL, ord.113, lstrchrW
+; implib KERNEL32.DLL, ord.109, lstrcspnA
+; implib KERNEL32.DLL, ord.110, lstrncpyA
+; implib KERNEL32.DLL, ord.116, lstrncpyW
+; implib KERNEL32.DLL, ord.111, lstrrchrA
+; implib KERNEL32.DLL, ord.112, lstrstrA
+; implib KERNEL32.DLL, ord.105, lstrtolW
 
 ; *** Stub function available since kernel32 v4.0
 ; implib KERNEL32.DLL, UTUnRegister, _UTUnRegister@4
