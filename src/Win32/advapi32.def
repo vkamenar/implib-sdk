@@ -1,5 +1,16 @@
 include '..\implib.inc'
 
+; The following symbols are commented out to limit the size of the library.
+; They are available in specific advapi32 versions only.
+; Feel free to uncomment the necessary symbols and recompile the library.
+
+; *** Function available in advapi32 v6.0 only
+; implib advapi32.dll, CheckAppInitBlockedServiceIdentity
+
+; *** Functions available in advapi32 v4.0 before Windows NT 4.0 SP4
+; implib advapi32.dll, BuildAccessRequestA
+; implib advapi32.dll, BuildAccessRequestW
+
 implib advapi32.dll, A_SHAFinal, _A_SHAFinal@8
 implib advapi32.dll, A_SHAInit, _A_SHAInit@4
 implib advapi32.dll, A_SHAUpdate, _A_SHAUpdate@12
