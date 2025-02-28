@@ -25,6 +25,6 @@ The ImpLib SDK is free even for commercial use and redistribution of any kind, a
 
 Unpack the ImpLib SDK release into any directory. Then launch ```build_libs.bat```. This batch file builds or rebuilds the sample import libraries: MSVCRT, Win32 and Win64 system API libraries.
 
-The output libraries are stored under the ```lib``` subdirectory. Two import libraries are created for each input file: a regular import library including *original thunk* and a "stripped" version without *original thunk*. The latter is stored into the ```stripped``` subdirectory.
+The output libraries are stored under the ```lib``` subdirectory. Two import libraries are created for each input file. One of the libraries follows the MS format and internal naming conventions. The other one uses the format and naming compatible with GNU LD and LLVM. The latter is stored into the ```lib\lld``` subdirectory.
 
 If you add new import library definitions or modify the sample files, just rerun ```build_libs.bat```. Only new or modified files will be recompiled.
