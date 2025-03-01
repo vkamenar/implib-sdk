@@ -7,9 +7,14 @@ include '..\implib.inc'
 ; *** Function available in advapi32 v6.0 only
 ; implib advapi32.dll, CheckAppInitBlockedServiceIdentity
 
+; *** Function available in advapi32 v4.90 only
+; implib advapi32.dll, CryptGetLocalKeyLimits, _CryptGetLocalKeyLimits@16
+
 ; *** Functions available in advapi32 v4.0 before Windows NT 4.0 SP4
 ; implib advapi32.dll, BuildAccessRequestA
 ; implib advapi32.dll, BuildAccessRequestW
+; implib advapi32.dll, DenyAccessRightsA
+; implib advapi32.dll, DenyAccessRightsW
 
 implib advapi32.dll, A_SHAFinal, _A_SHAFinal@8
 implib advapi32.dll, A_SHAInit, _A_SHAInit@4
