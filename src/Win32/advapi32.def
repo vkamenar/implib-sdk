@@ -15,6 +15,14 @@ include '..\implib.inc'
 ; implib advapi32.dll, BuildAccessRequestW
 ; implib advapi32.dll, DenyAccessRightsA
 ; implib advapi32.dll, DenyAccessRightsW
+; implib advapi32.dll, GetAuditedPermissionsFromSDA
+; implib advapi32.dll, GetAuditedPermissionsFromSDW
+; implib advapi32.dll, GetEffectiveAccessRightsA
+; implib advapi32.dll, GetEffectiveAccessRightsW
+; implib advapi32.dll, GetEffectiveRightsFromSDA
+; implib advapi32.dll, GetEffectiveRightsFromSDW
+; implib advapi32.dll, GetExplicitAccessRightsA
+; implib advapi32.dll, GetExplicitAccessRightsW
 
 implib advapi32.dll, A_SHAFinal, _A_SHAFinal@8
 implib advapi32.dll, A_SHAInit, _A_SHAInit@4
@@ -299,6 +307,7 @@ implib advapi32.dll, EnumerateTraceGuidsEx, _EnumerateTraceGuidsEx@24
 implib advapi32.dll, EqualDomainSid, _EqualDomainSid@12
 implib advapi32.dll, EqualPrefixSid, _EqualPrefixSid@8
 implib advapi32.dll, EqualSid, _EqualSid@8
+implib advapi32.dll, EtwLogSysConfigExtension, _EtwLogSysConfigExtension@8
 implib advapi32.dll, EventAccessControl, _EventAccessControl@20
 implib advapi32.dll, EventAccessQuery, _EventAccessQuery@12
 implib advapi32.dll, EventAccessRemove, _EventAccessRemove@4
