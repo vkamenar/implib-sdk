@@ -7,6 +7,15 @@ include '..\implib.inc'
 ; *** Function available in advapi32 v6.0 only
 ; implib advapi32.dll, CheckAppInitBlockedServiceIdentity
 
+; *** Functions available in advapi32 v5.0 only
+; implib advapi32.dll, GetMangledSiteSid, _GetMangledSiteSid@12
+; implib advapi32.dll, GetSiteDirectoryA, _GetSiteDirectoryA@12
+; implib advapi32.dll, GetSiteDirectoryW, _GetSiteDirectoryW@12
+; implib advapi32.dll, GetSiteNameFromSid, _GetSiteNameFromSid@8
+; implib advapi32.dll, GetSiteSidFromToken, _GetSiteSidFromToken@4
+; implib advapi32.dll, GetSiteSidFromUrl, _GetSiteSidFromUrl@4
+; implib advapi32.dll, IsInSandbox
+
 ; *** Function available in advapi32 v4.90 only
 ; implib advapi32.dll, CryptGetLocalKeyLimits, _CryptGetLocalKeyLimits@16
 
@@ -19,10 +28,15 @@ include '..\implib.inc'
 ; implib advapi32.dll, GetAuditedPermissionsFromSDW
 ; implib advapi32.dll, GetEffectiveAccessRightsA
 ; implib advapi32.dll, GetEffectiveAccessRightsW
-; implib advapi32.dll, GetEffectiveRightsFromSDA
-; implib advapi32.dll, GetEffectiveRightsFromSDW
+; implib advapi32.dll, GetEffectiveRightsFromSDA, _GetEffectiveRightsFromSDA@12
+; implib advapi32.dll, GetEffectiveRightsFromSDW, _GetEffectiveRightsFromSDW@12
 ; implib advapi32.dll, GetExplicitAccessRightsA
 ; implib advapi32.dll, GetExplicitAccessRightsW
+; implib advapi32.dll, GrantAccessRightsA, _GrantAccessRightsA@16
+; implib advapi32.dll, GrantAccessRightsW, _GrantAccessRightsW@16
+; implib advapi32.dll, IsAccessPermittedA, _IsAccessPermittedA@20
+; implib advapi32.dll, IsAccessPermittedW, _IsAccessPermittedW@20
+; implib advapi32.dll, NTAccessMaskToProvAccessRights, _NTAccessMaskToProvAccessRights@12
 
 implib advapi32.dll, A_SHAFinal, _A_SHAFinal@8
 implib advapi32.dll, A_SHAInit, _A_SHAInit@4
