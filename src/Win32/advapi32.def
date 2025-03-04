@@ -4,8 +4,14 @@ include '..\implib.inc'
 ; They are available in specific advapi32 versions only.
 ; Feel free to uncomment the necessary symbols and recompile the library.
 
+; *** Functions available in advapi32 v6.2 only
+; implib advapi32.dll, PsmActivateApplication, _PsmActivateApplication@12
+; implib advapi32.dll, PsmAdjustActivationToken, _PsmAdjustActivationToken@24
+; implib advapi32.dll, PsmQueryBackgroundActivationType, _PsmQueryBackgroundActivationType@8
+; implib advapi32.dll, PsmRegisterApplicationProcess, _PsmRegisterApplicationProcess@8
+
 ; *** Function available in advapi32 v6.0 only
-; implib advapi32.dll, CheckAppInitBlockedServiceIdentity
+; implib advapi32.dll, CheckAppInitBlockedServiceIdentity, _CheckAppInitBlockedServiceIdentity@4
 
 ; *** Functions available in advapi32 v5.0 only
 ; implib advapi32.dll, GetMangledSiteSid, _GetMangledSiteSid@12
@@ -14,7 +20,7 @@ include '..\implib.inc'
 ; implib advapi32.dll, GetSiteNameFromSid, _GetSiteNameFromSid@8
 ; implib advapi32.dll, GetSiteSidFromToken, _GetSiteSidFromToken@4
 ; implib advapi32.dll, GetSiteSidFromUrl, _GetSiteSidFromUrl@4
-; implib advapi32.dll, IsInSandbox
+; implib advapi32.dll, IsInSandbox, _IsInSandbox@0 ; IsInSandbox is an alias for IsProcessRestricted
 
 ; *** Function available in advapi32 v4.90 only
 ; implib advapi32.dll, CryptGetLocalKeyLimits, _CryptGetLocalKeyLimits@16
@@ -37,6 +43,16 @@ include '..\implib.inc'
 ; implib advapi32.dll, IsAccessPermittedA, _IsAccessPermittedA@20
 ; implib advapi32.dll, IsAccessPermittedW, _IsAccessPermittedW@20
 ; implib advapi32.dll, NTAccessMaskToProvAccessRights, _NTAccessMaskToProvAccessRights@12
+; implib advapi32.dll, ProvAccessRightsToNTAccessMask
+; implib advapi32.dll, ReplaceAllAccessRightsA
+; implib advapi32.dll, ReplaceAllAccessRightsW
+; implib advapi32.dll, RevokeExplicitAccessRightsA, _RevokeExplicitAccessRightsA@16
+; implib advapi32.dll, RevokeExplicitAccessRightsW, _RevokeExplicitAccessRightsW@16
+; implib advapi32.dll, SetAccessRightsA, _SetAccessRightsA@16
+; implib advapi32.dll, SetAccessRightsW, _SetAccessRightsW@16
+
+; *** Function available in advapi32 from v4.0 to v4.90
+; implib advapi32.dll, RegRemapPreDefKey
 
 implib advapi32.dll, A_SHAFinal, _A_SHAFinal@8
 implib advapi32.dll, A_SHAInit, _A_SHAInit@4
@@ -766,6 +782,7 @@ implib advapi32.dll, SaferiIsDllAllowed, _SaferiIsDllAllowed@12
 implib advapi32.dll, SaferiIsExecutableFileType, _SaferiIsExecutableFileType@8
 implib advapi32.dll, SaferiPopulateDefaultsInRegistry, _SaferiPopulateDefaultsInRegistry@8
 implib advapi32.dll, SaferiRecordEventLogEntry, _SaferiRecordEventLogEntry@12
+implib advapi32.dll, ord.1000, _SaferiRegisterExtensionDll@8
 implib advapi32.dll, SaferiReplaceProcessThreadTokens, _SaferiReplaceProcessThreadTokens@12
 implib advapi32.dll, SaferiSearchMatchingHashRules, _SaferiSearchMatchingHashRules@24
 implib advapi32.dll, SetAclInformation, _SetAclInformation@16
@@ -787,6 +804,7 @@ implib advapi32.dll, SetNamedSecurityInfoExW, _SetNamedSecurityInfoExW@36
 implib advapi32.dll, SetNamedSecurityInfoW, _SetNamedSecurityInfoW@28
 implib advapi32.dll, SetPrivateObjectSecurity, _SetPrivateObjectSecurity@20
 implib advapi32.dll, SetPrivateObjectSecurityEx, _SetPrivateObjectSecurityEx@24
+implib advapi32.dll, SetSecurityAccessMask, _SetSecurityAccessMask@8
 implib advapi32.dll, SetSecurityDescriptorControl, _SetSecurityDescriptorControl@12
 implib advapi32.dll, SetSecurityDescriptorDacl, _SetSecurityDescriptorDacl@16
 implib advapi32.dll, SetSecurityDescriptorGroup, _SetSecurityDescriptorGroup@12
