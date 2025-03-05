@@ -44,7 +44,7 @@ echo Linking the Win64 executable using the GNU Linker (LD)
 REM Optional file size optimization flags:
 REM   To remove symbol tables (debug symbols): -s
 REM   To remove the relocations: --disable-reloc-section
-"%LDLINK%" -m i386pep -subsystem console -o test.exe -e start -L..\..\..\lib\Win64\lld test.obj -lkernel32 -luser32
+"%LDLINK%" -m i386pep -subsystem console -o test.exe -e start -L..\..\..\lib\Win64\lld test.obj -lkernel32
 
 :EXIT
 pause
