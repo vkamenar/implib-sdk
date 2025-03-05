@@ -3,7 +3,7 @@ SETLOCAL
 REM === CONFIG BEGIN =====================================
 
 REM If MinGW32 is installed, set the installation path here:
-SET GCC="C:\mingw32"
+SET GCC=C:\mingw32
 
 REM === CONFIG END =======================================
 TITLE ImpLib SDK (GCC Win32 example)
