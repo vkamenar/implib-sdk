@@ -794,6 +794,8 @@ Const AL_EAXREVERB_MIN_DECAY_HFLIMIT As Long = 0
 Const AL_EAXREVERB_MAX_DECAY_HFLIMIT As Long = 1
 Const AL_EAXREVERB_DEFAULT_DECAY_HFLIMIT As Long = 1
 
+' *** Renderer State management
+
 ' Enable a feature of the OpenAL driver
 ' Note: There are no capabilities in OpenAL 1.1 to be used with this function, but it may be used by an extension
 Sub alEnable(ByVal capability As Long)
@@ -809,16 +811,80 @@ End Sub
 Function alIsEnabled(ByVal capability As Long) As Boolean
 End Function
 
-Sub alGenBuffers(ByVal n As Long, ByRef bufferNames As Integer)
+' *** State retrieval
+
+' Retrieve an OpenAL string property
+' Note: This function returns a null terminated ASCII string.
+'       It can be converted to VB6 string using the LPSTR2BSTR function.
+Function alGetString(ByVal param As Long) As Long
+End Function
+
+' Retrieve a boolean OpenAL state
+Sub alGetBooleanv(ByVal param As Long, ByRef data As Boolean)
 End Sub
 
-Sub alDeleteBuffers(ByVal n As Long, ByRef bufferNames As Integer)
+' Retrieve an integer OpenAL state
+Sub alGetIntegerv(ByVal param As Long, ByRef data As Long)
+End Sub
+
+' Retrieve a floating point OpenAL state
+Sub alGetFloatv(ByVal param As Long, ByRef data As Single)
+End SUb
+
+' Retrieve a double precision floating point OpenAL state
+Sub alGetDoublev(ByVal param As Long, ByRef data As Double)
+End SUb
+
+' Return a boolean OpenAL state
+Function alGetBoolean(ByVal param As Long) As Boolean
+End Function
+
+' Return an integer OpenAL state
+Function alGetInteger(ByVal param As Long) As Long
+End Function
+
+' Return a floating point OpenAL state
+Function alGetFloat(ByVal param As Long) As Single
+End Function
+
+' Return a double precision floating point OpenAL state
+Function alGetDouble(ByVal param As Long) As Double
+End Function
+
+' *** Error support
+
+' Return the current error state and then clear the error state
+Function alGetError() As Long
+End Function
+
+' *** Extension support
+' Note: The names are specified as null terminated ASCII strings.
+'       VB6 strings can be converted using the BSTR2LPSTR function.
+
+' Test if a specific extension is available for the OpenAL driver
+Function alIsExtensionPresent(ByVal extname As Long) As Boolean
+End Function
+
+' Return the address of an OpenAL extension function
+Function alGetProcAddress(ByVal fname As Long) As Long
+End Function
+
+' Return the enumeration value of an OpenAL enum described by a string
+Function alGetEnumValue(ByVal ename As Long) As Long
+End Function
+
+' *** Buffer objects are storage space for sample data
+
+Sub alGenBuffers(ByVal n As Long, ByRef bufferNames As Long)
+End Sub
+
+Sub alDeleteBuffers(ByVal n As Long, ByRef bufferNames As Long)
 End Sub
 
 Function alIsBuffer(ByVal bufferName As Integer) As Boolean
 End Function
 
-Function alcGetString(ByRef deviceHandle As Integer, ByVal token As Long) As String
+Function alcGetString(ByRef deviceHandle As Integer, ByVal token As Long) As Long
 End Function
 
 ' Open a device by name
@@ -831,10 +897,6 @@ End Function
 
 ' Query if a specified context extension is available
 Function alcIsExtensionPresent(ByVal device As Long, ByVal extName As String) As Boolean
-End Function
-
-' Return the current error state and then clear the error state
-Function alGetError() As Long
 End Function
 
 ' Create a context using a specified device
