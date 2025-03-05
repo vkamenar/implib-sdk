@@ -1,0 +1,230 @@
+include '..\implib.inc'
+
+implib apphelp.dll, AllowPermLayer, _AllowPermLayer@4
+implib apphelp.dll, ApphelpCheckExe, _ApphelpCheckExe@16
+implib apphelp.dll, ApphelpCheckIME, _ApphelpCheckIME@4
+implib apphelp.dll, ApphelpCheckInstallShieldPackage, _ApphelpCheckInstallShieldPackage@8
+implib apphelp.dll, ApphelpCheckModule, _ApphelpCheckModule@28
+implib apphelp.dll, ApphelpCheckMsiPackage, _ApphelpCheckMsiPackage@16
+implib apphelp.dll, ApphelpCheckRunApp, _ApphelpCheckRunApp@48
+implib apphelp.dll, ApphelpCheckRunAppEx, _ApphelpCheckRunAppEx@60
+implib apphelp.dll, ApphelpCheckShellObject, _ApphelpCheckShellObject@12
+implib apphelp.dll, ApphelpChpeModSettingsFromQueryResult, _ApphelpChpeModSettingsFromQueryResult@24
+implib apphelp.dll, ApphelpCreateAppcompatData, _ApphelpCreateAppcompatData@24
+implib apphelp.dll, ApphelpFixMsiPackage, _ApphelpFixMsiPackage@20
+implib apphelp.dll, ApphelpFixMsiPackageExe, _ApphelpFixMsiPackageExe@20
+implib apphelp.dll, ApphelpFreeFileAttributes, _ApphelpFreeFileAttributes@4
+implib apphelp.dll, ApphelpGetFileAttributes, _ApphelpGetFileAttributes@12
+implib apphelp.dll, ApphelpGetMsiProperties, _ApphelpGetMsiProperties@4
+implib apphelp.dll, ApphelpGetNTVDMInfo, _ApphelpGetNTVDMInfo@32
+implib apphelp.dll, ApphelpGetShimDebugLevel, _ApphelpGetShimDebugLevel@0
+implib apphelp.dll, ApphelpIsPortMonAllowed, _ApphelpIsPortMonAllowed@4
+implib apphelp.dll, ApphelpParseModuleData, _ApphelpParseModuleData@32
+implib apphelp.dll, ApphelpQueryModuleData, _ApphelpQueryModuleData@20
+implib apphelp.dll, ApphelpQueryModuleDataEx, _ApphelpQueryModuleDataEx@28
+implib apphelp.dll, ApphelpShowDialog, _ApphelpShowDialog@8
+implib apphelp.dll, ApphelpUpdateCacheEntry, _ApphelpUpdateCacheEntry@16
+implib apphelp.dll, DWM8And16Bit_ChangeDisplaySettingsExW_CallOut, _DWM8And16Bit_ChangeDisplaySettingsExW_CallOut@20
+implib apphelp.dll, DWM8And16Bit_DirectDrawCreateEx_CallOut, _DWM8And16Bit_DirectDrawCreateEx_CallOut@4
+implib apphelp.dll, DWM8And16Bit_DirectDrawCreate_CallOut, _DWM8And16Bit_DirectDrawCreate_CallOut@4
+implib apphelp.dll, DWM8And16Bit_EnumDisplaySettingsExW_CallOut, _DWM8And16Bit_EnumDisplaySettingsExW_CallOut@16
+implib apphelp.dll, DWM8And16Bit_IsShimApplied_CallOut, _DWM8And16Bit_IsShimApplied_CallOut@0
+implib apphelp.dll, DWM8And16Bit_RestoreDisplayMode_CallOut, _DWM8And16Bit_RestoreDisplayMode_CallOut@0
+implib apphelp.dll, GetPermLayers, _GetPermLayers@16
+implib apphelp.dll, SE_AddHookset, _SE_AddHookset@16
+implib apphelp.dll, SE_CALLBACK_AddHook, _SE_CALLBACK_AddHook@20
+implib apphelp.dll, SE_CALLBACK_Lookup
+implib apphelp.dll, SE_COM_AddHook
+implib apphelp.dll, SE_COM_AddServer
+implib apphelp.dll, SE_COM_HookInterface
+implib apphelp.dll, SE_COM_HookObject
+implib apphelp.dll, SE_COM_Lookup
+implib apphelp.dll, SE_DllLoaded
+implib apphelp.dll, SE_DllUnloaded
+implib apphelp.dll, SE_DynamicShim
+implib apphelp.dll, SE_GetHookAPIs
+implib apphelp.dll, SE_GetMaxShimCount
+implib apphelp.dll, SE_GetProcAddressForCaller
+implib apphelp.dll, SE_GetProcAddressIgnoreIncExc
+implib apphelp.dll, SE_GetProcAddressLoad
+implib apphelp.dll, SE_GetShimCount
+implib apphelp.dll, SE_GetShimId
+implib apphelp.dll, SE_InitializeEngine
+implib apphelp.dll, SE_InstallAfterInit
+implib apphelp.dll, SE_InstallBeforeInit
+implib apphelp.dll, SE_IsShimDll
+implib apphelp.dll, SE_LdrEntryRemoved
+implib apphelp.dll, SE_LdrResolveDllName
+implib apphelp.dll, SE_LookupAddress
+implib apphelp.dll, SE_LookupCaller
+implib apphelp.dll, SE_ProcessDying
+implib apphelp.dll, SE_ShimDPF
+implib apphelp.dll, SE_ShimDllLoaded
+implib apphelp.dll, SE_WINRT_AddHook
+implib apphelp.dll, SE_WINRT_HookObject
+implib apphelp.dll, SdbAddLayerTagRefToQuery
+implib apphelp.dll, SdbApphelpNotify
+implib apphelp.dll, SdbApphelpNotifyEx
+implib apphelp.dll, SdbApphelpNotifyEx2
+implib apphelp.dll, SdbBeginWriteListTag
+implib apphelp.dll, SdbBuildCompatEnvVariables
+implib apphelp.dll, SdbCloseApphelpInformation
+implib apphelp.dll, SdbCloseDatabase
+implib apphelp.dll, SdbCloseDatabaseWrite
+implib apphelp.dll, SdbCloseLocalDatabase
+implib apphelp.dll, SdbCommitIndexes
+implib apphelp.dll, SdbCreateDatabase
+implib apphelp.dll, SdbCreateHelpCenterURL
+implib apphelp.dll, SdbCreateMsiTransformFile
+implib apphelp.dll, SdbDeclareIndex
+implib apphelp.dll, SdbDeletePermLayerKeys
+implib apphelp.dll, SdbDumpSearchPathPartCaches
+implib apphelp.dll, SdbEndWriteListTag
+implib apphelp.dll, SdbEnumMsiTransforms
+implib apphelp.dll, SdbEscapeApphelpURL
+implib apphelp.dll, SdbFindCustomActionForPackage
+implib apphelp.dll, SdbFindFirstDWORDIndexedTag
+implib apphelp.dll, SdbFindFirstGUIDIndexedTag
+implib apphelp.dll, SdbFindFirstMsiPackage
+implib apphelp.dll, SdbFindFirstMsiPackage_Str
+implib apphelp.dll, SdbFindFirstNamedTag
+implib apphelp.dll, SdbFindFirstStringIndexedTag
+implib apphelp.dll, SdbFindFirstTag
+implib apphelp.dll, SdbFindFirstTagRef
+implib apphelp.dll, SdbFindMsiPackageByID
+implib apphelp.dll, SdbFindNextDWORDIndexedTag
+implib apphelp.dll, SdbFindNextGUIDIndexedTag
+implib apphelp.dll, SdbFindNextMsiPackage
+implib apphelp.dll, SdbFindNextStringIndexedTag
+implib apphelp.dll, SdbFindNextTag
+implib apphelp.dll, SdbFindNextTagRef
+implib apphelp.dll, SdbFormatAttribute
+implib apphelp.dll, SdbFreeDatabaseInformation
+implib apphelp.dll, SdbFreeFileAttributes
+implib apphelp.dll, SdbFreeFileInfo
+implib apphelp.dll, SdbFreeFlagInfo
+implib apphelp.dll, SdbGUIDFromString
+implib apphelp.dll, SdbGUIDToString
+implib apphelp.dll, SdbGetAppCompatDataSize
+implib apphelp.dll, SdbGetAppPatchDir
+implib apphelp.dll, SdbGetBinaryTagData
+implib apphelp.dll, SdbGetDatabaseGUID
+implib apphelp.dll, SdbGetDatabaseID
+implib apphelp.dll, SdbGetDatabaseInformation
+implib apphelp.dll, SdbGetDatabaseInformationByName
+implib apphelp.dll, SdbGetDatabaseMatch
+implib apphelp.dll, SdbGetDatabaseVersion
+implib apphelp.dll, SdbGetDllPath
+implib apphelp.dll, SdbGetEntryFlags
+implib apphelp.dll, SdbGetFileAttributes
+implib apphelp.dll, SdbGetFileImageType
+implib apphelp.dll, SdbGetFileImageTypeEx
+implib apphelp.dll, SdbGetFileInfo
+implib apphelp.dll, SdbGetFirstChild
+implib apphelp.dll, SdbGetImageType
+implib apphelp.dll, SdbGetIndex
+implib apphelp.dll, SdbGetItemFromItemRef
+implib apphelp.dll, SdbGetLayerName
+implib apphelp.dll, SdbGetLayerTagRef
+implib apphelp.dll, SdbGetLocalPDB
+implib apphelp.dll, SdbGetMatchingExe
+implib apphelp.dll, SdbGetMsiPackageInformation
+implib apphelp.dll, SdbGetNamedLayer
+implib apphelp.dll, SdbGetNextChild
+implib apphelp.dll, SdbGetNthUserSdb
+implib apphelp.dll, SdbGetPDBFromGUID
+implib apphelp.dll, SdbGetPathCustomSdb
+implib apphelp.dll, SdbGetPathSystemSdb
+implib apphelp.dll, SdbGetPermLayerKeys
+implib apphelp.dll, SdbGetShowDebugInfoOption
+implib apphelp.dll, SdbGetShowDebugInfoOptionValue
+implib apphelp.dll, SdbGetStandardDatabaseGUID
+implib apphelp.dll, SdbGetStringTagPtr
+implib apphelp.dll, SdbGetTagDataSize
+implib apphelp.dll, SdbGetTagFromTagID
+implib apphelp.dll, SdbGrabMatchingInfo
+implib apphelp.dll, SdbGrabMatchingInfoEx
+implib apphelp.dll, SdbInitDatabase
+implib apphelp.dll, SdbInitDatabaseEx
+implib apphelp.dll, SdbIsDbRuntimePlatformSupportedOnHost
+implib apphelp.dll, SdbIsNullGUID
+implib apphelp.dll, SdbIsStandardDatabase
+implib apphelp.dll, SdbIsTagrefFromLocalDB
+implib apphelp.dll, SdbIsTagrefFromMainDB
+implib apphelp.dll, SdbLoadString
+implib apphelp.dll, SdbMakeIndexKeyFromString
+implib apphelp.dll, SdbOpenApphelpDetailsDatabase
+implib apphelp.dll, SdbOpenApphelpDetailsDatabaseSP
+implib apphelp.dll, SdbOpenApphelpInformation
+implib apphelp.dll, SdbOpenApphelpInformationByID
+implib apphelp.dll, SdbOpenApphelpResourceFile
+implib apphelp.dll, SdbOpenDatabase
+implib apphelp.dll, SdbOpenDbFromGuid
+implib apphelp.dll, SdbOpenLocalDatabase
+implib apphelp.dll, SdbPackAppCompatData
+implib apphelp.dll, SdbQueryApphelpInformation
+implib apphelp.dll, SdbQueryBlockUpgrade
+implib apphelp.dll, SdbQueryContext
+implib apphelp.dll, SdbQueryData
+implib apphelp.dll, SdbQueryDataEx
+implib apphelp.dll, SdbQueryDataExTagID
+implib apphelp.dll, SdbQueryFlagInfo
+implib apphelp.dll, SdbQueryFlagMask
+implib apphelp.dll, SdbQueryName
+implib apphelp.dll, SdbQueryReinstallUpgrade
+implib apphelp.dll, SdbReadApphelpData
+implib apphelp.dll, SdbReadApphelpDetailsData
+implib apphelp.dll, SdbReadBYTETag
+implib apphelp.dll, SdbReadBYTETagRef
+implib apphelp.dll, SdbReadBinaryTag
+implib apphelp.dll, SdbReadDWORDTag
+implib apphelp.dll, SdbReadDWORDTagRef
+implib apphelp.dll, SdbReadEntryInformation
+implib apphelp.dll, SdbReadMsiTransformInfo
+implib apphelp.dll, SdbReadPatchBits
+implib apphelp.dll, SdbReadQWORDTag
+implib apphelp.dll, SdbReadQWORDTagRef
+implib apphelp.dll, SdbReadStringTag
+implib apphelp.dll, SdbReadStringTagRef
+implib apphelp.dll, SdbReadWORDTag
+implib apphelp.dll, SdbReadWORDTagRef
+implib apphelp.dll, SdbRegisterDatabase
+implib apphelp.dll, SdbRegisterDatabaseEx
+implib apphelp.dll, SdbReleaseDatabase
+implib apphelp.dll, SdbReleaseMatchingExe
+implib apphelp.dll, SdbResolveDatabase
+implib apphelp.dll, SdbSetApphelpDebugParameters
+implib apphelp.dll, SdbSetEntryFlags
+implib apphelp.dll, SdbSetImageType
+implib apphelp.dll, SdbSetPermLayerKeys
+implib apphelp.dll, SdbShowApphelpDialog
+implib apphelp.dll, SdbShowApphelpFromQuery
+implib apphelp.dll, SdbStartIndexing
+implib apphelp.dll, SdbStopIndexing
+implib apphelp.dll, SdbStringDuplicate
+implib apphelp.dll, SdbStringReplace
+implib apphelp.dll, SdbStringReplaceArray
+implib apphelp.dll, SdbTagIDToTagRef
+implib apphelp.dll, SdbTagRefToTagID
+implib apphelp.dll, SdbTagToString
+implib apphelp.dll, SdbUnpackAppCompatData
+implib apphelp.dll, SdbUnpackQueryResult
+implib apphelp.dll, SdbUnregisterDatabase
+implib apphelp.dll, SdbWriteBYTETag
+implib apphelp.dll, SdbWriteBinaryTag
+implib apphelp.dll, SdbWriteBinaryTagFromFile
+implib apphelp.dll, SdbWriteDWORDTag
+implib apphelp.dll, SdbWriteNULLTag
+implib apphelp.dll, SdbWriteQWORDTag
+implib apphelp.dll, SdbWriteStringRefTag
+implib apphelp.dll, SdbWriteStringTag
+implib apphelp.dll, SdbWriteStringTagDirect
+implib apphelp.dll, SdbWriteWORDTag
+implib apphelp.dll, SetPermLayerState
+implib apphelp.dll, SetPermLayerStateEx
+implib apphelp.dll, SetPermLayers
+implib apphelp.dll, ShimDbgPrint
+implib apphelp.dll, ShimDumpCache
+implib apphelp.dll, ShimFlushCache
+
+endlib
