@@ -1,5 +1,48 @@
 include '..\implib.inc'
 
+; The following symbols are commented out to limit the size of the library.
+; They are available in specific apphelp versions only.
+; Feel free to uncomment the necessary symbols and recompile the library.
+
+; *** Functions available from v6.2 to v6.3
+; implib apphelp.dll, ApphelpDebugPrintf, _ApphelpDebugPrintf ; Note: This function uses the CDECL calling convention!
+; implib apphelp.dll, ord.1, _DlCreate@12
+; implib apphelp.dll, ord.3, _DlDebugPrintf ; Note: This function uses the CDECL calling convention!
+; implib apphelp.dll, ord.5, _DlDebugSetListener@8
+; implib apphelp.dll, ord.4, _DlDebugVPrintf@28
+; implib apphelp.dll, ord.2, _DlDelete@4
+; implib apphelp.dll, DlEnumChannels, _DlEnumChannels@12
+; implib apphelp.dll, ord.11, _DlGetFlagsMask@4
+; implib apphelp.dll, ord.9, _DlGetQuota@4
+; implib apphelp.dll, ord.6, _DlGetState@12
+; implib apphelp.dll, DlGetStateEx, _DlGetStateEx@16
+; implib apphelp.dll, ord.17, _DlPrintf ; Note: This function uses the CDECL calling convention!
+; implib apphelp.dll, ord.14, _DlSetFileName@8
+; implib apphelp.dll, ord.8, _DlSetFlags@8
+; implib apphelp.dll, DlSetFlagsEx, _DlSetFlagsEx@12
+; implib apphelp.dll, ord.12, _DlSetFlagsMask@8
+; implib apphelp.dll, ord.13, _DlSetLevel@8
+; implib apphelp.dll, DlSetLevelEx, _DlSetLevelEx@12
+; implib apphelp.dll, ord.10, _DlSetQuota@8
+; implib apphelp.dll, ord.7, _DlSetState@12
+; implib apphelp.dll, DlSetStateEx, _DlSetStateEx@16
+; implib apphelp.dll, DlSnapshot, _DlSnapshot@16
+; implib apphelp.dll, ord.18, _DlVPrintf@12
+
+; *** Functions available in v6.2 only
+; implib apphelp.dll, ord.26, _SdbGetAppCompatData@12
+; implib apphelp.dll, ord.28, _SdbGetPermLayerPath@12
+
+; *** Function available in v5.2 only
+; implib apphelp.dll, ApphelpReleaseExe, _ApphelpReleaseExe@4
+
+; *** Function available from v5.1 to v5.2
+; implib apphelp.dll, ApphelpShowUI, _ApphelpShowUI@24
+
+; *** Functions available in v5.1 before Windows XP SP1
+; implib apphelp.dll, DeleteAppcompatModeW
+; implib apphelp.dll, PersistAppcompatModeW
+
 implib apphelp.dll, AllowPermLayer, _AllowPermLayer@4
 implib apphelp.dll, ApphelpCheckExe, _ApphelpCheckExe@16
 implib apphelp.dll, ApphelpCheckIME, _ApphelpCheckIME@4
@@ -63,6 +106,7 @@ implib apphelp.dll, SE_ShimDllLoaded, _SE_ShimDllLoaded@4
 implib apphelp.dll, SE_WINRT_AddHook, _SE_WINRT_AddHook@20
 implib apphelp.dll, SE_WINRT_HookObject, _SE_WINRT_HookObject@12
 implib apphelp.dll, SdbAddLayerTagRefToQuery, _SdbAddLayerTagRefToQuery@12
+implib apphelp.dll, ord.21, _SdbActivateIndex@12
 implib apphelp.dll, SdbApphelpNotify, _SdbApphelpNotify@16
 implib apphelp.dll, SdbApphelpNotifyEx, _SdbApphelpNotifyEx@20
 implib apphelp.dll, SdbApphelpNotifyEx2, _SdbApphelpNotifyEx2@16
@@ -76,7 +120,9 @@ implib apphelp.dll, SdbCommitIndexes, _SdbCommitIndexes@4
 implib apphelp.dll, SdbCreateDatabase, _SdbCreateDatabase@8
 implib apphelp.dll, SdbCreateHelpCenterURL, _SdbCreateHelpCenterURL@24
 implib apphelp.dll, SdbCreateMsiTransformFile, _SdbCreateMsiTransformFile@12
+implib apphelp.dll, ord.22, _SdbDeactivateIndex@12
 implib apphelp.dll, SdbDeclareIndex, _SdbDeclareIndex@24
+implib apphelp.dll, ord.19, _SdbDeclareIndexEx@24
 implib apphelp.dll, SdbDeletePermLayerKeys, _SdbDeletePermLayerKeys@8
 implib apphelp.dll, SdbDumpSearchPathPartCaches, _SdbDumpSearchPathPartCaches@4
 implib apphelp.dll, SdbEndWriteListTag, _SdbEndWriteListTag@8
@@ -85,6 +131,7 @@ implib apphelp.dll, SdbEscapeApphelpURL, _SdbEscapeApphelpURL@12
 implib apphelp.dll, SdbFindCustomActionForPackage, _SdbFindCustomActionForPackage@12
 implib apphelp.dll, SdbFindFirstDWORDIndexedTag, _SdbFindFirstDWORDIndexedTag@20
 implib apphelp.dll, SdbFindFirstGUIDIndexedTag, _SdbFindFirstGUIDIndexedTag@20
+implib apphelp.dll, ord.23, _SdbFindFirstLayer@8
 implib apphelp.dll, SdbFindFirstMsiPackage, _SdbFindFirstMsiPackage@16
 implib apphelp.dll, SdbFindFirstMsiPackage_Str, _SdbFindFirstMsiPackage_Str@16
 implib apphelp.dll, SdbFindFirstNamedTag, _SdbFindFirstNamedTag@20
@@ -94,6 +141,7 @@ implib apphelp.dll, SdbFindFirstTagRef, _SdbFindFirstTagRef@12
 implib apphelp.dll, SdbFindMsiPackageByID, _SdbFindMsiPackageByID@8
 implib apphelp.dll, SdbFindNextDWORDIndexedTag, _SdbFindNextDWORDIndexedTag@8
 implib apphelp.dll, SdbFindNextGUIDIndexedTag, _SdbFindNextGUIDIndexedTag@8
+implib apphelp.dll, ord.24, _SdbFindNextLayer@12
 implib apphelp.dll, SdbFindNextMsiPackage, _SdbFindNextMsiPackage@8
 implib apphelp.dll, SdbFindNextStringIndexedTag, _SdbFindNextStringIndexedTag@8
 implib apphelp.dll, SdbFindNextTag, _SdbFindNextTag@12
@@ -124,7 +172,10 @@ implib apphelp.dll, SdbGetFirstChild, _SdbGetFirstChild@8
 implib apphelp.dll, SdbGetImageType, _SdbGetImageType@4
 implib apphelp.dll, SdbGetIndex, _SdbGetIndex@16
 implib apphelp.dll, SdbGetItemFromItemRef, _SdbGetItemFromItemRef@20
+implib apphelp.dll, ord.34, _SdbGetKnownSafeLayers@12
+implib apphelp.dll, ord.26, _SdbGetLayerCommandLine@16 ; Note: function introduced in v6.2 with ordinal 27 (then 26)
 implib apphelp.dll, SdbGetLayerName, _SdbGetLayerName@8
+implib apphelp.dll, ord.25, _SdbGetLayerOsVersionValue@12
 implib apphelp.dll, SdbGetLayerTagRef, _SdbGetLayerTagRef@8
 implib apphelp.dll, SdbGetLocalPDB, _SdbGetLocalPDB@4
 implib apphelp.dll, SdbGetMatchingExe, _SdbGetMatchingExe@24
@@ -146,6 +197,8 @@ implib apphelp.dll, SdbGrabMatchingInfo, _SdbGrabMatchingInfo@12
 implib apphelp.dll, SdbGrabMatchingInfoEx, _SdbGrabMatchingInfoEx@20
 implib apphelp.dll, SdbInitDatabase, _SdbInitDatabase@8
 implib apphelp.dll, SdbInitDatabaseEx, _SdbInitDatabaseEx@12
+implib apphelp.dll, ord.28, _SdbInitDatabaseInMemory@8 ; Note: function introduced in v6.2 with ordinal 29 (then 28)
+implib apphelp.dll, ord.31, _SdbIsExeTaggedForReinstallUpgrade@4 ; Note: function introduced in v6.2 with ordinal 32 (then 31)
 implib apphelp.dll, SdbIsDbRuntimePlatformSupportedOnHost, _SdbIsDbRuntimePlatformSupportedOnHost@8
 implib apphelp.dll, SdbIsNullGUID, _SdbIsNullGUID@4
 implib apphelp.dll, SdbIsStandardDatabase, _SdbIsStandardDatabase@16
@@ -153,6 +206,7 @@ implib apphelp.dll, SdbIsTagrefFromLocalDB, _SdbIsTagrefFromLocalDB@4
 implib apphelp.dll, SdbIsTagrefFromMainDB, _SdbIsTagrefFromMainDB@4
 implib apphelp.dll, SdbLoadString, _SdbLoadString@16
 implib apphelp.dll, SdbMakeIndexKeyFromString, _SdbMakeIndexKeyFromString@4
+implib apphelp.dll, ord.20, _SdbMakeIndexKeyFromStringEx@8
 implib apphelp.dll, SdbOpenApphelpDetailsDatabase, _SdbOpenApphelpDetailsDatabase@4
 implib apphelp.dll, SdbOpenApphelpDetailsDatabaseSP, _SdbOpenApphelpDetailsDatabaseSP@0
 implib apphelp.dll, SdbOpenApphelpInformation, _SdbOpenApphelpInformation@8
@@ -197,6 +251,8 @@ implib apphelp.dll, SdbSetApphelpDebugParameters, _SdbSetApphelpDebugParameters@
 implib apphelp.dll, SdbSetEntryFlags, _SdbSetEntryFlags@8
 implib apphelp.dll, SdbSetImageType, _SdbSetImageType@8
 implib apphelp.dll, SdbSetPermLayerKeys, _SdbSetPermLayerKeys@12
+implib apphelp.dll, ord.32, _SdbSetPermLayerState@20 ; Note: function introduced in v6.2 with ordinal 33 (then 32)
+implib apphelp.dll, ord.33, _SdbSetPermLayerStateEx@24 ; Note: function introduced in v6.2 with ordinal 34 (then 33)
 implib apphelp.dll, SdbShowApphelpDialog, _SdbShowApphelpDialog@16
 implib apphelp.dll, SdbShowApphelpFromQuery, _SdbShowApphelpFromQuery@20
 implib apphelp.dll, SdbStartIndexing, _SdbStartIndexing@8
@@ -204,12 +260,14 @@ implib apphelp.dll, SdbStopIndexing, _SdbStopIndexing@8
 implib apphelp.dll, SdbStringDuplicate, _SdbStringDuplicate@4
 implib apphelp.dll, SdbStringReplace, _SdbStringReplace@12
 implib apphelp.dll, SdbStringReplaceArray, _SdbStringReplaceArray@16
+implib apphelp.dll, ord.29, _SdbTagExeForReinstallUpgrade@4 ; Note: function introduced in v6.2 with ordinal 30 (then 29)
 implib apphelp.dll, SdbTagIDToTagRef, _SdbTagIDToTagRef@16
 implib apphelp.dll, SdbTagRefToTagID, _SdbTagRefToTagID@16
 implib apphelp.dll, SdbTagToString, _SdbTagToString@4
 implib apphelp.dll, SdbUnpackAppCompatData, _SdbUnpackAppCompatData@16
 implib apphelp.dll, SdbUnpackQueryResult, _SdbUnpackQueryResult@8
 implib apphelp.dll, SdbUnregisterDatabase, _SdbUnregisterDatabase@4
+implib apphelp.dll, ord.30, _SdbUntagExeForReinstallUpgrade@4 ; Note: function introduced in v6.2 with ordinal 31 (then 30)
 implib apphelp.dll, SdbWriteBYTETag, _SdbWriteBYTETag@12
 implib apphelp.dll, SdbWriteBinaryTag, _SdbWriteBinaryTag@16
 implib apphelp.dll, SdbWriteBinaryTagFromFile, _SdbWriteBinaryTagFromFile@12
