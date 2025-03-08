@@ -798,119 +798,379 @@ Const AL_EAXREVERB_DEFAULT_DECAY_HFLIMIT As Long = 1
 
 ' Enable a feature of the OpenAL driver
 ' Note: There are no capabilities in OpenAL 1.1 to be used with this function, but it may be used by an extension
-Sub alEnable(ByVal capability As Long)
-End Sub
+Sub alEnable(ByVal capability As Long) : End Sub
 
 ' Disable a feature of the OpenAL driver
 ' Note: There are no capabilities in OpenAL 1.1 to be used with this function, but it may be used by an extension
-Sub alDisable(ByVal capability As Long)
-End Sub
+Sub alDisable(ByVal capability As Long) : End Sub
 
 ' Return a boolean indicating if a specific feature is enabled in the OpenAL driver
 ' Note: There are no capabilities in OpenAL 1.1 to be used with this function, but it may be used by an extension
-Function alIsEnabled(ByVal capability As Long) As Boolean
-End Function
+Function alIsEnabled(ByVal capability As Long) As Boolean : End Function
 
 ' *** State retrieval
 
 ' Retrieve an OpenAL string property
-' Note: This function returns a null terminated ASCII string.
-'       It can be converted to VB6 string using the LPSTR2BSTR function.
-Function alGetString(ByVal param As Long) As Long
-End Function
+' Note: This function returns a null terminated ASCII string
+'       (It can be converted to VB6 string using the LPSTR2BSTR function)
+Function alGetString(ByVal param As Long) As Long : End Function
 
 ' Retrieve a boolean OpenAL state
-Sub alGetBooleanv(ByVal param As Long, ByRef data As Boolean)
-End Sub
+Sub alGetBooleanv(ByVal param As Long, ByRef data As Boolean) : End Sub
 
 ' Retrieve an integer OpenAL state
-Sub alGetIntegerv(ByVal param As Long, ByRef data As Long)
-End Sub
+Sub alGetIntegerv(ByVal param As Long, ByRef data As Long) : End Sub
 
 ' Retrieve a floating point OpenAL state
-Sub alGetFloatv(ByVal param As Long, ByRef data As Single)
-End SUb
+Sub alGetFloatv(ByVal param As Long, ByRef data As Single) : End Sub
 
 ' Retrieve a double precision floating point OpenAL state
-Sub alGetDoublev(ByVal param As Long, ByRef data As Double)
-End SUb
+Sub alGetDoublev(ByVal param As Long, ByRef data As Double) : End Sub
 
 ' Return a boolean OpenAL state
-Function alGetBoolean(ByVal param As Long) As Boolean
-End Function
+Function alGetBoolean(ByVal param As Long) As Boolean : End Function
 
 ' Return an integer OpenAL state
-Function alGetInteger(ByVal param As Long) As Long
-End Function
+Function alGetInteger(ByVal param As Long) As Long : End Function
 
 ' Return a floating point OpenAL state
-Function alGetFloat(ByVal param As Long) As Single
-End Function
+Function alGetFloat(ByVal param As Long) As Single : End Function
 
 ' Return a double precision floating point OpenAL state
-Function alGetDouble(ByVal param As Long) As Double
-End Function
+Function alGetDouble(ByVal param As Long) As Double : End Function
 
 ' *** Error support
 
 ' Return the current error state and then clear the error state
-Function alGetError() As Long
-End Function
+Function alGetError() As Long : End Function
 
 ' *** Extension support
-' Note: The names are specified as null terminated ASCII strings.
-'       VB6 strings can be converted using the BSTR2LPSTR function.
+' Note: The names are specified as null terminated ASCII strings
+'       (VB6 strings can be converted using the BSTR2LPSTR function)
 
 ' Test if a specific extension is available for the OpenAL driver
-Function alIsExtensionPresent(ByVal extname As Long) As Boolean
-End Function
+Function alIsExtensionPresent(ByVal extname As Long) As Boolean : End Function
 
 ' Return the address of an OpenAL extension function
-Function alGetProcAddress(ByVal fname As Long) As Long
-End Function
+Function alGetProcAddress(ByVal fname As Long) As Long : End Function
 
 ' Return the enumeration value of an OpenAL enum described by a string
-Function alGetEnumValue(ByVal ename As Long) As Long
-End Function
+Function alGetEnumValue(ByVal ename As Long) As Long : End Function
 
-' *** Buffer objects are storage space for sample data
+' *** Listener API
+' Listener represents the location and orientation of the 'user' in 3D-space
+' Properties: gain, position, velocity, orientation
 
-Sub alGenBuffers(ByVal n As Long, ByRef bufferNames As Long)
-End Sub
+' *** Set Listener parameters
 
-Sub alDeleteBuffers(ByVal n As Long, ByRef bufferNames As Long)
-End Sub
+' Set a floating point property for the listener (AL_GAIN)
+Sub alListenerf(ByVal param As Long, ByVal value As Single) : End Sub
 
-Function alIsBuffer(ByVal bufferName As Integer) As Boolean
-End Function
+' Set three floating point values for a property of the listener (AL_POSITION, AL_VELOCITY)
+Sub alListener3f(ByVal param As Long, ByVal v1 As Single, ByVal v2 As Single, ByVal v3 As Single) : End Sub
 
-Function alcGetString(ByRef deviceHandle As Integer, ByVal token As Long) As Long
-End Function
+' Set a floating point-vector property of the listener (AL_POSITION, AL_VELOCITY, AL_ORIENTATION)
+' Note: 'values' is a pointer to an array of 32-bit floating point values
+Sub alListenerfv(ByVal param As Long, ByVal values As Long) : End Sub
 
-' Open a device by name
-Function alcOpenDevice(ByVal devicename As String) As Long
-End Function
+' Set an integer property of the listener (AL_GAIN)
+Sub alListeneri(ByVal param As Long, ByVal value As Long) : End Sub
 
-' Close a device by name
-Function alcCloseDevice(ByVal device As Long) As Boolean
-End Function
+' Set three integer values for a property of the listener (AL_POSITION, AL_VELOCITY)
+Sub alListener3i(ByVal param As Long, ByVal v1 As Long, ByVal v2 As Long, ByVal v3 As Long) : End Sub
 
-' Query if a specified context extension is available
-Function alcIsExtensionPresent(ByVal device As Long, ByVal extName As String) As Boolean
-End Function
+' Set an integer property of the listener (AL_POSITION, AL_VELOCITY, AL_ORIENTATION)
+' Note: 'values' is a pointer to an array of 32-bit integer values
+Sub alListeneriv(ByVal param As Long, ByVal values As Long) : End Sub
 
-' Create a context using a specified device
-Function alcCreateContext(ByVal device As Long, ByVal sttrlist As Long) As Long
-End Function
+' *** Get Listener parameters
 
-' Destroy a context
-Sub alcDestroyContext(ByVal context As Long)
-End Sub
+' Retrieve a floating point property of the listener (AL_GAIN)
+Sub alGetListenerf(ByVal param As Long, ByRef value As Single) : End Sub
 
-' Make a specified context the current context
-Function alcMakeContextCurrent(ByVal context As Long) As Boolean
-End Function
+' Retrieve three floating point values from a property of the listener (AL_POSITION, AL_VELOCITY)
+Sub alGetListener3f(ByVal param As Long, ByRef v1 As Single, ByRef v2 As Single, ByRef v3 As Single) : End Sub
+
+' Retrieve a floating point-vector property of the listener (AL_POSITION, AL_VELOCITY, AL_ORIENTATION)
+' Note: 'values' is a pointer to an array of 32-bit floating point values
+Sub alGetListenerfv(ByVal param As Long, ByVal values As Long) : End Sub
+
+' Retrieve an integer property of the listener (AL_GAIN)
+Sub alGetListeneri(ByVal param As Long, ByRef value As Long) : End Sub
+
+' Retrieve three integer values from a property of the listener (AL_POSITION, AL_VELOCITY)
+Sub alGetListener3i(ByVal param As Long, ByRef v1 As Long, ByRef v2 As Long, ByRef v3 As Long) : End Sub
+
+' Retrieve an integer-vector property of the listener (AL_POSITION, AL_VELOCITY, AL_ORIENTATION)
+' Note: 'values' is a pointer to an array of 32-bit integer values
+Sub alGetListeneriv(ByVal param As Long, ByVal values As Long) : End Sub
+
+' *** Source API
+' Sources represent individual sound objects in 3D-space. Sources take the PCM data provided in the buffer,
+' apply source-specific modifications, and then submit them to be mixed according to spatial arrangement etc.
+' Properties: gain, min gain, max gain, position, velocity, direction, head relative mode,
+'             reference distance, max distance, rolloff factor, inner angle, outer angle,
+'             cone outer gain, pitch, looping, ms offset, byte offset, sample offset, attached
+'             buffer, state (query only), buffers queued (query only), buffers processed (query only)
+
+' *** Create Source objects
+' Note: When specifying multiple sources, 'sources' must be a pointer to the first value in the array
 
 ' Generate one or more sources
-Sub alGenSources(ByVal n As Long, ByRef sources As Long)
-End Sub
+Sub alGenSources(ByVal n As Long, ByRef sources As Long) : End Sub
+
+' Delete source objects
+Sub alDeleteSources(ByVal n As Long, ByRef sources As Long) : End Sub
+
+' Verify a handle is a valid source
+Function alIsSource(ByVal sid As Long) As Boolean : End Function
+
+' *** Set Source parameters
+
+' Set a floating point property of a source (AL_PITCH, AL_GAIN, AL_MIN_GAIN, AL_MAX_GAIN, AL_MAX_DISTANCE,
+' AL_ROLLOFF_FACTOR, AL_CONE_OUTER_GAIN, AL_CONE_INNER_ANGLE, AL_CONE_OUTER_ANGLE, AL_REFERENCE_DISTANCE)
+Sub alSourcef(ByVal sid As Long, ByVal param As Long, ByVal value As Single) : End Sub
+
+' Set a source property requiring three floating point values (AL_POSITION, AL_VELOCITY, AL_DIRECTION)
+Sub alSource3f(ByVal sid As Long, ByVal param As Long, ByVal v1 As Single, ByVal v2 As Single, ByVal v3 As Single) : End Sub
+
+' Set a floating point-vector property of a source (AL_POSITION, AL_VELOCITY, AL_DIRECTION)
+' Note: 'values' is a pointer to an array of 32-bit floating point values
+Sub alSourcefv(ByVal sid As Long, ByVal param As Long, ByVal values As Long) : End Sub
+
+' Set an integer property of a source (AL_SOURCE_RELATIVE, AL_CONE_INNER_ANGLE, AL_CONE_OUTER_ANGLE,
+' AL_LOOPING, AL_BUFFER, AL_SOURCE_STATE)
+Sub alSourcei(ByVal sid As Long, ByVal param As Long, ByVal value As Long) : End Sub
+
+' Set three integer values for a property of the source (AL_POSITION, AL_VELOCITY, AL_DIRECTION)
+Sub alSource3i(ByVal sid As Long, ByVal param As Long, ByVal v1 As Long, ByVal v2 As Long, ByVal v3 As Long) : End Sub
+
+' Set an integer property of the source (AL_POSITION, AL_VELOCITY, AL_DIRECTION)
+' Note: 'values' is a pointer to an array of 32-bit integer values
+Sub alSourceiv(ByVal sid As Long, ByVal param As Long, ByVal values As Long) : End Sub
+
+' *** Get Source parameters
+
+' Retrieve a floating point property of a source (AL_PITCH, AL_GAIN, AL_MIN_GAIN, AL_MAX_GAIN, AL_MAX_DISTANCE,
+' AL_ROLLOFF_FACTOR, AL_CONE_OUTER_GAIN, AL_CONE_INNER_ANGLE, AL_CONE_OUTER_ANGLE, AL_REFERENCE_DISTANCE)
+Sub alGetSourcef(ByVal sid As Long, ByVal param As Long, ByRef value As Single) : End Sub
+
+' Retrieve three floating point values representing a property of a source (AL_POSITION, AL_VELOCITY, AL_DIRECTION)
+Sub alGetSource3f(ByVal sid As Long, ByVal param As Long, ByRef v1 As Single, ByRef v2 As Single, ByRef v3 As Single) : End Sub
+
+' Retrieve a floating point-vector property of a source (AL_POSITION, AL_VELOCITY, AL_DIRECTION)
+' Note: 'values' is a pointer to an array of 32-bit floating point values
+Sub alGetSourcefv(ByVal sid As Long, ByVal param As Long, ByVal values As Long) : End Sub
+
+' Retrieve an integer property of a source (AL_SOURCE_RELATIVE, AL_BUFFER, AL_SOURCE_STATE, AL_BUFFERS_QUEUED,
+' AL_BUFFERS_PROCESSED)
+Sub alGetSourcei(ByVal sid As Long, ByVal param As Long, ByRef value As Long) : End Sub
+
+' Retrieve three integer values for a property of the source (AL_POSITION, AL_VELOCITY, AL_DIRECTION)
+Sub alGetSource3i(ByVal sid As Long, ByVal param As Long, ByRef v1 As Long, ByRef v2 As Long, ByRef v3 As Long) : End Sub
+
+' Retrieve an integer property of the source (AL_POSITION, AL_VELOCITY, AL_DIRECTION)
+' Note: 'values' is a pointer to an array of 32-bit integer values
+Sub alGetSourceiv(ByVal sid As Long, ByVal param As Long, ByVal values As Long) : End Sub
+
+' *** Source vector based playback calls
+' Note: When specifying multiple sources, 'sids' must be a pointer to the first value in the array
+
+' Play, replay, or resume (if paused) a list of Sources
+Sub alSourcePlayv(ByVal ns As Long, ByRef sids As Long) : End Sub
+
+' Stop a list of Sources
+Sub alSourceStopv(ByVal ns As Long, ByRef sids As Long) : End Sub
+
+' Rewind a list of Sources
+Sub alSourceRewindv(ByVal ns As Long, ByRef sids As Long) : End Sub
+
+' Pause a list of Sources
+Sub alSourcePausev(ByVal ns As Long, ByRef sids As Long) : End Sub
+
+' *** Source based playback calls
+
+' Play, replay, or resume a Source
+Sub alSourcePlay(ByVal sid As Long) : End Sub
+
+' Stop a Source
+Sub alSourceStop(ByVal sid As Long) : End Sub
+
+' Rewind a Source (set playback postiton to beginning)
+Sub alSourceRewind(ByVal sid As Long) : End Sub
+
+' Pause a Source
+Sub alSourcePause(ByVal sid As Long) : End Sub
+
+' *** Source Queuing
+' Note: When specifying multiple buffers, 'buffers' must be a pointer to the first value in the array
+
+' Queue a set of buffers on a source. All buffers attached to a source will be played in sequence, and
+' the number of processed buffers can be detected using an alSourcei call to retrieve AL_BUFFERS_PROCESSED
+Sub alSourceQueueBuffers(ByVal sid As Long, ByVal n As Long, ByRef buffers As Long) : End Sub
+
+' Unqueue a set of buffers attached to a source. The number of processed buffers can be detected using an
+' alSourcei call to retrieve AL_BUFFERS_PROCESSED, which is the maximum number of buffers that can be unqueued
+Sub alSourceUnqueueBuffers(ByVal sid As Long, ByVal n As Long, ByRef buffers As Long) : End Sub
+
+' *** Buffer API
+' Buffer are storage space for sample data. Buffers are referred to by Sources.
+' One Buffer can be used by multiple Sources.
+' Properties (query only): frequency, size, bits, channels
+' Note: When specifying multiple buffers, 'buffers' must be a pointer to the first value in the array
+
+' Create Buffer objects
+Sub alGenBuffers(ByVal n As Long, ByRef buffers As Long) : End Sub
+
+' Delete Buffer objects
+Sub alDeleteBuffers(ByVal n As Long, ByRef buffers As Long) : End Sub
+
+' Verify a handle is a valid Buffer
+Function alIsBuffer(ByVal bid As Long) As Boolean : End Function
+
+' Specify the data to be copied into a buffer
+' Note: 'data' is a pointer to a byte array containing the sample data
+Sub alBufferData(ByVal bid As Long, ByVal format As Long, ByVal data As Long, ByVal size As Long, ByVal freq As Long) : End Sub
+
+' *** Set Buffer parameters
+
+' Set a floating point property of a buffer
+Sub alBufferf(ByVal bid As Long, ByVal param As Long, ByVal value As Single) : End Sub
+
+' Set three floating point values for a property of the buffer
+Sub alBuffer3f(ByVal bid As Long, ByVal param As Long, ByVal v1 As Single, ByVal v2 As Single, ByVal v3 As Single) : End Sub
+
+' Set a floating point property of the buffer
+' Note: 'values' is a pointer to an array of 32-bit floating point values
+Sub alBufferfv(ByVal bid As Long, ByVal param As Long, ByVal values As Long) : End Sub
+
+' Set an integer property of a buffer
+Sub alBufferi(ByVal bid As Long, ByVal param As Long, ByVal value As Long) : End Sub
+
+' Set three integer values for a property of the buffer
+Sub alBuffer3i(ByVal bid As Long, ByVal param As Long, ByVal v1 As Long, ByVal v2 As Long, ByVal v3 As Long) : End Sub
+
+' Set an integer property of the buffer
+' Note: 'values' is a pointer to an array of 32-bit integer values
+Sub alBufferiv(ByVal bid As Long, ByVal param As Long, ByVal values As Long) : End Sub
+
+' *** Get Buffer parameters
+
+' Retrieve a floating point property of a buffer
+Sub alGetBufferf(ByVal bid As Long, ByVal param As Long, ByRef value As Single) : End Sub
+
+' Retrieve three floating point values for a property of the buffer
+Sub alGetBuffer3f(ByVal bid As Long, ByVal param As Long, ByRef v1 As Single, ByRef v2 As Single, ByRef v3 As Single) : End Sub
+
+' Retrieve a floating point-vector property of a buffer
+' Note: 'values' is a pointer to an array of 32-bit floating point values
+Sub alGetBufferfv(ByVal bid As Long, ByVal param As Long, ByVal values As Long) : End Sub
+
+' Retrieve an integer property of a buffer
+Sub alGetBufferi(ByVal bid As Long, ByVal param As Long, ByRef value As Long) : End Sub
+
+' Retrieve three integer values for a property of the buffer
+Sub alGetBuffer3i(ByVal bid As Long, ByVal param As Long, ByRef v1 As Long, ByRef v2 As Long, ByRef v3 As Long) : End Sub
+
+' Retrieve an integer-vector property of a buffer
+' Note: 'values' is a pointer to an array of 32-bit integer values
+Sub alGetBufferiv(ByVal bid As Long, ByVal param As Long, ByVal values As Long) : End Sub
+
+' *** Global Parameters
+
+' Select the OpenAL Doppler factor value
+Sub alDopplerFactor(ByVal value As Single) : End Sub
+
+' Select the OpenAL Doppler velocity value
+Sub alDopplerVelocity(ByVal value As Single) : End Sub
+
+' Select the speed of sound for use in Doppler calculations
+Sub alSpeedOfSound(ByVal value As Single) : End Sub
+
+' Select the OpenAL distance model: AL_INVERSE_DISTANCE, AL_INVERSE_DISTANCE_CLAMPED, AL_LINEAR_DISTANCE,
+' AL_LINEAR_DISTANCE_CLAMPED, AL_EXPONENT_DISTANCE, AL_EXPONENT_DISTANCE_CLAMPED, or AL_NONE
+Sub alDistanceModel(ByVal distanceModel As Long) : End Sub
+
+' *** Context Management
+
+' Create a context using a specified device
+Function alcCreateContext(ByVal device As Long, ByVal sttrlist As Long) As Long : End Function
+
+' Make a specified context the current context
+Function alcMakeContextCurrent(ByVal context As Long) As Boolean : End Function
+
+' Tell a context to begin processing
+Sub alcProcessContext(ByVal context As Long) : End Sub
+
+' Suspend processing on a specified context
+Sub alcSuspendContext(ByVal context As Long) : End Sub
+
+' Destroy a context
+Sub alcDestroyContext(ByVal context As Long) : End Sub
+
+' Retrieve the current context
+Function alcGetCurrentContext() As Long : End Function
+
+' Retrieve a context's device pointer
+Function alcGetContextsDevice(ByVal context As Long) As Long : End Function
+
+' *** Device Management
+
+' Open a device by name
+' Note: 'devicename' is specified as a null terminated ASCII string
+'       (VB6 strings can be converted using the BSTR2LPSTR function)
+'       A null value is used to specify the default device
+Function alcOpenDevice(ByVal devicename As Long) As Long : End Function
+
+' Close a device by name
+Function alcCloseDevice(ByVal device As Long) As Boolean : End Function
+
+' *** Error support
+
+' Obtain the most recent Context error
+Function alcGetError(ByVal device As Long) As Long : End Function
+
+' *** Extension support
+' Query for the presence of an extension, and obtain any appropriate function pointers and enum values
+' Note: 'name' is specified as a null terminated ASCII string
+'       (VB6 strings can be converted using the BSTR2LPSTR function)
+
+' Query if a specified context extension is available
+Function alcIsExtensionPresent(ByVal device As Long, ByVal name As Long) As Boolean : End Function
+
+' Retrieve the address of a specified context extension function
+Function alcGetProcAddress(ByVal device As Long, ByVal name As Long) As Long : End Function
+
+' Retrieve the enum value for a specified enumeration name
+Function alcGetEnumValue(ByVal device As Long, ByVal name As Long) As Long : End Function
+
+' *** Query functions
+
+' Return a string (or strings) related to the context
+' Note: This function returns a null terminated ASCII string
+'       (It can be converted to VB6 string using the LPSTR2BSTR function)
+Function alcGetString(ByVal device As Long, ByVal param As Long) As Long : End Function
+
+' Return integers related to the context
+' Note: 'data' is a pointer to an array of integers large enough to receive the requested 'size' values
+Sub alcGetIntegerv(ByVal device As Long, ByVal param As Long, ByVal size As Long, ByVal data As Long) : End Sub
+
+' *** Capture functions
+
+' Open a capture device by name
+' Note: 'name' is specified as a null terminated ASCII string
+'       (VB6 strings can be converted using the BSTR2LPSTR function)
+Function alcCaptureOpenDevice(ByVal name As Long, ByVal frequency As Long, ByVal format As Long, ByVal buffersize As Long) As Long : End Function
+
+' Close the specified capture device
+Function alcCaptureCloseDevice(ByVal device As Long) As Boolean : End Function
+
+' Begin a capture operation
+Sub alcCaptureStart(ByVal device As Long) : End Sub
+
+' Stop a capture operation
+Sub alcCaptureStop(ByVal device As Long) : End Sub
+
+' Complete a capture operation, without blocking
+' Note: 'buffer' is a pointer to a byte array large enough to receive the requested number of samples
+Sub alcCaptureSamples(ByVal device As Long, ByVal buffer As Long, ByVal samples As Long) : End Sub

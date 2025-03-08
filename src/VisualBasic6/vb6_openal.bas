@@ -34,7 +34,7 @@ Public Sub Main()
    Dim b() As Byte
 
    ' Open a handle to the default audio device
-   device = openal32.alcOpenDevice(vbNullString)
+   device = openal32.alcOpenDevice(0)
    If device = 0 Then
       MsgBox OAerr("Failed to open the default device"), vbCritical
       Exit Sub
