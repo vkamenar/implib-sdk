@@ -25,45 +25,78 @@ Private Function LPSTR2BSTR(ByVal lpsz As Long) As String
 End Function
 
 ' Append the OpeanAL error code
-Private Function OAerr(ByVal msg As String) As String
-   OAerr = msg & vbCrLf & "Error: " & alGetError()
+Private Function OAerr(ByVal msg As String, Optional err As Long = -1) As String
+   If err = -1 Then err = alGetError()
+   OAerr = msg & vbCrLf & "Error: " & err
 End Function
 
 Public Sub Main()
-   Dim device, context, source As Long
-   Dim b() As Byte
+   Dim err As Long, device As Long, context As Long, source As Long, buffer As Long, b() As Byte
 
-   ' Open a handle to the default audio device
-   device = openal32.alcOpenDevice(0)
+   device = openal32.alcOpenDevice(0) ' Open a handle to the default audio device
    If device = 0 Then
       MsgBox OAerr("Failed to open the default device"), vbCritical
       Exit Sub
    End If
-
-   ' Create a context
-   context = openal32.alcCreateContext(device, 0)
+   context = openal32.alcCreateContext(device, 0) ' Create a context
    If context = 0 Then
       MsgBox OAerr("Failed to create the context"), vbCritical
       Exit Sub
    End If
-
    ' Make the context current
    If Not openal32.alcMakeContextCurrent(context) Then
       MsgBox OAerr("Failed to make context current"), vbCritical
    Else
 
       ' Test if XRAM is supported
-      If alIsExtensionPresent(BSTR2LPSTR("EAX-RAM", b)) Then MsgBox "XRAM supported!"
+      ' If alIsExtensionPresent(BSTR2LPSTR("EAX-RAM", b)) Then MsgBox "XRAM supported!"
 
-      ' Generate and initialize the source
-      openal32.alGenSources 1, source
-      If openal32.alGetError() <> AL_NO_ERROR Then
-         MsgBox "Failed to generate the source", vbCritical
+      openal32.alGenSources 1, source ' Generate and initialize the source
+      err = openal32.alGetError()
+      If err <> AL_NO_ERROR Then
+         MsgBox OAerr("Failed to generate the source", err), vbCritical
+      Else
+
+         ' Modify the source properties: pitch, gain, position, velocity and looping
+         ' openal32.alSourcef source, AL_PITCH, 1
+         ' openal32.alSourcef source, AL_GAIN, 1
+         ' openal32.alSource3f source, AL_POSITION, 0, 0, 0
+         ' openal32.alSource3f source, AL_VELOCITY, 0, 0, 0
+         openal32.alSourcei source, AL_LOOPING, AL_TRUE ' Enable looping
+         err = openal32.alGetError()
+         If err <> AL_NO_ERROR Then MsgBox OAerr("Failed to configure the source", err)
+
+         openal32.alGenBuffers 1, buffer ' Create the buffer to hold the raw audio stream
+         err = openal32.alGetError()
+         If err <> AL_NO_ERROR Then
+            MsgBox OAerr("Failed to create the buffer", err), vbCritical
+         Else
+
+            ' Generate a 16-bit sive wave (PCM format)
+            Dim wav(1000) As Integer, T As Long, L As Long, SR As Long, F As Double
+            SR = 22000
+            L = UBound(wav)
+            F = (2 * 3.14159265358979 * 440) / SR
+            For T = 0 To L
+               wav(T) = 32700 * Sin(F * T)
+            Next T
+
+            ' Load the sine wave into the buffer
+            openal32.alBufferData buffer, AL_FORMAT_MONO16, VarPtr(wav(0)), L, SR
+            err = openal32.alGetError()
+            If err <> AL_NO_ERROR Then
+               MsgBox OAerr("Failed to load PCM data into the buffer", err), vbCritical
+            Else
+               openal32.alSourcei source, AL_BUFFER, buffer ' Bind the source with its buffer
+               openal32.alSourcePlay source                 ' Start playing
+               MsgBox "OpenAL test"
+            End If
+            alDeleteBuffers 1, buffer
+         End If
+         alDeleteSources 1, source
       End If
-
       openal32.alcMakeContextCurrent 0
    End If
    openal32.alcDestroyContext context
    openal32.alcCloseDevice device
 End Sub
-
