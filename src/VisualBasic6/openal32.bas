@@ -6,793 +6,709 @@ Attribute VB_Name = "openal32"
 ' At link time (when VB6 invokes the MS linker to generate the native executable), the VB6LINK tool included in
 ' the ImpLib SDK replaces this module with the OpenAL import library to link the executable to the openal32.dll.
 
-' bad value
-Const AL_INVALID As Long = -1
-Const ALC_INVALID As Long = 0
-
-Const AL_NONE As Long = 0
-
-' Boolean False
-Const AL_FALSE As Long = 0
-Const ALC_FALSE As Long = 0
-
-' Boolean True
-Const AL_TRUE As Long = 1
-Const ALC_TRUE As Long = 1
-
-' Indicate Source has relative coordinates
-Const AL_SOURCE_RELATIVE As Long = &H202
-
-' Directional source, inner cone angle, in degrees
-Const AL_CONE_INNER_ANGLE As Long = &H1001
-
-' Directional source, outer cone angle, in degrees
-Const AL_CONE_OUTER_ANGLE As Long = &H1002
-
-' Specify the pitch to be applied at source
-Const AL_PITCH As Long = &H1003
-
-' Specify the current location in 3D space
-Const AL_POSITION As Long = &H1004
-
-' Specify the current direction
-Const AL_DIRECTION As Long = &H1005
-
-' Specify the current velocity in 3D space
-Const AL_VELOCITY As Long = &H1006
-
-' Indicate whether source is looping
-Const AL_LOOPING As Long = &H1007
-
-' Indicate the buffer to provide sound samples
-Const AL_BUFFER As Long = &H1009
-
-' Indicate the gain (volume amplification) applied
-Const AL_GAIN As Long = &H100A
-
-' Indicate minimum source attenuation
-Const AL_MIN_GAIN As Long = &H100D
-
-' Indicate maximum source attenuation
-Const AL_MAX_GAIN As Long = &H100E
-
-' Indicate listener orientation
-Const AL_ORIENTATION As Long = &H100F
-
-' Specify the channel mask (Creative)
-Const AL_CHANNEL_MASK As Long = &H3000
-
-' Source state information
-Const AL_SOURCE_STATE As Long = &H1010
-Const AL_INITIAL As Long = &H1011
-Const AL_PLAYING As Long = &H1012
-Const AL_PAUSED As Long = &H1013
-Const AL_STOPPED As Long = &H1014
-
-' Buffer queue params
-Const AL_BUFFERS_QUEUED As Long = &H1015
-Const AL_BUFFERS_PROCESSED As Long = &H1016
-
-' Source buffer position information
-Const AL_SEC_OFFSET As Long = &H1024
-Const AL_SAMPLE_OFFSET As Long = &H1025
-Const AL_BYTE_OFFSET As Long = &H1026
-
-' Source type: static, streaming or undetermined
-' Source is static if a buffer has been attached using AL_BUFFER
-' Source is streaming if one or more buffers have been attached using alSourceQueueBuffers
-' Source is undetermined when it has the NULL buffer attached
-Const AL_SOURCE_TYPE As Long = &H1027
-Const AL_STATIC As Long = &H1028
-Const AL_STREAMING As Long = &H1029
-Const AL_UNDETERMINED As Long = &H1030
-
-' Sound samples: format specifier
-Const AL_FORMAT_MONO8 As Long = &H1100
-Const AL_FORMAT_MONO16 As Long = &H1101
-Const AL_FORMAT_STEREO8 As Long = &H1102
-Const AL_FORMAT_STEREO16 As Long = &H1103
-
-' Source specific reference distance
-Const AL_REFERENCE_DISTANCE As Long = &H1020
-
-' Source specific rolloff factor
-Const AL_ROLLOFF_FACTOR As Long = &H1021
-
-' Directional source, outer cone gain
-Const AL_CONE_OUTER_GAIN As Long = &H1022
-
-' Indicate distance above which sources are not attenuated using the inverse clamped distance model
-Const AL_MAX_DISTANCE As Long = &H1023
-
-' Sound samples per second: frequency, in units of Hertz [Hz]
-' Half of the sample frequency marks the maximum significant frequency component
-Const AL_FREQUENCY As Long = &H2001
-
-Const AL_BITS As Long = &H2002
-Const AL_CHANNELS As Long = &H2003
-Const AL_SIZE As Long = &H2004
-
-' Buffer state
-Const AL_UNUSED As Long = &H2010
-Const AL_PENDING As Long = &H2011
-Const AL_PROCESSED As Long = &H2012
-
-' Errors: No Error
-Const AL_NO_ERROR As Long = 0
-Const ALC_NO_ERROR As Long = 0
-
-' Invalid name paramater passed to AL call
-Const AL_INVALID_NAME As Long = &HA001
-
-' The specified device is not a valid output device
-Const ALC_INVALID_DEVICE As Long = &HA001
-
-' Invalid enum passed to AL call
-Const AL_ILLEGAL_ENUM As Long = &HA002
-Const AL_INVALID_ENUM As Long = &HA002
-Const ALC_INVALID_ENUM As Long = &HA003
-
-' The specified context is invalid
-Const ALC_INVALID_CONTEXT As Long = &HA002
-
-' Invalid value passed to AL call
-Const AL_INVALID_VALUE As Long = &HA003
-Const ALC_INVALID_VALUE As Long = &HA004
-
-' Illegal call
-Const AL_ILLEGAL_COMMAND As Long = &HA004
-Const AL_INVALID_OPERATION As Long = &HA004
-
-' Requested operation resulted in AL running out of memory
-Const AL_OUT_OF_MEMORY As Long = &HA005
-Const ALC_OUT_OF_MEMORY As Long = &HA005
-
-' Context strings: Vendor Name
-Const AL_VENDOR As Long = &HB001
-
-Const AL_VERSION As Long = &HB002
-Const AL_RENDERER As Long = &HB003
-Const AL_EXTENSIONS As Long = &HB004
-
-' *** Global tweakage
-
-' Doppler scale
-Const AL_DOPPLER_FACTOR As Long = &HC000
-
-' Tweaks speed of propagation
-Const AL_DOPPLER_VELOCITY As Long = &HC001
-
-' Speed of sound in units per second
-Const AL_SPEED_OF_SOUND As Long = &HC003
-
-' Distance models
-Const AL_DISTANCE_MODEL As Long = &HD000
-Const AL_INVERSE_DISTANCE As Long = &HD001
-Const AL_INVERSE_DISTANCE_CLAMPED As Long = &HD002
-Const AL_LINEAR_DISTANCE As Long = &HD003
-Const AL_LINEAR_DISTANCE_CLAMPED As Long = &HD004
-Const AL_EXPONENT_DISTANCE As Long = &HD005
-Const AL_EXPONENT_DISTANCE_CLAMPED As Long = &HD006
-
-' Output frequency in Hz
-Const ALC_FREQUENCY As Long = &H1007
-
-' Rate of context processing
-Const ALC_REFRESH As Long = &H1008
-
-' Flag indicating a synchronous context
-Const ALC_SYNC As Long = &H1009
-
-' Num of requested mono (3D) sources
-Const ALC_MONO_SOURCES As Long = &H1010
-
-' Num of requested stereo sources
-Const ALC_STEREO_SOURCES As Long = &H1011
-
-' The name of the default output device
-Const ALC_DEFAULT_DEVICE_SPECIFIER As Long = &H1004
-
-' The name of the specified output device
-Const ALC_DEVICE_SPECIFIER As Long = &H1005
-
-' The available context extensions
-Const ALC_EXTENSIONS As Long = &H1006
-
-Const ALC_MAJOR_VERSION As Long = &H1000
-Const ALC_MINOR_VERSION As Long = &H1001
-Const ALC_ATTRIBUTES_SIZE As Long = &H1002
-Const ALC_ALL_ATTRIBUTES As Long = &H1003
-
-' Use with alcGetString with a NULL device ID to retrieve the name of the default device
-Const ALC_DEFAULT_ALL_DEVICES_SPECIFIER As Long = &H1012
-
-' Use with alcGetString and a NULL device pointer to retrieve the names of all devices and audio output paths
-Const ALC_ALL_DEVICES_SPECIFIER As Long = &H1013
-
-' Return the name of the specified capture device or a list of all available devices (if a NULL device pointer is supplied)
-Const ALC_CAPTURE_DEVICE_SPECIFIER As Long = &H310
-
-' Use with alcGetString with a NULL device ID to retrieve the name of the default capture device
-Const ALC_CAPTURE_DEFAULT_DEVICE_SPECIFIER As Long = &H311
-
-Const ALC_CAPTURE_SAMPLES As Long = &H312
-
-' Context definitions to be used with alcCreateContext
-Const ALC_EFX_MAJOR_VERSION As Long = &H20001
-Const ALC_EFX_MINOR_VERSION As Long = &H20002
-Const ALC_MAX_AUXILIARY_SENDS As Long = &H20003
-
-' Listener definitions to be used with alListener functions
-Const AL_METERS_PER_UNIT As Long = &H20004
-
-' Source definitions to be used with alSource functions
-Const AL_DIRECT_FILTER As Long = &H20005
-Const AL_AUXILIARY_SEND_FILTER As Long = &H20006
-Const AL_AIR_ABSORPTION_FACTOR As Long = &H20007
-Const AL_ROOM_ROLLOFF_FACTOR As Long = &H20008
-Const AL_CONE_OUTER_GAINHF As Long = &H20009
-Const AL_DIRECT_FILTER_GAINHF_AUTO As Long = &H2000A
-Const AL_AUXILIARY_SEND_FILTER_GAIN_AUTO As Long = &H2000B
-Const AL_AUXILIARY_SEND_FILTER_GAINHF_AUTO As Long = &H2000C
-
-' *** Effect object definitions to be used with alEffect functions
-
-' Reverb parameters
-Const AL_REVERB_DENSITY As Long = 1
-Const AL_REVERB_DIFFUSION As Long = 2
-Const AL_REVERB_GAIN As Long = 3
-Const AL_REVERB_GAINHF As Long = 4
-Const AL_REVERB_DECAY_TIME As Long = 5
-Const AL_REVERB_DECAY_HFRATIO As Long = 6
-Const AL_REVERB_REFLECTIONS_GAIN As Long = 7
-Const AL_REVERB_REFLECTIONS_DELAY As Long = 8
-Const AL_REVERB_LATE_REVERB_GAIN As Long = 9
-Const AL_REVERB_LATE_REVERB_DELAY As Long = &HA
-Const AL_REVERB_AIR_ABSORPTION_GAINHF As Long = &HB 
-Const AL_REVERB_ROOM_ROLLOFF_FACTOR As Long = &HC
-Const AL_REVERB_DECAY_HFLIMIT As Long = &HD
-
-' Chorus parameters
-Const AL_CHORUS_WAVEFORM As Long = 1
-Const AL_CHORUS_PHASE As Long = 2
-Const AL_CHORUS_RATE As Long = 3
-Const AL_CHORUS_DEPTH As Long = 4
-Const AL_CHORUS_FEEDBACK As Long = 5
-Const AL_CHORUS_DELAY As Long = 6
-
-' Distortion parameters
-Const AL_DISTORTION_EDGE As Long = 1
-Const AL_DISTORTION_GAIN As Long = 2
-Const AL_DISTORTION_LOWPASS_CUTOFF As Long = 3
-Const AL_DISTORTION_EQCENTER As Long = 4
-Const AL_DISTORTION_EQBANDWIDTH As Long = 5
-
-' Echo parameters
-Const AL_ECHO_DELAY As Long = 1
-Const AL_ECHO_LRDELAY As Long = 2
-Const AL_ECHO_DAMPING As Long = 3
-Const AL_ECHO_FEEDBACK As Long = 4
-Const AL_ECHO_SPREAD As Long = 5
-
-' Flanger parameters
-Const AL_FLANGER_WAVEFORM As Long = 1
-Const AL_FLANGER_PHASE As Long = 2
-Const AL_FLANGER_RATE As Long = 3
-Const AL_FLANGER_DEPTH As Long = 4
-Const AL_FLANGER_FEEDBACK As Long = 5
-Const AL_FLANGER_DELAY As Long = 6
-
-' Frequencyshifter parameters
-Const AL_FREQUENCY_SHIFTER_FREQUENCY As Long = 1
-Const AL_FREQUENCY_SHIFTER_LEFT_DIRECTION As Long = 2
-Const AL_FREQUENCY_SHIFTER_RIGHT_DIRECTION As Long = 3
-
-' Vocalmorpher parameters
-Const AL_VOCAL_MORPHER_PHONEMEA As Long = 1
-Const AL_VOCAL_MORPHER_PHONEMEA_COARSE_TUNING As Long = 2
-Const AL_VOCAL_MORPHER_PHONEMEB As Long = 3
-Const AL_VOCAL_MORPHER_PHONEMEB_COARSE_TUNING As Long = 4
-Const AL_VOCAL_MORPHER_WAVEFORM As Long = 5
-Const AL_VOCAL_MORPHER_RATE As Long = 6
-
-' Pitchshifter parameters
-Const AL_PITCH_SHIFTER_COARSE_TUNE As Long = 1
-Const AL_PITCH_SHIFTER_FINE_TUNE As Long = 2
-
-' Ringmodulator parameters
-Const AL_RING_MODULATOR_FREQUENCY As Long = 1
-Const AL_RING_MODULATOR_HIGHPASS_CUTOFF As Long = 2
-Const AL_RING_MODULATOR_WAVEFORM As Long = 3
-
-' Autowah parameters
-Const AL_AUTOWAH_ATTACK_TIME As Long = 1
-Const AL_AUTOWAH_RELEASE_TIME As Long = 2
-Const AL_AUTOWAH_RESONANCE As Long = 3
-Const AL_AUTOWAH_PEAK_GAIN As Long = 4
-
-' Compressor parameters
-Const AL_COMPRESSOR_ONOFF As Long = 1
-
-' Equalizer parameters
-Const AL_EQUALIZER_LOW_GAIN As Long = 1
-Const AL_EQUALIZER_LOW_CUTOFF As Long = 2
-Const AL_EQUALIZER_MID1_GAIN As Long = 3
-Const AL_EQUALIZER_MID1_CENTER As Long = 4
-Const AL_EQUALIZER_MID1_WIDTH As Long = 5
-Const AL_EQUALIZER_MID2_GAIN As Long = 6
-Const AL_EQUALIZER_MID2_CENTER As Long = 7
-Const AL_EQUALIZER_MID2_WIDTH As Long = 8
-Const AL_EQUALIZER_HIGH_GAIN As Long = 9
-Const AL_EQUALIZER_HIGH_CUTOFF As Long = &HA
-
-' Effect type
-Const AL_EFFECT_FIRST_PARAMETER As Long = 0
-Const AL_EFFECT_LAST_PARAMETER As Long = &H8000
-Const AL_EFFECT_TYPE As Long = &H8001
-
-' Effect type definitions to be used with AL_EFFECT_TYPE
-Const AL_EFFECT_NULL As Long = 0 ' Can also be used as an Effect Object ID
-Const AL_EFFECT_REVERB As Long = 1
-Const AL_EFFECT_CHORUS As Long = 2
-Const AL_EFFECT_DISTORTION As Long = 3
-Const AL_EFFECT_ECHO As Long = 4
-Const AL_EFFECT_FLANGER As Long = 5
-Const AL_EFFECT_FREQUENCY_SHIFTER As Long = 6
-Const AL_EFFECT_VOCAL_MORPHER As Long = 7
-Const AL_EFFECT_PITCH_SHIFTER As Long = 8
-Const AL_EFFECT_RING_MODULATOR As Long = 9
-Const AL_EFFECT_AUTOWAH As Long = &HA
-Const AL_EFFECT_COMPRESSOR As Long = &HB
-Const AL_EFFECT_EQUALIZER As Long = &HC
-
-' Auxiliary Slot object definitions to be used with alAuxiliaryEffectSlot functions
-Const AL_EFFECTSLOT_EFFECT As Long = 1
-Const AL_EFFECTSLOT_GAIN As Long = 2
-Const AL_EFFECTSLOT_AUXILIARY_SEND_AUTO As Long = 3
-
-' Value to be used as an Auxiliary Slot ID to disable a source send
-Const AL_EFFECTSLOT_NULL As Long = 0
-
-' *** Filter object definitions to be used with alFilter functions
-
-' Lowpass parameters
-Const AL_LOWPASS_GAIN As Long = 1
-Const AL_LOWPASS_GAINHF As Long = 2
-
-' Highpass parameters
-Const AL_HIGHPASS_GAIN As Long = 1
-Const AL_HIGHPASS_GAINLF As Long = 2
-
-' Bandpass parameters
-Const AL_BANDPASS_GAIN As Long = 1
-Const AL_BANDPASS_GAINLF As Long = 2
-Const AL_BANDPASS_GAINHF As Long = 3
-
-' Filter type
-Const AL_FILTER_FIRST_PARAMETER As Long = 0
-Const AL_FILTER_LAST_PARAMETER As Long = &H8000
-Const AL_FILTER_TYPE As Long = &H8001
-
-' Filter type definitions to be used with AL_FILTER_TYPE
-Const AL_FILTER_NULL As Long = 0 ' Can also be used as a Filter Object ID
-Const AL_FILTER_LOWPASS As Long = 1
-Const AL_FILTER_HIGHPASS As Long = 2
-Const AL_FILTER_BANDPASS As Long = 3
-
-' *** Filter ranges and defaults
-
-' Lowpass filter
-Const LOWPASS_MIN_GAIN As Single = 0.0
-Const LOWPASS_MAX_GAIN As Single = 1.0
-Const LOWPASS_DEFAULT_GAIN As Single = 1.0
-Const LOWPASS_MIN_GAINHF As Single = 0.0
-Const LOWPASS_MAX_GAINHF As Single = 1.0
-Const LOWPASS_DEFAULT_GAINHF As Single = 1.0
-
-' Highpass filter
-Const HIGHPASS_MIN_GAIN As Single = 0.0
-Const HIGHPASS_MAX_GAIN As Single = 1.0
-Const HIGHPASS_DEFAULT_GAIN As Single = 1.0
-Const HIGHPASS_MIN_GAINLF As Single = 0.0
-Const HIGHPASS_MAX_GAINLF As Single = 1.0
-Const HIGHPASS_DEFAULT_GAINLF As Single = 1.0
-
-' Bandpass filter
-Const BANDPASS_MIN_GAIN As Single = 0.0
-Const BANDPASS_MAX_GAIN As Single = 1.0
-Const BANDPASS_DEFAULT_GAIN As Single = 1.0
-Const BANDPASS_MIN_GAINHF As Single = 0.0
-Const BANDPASS_MAX_GAINHF As Single = 1.0
-Const BANDPASS_DEFAULT_GAINHF As Single = 1.0
-Const BANDPASS_MIN_GAINLF As Single = 0.0
-Const BANDPASS_MAX_GAINLF As Single = 1.0
-Const BANDPASS_DEFAULT_GAINLF As Single = 1.0
-
-' *** Effect parameter structures, value definitions, ranges and defaults
-
-' AL reverb effect parameter ranges and defaults
-Const AL_REVERB_MIN_DENSITY As Single = 0.0
-Const AL_REVERB_MAX_DENSITY As Single = 1.0
-Const AL_REVERB_DEFAULT_DENSITY As Single = 1.0
-Const AL_REVERB_MIN_DIFFUSION As Single = 0.0
-Const AL_REVERB_MAX_DIFFUSION As Single = 1.0
-Const AL_REVERB_DEFAULT_DIFFUSION As Single = 1.0
-Const AL_REVERB_MIN_GAIN As Single = 0.0
-Const AL_REVERB_MAX_GAIN As Single = 1.0
-Const AL_REVERB_DEFAULT_GAIN As Single = 0.32
-Const AL_REVERB_MIN_GAINHF As Single = 0.0
-Const AL_REVERB_MAX_GAINHF As Single = 1.0
-Const AL_REVERB_DEFAULT_GAINHF As Single = 0.89
-Const AL_REVERB_MIN_DECAY_TIME As Single = 0.1
-Const AL_REVERB_MAX_DECAY_TIME As Single = 20.0
-Const AL_REVERB_DEFAULT_DECAY_TIME As Single = 1.49
-Const AL_REVERB_MIN_DECAY_HFRATIO As Single = 0.1
-Const AL_REVERB_MAX_DECAY_HFRATIO As Single = 2.0
-Const AL_REVERB_DEFAULT_DECAY_HFRATIO As Single = 0.83
-Const AL_REVERB_MIN_REFLECTIONS_GAIN As Single = 0.0
-Const AL_REVERB_MAX_REFLECTIONS_GAIN As Single = 3.16
-Const AL_REVERB_DEFAULT_REFLECTIONS_GAIN As Single = 0.05
-Const AL_REVERB_MIN_REFLECTIONS_DELAY As Single = 0.0
-Const AL_REVERB_MAX_REFLECTIONS_DELAY As Single = 0.3
-Const AL_REVERB_DEFAULT_REFLECTIONS_DELAY As Single = 0.007
-Const AL_REVERB_MIN_LATE_REVERB_GAIN As Single = 0.0
-Const AL_REVERB_MAX_LATE_REVERB_GAIN As Single = 10.0
-Const AL_REVERB_DEFAULT_LATE_REVERB_GAIN As Single = 1.26
-Const AL_REVERB_MIN_LATE_REVERB_DELAY As Single = 0.0
-Const AL_REVERB_MAX_LATE_REVERB_DELAY As Single = 0.1
-Const AL_REVERB_DEFAULT_LATE_REVERB_DELAY As Single = 0.011
-Const AL_REVERB_MIN_AIR_ABSORPTION_GAINHF As Single = 0.892
-Const AL_REVERB_MAX_AIR_ABSORPTION_GAINHF As Single = 1.0
-Const AL_REVERB_DEFAULT_AIR_ABSORPTION_GAINHF As Single = 0.994
-Const AL_REVERB_MIN_ROOM_ROLLOFF_FACTOR As Single = 0.0
-Const AL_REVERB_MAX_ROOM_ROLLOFF_FACTOR As Single = 10.0
-Const AL_REVERB_DEFAULT_ROOM_ROLLOFF_FACTOR As Single = 0.0
-Const AL_REVERB_MIN_DECAY_HFLIMIT As Long = 0
-Const AL_REVERB_MAX_DECAY_HFLIMIT As Long = 1
-Const AL_REVERB_DEFAULT_DECAY_HFLIMIT As Long = 1
-
-' AL chorus effect parameter ranges and defaults
-Const AL_CHORUS_MIN_WAVEFORM As Long = 0
-Const AL_CHORUS_MAX_WAVEFORM As Long = 1
-Const AL_CHORUS_DEFAULT_WAVEFORM As Long = 1
-Const AL_CHORUS_WAVEFORM_SINUSOID As Long = 0
-Const AL_CHORUS_WAVEFORM_TRIANGLE As Long = 1
-Const AL_CHORUS_MIN_PHASE As Long = -180
-Const AL_CHORUS_MAX_PHASE As Long = 180
-Const AL_CHORUS_DEFAULT_PHASE As Long = 90
-Const AL_CHORUS_MIN_RATE As Single = 0.0
-Const AL_CHORUS_MAX_RATE As Single = 10.0
-Const AL_CHORUS_DEFAULT_RATE As Single = 1.1
-Const AL_CHORUS_MIN_DEPTH As Single = 0.0
-Const AL_CHORUS_MAX_DEPTH As Single = 1.0
-Const AL_CHORUS_DEFAULT_DEPTH As Single = 0.1
-Const AL_CHORUS_MIN_FEEDBACK As Single = -1.0
-Const AL_CHORUS_MAX_FEEDBACK As Single = 1.0
-Const AL_CHORUS_DEFAULT_FEEDBACK As Single = 0.25
-Const AL_CHORUS_MIN_DELAY As Single = 0.0
-Const AL_CHORUS_MAX_DELAY As Single = 0.016
-Const AL_CHORUS_DEFAULT_DELAY As Single = 0.016
-
-' AL distortion effect parameter ranges and defaults
-Const AL_DISTORTION_MIN_EDGE As Single = 0.0
-Const AL_DISTORTION_MAX_EDGE As Single = 1.0
-Const AL_DISTORTION_DEFAULT_EDGE As Single = 0.2
-Const AL_DISTORTION_MIN_GAIN As Single = 0.01
-Const AL_DISTORTION_MAX_GAIN As Single = 1.0
-Const AL_DISTORTION_DEFAULT_GAIN As Single = 0.05
-Const AL_DISTORTION_MIN_LOWPASS_CUTOFF As Single = 80.0
-Const AL_DISTORTION_MAX_LOWPASS_CUTOFF As Single = 24000.0
-Const AL_DISTORTION_DEFAULT_LOWPASS_CUTOFF As Single = 8000.0
-Const AL_DISTORTION_MIN_EQCENTER As Single = 80.0
-Const AL_DISTORTION_MAX_EQCENTER As Single = 24000.0
-Const AL_DISTORTION_DEFAULT_EQCENTER As Single = 3600.0
-Const AL_DISTORTION_MIN_EQBANDWIDTH As Single = 80.0
-Const AL_DISTORTION_MAX_EQBANDWIDTH As Single = 24000.0
-Const AL_DISTORTION_DEFAULT_EQBANDWIDTH As Single = 3600.0
-
-' AL echo effect parameter ranges and defaults
-Const AL_ECHO_MIN_DELAY As Single = 0.0
-Const AL_ECHO_MAX_DELAY As Single = 0.207
-Const AL_ECHO_DEFAULT_DELAY As Single = 0.1
-Const AL_ECHO_MIN_LRDELAY As Single = 0.0
-Const AL_ECHO_MAX_LRDELAY As Single = 0.404
-Const AL_ECHO_DEFAULT_LRDELAY As Single = 0.1
-Const AL_ECHO_MIN_DAMPING As Single = 0.0
-Const AL_ECHO_MAX_DAMPING As Single = 0.99
-Const AL_ECHO_DEFAULT_DAMPING As Single = 0.5
-Const AL_ECHO_MIN_FEEDBACK As Single = 0.0
-Const AL_ECHO_MAX_FEEDBACK As Single = 1.0
-Const AL_ECHO_DEFAULT_FEEDBACK As Single = 0.5
-Const AL_ECHO_MIN_SPREAD As Single = -1.0
-Const AL_ECHO_MAX_SPREAD As Single = 1.0
-Const AL_ECHO_DEFAULT_SPREAD As Single = -1.0
-
-' AL flanger effect parameter ranges and defaults
-Const AL_FLANGER_MIN_WAVEFORM As Long = 0
-Const AL_FLANGER_MAX_WAVEFORM As Long = 1
-Const AL_FLANGER_DEFAULT_WAVEFORM As Long = 1
-Const AL_FLANGER_WAVEFORM_SINUSOID As Long = 0
-Const AL_FLANGER_WAVEFORM_TRIANGLE As Long = 1
-Const AL_FLANGER_MIN_PHASE As Long = -180
-Const AL_FLANGER_MAX_PHASE As Long = 180
-Const AL_FLANGER_DEFAULT_PHASE As Long = 0
-Const AL_FLANGER_MIN_RATE As Single = 0.0
-Const AL_FLANGER_MAX_RATE As Single = 10.0
-Const AL_FLANGER_DEFAULT_RATE As Single = 0.27
-Const AL_FLANGER_MIN_DEPTH As Single = 0.0
-Const AL_FLANGER_MAX_DEPTH As Single = 1.0
-Const AL_FLANGER_DEFAULT_DEPTH As Single = 1.0
-Const AL_FLANGER_MIN_FEEDBACK As Single = -1.0
-Const AL_FLANGER_MAX_FEEDBACK As Single = 1.0
-Const AL_FLANGER_DEFAULT_FEEDBACK As Single = -0.5
-Const AL_FLANGER_MIN_DELAY As Single = 0.0
-Const AL_FLANGER_MAX_DELAY As Single = 0.004
-Const AL_FLANGER_DEFAULT_DELAY As Single = 0.002
-
-' AL frequency shifter effect parameter ranges and defaults
-Const AL_FREQUENCY_SHIFTER_MIN_FREQUENCY As Single = 0.0
-Const AL_FREQUENCY_SHIFTER_MAX_FREQUENCY As Single = 24000.0
-Const AL_FREQUENCY_SHIFTER_DEFAULT_FREQUENCY As Single = 0.0
-Const AL_FREQUENCY_SHIFTER_MIN_LEFT_DIRECTION As Long = 0
-Const AL_FREQUENCY_SHIFTER_MAX_LEFT_DIRECTION As Long = 2
-Const AL_FREQUENCY_SHIFTER_DEFAULT_LEFT_DIRECTION As Long = 0
-Const AL_FREQUENCY_SHIFTER_MIN_RIGHT_DIRECTION As Long = 0
-Const AL_FREQUENCY_SHIFTER_MAX_RIGHT_DIRECTION As Long = 2
-Const AL_FREQUENCY_SHIFTER_DEFAULT_RIGHT_DIRECTION As Long = 0
-Const AL_FREQUENCY_SHIFTER_DIRECTION_DOWN As Long = 0
-Const AL_FREQUENCY_SHIFTER_DIRECTION_UP As Long = 1
-Const AL_FREQUENCY_SHIFTER_DIRECTION_OFF As Long = 2
-
-' AL vocal morpher effect parameter ranges and defaults
-Const AL_VOCAL_MORPHER_MIN_PHONEMEA As Long = 0
-Const AL_VOCAL_MORPHER_MAX_PHONEMEA As Long = 29
-Const AL_VOCAL_MORPHER_DEFAULT_PHONEMEA As Long = 0
-Const AL_VOCAL_MORPHER_MIN_PHONEMEA_COARSE_TUNING As Long = -24
-Const AL_VOCAL_MORPHER_MAX_PHONEMEA_COARSE_TUNING As Long = 24
-Const AL_VOCAL_MORPHER_DEFAULT_PHONEMEA_COARSE_TUNING As Long = 0
-Const AL_VOCAL_MORPHER_MIN_PHONEMEB As Long = 0
-Const AL_VOCAL_MORPHER_MAX_PHONEMEB As Long = 29
-Const AL_VOCAL_MORPHER_DEFAULT_PHONEMEB As Long = 10
-Const AL_VOCAL_MORPHER_PHONEME_A As Long = 0
-Const AL_VOCAL_MORPHER_PHONEME_E As Long = 1
-Const AL_VOCAL_MORPHER_PHONEME_I As Long = 2
-Const AL_VOCAL_MORPHER_PHONEME_O As Long = 3
-Const AL_VOCAL_MORPHER_PHONEME_U As Long = 4
-Const AL_VOCAL_MORPHER_PHONEME_AA As Long = 5
-Const AL_VOCAL_MORPHER_PHONEME_AE As Long = 6
-Const AL_VOCAL_MORPHER_PHONEME_AH As Long = 7
-Const AL_VOCAL_MORPHER_PHONEME_AO As Long = 8
-Const AL_VOCAL_MORPHER_PHONEME_EH As Long = 9
-Const AL_VOCAL_MORPHER_PHONEME_ER As Long = 10
-Const AL_VOCAL_MORPHER_PHONEME_IH As Long = 11
-Const AL_VOCAL_MORPHER_PHONEME_IY As Long = 12
-Const AL_VOCAL_MORPHER_PHONEME_UH As Long = 13
-Const AL_VOCAL_MORPHER_PHONEME_UW As Long = 14
-Const AL_VOCAL_MORPHER_PHONEME_B As Long = 15
-Const AL_VOCAL_MORPHER_PHONEME_D As Long = 16
-Const AL_VOCAL_MORPHER_PHONEME_F As Long = 17
-Const AL_VOCAL_MORPHER_PHONEME_G As Long = 18
-Const AL_VOCAL_MORPHER_PHONEME_J As Long = 19
-Const AL_VOCAL_MORPHER_PHONEME_K As Long = 20
-Const AL_VOCAL_MORPHER_PHONEME_L As Long = 21
-Const AL_VOCAL_MORPHER_PHONEME_M As Long = 22
-Const AL_VOCAL_MORPHER_PHONEME_N As Long = 23
-Const AL_VOCAL_MORPHER_PHONEME_P As Long = 24
-Const AL_VOCAL_MORPHER_PHONEME_R As Long = 25
-Const AL_VOCAL_MORPHER_PHONEME_S As Long = 26
-Const AL_VOCAL_MORPHER_PHONEME_T As Long = 27
-Const AL_VOCAL_MORPHER_PHONEME_V As Long = 28
-Const AL_VOCAL_MORPHER_PHONEME_Z As Long = 29
-Const AL_VOCAL_MORPHER_MIN_PHONEMEB_COARSE_TUNING As Long = -24
-Const AL_VOCAL_MORPHER_MAX_PHONEMEB_COARSE_TUNING As Long = 24
-Const AL_VOCAL_MORPHER_DEFAULT_PHONEMEB_COARSE_TUNING As Long = 0
-Const AL_VOCAL_MORPHER_MIN_WAVEFORM As Long = 0
-Const AL_VOCAL_MORPHER_MAX_WAVEFORM As Long = 2
-Const AL_VOCAL_MORPHER_DEFAULT_WAVEFORM As Long = 0
-Const AL_VOCAL_MORPHER_WAVEFORM_SINUSOID As Long = 0
-Const AL_VOCAL_MORPHER_WAVEFORM_TRIANGLE As Long = 1
-Const AL_VOCAL_MORPHER_WAVEFORM_SAWTOOTH As Long = 2
-Const AL_VOCAL_MORPHER_MIN_RATE As Single = 0.0
-Const AL_VOCAL_MORPHER_MAX_RATE As Single = 10.0
-Const AL_VOCAL_MORPHER_DEFAULT_RATE As Single = 1.41
-
-' AL pitch shifter effect parameter ranges and defaults
-Const AL_PITCH_SHIFTER_MIN_COARSE_TUNE As Long = -12
-Const AL_PITCH_SHIFTER_MAX_COARSE_TUNE As Long = 12
-Const AL_PITCH_SHIFTER_DEFAULT_COARSE_TUNE As Long = 12
-Const AL_PITCH_SHIFTER_MIN_FINE_TUNE As Long = -50
-Const AL_PITCH_SHIFTER_MAX_FINE_TUNE As Long = 50
-Const AL_PITCH_SHIFTER_DEFAULT_FINE_TUNE As Long = 0
-
-' AL ring modulator effect parameter ranges and defaults
-Const AL_RING_MODULATOR_MIN_FREQUENCY As Single = 0.0
-Const AL_RING_MODULATOR_MAX_FREQUENCY As Single = 8000.0
-Const AL_RING_MODULATOR_DEFAULT_FREQUENCY As Single = 440.0
-Const AL_RING_MODULATOR_MIN_HIGHPASS_CUTOFF As Single = 0.0
-Const AL_RING_MODULATOR_MAX_HIGHPASS_CUTOFF As Single = 24000.0
-Const AL_RING_MODULATOR_DEFAULT_HIGHPASS_CUTOFF As Single = 800.0
-Const AL_RING_MODULATOR_MIN_WAVEFORM As Long = 0
-Const AL_RING_MODULATOR_MAX_WAVEFORM As Long = 2
-Const AL_RING_MODULATOR_DEFAULT_WAVEFORM As Long = 0
-Const AL_RING_MODULATOR_SINUSOID As Long = 0
-Const AL_RING_MODULATOR_SAWTOOTH As Long = 1
-Const AL_RING_MODULATOR_SQUARE As Long = 2
-
-' AL autowah effect parameter ranges and defaults
-Const AL_AUTOWAH_MIN_ATTACK_TIME As Single = 0.0001
-Const AL_AUTOWAH_MAX_ATTACK_TIME As Single = 1.0
-Const AL_AUTOWAH_DEFAULT_ATTACK_TIME As Single = 0.06
-Const AL_AUTOWAH_MIN_RELEASE_TIME As Single = 0.0001
-Const AL_AUTOWAH_MAX_RELEASE_TIME As Single = 1.0
-Const AL_AUTOWAH_DEFAULT_RELEASE_TIME As Single = 0.06
-Const AL_AUTOWAH_MIN_RESONANCE As Single = 2.0
-Const AL_AUTOWAH_MAX_RESONANCE As Single = 1000.0
-Const AL_AUTOWAH_DEFAULT_RESONANCE As Single = 1000.0
-Const AL_AUTOWAH_MIN_PEAK_GAIN As Single = 0.00003
-Const AL_AUTOWAH_MAX_PEAK_GAIN As Single = 31621.0
-Const AL_AUTOWAH_DEFAULT_PEAK_GAIN As Single = 11.22
-
-' AL compressor effect parameter ranges and defaults
-Const AL_COMPRESSOR_MIN_ONOFF As Long = 0
-Const AL_COMPRESSOR_MAX_ONOFF As Long = 1
-Const AL_COMPRESSOR_DEFAULT_ONOFF As Long = 1
-
-' AL equalizer effect parameter ranges and defaults
-Const AL_EQUALIZER_MIN_LOW_GAIN As Single = 0.126
-Const AL_EQUALIZER_MAX_LOW_GAIN As Single = 7.943
-Const AL_EQUALIZER_DEFAULT_LOW_GAIN As Single = 1.0
-Const AL_EQUALIZER_MIN_LOW_CUTOFF As Single = 50.0
-Const AL_EQUALIZER_MAX_LOW_CUTOFF As Single = 800.0
-Const AL_EQUALIZER_DEFAULT_LOW_CUTOFF As Single = 200.0
-Const AL_EQUALIZER_MIN_MID1_GAIN As Single = 0.126
-Const AL_EQUALIZER_MAX_MID1_GAIN As Single = 7.943
-Const AL_EQUALIZER_DEFAULT_MID1_GAIN As Single = 1.0
-Const AL_EQUALIZER_MIN_MID1_CENTER As Single = 200.0
-Const AL_EQUALIZER_MAX_MID1_CENTER As Single = 3000.0
-Const AL_EQUALIZER_DEFAULT_MID1_CENTER As Single = 500.0
-Const AL_EQUALIZER_MIN_MID1_WIDTH As Single = 0.01
-Const AL_EQUALIZER_MAX_MID1_WIDTH As Single = 1.0
-Const AL_EQUALIZER_DEFAULT_MID1_WIDTH As Single = 1.0
-Const AL_EQUALIZER_MIN_MID2_GAIN As Single = 0.126
-Const AL_EQUALIZER_MAX_MID2_GAIN As Single = 7.943
-Const AL_EQUALIZER_DEFAULT_MID2_GAIN As Single = 1.0
-Const AL_EQUALIZER_MIN_MID2_CENTER As Single = 1000.0
-Const AL_EQUALIZER_MAX_MID2_CENTER As Single = 8000.0
-Const AL_EQUALIZER_DEFAULT_MID2_CENTER As Single = 3000.0
-Const AL_EQUALIZER_MIN_MID2_WIDTH As Single = 0.01
-Const AL_EQUALIZER_MAX_MID2_WIDTH As Single = 1.0
-Const AL_EQUALIZER_DEFAULT_MID2_WIDTH As Single = 1.0
-Const AL_EQUALIZER_MIN_HIGH_GAIN As Single = 0.126
-Const AL_EQUALIZER_MAX_HIGH_GAIN As Single = 7.943
-Const AL_EQUALIZER_DEFAULT_HIGH_GAIN As Single = 1.0
-Const AL_EQUALIZER_MIN_HIGH_CUTOFF As Single = 4000.0
-Const AL_EQUALIZER_MAX_HIGH_CUTOFF As Single = 16000.0
-Const AL_EQUALIZER_DEFAULT_HIGH_CUTOFF As Single = 6000.0
-
-' Source parameter value definitions, ranges and defaults
-Const AL_MIN_AIR_ABSORPTION_FACTOR As Single = 0.0
-Const AL_MAX_AIR_ABSORPTION_FACTOR As Single = 10.0
-Const AL_DEFAULT_AIR_ABSORPTION_FACTOR As Single = 0.0
-Const AL_MIN_ROOM_ROLLOFF_FACTOR As Single = 0.0
-Const AL_MAX_ROOM_ROLLOFF_FACTOR As Single = 10.0
-Const AL_DEFAULT_ROOM_ROLLOFF_FACTOR As Single = 0.0
-Const AL_MIN_CONE_OUTER_GAINHF As Single = 0.0
-Const AL_MAX_CONE_OUTER_GAINHF As Single = 1.0
-Const AL_DEFAULT_CONE_OUTER_GAINHF As Single = 1.0
-Const AL_MIN_DIRECT_FILTER_GAINHF_AUTO As Long = 0
-Const AL_MAX_DIRECT_FILTER_GAINHF_AUTO As Long = 1
-Const AL_DEFAULT_DIRECT_FILTER_GAINHF_AUTO As Long = 1
-Const AL_MIN_AUXILIARY_SEND_FILTER_GAIN_AUTO As Long = 0
-Const AL_MAX_AUXILIARY_SEND_FILTER_GAIN_AUTO As Long = 1
-Const AL_DEFAULT_AUXILIARY_SEND_FILTER_GAIN_AUTO As Long = 1
-Const AL_MIN_AUXILIARY_SEND_FILTER_GAINHF_AUTO As Long = 0
-Const AL_MAX_AUXILIARY_SEND_FILTER_GAINHF_AUTO As Long = 1
-Const AL_DEFAULT_AUXILIARY_SEND_FILTER_GAINHF_AUTO As Long = 1
-
-' Listener parameter value definitions, ranges and defaults
-Const AL_MIN_METERS_PER_UNIT As Single = 1.175494e-38
-Const AL_MAX_METERS_PER_UNIT As Single = 3.402823e+38
-Const AL_DEFAULT_METERS_PER_UNIT As Single = 1.0
-
-' *** Effect object definitions to be used with alEffect functions (Creative)
-
-' AL EAXReverb effect parameters
-Const AL_EAXREVERB_DENSITY As Long = 1
-Const AL_EAXREVERB_DIFFUSION As Long = 2
-Const AL_EAXREVERB_GAIN As Long = 3
-Const AL_EAXREVERB_GAINHF As Long = 4
-Const AL_EAXREVERB_GAINLF As Long = 5
-Const AL_EAXREVERB_DECAY_TIME As Long = 6
-Const AL_EAXREVERB_DECAY_HFRATIO As Long = 7
-Const AL_EAXREVERB_DECAY_LFRATIO As Long = 8
-Const AL_EAXREVERB_REFLECTIONS_GAIN As Long = 9
-Const AL_EAXREVERB_REFLECTIONS_DELAY As Long = &HA
-Const AL_EAXREVERB_REFLECTIONS_PAN As Long = &HB
-Const AL_EAXREVERB_LATE_REVERB_GAIN As Long = &HC
-Const AL_EAXREVERB_LATE_REVERB_DELAY As Long = &HD
-Const AL_EAXREVERB_LATE_REVERB_PAN As Long = &HE
-Const AL_EAXREVERB_ECHO_TIME As Long = &HF
-Const AL_EAXREVERB_ECHO_DEPTH As Long = &H10
-Const AL_EAXREVERB_MODULATION_TIME As Long = &H11
-Const AL_EAXREVERB_MODULATION_DEPTH As Long = &H12
-Const AL_EAXREVERB_AIR_ABSORPTION_GAINHF As Long = &H13 
-Const AL_EAXREVERB_HFREFERENCE As Long = &H14 
-Const AL_EAXREVERB_LFREFERENCE As Long = &H15 
-Const AL_EAXREVERB_ROOM_ROLLOFF_FACTOR As Long = &H16
-Const AL_EAXREVERB_DECAY_HFLIMIT As Long = &H17
-
-' Effect type definitions to be used with AL_EFFECT_TYPE
-Const AL_EFFECT_EAXREVERB As Long = &H8000
-
-' *** Effect parameter structures, value definitions, ranges and defaults (Creative)
-
-' AL reverb effect parameter ranges and defaults
-Const AL_EAXREVERB_MIN_DENSITY As Single = 0.0
-Const AL_EAXREVERB_MAX_DENSITY As Single = 1.0
-Const AL_EAXREVERB_DEFAULT_DENSITY As Single = 1.0
-Const AL_EAXREVERB_MIN_DIFFUSION As Single = 0.0
-Const AL_EAXREVERB_MAX_DIFFUSION As Single = 1.0
-Const AL_EAXREVERB_DEFAULT_DIFFUSION As Single = 1.0
-Const AL_EAXREVERB_MIN_GAIN As Single = 0.0
-Const AL_EAXREVERB_MAX_GAIN As Single = 1.0
-Const AL_EAXREVERB_DEFAULT_GAIN As Single = 0.32
-Const AL_EAXREVERB_MIN_GAINHF As Single = 0.0
-Const AL_EAXREVERB_MAX_GAINHF As Single = 1.0
-Const AL_EAXREVERB_DEFAULT_GAINHF As Single = 0.89
-Const AL_EAXREVERB_MIN_GAINLF As Single = 0.0
-Const AL_EAXREVERB_MAX_GAINLF As Single = 1.0
-Const AL_EAXREVERB_DEFAULT_GAINLF As Single = 1.0
-Const AL_EAXREVERB_MIN_DECAY_TIME As Single = 0.1
-Const AL_EAXREVERB_MAX_DECAY_TIME As Single = 20.0
-Const AL_EAXREVERB_DEFAULT_DECAY_TIME As Single = 1.49
-Const AL_EAXREVERB_MIN_DECAY_HFRATIO As Single = 0.1
-Const AL_EAXREVERB_MAX_DECAY_HFRATIO As Single = 2.0
-Const AL_EAXREVERB_DEFAULT_DECAY_HFRATIO As Single = 0.83
-Const AL_EAXREVERB_MIN_DECAY_LFRATIO As Single = 0.1
-Const AL_EAXREVERB_MAX_DECAY_LFRATIO As Single = 2.0
-Const AL_EAXREVERB_DEFAULT_DECAY_LFRATIO As Single = 1.0
-Const AL_EAXREVERB_MIN_REFLECTIONS_GAIN As Single = 0.0
-Const AL_EAXREVERB_MAX_REFLECTIONS_GAIN As Single = 3.16
-Const AL_EAXREVERB_DEFAULT_REFLECTIONS_GAIN As Single = 0.05
-Const AL_EAXREVERB_MIN_REFLECTIONS_DELAY As Single = 0.0
-Const AL_EAXREVERB_MAX_REFLECTIONS_DELAY As Single = 0.3
-Const AL_EAXREVERB_DEFAULT_REFLECTIONS_DELAY As Single = 0.007
-Const AL_EAXREVERB_DEFAULT_REFLECTIONS_PAN_XYZ As Single = 0.0
-Const AL_EAXREVERB_MIN_LATE_REVERB_GAIN As Single = 0.0
-Const AL_EAXREVERB_MAX_LATE_REVERB_GAIN As Single = 10.0
-Const AL_EAXREVERB_DEFAULT_LATE_REVERB_GAIN As Single = 1.26
-Const AL_EAXREVERB_MIN_LATE_REVERB_DELAY As Single = 0.0
-Const AL_EAXREVERB_MAX_LATE_REVERB_DELAY As Single = 0.1
-Const AL_EAXREVERB_DEFAULT_LATE_REVERB_DELAY As Single = 0.011
-Const AL_EAXREVERB_DEFAULT_LATE_REVERB_PAN_XYZ As Single = 0.0
-Const AL_EAXREVERB_MIN_ECHO_TIME As Single = 0.075
-Const AL_EAXREVERB_MAX_ECHO_TIME As Single = 0.25
-Const AL_EAXREVERB_DEFAULT_ECHO_TIME As Single = 0.25
-Const AL_EAXREVERB_MIN_ECHO_DEPTH As Single = 0.0
-Const AL_EAXREVERB_MAX_ECHO_DEPTH As Single = 1.0
-Const AL_EAXREVERB_DEFAULT_ECHO_DEPTH As Single = 0.0
-Const AL_EAXREVERB_MIN_MODULATION_TIME As Single = 0.04
-Const AL_EAXREVERB_MAX_MODULATION_TIME As Single = 4.0
-Const AL_EAXREVERB_DEFAULT_MODULATION_TIME As Single = 0.25
-Const AL_EAXREVERB_MIN_MODULATION_DEPTH As Single = 0.0
-Const AL_EAXREVERB_MAX_MODULATION_DEPTH As Single = 1.0
-Const AL_EAXREVERB_DEFAULT_MODULATION_DEPTH As Single = 0.0
-Const AL_EAXREVERB_MIN_AIR_ABSORPTION_GAINHF As Single = 0.892
-Const AL_EAXREVERB_MAX_AIR_ABSORPTION_GAINHF As Single = 1.0
-Const AL_EAXREVERB_DEFAULT_AIR_ABSORPTION_GAINHF As Single = 0.994
-Const AL_EAXREVERB_MIN_HFREFERENCE As Single = 1000.0
-Const AL_EAXREVERB_MAX_HFREFERENCE As Single = 20000.0
-Const AL_EAXREVERB_DEFAULT_HFREFERENCE As Single = 5000.0
-Const AL_EAXREVERB_MIN_LFREFERENCE As Single = 20.0
-Const AL_EAXREVERB_MAX_LFREFERENCE As Single = 1000.0
-Const AL_EAXREVERB_DEFAULT_LFREFERENCE As Single = 250.0
-Const AL_EAXREVERB_MIN_ROOM_ROLLOFF_FACTOR As Single = 0.0
-Const AL_EAXREVERB_MAX_ROOM_ROLLOFF_FACTOR As Single = 10.0
-Const AL_EAXREVERB_DEFAULT_ROOM_ROLLOFF_FACTOR As Single = 0.0
-Const AL_EAXREVERB_MIN_DECAY_HFLIMIT As Long = 0
-Const AL_EAXREVERB_MAX_DECAY_HFLIMIT As Long = 1
-Const AL_EAXREVERB_DEFAULT_DECAY_HFLIMIT As Long = 1
+Public Enum OAL
+
+   AL_INVALID = -1 ' bad value
+   ALC_INVALID = 0
+   AL_NONE = 0
+   AL_FALSE = 0    ' Boolean False
+   ALC_FALSE = 0
+   AL_TRUE = 1     ' Boolean True
+   ALC_TRUE = 1
+
+   AL_NO_ERROR = 0              ' No Error
+   ALC_NO_ERROR = 0
+   AL_INVALID_NAME = &HA001     ' Invalid name paramater passed to AL call
+   ALC_INVALID_DEVICE = &HA001  ' The specified device is not a valid output device
+   AL_ILLEGAL_ENUM = &HA002     ' Invalid enum passed to AL call
+   AL_INVALID_ENUM = &HA002
+   ALC_INVALID_ENUM = &HA003
+   ALC_INVALID_CONTEXT = &HA002 ' The specified context is invalid
+   AL_INVALID_VALUE = &HA003    ' Invalid value passed to AL call
+   ALC_INVALID_VALUE = &HA004
+   AL_ILLEGAL_COMMAND = &HA004  ' Illegal call
+   AL_INVALID_OPERATION = &HA004
+   AL_OUT_OF_MEMORY = &HA005    ' Requested operation resulted in AL running out of memory
+   ALC_OUT_OF_MEMORY = &HA005
+
+   AL_SOURCE_RELATIVE = &H202   ' Indicate Source has relative coordinates
+   AL_CONE_INNER_ANGLE = &H1001 ' Directional source, inner cone angle, in degrees
+   AL_CONE_OUTER_ANGLE = &H1002 ' Directional source, outer cone angle, in degrees
+   AL_PITCH = &H1003            ' Specify the pitch to be applied at source
+   AL_POSITION = &H1004         ' Specify the current location in 3D space
+   AL_DIRECTION = &H1005        ' Specify the current direction
+   AL_VELOCITY = &H1006         ' Specify the current velocity in 3D space
+   AL_LOOPING = &H1007          ' Indicate whether source is looping
+   AL_BUFFER = &H1009           ' Indicate the buffer to provide sound samples
+   AL_GAIN = &H100A             ' Indicate the gain (volume amplification) applied
+   AL_MIN_GAIN = &H100D         ' Indicate minimum source attenuation
+   AL_MAX_GAIN = &H100E         ' Indicate maximum source attenuation
+   AL_ORIENTATION = &H100F      ' Indicate listener orientation
+   AL_CHANNEL_MASK = &H3000     ' Specify the channel mask (Creative)
+
+   ' Source state information
+   AL_SOURCE_STATE = &H1010
+   AL_INITIAL
+   AL_PLAYING
+   AL_PAUSED
+   AL_STOPPED
+
+   ' Buffer queue params
+   AL_BUFFERS_QUEUED = &H1015
+   AL_BUFFERS_PROCESSED = &H1016
+
+   ' Source buffer position information
+   AL_SEC_OFFSET = &H1024
+   AL_SAMPLE_OFFSET
+   AL_BYTE_OFFSET
+
+   ' Source type: static, streaming or undetermined
+   AL_SOURCE_TYPE = &H1027
+   AL_STATIC = &H1028       ' Source is static if a buffer has been attached using AL_BUFFER
+   AL_STREAMING = &H1029    ' Source is streaming if one or more buffers have been attached using alSourceQueueBuffers
+   AL_UNDETERMINED = &H1030 ' Source is undetermined when it has the NULL buffer attached
+
+   ' Sound samples: format specifier
+   AL_FORMAT_MONO8 = &H1100
+   AL_FORMAT_MONO16
+   AL_FORMAT_STEREO8
+   AL_FORMAT_STEREO16
+
+   AL_REFERENCE_DISTANCE = &H1020 ' Source specific reference distance
+   AL_ROLLOFF_FACTOR              ' Source specific rolloff factor
+   AL_CONE_OUTER_GAIN             ' Directional source, outer cone gain
+   AL_MAX_DISTANCE                ' Indicate distance above which sources are not attenuated using the inverse clamped distance model
+
+   ' Sound samples per second: frequency, in units of Hertz [Hz]
+   ' Half of the sample frequency marks the maximum significant frequency component
+   AL_FREQUENCY = &H2001
+
+   AL_BITS = &H2002
+   AL_CHANNELS = &H2003
+   AL_SIZE = &H2004
+
+   ' Buffer state
+   AL_UNUSED = &H2010
+   AL_PENDING = &H2011
+   AL_PROCESSED = &H2012
+
+   AL_VENDOR = &HB001 ' Context strings: Vendor Name
+   AL_VERSION = &HB002
+   AL_RENDERER = &HB003
+   AL_EXTENSIONS = &HB004
+
+   ' *** Global tweakage
+
+   AL_DOPPLER_FACTOR = &HC000   ' Doppler scale
+   AL_DOPPLER_VELOCITY = &HC001 ' Tweaks speed of propagation
+   AL_SPEED_OF_SOUND = &HC003   ' Speed of sound in units per second
+
+   ' Distance models
+   AL_DISTANCE_MODEL = &HD000
+   AL_INVERSE_DISTANCE
+   AL_INVERSE_DISTANCE_CLAMPED
+   AL_LINEAR_DISTANCE
+   AL_LINEAR_DISTANCE_CLAMPED
+   AL_EXPONENT_DISTANCE
+   AL_EXPONENT_DISTANCE_CLAMPED
+
+   ALC_FREQUENCY = &H1007                ' Output frequency in Hz
+   ALC_REFRESH = &H1008                  ' Rate of context processing
+   ALC_SYNC = &H1009                     ' Flag indicating a synchronous context
+   ALC_MONO_SOURCES = &H1010             ' Num of requested mono (3D) sources
+   ALC_STEREO_SOURCES = &H1011           ' Num of requested stereo sources
+   ALC_DEFAULT_DEVICE_SPECIFIER = &H1004 ' The name of the default output device
+   ALC_DEVICE_SPECIFIER = &H1005         ' The name of the specified output device
+   ALC_EXTENSIONS = &H1006               ' The available context extensions
+
+   ALC_MAJOR_VERSION = &H1000
+   ALC_MINOR_VERSION = &H1001
+   ALC_ATTRIBUTES_SIZE = &H1002
+   ALC_ALL_ATTRIBUTES = &H1003
+
+   ALC_DEFAULT_ALL_DEVICES_SPECIFIER = &H1012   ' Use with alcGetString with a NULL device ID to retrieve the name of the default device
+   ALC_ALL_DEVICES_SPECIFIER = &H1013           ' Use with alcGetString and a NULL device pointer to retrieve the names of all devices and audio output paths
+   ALC_CAPTURE_DEVICE_SPECIFIER = &H310         ' Return the name of the specified capture device or a list of all available devices (if a NULL device pointer is supplied)
+   ALC_CAPTURE_DEFAULT_DEVICE_SPECIFIER = &H311 ' Use with alcGetString with a NULL device ID to retrieve the name of the default capture device
+   ALC_CAPTURE_SAMPLES = &H312
+
+   ' Context definitions to be used with alcCreateContext
+   ALC_EFX_MAJOR_VERSION = &H20001
+   ALC_EFX_MINOR_VERSION = &H20002
+   ALC_MAX_AUXILIARY_SENDS = &H20003
+
+   ' Listener definitions to be used with alListener functions
+   AL_METERS_PER_UNIT = &H20004
+
+   ' Source definitions to be used with alSource functions
+   AL_DIRECT_FILTER = &H20005
+   AL_AUXILIARY_SEND_FILTER = &H20006
+   AL_AIR_ABSORPTION_FACTOR = &H20007
+   AL_ROOM_ROLLOFF_FACTOR = &H20008
+   AL_CONE_OUTER_GAINHF = &H20009
+   AL_DIRECT_FILTER_GAINHF_AUTO = &H2000A
+   AL_AUXILIARY_SEND_FILTER_GAIN_AUTO = &H2000B
+   AL_AUXILIARY_SEND_FILTER_GAINHF_AUTO = &H2000C
+
+   ' *** Effect object definitions to be used with alEffect functions
+
+   ' Reverb parameters
+   AL_REVERB_DENSITY = 1
+   AL_REVERB_DIFFUSION
+   AL_REVERB_GAIN
+   AL_REVERB_GAINHF
+   AL_REVERB_DECAY_TIME
+   AL_REVERB_DECAY_HFRATIO
+   AL_REVERB_REFLECTIONS_GAIN
+   AL_REVERB_REFLECTIONS_DELAY
+   AL_REVERB_LATE_REVERB_GAIN
+   AL_REVERB_LATE_REVERB_DELAY
+   AL_REVERB_AIR_ABSORPTION_GAINHF
+   AL_REVERB_ROOM_ROLLOFF_FACTOR
+   AL_REVERB_DECAY_HFLIMIT
+
+   ' Chorus parameters
+   AL_CHORUS_WAVEFORM = 1
+   AL_CHORUS_PHASE
+   AL_CHORUS_RATE
+   AL_CHORUS_DEPTH
+   AL_CHORUS_FEEDBACK
+   AL_CHORUS_DELAY
+
+   ' Distortion parameters
+   AL_DISTORTION_EDGE = 1
+   AL_DISTORTION_GAIN
+   AL_DISTORTION_LOWPASS_CUTOFF
+   AL_DISTORTION_EQCENTER
+   AL_DISTORTION_EQBANDWIDTH
+
+   ' Echo parameters
+   AL_ECHO_DELAY = 1
+   AL_ECHO_LRDELAY
+   AL_ECHO_DAMPING
+   AL_ECHO_FEEDBACK
+   AL_ECHO_SPREAD
+
+   ' Flanger parameters
+   AL_FLANGER_WAVEFORM = 1
+   AL_FLANGER_PHASE
+   AL_FLANGER_RATE
+   AL_FLANGER_DEPTH
+   AL_FLANGER_FEEDBACK
+   AL_FLANGER_DELAY
+
+   ' Frequencyshifter parameters
+   AL_FREQUENCY_SHIFTER_FREQUENCY = 1
+   AL_FREQUENCY_SHIFTER_LEFT_DIRECTION
+   AL_FREQUENCY_SHIFTER_RIGHT_DIRECTION
+
+   ' Vocalmorpher parameters
+   AL_VOCAL_MORPHER_PHONEMEA = 1
+   AL_VOCAL_MORPHER_PHONEMEA_COARSE_TUNING
+   AL_VOCAL_MORPHER_PHONEMEB
+   AL_VOCAL_MORPHER_PHONEMEB_COARSE_TUNING
+   AL_VOCAL_MORPHER_WAVEFORM
+   AL_VOCAL_MORPHER_RATE
+
+   ' Pitchshifter parameters
+   AL_PITCH_SHIFTER_COARSE_TUNE = 1
+   AL_PITCH_SHIFTER_FINE_TUNE
+
+   ' Ringmodulator parameters
+   AL_RING_MODULATOR_FREQUENCY = 1
+   AL_RING_MODULATOR_HIGHPASS_CUTOFF
+   AL_RING_MODULATOR_WAVEFORM
+
+   ' Autowah parameters
+   AL_AUTOWAH_ATTACK_TIME = 1
+   AL_AUTOWAH_RELEASE_TIME
+   AL_AUTOWAH_RESONANCE
+   AL_AUTOWAH_PEAK_GAIN
+
+   ' Compressor parameters
+   AL_COMPRESSOR_ONOFF = 1
+
+   ' Equalizer parameters
+   AL_EQUALIZER_LOW_GAIN = 1
+   AL_EQUALIZER_LOW_CUTOFF
+   AL_EQUALIZER_MID1_GAIN
+   AL_EQUALIZER_MID1_CENTER
+   AL_EQUALIZER_MID1_WIDTH
+   AL_EQUALIZER_MID2_GAIN
+   AL_EQUALIZER_MID2_CENTER
+   AL_EQUALIZER_MID2_WIDTH
+   AL_EQUALIZER_HIGH_GAIN
+   AL_EQUALIZER_HIGH_CUTOFF
+
+   ' Effect type
+   AL_EFFECT_FIRST_PARAMETER = 0
+   AL_EFFECT_LAST_PARAMETER = &H8000
+   AL_EFFECT_TYPE = &H8001
+
+   ' Effect type definitions to be used with AL_EFFECT_TYPE
+   AL_EFFECT_NULL = 0 ' Can also be used as an Effect Object ID
+   AL_EFFECT_REVERB
+   AL_EFFECT_CHORUS
+   AL_EFFECT_DISTORTION
+   AL_EFFECT_ECHO
+   AL_EFFECT_FLANGER
+   AL_EFFECT_FREQUENCY_SHIFTER
+   AL_EFFECT_VOCAL_MORPHER
+   AL_EFFECT_PITCH_SHIFTER
+   AL_EFFECT_RING_MODULATOR
+   AL_EFFECT_AUTOWAH
+   AL_EFFECT_COMPRESSOR
+   AL_EFFECT_EQUALIZER
+
+   ' Auxiliary Slot object definitions to be used with alAuxiliaryEffectSlot functions
+   AL_EFFECTSLOT_EFFECT = 1
+   AL_EFFECTSLOT_GAIN
+   AL_EFFECTSLOT_AUXILIARY_SEND_AUTO
+
+   ' Value to be used as an Auxiliary Slot ID to disable a source send
+   AL_EFFECTSLOT_NULL = 0
+
+   ' *** Filter object definitions to be used with alFilter functions
+
+   ' Lowpass parameters
+   AL_LOWPASS_GAIN = 1
+   AL_LOWPASS_GAINHF
+
+   ' Highpass parameters
+   AL_HIGHPASS_GAIN = 1
+   AL_HIGHPASS_GAINLF
+
+   ' Bandpass parameters
+   AL_BANDPASS_GAIN = 1
+   AL_BANDPASS_GAINLF
+   AL_BANDPASS_GAINHF
+
+   ' Filter type
+   AL_FILTER_FIRST_PARAMETER = 0
+   AL_FILTER_LAST_PARAMETER = &H8000
+   AL_FILTER_TYPE = &H8001
+
+   ' Filter type definitions to be used with AL_FILTER_TYPE
+   AL_FILTER_NULL = 0 ' Can also be used as a Filter Object ID
+   AL_FILTER_LOWPASS
+   AL_FILTER_HIGHPASS
+   AL_FILTER_BANDPASS
+
+   ' *** Filter ranges and defaults
+
+   ' Lowpass filter
+   LOWPASS_MIN_GAIN = 0.0
+   LOWPASS_MAX_GAIN = 1.0
+   LOWPASS_DEFAULT_GAIN = 1.0
+   LOWPASS_MIN_GAINHF = 0.0
+   LOWPASS_MAX_GAINHF = 1.0
+   LOWPASS_DEFAULT_GAINHF = 1.0
+
+   ' Highpass filter
+   HIGHPASS_MIN_GAIN = 0.0
+   HIGHPASS_MAX_GAIN = 1.0
+   HIGHPASS_DEFAULT_GAIN = 1.0
+   HIGHPASS_MIN_GAINLF = 0.0
+   HIGHPASS_MAX_GAINLF = 1.0
+   HIGHPASS_DEFAULT_GAINLF = 1.0
+
+   ' Bandpass filter
+   BANDPASS_MIN_GAIN = 0.0
+   BANDPASS_MAX_GAIN = 1.0
+   BANDPASS_DEFAULT_GAIN = 1.0
+   BANDPASS_MIN_GAINHF = 0.0
+   BANDPASS_MAX_GAINHF = 1.0
+   BANDPASS_DEFAULT_GAINHF = 1.0
+   BANDPASS_MIN_GAINLF = 0.0
+   BANDPASS_MAX_GAINLF = 1.0
+   BANDPASS_DEFAULT_GAINLF = 1.0
+
+   ' *** Effect parameter structures, value definitions, ranges and defaults
+
+   ' AL reverb effect parameter ranges and defaults
+   AL_REVERB_MIN_DENSITY = 0.0
+   AL_REVERB_MAX_DENSITY = 1.0
+   AL_REVERB_DEFAULT_DENSITY = 1.0
+   AL_REVERB_MIN_DIFFUSION = 0.0
+   AL_REVERB_MAX_DIFFUSION = 1.0
+   AL_REVERB_DEFAULT_DIFFUSION = 1.0
+   AL_REVERB_MIN_GAIN = 0.0
+   AL_REVERB_MAX_GAIN = 1.0
+   AL_REVERB_DEFAULT_GAIN = 0.32
+   AL_REVERB_MIN_GAINHF = 0.0
+   AL_REVERB_MAX_GAINHF = 1.0
+   AL_REVERB_DEFAULT_GAINHF = 0.89
+   AL_REVERB_MIN_DECAY_TIME = 0.1
+   AL_REVERB_MAX_DECAY_TIME = 20.0
+   AL_REVERB_DEFAULT_DECAY_TIME = 1.49
+   AL_REVERB_MIN_DECAY_HFRATIO = 0.1
+   AL_REVERB_MAX_DECAY_HFRATIO = 2.0
+   AL_REVERB_DEFAULT_DECAY_HFRATIO = 0.83
+   AL_REVERB_MIN_REFLECTIONS_GAIN = 0.0
+   AL_REVERB_MAX_REFLECTIONS_GAIN = 3.16
+   AL_REVERB_DEFAULT_REFLECTIONS_GAIN = 0.05
+   AL_REVERB_MIN_REFLECTIONS_DELAY = 0.0
+   AL_REVERB_MAX_REFLECTIONS_DELAY = 0.3
+   AL_REVERB_DEFAULT_REFLECTIONS_DELAY = 0.007
+   AL_REVERB_MIN_LATE_REVERB_GAIN = 0.0
+   AL_REVERB_MAX_LATE_REVERB_GAIN = 10.0
+   AL_REVERB_DEFAULT_LATE_REVERB_GAIN = 1.26
+   AL_REVERB_MIN_LATE_REVERB_DELAY = 0.0
+   AL_REVERB_MAX_LATE_REVERB_DELAY = 0.1
+   AL_REVERB_DEFAULT_LATE_REVERB_DELAY = 0.011
+   AL_REVERB_MIN_AIR_ABSORPTION_GAINHF = 0.892
+   AL_REVERB_MAX_AIR_ABSORPTION_GAINHF = 1.0
+   AL_REVERB_DEFAULT_AIR_ABSORPTION_GAINHF = 0.994
+   AL_REVERB_MIN_ROOM_ROLLOFF_FACTOR = 0.0
+   AL_REVERB_MAX_ROOM_ROLLOFF_FACTOR = 10.0
+   AL_REVERB_DEFAULT_ROOM_ROLLOFF_FACTOR = 0.0
+   AL_REVERB_MIN_DECAY_HFLIMIT = 0
+   AL_REVERB_MAX_DECAY_HFLIMIT = 1
+   AL_REVERB_DEFAULT_DECAY_HFLIMIT = 1
+
+   ' AL chorus effect parameter ranges and defaults
+   AL_CHORUS_MIN_WAVEFORM = 0
+   AL_CHORUS_MAX_WAVEFORM = 1
+   AL_CHORUS_DEFAULT_WAVEFORM = 1
+   AL_CHORUS_WAVEFORM_SINUSOID = 0
+   AL_CHORUS_WAVEFORM_TRIANGLE = 1
+   AL_CHORUS_MIN_PHASE = -180
+   AL_CHORUS_MAX_PHASE = 180
+   AL_CHORUS_DEFAULT_PHASE = 90
+   AL_CHORUS_MIN_RATE = 0.0
+   AL_CHORUS_MAX_RATE = 10.0
+   AL_CHORUS_DEFAULT_RATE = 1.1
+   AL_CHORUS_MIN_DEPTH = 0.0
+   AL_CHORUS_MAX_DEPTH = 1.0
+   AL_CHORUS_DEFAULT_DEPTH = 0.1
+   AL_CHORUS_MIN_FEEDBACK = -1.0
+   AL_CHORUS_MAX_FEEDBACK = 1.0
+   AL_CHORUS_DEFAULT_FEEDBACK = 0.25
+   AL_CHORUS_MIN_DELAY = 0.0
+   AL_CHORUS_MAX_DELAY = 0.016
+   AL_CHORUS_DEFAULT_DELAY = 0.016
+
+   ' AL distortion effect parameter ranges and defaults
+   AL_DISTORTION_MIN_EDGE = 0.0
+   AL_DISTORTION_MAX_EDGE = 1.0
+   AL_DISTORTION_DEFAULT_EDGE = 0.2
+   AL_DISTORTION_MIN_GAIN = 0.01
+   AL_DISTORTION_MAX_GAIN = 1.0
+   AL_DISTORTION_DEFAULT_GAIN = 0.05
+   AL_DISTORTION_MIN_LOWPASS_CUTOFF = 80.0
+   AL_DISTORTION_MAX_LOWPASS_CUTOFF = 24000.0
+   AL_DISTORTION_DEFAULT_LOWPASS_CUTOFF = 8000.0
+   AL_DISTORTION_MIN_EQCENTER = 80.0
+   AL_DISTORTION_MAX_EQCENTER = 24000.0
+   AL_DISTORTION_DEFAULT_EQCENTER = 3600.0
+   AL_DISTORTION_MIN_EQBANDWIDTH = 80.0
+   AL_DISTORTION_MAX_EQBANDWIDTH = 24000.0
+   AL_DISTORTION_DEFAULT_EQBANDWIDTH = 3600.0
+
+   ' AL echo effect parameter ranges and defaults
+   AL_ECHO_MIN_DELAY = 0.0
+   AL_ECHO_MAX_DELAY = 0.207
+   AL_ECHO_DEFAULT_DELAY = 0.1
+   AL_ECHO_MIN_LRDELAY = 0.0
+   AL_ECHO_MAX_LRDELAY = 0.404
+   AL_ECHO_DEFAULT_LRDELAY = 0.1
+   AL_ECHO_MIN_DAMPING = 0.0
+   AL_ECHO_MAX_DAMPING = 0.99
+   AL_ECHO_DEFAULT_DAMPING = 0.5
+   AL_ECHO_MIN_FEEDBACK = 0.0
+   AL_ECHO_MAX_FEEDBACK = 1.0
+   AL_ECHO_DEFAULT_FEEDBACK = 0.5
+   AL_ECHO_MIN_SPREAD = -1.0
+   AL_ECHO_MAX_SPREAD = 1.0
+   AL_ECHO_DEFAULT_SPREAD = -1.0
+
+   ' AL flanger effect parameter ranges and defaults
+   AL_FLANGER_MIN_WAVEFORM = 0
+   AL_FLANGER_MAX_WAVEFORM = 1
+   AL_FLANGER_DEFAULT_WAVEFORM = 1
+   AL_FLANGER_WAVEFORM_SINUSOID = 0
+   AL_FLANGER_WAVEFORM_TRIANGLE = 1
+   AL_FLANGER_MIN_PHASE = -180
+   AL_FLANGER_MAX_PHASE = 180
+   AL_FLANGER_DEFAULT_PHASE = 0
+   AL_FLANGER_MIN_RATE = 0.0
+   AL_FLANGER_MAX_RATE = 10.0
+   AL_FLANGER_DEFAULT_RATE = 0.27
+   AL_FLANGER_MIN_DEPTH = 0.0
+   AL_FLANGER_MAX_DEPTH = 1.0
+   AL_FLANGER_DEFAULT_DEPTH = 1.0
+   AL_FLANGER_MIN_FEEDBACK = -1.0
+   AL_FLANGER_MAX_FEEDBACK = 1.0
+   AL_FLANGER_DEFAULT_FEEDBACK = -0.5
+   AL_FLANGER_MIN_DELAY = 0.0
+   AL_FLANGER_MAX_DELAY = 0.004
+   AL_FLANGER_DEFAULT_DELAY = 0.002
+
+   ' AL frequency shifter effect parameter ranges and defaults
+   AL_FREQUENCY_SHIFTER_MIN_FREQUENCY = 0.0
+   AL_FREQUENCY_SHIFTER_MAX_FREQUENCY = 24000.0
+   AL_FREQUENCY_SHIFTER_DEFAULT_FREQUENCY = 0.0
+   AL_FREQUENCY_SHIFTER_MIN_LEFT_DIRECTION = 0
+   AL_FREQUENCY_SHIFTER_MAX_LEFT_DIRECTION = 2
+   AL_FREQUENCY_SHIFTER_DEFAULT_LEFT_DIRECTION = 0
+   AL_FREQUENCY_SHIFTER_MIN_RIGHT_DIRECTION = 0
+   AL_FREQUENCY_SHIFTER_MAX_RIGHT_DIRECTION = 2
+   AL_FREQUENCY_SHIFTER_DEFAULT_RIGHT_DIRECTION = 0
+   AL_FREQUENCY_SHIFTER_DIRECTION_DOWN = 0
+   AL_FREQUENCY_SHIFTER_DIRECTION_UP = 1
+   AL_FREQUENCY_SHIFTER_DIRECTION_OFF = 2
+
+   ' AL vocal morpher effect parameter ranges and defaults
+   AL_VOCAL_MORPHER_MIN_PHONEMEA = 0
+   AL_VOCAL_MORPHER_MAX_PHONEMEA = 29
+   AL_VOCAL_MORPHER_DEFAULT_PHONEMEA = 0
+   AL_VOCAL_MORPHER_MIN_PHONEMEA_COARSE_TUNING = -24
+   AL_VOCAL_MORPHER_MAX_PHONEMEA_COARSE_TUNING = 24
+   AL_VOCAL_MORPHER_DEFAULT_PHONEMEA_COARSE_TUNING = 0
+   AL_VOCAL_MORPHER_MIN_PHONEMEB = 0
+   AL_VOCAL_MORPHER_MAX_PHONEMEB = 29
+   AL_VOCAL_MORPHER_DEFAULT_PHONEMEB = 10
+   AL_VOCAL_MORPHER_PHONEME_A = 0
+   AL_VOCAL_MORPHER_PHONEME_E
+   AL_VOCAL_MORPHER_PHONEME_I
+   AL_VOCAL_MORPHER_PHONEME_O
+   AL_VOCAL_MORPHER_PHONEME_U
+   AL_VOCAL_MORPHER_PHONEME_AA
+   AL_VOCAL_MORPHER_PHONEME_AE
+   AL_VOCAL_MORPHER_PHONEME_AH
+   AL_VOCAL_MORPHER_PHONEME_AO
+   AL_VOCAL_MORPHER_PHONEME_EH
+   AL_VOCAL_MORPHER_PHONEME_ER
+   AL_VOCAL_MORPHER_PHONEME_IH
+   AL_VOCAL_MORPHER_PHONEME_IY
+   AL_VOCAL_MORPHER_PHONEME_UH
+   AL_VOCAL_MORPHER_PHONEME_UW
+   AL_VOCAL_MORPHER_PHONEME_B
+   AL_VOCAL_MORPHER_PHONEME_D
+   AL_VOCAL_MORPHER_PHONEME_F
+   AL_VOCAL_MORPHER_PHONEME_G
+   AL_VOCAL_MORPHER_PHONEME_J
+   AL_VOCAL_MORPHER_PHONEME_K
+   AL_VOCAL_MORPHER_PHONEME_L
+   AL_VOCAL_MORPHER_PHONEME_M
+   AL_VOCAL_MORPHER_PHONEME_N
+   AL_VOCAL_MORPHER_PHONEME_P
+   AL_VOCAL_MORPHER_PHONEME_R
+   AL_VOCAL_MORPHER_PHONEME_S
+   AL_VOCAL_MORPHER_PHONEME_T
+   AL_VOCAL_MORPHER_PHONEME_V
+   AL_VOCAL_MORPHER_PHONEME_Z
+   AL_VOCAL_MORPHER_MIN_PHONEMEB_COARSE_TUNING = -24
+   AL_VOCAL_MORPHER_MAX_PHONEMEB_COARSE_TUNING = 24
+   AL_VOCAL_MORPHER_DEFAULT_PHONEMEB_COARSE_TUNING = 0
+   AL_VOCAL_MORPHER_MIN_WAVEFORM = 0
+   AL_VOCAL_MORPHER_MAX_WAVEFORM = 2
+   AL_VOCAL_MORPHER_DEFAULT_WAVEFORM = 0
+   AL_VOCAL_MORPHER_WAVEFORM_SINUSOID = 0
+   AL_VOCAL_MORPHER_WAVEFORM_TRIANGLE
+   AL_VOCAL_MORPHER_WAVEFORM_SAWTOOTH
+   AL_VOCAL_MORPHER_MIN_RATE = 0.0
+   AL_VOCAL_MORPHER_MAX_RATE = 10.0
+   AL_VOCAL_MORPHER_DEFAULT_RATE = 1.41
+
+   ' AL pitch shifter effect parameter ranges and defaults
+   AL_PITCH_SHIFTER_MIN_COARSE_TUNE = -12
+   AL_PITCH_SHIFTER_MAX_COARSE_TUNE = 12
+   AL_PITCH_SHIFTER_DEFAULT_COARSE_TUNE = 12
+   AL_PITCH_SHIFTER_MIN_FINE_TUNE = -50
+   AL_PITCH_SHIFTER_MAX_FINE_TUNE = 50
+   AL_PITCH_SHIFTER_DEFAULT_FINE_TUNE = 0
+
+   ' AL ring modulator effect parameter ranges and defaults
+   AL_RING_MODULATOR_MIN_FREQUENCY = 0.0
+   AL_RING_MODULATOR_MAX_FREQUENCY = 8000.0
+   AL_RING_MODULATOR_DEFAULT_FREQUENCY = 440.0
+   AL_RING_MODULATOR_MIN_HIGHPASS_CUTOFF = 0.0
+   AL_RING_MODULATOR_MAX_HIGHPASS_CUTOFF = 24000.0
+   AL_RING_MODULATOR_DEFAULT_HIGHPASS_CUTOFF = 800.0
+   AL_RING_MODULATOR_MIN_WAVEFORM = 0
+   AL_RING_MODULATOR_MAX_WAVEFORM = 2
+   AL_RING_MODULATOR_DEFAULT_WAVEFORM = 0
+   AL_RING_MODULATOR_SINUSOID = 0
+   AL_RING_MODULATOR_SAWTOOTH
+   AL_RING_MODULATOR_SQUARE
+
+   ' AL autowah effect parameter ranges and defaults
+   AL_AUTOWAH_MIN_ATTACK_TIME = 0.0001
+   AL_AUTOWAH_MAX_ATTACK_TIME = 1.0
+   AL_AUTOWAH_DEFAULT_ATTACK_TIME = 0.06
+   AL_AUTOWAH_MIN_RELEASE_TIME = 0.0001
+   AL_AUTOWAH_MAX_RELEASE_TIME = 1.0
+   AL_AUTOWAH_DEFAULT_RELEASE_TIME = 0.06
+   AL_AUTOWAH_MIN_RESONANCE = 2.0
+   AL_AUTOWAH_MAX_RESONANCE = 1000.0
+   AL_AUTOWAH_DEFAULT_RESONANCE = 1000.0
+   AL_AUTOWAH_MIN_PEAK_GAIN = 0.00003
+   AL_AUTOWAH_MAX_PEAK_GAIN = 31621.0
+   AL_AUTOWAH_DEFAULT_PEAK_GAIN = 11.22
+
+   ' AL compressor effect parameter ranges and defaults
+   AL_COMPRESSOR_MIN_ONOFF = 0
+   AL_COMPRESSOR_MAX_ONOFF = 1
+   AL_COMPRESSOR_DEFAULT_ONOFF = 1
+
+   ' AL equalizer effect parameter ranges and defaults
+   AL_EQUALIZER_MIN_LOW_GAIN = 0.126
+   AL_EQUALIZER_MAX_LOW_GAIN = 7.943
+   AL_EQUALIZER_DEFAULT_LOW_GAIN = 1.0
+   AL_EQUALIZER_MIN_LOW_CUTOFF = 50.0
+   AL_EQUALIZER_MAX_LOW_CUTOFF = 800.0
+   AL_EQUALIZER_DEFAULT_LOW_CUTOFF = 200.0
+   AL_EQUALIZER_MIN_MID1_GAIN = 0.126
+   AL_EQUALIZER_MAX_MID1_GAIN = 7.943
+   AL_EQUALIZER_DEFAULT_MID1_GAIN = 1.0
+   AL_EQUALIZER_MIN_MID1_CENTER = 200.0
+   AL_EQUALIZER_MAX_MID1_CENTER = 3000.0
+   AL_EQUALIZER_DEFAULT_MID1_CENTER = 500.0
+   AL_EQUALIZER_MIN_MID1_WIDTH = 0.01
+   AL_EQUALIZER_MAX_MID1_WIDTH = 1.0
+   AL_EQUALIZER_DEFAULT_MID1_WIDTH = 1.0
+   AL_EQUALIZER_MIN_MID2_GAIN = 0.126
+   AL_EQUALIZER_MAX_MID2_GAIN = 7.943
+   AL_EQUALIZER_DEFAULT_MID2_GAIN = 1.0
+   AL_EQUALIZER_MIN_MID2_CENTER = 1000.0
+   AL_EQUALIZER_MAX_MID2_CENTER = 8000.0
+   AL_EQUALIZER_DEFAULT_MID2_CENTER = 3000.0
+   AL_EQUALIZER_MIN_MID2_WIDTH = 0.01
+   AL_EQUALIZER_MAX_MID2_WIDTH = 1.0
+   AL_EQUALIZER_DEFAULT_MID2_WIDTH = 1.0
+   AL_EQUALIZER_MIN_HIGH_GAIN = 0.126
+   AL_EQUALIZER_MAX_HIGH_GAIN = 7.943
+   AL_EQUALIZER_DEFAULT_HIGH_GAIN = 1.0
+   AL_EQUALIZER_MIN_HIGH_CUTOFF = 4000.0
+   AL_EQUALIZER_MAX_HIGH_CUTOFF = 16000.0
+   AL_EQUALIZER_DEFAULT_HIGH_CUTOFF = 6000.0
+
+   ' Source parameter value definitions, ranges and defaults
+   AL_MIN_AIR_ABSORPTION_FACTOR = 0.0
+   AL_MAX_AIR_ABSORPTION_FACTOR = 10.0
+   AL_DEFAULT_AIR_ABSORPTION_FACTOR = 0.0
+   AL_MIN_ROOM_ROLLOFF_FACTOR = 0.0
+   AL_MAX_ROOM_ROLLOFF_FACTOR = 10.0
+   AL_DEFAULT_ROOM_ROLLOFF_FACTOR = 0.0
+   AL_MIN_CONE_OUTER_GAINHF = 0.0
+   AL_MAX_CONE_OUTER_GAINHF = 1.0
+   AL_DEFAULT_CONE_OUTER_GAINHF = 1.0
+   AL_MIN_DIRECT_FILTER_GAINHF_AUTO = 0
+   AL_MAX_DIRECT_FILTER_GAINHF_AUTO
+   AL_DEFAULT_DIRECT_FILTER_GAINHF_AUTO = 1
+   AL_MIN_AUXILIARY_SEND_FILTER_GAIN_AUTO = 0
+   AL_MAX_AUXILIARY_SEND_FILTER_GAIN_AUTO
+   AL_DEFAULT_AUXILIARY_SEND_FILTER_GAIN_AUTO = 1
+   AL_MIN_AUXILIARY_SEND_FILTER_GAINHF_AUTO = 0
+   AL_MAX_AUXILIARY_SEND_FILTER_GAINHF_AUTO
+   AL_DEFAULT_AUXILIARY_SEND_FILTER_GAINHF_AUTO = 1
+
+   ' Listener parameter value definitions, ranges and defaults
+   AL_MIN_METERS_PER_UNIT = 1.175494e-38
+   AL_MAX_METERS_PER_UNIT = 999999999.9
+   AL_DEFAULT_METERS_PER_UNIT = 1.0
+
+   ' *** Effect object definitions to be used with alEffect functions (Creative)
+
+   ' AL EAXReverb effect parameters
+   AL_EAXREVERB_DENSITY = 1
+   AL_EAXREVERB_DIFFUSION
+   AL_EAXREVERB_GAIN
+   AL_EAXREVERB_GAINHF
+   AL_EAXREVERB_GAINLF
+   AL_EAXREVERB_DECAY_TIME
+   AL_EAXREVERB_DECAY_HFRATIO
+   AL_EAXREVERB_DECAY_LFRATIO
+   AL_EAXREVERB_REFLECTIONS_GAIN
+   AL_EAXREVERB_REFLECTIONS_DELAY
+   AL_EAXREVERB_REFLECTIONS_PAN
+   AL_EAXREVERB_LATE_REVERB_GAIN
+   AL_EAXREVERB_LATE_REVERB_DELAY
+   AL_EAXREVERB_LATE_REVERB_PAN
+   AL_EAXREVERB_ECHO_TIME
+   AL_EAXREVERB_ECHO_DEPTH
+   AL_EAXREVERB_MODULATION_TIME
+   AL_EAXREVERB_MODULATION_DEPTH
+   AL_EAXREVERB_AIR_ABSORPTION_GAINHF
+   AL_EAXREVERB_HFREFERENCE
+   AL_EAXREVERB_LFREFERENCE
+   AL_EAXREVERB_ROOM_ROLLOFF_FACTOR
+   AL_EAXREVERB_DECAY_HFLIMIT
+
+   ' Effect type definitions to be used with AL_EFFECT_TYPE
+   AL_EFFECT_EAXREVERB = &H8000
+
+   ' *** Effect parameter structures, value definitions, ranges and defaults (Creative)
+
+   ' AL reverb effect parameter ranges and defaults
+   AL_EAXREVERB_MIN_DENSITY = 0.0
+   AL_EAXREVERB_MAX_DENSITY = 1.0
+   AL_EAXREVERB_DEFAULT_DENSITY = 1.0
+   AL_EAXREVERB_MIN_DIFFUSION = 0.0
+   AL_EAXREVERB_MAX_DIFFUSION = 1.0
+   AL_EAXREVERB_DEFAULT_DIFFUSION = 1.0
+   AL_EAXREVERB_MIN_GAIN = 0.0
+   AL_EAXREVERB_MAX_GAIN = 1.0
+   AL_EAXREVERB_DEFAULT_GAIN = 0.32
+   AL_EAXREVERB_MIN_GAINHF = 0.0
+   AL_EAXREVERB_MAX_GAINHF = 1.0
+   AL_EAXREVERB_DEFAULT_GAINHF = 0.89
+   AL_EAXREVERB_MIN_GAINLF = 0.0
+   AL_EAXREVERB_MAX_GAINLF = 1.0
+   AL_EAXREVERB_DEFAULT_GAINLF = 1.0
+   AL_EAXREVERB_MIN_DECAY_TIME = 0.1
+   AL_EAXREVERB_MAX_DECAY_TIME = 20.0
+   AL_EAXREVERB_DEFAULT_DECAY_TIME = 1.49
+   AL_EAXREVERB_MIN_DECAY_HFRATIO = 0.1
+   AL_EAXREVERB_MAX_DECAY_HFRATIO = 2.0
+   AL_EAXREVERB_DEFAULT_DECAY_HFRATIO = 0.83
+   AL_EAXREVERB_MIN_DECAY_LFRATIO = 0.1
+   AL_EAXREVERB_MAX_DECAY_LFRATIO = 2.0
+   AL_EAXREVERB_DEFAULT_DECAY_LFRATIO = 1.0
+   AL_EAXREVERB_MIN_REFLECTIONS_GAIN = 0.0
+   AL_EAXREVERB_MAX_REFLECTIONS_GAIN = 3.16
+   AL_EAXREVERB_DEFAULT_REFLECTIONS_GAIN = 0.05
+   AL_EAXREVERB_MIN_REFLECTIONS_DELAY = 0.0
+   AL_EAXREVERB_MAX_REFLECTIONS_DELAY = 0.3
+   AL_EAXREVERB_DEFAULT_REFLECTIONS_DELAY = 0.007
+   AL_EAXREVERB_DEFAULT_REFLECTIONS_PAN_XYZ = 0.0
+   AL_EAXREVERB_MIN_LATE_REVERB_GAIN = 0.0
+   AL_EAXREVERB_MAX_LATE_REVERB_GAIN = 10.0
+   AL_EAXREVERB_DEFAULT_LATE_REVERB_GAIN = 1.26
+   AL_EAXREVERB_MIN_LATE_REVERB_DELAY = 0.0
+   AL_EAXREVERB_MAX_LATE_REVERB_DELAY = 0.1
+   AL_EAXREVERB_DEFAULT_LATE_REVERB_DELAY = 0.011
+   AL_EAXREVERB_DEFAULT_LATE_REVERB_PAN_XYZ = 0.0
+   AL_EAXREVERB_MIN_ECHO_TIME = 0.075
+   AL_EAXREVERB_MAX_ECHO_TIME = 0.25
+   AL_EAXREVERB_DEFAULT_ECHO_TIME = 0.25
+   AL_EAXREVERB_MIN_ECHO_DEPTH = 0.0
+   AL_EAXREVERB_MAX_ECHO_DEPTH = 1.0
+   AL_EAXREVERB_DEFAULT_ECHO_DEPTH = 0.0
+   AL_EAXREVERB_MIN_MODULATION_TIME = 0.04
+   AL_EAXREVERB_MAX_MODULATION_TIME = 4.0
+   AL_EAXREVERB_DEFAULT_MODULATION_TIME = 0.25
+   AL_EAXREVERB_MIN_MODULATION_DEPTH = 0.0
+   AL_EAXREVERB_MAX_MODULATION_DEPTH = 1.0
+   AL_EAXREVERB_DEFAULT_MODULATION_DEPTH = 0.0
+   AL_EAXREVERB_MIN_AIR_ABSORPTION_GAINHF = 0.892
+   AL_EAXREVERB_MAX_AIR_ABSORPTION_GAINHF = 1.0
+   AL_EAXREVERB_DEFAULT_AIR_ABSORPTION_GAINHF = 0.994
+   AL_EAXREVERB_MIN_HFREFERENCE = 1000.0
+   AL_EAXREVERB_MAX_HFREFERENCE = 20000.0
+   AL_EAXREVERB_DEFAULT_HFREFERENCE = 5000.0
+   AL_EAXREVERB_MIN_LFREFERENCE = 20.0
+   AL_EAXREVERB_MAX_LFREFERENCE = 1000.0
+   AL_EAXREVERB_DEFAULT_LFREFERENCE = 250.0
+   AL_EAXREVERB_MIN_ROOM_ROLLOFF_FACTOR = 0.0
+   AL_EAXREVERB_MAX_ROOM_ROLLOFF_FACTOR = 10.0
+   AL_EAXREVERB_DEFAULT_ROOM_ROLLOFF_FACTOR = 0.0
+   AL_EAXREVERB_MIN_DECAY_HFLIMIT = 0
+   AL_EAXREVERB_MAX_DECAY_HFLIMIT
+   AL_EAXREVERB_DEFAULT_DECAY_HFLIMIT = 1
+
+End Enum
 
 ' *** Renderer State management
 
