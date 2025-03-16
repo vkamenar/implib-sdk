@@ -226,6 +226,11 @@ macro islongname dllname{
 				namelen=$-4
 			end if
 		end if
+		dllhash = 0
+		repeat dllnamelen
+			load chr from %-1
+			dllhash = (dllhash * 31 + chr) and 7FFFFFFFFFFFFFh
+		end repeat
 	end virtual
 }
 
@@ -316,7 +321,7 @@ macro implib dllname,name,thunk,pubname{
 			longname=0
 		end if
 	end if
-	if ~defined dllname#.alreadydefined
+	if ~defined def.#dllhash
 
 		; __IMPORT_DESCRIPTOR_<DLL>
 		nxt_even_addr
@@ -345,15 +350,15 @@ macro implib dllname,name,thunk,pubname{
 		end if
 		print_ts
 		db '            0       ' ; owner id, group id, file mode (not used in Win)
-		pack_sz (dllname#.descr_strtbl_end-dllname#.descr)
-	dllname#.descr:
+		pack_sz (descr_strtbl_end.#dllhash-descr.#dllhash)
+	descr.#dllhash:
 		dw IMAGE_FILE_MACHINE_AMD64,2+RENAME_AR_MEMBERS*(1+KEEP_ORIGINAL_THUNK)
-		dd %t,dllname#.descr_sym_tbl-dllname#.descr
+		dd %t,descr_sym_tbl.#dllhash-descr.#dllhash
 		coffhdr
-		dd dllname#.null_import_descr_data-dllname#.descr,dllname#.descr_rel-dllname#.descr
+		dd null_import_descr_data.#dllhash-descr.#dllhash,descr_rel.#dllhash-descr.#dllhash
 		dd 0,2+KEEP_ORIGINAL_THUNK,IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_4BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		db '.idata$6'
-		dd 0,0,(dllname#.null_import_descr_data-dllname#.descr_dllname+2) and -2,dllname#.descr_dllname-dllname#.descr,0
+		dd 0,0,(null_import_descr_data.#dllhash-descr_dllname.#dllhash+2) and -2,descr_dllname.#dllhash-descr.#dllhash,0
 		dd 0,0,IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		if RENAME_AR_MEMBERS
 			db '.idata$5'
@@ -363,24 +368,24 @@ macro implib dllname,name,thunk,pubname{
 				dd 0,0,0,0,0,0,0,IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_8BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 			end if
 		end if
-	dllname#.descr_dllname db `dllname
-		do_cpy dllname#.descr_dllname,dllname_spot,longnamelen
-	dllname#.null_import_descr_data dq 0,0
+	descr_dllname.#dllhash db `dllname
+		do_cpy descr_dllname.#dllhash,dllname_spot,longnamelen
+	null_import_descr_data.#dllhash dq 0,0
 		if KEEP_ORIGINAL_THUNK
-		dllname#.descr_rel:
+		descr_rel.#dllhash:
 			dd 0,3+USE_COMPID ; Import lookup table RVA (characteristics) --> .idata$4
 			dw IMAGE_REL_AMD64_ADDR32NB
 		else
 			dd 0
-		dllname#.descr_rel:
+		descr_rel.#dllhash:
 		end if
 		dd 12,2+USE_COMPID ; DLL name RVA --> .idata$6
 		dw IMAGE_REL_AMD64_ADDR32NB
 		dd 16,3+USE_COMPID+KEEP_ORIGINAL_THUNK ; Import address table RVA (thunk table) --> .idata$5
 		dw IMAGE_REL_AMD64_ADDR32NB
-	dllname#.descr_sym_tbl:
+	descr_sym_tbl.#dllhash:
 		addcompid
-		dd 0,dllname#.descr_strtbl2-dllname#.descr_strtbl,0,1
+		dd 0,descr_strtbl2.#dllhash-descr_strtbl.#dllhash,0,1
 		dw IMAGE_SYM_CLASS_EXTERNAL
 		db '.idata$2'
 		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_MEM_READ or IMAGE_MEM_WRITE,1
@@ -408,21 +413,21 @@ macro implib dllname,name,thunk,pubname{
 			dd 0,4,0,0
 			dw IMAGE_SYM_CLASS_EXTERNAL
 		end if
-		dd 0,dllname#.descr_strtbl_1-dllname#.descr_strtbl,0,0
+		dd 0,descr_strtbl_1.#dllhash-descr_strtbl.#dllhash,0,0
 		dw IMAGE_SYM_CLASS_EXTERNAL
-	dllname#.descr_strtbl dd dllname#.descr_strtbl_end-$
+	descr_strtbl.#dllhash dd descr_strtbl_end.#dllhash-$
 		if ~RENAME_AR_MEMBERS
 			db '__NULL_IMPORT_DESCRIPTOR',0
 		end if
-	dllname#.descr_strtbl2 db '__IMPORT_DESCRIPTOR_'
+	descr_strtbl2.#dllhash db '__IMPORT_DESCRIPTOR_'
 		times namelen+1 db 0
-		do_cpy dllname#.descr_dllname,dllname#.descr_strtbl2+20,namelen
-		add2dir dllname#.descr_strtbl2,$-dllname#.descr_strtbl2
-		dllname#.descr_strtbl_1 db 07Fh
+		do_cpy descr_dllname.#dllhash,descr_strtbl2.#dllhash+20,namelen
+		add2dir descr_strtbl2.#dllhash,$-descr_strtbl2.#dllhash
+		descr_strtbl_1.#dllhash db 07Fh
 		times namelen db 0
-		do_cpy dllname#.descr_dllname,dllname#.descr_strtbl_1+1,namelen
+		do_cpy descr_dllname.#dllhash,descr_strtbl_1.#dllhash+1,namelen
 		db '_NULL_THUNK_DATA',0
-	dllname#.descr_strtbl_end:
+	descr_strtbl_end.#dllhash:
 
 		; [7Fh]<DLL>_NULL_THUNK_DATA
 		nxt_even_addr
@@ -443,14 +448,14 @@ macro implib dllname,name,thunk,pubname{
 			add2long
 		end if
 		if dllname_spot
-			do_cpy dllname#.descr_dllname,dllname_spot,longnamelen
+			do_cpy descr_dllname.#dllhash,dllname_spot,longnamelen
 		end if
 		print_ts
 		db '            0       ' ; owner id, group id, file mode (not used in Win)
-		pack_sz (dllname#.descr_strtbl2_end-dllname#.descr2)
-	dllname#.descr2:
+		pack_sz (descr_strtbl2_end.#dllhash-descr2.#dllhash)
+	descr2.#dllhash:
 		dw IMAGE_FILE_MACHINE_AMD64,1+KEEP_ORIGINAL_THUNK
-		dd %t,dllname#.descr_sym_tbl2-dllname#.descr2,1+USE_COMPID
+		dd %t,descr_sym_tbl2.#dllhash-descr2.#dllhash,1+USE_COMPID
 		dw 0,IMAGE_FILE_LINE_NUMS_STRIPPED
 		db '.idata$5'
 		dd 0,0,8,48,0,0,0,IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_8BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
@@ -458,17 +463,17 @@ macro implib dllname,name,thunk,pubname{
 			db '.idata$4'
 			dd 0,0,8,88,0,0,0,IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_8BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		end if
-	dllname#.descr_sym_tbl2:
+	descr_sym_tbl2.#dllhash:
 		addcompid
 		dd 0,4,0,1
 		dw IMAGE_SYM_CLASS_EXTERNAL
-		dd dllname#.descr_strtbl2_end-$
-		dllname#.descr_strtbl3 db 07Fh
+		dd descr_strtbl2_end.#dllhash-$
+		descr_strtbl3.#dllhash db 07Fh
 		times namelen db 0
-		do_cpy dllname#.descr_dllname,dllname#.descr_strtbl3+1,namelen
+		do_cpy descr_dllname.#dllhash,descr_strtbl3.#dllhash+1,namelen
 		db '_NULL_THUNK_DATA',0
-	dllname#.descr_strtbl2_end:
-		add2dir dllname#.descr_strtbl3,$-dllname#.descr_strtbl3
+	descr_strtbl2_end.#dllhash:
+		add2dir descr_strtbl3.#dllhash,$-descr_strtbl3.#dllhash
 
 		nxt_even_addr
 		dllname_spot=$
@@ -490,7 +495,7 @@ macro implib dllname,name,thunk,pubname{
 		if dllname_spot
 			do_cpy dllname#.descr_dllname,dllname_spot,longnamelen
 		end if
-		define dllname#.alreadydefined 1
+		define def.#dllhash 1
 	else
 
 		nxt_even_addr
@@ -511,29 +516,29 @@ macro implib dllname,name,thunk,pubname{
 	end if
 	print_ts
 	db '            0       ' ; owner id, group id, file mode (not used in Win)
-	pack_sz (dllname#name#.strtbl_end-dllname#name#.lnk_memberN)
-dllname#name#.lnk_memberN:
+	pack_sz (name#.strtbl_end.#dllhash-name#.lnk_memberN.#dllhash)
+name#.lnk_memberN.#dllhash:
 	chkordinal name
 	dw IMAGE_FILE_MACHINE_AMD64,3+KEEP_ORIGINAL_THUNK-byordinal
-	dd %t,dllname#name#.symbol_table-dllname#name#.lnk_memberN
+	dd %t,name#.symbol_table.#dllhash-name#.lnk_memberN.#dllhash
 	dd 9+KEEP_ORIGINAL_THUNK*2-byordinal*2+USE_COMPID
 	dw 0,IMAGE_FILE_LINE_NUMS_STRIPPED
 	db '.text',0,0,0
-	dd 0,0,6,dllname#name#.thunk-dllname#name#.lnk_memberN,dllname#name#.rel1-dllname#name#.lnk_memberN
+	dd 0,0,6,name#.thunk.#dllhash-name#.lnk_memberN.#dllhash,name#.rel1.#dllhash-name#.lnk_memberN.#dllhash
 	dd 0,1,IMAGE_CNT_CODE or IMAGE_LNK_COMDAT or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_EXECUTE
 	db '.idata$5'
-	dd 0,0,8,dllname#name#.lu64-dllname#name#.lnk_memberN
+	dd 0,0,8,name#.lu64.#dllhash-name#.lnk_memberN.#dllhash
 	if byordinal=0
-		dd dllname#name#.rel2-dllname#name#.lnk_memberN,0,1
+		dd name#.rel2.#dllhash-name#.lnk_memberN.#dllhash,0,1
 	else
 		dd 0,0,0
 	end if
 	dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_LNK_COMDAT or IMAGE_ALIGN_8BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 	if KEEP_ORIGINAL_THUNK
 		db '.idata$4'
-		dd 0,0,8,dllname#name#.lu64-dllname#name#.lnk_memberN
+		dd 0,0,8,name#.lu64.#dllhash-name#.lnk_memberN.#dllhash
 		if byordinal=0
-			dd dllname#name#.rel2-dllname#name#.lnk_memberN,0,1
+			dd name#.rel2.#dllhash-name#.lnk_memberN.#dllhash,0,1
 		else
 			dd 0,0,0
 		end if
@@ -541,27 +546,27 @@ dllname#name#.lnk_memberN:
 	end if
 	if byordinal=0
 		db '.idata$6'
-		dd 0,0,dllname#name#.symbol_table-dllname#name#.data3
-		dd dllname#name#.data3-dllname#name#.lnk_memberN,0,0,0
+		dd 0,0,name#.symbol_table.#dllhash-name#.data3.#dllhash
+		dd name#.data3.#dllhash-name#.lnk_memberN.#dllhash,0,0,0
 		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_LNK_COMDAT or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
-		dllname#name#.thunk:
+		name#.thunk.#dllhash:
 			dw 25FFh ; +00000000 jmp [pubname]
-		dllname#name#.lu64 dd 0
-		dllname#name#.rel2 dd 0,6+KEEP_ORIGINAL_THUNK*2+USE_COMPID ; --> .idata$6
+		name#.lu64.#dllhash dd 0
+		name#.rel2.#dllhash dd 0,6+KEEP_ORIGINAL_THUNK*2+USE_COMPID ; --> .idata$6
 			dw IMAGE_REL_AMD64_ADDR32NB
-		dllname#name#.rel1 dd 2,5+USE_COMPID ; --> public name
+		name#.rel1.#dllhash dd 2,5+USE_COMPID ; --> public name
 			db IMAGE_REL_AMD64_REL32
-		dllname#name#.data3 db 0,0,`name,0
-			times ($-dllname#name#.data3) and 1 db 0
+		name#.data3.#dllhash db 0,0,`name,0
+			times ($-name#.data3.#dllhash) and 1 db 0
 	else
-		dllname#name#.thunk:
+		name#.thunk.#dllhash:
 			dw 25FFh,0,0 ; jmp [pubname]
-		dllname#name#.rel1 dd 2,5+USE_COMPID ; --> public name
+		name#.rel1.#dllhash dd 2,5+USE_COMPID ; --> public name
 			dw IMAGE_REL_AMD64_REL32
-		dllname#name#.lu64:
-		dllname#name#.rel2 dq 8000000000000000h+ordinal_value
+		name#.lu64.#dllhash:
+		name#.rel2.#dllhash dq 8000000000000000h+ordinal_value
 	end if
-dllname#name#.symbol_table:
+name#.symbol_table.#dllhash:
 	addcompid
 	db '.text',0,0,0
 	dd 0,1
@@ -569,7 +574,7 @@ dllname#name#.symbol_table:
 	dd 6,1,0
 	dw 0
 	dd IMAGE_COMDAT_SELECT_NODUPLICATES
-	dd 0,dllname#name#.thunkname-dllname#name#.strtbl,0
+	dd 0,name#.thunkname.#dllhash-name#.strtbl.#dllhash,0
 	dw 1,IMAGE_SYM_DTYPE_FUNCTION,IMAGE_SYM_CLASS_EXTERNAL
 	db '.idata$5'
 	dd 0,2
@@ -591,33 +596,33 @@ dllname#name#.symbol_table:
 		db '.idata$6'
 		dd 0,3+KEEP_ORIGINAL_THUNK
 		db IMAGE_SYM_CLASS_STATIC,1
-		dd dllname#name#.symbol_table-dllname#name#.data3,0,0
+		dd name#.symbol_table.#dllhash-name#.data3.#dllhash,0,0
 		dw 2
 		dd IMAGE_COMDAT_SELECT_ASSOCIATIVE
 	end if
-	dd 0,dllname#name#.strtbl_2-dllname#name#.strtbl,0,0
+	dd 0,name#.strtbl_2.#dllhash-name#.strtbl.#dllhash,0,0
 	dw IMAGE_SYM_CLASS_EXTERNAL
-dllname#name#.strtbl dd dllname#name#.strtbl_end-$
-dllname#name#.publicname:
+name#.strtbl.#dllhash dd name#.strtbl_end.#dllhash-$
+name#.publicname.#dllhash:
 if pubname eqtype 0
 	db `pubname,0
-	dllname#name#.publicname_end:
-	dllname#name#.thunkname db `thunk,0
+	name#.publicname_end.#dllhash:
+	name#.thunkname.#dllhash db `thunk,0
 else
 	db '__imp_'
 	if thunk eqtype 0
-		dllname#name#.thunkname db `thunk,0
+		name#.thunkname.#dllhash db `thunk,0
 	else
-		dllname#name#.thunkname db `name,0
+		name#.thunkname.#dllhash db `name,0
 	end if
-	dllname#name#.publicname_end:
+	name#.publicname_end.#dllhash:
 end if
-dllname#name#.strtbl_2 db '__IMPORT_DESCRIPTOR_'
+name#.strtbl_2.#dllhash db '__IMPORT_DESCRIPTOR_'
 	times namelen+1 db 0
-	do_cpy dllname#.descr_dllname,dllname#name#.strtbl_2+20,namelen
-dllname#name#.strtbl_end:
-	add2dir dllname#name#.thunkname,dllname#name#.strtbl_2-dllname#name#.thunkname
-	add2dir dllname#name#.publicname,dllname#name#.publicname_end-dllname#name#.publicname
+	do_cpy descr_dllname.#dllhash,name#.strtbl_2.#dllhash+20,namelen
+name#.strtbl_end.#dllhash:
+	add2dir name#.thunkname.#dllhash,name#.strtbl_2.#dllhash-name#.thunkname.#dllhash
+	add2dir name#.publicname.#dllhash,name#.publicname_end.#dllhash-name#.publicname.#dllhash
 }
 
 macro pbimplib{
