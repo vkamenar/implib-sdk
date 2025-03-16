@@ -1,4 +1,5 @@
-; Make an import lib for PureBasic: OpenAL versions 1.0 and 1.1
+; Make an import library for PureBasic: OpenAL (Open Audio Library)
+; This library supports the original OpenAL 1.0 and 1.1 and OpenAL Soft
 
 include '..\implib.inc'
 
@@ -115,5 +116,40 @@ pbimplib openal32.dll, CDECL, 1, alcCaptureCloseDevice, alcCaptureCloseDevice@4
 pbimplib openal32.dll, CDECL, 1, alcCaptureStart, alcCaptureStart@4
 pbimplib openal32.dll, CDECL, 1, alcCaptureStop, alcCaptureStop@4
 pbimplib openal32.dll, CDECL, 3, alcCaptureSamples, alcCaptureSamples@12
+
+; Available in OpenAL Soft
+pbimplib openal32.dll, CDECL, 2, alGenEffects, alGenEffects@8
+pbimplib openal32.dll, CDECL, 2, alDeleteEffects, alDeleteEffects@8
+pbimplib openal32.dll, CDECL, 1, alIsEffect, alIsEffect@4
+pbimplib openal32.dll, CDECL, 3, alEffecti, alEffecti@12
+pbimplib openal32.dll, CDECL, 3, alEffectiv, alEffectiv@12
+pbimplib openal32.dll, CDECL, 3, alEffectf, alEffectf@12
+pbimplib openal32.dll, CDECL, 3, alEffectfv, alEffectfv@12
+pbimplib openal32.dll, CDECL, 3, alGetEffecti, alGetEffecti@12
+pbimplib openal32.dll, CDECL, 3, alGetEffectiv, alGetEffectiv@12
+pbimplib openal32.dll, CDECL, 3, alGetEffectf, alGetEffectf@12
+pbimplib openal32.dll, CDECL, 3, alGetEffectfv, alGetEffectfv@12
+pbimplib openal32.dll, CDECL, 2, alGenFilters, alGenFilters@8
+pbimplib openal32.dll, CDECL, 2, alDeleteFilters, alDeleteFilters@8
+pbimplib openal32.dll, CDECL, 1, alIsFilter, alIsFilter@4
+pbimplib openal32.dll, CDECL, 3, alFilteri, alFilteri@12
+pbimplib openal32.dll, CDECL, 3, alFilteriv, alFilteriv@12
+pbimplib openal32.dll, CDECL, 3, alFilterf, alFilterf@12
+pbimplib openal32.dll, CDECL, 3, alFilterfv, alFilterfv@12
+pbimplib openal32.dll, CDECL, 3, alGetFilteri, alGetFilteri@12
+pbimplib openal32.dll, CDECL, 3, alGetFilteriv, alGetFilteriv@12
+pbimplib openal32.dll, CDECL, 3, alGetFilterf, alGetFilterf@12
+pbimplib openal32.dll, CDECL, 3, alGetFilterfv, alGetFilterfv@12
+pbimplib openal32.dll, CDECL, 2, alGenAuxiliaryEffectSlots, alGenAuxiliaryEffectSlots@8
+pbimplib openal32.dll, CDECL, 2, alDeleteAuxiliaryEffectSlots, alDeleteAuxiliaryEffectSlots@8
+pbimplib openal32.dll, CDECL, 1, alIsAuxiliaryEffectSlot, alIsAuxiliaryEffectSlot@4
+pbimplib openal32.dll, CDECL, 3, alAuxiliaryEffectSloti, alAuxiliaryEffectSloti@12
+pbimplib openal32.dll, CDECL, 3, alAuxiliaryEffectSlotiv, alAuxiliaryEffectSlotiv@12
+pbimplib openal32.dll, CDECL, 3, alAuxiliaryEffectSlotf, alAuxiliaryEffectSlotf@12
+pbimplib openal32.dll, CDECL, 3, alAuxiliaryEffectSlotfv, alAuxiliaryEffectSlotfv@12
+pbimplib openal32.dll, CDECL, 3, alGetAuxiliaryEffectSloti, alGetAuxiliaryEffectSloti@12
+pbimplib openal32.dll, CDECL, 3, alGetAuxiliaryEffectSlotiv, alGetAuxiliaryEffectSlotiv@12
+pbimplib openal32.dll, CDECL, 3, alGetAuxiliaryEffectSlotf, alGetAuxiliaryEffectSlotf@12
+pbimplib openal32.dll, CDECL, 3, alGetAuxiliaryEffectSlotfv, alGetAuxiliaryEffectSlotfv@12
 
 endlib
