@@ -117,7 +117,7 @@ pbimplib openal32.dll, CDECL, 1, alcCaptureStart, alcCaptureStart@4
 pbimplib openal32.dll, CDECL, 1, alcCaptureStop, alcCaptureStop@4
 pbimplib openal32.dll, CDECL, 3, alcCaptureSamples, alcCaptureSamples@12
 
-; Available in OpenAL Soft
+; Effect extension functions
 pbimplib openal32.dll, CDECL, 2, alGenEffects, alGenEffects@8
 pbimplib openal32.dll, CDECL, 2, alDeleteEffects, alDeleteEffects@8
 pbimplib openal32.dll, CDECL, 1, alIsEffect, alIsEffect@4
