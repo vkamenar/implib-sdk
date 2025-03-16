@@ -1,6 +1,7 @@
 ; PBOPENAL.DESC
 ; -------------
-; OpenAL versions 1.0 and 1.1 import lib
+; OpenAL (Open Audio Library).
+; Compatible with the original OpenAL v1.0 and v1.1 and OpenAL Soft.
 ; PureBasic library description. Requires PureBasic v3.50 or later.
 
 C
@@ -193,4 +194,70 @@ None
 alcCaptureStop, Any, (*device) - Stops a capture operation
 None
 alcCaptureSamples, Any, Any, Long, (*device, *buffer, samples) - Completes a capture operation and does not block
+None
+alGenEffects, Long, Any, (n, *effects) - Creates one or more Effect objects
+None
+alDeleteEffects, Long, Any, (n, *effects) - Deletes and frees resources for Effect objects
+None
+alIsEffect, Long, (effect) - Determines if an object identifier is a valid Effect object
+Byte
+alEffecti, Long, Long, Long, (effect, param, iValue) - Sets integer property on Effect object
+None
+alEffectiv, Long, Long, Any, (effect, param, *piValues) - Sets integer array property on Effect object
+None
+alEffectf, Long, Long, Float, (effect, param, flValue) - Sets floating point property on Effect object
+None
+alEffectfv, Long, Long, Any, (effect, param, *pflValues) - Sets floating point array property on Effect object
+None
+alGetEffecti, Long, Long, Any, (effect, param, *piValue) - Retrieves an integer property from Effect object
+None
+alGetEffectiv, Long, Long, Any, (effect, param, *piValues) - Retrieves an integer array property from Effect object
+None
+alGetEffectf, Long, Long, Any, (effect, param, *pflValue) - Retrieves a floating point property from Effect object
+None
+alGetEffectfv, Long, Long, Any, (effect, param, *pflValues) - Retrieves a floating point array property from Effect object
+None
+alGenFilters, Long, Any, (n, *filters) - Creates one or more Filter objects
+None
+alDeleteFilters, Long, Any, (n, *filters) - Deletes and frees resources for Filter objects
+None
+alIsFilter, Long, (filter) - Determines if an object identifier is a valid Filter object
+Byte
+alFilteri, Long, Long, Long, (filter, param, iValue) - Sets integer property on Filter object
+None
+alFilteriv, Long, Long, Any, (filter, param, *piValues) - Sets integer array property on Filter object
+None
+alFilterf, Long, Long, Float, (filter, param, flValue) - Sets floating point property on Filter object
+None
+alFilterfv, Long, Long, Any, (filter, param, *pflValues) - Sets floating point array property on Filter object
+None
+alGetFilteri, Long, Long, Any, (filter, param, *piValue) - Retrieves an integer property from Filter object
+None
+alGetFilteriv, Long, Long, Any, (filter, param, *piValues) - Retrieves an integer array property from Filter object
+None
+alGetFilterf, Long, Long, Any, (filter, param, *pflValue) - Retrieves a floating point property from Filter object
+None
+alGetFilterfv, Long, Long, Any, (filter, param, *pflValues) - Retrieves a floating point array property from Filter object
+None
+alGenAuxiliaryEffectSlots, Long, Any, (n, *effectslots) - Creates one or more Auxiliary Effect Slots
+None
+alDeleteAuxiliaryEffectSlots, Long, Any, (n, *effectslots) - Deletes and frees resources for Auxiliary Effect Slots
+None
+alIsAuxiliaryEffectSlot, Long, (effectslot) - Determines if an object identifier is a valid Auxiliary Effect Slot object
+Byte
+alAuxiliaryEffectSloti, Long, Long, Long, (effectslot, param, iValue) - Sets integer property on Auxiliary Effect Slot object
+None
+alAuxiliaryEffectSlotiv, Long, Long, Any, (effectslot, param, *piValues) - Sets integer array property on Auxiliary Effect Slot object
+None
+alAuxiliaryEffectSlotf, Long, Long, Float, (effectslot, param, flValue) - Sets floating point property on Auxiliary Effect Slot object
+None
+alAuxiliaryEffectSlotfv, Long, Long, Any, (effectslot, param, *pflValues) - Sets floating point array property on Auxiliary Effect Slot object
+None
+alGetAuxiliaryEffectSloti, Long, Long, Any, (effectslot, param, *piValue) - Retrieves an integer property from Auxiliary Effect Slot object
+None
+alGetAuxiliaryEffectSlotiv, Long, Long, Any, (effectslot, param, *piValues) - Retrieves an integer array property from Auxiliary Effect Slot object
+None
+alGetAuxiliaryEffectSlotf, Long, Long, Any, (effectslot, param, *pflValue) - Retrieves a floating point property from Auxiliary Effect Slot object
+None
+alGetAuxiliaryEffectSlotfv, Long, Long, Any, (effectslot, param, *pflValues) - Retrieves a floating point array property from Auxiliary Effect Slot object
 None
