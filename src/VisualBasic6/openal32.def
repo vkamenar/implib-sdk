@@ -1,4 +1,5 @@
-; Make an import lib for Visual Basic 6: OpenAL versions 1.0 and 1.1
+; Make an import library for Visual Basic 6: OpenAL (Open Audio Library)
+; This library supports the original OpenAL 1.0 and 1.1 and OpenAL Soft
 
 include '..\implib.inc'
 
@@ -115,5 +116,40 @@ vbimplib openal32, openal32.dll, CDECL, 1, alcCaptureCloseDevice
 vbimplib openal32, openal32.dll, CDECL, 1, alcCaptureStart
 vbimplib openal32, openal32.dll, CDECL, 1, alcCaptureStop
 vbimplib openal32, openal32.dll, CDECL, 3, alcCaptureSamples
+
+; Effect extension functions
+vbimplib openal32, openal32.dll, CDECL, 2, alGenEffects
+vbimplib openal32, openal32.dll, CDECL, 2, alDeleteEffects
+vbimplib openal32, openal32.dll, CDECL, 1, alIsEffect
+vbimplib openal32, openal32.dll, CDECL, 3, alEffecti
+vbimplib openal32, openal32.dll, CDECL, 3, alEffectiv
+vbimplib openal32, openal32.dll, CDECL, 3, alEffectf
+vbimplib openal32, openal32.dll, CDECL, 3, alEffectfv
+vbimplib openal32, openal32.dll, CDECL, 3, alGetEffecti
+vbimplib openal32, openal32.dll, CDECL, 3, alGetEffectiv
+vbimplib openal32, openal32.dll, CDECL, 3, alGetEffectf
+vbimplib openal32, openal32.dll, CDECL, 3, alGetEffectfv
+vbimplib openal32, openal32.dll, CDECL, 2, alGenFilters
+vbimplib openal32, openal32.dll, CDECL, 2, alDeleteFilters
+vbimplib openal32, openal32.dll, CDECL, 1, alIsFilter
+vbimplib openal32, openal32.dll, CDECL, 3, alFilteri
+vbimplib openal32, openal32.dll, CDECL, 3, alFilteriv
+vbimplib openal32, openal32.dll, CDECL, 3, alFilterf
+vbimplib openal32, openal32.dll, CDECL, 3, alFilterfv
+vbimplib openal32, openal32.dll, CDECL, 3, alGetFilteri
+vbimplib openal32, openal32.dll, CDECL, 3, alGetFilteriv
+vbimplib openal32, openal32.dll, CDECL, 3, alGetFilterf
+vbimplib openal32, openal32.dll, CDECL, 3, alGetFilterfv
+vbimplib openal32, openal32.dll, CDECL, 2, alGenAuxiliaryEffectSlots
+vbimplib openal32, openal32.dll, CDECL, 2, alDeleteAuxiliaryEffectSlots
+vbimplib openal32, openal32.dll, CDECL, 1, alIsAuxiliaryEffectSlot
+vbimplib openal32, openal32.dll, CDECL, 3, alAuxiliaryEffectSloti
+vbimplib openal32, openal32.dll, CDECL, 3, alAuxiliaryEffectSlotiv
+vbimplib openal32, openal32.dll, CDECL, 3, alAuxiliaryEffectSlotf
+vbimplib openal32, openal32.dll, CDECL, 3, alAuxiliaryEffectSlotfv
+vbimplib openal32, openal32.dll, CDECL, 3, alGetAuxiliaryEffectSloti
+vbimplib openal32, openal32.dll, CDECL, 3, alGetAuxiliaryEffectSlotiv
+vbimplib openal32, openal32.dll, CDECL, 3, alGetAuxiliaryEffectSlotf
+vbimplib openal32, openal32.dll, CDECL, 3, alGetAuxiliaryEffectSlotfv
 
 endlib
