@@ -1,10 +1,11 @@
 Attribute VB_Name = "openal32"
 ' This module represents the OpenAL (Open Audio Library) 32-bit API.
 ' The OpenAL constants and function prototypes are listed below.
-' These constants and prototypes are based on the original OpenAL SDK v1.0/v1.1.
 
 ' At link time (when VB6 invokes the MS linker to generate the native executable), the VB6LINK tool included in
 ' the ImpLib SDK replaces this module with the OpenAL import library to link the executable to the openal32.dll.
+' The following tutorial explains how to use the VB6LINK tool:
+'    https://github.com/vkamenar/implib-sdk/discussions/3
 
 Public Enum OAL
 
@@ -259,14 +260,13 @@ Public Enum OAL
    AL_EFFECT_AUTOWAH
    AL_EFFECT_COMPRESSOR
    AL_EFFECT_EQUALIZER
+   AL_EFFECT_EAXREVERB = &H8000
 
    ' Auxiliary Slot object definitions to be used with alAuxiliaryEffectSlot functions
-   AL_EFFECTSLOT_EFFECT = 1
+   AL_EFFECTSLOT_NULL = 0 ' NULL Auxiliary Slot ID to disable a source send
+   AL_EFFECTSLOT_EFFECT
    AL_EFFECTSLOT_GAIN
    AL_EFFECTSLOT_AUXILIARY_SEND_AUTO
-
-   ' Value to be used as an Auxiliary Slot ID to disable a source send
-   AL_EFFECTSLOT_NULL = 0
 
    ' *** Filter object definitions to be used with alFilter functions
 
@@ -636,9 +636,6 @@ Public Enum OAL
    AL_EAXREVERB_ROOM_ROLLOFF_FACTOR
    AL_EAXREVERB_DECAY_HFLIMIT
 
-   ' Effect type definitions to be used with AL_EFFECT_TYPE
-   AL_EFFECT_EAXREVERB = &H8000
-
    ' *** Effect parameter structures, value definitions, ranges and defaults (Creative)
 
    ' AL reverb effect parameter ranges and defaults
@@ -711,17 +708,15 @@ Public Enum OAL
 End Enum
 
 ' *** Renderer State management
+' Note: There are no capabilities in OpenAL 1.1 to be used with these functions, but they may be used by an extension
 
 ' Enable a feature of the OpenAL driver
-' Note: There are no capabilities in OpenAL 1.1 to be used with this function, but it may be used by an extension
 Sub alEnable(ByVal capability As Long) : End Sub
 
 ' Disable a feature of the OpenAL driver
-' Note: There are no capabilities in OpenAL 1.1 to be used with this function, but it may be used by an extension
 Sub alDisable(ByVal capability As Long) : End Sub
 
 ' Return a boolean indicating if a specific feature is enabled in the OpenAL driver
-' Note: There are no capabilities in OpenAL 1.1 to be used with this function, but it may be used by an extension
 Function alIsEnabled(ByVal capability As Long) As Boolean : End Function
 
 ' *** State retrieval
@@ -830,7 +825,7 @@ Sub alGetListeneriv(ByVal param As Long, ByVal values As Long) : End Sub
 '             buffer, state (query only), buffers queued (query only), buffers processed (query only)
 
 ' *** Create Source objects
-' Note: When specifying multiple sources, 'sources' must be a pointer to the first value in the array
+' Note: When specifying multiple sources, 'sources' must point to the first value in the array
 
 ' Generate one or more sources
 Sub alGenSources(ByVal n As Long, ByRef sources As Long) : End Sub
@@ -890,7 +885,7 @@ Sub alGetSource3i(ByVal sid As Long, ByVal param As Long, ByRef v1 As Long, ByRe
 Sub alGetSourceiv(ByVal sid As Long, ByVal param As Long, ByVal values As Long) : End Sub
 
 ' *** Source vector based playback calls
-' Note: When specifying multiple sources, 'sids' must be a pointer to the first value in the array
+' Note: When specifying multiple sources, 'sids' must point to the first value in the array
 
 ' Play, replay, or resume (if paused) a list of Sources
 Sub alSourcePlayv(ByVal ns As Long, ByRef sids As Long) : End Sub
@@ -919,7 +914,7 @@ Sub alSourceRewind(ByVal sid As Long) : End Sub
 Sub alSourcePause(ByVal sid As Long) : End Sub
 
 ' *** Source Queuing
-' Note: When specifying multiple buffers, 'buffers' must be a pointer to the first value in the array
+' Note: When specifying multiple buffers, 'buffers' must point to the first value in the array
 
 ' Queue a set of buffers on a source. All buffers attached to a source will be played in sequence, and
 ' the number of processed buffers can be detected using an alSourcei call to retrieve AL_BUFFERS_PROCESSED
@@ -933,7 +928,7 @@ Sub alSourceUnqueueBuffers(ByVal sid As Long, ByVal n As Long, ByRef buffers As 
 ' Buffer are storage space for sample data. Buffers are referred to by Sources.
 ' One Buffer can be used by multiple Sources.
 ' Properties (query only): frequency, size, bits, channels
-' Note: When specifying multiple buffers, 'buffers' must be a pointer to the first value in the array
+' Note: When specifying multiple buffers, 'buffers' must point to the first value in the array
 
 ' Create Buffer objects
 Sub alGenBuffers(ByVal n As Long, ByRef buffers As Long) : End Sub
@@ -1090,3 +1085,107 @@ Sub alcCaptureStop(ByVal device As Long) : End Sub
 ' Complete a capture operation, without blocking
 ' Note: 'buffer' is a pointer to a byte array large enough to receive the requested number of samples
 Sub alcCaptureSamples(ByVal device As Long, ByVal buffer As Long, ByVal samples As Long) : End Sub
+
+' *** Effect extension functions
+' Note: When specifying multiple effects, filters or effect slots, 'effects' or 'filters' or 'effectslots' must point to the first value in the array
+' Note: 'piValues' is a pointer to an array of 32-bit integer values
+' Note: 'pflValues' is a pointer to an array of 32-bit floating point values
+
+' Create one or more Effect objects
+Sub alGenEffects(ByVal n As Long, ByRef effects As Long) : End Sub
+
+' Delete and free resources for Effect objects
+Sub alDeleteEffects(ByVal n As Long, ByRef effects As Long) : End Sub
+
+' Determine if an object identifier is a valid Effect object
+Function alIsEffect(ByVal effect As Long) As Boolean : End Function
+
+' Set integer property on Effect object
+Sub alEffecti(ByVal effect As Long, ByVal param As Long, ByVal iValue As Long) : End Sub
+
+' Set integer array property on Effect object
+Sub alEffectiv(ByVal effect As Long, ByVal param As Long, ByVal piValues As Long) : End Sub
+
+' Set floating point property on Effect object
+Sub alEffectf(ByVal effect As Long, ByVal param As Long, ByVal flValue As Single) : End Sub
+
+' Set floating point array property on Effect object
+Sub alEffectfv(ByVal effect As Long, ByVal param As Long, ByVal pflValues As Long) : End Sub
+
+' Retrieve an integer property from Effect object
+Sub alGetEffecti(ByVal effect As Long, ByVal param As Long, ByRef piValue As Long) : End Sub
+
+' Retrieve an integer array property from Effect object
+Sub alGetEffectiv(ByVal effect As Long, ByVal param As Long, ByVal piValues As Long) : End Sub
+
+' Retrieve a floating point property from Effect object
+Sub alGetEffectf(ByVal effect As Long, ByVal param As Long, ByRef pflValue As Single) : End Sub
+
+' Retrieve a floating point array property from Effect object
+Sub alGetEffectfv(ByVal effect As Long, ByVal param As Long, ByVal pflValues As Long) : End Sub
+
+' Create one or more Filter objects
+Sub alGenFilters(ByVal n As Long, ByRef filters As Long) : End Sub
+
+' Delete and free resources for Filter objects
+Sub alDeleteFilters(ByVal n As Long, ByRef filters As Long) : End Sub
+
+' Determine if an object identifier is a valid Filter object
+Function alIsFilter(ByVal filter As Long) As Boolean : End Function
+
+' Set integer property on Filter object
+Sub alFilteri(ByVal filter As Long, ByVal param As Long, ByVal iValue As Long) : End Sub
+
+' Set integer array property on Filter object
+Sub alFilteriv(ByVal filter As Long, ByVal param As Long, ByVal piValues As Long) : End Sub
+
+' Set floating point property on Filter object
+Sub alFilterf(ByVal filter As Long, ByVal param As Long, ByVal flValue As Single) : End Sub
+
+' Set floating point array property on Filter object
+Sub alFilterfv(ByVal filter As Long, ByVal param As Long, ByVal pflValues As Long) : End Sub
+
+' Retrieve an integer property from Filter object
+Sub alGetFilteri(ByVal filter As Long, ByVal param As Long, ByRef piValue As Long) : End Sub
+
+' Retrieve an integer array property from Filter object
+Sub alGetFilteriv(ByVal filter As Long, ByVal param As Long, ByVal piValues As Long) : End Sub
+
+' Retrieve a floating point property from Filter object
+Sub alGetFilterf(ByVal filter As Long, ByVal param As Long, ByRef pflValue As Single) : End Sub
+
+' Retrieve a floating point array property from Filter object
+Sub alGetFilterfv(ByVal filter As Long, ByVal param As Long, ByVal pflValues As Long) : End Sub
+
+' Create one or more Auxiliary Effect Slots
+Sub alGenAuxiliaryEffectSlots(ByVal n As Long, ByRef effectslots As Long) : End Sub
+
+' Delete and free resources for Auxiliary Effect Slots
+Sub alDeleteAuxiliaryEffectSlots(ByVal n As Long, ByRef effectslots As Long) : End Sub
+
+' Determine if an object identifier is a valid Auxiliary Effect Slot object
+Function alIsAuxiliaryEffectSlot(ByVal effectslot As Long) As Boolean : End Function
+
+' Set integer property on Auxiliary Effect Slot object
+Sub alAuxiliaryEffectSloti(ByVal effectslot As Long, ByVal param As Long, ByVal iValue As Long) : End Sub
+
+' Set integer array property on Auxiliary Effect Slot object
+Sub alAuxiliaryEffectSlotiv(ByVal effectslot As Long, ByVal param As Long, ByVal piValues As Long) : End Sub
+
+' Set floating point property on Auxiliary Effect Slot object
+Sub alAuxiliaryEffectSlotf(ByVal effectslot As Long, ByVal param As Long, ByVal flValue As Single) : End Sub
+
+' Set floating point array property on Auxiliary Effect Slot object
+Sub alAuxiliaryEffectSlotfv(ByVal effectslot As Long, ByVal param As Long, ByVal pflValues As Long) : End Sub
+
+' Retrieve an integer property from Auxiliary Effect Slot object
+Sub alGetAuxiliaryEffectSloti(ByVal effectslot As Long, ByVal param As Long, ByRef piValue As Long) : End Sub
+
+' Retrieve an integer array property from Auxiliary Effect Slot object
+Sub alGetAuxiliaryEffectSlotiv(ByVal effectslot As Long, ByVal param As Long, ByVal piValues As Long) : End Sub
+
+' Retrieve a floating point property from Auxiliary Effect Slot object
+Sub alGetAuxiliaryEffectSlotf(ByVal effectslot As Long, ByVal param As Long, ByRef pflValue As Single) : End Sub
+
+' Retrieve a floating point array property from Auxiliary Effect Slot object
+Sub alGetAuxiliaryEffectSlotfv(ByVal effectslot As Long, ByVal param As Long, ByVal pflValues As Long) : End Sub
