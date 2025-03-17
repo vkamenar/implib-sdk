@@ -9,7 +9,8 @@
 ; MACRO implib   dllname, name, thunk, pubname
 ; MACRO pbimplib dllname, cconv, argcount, name, pb_name, pubname
 ; Parameters:
-;    dllname  : DLL file name.
+;    dllname  : DLL file name. Enclose in quotes if the file name contains
+;               whitespaces, '-' or other non-alphanumeric characters.
 ;    cconv    : Calling convention. Possible values: STDCALL, CDECL, PBCALL
 ;    argcount : Number of DWORD arguments. (QWORD counts as 2 DWORDs and so on.)
 ;    name     : Symbol name or an ordinal value, prefixed with ord. This value should
