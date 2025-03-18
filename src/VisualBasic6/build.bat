@@ -18,7 +18,8 @@ ECHO -ERR: Visual Basic 6 not found.
 GOTO EXIT
 :VB6FOUND
 IF EXIST "%VB6%\LNK.EXE" GOTO LNKFOUND
-ECHO -ERR: VB6LINK not found in %VB6%. Please, check the readme for information on how to install VB6LINK.
+ECHO -ERR: VB6LINK not found in %VB6%. Please, check the following tutorial for information on how to install VB6LINK:
+ECHO       https://github.com/vkamenar/implib-sdk/discussions/3
 GOTO EXIT
 :LNKFOUND
 echo Compiling the Visual Basic 6 sample project
