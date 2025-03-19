@@ -1,6 +1,6 @@
 ; PBOPENAL.DESC
 ; -------------
-; OpenAL (Open Audio Library).
+; OpenAL32 (Open Audio Library).
 ; Compatible with the original OpenAL v1.0 and v1.1 and OpenAL Soft.
 ; PureBasic library description. Requires PureBasic v3.50 or later.
 
