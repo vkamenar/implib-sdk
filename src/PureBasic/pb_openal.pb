@@ -1,19 +1,26 @@
 ; This sample project shows how to use the OpenAL (Open Audio Library) API
-; with PureBasic (32 bit). The ImpLib SDK compiles an import library for
-; the OpenAL32 DLL, which uses the CDECL calling convention. Then, the
-; import library is converted to the User-Lib format using the PureBasic SDK.
+; with PureBasic (32 and 64-bit). The ImpLib SDK compiles the import libraries
+; for the OpenAL32 and OpenAL64 DLL. Then, the import libraries are converted
+; to the User-Lib format using the PureBasic SDK.
 
 ; This project uses the device enumeration extension to locate all of the
 ; OpenAL devices on the user's system. The code also shows how to determine
 ; the capabilities of each device, including what version of OpenAL each
 ; device supports.
 
-; Just run the batch file build.bat to build/rebuild the sample application.
+; Launch the batch file build.bat to build/rebuild the sample applications.
 
 ; Make sure you have OpenAL properly installed before running the program.
 ; You can download the redistributable OpenAL installer from the official
 ; OpenAL website:
 ;   https://www.openal.org/downloads/
+
+; This example is also compatible with OpenAL Soft, an LGPL-licensed
+; implementation of the OpenAL 3D API. The OpenAL Soft can be downloaded
+; from the official website:
+;   https://openal-soft.org/
+; Note: When using OpenAL Soft, rename soft_oal.dll to either
+;       openal32.dll (x86) or openal64.dll (x64).
 
 ; For more advanced samples refer to the PureBasic OpenAL SDK:
 ;   https://implib.sourceforge.io/PBOpenAL.htm
