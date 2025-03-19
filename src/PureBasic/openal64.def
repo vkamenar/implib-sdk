@@ -1,0 +1,155 @@
+; Import library for PureBasic x64: OpenAL64 (Open Audio Library)
+; This library supports the original OpenAL 1.0 and 1.1 and OpenAL Soft
+
+include '..\implib64.inc'
+
+KEEP_ORIGINAL_THUNK equ 0 ; Remove original thunk
+RENAME_AR_MEMBERS   equ 1 ; For compatibility with the LLVM linker
+
+; Buffer-related
+pbimplib openal64.dll, alGenBuffers
+pbimplib openal64.dll, alDeleteBuffers
+pbimplib openal64.dll, alIsBuffer
+pbimplib openal64.dll, alBufferData
+pbimplib openal64.dll, alBufferf
+pbimplib openal64.dll, alBuffer3f
+pbimplib openal64.dll, alBufferfv
+pbimplib openal64.dll, alBufferi
+pbimplib openal64.dll, alBuffer3i
+pbimplib openal64.dll, alBufferiv
+pbimplib openal64.dll, alGetBufferf
+pbimplib openal64.dll, alGetBuffer3f
+pbimplib openal64.dll, alGetBufferfv
+pbimplib openal64.dll, alGetBufferi
+pbimplib openal64.dll, alGetBuffer3i
+pbimplib openal64.dll, alGetBufferiv
+
+; Source-related
+pbimplib openal64.dll, alGenSources
+pbimplib openal64.dll, alDeleteSources
+pbimplib openal64.dll, alIsSource
+pbimplib openal64.dll, alSourcef
+pbimplib openal64.dll, alSource3f
+pbimplib openal64.dll, alSourcefv
+pbimplib openal64.dll, alSourcei
+pbimplib openal64.dll, alSource3i
+pbimplib openal64.dll, alSourceiv
+pbimplib openal64.dll, alGetSourcef
+pbimplib openal64.dll, alGetSource3f
+pbimplib openal64.dll, alGetSourcefv
+pbimplib openal64.dll, alGetSourcei
+pbimplib openal64.dll, alGetSource3i
+pbimplib openal64.dll, alGetSourceiv
+pbimplib openal64.dll, alSourcePlay
+pbimplib openal64.dll, alSourcePlayv
+pbimplib openal64.dll, alSourcePause
+pbimplib openal64.dll, alSourcePausev
+pbimplib openal64.dll, alSourceStop
+pbimplib openal64.dll, alSourceStopv
+pbimplib openal64.dll, alSourceRewind
+pbimplib openal64.dll, alSourceRewindv
+pbimplib openal64.dll, alSourceQueueBuffers
+pbimplib openal64.dll, alSourceUnqueueBuffers
+
+; Listener-related
+pbimplib openal64.dll, alListenerf
+pbimplib openal64.dll, alListener3f
+pbimplib openal64.dll, alListenerfv
+pbimplib openal64.dll, alListeneri
+pbimplib openal64.dll, alListener3i
+pbimplib openal64.dll, alListeneriv
+pbimplib openal64.dll, alGetListenerf
+pbimplib openal64.dll, alGetListener3f
+pbimplib openal64.dll, alGetListenerfv
+pbimplib openal64.dll, alGetListeneri
+pbimplib openal64.dll, alGetListener3i
+pbimplib openal64.dll, alGetListeneriv
+
+; State-related
+pbimplib openal64.dll, alEnable
+pbimplib openal64.dll, alDisable
+pbimplib openal64.dll, alIsEnabled
+pbimplib openal64.dll, alGetBoolean
+pbimplib openal64.dll, alGetDouble
+pbimplib openal64.dll, alGetFloat
+pbimplib openal64.dll, alGetInteger
+pbimplib openal64.dll, alGetBooleanv
+pbimplib openal64.dll, alGetDoublev
+pbimplib openal64.dll, alGetFloatv
+pbimplib openal64.dll, alGetIntegerv
+pbimplib openal64.dll, alcGetIntegerv
+pbimplib openal64.dll, alGetString
+pbimplib openal64.dll, alcGetString
+pbimplib openal64.dll, alDistanceModel
+pbimplib openal64.dll, alDopplerFactor
+pbimplib openal64.dll, alDopplerVelocity ; Deprecated in v1.1: use alSpeedOfSound instead!
+pbimplib openal64.dll, alSpeedOfSound
+
+; Error-related
+pbimplib openal64.dll, alGetError
+pbimplib openal64.dll, alcGetError
+
+; Extension-related
+pbimplib openal64.dll, alIsExtensionPresent
+pbimplib openal64.dll, alcIsExtensionPresent
+pbimplib openal64.dll, alGetProcAddress
+pbimplib openal64.dll, alcGetProcAddress
+pbimplib openal64.dll, alGetEnumValue
+pbimplib openal64.dll, alcGetEnumValue
+
+; Context-related
+pbimplib openal64.dll, alcCreateContext
+pbimplib openal64.dll, alcMakeContextCurrent
+pbimplib openal64.dll, alcProcessContext
+pbimplib openal64.dll, alcSuspendContext
+pbimplib openal64.dll, alcDestroyContext
+pbimplib openal64.dll, alcGetCurrentContext
+pbimplib openal64.dll, alcGetContextsDevice
+
+; Device-related
+pbimplib openal64.dll, alcOpenDevice
+pbimplib openal64.dll, alcCloseDevice
+
+; Capture-related
+pbimplib openal64.dll, alcCaptureOpenDevice
+pbimplib openal64.dll, alcCaptureCloseDevice
+pbimplib openal64.dll, alcCaptureStart
+pbimplib openal64.dll, alcCaptureStop
+pbimplib openal64.dll, alcCaptureSamples
+
+; Effect extension functions
+pbimplib openal64.dll, alGenEffects
+pbimplib openal64.dll, alDeleteEffects
+pbimplib openal64.dll, alIsEffect
+pbimplib openal64.dll, alEffecti
+pbimplib openal64.dll, alEffectiv
+pbimplib openal64.dll, alEffectf
+pbimplib openal64.dll, alEffectfv
+pbimplib openal64.dll, alGetEffecti
+pbimplib openal64.dll, alGetEffectiv
+pbimplib openal64.dll, alGetEffectf
+pbimplib openal64.dll, alGetEffectfv
+pbimplib openal64.dll, alGenFilters
+pbimplib openal64.dll, alDeleteFilters
+pbimplib openal64.dll, alIsFilter
+pbimplib openal64.dll, alFilteri
+pbimplib openal64.dll, alFilteriv
+pbimplib openal64.dll, alFilterf
+pbimplib openal64.dll, alFilterfv
+pbimplib openal64.dll, alGetFilteri
+pbimplib openal64.dll, alGetFilteriv
+pbimplib openal64.dll, alGetFilterf
+pbimplib openal64.dll, alGetFilterfv
+pbimplib openal64.dll, alGenAuxiliaryEffectSlots
+pbimplib openal64.dll, alDeleteAuxiliaryEffectSlots
+pbimplib openal64.dll, alIsAuxiliaryEffectSlot
+pbimplib openal64.dll, alAuxiliaryEffectSloti
+pbimplib openal64.dll, alAuxiliaryEffectSlotiv
+pbimplib openal64.dll, alAuxiliaryEffectSlotf
+pbimplib openal64.dll, alAuxiliaryEffectSlotfv
+pbimplib openal64.dll, alGetAuxiliaryEffectSloti
+pbimplib openal64.dll, alGetAuxiliaryEffectSlotiv
+pbimplib openal64.dll, alGetAuxiliaryEffectSlotf
+pbimplib openal64.dll, alGetAuxiliaryEffectSlotfv
+
+endlib
