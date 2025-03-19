@@ -1,4 +1,4 @@
-; Make an import library for PureBasic: OpenAL (Open Audio Library)
+; Import library for PureBasic: OpenAL32 (Open Audio Library)
 ; This library supports the original OpenAL 1.0 and 1.1 and OpenAL Soft
 
 include '..\implib.inc'
