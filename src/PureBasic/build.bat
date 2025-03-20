@@ -45,7 +45,6 @@ IF NOT "%PB32_HOME%" == "" move /Y PBopenal "%PB32_HOME%\PureLibraries\UserLibra
 IF %ERRORLEVEL% NEQ 0 GOTO EXIT
 IF NOT "%PB64_HOME%" == "" move /Y PBopenal64 "%PB64_HOME%\PureLibraries\UserLibraries\"
 
-:BUILD_EXE
 echo.
 echo Compiling the sample PureBasic applications
 echo.
