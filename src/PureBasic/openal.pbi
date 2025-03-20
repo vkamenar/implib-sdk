@@ -1,17 +1,11 @@
 ; The following constants were ported from the original OpenAL (Open Audio Library) SDK v1.0/v1.1
 
-; bad value
-#AL_INVALID = -1
+#AL_INVALID = -1 ; Bad value
 #ALC_INVALID = 0
-
-#AL_NONE = 0
-
-; Boolean False
-#AL_FALSE = 0
+#AL_NONE = 0     ; No distance model or no buffer
+#AL_FALSE = 0    ; Boolean False
 #ALC_FALSE = 0
-
-; Boolean True
-#AL_TRUE = 1
+#AL_TRUE = 1     ; Boolean True
 #ALC_TRUE = 1
 
 ; Indicate Source has relative coordinates
@@ -337,14 +331,13 @@
 #AL_EFFECT_AUTOWAH = $A
 #AL_EFFECT_COMPRESSOR = $B
 #AL_EFFECT_EQUALIZER = $C
+#AL_EFFECT_EAXREVERB = $8000
 
 ; Auxiliary Slot object definitions to be used with alAuxiliaryEffectSlot functions
+#AL_EFFECTSLOT_NULL = 0 ; NULL Auxiliary Slot ID to disable a source send
 #AL_EFFECTSLOT_EFFECT = 1
 #AL_EFFECTSLOT_GAIN = 2
 #AL_EFFECTSLOT_AUXILIARY_SEND_AUTO = 3
-
-; Value to be used as an Auxiliary Slot ID to disable a source send
-#AL_EFFECTSLOT_NULL = 0
 
 ; *** Filter object definitions to be used with alFilter functions
 ; Lowpass parameters
@@ -709,9 +702,6 @@
 #AL_EAXREVERB_LFREFERENCE = $15
 #AL_EAXREVERB_ROOM_ROLLOFF_FACTOR = $16
 #AL_EAXREVERB_DECAY_HFLIMIT = $17
-
-; Effect type definitions to be used with AL_EFFECT_TYPE
-#AL_EFFECT_EAXREVERB = $8000
 
 ; *** Effect parameter structures, value definitions, ranges and defaults (Creative)
 ; AL reverb effect parameter ranges and defaults
