@@ -36,20 +36,32 @@ enum ERR_CODES{
 	ERR_VB64
 };
 
-// Error messages
-char error_msgs[][34] = {
-	"\": File locked or not found      \n",
-	"\": Error opening the output file \n",
-	"\": Unreadable or invalid PE image\n",
-	"\": No export found               \n",
-	"\": Not enough memory             \n",
-	"\": Not a valid filename          \n",
-	"\": Visual Basic 6 is 32-bit only \n"
-};
-
 // Syntax mods
 #define MOD_PB 1 // PureBasic
 #define MOD_VB 2 // Visual Basic 6
+
+// Error messages
+char error_msgs[][28] = {
+	"\": File locked or not found\n",
+	"\": Can't open the output   \n",
+	"\": Unreadable or invalid PE\n",
+	"\": No export found         \n",
+	"\": Not enough memory       \n",
+	"\": Not a valid filename    \n",
+	"\": Visual Basic 6 is 32-bit\n"
+};
+
+char dll2def[] = "\n ImpLib SDK DLL2DEF\n";
+char usage[] = " USAGE: dll2def [options] file [output]\n"
+               "        file   - input file name.\n"
+               "        output - optional output file name.\n"
+               "        options:\n"
+               "         /COMPACT - Don't place any comments.\n"
+               "         /PB      - Enable PureBasic mod.\n"
+               "         /VB      - Enable Visual Basic 6 mod.\n"
+               " Example:\n"
+               " dll2def \\windows\\system32\\kernel32.dll test.def\n";
+char errpfx[] = "\n -ERR \"";
 
 typedef struct struct_RVA_2_FileOffset{
 	DWORD VirtualAddress;
@@ -99,47 +111,21 @@ int cprintf(char *dest, char *mask, int ord){
 }
 
 // Process a single PE file and dump its export
-char buf1k[1024], dll_name[80], pub_name[80], qfname[80];
+char buf1k[1024], dll_name[80], pub_name[80], imppfx[270];
 int compact;
 WIN32_FIND_DATA fdata;
-int parse_pe(char *filename, HANDLE hFile, HANDLE hOut, HANDLE hHeap, char current_mod, char mustquote){
+char parse_pe(char *filename, HANDLE hFile, HANDLE hOut, HANDLE hHeap, char cur_mod, char do_quot){
 char *cur1, *cur2, *buf = buf1k, c, x64;
 RVA_2_FileOffset export_dir;
 RVA_2_FileOffset_node *sections = 0, **current_node = &sections;
-int dll_name_len, aux, i, file_pos, size_of_optional_header, is_PE32plus, num_sections, qfnamelen;
+int dll_name_len, aux, i, file_pos, size_of_optional_header, is_PE32plus, num_sections, imppfxlen;
 int ordinal_base, num_pointers, ordinals_array, pointers_array, psymbols_array, pub_name_len;
 HANDLE hFind;
 WORD ordinal;
-	if(hFile == INVALID_HANDLE_VALUE)
-		return ERR_FILE_NOT_FOUND;
 	if(hOut == INVALID_HANDLE_VALUE)
 		return ERR_OUTPUT;
 	if(!hHeap)
 		return ERR_NO_FREE_MEM;
-
-	// Parse PE filename
-	cur1 = qfname;
-	if(mustquote)
-		*cur1++ = '\'';
-	qfnamelen = strlen(filename);
-	if(qfnamelen > 78)
-		qfnamelen = 78;
-	cmemcpy(cur1, filename, qfnamelen);
-	cur1 += qfnamelen;
-	if(mustquote){
-		*cur1++ = '\'';
-		qfnamelen += 2;
-	}
-	cur1 = filename;
-	cur2 = dll_name;
-	dll_name_len = 0;
-	while((c = *cur1++) && (c != '.' || *(cur1 + 3)))
-		if(dll_name_len < sizeof(dll_name) - 1 && c != ' ' && c != '-' && c != ','){
-			if(c >= 'a' && c <= 'z')
-				c -= 'a' - 'A';
-			*cur2++ = c;
-			dll_name_len++;
-		}
 
 	// Read in a fragment of the MSDOS header
 	if(!ReadFile(hFile, buf, 0x40, &aux, 0) || aux != 0x40)
@@ -165,10 +151,58 @@ WORD ordinal;
 			return ERR_BAD_FORMAT;
 		if(aux == 0x20B){
 			is_PE32plus = 1;
-			if(current_mod == MOD_VB)
+			if(cur_mod == MOD_VB)
 				return ERR_VB64;
 		}
 	}
+
+	// Parse PE filename
+	cur1 = filename;
+	cur2 = dll_name;
+	dll_name_len = 0;
+	while((c = *cur1++) && (c != '.' || *(cur1 + 3)))
+		if(dll_name_len < sizeof(dll_name) - 1 && c != ' ' && c != '-' && c != ','){
+			if(c >= 'a' && c <= 'z')
+				c &= 0xDF; // to uppercase
+			*cur2++ = c;
+			dll_name_len++;
+		}
+
+	// [pb|vb]implib dllname, ...
+	cur1 = imppfx;
+	switch(cur_mod){
+	case MOD_PB:
+		cmemcpy(cur1, "pbimplib ", 9);
+		cur1 += 9;
+		break;
+	case MOD_VB:
+		cmemcpy(cur1, "vbimplib ", 9);
+		cur1 += 9;
+		cmemcpy(cur1, dll_name, dll_name_len);
+		cur1 += dll_name_len;
+		*cur1++ = ',';
+		*cur1++ = ' ';
+		break;
+	default:
+		cmemcpy(cur1, "implib ", 7);
+		cur1 += 7;
+	}
+	if(do_quot)
+		*cur1++ = '\'';
+	if((aux = strlen(filename)) > 78)
+		aux = 78;
+	cmemcpy(cur1, filename, aux);
+	cur1 += aux;
+	if(do_quot)
+		*cur1++ = '\'';
+	if(cur_mod != 0 && is_PE32plus == 0){
+		cmemcpy(cur1, ", STDCALL, 0, ", 14);
+		cur1 += 14;
+	}else{
+		*cur1++ = ',';
+		*cur1++ = ' ';
+	}
+	imppfxlen = cur1 - imppfx;
 
 	// DEF header
 	WriteFile(hOut, "include \'", 9, &aux, 0);
@@ -290,7 +324,7 @@ WORD ordinal;
 				return ERR_BAD_FORMAT;
 			if(!ReadFile(hFile, &i, 4, &aux, 0) || aux != 4)
 				return ERR_BAD_FORMAT;
-			if(i >= export_dir.VirtualAddress && i < export_dir.VirtualAddress + export_dir.VirtualSize){
+			if((DWORD)i >= export_dir.VirtualAddress && (DWORD)i < export_dir.VirtualAddress + export_dir.VirtualSize){
 
 				// It's a forwarder RVA
 				file_pos = do_RVA_2_FileOffset(sections, i);
@@ -311,70 +345,43 @@ WORD ordinal;
 				WriteFile(hOut, buf, aux + 7, &aux, 0);
 			}
 		}
-
-		// [pb|vb]implib dllname, ...
-		switch(current_mod){
-			case MOD_PB:
-				cmemcpy(buf, "pbimplib ", aux = 9);
-				break;
-			case MOD_VB:
-				cmemcpy(buf, "vbimplib ", 9);
-				cmemcpy(buf + 9, dll_name, dll_name_len);
-				buf[9 + dll_name_len]  = ',';
-				buf[10 + dll_name_len] = ' ';
-				aux = 11 + dll_name_len;
-				break;
-			default:
-				cmemcpy(buf, "implib ", aux = 7);
-		}
-		cmemcpy(buf + aux, qfname, qfnamelen);
-		aux += qfnamelen;
-		if(current_mod != 0 && is_PE32plus == 0){
-			cmemcpy(buf + aux, ", STDCALL, 0, ", 14);
-			aux += 14;
-		}else{
-			buf[aux++] = ',';
-			buf[aux++] = ' ';
-		}
-		cmemcpy(buf + aux, pub_name, pub_name_len);
-		aux += pub_name_len;
-		buf[aux++] = '\r';
-		buf[aux++] = '\n';
-		WriteFile(hOut, buf, aux, &aux, 0);
+		cur1 = imppfx + imppfxlen;
+		cmemcpy(cur1, pub_name, pub_name_len);
+		cur1 += pub_name_len;
+		*cur1++ = '\r';
+		*cur1++ = '\n';
+		WriteFile(hOut, imppfx, cur1 - imppfx, &aux, 0);
 	}
 	return 0;
 }
-
-char usage[] = " USAGE: dll2def [options] file [output]\n"
-               "        file   - input file name.\n"
-               "        output - optional output file name.\n"
-               "        options:\n"
-               "         /COMPACT - Don't place any comments.\n"
-               "         /PB      - Enable PureBasic mod.\n"
-               "         /VB      - Enable Visual Basic 6 mod.\n"
-               " Example:\n"
-               " dll2def \\windows\\system32\\kernel32.dll test.def\n";
 
 // Program entry point
 char output_filename[80];
 void start(void){
 unsigned __int64 kw;
-int i, aux;
-char *args, *cursor, *output, *ends, *buf = buf1k, ch, current_mod = 0, mustquote = 0;
-HANDLE hDLL, hDEF, hHeap;
+int aux;
+char *args, *cursor, *output, *ends, *buf = buf1k, ch, err, cur_mod = 0, do_quot = 0;
+HANDLE hHeap, hDLL, hDEF = INVALID_HANDLE_VALUE;
+CONSOLE_SCREEN_BUFFER_INFO console_info;
 HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 
 	// If executing as a service or otherwise detached from the console, STDOUT might be unavailable
 	if(hOut == INVALID_HANDLE_VALUE)
 		hOut = 0;
+	else{
+		// If this is a console, initialize the console info buffer (it is used to apply color attributes)
+		GetConsoleScreenBufferInfo(hOut, &console_info);
+		console_info.dwCursorPosition.Y++;
+		console_info.dwCursorPosition.X = 1;
+	}
 
 	// Parse the command-line
 	args = GetCommandLine();
-	i = 0;
+	aux = 0;
 	while(ch = *args){
 		if(ch == '\"')
-			i ^= 1;
-		if(!i && (ch == ' ' || ch == '\t'))
+			aux ^= 1;
+		if(!aux && (ch == ' ' || ch == '\t'))
 			break;
 		args++;
 	}
@@ -383,8 +390,11 @@ HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 
 	// No parameters
 	if(!ch){
-		if(hOut)
+		if(hOut){
+			WriteFile(hOut, dll2def, sizeof(dll2def) - 1, &aux, 0);
+			FillConsoleOutputAttribute(hOut, FOREGROUND_GREEN, sizeof(dll2def) - 1, console_info.dwCursorPosition, &aux);
 			WriteFile(hOut, usage, sizeof(usage) - 1, &aux, 0);
+		}
 		ExitProcess(0);
 	}
 
@@ -394,15 +404,17 @@ HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 		while((ch = *args++) && ch != ' ' && ch != '\t')
 			kw = kw << 8 | (ch | 0x20) & 0xFF; // to lowercase
 		if(kw == 0x7062)
-			current_mod = MOD_PB;
+			cur_mod = MOD_PB;
 		else if(kw == 0x7662)
-			current_mod = MOD_VB;
+			cur_mod = MOD_VB;
 		else if(kw == 0x636F6D70616374)
 			compact = 1;
 		else if(hOut){
-			cmemcpy(buf, cursor, aux = args - cursor - 1);
+			aux = args - cursor - 1;
+			cmemcpy(buf, cursor, aux);
 			cmemcpy(buf + aux, " is not a valid option. Ignoring.\n", 34);
 			WriteFile(hOut, buf, aux + 34, &aux, 0);
+			console_info.dwCursorPosition.Y++;
 		}
 		while((ch = *args) == ' ' || ch == '\t')
 			args++;
@@ -429,34 +441,38 @@ HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 			output = 0;
 	}else
 		output = 0;
+	err = ERR_FILE_NOT_FOUND;
 	hDLL = CreateFile(args, GENERIC_READ, FILE_SHARE_READ, 0, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
-	cursor = args + aux;
-	ends = cursor;
-	while(ends > args && (ch = *(ends-1)) != '\\'){
-		ends--;
-		if(ch == ' ' || ch == '-' || ch == ',')
-			mustquote = 1;
-	}
-	if(!output){
-		output = cursor;
-		while(output > ends && *output != '.')
-			output--;
-		if(output == ends)
+	if(hDLL != INVALID_HANDLE_VALUE){
+		cursor = args + aux;
+		ends = cursor;
+		while(ends > args && (ch = *(ends-1)) != '\\'){
+			ends--;
+			if(ch == ' ' || ch == '-' || ch == ',')
+				do_quot = 1;
+		}
+		if(!output){
 			output = cursor;
-		aux = output - ends;
-		if(aux > sizeof(output_filename) - 5)
-			aux = sizeof(output_filename) - 5;
-		cmemcpy(output_filename, ends, aux);
-		cmemcpy(output_filename + aux, ".def", 5);
-		output = output_filename;
-	}
-	hDEF = CreateFile(output, GENERIC_WRITE, 0, 0, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
+			while(output > ends && *output != '.')
+				output--;
+			if(output == ends)
+				output = cursor;
+			aux = output - ends;
+			if(aux > sizeof(output_filename) - 5)
+				aux = sizeof(output_filename) - 5;
+			cmemcpy(output_filename, ends, aux);
+			cmemcpy(output_filename + aux, ".def", 5);
+			output = output_filename;
+		}
+		hDEF = CreateFile(output, GENERIC_WRITE, 0, 0, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
+		hHeap = HeapCreate(HEAP_NO_SERIALIZE, 4096, 0);
 
-	// Process a single PE file
-	hHeap = HeapCreate(HEAP_NO_SERIALIZE, 4096, 0);
-	i = parse_pe(ends, hDLL, hDEF, hHeap, current_mod, mustquote);
-	if(hDLL != INVALID_HANDLE_VALUE)
+		// Process a single PE file
+		err = parse_pe(ends, hDLL, hDEF, hHeap, cur_mod, do_quot);
 		CloseHandle(hDLL);
+		if(hHeap)
+			HeapDestroy(hHeap);
+	}
 
 	// DEF footer
 	if(hDEF != INVALID_HANDLE_VALUE){
@@ -464,19 +480,28 @@ HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 		CloseHandle(hDEF);
 	}
 
-	if(hHeap)
-		HeapDestroy(hHeap);
-	if(i && hOut){
+	// Print the error message, if any
+	if(err && hOut){
+
+		// Build the error message
 		cursor = buf;
-		cmemcpy(cursor, "-ERR \"", 6);
-		cursor += 6;
-		if(i != ERR_OUTPUT)
+		cmemcpy(cursor, errpfx, sizeof(errpfx) - 1);
+		cursor += sizeof(errpfx) - 1;
+
+		// Append either the input or the output filename, depending on the error code
+		if(err != ERR_OUTPUT)
 			output = args;
 		aux = strlen(output);
 		cmemcpy(cursor, output, aux);
 		cursor += aux;
-		cmemcpy(cursor, error_msgs[i - 1], 34);
-		WriteFile(hOut, buf, cursor + 34 - buf, &aux, 0);
+
+		// Append the actual error message
+		cmemcpy(cursor, error_msgs[err - 1], sizeof(error_msgs[0]));
+		WriteFile(hOut, buf, cursor + sizeof(error_msgs[0]) - buf, &aux, 0);
+
+		// Highlight the error
+		FillConsoleOutputAttribute(hOut, FOREGROUND_RED, 4, console_info.dwCursorPosition, &aux);
 	}
+
 	ExitProcess(0);
 }
