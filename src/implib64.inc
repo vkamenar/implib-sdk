@@ -55,8 +55,8 @@ IMAGE_FILE_LINE_NUMS_STRIPPED=4
 IMAGE_CNT_CODE=20h
 IMAGE_CNT_INITIALIZED_DATA=40h
 IMAGE_LNK_COMDAT=1000h
+IMAGE_ALIGN_1BYTES=100000h
 IMAGE_ALIGN_2BYTES=200000h
-IMAGE_ALIGN_4BYTES=300000h
 IMAGE_ALIGN_8BYTES=400000h
 IMAGE_MEM_EXECUTE=20000000h
 IMAGE_MEM_READ=40000000h
@@ -355,7 +355,7 @@ macro _implib mod,dllname,name,thunk,pubname{
 		dd %t,descr_sym_tbl.#dllhash-descr.#dllhash
 		coffhdr
 		dd null_imp_descr.#dllhash-descr.#dllhash,descr_rel.#dllhash-descr.#dllhash
-		dd 0,2+KEEP_ORIGINAL_THUNK,IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_4BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
+		dd 0,2+KEEP_ORIGINAL_THUNK,IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_1BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 		db '.idata$6'
 		dd 0,0,(null_imp_descr.#dllhash-descr_dllname.#dllhash+2) and -2,descr_dllname.#dllhash-descr.#dllhash,0
 		dd 0,0,IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_2BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
@@ -663,7 +663,7 @@ macro endlib{
 		dw 0,IMAGE_FILE_LINE_NUMS_STRIPPED
 		db '.idata$3'
 		dd 0,0,20,null_imp_descr_data-null_imp_descr,0,0,0
-		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_4BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
+		dd IMAGE_CNT_INITIALIZED_DATA or IMAGE_ALIGN_1BYTES or IMAGE_MEM_READ or IMAGE_MEM_WRITE
 	null_imp_descr_data dq 0,0
 		if USE_COMPID
 			dd 0
