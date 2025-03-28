@@ -12,11 +12,12 @@
 	How to install the wrapper:
 	---------------------------
 
-	1. Copy VB6LINK.EXE to the Visual Basic 6 installation directory.
-	   The path is typically \Program Files\Microsoft Visual Studio\VB98\ (in Win32) or
-	   \Program Files (x86)\Microsoft Visual Studio\VB98\ (in Win64).
-	2. Rename the Microsoft linker LINK.EXE to LNK.EXE.
-	3. Rename the wrapper VB6LINK.EXE to LINK.EXE.
+	1. Copy VB6LINK.EXE to the Visual Basic 6 installation directory. It's typically
+	      \Program Files\Microsoft Visual Studio\VB98\       (in Win32)
+	         or
+	      \Program Files (x86)\Microsoft Visual Studio\VB98\ (in Win64)
+	2. Rename the Microsoft linker LINK.EXE to LNK.EXE
+	3. Rename the wrapper VB6LINK.EXE to LINK.EXE
 
 	How to unistall the wrapper:
 	----------------------------
@@ -42,21 +43,18 @@
 	the final executable link to OPENAL32.DLL.
 */
 
-#define WINDOWS_IGNORE_PACKING_MISMATCH /* workaroud for C2118 in W10 SDK */
+#define WINDOWS_IGNORE_PACKING_MISMATCH // workaroud for C2118 in W10 SDK
 #include <windows.h>
 
-/* Error messages */
-char err0[] = "-ERR: Visual Basic 6 not installed";
-char err1[] = "-ERR: VB6.EXE path not found";
-char err2[] = "-ERR: LNK.EXE not found";
-char err3[] = "-ERR: Not enough heap memory";
-char err4[] = "-ERR: Error spawning LNK.EXE";
+// Error messages defined as arrays of char to avoid the \0
+char err0[] = { '-','E','R','R',':',' ','V','i','s','u','a','l',' ','B','a','s','i','c',' ','6',' ','n','o','t',' ','i','n','s','t','a','l','l','e','d' };
+char err1[] = { '-','E','R','R',':',' ','V','B','6','.','E','X','E',' ','p','a','t','h',' ','n','o','t',' ','f','o','u','n','d' } ;
+char err2[] = { '-','E','R','R',':',' ','L','N','K','.','E','X','E',' ','n','o','t',' ','f','o','u','n','d' };
+char err3[] = { '-','E','R','R',':',' ','E','r','r','o','r',' ','r','u','n','n','i','n','g',' ','L','N','K','.','E','X','E' };
 
-char buf[2048];
-WIN32_FIND_DATA fdata;
-int copy_LNK;
+char pmem[2080], buf[2047], copy_LNK;
 
-/* A simple memcpy replacement if linking without CRT */
+// A simple memcpy replacement if linking without CRT
 void cmemcpy(char *dest, char *src, int n){
 	for(int i = 0; i < n; i++)
 		dest[i] = src[i];
@@ -66,26 +64,28 @@ int ep(void){
 STARTUPINFO sinfo;
 PROCESS_INFORMATION pinfo;
 HKEY regKey;
-HANDLE hFind, hOut = GetStdHandle(STD_OUTPUT_HANDLE);
-void* pMem;
+HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 char *cur, *start, *dst, *bk;
-unsigned int stage, tmp, quote;
-	hFind = FindFirstFile("LNK.EXE", &fdata);
-	if(hFind != INVALID_HANDLE_VALUE)
-		FindClose(hFind);
-	else{
-		/* LNK.EXE not found. Maybe MSDEV has spawned linker in the sources directory.
-		   Let's try to copy LNK.EXE to the same directory. */
-		if(RegOpenKeyEx(HKEY_CLASSES_ROOT, "VisualBasic.Project\\shell\\open\\command",
-			0, KEY_QUERY_VALUE, &regKey) != ERROR_SUCCESS){
-			WriteFile(hOut, err0, sizeof(err0) - 1, &stage, 0); // VB6 not installed
+unsigned int tmp, stage, quote;
+
+	// STDOUT might be unavailable (this should never happen when linking from the command line or the IDE)
+	if(hOut == INVALID_HANDLE_VALUE)
+		hOut = 0;
+
+	if(GetFileAttributes("LNK.EXE") == INVALID_FILE_ATTRIBUTES){
+		// LNK.EXE not found. Maybe MSDEV is running the linker in the sources directory.
+		// Let's try to copy LNK.EXE from the installation directory.
+		if(RegOpenKeyEx(HKEY_CLASSES_ROOT, "VisualBasic.Project\\shell\\open\\command", 0, KEY_QUERY_VALUE, &regKey) != ERROR_SUCCESS){
+			if(hOut)
+				WriteFile(hOut, err0, sizeof(err0), &tmp, 0); // VB6 not installed
 			return -1;
 		}
-		stage = sizeof(buf) - 1;
+		stage = sizeof(buf);
 		tmp = RegQueryValueEx(regKey, "", 0, 0, buf, &stage);
 		RegCloseKey(regKey);
 		if(tmp != ERROR_SUCCESS){
-			WriteFile(hOut, err1, sizeof(err1) - 1, &stage, 0); // VB6 path not found
+			if(hOut)
+				WriteFile(hOut, err1, sizeof(err1), &tmp, 0); // VB6 path not found
 			return -1;
 		}
 		start = buf + stage;
@@ -98,19 +98,15 @@ unsigned int stage, tmp, quote;
 		*(unsigned int*)(start + 4) = 'EXE.';
 		*(start + 8) = 0;
 		if(!CopyFile(cur, "LNK.EXE", 0)){
-			WriteFile(hOut, err2, sizeof(err2) - 1, &stage, 0); // LNK.EXE not found
+			if(hOut)
+				WriteFile(hOut, err2, sizeof(err2), &tmp, 0); // LNK.EXE not found
 			return -1;
 		}
-		copy_LNK++;
+		copy_LNK = 1;
 	}
 	start = cur = GetCommandLine();
-	pMem = HeapAlloc(GetProcessHeap(), 0, strlen(cur) + 16);
-	if(!pMem){
-		WriteFile(hOut, err3, sizeof(err3) - 1, &stage, 0); // Not enough heap memory
-		return -1;
-	}
-	*((unsigned int*)pMem) = 'KNL';
-	dst = (char*)pMem + 3;
+	*((unsigned int*)pmem) = 'KNL';
+	dst = pmem + 3;
 	stage = quote = 0;
 
 	// Parse the command line
@@ -132,8 +128,7 @@ unsigned int stage, tmp, quote;
 					while(*bk <= '"')
 						bk++;
 					cur += 4;
-					if((hFind = FindFirstFile(bk, &fdata)) != INVALID_HANDLE_VALUE){
-						FindClose(hFind);
+					if(GetFileAttributes(bk) != INVALID_FILE_ATTRIBUTES){
 						tmp += 3;
 						start = buf;
 					}else
@@ -160,28 +155,28 @@ unsigned int stage, tmp, quote;
 	*((unsigned int*)dst) = 'PO/ ';
 	*((unsigned int*)(dst + 4)) = 'ON:T';
 	*((unsigned int*)(dst + 8)) = 'FER';
-	stage = 0;
+	tmp = 0;
 
 	// Run the real linker
 	GetStartupInfo(&sinfo);
-	if(CreateProcess(0, pMem, 0, 0, 1, 0, 0, 0, &sinfo, &pinfo)){
+	if(CreateProcess(0, pmem, 0, 0, 1, 0, 0, 0, &sinfo, &pinfo)){
 		CloseHandle(pinfo.hThread);
 		WaitForSingleObject(pinfo.hProcess, INFINITE);
-		GetExitCodeProcess(pinfo.hProcess, &stage);
+		GetExitCodeProcess(pinfo.hProcess, &tmp);
 		CloseHandle(pinfo.hProcess);
 	}else{
-		WriteFile(hOut, err4, sizeof(err4) - 1, &stage, 0); // Couldn't spawn the linker
-		stage = -1;
+		if(hOut)
+			WriteFile(hOut, err3, sizeof(err3), &tmp, 0); // Couldn't launch the linker
+		tmp = -1;
 	}
-	HeapFree(GetProcessHeap(), 0, pMem);
-	return stage;
+	return tmp;
 }
 
 // Program entry point
 void start(void){
 int cnt, err = ep();
 	if(copy_LNK)
-		for(cnt = 0; cnt < 7 && !DeleteFile("LNK.EXE"); cnt++) // Try to delete LNK.EXE
+		for(cnt = 0; cnt < 5 && !DeleteFile("LNK.EXE"); cnt++) // Try to delete LNK.EXE (only if we did copy this file)
 			Sleep(128);
 	ExitProcess(err);
 }
