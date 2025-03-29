@@ -94,8 +94,8 @@ unsigned int tmp, stage, quote;
 		cur = buf;
 		if(*cur == '"')
 			cur++;
-		*(unsigned int*)start = 'KNL\\';
-		*(unsigned int*)(start + 4) = 'EXE.';
+		*(int*)start = 'KNL\\';
+		*(int*)(start + 4) = 'EXE.';
 		*(start + 8) = 0;
 		if(!CopyFile(cur, "LNK.EXE", 0)){
 			if(hOut)
@@ -105,7 +105,7 @@ unsigned int tmp, stage, quote;
 		copy_LNK = 1;
 	}
 	start = cur = GetCommandLine();
-	*((unsigned int*)pmem) = 'KNL';
+	*((int*)pmem) = 'KNL';
 	dst = pmem + 3;
 	stage = quote = 0;
 
@@ -121,7 +121,7 @@ unsigned int tmp, stage, quote;
 					start = cur;
 					continue;
 				}
-				if((*((unsigned int*)cur) | 0x20202020) == 'jbo.'){
+				if((*((int*)cur) | 0x20202020) == 'jbo.'){
 					cmemcpy(buf, start, (tmp = cur + 1 - start));
 					*((unsigned int*)(buf + tmp)) = 'bil';
 					bk = buf;
@@ -152,9 +152,9 @@ unsigned int tmp, stage, quote;
 	}
 	cmemcpy(dst, start, (tmp = cur - start));
 	dst += tmp;
-	*((unsigned int*)dst) = 'PO/ ';
-	*((unsigned int*)(dst + 4)) = 'ON:T';
-	*((unsigned int*)(dst + 8)) = 'FER';
+	*((int*)dst) = 'PO/ ';
+	*((int*)(dst + 4)) = 'ON:T';
+	*((int*)(dst + 8)) = 'FER';
 	tmp = 0;
 
 	// Run the real linker
