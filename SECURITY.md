@@ -19,7 +19,7 @@ The following security policies are applicable to the **ImpLib SDK** source code
 
 ## Reporting a Vulnerability
 
-Please, use the [Security Advisories](/vkamenar/implib-sdk/security/advisories) to report vulnerabilities or any other security concerns.
+Please, use the [Security Advisories](https://github.com/vkamenar/implib-sdk/security/advisories) to report vulnerabilities or any other security concerns.
 
 ## Security Update policy
 
