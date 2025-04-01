@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8">
+<meta name="description" content="ImpLib SDK combines free programming tools for authoring custom import libraries with advanced features, like cdecl2stdcall conversion, importing by ordinal, removing original thunk.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ImpLib SDK">
+<meta property="og:description" content="ImpLib SDK combines free programming tools for authoring custom import libraries with advanced features, like cdecl2stdcall conversion, importing by ordinal, removing original thunk.">
+<meta property="og:image" content="https://vkamenar.github.io/implib-sdk/logo.png">
+<meta property="og:url" content="https://vkamenar.github.io/implib-sdk/index.html">
+<title>ImpLib SDK</title>
+<link rel="canonical" href="https://vkamenar.github.io/implib-sdk/">
+<link rel="alternate" href="https://vkamenar.github.io/implib-sdk/index.html" hreflang="en">
+<link rel="alternate" href="https://vkamenar.github.io/implib-sdk/ind_es.htm" hreflang="es">
+<link rel="alternate" href="https://vkamenar.github.io/implib-sdk/ind_ru.htm" hreflang="ru">
+<link rel="alternate" href="https://vkamenar.github.io/implib-sdk/index.html" hreflang="x-default">
+</head><body style='margin:0'>
+<div style='padding:10px;background:#EEE;border:1px solid #DDD'>
+<a href="https://github.com/vkamenar/implib-sdk"><img alt="GitHub" src="github.png" border=0 align=right></a>
+<div style='text-align:center'>[ English | <a href='ind_es.htm'>Espa&#241;ol</a> | <a href='ind_ru.htm'>Pycc&#954;u&#250;</a> ]<br>
+<b>ImpLib SDK v2.0.1</b><br>
+[ <a href='https://github.com/vkamenar/implib-sdk/releases'>Download</a> | <a href='EN.HTM'>Guide</a> ]</div>
+</div>
+<div style='background:#FFF;text-align:justify;padding:10px'>
+<p><b>Import libraries</b> are used to link an executable file to a dynamic-link library (DLL) or another executable containing an export table.
+Usually, the import library is provided by the DLL developer, so that other developers can link to that specific DLL.
+For example, Microsoft<sup>&reg;</sup> provides the import libraries for the Windows system DLL (e.g., <code>kernel32.dll</code>, <code>user32.dll</code>).
+Usually, the import libraries have the same file extension and the same format as the static libraries. For example, <code>kernel32.lib</code> can be the import library for <code>kernel32.dll</code>.
+The standard import library file format supported by most linkers for Windows is MS <a href="https://learn.microsoft.com/en-us/windows/win32/debug/pe-format" target="_blank">COFF</a>.
+<div itemscope itemtype="https://schema.org/CreativeWork">
+<img itemprop="image" src='logo.png' align='left' hspace='8' vspace='8' alt="ImpLib SDK"><b><span itemprop="name"><link itemprop="sameAs" href="https://www.wikidata.org/wiki/Q107297586">ImpLib SDK</span></b> <span itemprop="description">combines free programming tools for authoring custom import libraries for Windows DLL (32 and 64-bit). The SDK supports advanced features, like <i>cdecl2stdcall</i> conversion, importing by ordinal, removing <i>original thunk</i></span>.
+There are many non-standard use cases, like interfacing a DLL with <i>cdecl</i> calling convention from Visual Basic 6, prototyping a set of DLL functions for PureBasic, mangling the symbolic aliases for an existing object
+file and so on. ImpLib SDK provides a set of tools to solve this kind of problems. It is not necessary to understand the internal structure of an Import Library file to use these tools.
+<p>The ImpLib SDK is also useful to overcome any legal restrictions when redistributing the import libraries for certain DLL files, like the Microsoft<sup>&reg;</sup> C++ runtime.
+The <a href="https://learn.microsoft.com/en-us/cpp/c-runtime-library/crt-library-features?view=msvc-160" target="_blank">import libraries for the CRT or STL</a> are part of the Windows SDK.
+Even though the SDK is available for free, redistributing these files is not allowed according to the current license agreements. An alternative is to generate the import libraries using the ImpLib SDK,
+as it doesn't restrict redistribution.
+<p><span itemprop="hasPart" itemscope itemtype="https://schema.org/CreativeWork">One of the ImpLib SDK tools is <a itemprop="url" href="EN.HTM#2"><b itemprop="name"><link itemprop="sameAs" href="https://www.wikidata.org/wiki/Q107529066">DLL2DEF</b></a>. <span itemprop="description">It's a command-line utility to extract the dynamic-link library symbols in plain text format.</span></span>
+<p>The <a href='EN.HTM'>ImpLib SDK Guide</a> provides a more detailed description and a set of usage tutorials.
+<p>The ImpLib SDK can also generate import libraries for Visual Basic 6, <a href="https://github.com/vkamenar/implib-sdk/discussions/3" target="_blank">even if the DLL uses a non-<i>stdcall</i> calling convention, like <i>cdecl</i></a>.
+One of the sample projects included into the ImpLib SDK shows how to use the OpenAL API with Visual Basic 6. The OpenAL DLL uses the <i>cdecl</i> calling convention.
+<p>The ImpLIb SDK open source repository and official releases are available for free on <a href="https://sourceforge.net/p/implib/">Sourceforge</a> and <a href="https://github.com/vkamenar/implib-sdk">GitHub</a>.
+<p><a href='PBOpenAL.htm'>PureBasic OpenAL SDK</a> is hosted here as well. It was built using the ImpLib SDK.
+<p>The ImpLib SDK is free even for commercial use and redistribution of any kind, as long as all copyrights are preserved. The whole package is provided "AS IS".</div></div>
+<div style='background:#D4FFFF;padding:10px;margin:10px;border:1px solid #507B7B'>
+<b>ImpLib SDK Version History:</b><br>&nbsp;
+<table border=0 cellpadding=0>
+<tr><td valign=top width=84><b>2025-03-09</b><td>v2.0.1 supports LLVM linker (lld-link).
+<tr><td valign=top><b>2025-01-20</b><td>v2.0.0 supports 64-bit libraries (x64).
+<tr><td valign=top><b>2024-12-13</b><td>v1.9.1 produces more compact output files. More samples added. Documentation revised and updated.
+<tr><td valign=top><b>2021-06-25</b><td>v1.9 supports long DLL filenames. Spanish translation added.
+<tr><td colspan=2>&nbsp;&nbsp;...
+<tr><td><b>2006</b><td>First public release
+</table>
+</div>
+<p><center><small>&#169; <span itemprop="copyrightYear">2006</span> - 2025 <span itemprop="author" itemscope itemtype="https://schema.org/Person"><a itemprop="url" href="https://www.celersms.com/org/vkamenar.htm"><span itemprop="name"><link itemprop="sameAs" href="https://www.facebook.com/vladimir.kamenar.1"><link itemprop="sameAs" href="https://twitter.com/KamenarVladimir"><link itemprop="sameAs" href="https://www.linkedin.com/in/vladimir-kamenar/"><link itemprop="sameAs" href="https://www.wikidata.org/wiki/Q106606516">Vladimir Kame&#241;ar</span></a></span>
+<br>All rights reserved</small></center>&nbsp;<br></body></html>
