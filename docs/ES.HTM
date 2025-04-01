@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="es">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8">
+<meta name="description" content="ImpLib SDK combina herramientas de desarrollo gratuitas para crear librerías de importación personalizadas con funciones avanzadas, como conversión cdecl2stdcall, importación por ordinal, eliminación de saltos (original thunk).">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ImpLib SDK">
+<meta property="og:description" content="ImpLib SDK combina herramientas de desarrollo gratuitas para crear librerías de importación personalizadas con funciones avanzadas, como conversión cdecl2stdcall, importación por ordinal, eliminación de saltos (original thunk).">
+<meta property="og:image" content="https://vkamenar.github.io/implib-sdk/logo.png">
+<meta property="og:url" content="https://vkamenar.github.io/implib-sdk/ES.HTM">
+<title>ImpLib SDK</title>
+<link rel="canonical" href="https://vkamenar.github.io/implib-sdk/ES.HTM">
+<link rel="alternate" href="https://vkamenar.github.io/implib-sdk/EN.HTM" hreflang="en">
+<link rel="alternate" href="https://vkamenar.github.io/implib-sdk/ES.HTM" hreflang="es">
+<link rel="alternate" href="https://vkamenar.github.io/implib-sdk/RU.HTM" hreflang="ru">
+<link rel="alternate" href="https://vkamenar.github.io/implib-sdk/EN.HTM" hreflang="x-default">
+</head><body style="text-align:justify">
+<div id="top" itemscope itemtype="https://schema.org/Article"><meta itemprop="inLanguage" content="es">
+<center><span style='color:#708090'>[ <a href='EN.HTM'>English</a> | Espa&#241;ol | <a href='RU.HTM'>Pycc&#954;u&#250;</a> ]</span>
+<h2 itemprop="headline" style='margin:4px'>ImpLib SDK</h2><span style='color:#708090'>[ <a href='https://github.com/vkamenar/implib-sdk/releases'>Descargar</a> ]</span></center>
+<p align="right">Fecha de publicación: <b itemprop="datePublished">2007-02-01</b><br>Última actualización: <b itemprop="dateModified">2025-03-09</b><br>Autor: <span itemprop="author" itemscope itemtype="https://schema.org/Person"><a itemprop="url" href="https://www.celersms.com/org/vkamenar-es.htm"><b itemprop="name"><link itemprop="sameAs" href="https://www.facebook.com/vladimir.kamenar.1"><link itemprop="sameAs" href="https://twitter.com/KamenarVladimir"><link itemprop="sameAs" href="https://www.linkedin.com/in/vladimir-kamenar/"><link itemprop="sameAs" href="https://www.wikidata.org/wiki/Q106606516">Vladimir Kame&#241;ar</b></a></span>
+<div style="background:#e1f5fa;padding:10px;border:1px solid #abbbbf;display:inline-block">
+<a href="#0">Instalación y uso</a>
+<br><a href="#1">¿Cómo funciona?</a>
+<br><a href="#2">DLL2DEF</a>
+<br><a href="#3">Modificaciones para Visual Basic y PureBasic</a>
+<br><a href="#T1">MSVCRT.lib para MASM32 y NASM</a>
+<br><a href="#T2">OpenAL PureBasic Userlib</a>
+<br><a href="#4">Preguntas, comentarios</a>
+</div><br>&nbsp;
+<div itemprop="articleBody">
+<p><div itemscope itemtype="https://schema.org/CreativeWork"><img itemprop="image" src='logo.png' alt="ImpLib SDK" width="33" height="21"> <b><span itemprop="name"><link itemprop="sameAs" href="https://www.wikidata.org/wiki/Q107297586">ImpLib SDK</span></b> <span itemprop="description">combina herramientas de desarrollo gratuitas para crear librerías de importación personalizadas para las DLL de Windows (32 y 64 bits). El SDK soporta funciones avanzadas, como conversión <i>cdecl2stdcall</i>, importación por ordinal, eliminación de saltos (<i>original thunk</i>), acceso a funciones internas no documentadas</span>:
+<ul>
+<li>Importación por ordinal. Por ejemplo, supongamos que la DLL tiene esta función: <code>MiDLL!cierta_funcion ord.20</code>.
+El nombre simbólico es <code>cierta_funcion</code>, mientras que el ordinal es 20. Por lo general, no se recomienda realizar importación por ordinal,
+ya que los ordinales pueden cambiar entre versiones de la DLL. Sin embargo, puede aprovechar el uso de ordinales si sabe que la versión de la DLL
+no cambiará o el desarrollador de la DLL garantiza la consistencia de los ordinales (por ejemplo, Usted es el desarrollador de la DLL y mantiene los
+ordinales fijos en las versiones subsiguientes). La importación por ordinal reduce significativamente el tiempo de carga del ejecutable y reduce el tamaño
+en bytes de la sección de importación. Por cierto, si planea usar siempre la misma compilación de DLL, considere enlazar sus ejecutables mediante el proceso
+de <a href="https://learn.microsoft.com/es-es/cpp/build/reference/bind"><i>binding</i></a>. Esto reduce aún más el tiempo de carga.
+<li>Combinar símbolos de diferentes librerías DLL en una única librería de importación. Por ejemplo, puede crear una única librería que contenga las
+entradas de KERNEL32, USER32, GDI32 y otras API estándar de Windows, bajo un nombre común como win32api.lib. Puede incluir esta única librería de importación
+en lugar de especificar kernel32.lib, user32.lib, gdi32.lib y así sucesivamente.
+<li>Al utilizar funciones DLL que no son de tipo <i>stdcall</i> desde Visual Basic 6, PureBasic y otros entornos de desarrollo, es posible que la convención de
+llamado no sea compatible. ImpLib puede generar el código de conversión de CDECL y otras convenciones de llamado a STDCALL con muy poco peso adicional.
+<li>ImpLib puede generar librerías sin saltos, conocidos como <i>original thunk</i>. Cuando se utiliza una librería de importación libre de estos saltos,
+el ejecutable final tampoco los incluye. Esto significa que se puede reducir el tamaño del ejecutable al utilizar librerías de importación sin saltos.
+Para generar una librería de importación sin dichos saltos desactive el parámetro de configuración <code>KEEP_ORIGINAL_THUNK</code>.
+Nótese que no será posible aplicar <i>binding</i> si se remueven los saltos. Por lo demás, el ejecutable será válido en cualquier versión de Windows.
+</ul>
+<p>Las librerías de importación generadas con ImpLib SDK son compatibles con cualquier <i>linker</i> que soporte el formato MS COFF. En particular, el SDK se ha
+probado exhaustivamente en materia de compatibilidad con los siguientes <i>linker</i>:
+<ul>
+<li><i>Pelle's Linker</i>, también llamado <b>polink</b>, es un <i>linker</i> gratuito y confiable creado por Pelle Orinius, el desarrollador de
+<a href="http://www.smorgasbordet.com/pellesc/">Pelle's C</a>. No se han detectado problemas de compatibilidad al utilizar importación de 32 y 64 bits
+o combinar librarías con y sin saltos.
+<li>El <i>linker de MS</i> forma parte de Visual C++ y el SDK de Windows. Todas las versiones son compatibles. La versión de 32 bits puede producir el error
+LNK1102 al utilizar librerías de importación que excedan cierto tamaño. ImpLib SDK emite una advertencia de compatibilidad cuando la librería de importación
+exceda dicho tamaño máximo. Normalmente, esto puede suceder cuando la DLL exporta más de 1500 símbolos. El tamaño de cada símbolo también cuenta. La solución
+es utilizar el <i>linker</i> de 64 bits. Al utilizar el <i>linker de MS</i>, no se recomienda combinar librerías de importación con y sin saltos. Es más seguro
+utilizar solamente librerías con saltos o sólo sin saltos, pero no ambos tipos de librerías al tiempo. De lo contrario, las tablas de importación en el
+ejecutable final podrían corromperse.
+<li>El <i>linker de GNU</i>, también conocido como <b>LD</b>, se puede encontrar, por ejemplo, en las instalaciones de
+<a href="https://www.mingw-w64.org/">MinGW</a>. Se admiten DLL de 32 y 64 bits. Este <i>linker</i> se puede utilizar para realizar una compilación cruzada para
+Win32 o Win64 desde Linux u otro sistema operativo. Las librerías de importación sin saltos también están soportadas.
+<li>El <i>linker LLVM</i>, también conocido como <a href="https://lld.llvm.org/"><b>lld-link</b></a>, es parte del proyecto LLVM. Se caracteriza por su alto
+rendimiento y la capacidad de realizar compilación cruzada desde otras plataformas y sistemas operativos. No se han detectado problemas de compatibilidad. Sin
+embargo, este <i>linker</i> requiere de una estructura de archivo de las librerías de importación ligeramente diferente. Al compilar la librería de importación
+para compatibilidad con este <i>linker</i> es necesario activar el parámetro de configuración <code>RENAME_AR_MEMBERS</code>. La misma librería también se puede
+utilizar con el <i>linker de GNU</i>. La siguiente tabla resume el estado de compatibilidad.
+</ul>
+<table cellpadding=4 style="border:1px solid #ddd;margin-left:auto;margin-right:auto;text-align:center">
+<tr><th>RENAME_AR_MEMBERS<th>Pelle's<br>(polink)<th>MS<th>GNU<br>(LD)<th>LLVM<br>(lld-link)
+<tr><td>0<td>&#10003;<td>&#10003;<td>&#10003;<td>&#10007;
+<tr><td>1<td>&#10007;<td>&#10007;<td>&#10003;<td>&#10003;
+</table>
+&nbsp;
+<h4 id='0'>Instalación y uso</h4>
+<p>Descomprima ImpLib SDK en cualquier directorio. Luego ejecute <code>build_libs.bat</code>.
+Este archivo <i>batch</i> crea o recrea las librerías de importación incluidas como ejemplo, a saber: MSVCRT, API del sistema para Win32 y Win64.
+<p>Los archivos de salida se almacenan bajo el subdirectorio <code>lib</code>. Se crean dos librerías de importación por cada archivo de entrada.
+Una de las librerías utiliza el formato y convención de nombres internos de MS. La otra librería utiliza el formato y nombres compatibles con GNU LD y LLVM.
+Esta última se almacena en el subdirectorio <code>lib\lld</code>.
+<p>Si agrega nuevas definiciones para librerías de importación o modifica los archivos de ejemplo, simplemente vuelva a ejecutar <code>build_libs.bat</code>.
+Sólamente se recompilarán los archivos nuevos o modificados.
+<br>&nbsp;
+<h4 id='1'>¿Cómo funciona?</h4>
+<p>El primer paso es generar un listado de los símbolos (es decir, funciones) exportados por la DLL. El listado se almacena en formato de texto plano.
+La sintaxis es similar al formato de archivo DEF de Microsoft. Por ejemplo, hagamos una librería de importación con algunas funciones de Entrada/Salida
+disponibles en <code>KERNEL32.DLL</code>:<pre>
+include 'implib.inc'
+
+   ; KERNEL32.DLL
+   implib kernel32.dll, CreateFileA
+   implib kernel32.dll, CreateFileW
+   implib kernel32.dll, ReadFile
+   implib kernel32.dll, SetFilePointer
+   implib kernel32.dll, CloseHandle
+
+endlib
+</pre>
+<p>Todo lo que esté precedido por punto y coma es un comentario. Antes de comenzar a declarar los símbolos, se debe agregar una referencia ya sea a
+<code>implib.inc</code> (si la DLL es de 32 bits), ya sea a <code>implib64.inc</code> (si la DLL es de 64 bits). Se requiere indicar la ruta relativa o absoluta,
+a menos que <code>implib.inc</code> o <code>implib64.inc</code> esté en el mismo directorio donde se encuentra el archivo DEF. Después de completar la lista, no
+olvide agregar la macro <code>endlib</code>. Cada definición de símbolo comienza con la macro <code>implib</code>, seguida por el nombre de DLL y el nombre
+simbólico de la función. Puede especificar el valor ordinal en lugar del nombre simbólico, colocando el prefijo 'ord.':<pre>
+   implib kernel32.dll, <span style="background-color:#FF0">ord.5</span>
+</pre>Si desea que el <i>linker</i> indexe un símbolo con un nombre público diferente, agregue otro argumento con el nombre que desee:<pre>
+   implib kernel32.dll, CreateFileA, <span style="background-color:#FF0">CreateFile</span>
+</pre>
+<p>De esta manera, cuando se hace referencia a <code>CreateFile</code> en el código objeto, el <i>linker</i> lo resolverá como <code>KERNEL32!CreateFileA</code>. Por lo tanto,
+no es necesario especificar el sufijo 'A'. Esta función es útil para traducir nombres simbólicos. Por ejemplo, las herramientas de MS asumen que la
+función STDCALL de 32 bits <code>CreateFileA</code> con 7 argumentos debe llamarse <code>_CreateFileA@28</code>.
+Teniendo esto en cuenta, si estamos enlazando con la DLL de 32 bits KERNEL32.DLL, podemos reescribir nuestro primer ejemplo para que sea compatible con las convenciones de nombres de MS:<pre>
+include 'src\implib.inc'
+
+   ; KERNEL32.DLL
+   implib kernel32.dll, CreateFileA,    _CreateFileA@28
+   implib kernel32.dll, CreateFileW,    _CreateFileW@28
+   implib kernel32.dll, ReadFile,       _ReadFile@20
+   implib kernel32.dll, SetFilePointer, _SetFilePointer@16
+   implib kernel32.dll, CloseHandle,    _CloseHandle@4
+
+endlib
+</pre>
+<p>Como puede ver, los nombres STDCALL en modo de 32 bits tienen como prefijo el signo de subrayado (<code>_</code>) y el sufijo es el signo de arroba seguido de un valor decimal (<code>@#</code>).
+Ese valor decimal es el tamaño en bytes de la lista de argumentos. Generalmente, este valor es el número de argumentos x4, ya que la mayoría de los argumentos son de 32 bits o se encuentran alineados a 32 bits (32 bits = 4 bytes).
+<p>Esta convención de nombres no se aplica en modo de 64 bits. Por lo tanto, si pretendemos enlazar con la versión de 64 bits de KERNEL32.DLL, el listado sería como sigue:<pre>
+include 'src\<span style="background-color:#FF0">implib64.inc</span>'
+
+   ; KERNEL32.DLL
+   implib kernel32.dll, CreateFileA
+   implib kernel32.dll, CreateFileW
+   implib kernel32.dll, ReadFile
+   implib kernel32.dll, SetFilePointer
+   implib kernel32.dll, CloseHandle
+
+endlib
+</pre>
+<p>Como habrá notado, la DLL se llama KERNEL32, aunque la versión sea de 64 bits (Win64). Microsoft mantiene intencionalmente los mismos nombres de DLL.
+<p>Guardemos el listado, ya sea la versión de 32 o 64 bits, con el nombre <code>kernel32.def</code>. Puede elegir cualquier otro nombre. Estamos listos para compilarlo desde la línea de comandos:
+<p><center><table border=0 cellpadding=8>
+<tr bgcolor=#000000><td><pre><font color=#FFFFFF>   <b>bin\fasm kernel32.def kernel32.lib</b>
+   flat assembler  version 1.67.23  (533081 kilobytes memory) 
+   DLL symbols indexed: 5
+   3 passes, 4313 bytes.</font></table></center>
+<p>¡Obtuvimos un archivo llamado <code>kernel32.lib</code>! Por cierto, <a href="https://flatassembler.net/">FASM</a> es realmente un ensamblador, pero su
+preprocesador es tan avanzado que podemos usarlo para ejecutar el motor de ImpLib.
+<p>Existen más argumentos opcionales para la macro <code>implib</code>. Puede abrir <code>implib.inc</code> o <code>implib64.inc</code> en un editor de texto plano y leer el encabezado con la descripción detallada de todos los argumentos.
+<br>&nbsp;
+<div itemprop="hasPart" itemscope itemtype="https://schema.org/CreativeWork"><h4 id='2' itemprop="name"><link itemprop="sameAs" href="https://www.wikidata.org/wiki/Q107529066">DLL2DEF</h4>
+<p itemprop="description">Es una herramienta de línea de comandos para extraer en formato de texto plano los símbolos de las bibliotecas de vínculos dinámicos. DLL2DEF soporta DLL tanto de 32 como de 64 bits.</p>
+</div>
+</div>
+<p>Las DLL grandes pueden contener muchísimas funciones. Listarlas manualmente en un archivo de texto sería una tarea demasiado tediosa. Esta herramienta,
+la cual se incluye dentro del subdirectorio <code>\bin</code>, sirve para automatizar este proceso. Al ejecutar <code>dll2def</code>, sin argumentos de línea de comandos, obtenemos la siguiente respuesta:<p><center><table border=0 cellpadding=8>
+<tr bgcolor=#000000><td><pre><font color=#008000> ImpLib SDK DLL2DEF</font><font color=#FFFFFF>
+ USAGE: dll2def [options] file [output]
+   file   - input filename
+   output - optional output filename
+ Options:
+   /COMPACT - Don't add comments
+   /PB      - PureBasic mod
+   /VB      - Visual Basic 6 mod
+ Example:
+ dll2def \windows\system32\kernel32.dll test.def </font></table></center>
+<p>Por ejemplo, procedamos a ejecutar:<pre>
+   <b>bin\dll2def c:\windows\system32\kernel32.dll</b>
+</pre>
+<p>Obtuvimos un archivo llamado <code>kernel32.def</code> con el listado de todas las funciones públicas de KERNEL32.DLL.
+La referencia de <code>implib.inc</code>, la cual corresponde a DLL de 32 bits, o su equivalente <code>implib64.inc</code> para las DLL de 64 bits contiene
+la ruta completa si el archivo <code>inc</code> se encuentra en el mismo directorio que <code>dll2def.exe</code>.
+Por lo tanto, puede mover el archivo <code>def</code> a cualquier ubicación sin tener que actualizar la ruta del archivo <code>inc</code>.
+Cada definición de símbolo comienza con unos comentarios, a saber:<pre>
+   ; KERNEL32.AddVectoredExceptionHandler ord.9
+   ; -> NTDLL.RtlAddVectoredExceptionHandler
+   implib kernel32.dll, AddVectoredExceptionHandler
+</pre>
+<p>Los comentarios incluyen el nombre simbólico completo (si está disponible), el valor ordinal y la referencia de otras DLL, si corresponde.
+Conocer el ordinal es útil si existe una buena razón para utilizar la importación por ordinal. La referencia hacia otra DLL significa que el símbolo exportado
+realmente corresponde a otra DLL. En el ejemplo anterior, el símbolo <code>AddVectoredExceptionHandler</code> de KERNEL32.DLL realmente corresponde a una
+función de NTDLL. Puede actualizar la definición del símbolo para importar directamente desde la DLL real, pero generalmente no se recomienda hacer esto por razones de compatibilidad.
+Si no desea ver estos comentarios en el listado, simplemente agregue <code>/COMPACT</code> justo antes del nombre de archivo de entrada en el llamado a DLL2DEF:<pre>
+   <b>bin\dll2def /COMPACT c:\windows\system32\kernel32.dll</b>
+</pre>
+<br>&nbsp;
+<h4 id='3'>Modificaciones</h4>
+<p>Actualmente existen 2 modificaciones o <i>mods</i>:<ul>
+<li>El mod de Visual Basic sirve para utilizar las DLL de tipo CDECL y otras que no son STDCALL en Visual Basic 6.
+<li>El mod de PureBasic es útil para crear Userlibs de PureBasic que interactúen con DLL externas, especialmente con DLL de tipo CDECL.</ul>
+<p>Reemplace la macro <code>implib</code> con <code>vbimplib</code> o <code>pbimplib</code> en el archivo <code>def</code> para usar las modificaciones de Visual Basic o PureBasic respectivamente.
+Al llamar a DLL2DEF, agregue el parámetro <code>/VB</code> o <code>/PB</code> en la línea de comandos para que se use el mod correspondiente. Puede consultar los tutoriales
+a continuación para ver ejemplos más completos.
+<p>Los siguientes minitutoriales presentan ejemplos de uso reales:<ul>
+<li>Propósito general: <a href="#T1">MSVCRT.lib para MASM32 y NASM</a>.
+<li>Mod de PureBasic: <a href="#T2">OpenAL PureBasic Userlib</a>.</ul>
+<br>&nbsp;
+<h4 id='T1'>MSVCRT.lib para MASM32 y NASM</h4>
+<p>La librería de tiempo de ejecución (<i>runtime</i>) de Microsoft Visual C, conocida como MSVCRT.DLL, exporta más de 1300 funciones,
+automatizando muchas tareas de programación comunes, como formateo de Entrada/Salida por consola, administración de memoria, manipulación de
+cadenas de texto, ordenamiento, etc. Las mismas funcionalidades pueden ser implementadas por medio de la API de Windows. Sin embargo, dado que la
+librería de C casi siempre está preinstalada en todas las versiones de Windows (excepto en Windows 95), podría ser útil hacer uso de esta DLL en lugar de
+crear versiones propias de <code>printf()</code>, <code>malloc()</code>, etc. Entonces, el objetivo de nuestro primer tutorial es crear un par de programas de ejemplo en MASM32 y
+NASM usando MSVCRT.DLL.
+<p>Comencemos con MASM32. Ya existe un archivo de cabecera para MSVCRT, llamado <code>msvcrt.inc</code>, en la última versión de MASM32, pero no se
+incluye la librería de importación <code>msvcrt.lib</code> necesaria para el <i>linker</i>. Si tiene Visual Studio instalado, allí puede obtener la versión dinámica de
+<code>msvcrt.lib</code>, pero hay un pequeño conflicto de nombres con las funciones <code>div()</code> y <code>fabs()</code>. No se puede usar <code>div</code> o <code>fabs</code> como nombre de una función
+en MASM32 o NASM, ya que se genera un conflicto con los mnemónicos (conjunto de instrucciones x86) del mismo nombre. El mismo error se presenta
+cuando se usan nombres con sólo caracteres numéricos, o cualquiera de las palabras reservadas por el compilador, como <code>proc</code>, <code>label</code>, etc. Las librerías de
+importación en Visual Studio a veces introducen dependencias adicionales de <code>OLDNAMES.lib</code>, <code>UUID.lib</code> y otras. Parece que no se permite redistribuir la
+librería de importación de Visual Studio original. Por eso MASM32 no incluye <code>msvcrt.lib</code>.
+<p>Por lo tanto, crearemos nuestra propia <code>MSVCRT.lib</code> sin derechos de autor de terceros, sin generar conflicto con las palabras reservadas de MASM o NASM.
+<p>El primer paso es crear el listado con todos los nombres públicos que se encuentran en MSVCRT.DLL:<pre>
+   <b>bin\dll2def /COMPACT \windows\system32\msvcrt.dll</b>
+</pre>
+<p>A continuación, necesitamos resolver el conflicto de nombres. Podemos abrir <code>msvcrt.def</code> en el Bloc de notas y buscar la siguiente línea:<pre>
+   implib msvcrt.dll, div
+</pre>
+<p>Dado que <code>div</code> es el mnemónico de división de enteros sin signo, necesitamos cambiar el nombre de esta función.
+Steve Hutchesson (<i>Hutch</i>), el creador del SDK de MASM32, sugirió agregar el prefijo '<code>_crt_</code>' (refiérase al foro oficial de masm32 para mayor detalle). Entonces, quedaría como sigue:<pre>
+   implib msvcrt.dll, div, <span style="background-color:#FF0">_crt_</span>div
+</pre>
+<p>Hagamos lo mismo con la función de <code>fabs</code>. Se recomienda agregar '<code>_</code>' como prefijo en el alias de salto (<i>thunk</i>) para todos los nombres de
+funciones que no comiencen con este caracter. Esto permite llamar a estas funciones a través de la macro <code>invoke</code> en MASM32. Por ejemplo:<pre>
+   ; MSVCRT.printf ord.742
+   implib msvcrt.dll, printf
+</pre>
+<p>Se recomienda actualizar la definición de la siguiente manera:<pre>
+   ; MSVCRT.printf ord.742
+   implib msvcrt.dll, printf, _printf
+</pre>
+<p>La misma definición incluyendo el ordinal sería así:<pre>
+   ; MSVCRT.printf ord.742
+   implib msvcrt.dll, ord.742, _printf, __imp__printf
+</pre>
+<p>Dado que el nombre real de la función se pierde cuando se usa su ordinal, se recomienda especificar el alias de salto (<code>_printf</code>) y el nombre
+público de importación (<code>__imp__printf</code>) explícitamente en este caso. ImpLib no necesita estos nombres, pero hacer el llamado a <code>printf()</code> será complicado sin los nombres.
+<p>Compilemos la librería. Dado que ImpLib se ejecuta en modo interpretado por el preprocesador de FASM y el archivo <code>def</code> contiene muchísimas funciones,
+puede tardar un tiempo en completar la tarea:<pre>
+   <b>\bin\fasm msvcrt.def msvcrt.lib</b>
+   flat assembler  version 1.67.23  (518320 kilobytes memory)
+   DLL symbols indexed: 1372
+   3 passes, 21.4 seconds, 845227 bytes.
+</pre>
+<p>Ahora tenemos nuestra propia <code>msvcrt.lib</code>. O una serie de errores de sintaxis, símbolos duplicados u otros mensajes poco alentadores.
+Hay que corregir los errores y compilar de nuevo. Una versión de <code>msvcrt.def</code> lista para usar está disponibles en <code>\src\MSVCRT32</code>.
+<p>Para llamar las funciones de C en MASM32 usando <code>invoke</code>, necesita especificar los prototipos. Hay un ejemplo de un archivo de cabecera con prototipos
+C en <code>\src\MSVCRT32\test_masm\msvcrt.inc</code>. Como alternativa, puede usar <code>PROTO</code> en lugar de <code>externdef</code>, si desea llamar a la librería de C por medio de saltos
+(<i>thunk</i>). Por ejemplo:<pre>
+   printf PROTO C :DWORD,:VARARG
+</pre>
+<p>El llamado a <code>printf()</code> usando <code>invoke</code> con el prototipo anterior generará <code>call &lt;jmp msvcrt!printf&gt;</code> en lugar del llamado directo
+<code>call msvcrt!printf</code>. En otras palabras, se utilizará un salto adicional. El uso de estos saltos no favorece el rendimiento. Por eso, en la
+mayoría de los casos se recomienda crear los prototipos de funciones externas con <code>externdef</code>:<pre>
+   cdecl_dword_vararg typedef PROTO C :DWORD,:VARARG
+   externdef _imp__printf:PTR cdecl_dword_vararg
+   printf equ <_imp__printf>
+</pre>
+<p>Ahora la invocación de <code>printf()</code> generará un llamado directo, sin saltos.
+<p>A continuación se presenta un ejemplo completo para MASM32 que utiliza <code>MSVCRT!printf</code>:<pre>
+   .386
+   .model flat,stdcall
+
+   ; MSVCRT API
+   include msvcrt.inc
+   includelib msvcrt.lib
+
+   .CODE
+   format db "Hola mundo!",0
+
+   start:
+      invoke printf,OFFSET format
+      ret
+   END start
+</pre>
+<p>Compilemos, enlacemos y ejecutemos el ejemplo desde la línea de comando:<pre>
+   <b>\masm32\bin\ml /c /coff test.asm
+   \masm32\bin\link /SUBSYSTEM:CONSOLE test.obj
+   test</b>
+   Hola mundo!
+</pre>
+<p>El mismo ejemplo, pero para NASM:<pre>
+   EXTERN __imp__printf
+   %define printf [__imp__printf]
+
+   section .text
+   format db "Hola mundo!",0
+
+   GLOBAL _start
+   _start:
+      push format
+      call printf
+      add esp,4 ; fix the stack
+      ret
+</pre>
+<p>Compilemos, enlacemos y ejecutemos:<pre>
+   <b>\nasm\nasm -fwin32 test.asm
+   \nasm\polink /ENTRY:start /SUBSYSTEM:CONSOLE test.obj msvcrt.lib
+   test</b>
+   Hola mundo!
+</pre>
+<p>Con esto se concluye el tutorial de MSVCRT.LIB.
+<br>&nbsp;
+<h4 id='T2'>OpenAL PureBasic Userlib</h4>
+<p>Vamos a generar un módulo Userlib para PureBasic que interactúe con una DLL externa. La DLL de ejemplo es OPENAL32.DLL, la cual ofrece la API
+de <a href="https://www.openal.org">OpenAL</a> v1.0 / v1.1. Esta DLL usa la convención de llamado CDECL para sus funciones de API.
+Podríamos usar la sintaxis de <b>ImportC</b> y el archivo <code>OpenAL32.lib</code> que se incluye en el SDK de OpenAL, o simplemente usar <b>OpenLibrary</b> seguido de
+<b>CallCFunctionFast</b> cada vez que necesitemos invocar una función de OpenAL. En este tutorial tomaremos un camino alterno: crearemos una librería Userlib para
+PureBasic, la cual nos dará acceso directo a OpenAL, con muy poco código adicional. Las llamadas hacia la API de OpenAL serán más rápidas en comparación con <b>CallCFunctionFast</b>,
+contaremos con validación de prototipos, ayuda en línea, además de otras ventajas que ofrece Userlib.
+<p>En primer lugar, necesitamos crear el listado de símbolos de importación:<pre>
+   <b>bin\dll2def /PB /COMPACT \windows\system32\OpenAL32.dll</b>
+</pre>
+<p>Esto creará un archivo llamado <code>openal32.def</code>, con la lista de los símbolos públicos que se encuentran en OpenAL32.dll. Por ejemplo:<pre>
+   pbimplib OpenAL32.dll, STDCALL, 0, alBuffer3f
+</pre>
+<p>La sintaxis completa de la macro <code>pbimplib</code> es la siguiente:<pre>
+   pbimplib dllname, convention, numarguments, real_name, PureBasics_name, public_name
+</pre>
+<p>El parámetro <code>dllname</code> contiene el nombre del archivo DLL. El parámetro <code>convention</code> identifica la convención de
+llamado para la función especificada. Actualmente se admiten los siguientes valores:<ul>
+<li><b>STDCALL</b> se usa por defecto en la mayoría de las DLL de Windows: KERNEL32.DLL, USER32.DLL, ...
+<li><b>CDECL</b> se usa principalmente en las DLL de C: MSVCRT.DLL, OPENAL32.DLL, ...
+<li><b>PBCALL</b> es la convención de llamado de PureBasic. Se proporciona a manera de ejemplo para mostrar cómo se extiende la funcionalidad de PBIMPLIB.
+Alguien podría considerar agregar convenciones de llamado más exóticas, como PASCAL, FASTCALL, etc.</ul>
+<p><code>numarguments</code> indica la cantidad de valores de 32 bits que se requieren para almacenar los argumentos de la función en la pila.
+Generalmente este valor coincide con la cantidad real de argumentos, excepto cuando se trata de parámetros de 64 bits (<code>double</code>, <code>__int64</code>, etc.)
+Este valor no se usa en STDCALL. <code>real_name</code> es el nombre de la función, tal y como aparece en la tabla de exportación de la
+DLL. Los 2 últimos parámetros son opcionales. <code>PureBasics_name</code> permite personalizar el nombre de la función en PureBasic.
+Por defecto, cuando no se especifica, se utiliza <code>real_name</code>. <code>public_name</code> está reservado para casos muy específicos,
+generalmente relacionados con la programación en ensamblador. Este parámetro permite especificar el nombre del símbolo para llamar a una función
+directamente, sin utilizar saltos (sin <i>thunk</i>). Revisemos el listado generado una vez más:<pre>
+   pbimplib OpenAL32.dll, STDCALL, 0, alBuffer3f
+</pre>
+<p><code>alBuffer3f()</code> no es una función STDCALL y no recibe 0 argumentos. DLL2DEF no puede adivinar la cantidad de argumentos y la convención de
+llamado. El uso de "STDCALL, 0" evita la restauración automática de la pila después del llamado a la función. El prototipo correcto debería ser:<pre>
+   pbimplib OpenAL32.dll, <span style="background-color:#FF0">CDECL, 5</span>, alBuffer3f
+</pre>
+<p>Puede actualizar las demás definiciones o simplemente usar el listado ya corregido en <code>src\PureBasic\openal32.def</code>. Compilemos:<pre>
+   <b>bin\fasm openal32.def Pbopenal.lib</b>
+</pre>
+<p>¿Sin errores? - Bien. El siguiente paso es crear una descripción de librería con el mismo nombre que la librería de importación recién creada,
+pero con extensión ".desc". En este ejemplo el archivo debería llamarse <code>Pbopenal.desc</code>. Consulte en <code>[PureBasic]\SDK\Readme.txt</code> para mayor información
+acerca de la herramienta LibraryMaker.<pre>
+   ; Lenguaje de la librería: ASM o C. En este caso debe ser C.
+   C
+
+   ; Cuántas DLL de Windows requiere esta librería: ninguna en este caso.
+   0
+
+   ; El tipo de librería (puede ser OBJ o LIB). Usaremos LIB, ya que la librería es Pbopenal.lib.
+   LIB
+
+   ; Cuántas librerías de PureBasic requiere esta librería: ninguna en este caso.
+   0
+
+   ; El nombre del directorio con la guía de ayuda en línea para la API de esta librería.
+   Help
+</pre>
+<p>El resto del archivo depende del contenido real de la librería. Como ejemplo podemos usar <code>src\PureBasic\Pbopenal.desc</code>. Finalmente, usemos
+<code>LibraryMaker.exe</code> para crear nuestra Userlib:<pre>
+   <b>LibraryMaker .\Pbopenal.desc</b>
+</pre>
+<p><b>Nota:</b> Asegúrese de que la ruta donde se encuentra LibraryMaker no tenga espacios en blanco.
+<p>Si la compilación fue exitosa, simplemente mueva la Userlib a <code>[PureBasic]\PureLibraries\UserLibraries</code> e intente compilar una aplicación de prueba.
+Puede encontrar varios ejemplos de PureBasic con OpenAL en <a href="PBOpenAL_es.htm">PureBasic OpenAL SDK</a> y en el proyecto
+<a href="https://ufmod.sourceforge.io/ind_es.htm">&#181;FMOD</a>.
+<br>&nbsp;
+<h4 id='4'>Preguntas, comentarios</h4>
+<p>Gracias por tomarse el tiempo de leer esta guía. No dude en hacer preguntas o brindar comentarios y sugerencias en
+<a href="https://github.com/vkamenar/implib-sdk/discussions">GitHub</a> o <a href="https://sourceforge.net/p/implib/discussion/">SourceForge</a>.<br>&nbsp;
+</div>
+</div>
+<div style="text-align:right"><a href="#top">Volver arriba</a></div>
+<center><small>&#169; 2006 - 2025 <a href="https://www.celersms.com/org/vkamenar-es.htm">Vladimir Kame&#241;ar</a>
+<br>Todos los derechos reservados</small></center></body></html>
