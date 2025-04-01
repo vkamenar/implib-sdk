@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8">
+<meta name="description" content="PureBasic software development kit for the OpenAL audio API.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PureBasic OpenAL SDK">
+<meta property="og:description" content="PureBasic software development kit for the OpenAL audio API.">
+<meta property="og:url" content="https://vkamenar.github.io/implib-sdk/PBOpenAL.htm">
+<title>PureBasic OpenAL SDK</title>
+<link rel="canonical" href="https://vkamenar.github.io/implib-sdk/PBOpenAL.htm">
+<link rel="alternate" href="https://vkamenar.github.io/implib-sdk/PBOpenAL.htm" hreflang="en">
+<link rel="alternate" href="https://vkamenar.github.io/implib-sdk/PBOpenAL_es.htm" hreflang="es">
+<link rel="alternate" href="https://vkamenar.github.io/implib-sdk/PBOpenAL_ru.htm" hreflang="ru">
+<link rel="alternate" href="https://vkamenar.github.io/implib-sdk/PBOpenAL.htm" hreflang="x-default">
+</head><body style='margin:0'>
+<div style='padding:10px;background:#E7E7E7'>
+<a href="https://github.com/vkamenar/purebasic-openal-sdk"><img alt="GitHub" src="github.png" border=0 align=right></a>
+<div style='color:#708090;text-align:center'>[ English | <a href='PBOpenAL_es.htm'>Espa&#241;ol</a> | <a href='PBOpenAL_ru.htm'>Pycc&#954;u&#250;</a> ]<br>
+<b style='color:#000'>PureBasic OpenAL SDK</b><br>
+[ <a href='https://github.com/vkamenar/purebasic-openal-sdk/releases'>Download</a> ]</div>
+</div>
+<div style='background:#FFF;text-align:justify;padding:10px'>
+<p><img itemprop="image" src='OpenAL.png' align='left' hspace='8' vspace='3' alt="OpenAL"><b>OpenAL</b> (for "Open Audio Library") is a cross-platform audio API complementary to OpenGL. It was specifically designed to render multichannel output of 3D arrangements of sound sources around the listener.
+The API was originally developed by Loki Entertainment Software, an American video game developer, in late 1999. The first specification was released in early 2000. They created the API as part of their business of porting Windows games to Linux.
+For example, Heavy Gear II and Heretic II for Linux were some of the first games shipped using OpenAL.
+<img src='heretic_II_for_linux.png' align='right' hspace='8' vspace='8' alt="Heretic II for Linux, one of the first games shipped using OpenAL">
+The following games, among many others, are also known to be using OpenAL: S.T.A.L.K.E.R., BioShock, Mass Effect.
+<p>Creative Labs joined the OpenAL creation and authoring committee and released the first hardware-accelerated OpenAL drivers in 2001.
+The libraries supported SoudBlaster Live on MacOS and Windows.
+<p>Around 2009, the sample implementation became proprietary, but the older free version 1.1 is still <a href="https://www.openal.org/downloads/" target="_blank">available</a>.
+Several open-source alternatives are also available. For example, <a href="https://openal-soft.org/" target="_blank">OpenAL Soft</a> is one of the widely used LGPL-licensed alternatives.
+<div itemscope itemtype="https://schema.org/CreativeWork">
+<p>The <b><span itemprop="name"><link itemprop="sameAs" href="https://www.wikidata.org/wiki/Q128848012">PureBasic OpenAL SDK</span></b> was created to show how to
+use the <a href="index.html">ImpLib SDK</a> to make custom import libraries in <a href="http://www.purearea.net/pb/english/userlibs.php" target="_blank">User-Lib
+format for PureBasic</a>. It's not a DLL wrapper, but rather <span itemprop="description">an import library for the OpenAL DLL, which can be used as a User-Lib in
+PureBasic</span>. The SDK is compatible with the original OpenAL 1.0 and 1.1 and also the OpenAL Soft versions. The SDK includes the header files, API
+documentation and usage examples. The OpenAL DLL is not included, but it can be downloaded for free from the official OpenAL or OpenAL Soft websites.
+Since 2007, several applications and games were created using this SDK to implement 3D sound effects using the OpenAL API.
+<p>The PureBasic OpenAL SDK open source repository and official releases are available for free on <a href="https://sourceforge.net/p/implib/pb-openal-sdk/">Sourceforge</a> and <a href="https://github.com/vkamenar/purebasic-openal-sdk">GitHub</a>.
+<div style='background:#D4FFFF;padding:10px;text-align:justify;border:1px solid #507B7B'>
+<b>Note:</b> When using this SDK with PureBasic <b>v6.10 LTS</b> or earlier, it's necessary to set to <code>0</code> the following configuration option in <code>src\openal32.def</code> and <code>src\openal64.def</code> before compiling the OpenAL library:<pre>
+   RENAME_AR_MEMBERS equ 1
+</pre>
+This is necessary for compatibility with the linker used in the previous PureBasic releases.
+Since PureBasic <b>v6.11</b> the linker is <i>lld-link</i>, while earlier versions used <i>polink</i>.</div>
+<p>There is no copyright notice because this SDK is in the public domain. It is available for free without any conditions or restrictions.
+However, the OpenAL DLL does have a license. Please, check the license if you need to redistribute the DLL.
+<p>The PureBasic OpenAL SDK was created by <span itemprop="author" itemscope itemtype="https://schema.org/Person"><a itemprop="url" href="https://www.celersms.com/org/vkamenar.htm"><span itemprop="name"><link itemprop="sameAs" href="https://www.facebook.com/vladimir.kamenar.1"><link itemprop="sameAs" href="https://twitter.com/KamenarVladimir"><link itemprop="sameAs" href="https://www.linkedin.com/in/vladimir-kamenar/"><link itemprop="sameAs" href="https://www.wikidata.org/wiki/Q106606516">Vladimir Kame&#241;ar</span></a></span>.
+</div></div></body></html>

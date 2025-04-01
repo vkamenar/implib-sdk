@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8">
+<meta name="description" content="Комплект для разработки программного обеспечения в среде PureBasic для работы с аудио API OpenAL.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PureBasic OpenAL SDK">
+<meta property="og:description" content="Комплект для разработки программного обеспечения в среде PureBasic для работы с аудио API OpenAL.">
+<meta property="og:url" content="https://vkamenar.github.io/implib-sdk/PBOpenAL_ru.htm">
+<title>PureBasic OpenAL SDK</title>
+<link rel="canonical" href="https://vkamenar.github.io/implib-sdk/PBOpenAL_ru.htm">
+<link rel="alternate" href="https://vkamenar.github.io/implib-sdk/PBOpenAL.htm" hreflang="en">
+<link rel="alternate" href="https://vkamenar.github.io/implib-sdk/PBOpenAL_es.htm" hreflang="es">
+<link rel="alternate" href="https://vkamenar.github.io/implib-sdk/PBOpenAL_ru.htm" hreflang="ru">
+<link rel="alternate" href="https://vkamenar.github.io/implib-sdk/PBOpenAL.htm" hreflang="x-default">
+</head><body style='margin:0'>
+<div style='padding:10px;background:#E7E7E7'>
+<a href="https://github.com/vkamenar/purebasic-openal-sdk"><img alt="GitHub" src="github.png" border=0 align=right></a>
+<div style='color:#708090;text-align:center'>[ <a href='PBOpenAL.htm'>English</a> | <a href='PBOpenAL_es.htm'>Espa&#241;ol</a> | Pycc&#954;u&#250; ]<br>
+<b style='color:#000'>PureBasic OpenAL SDK</b><br>
+[ <a href='https://github.com/vkamenar/purebasic-openal-sdk/releases'>Скачать</a> ]</div>
+</div>
+<div style='background:#FFF;text-align:justify;padding:10px'>
+<p><img itemprop="image" src='OpenAL.png' align='left' hspace='8' vspace='3' alt="OpenAL"><b>OpenAL</b> (<i>Open Audio Library</i>) — это кроссплатформенный программный интерфейс, дополняющий OpenGL, разработанный специально для поддержки многоканального звука с трехмерным расположением источников вокруг пользователя.
+Первоначально OpenAL был создан американской компанией по разработке видеоигр Loki Entertainment Software в конце 1999 года. Первая спецификация была выпущена в начале 2000 года.
+Они создали данный интерфейс, чтобы облегчить портирование игр с Windows на Linux в рамках своего бизнеса.
+Например, Heavy Gear II и Heretic II для Linux являются одними из первых игр, выпущенных с использованием OpenAL.
+<img src='heretic_II_for_linux.png' align='right' hspace='8' vspace='8' alt="Heretic II для Linux — одна из первых игр, выпущенных с использованием OpenAL">
+OpenAL также используется в следующих играх, среди многих других: S.T.A.L.K.E.R., BioShock, Mass Effect.
+<p>Creative Labs вошла в комитет, продвигающий разработку и распространение OpenAL, и выпустила первые драйверы OpenAL с аппаратным ускорением в 2001 году.
+Библиотеки поддерживали SoudBlaster Live на MacOS и Windows.
+<p>Примерно в 2009 году бесплатная реализация OpenAL стала коммерческой, но последняя бесплатная версия 1.1 всё ещё <a href="https://www.openal.org/downloads/" target="_blank">доступна</a>
+Также доступно несколько альтернатив с открытым исходным кодом. Например, <a href="https://openal-soft.org/" target="_blank">OpenAL Soft</a> — одна из часто используемых альтернатив под лицензией LGPL.
+<div itemscope itemtype="https://schema.org/CreativeWork">
+<p><b><span itemprop="name"><link itemprop="sameAs" href="https://www.wikidata.org/wiki/Q128848012">PureBasic OpenAL SDK</span></b> изначально создавался, чтобы
+показать, как использовать <a href="ind_ru.htm">ImpLib SDK</a> для компиляции альтернативных библиотек импорта в
+<a href="http://www.purearea.net/pb/english/userlibs.php" target="_blank">формате <i>User-Lib</i> для PureBasic</a>. Это не обёртка для DLL, а скорее
+<span itemprop="description">библиотека импорта для OpenAL, которую можно подключать в качестве пользовательской библиотеки в PureBasic (т.н.
+<i>User-Lib</i>)</span>. SDK совместим с оригинальными версиями 1.0 и 1.1 OpenAL, а также с версиями OpenAL Soft. SDK включает файлы заголовков, описание
+доступных API-функций и примеры использования. Библиотека DLL для OpenAL не включена в дистрибутив, но её можно бесплатно скачать с официальных сайтов
+OpenAL и OpenAL Soft. С 2007 года было создано несколько приложений и игр с использованием данного SDK для реализации 3D-звуковых эффектов посредством API OpenAL.
+<p>Репозиторий с открытым исходным кодом и официальные релизы PureBasic OpenAL SDK доступны бесплатно на платформах <a href="https://sourceforge.net/p/implib/pb-openal-sdk/">Sourceforge</a> и <a href="https://github.com/vkamenar/purebasic-openal-sdk">GitHub</a>.
+<div style='background:#D4FFFF;padding:10px;text-align:justify;border:1px solid #507B7B'>
+<b>Примечание.</b> При использовании данного SDK с PureBasic <b>v6.10 LTS</b> или более ранней версией необходимо установить значение <code>0</code> для следующего параметра конфигурации в <code>src\openal32.def</code> и <code>src\openal64.def</code> перед сборкой библиотеки OpenAL:<pre>
+   RENAME_AR_MEMBERS equ 1
+</pre>
+Это необходимо для совместимости с линкером, который использовался в предыдущих версиях PureBasic.
+Начиная с PureBasic <b>v6.11</b> линкером является <i>lld-link</i>, тогда как в более ранних версиях использовался <i>polink</i>.</div>
+<p>Здесь отсутствует копирайт, поскольку данный SDK находится в свободном доступе. Его можно использовать бесплатно без условий и ограничений.
+Однако, у библиотеки DLL для OpenAL есть лицензия. Пожалуйста, изучите соответствующую лицензию перед тем как распространять данный файл.
+<p>Автор PureBasic OpenAL SDK — <span itemprop="author" itemscope itemtype="https://schema.org/Person"><a itemprop="url" href="https://www.celersms.com/org/vkamenar-ru.htm"><span itemprop="name"><link itemprop="sameAs" href="https://www.facebook.com/vladimir.kamenar.1"><link itemprop="sameAs" href="https://twitter.com/KamenarVladimir"><link itemprop="sameAs" href="https://www.linkedin.com/in/vladimir-kamenar/"><link itemprop="sameAs" href="https://www.wikidata.org/wiki/Q106606516">Владимир Каменяр</span></a></span>.
+</div></div></body></html>
