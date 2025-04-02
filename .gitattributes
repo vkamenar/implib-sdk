@@ -3,5 +3,5 @@
 src/VisualBasic6/* linguist-vendored
 src/PureBasic/* linguist-vendored
 
-# Exclude the website when packaging the source code
-/docs export-ignore
+# Exclude when packaging the source code
+/.github export-ignore
