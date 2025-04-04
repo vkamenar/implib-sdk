@@ -116,10 +116,7 @@ implib user32.dll, CreateMDIWindowW, _CreateMDIWindowW@40
 implib user32.dll, CreateMenu, _CreateMenu@0
 implib user32.dll, CreatePopupMenu, _CreatePopupMenu@0
 implib user32.dll, CreateSyntheticPointerDevice, _CreateSyntheticPointerDevice@12
-
-; This function doesn't return. The number of parameters depends on the OS version.
-implib user32.dll, CreateSystemThreads
-
+implib user32.dll, CreateSystemThreads ; This function doesn't return. The number of parameters depends on the OS version.
 implib user32.dll, CreateWindowExA, _CreateWindowExA@48
 implib user32.dll, CreateWindowExW, _CreateWindowExW@48
 implib user32.dll, CreateWindowInBand, _CreateWindowInBand@52
@@ -185,10 +182,7 @@ implib user32.dll, DestroyMenu, _DestroyMenu@4
 implib user32.dll, DestroyReasons, _DestroyReasons@4
 implib user32.dll, DestroySyntheticPointerDevice, _DestroySyntheticPointerDevice@4
 implib user32.dll, DestroyWindow, _DestroyWindow@4
-
-; This function was removed in the latest user32 versions. In ReactOS it is a stub. Some user32 versions use @24.
-implib user32.dll, DeviceEventWorker, _DeviceEventWorker@20
-
+implib user32.dll, DeviceEventWorker, _DeviceEventWorker@20 ; This function was removed in the latest user32 versions. In ReactOS it is a stub. Some user32 versions use @24.
 implib user32.dll, DialogBoxIndirectParamA, _DialogBoxIndirectParamA@20
 implib user32.dll, DialogBoxIndirectParamAorW, _DialogBoxIndirectParamAorW@24
 implib user32.dll, DialogBoxIndirectParamW, _DialogBoxIndirectParamW@20
@@ -294,10 +288,7 @@ implib user32.dll, GetAltTabInfo, _GetAltTabInfo@20
 implib user32.dll, GetAltTabInfoA, _GetAltTabInfoA@20
 implib user32.dll, GetAltTabInfoW, _GetAltTabInfoW@20
 implib user32.dll, GetAncestor, _GetAncestor@8
-
-; Older user32 and ReactOS have @4 versions of this function.
-implib user32.dll, GetAppCompatFlags, _GetAppCompatFlags@8
-
+implib user32.dll, GetAppCompatFlags, _GetAppCompatFlags@8 ; Older user32 and ReactOS have @4 versions of this function
 implib user32.dll, GetAppCompatFlags2, _GetAppCompatFlags2@4
 implib user32.dll, GetAsyncKeyState, _GetAsyncKeyState@4
 implib user32.dll, GetAutoRotationState, _GetAutoRotationState@4
@@ -976,10 +967,7 @@ implib user32.dll, UnregisterUserApiHook, _UnregisterUserApiHook@0
 implib user32.dll, UpdateDefaultDesktopThumbnail, _UpdateDefaultDesktopThumbnail@20
 implib user32.dll, UpdateLayeredWindow, _UpdateLayeredWindow@36
 implib user32.dll, UpdateLayeredWindowIndirect, _UpdateLayeredWindowIndirect@8
-
-; Older Windows versions and ReactOS support the @8 version of this undocumented function.
-implib user32.dll, UpdatePerUserSystemParameters, _UpdatePerUserSystemParameters@4
-
+implib user32.dll, UpdatePerUserSystemParameters, _UpdatePerUserSystemParameters@4 ; Older Windows versions and ReactOS support the @8 version of this undocumented function
 implib user32.dll, UpdateWindow, _UpdateWindow@4
 implib user32.dll, UpdateWindowInputSinkHints, _UpdateWindowInputSinkHints@8
 implib user32.dll, User32InitializeImmEntryTable, _User32InitializeImmEntryTable@4
