@@ -299,7 +299,7 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, ord.94, __CheckNotSysLevel@4
 ; implib KERNEL32.DLL, ord.95, __ConfirmSysLevel@4
 ; implib KERNEL32.DLL, ord.96, __ConfirmWin16Lock@0
-; implib KERNEL32.DLL, _DebugOut ; Note: This function uses the CDECL calling convention!
+; implib KERNEL32.DLL, _DebugOut ; This function uses the CDECL calling convention!
 ; implib KERNEL32.DLL, _DebugPrintf
 ; implib KERNEL32.DLL, ord.97, __EnterSysLevel@4
 ; implib KERNEL32.DLL, ord.98, __LeaveSysLevel@4
@@ -310,8 +310,8 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, ord.14, _k32LoadStringA@16
 ; implib KERNEL32.DLL, ord.12, _k32OemToCharA@8
 ; implib KERNEL32.DLL, ord.13, _k32OemToCharBuffA@12
-; implib KERNEL32.DLL, ord.15, _k32wsprintfA ; Note: This function uses the CDECL calling convention!
-; implib KERNEL32.DLL, ord.16, _k32wvsprintfA ; Note: This function uses the CDECL calling convention!
+; implib KERNEL32.DLL, ord.15, _k32wsprintfA ; This function uses the CDECL calling convention!
+; implib KERNEL32.DLL, ord.16, _k32wvsprintfA ; This function uses the CDECL calling convention!
 
 ; *** These functions, available from v4.0 to v4.90, manage the stack frame for the thunk code
 ; implib KERNEL32.DLL, FT_Exit0
@@ -560,10 +560,7 @@ implib KERNEL32.DLL, BuildCommDCBW, _BuildCommDCBW@8
 implib KERNEL32.DLL, CallNamedPipeA, _CallNamedPipeA@28
 implib KERNEL32.DLL, CallNamedPipeW, _CallNamedPipeW@28
 implib KERNEL32.DLL, CallbackMayRunLong, _CallbackMayRunLong@4
-
-; CancelDeviceWakeupRequest triggers STATUS_NOT_IMPLEMENTED in Windows 10
-; implib KERNEL32.DLL, CancelDeviceWakeupRequest, _CancelDeviceWakeupRequest@4
-
+; implib KERNEL32.DLL, CancelDeviceWakeupRequest, _CancelDeviceWakeupRequest@4 ; CancelDeviceWakeupRequest triggers STATUS_NOT_IMPLEMENTED in Windows 10
 implib KERNEL32.DLL, CancelIo, _CancelIo@4
 implib KERNEL32.DLL, CancelIoEx, _CancelIoEx@8
 implib KERNEL32.DLL, CancelSynchronousIo, _CancelSynchronousIo@4
@@ -624,10 +621,7 @@ implib KERNEL32.DLL, CopyFileExW, _CopyFileExW@24
 implib KERNEL32.DLL, CopyFileTransactedA, _CopyFileTransactedA@28
 implib KERNEL32.DLL, CopyFileTransactedW, _CopyFileTransactedW@28
 implib KERNEL32.DLL, CopyFileW, _CopyFileW@12
-
-; CopyLZFile is an alias for LZCopy
-; implib KERNEL32.DLL, CopyLZFile, _CopyLZFile@8
-
+; implib KERNEL32.DLL, CopyLZFile, _CopyLZFile@8 ; CopyLZFile is an alias for LZCopy
 implib KERNEL32.DLL, CreateActCtxA, _CreateActCtxA@4
 implib KERNEL32.DLL, CreateActCtxW, _CreateActCtxW@4
 implib KERNEL32.DLL, CreateActCtxWWorker, _CreateActCtxWWorker@4
@@ -688,10 +682,7 @@ implib KERNEL32.DLL, CreateSemaphoreA, _CreateSemaphoreA@16
 implib KERNEL32.DLL, CreateSemaphoreExA, _CreateSemaphoreExA@24
 implib KERNEL32.DLL, CreateSemaphoreExW, _CreateSemaphoreExW@24
 implib KERNEL32.DLL, CreateSemaphoreW, _CreateSemaphoreW@16
-
-; CreateSocketHandle triggers ERROR_CALL_NOT_IMPLEMENTED in Windows 10
-; implib KERNEL32.DLL, CreateSocketHandle, _CreateSocketHandle@0
-
+; implib KERNEL32.DLL, CreateSocketHandle, _CreateSocketHandle@0 ; CreateSocketHandle triggers ERROR_CALL_NOT_IMPLEMENTED in Windows 10
 implib KERNEL32.DLL, CreateSymbolicLinkA, _CreateSymbolicLinkA@12
 implib KERNEL32.DLL, CreateSymbolicLinkTransactedA, _CreateSymbolicLinkTransactedA@16
 implib KERNEL32.DLL, CreateSymbolicLinkTransactedW, _CreateSymbolicLinkTransactedW@16
@@ -900,10 +891,7 @@ implib KERNEL32.DLL, GetApplicationRestartSettingsWorker, _GetApplicationRestart
 implib KERNEL32.DLL, GetApplicationUserModelId, _GetApplicationUserModelId@12
 implib KERNEL32.DLL, GetAtomNameA, _GetAtomNameA@12
 implib KERNEL32.DLL, GetAtomNameW, _GetAtomNameW@12
-
-; GetBinaryType is an alias for GetBinaryTypeA
-; implib KERNEL32.DLL, GetBinaryType, _GetBinaryType@8
-
+; implib KERNEL32.DLL, GetBinaryType, _GetBinaryType@8 ; GetBinaryType is an alias for GetBinaryTypeA
 implib KERNEL32.DLL, GetBinaryTypeA, _GetBinaryTypeA@8
 implib KERNEL32.DLL, GetBinaryTypeW, _GetBinaryTypeW@8
 implib KERNEL32.DLL, GetCPInfo, _GetCPInfo@8
@@ -1062,10 +1050,7 @@ implib KERNEL32.DLL, GetFullPathNameW, _GetFullPathNameW@16
 implib KERNEL32.DLL, GetGeoInfoA, _GetGeoInfoA@20
 implib KERNEL32.DLL, GetGeoInfoEx, _GetGeoInfoEx@16
 implib KERNEL32.DLL, GetGeoInfoW, _GetGeoInfoW@20
-
-; GetHandleContext triggers ERROR_CALL_NOT_IMPLEMENTED in Windows 10
-; implib KERNEL32.DLL, GetHandleContext, _GetHandleContext@4
-
+; implib KERNEL32.DLL, GetHandleContext, _GetHandleContext@4 ; GetHandleContext triggers ERROR_CALL_NOT_IMPLEMENTED in Windows 10
 implib KERNEL32.DLL, GetHandleInformation, _GetHandleInformation@8
 implib KERNEL32.DLL, GetLargePageMinimum, _GetLargePageMinimum@0
 implib KERNEL32.DLL, GetLargestConsoleWindowSize, _GetLargestConsoleWindowSize@4
@@ -1185,10 +1170,7 @@ implib KERNEL32.DLL, GetStateFolder, _GetStateFolder@16
 implib KERNEL32.DLL, GetStdHandle, _GetStdHandle@4
 implib KERNEL32.DLL, GetStringScripts, _GetStringScripts@20
 implib KERNEL32.DLL, GetStringTypeA, _GetStringTypeA@20
-
-; GetStringTypeExA is an alias for GetStringTypeA
-; implib KERNEL32.DLL, GetStringTypeExA, _GetStringTypeExA@20
-
+; implib KERNEL32.DLL, GetStringTypeExA, _GetStringTypeExA@20 ; GetStringTypeExA is an alias for GetStringTypeA
 implib KERNEL32.DLL, GetStringTypeExW, _GetStringTypeExW@20
 implib KERNEL32.DLL, GetStringTypeW, _GetStringTypeW@16
 implib KERNEL32.DLL, GetSystemAppDataKey, _GetSystemAppDataKey@16
@@ -1277,10 +1259,7 @@ implib KERNEL32.DLL, GlobalAddAtomExA, _GlobalAddAtomExA@8
 implib KERNEL32.DLL, GlobalAddAtomExW, _GlobalAddAtomExW@8
 implib KERNEL32.DLL, GlobalAddAtomW, _GlobalAddAtomW@4
 implib KERNEL32.DLL, GlobalAlloc, _GlobalAlloc@8
-
-; GlobalCompact is an alias for LocalCompact
-; implib KERNEL32.DLL, GlobalCompact, _GlobalCompact@4
-
+; implib KERNEL32.DLL, GlobalCompact, _GlobalCompact@4 ; GlobalCompact is an alias for LocalCompact
 implib KERNEL32.DLL, GlobalDeleteAtom, _GlobalDeleteAtom@4
 implib KERNEL32.DLL, GlobalFindAtomA, _GlobalFindAtomA@4
 implib KERNEL32.DLL, GlobalFindAtomW, _GlobalFindAtomW@4
@@ -1295,16 +1274,10 @@ implib KERNEL32.DLL, GlobalMemoryStatus, _GlobalMemoryStatus@4
 implib KERNEL32.DLL, GlobalMemoryStatusEx, _GlobalMemoryStatusEx@4
 implib KERNEL32.DLL, GlobalReAlloc, _GlobalReAlloc@12
 implib KERNEL32.DLL, GlobalSize, _GlobalSize@4
-
-; GlobalUnWire is an alias for GlobalUnlock
-; implib KERNEL32.DLL, GlobalUnWire, _GlobalUnWire@4
-
+; implib KERNEL32.DLL, GlobalUnWire, _GlobalUnWire@4 ; GlobalUnWire is an alias for GlobalUnlock
 implib KERNEL32.DLL, GlobalUnfix, _GlobalUnfix@4
 implib KERNEL32.DLL, GlobalUnlock, _GlobalUnlock@4
-
-; GlobalWire is an alias for GlobalLock
-; implib KERNEL32.DLL, GlobalWire, _GlobalWire@4
-
+; implib KERNEL32.DLL, GlobalWire, _GlobalWire@4 ; GlobalWire is an alias for GlobalLock
 implib KERNEL32.DLL, Heap32First, _Heap32First@12
 implib KERNEL32.DLL, Heap32ListFirst, _Heap32ListFirst@8
 implib KERNEL32.DLL, Heap32ListNext, _Heap32ListNext@8
@@ -1357,13 +1330,8 @@ implib KERNEL32.DLL, InterlockedPushListSList, _InterlockedPushListSList@8
 implib KERNEL32.DLL, InterlockedPushListSListEx, _InterlockedPushListSListEx@16
 implib KERNEL32.DLL, InvalidateConsoleDIBits, _InvalidateConsoleDIBits@8
 implib KERNEL32.DLL, IsBadCodePtr, _IsBadCodePtr@4
-
-; IsBadHugeReadPtr is an alias for IsBadReadPtr
-; implib KERNEL32.DLL, IsBadHugeReadPtr, _IsBadHugeReadPtr@8
-
-; IsBadHugeWritePtr is an alias for IsBadWritePtr
-; implib KERNEL32.DLL, IsBadHugeWritePtr, _IsBadHugeWritePtr@8
-
+; implib KERNEL32.DLL, IsBadHugeReadPtr, _IsBadHugeReadPtr@8 ; IsBadHugeReadPtr is an alias for IsBadReadPtr
+; implib KERNEL32.DLL, IsBadHugeWritePtr, _IsBadHugeWritePtr@8 ; IsBadHugeWritePtr is an alias for IsBadWritePtr
 implib KERNEL32.DLL, IsBadReadPtr, _IsBadReadPtr@8
 implib KERNEL32.DLL, IsBadStringPtrA, _IsBadStringPtrA@8
 implib KERNEL32.DLL, IsBadStringPtrW, _IsBadStringPtrW@8
@@ -1426,10 +1394,7 @@ implib KERNEL32.DLL, LCMapStringA, _LCMapStringA@24
 implib KERNEL32.DLL, LCMapStringEx, _LCMapStringEx@36
 implib KERNEL32.DLL, LCMapStringW, _LCMapStringW@24
 implib KERNEL32.DLL, LZClose, _LZClose@4
-
-; LZCloseFile is an alias for LZClose
-; implib KERNEL32.DLL, LZCloseFile, _LZCloseFile@4
-
+; implib KERNEL32.DLL, LZCloseFile, _LZCloseFile@4 ; LZCloseFile is an alias for LZClose
 implib KERNEL32.DLL, LZCopy, _LZCopy@8
 implib KERNEL32.DLL, LZCreateFileW, _LZCreateFileW@20
 implib KERNEL32.DLL, LZInit, _LZInit@4
@@ -1501,10 +1466,7 @@ implib KERNEL32.DLL, NtVdm64CreateProcessInternalW, _NtVdm64CreateProcessInterna
 implib KERNEL32.DLL, OOBEComplete, _OOBEComplete@4
 implib KERNEL32.DLL, OfferVirtualMemory, _OfferVirtualMemory@12
 implib KERNEL32.DLL, OpenConsoleW, _OpenConsoleW@16
-
-; OpenConsoleWStub is an alias for OpenConsoleW
-; implib KERNEL32.DLL, OpenConsoleWStub, _OpenConsoleWStub@16
-
+; implib KERNEL32.DLL, OpenConsoleWStub, _OpenConsoleWStub@16 ; OpenConsoleWStub is an alias for OpenConsoleW
 implib KERNEL32.DLL, OpenEventA, _OpenEventA@12
 implib KERNEL32.DLL, OpenEventW, _OpenEventW@12
 implib KERNEL32.DLL, OpenFile, _OpenFile@12
@@ -1519,19 +1481,13 @@ implib KERNEL32.DLL, OpenPackageInfoByFullName, _OpenPackageInfoByFullName@12
 implib KERNEL32.DLL, OpenPrivateNamespaceA, _OpenPrivateNamespaceA@8
 implib KERNEL32.DLL, OpenPrivateNamespaceW, _OpenPrivateNamespaceW@8
 implib KERNEL32.DLL, OpenProcess, _OpenProcess@12
-
-; OpenProcessToken should be imported from advapi32. Uncomment the following entry if you really need to import it from kernel32 instead.
-; implib KERNEL32.DLL, OpenProcessToken, _OpenProcessToken@12
-
+; implib KERNEL32.DLL, OpenProcessToken, _OpenProcessToken@12 ; OpenProcessToken should be imported from advapi32. Uncomment this entry if you really need to import it from kernel32.
 implib KERNEL32.DLL, OpenSemaphoreA, _OpenSemaphoreA@12
 implib KERNEL32.DLL, OpenSemaphoreW, _OpenSemaphoreW@12
 implib KERNEL32.DLL, OpenState, _OpenState@0
 implib KERNEL32.DLL, OpenStateExplicit, _OpenStateExplicit@8
 implib KERNEL32.DLL, OpenThread, _OpenThread@12
-
-; OpenThreadToken should be imported from advapi32. Uncomment the following entry if you really need to import it from kernel32 instead.
-; implib KERNEL32.DLL, OpenThreadToken, _OpenThreadToken@16
-
+; implib KERNEL32.DLL, OpenThreadToken, _OpenThreadToken@16 ; OpenThreadToken should be imported from advapi32. Uncomment this entry if you really need to import it from kernel32.
 implib KERNEL32.DLL, OpenWaitableTimerA, _OpenWaitableTimerA@12
 implib KERNEL32.DLL, OpenWaitableTimerW, _OpenWaitableTimerW@12
 implib KERNEL32.DLL, OutputDebugStringA, _OutputDebugStringA@4
@@ -1567,16 +1523,9 @@ implib KERNEL32.DLL, PssWalkMarkerFree, _PssWalkMarkerFree@4
 implib KERNEL32.DLL, PssWalkMarkerGetPosition, _PssWalkMarkerGetPosition@8
 implib KERNEL32.DLL, PssWalkMarkerRewind, _PssWalkMarkerRewind@4
 implib KERNEL32.DLL, PssWalkMarkerSeek, _PssWalkMarkerSeek@8
-
-; PssWalkMarkerSeekToBeginning is an alias for PssWalkMarkerRewind
-; implib KERNEL32.DLL, PssWalkMarkerSeekToBeginning, _PssWalkMarkerSeekToBeginning@4
-
-; PssWalkMarkerSetPosition is an alias for PssWalkMarkerSeek
-; implib KERNEL32.DLL, PssWalkMarkerSetPosition, _PssWalkMarkerSetPosition@8
-
-; PssWalkMarkerTell is an alias for PssWalkMarkerGetPosition
-; implib KERNEL32.DLL, PssWalkMarkerTell, _PssWalkMarkerTell@8
-
+; implib KERNEL32.DLL, PssWalkMarkerSeekToBeginning, _PssWalkMarkerSeekToBeginning@4 ; PssWalkMarkerSeekToBeginning is an alias for PssWalkMarkerRewind
+; implib KERNEL32.DLL, PssWalkMarkerSetPosition, _PssWalkMarkerSetPosition@8 ; PssWalkMarkerSetPosition is an alias for PssWalkMarkerSeek
+; implib KERNEL32.DLL, PssWalkMarkerTell, _PssWalkMarkerTell@8 ; PssWalkMarkerTell is an alias for PssWalkMarkerGetPosition
 implib KERNEL32.DLL, PssWalkSnapshot, _PssWalkSnapshot@20
 implib KERNEL32.DLL, PulseEvent, _PulseEvent@4
 implib KERNEL32.DLL, PurgeComm, _PurgeComm@8
@@ -1642,10 +1591,7 @@ implib KERNEL32.DLL, ReclaimVirtualMemory, _ReclaimVirtualMemory@8
 implib KERNEL32.DLL, RegisterApplicationRecoveryCallback, _RegisterApplicationRecoveryCallback@16
 implib KERNEL32.DLL, RegisterApplicationRestart, _RegisterApplicationRestart@8
 implib KERNEL32.DLL, RegisterBadMemoryNotification, _RegisterBadMemoryNotification@4
-
-; RegisterConsoleIME triggers ERROR_CALL_NOT_IMPLEMENTED in Windows 10
-; implib KERNEL32.DLL, RegisterConsoleIME, _RegisterConsoleIME@8
-
+; implib KERNEL32.DLL, RegisterConsoleIME, _RegisterConsoleIME@8 ; RegisterConsoleIME triggers ERROR_CALL_NOT_IMPLEMENTED in Windows 10
 implib KERNEL32.DLL, RegisterConsoleOS2, _RegisterConsoleOS2@4
 implib KERNEL32.DLL, RegisterConsoleVDM, _RegisterConsoleVDM@44
 implib KERNEL32.DLL, RegisterWaitForInputIdle, _RegisterWaitForInputIdle@4
@@ -1672,18 +1618,12 @@ implib KERNEL32.DLL, RemoveLocalAlternateComputerNameW, _RemoveLocalAlternateCom
 implib KERNEL32.DLL, RemoveSecureMemoryCacheCallback, _RemoveSecureMemoryCacheCallback@4
 implib KERNEL32.DLL, RemoveVectoredContinueHandler, _RemoveVectoredContinueHandler@4
 implib KERNEL32.DLL, RemoveVectoredExceptionHandler, _RemoveVectoredExceptionHandler@4
-
-; ReplaceFile is an alias for ReplaceFileW
-; implib KERNEL32.DLL, ReplaceFile, _ReplaceFile@24
-
+; implib KERNEL32.DLL, ReplaceFile, _ReplaceFile@24 ; ReplaceFile is an alias for ReplaceFileW
 implib KERNEL32.DLL, ReplaceFileA, _ReplaceFileA@24
 implib KERNEL32.DLL, ReplaceFileW, _ReplaceFileW@24
 implib KERNEL32.DLL, ReplacePartitionUnit, _ReplacePartitionUnit@12
-
-; RequestDeviceWakeup and RequestWakeupLatency trigger STATUS_NOT_IMPLEMENTED in Windows 10
-; implib KERNEL32.DLL, RequestDeviceWakeup, _RequestDeviceWakeup@4
-; implib KERNEL32.DLL, RequestWakeupLatency, _RequestWakeupLatency@4
-
+; implib KERNEL32.DLL, RequestDeviceWakeup, _RequestDeviceWakeup@4 ; RequestDeviceWakeup triggers STATUS_NOT_IMPLEMENTED in Windows 10
+; implib KERNEL32.DLL, RequestWakeupLatency, _RequestWakeupLatency@4 ; RequestWakeupLatency triggers STATUS_NOT_IMPLEMENTED in Windows 10
 implib KERNEL32.DLL, ResetEvent, _ResetEvent@4
 implib KERNEL32.DLL, ResetWriteWatch, _ResetWriteWatch@8
 implib KERNEL32.DLL, ResizePseudoConsole, _ResizePseudoConsole@8
@@ -1785,13 +1725,8 @@ implib KERNEL32.DLL, SetFirmwareEnvironmentVariableA, _SetFirmwareEnvironmentVar
 implib KERNEL32.DLL, SetFirmwareEnvironmentVariableExA, _SetFirmwareEnvironmentVariableExA@20
 implib KERNEL32.DLL, SetFirmwareEnvironmentVariableExW, _SetFirmwareEnvironmentVariableExW@20
 implib KERNEL32.DLL, SetFirmwareEnvironmentVariableW, _SetFirmwareEnvironmentVariableW@16
-
-; SetHandleContext triggers ERROR_CALL_NOT_IMPLEMENTED in Windows 10
-; implib KERNEL32.DLL, SetHandleContext, _SetHandleContext@8
-
-; SetHandleCount has no effect in Win32
-; implib KERNEL32.DLL, SetHandleCount, _SetHandleCount@4
-
+; implib KERNEL32.DLL, SetHandleContext, _SetHandleContext@8 ; SetHandleContext triggers ERROR_CALL_NOT_IMPLEMENTED in Windows 10
+; implib KERNEL32.DLL, SetHandleCount, _SetHandleCount@4 ; SetHandleCount has no effect in Win32
 implib KERNEL32.DLL, SetHandleInformation, _SetHandleInformation@12
 implib KERNEL32.DLL, SetInformationJobObject, _SetInformationJobObject@16
 implib KERNEL32.DLL, SetIoRateControlInformationJobObject, _SetIoRateControlInformationJobObject@8
@@ -1803,10 +1738,7 @@ implib KERNEL32.DLL, SetLocalTime, _SetLocalTime@4
 implib KERNEL32.DLL, SetLocaleInfoA, _SetLocaleInfoA@12
 implib KERNEL32.DLL, SetLocaleInfoW, _SetLocaleInfoW@12
 implib KERNEL32.DLL, SetMailslotInfo, _SetMailslotInfo@8
-
-; SetMessageWaitingIndicator triggers ERROR_INVALID_FUNCTION in Windows 10
-; implib KERNEL32.DLL, SetMessageWaitingIndicator, _SetMessageWaitingIndicator@8
-
+; implib KERNEL32.DLL, SetMessageWaitingIndicator, _SetMessageWaitingIndicator@8 ; SetMessageWaitingIndicator triggers ERROR_INVALID_FUNCTION in Windows 10
 implib KERNEL32.DLL, SetNamedPipeAttribute, _SetNamedPipeAttribute@20
 implib KERNEL32.DLL, SetNamedPipeHandleState, _SetNamedPipeHandleState@16
 implib KERNEL32.DLL, SetPriorityClass, _SetPriorityClass@8
@@ -1849,10 +1781,7 @@ implib KERNEL32.DLL, SetThreadPriority, _SetThreadPriority@8
 implib KERNEL32.DLL, SetThreadPriorityBoost, _SetThreadPriorityBoost@8
 implib KERNEL32.DLL, SetThreadSelectedCpuSets, _SetThreadSelectedCpuSets@12
 implib KERNEL32.DLL, SetThreadStackGuarantee, _SetThreadStackGuarantee@4
-
-; SetThreadToken should be imported from advapi32. Uncomment the following entry if you really need to import it from kernel32 instead.
-; implib KERNEL32.DLL, SetThreadToken, _SetThreadToken@8
-
+; implib KERNEL32.DLL, SetThreadToken, _SetThreadToken@8 ; SetThreadToken should be imported from advapi32. Uncomment this entry if you really need to import it from kernel32.
 implib KERNEL32.DLL, SetThreadUILanguage, _SetThreadUILanguage@4
 implib KERNEL32.DLL, SetThreadpoolStackInformation, _SetThreadpoolStackInformation@8
 implib KERNEL32.DLL, SetThreadpoolThreadMaximum, _SetThreadpoolThreadMaximum@8
@@ -1871,10 +1800,7 @@ implib KERNEL32.DLL, SetVolumeLabelA, _SetVolumeLabelA@8
 implib KERNEL32.DLL, SetVolumeLabelW, _SetVolumeLabelW@8
 implib KERNEL32.DLL, SetVolumeMountPointA, _SetVolumeMountPointA@8
 implib KERNEL32.DLL, SetVolumeMountPointW, _SetVolumeMountPointW@8
-
-; SetVolumeMountPointWStub is an alias for SetVolumeMountPointW
-; implib KERNEL32.DLL, SetVolumeMountPointWStub, _SetVolumeMountPointWStub@8
-
+; implib KERNEL32.DLL, SetVolumeMountPointWStub, _SetVolumeMountPointWStub@8 ; SetVolumeMountPointWStub is an alias for SetVolumeMountPointW
 implib KERNEL32.DLL, SetWaitableTimer, _SetWaitableTimer@24
 implib KERNEL32.DLL, SetWaitableTimerEx, _SetWaitableTimerEx@28
 implib KERNEL32.DLL, SetXStateFeaturesMask, _SetXStateFeaturesMask@12
@@ -1937,10 +1863,7 @@ implib KERNEL32.DLL, UnmapViewOfFileEx, _UnmapViewOfFileEx@8
 implib KERNEL32.DLL, UnregisterApplicationRecoveryCallback, _UnregisterApplicationRecoveryCallback@0
 implib KERNEL32.DLL, UnregisterApplicationRestart, _UnregisterApplicationRestart@0
 implib KERNEL32.DLL, UnregisterBadMemoryNotification, _UnregisterBadMemoryNotification@4
-
-; UnregisterConsoleIME triggers ERROR_CALL_NOT_IMPLEMENTED in Windows 10
-; implib KERNEL32.DLL, UnregisterConsoleIME, _UnregisterConsoleIME@0
-
+; implib KERNEL32.DLL, UnregisterConsoleIME, _UnregisterConsoleIME@0 ; UnregisterConsoleIME triggers ERROR_CALL_NOT_IMPLEMENTED in Windows 10
 implib KERNEL32.DLL, UnregisterWait, _UnregisterWait@4
 implib KERNEL32.DLL, UnregisterWaitEx, _UnregisterWaitEx@8
 implib KERNEL32.DLL, UnregisterWaitUntilOOBECompleted, _UnregisterWaitUntilOOBECompleted@4
@@ -1984,10 +1907,7 @@ implib KERNEL32.DLL, WaitNamedPipeW, _WaitNamedPipeW@8
 implib KERNEL32.DLL, WakeAllConditionVariable, _WakeAllConditionVariable@4
 implib KERNEL32.DLL, WakeConditionVariable, _WakeConditionVariable@4
 implib KERNEL32.DLL, WerGetFlags, _WerGetFlags@8
-
-; WerGetFlagsWorker is an alias for WerGetFlags
-; implib KERNEL32.DLL, WerGetFlagsWorker, _WerGetFlagsWorker@8
-
+; implib KERNEL32.DLL, WerGetFlagsWorker, _WerGetFlagsWorker@8 ; WerGetFlagsWorker is an alias for WerGetFlags
 implib KERNEL32.DLL, WerRegisterAdditionalProcess, _WerRegisterAdditionalProcess@8
 implib KERNEL32.DLL, WerRegisterAppLocalDump, _WerRegisterAppLocalDump@4
 implib KERNEL32.DLL, WerRegisterCustomMetadata, _WerRegisterCustomMetadata@8
@@ -1999,10 +1919,7 @@ implib KERNEL32.DLL, WerRegisterMemoryBlockWorker, _WerRegisterMemoryBlockWorker
 implib KERNEL32.DLL, WerRegisterRuntimeExceptionModule, _WerRegisterRuntimeExceptionModule@8
 implib KERNEL32.DLL, WerRegisterRuntimeExceptionModuleWorker, _WerRegisterRuntimeExceptionModuleWorker@8
 implib KERNEL32.DLL, WerSetFlags, _WerSetFlags@4
-
-; WerSetFlagsWorker is an alias for WerSetFlags
-; implib KERNEL32.DLL, WerSetFlagsWorker, _WerSetFlagsWorker@4
-
+; implib KERNEL32.DLL, WerSetFlagsWorker, _WerSetFlagsWorker@4 ; WerSetFlagsWorker is an alias for WerSetFlags
 implib KERNEL32.DLL, WerUnregisterAdditionalProcess, _WerUnregisterAdditionalProcess@4
 implib KERNEL32.DLL, WerUnregisterAppLocalDump, _WerUnregisterAppLocalDump@0
 implib KERNEL32.DLL, WerUnregisterCustomMetadata, _WerUnregisterCustomMetadata@4
@@ -2021,17 +1938,11 @@ implib KERNEL32.DLL, WinExec, _WinExec@8
 implib KERNEL32.DLL, Wow64DisableWow64FsRedirection, _Wow64DisableWow64FsRedirection@4
 implib KERNEL32.DLL, Wow64EnableWow64FsRedirection, _Wow64EnableWow64FsRedirection@4
 implib KERNEL32.DLL, Wow64GetThreadContext, _Wow64GetThreadContext@8
-
-; Wow64GetThreadSelectorEntry triggers STATUS_NOT_SUPPORTED in Windows 10
-; implib KERNEL32.DLL, Wow64GetThreadSelectorEntry, _Wow64GetThreadSelectorEntry@12
-
+; implib KERNEL32.DLL, Wow64GetThreadSelectorEntry, _Wow64GetThreadSelectorEntry@12 ; Wow64GetThreadSelectorEntry triggers STATUS_NOT_SUPPORTED in Windows 10
 implib KERNEL32.DLL, Wow64RevertWow64FsRedirection, _Wow64RevertWow64FsRedirection@4
 implib KERNEL32.DLL, Wow64SetThreadContext, _Wow64SetThreadContext@8
 implib KERNEL32.DLL, Wow64SuspendThread, _Wow64SuspendThread@4
-
-; Wow64Transition is not a function, but a DATA symbol
-; implib KERNEL32.DLL, Wow64Transition
-
+; implib KERNEL32.DLL, Wow64Transition ; Wow64Transition is not a function, but a DATA symbol
 implib KERNEL32.DLL, WriteConsoleA, _WriteConsoleA@20
 implib KERNEL32.DLL, WriteConsoleInputA, _WriteConsoleInputA@16
 implib KERNEL32.DLL, WriteConsoleInputVDMA, _WriteConsoleInputVDMA@16
@@ -2060,10 +1971,7 @@ implib KERNEL32.DLL, WriteProfileStringW, _WriteProfileStringW@12
 implib KERNEL32.DLL, WriteTapemark, _WriteTapemark@16
 implib KERNEL32.DLL, ZombifyActCtx, _ZombifyActCtx@4
 implib KERNEL32.DLL, ZombifyActCtxWorker, _ZombifyActCtxWorker@4
-
-; _hread is an alias for _lread
-; implib KERNEL32.DLL, _hread, __hread@12
-
+; implib KERNEL32.DLL, _hread, __hread@12 ; _hread is an alias for _lread
 implib KERNEL32.DLL, _hwrite, __hwrite@12
 implib KERNEL32.DLL, _lclose, __lclose@4
 implib KERNEL32.DLL, _lcreat, __lcreat@8
