@@ -1,0 +1,2456 @@
+include '..\implib.inc'
+
+; The following symbols are commented out to limit the size of the library.
+; They are either stubs or available in specific ntdll versions only.
+; Feel free to uncomment the necessary symbols and recompile the library.
+
+; *** Software Quality Measurement (SQM) functions (dummy functions in Windows 10)
+; implib ntdll.dll, WinSqmAddToAverageDWORD, _WinSqmAddToAverageDWORD@12
+; implib ntdll.dll, WinSqmAddToStream, _WinSqmAddToStream@16
+; implib ntdll.dll, WinSqmAddToStreamEx, _WinSqmAddToStreamEx@20
+; implib ntdll.dll, WinSqmCheckEscalationAddToStreamEx, _WinSqmCheckEscalationAddToStreamEx@20 ; returns 0
+; implib ntdll.dll, WinSqmCheckEscalationSetDWORD, _WinSqmCheckEscalationSetDWORD@16           ; returns 0
+; implib ntdll.dll, WinSqmCheckEscalationSetDWORD64, _WinSqmCheckEscalationSetDWORD64@20       ; returns 0
+; implib ntdll.dll, WinSqmCheckEscalationSetString, _WinSqmCheckEscalationSetString@16         ; returns 0
+; implib ntdll.dll, WinSqmCommonDatapointDelete, _WinSqmCommonDatapointDelete@4                ; returns 1
+; implib ntdll.dll, WinSqmCommonDatapointSetDWORD, _WinSqmCommonDatapointSetDWORD@12           ; returns 1
+; implib ntdll.dll, WinSqmCommonDatapointSetDWORD64, _WinSqmCommonDatapointSetDWORD64@16       ; returns 1
+; implib ntdll.dll, WinSqmCommonDatapointSetStreamEx, _WinSqmCommonDatapointSetStreamEx@20     ; returns 1
+; implib ntdll.dll, WinSqmCommonDatapointSetString, _WinSqmCommonDatapointSetString@12         ; returns 1
+; implib ntdll.dll, WinSqmEndSession, _WinSqmEndSession@4
+; implib ntdll.dll, WinSqmEventEnabled, _WinSqmEventEnabled@8                                  ; returns 0
+; implib ntdll.dll, WinSqmEventWrite, _WinSqmEventWrite@12                                     ; returns 0
+; implib ntdll.dll, WinSqmGetEscalationRuleStatus, _WinSqmGetEscalationRuleStatus@8            ; returns 0
+; implib ntdll.dll, WinSqmIncrementDWORD, _WinSqmIncrementDWORD@12
+; implib ntdll.dll, WinSqmIsOptedIn, _WinSqmIsOptedIn@0                                        ; returns 0
+; implib ntdll.dll, WinSqmIsOptedInEx, _WinSqmIsOptedInEx@4                                    ; returns 0
+; implib ntdll.dll, WinSqmIsSessionDisabled, _WinSqmIsSessionDisabled@4                        ; returns 1
+; implib ntdll.dll, WinSqmSetDWORD, _WinSqmSetDWORD@12
+; implib ntdll.dll, WinSqmSetDWORD64, _WinSqmSetDWORD64@16
+; implib ntdll.dll, WinSqmSetEscalationInfo, _WinSqmSetEscalationInfo@16
+; implib ntdll.dll, WinSqmSetIfMaxDWORD, _WinSqmSetIfMaxDWORD@12
+; implib ntdll.dll, WinSqmSetIfMinDWORD, _WinSqmSetIfMinDWORD@12
+; implib ntdll.dll, WinSqmSetString, _WinSqmSetString@12
+; implib ntdll.dll, WinSqmStartSession, _WinSqmStartSession@12                                ; returns -1
+; implib ntdll.dll, WinSqmStartSessionForPartner, _WinSqmStartSessionForPartner@16            ; returns -1
+; implib ntdll.dll, WinSqmStartSqmOptinListener, _WinSqmStartSqmOptinListener@0               ; returns 0
+
+; *** Zw-prefix functions are aliases for the corresponding Nt-prefix functions
+; implib ntdll.dll, ZwAcceptConnectPort, _ZwAcceptConnectPort@24
+; implib ntdll.dll, ZwAccessCheck, _ZwAccessCheck@32
+; implib ntdll.dll, ZwAccessCheckAndAuditAlarm, _ZwAccessCheckAndAuditAlarm@44
+; implib ntdll.dll, ZwAccessCheckByType, _ZwAccessCheckByType@44
+; implib ntdll.dll, ZwAccessCheckByTypeAndAuditAlarm, _ZwAccessCheckByTypeAndAuditAlarm@64
+; implib ntdll.dll, ZwAccessCheckByTypeResultList, _ZwAccessCheckByTypeResultList@44
+; implib ntdll.dll, ZwAccessCheckByTypeResultListAndAuditAlarm, _ZwAccessCheckByTypeResultListAndAuditAlarm@64
+; implib ntdll.dll, ZwAccessCheckByTypeResultListAndAuditAlarmByHandle, _ZwAccessCheckByTypeResultListAndAuditAlarmByHandle@68
+; implib ntdll.dll, ZwAcquireCrossVmMutant, _ZwAcquireCrossVmMutant@8
+; implib ntdll.dll, ZwAcquireProcessActivityReference, _ZwAcquireProcessActivityReference@12
+; implib ntdll.dll, ZwAddAtom, _ZwAddAtom@12
+; implib ntdll.dll, ZwAddAtomEx, _ZwAddAtomEx@16
+; implib ntdll.dll, ZwAddBootEntry, _ZwAddBootEntry@8
+; implib ntdll.dll, ZwAddDriverEntry, _ZwAddDriverEntry@8
+; implib ntdll.dll, ZwAdjustGroupsToken, _ZwAdjustGroupsToken@24
+; implib ntdll.dll, ZwAdjustPrivilegesToken, _ZwAdjustPrivilegesToken@24
+; implib ntdll.dll, ZwAdjustTokenClaimsAndDeviceGroups, _ZwAdjustTokenClaimsAndDeviceGroups@64
+; implib ntdll.dll, ZwAlertResumeThread, _ZwAlertResumeThread@8
+; implib ntdll.dll, ZwAlertThread, _ZwAlertThread@4
+; implib ntdll.dll, ZwAlertThreadByThreadId, _ZwAlertThreadByThreadId@4
+; implib ntdll.dll, ZwAllocateLocallyUniqueId, _ZwAllocateLocallyUniqueId@4
+; implib ntdll.dll, ZwAllocateReserveObject, _ZwAllocateReserveObject@12
+; implib ntdll.dll, ZwAllocateUserPhysicalPages, _ZwAllocateUserPhysicalPages@12
+; implib ntdll.dll, ZwAllocateUserPhysicalPagesEx, _ZwAllocateUserPhysicalPagesEx@20
+; implib ntdll.dll, ZwAllocateUuids, _ZwAllocateUuids@16
+; implib ntdll.dll, ZwAllocateVirtualMemory, _ZwAllocateVirtualMemory@24
+; implib ntdll.dll, ZwAllocateVirtualMemoryEx, _ZwAllocateVirtualMemoryEx@28
+; implib ntdll.dll, ZwAlpcAcceptConnectPort, _ZwAlpcAcceptConnectPort@36
+; implib ntdll.dll, ZwAlpcCancelMessage, _ZwAlpcCancelMessage@12
+; implib ntdll.dll, ZwAlpcConnectPort, _ZwAlpcConnectPort@44
+; implib ntdll.dll, ZwAlpcConnectPortEx, _ZwAlpcConnectPortEx@44
+; implib ntdll.dll, ZwAlpcCreatePort, _ZwAlpcCreatePort@12
+; implib ntdll.dll, ZwAlpcCreatePortSection, _ZwAlpcCreatePortSection@24
+; implib ntdll.dll, ZwAlpcCreateResourceReserve, _ZwAlpcCreateResourceReserve@16
+; implib ntdll.dll, ZwAlpcCreateSectionView, _ZwAlpcCreateSectionView@12
+; implib ntdll.dll, ZwAlpcCreateSecurityContext, _ZwAlpcCreateSecurityContext@12
+; implib ntdll.dll, ZwAlpcDeletePortSection, _ZwAlpcDeletePortSection@12
+; implib ntdll.dll, ZwAlpcDeleteResourceReserve, _ZwAlpcDeleteResourceReserve@12
+; implib ntdll.dll, ZwAlpcDeleteSectionView, _ZwAlpcDeleteSectionView@12
+; implib ntdll.dll, ZwAlpcDeleteSecurityContext, _ZwAlpcDeleteSecurityContext@12
+; implib ntdll.dll, ZwAlpcDisconnectPort, _ZwAlpcDisconnectPort@8
+; implib ntdll.dll, ZwAlpcImpersonateClientContainerOfPort, _ZwAlpcImpersonateClientContainerOfPort@12
+; implib ntdll.dll, ZwAlpcImpersonateClientOfPort, _ZwAlpcImpersonateClientOfPort@12
+; implib ntdll.dll, ZwAlpcOpenSenderProcess, _ZwAlpcOpenSenderProcess@24
+; implib ntdll.dll, ZwAlpcOpenSenderThread, _ZwAlpcOpenSenderThread@24
+; implib ntdll.dll, ZwAlpcQueryInformation, _ZwAlpcQueryInformation@20
+; implib ntdll.dll, ZwAlpcQueryInformationMessage, _ZwAlpcQueryInformationMessage@24
+; implib ntdll.dll, ZwAlpcRevokeSecurityContext, _ZwAlpcRevokeSecurityContext@12
+; implib ntdll.dll, ZwAlpcSendWaitReceivePort, _ZwAlpcSendWaitReceivePort@32
+; implib ntdll.dll, ZwAlpcSetInformation, _ZwAlpcSetInformation@16
+; implib ntdll.dll, ZwApphelpCacheControl, _ZwApphelpCacheControl@8
+; implib ntdll.dll, ZwAreMappedFilesTheSame, _ZwAreMappedFilesTheSame@8
+; implib ntdll.dll, ZwAssignProcessToJobObject, _ZwAssignProcessToJobObject@8
+; implib ntdll.dll, ZwAssociateWaitCompletionPacket, _ZwAssociateWaitCompletionPacket@32
+; implib ntdll.dll, ZwCallEnclave, _ZwCallEnclave@16
+; implib ntdll.dll, ZwCallbackReturn, _ZwCallbackReturn@12
+; implib ntdll.dll, ZwCancelIoFile, _ZwCancelIoFile@8
+; implib ntdll.dll, ZwCancelIoFileEx, _ZwCancelIoFileEx@12
+; implib ntdll.dll, ZwCancelSynchronousIoFile, _ZwCancelSynchronousIoFile@12
+; implib ntdll.dll, ZwCancelTimer, _ZwCancelTimer@8
+; implib ntdll.dll, ZwCancelTimer2, _ZwCancelTimer2@8
+; implib ntdll.dll, ZwCancelWaitCompletionPacket, _ZwCancelWaitCompletionPacket@8
+; implib ntdll.dll, ZwClearEvent, _ZwClearEvent@4
+; implib ntdll.dll, ZwClose, _ZwClose@4
+; implib ntdll.dll, ZwCloseObjectAuditAlarm, _ZwCloseObjectAuditAlarm@12
+; implib ntdll.dll, ZwCommitComplete, _ZwCommitComplete@8
+; implib ntdll.dll, ZwCommitEnlistment, _ZwCommitEnlistment@8
+; implib ntdll.dll, ZwCommitRegistryTransaction, _ZwCommitRegistryTransaction@8
+; implib ntdll.dll, ZwCommitTransaction, _ZwCommitTransaction@8
+; implib ntdll.dll, ZwCompactKeys, _ZwCompactKeys@8
+; implib ntdll.dll, ZwCompareObjects, _ZwCompareObjects@8
+; implib ntdll.dll, ZwCompareSigningLevels, _ZwCompareSigningLevels@8
+; implib ntdll.dll, ZwCompareTokens, _ZwCompareTokens@12
+; implib ntdll.dll, ZwCompleteConnectPort, _ZwCompleteConnectPort@4
+; implib ntdll.dll, ZwCompressKey, _ZwCompressKey@4
+; implib ntdll.dll, ZwConnectPort, _ZwConnectPort@32
+; implib ntdll.dll, ZwContinue, _ZwContinue@8
+; implib ntdll.dll, ZwContinueEx, _ZwContinueEx@8
+; implib ntdll.dll, ZwConvertBetweenAuxiliaryCounterAndPerformanceCounter, _ZwConvertBetweenAuxiliaryCounterAndPerformanceCounter@16
+; implib ntdll.dll, ZwCopyFileChunk, _ZwCopyFileChunk@40
+; implib ntdll.dll, ZwCreateCrossVmEvent, _ZwCreateCrossVmEvent@24
+; implib ntdll.dll, ZwCreateCrossVmMutant, _ZwCreateCrossVmMutant@24
+; implib ntdll.dll, ZwCreateDebugObject, _ZwCreateDebugObject@16
+; implib ntdll.dll, ZwCreateDirectoryObject, _ZwCreateDirectoryObject@12
+; implib ntdll.dll, ZwCreateDirectoryObjectEx, _ZwCreateDirectoryObjectEx@20
+; implib ntdll.dll, ZwCreateEnclave, _ZwCreateEnclave@36
+; implib ntdll.dll, ZwCreateEnlistment, _ZwCreateEnlistment@32
+; implib ntdll.dll, ZwCreateEvent, _ZwCreateEvent@20
+; implib ntdll.dll, ZwCreateEventPair, _ZwCreateEventPair@12
+; implib ntdll.dll, ZwCreateFile, _ZwCreateFile@44
+; implib ntdll.dll, ZwCreateIRTimer, _ZwCreateIRTimer@12
+; implib ntdll.dll, ZwCreateIoCompletion, _ZwCreateIoCompletion@16
+; implib ntdll.dll, ZwCreateJobObject, _ZwCreateJobObject@12
+; implib ntdll.dll, ZwCreateJobSet, _ZwCreateJobSet@12
+; implib ntdll.dll, ZwCreateKey, _ZwCreateKey@28
+; implib ntdll.dll, ZwCreateKeyTransacted, _ZwCreateKeyTransacted@32
+; implib ntdll.dll, ZwCreateKeyedEvent, _ZwCreateKeyedEvent@16
+; implib ntdll.dll, ZwCreateLowBoxToken, _ZwCreateLowBoxToken@36
+; implib ntdll.dll, ZwCreateMailslotFile, _ZwCreateMailslotFile@32
+
+; implib ntdll.dll, ZwWow64CsrAllocateMessagePointer, _ZwWow64CsrAllocateMessagePointer@12
+; implib ntdll.dll, ZwWow64CsrCaptureMessageBuffer, _ZwWow64CsrCaptureMessageBuffer@16
+; implib ntdll.dll, ZwWow64CsrCaptureMessageString, _ZwWow64CsrCaptureMessageString@20
+; implib ntdll.dll, ZwWow64CsrClientCallServer, _ZwWow64CsrClientCallServer@16
+; implib ntdll.dll, ZwWow64CsrFreeCaptureBuffer, _ZwWow64CsrFreeCaptureBuffer@4
+; implib ntdll.dll, ZwWow64CsrGetProcessId, _ZwWow64CsrGetProcessId@0
+; implib ntdll.dll, ZwWow64CsrIdentifyAlertableThread, _ZwWow64CsrIdentifyAlertableThread@0
+; implib ntdll.dll, ZwWow64CsrVerifyRegion, _ZwWow64CsrVerifyRegion@8
+; implib ntdll.dll, ZwWow64CsrClientConnectToServer, _ZwWow64CsrClientConnectToServer@20
+; implib ntdll.dll, ZwWow64DebuggerCall, _ZwWow64DebuggerCall@20
+; implib ntdll.dll, ZwWow64GetCurrentProcessorNumberEx, _ZwWow64GetCurrentProcessorNumberEx@4
+; implib ntdll.dll, ZwWow64GetNativeSystemInformation, _ZwWow64GetNativeSystemInformation@16
+; implib ntdll.dll, ZwWow64IsProcessorFeaturePresent, _ZwWow64IsProcessorFeaturePresent@4
+; implib ntdll.dll, ZwWow64QueryInformationProcess64, _ZwWow64QueryInformationProcess64@20
+; implib ntdll.dll, ZwWow64ReadVirtualMemory64, _ZwWow64ReadVirtualMemory64@28
+; implib ntdll.dll, ZwWow64WriteVirtualMemory64, _ZwWow64WriteVirtualMemory64@28
+; implib ntdll.dll, ZwWriteFile, _ZwWriteFile@36
+; implib ntdll.dll, ZwWriteFileGather, _ZwWriteFileGather@36
+; implib ntdll.dll, ZwWriteRequestData, _ZwWriteRequestData@24
+; implib ntdll.dll, ZwWriteVirtualMemory, _ZwWriteVirtualMemory@20
+; implib ntdll.dll, ZwYieldExecution, _ZwYieldExecution@0
+
+; *** The following entries are not functions, but DATA symbols
+; implib ntdll.dll, LdrParentInterlockedPopEntrySList
+; implib ntdll.dll, LdrParentRtlInitializeNtUserPfn
+; implib ntdll.dll, LdrParentRtlResetNtUserPfn
+; implib ntdll.dll, LdrParentRtlRetrieveNtUserPfn
+; implib ntdll.dll, LdrSystemDllInitBlock
+; implib ntdll.dll, LdrpChildNtdll
+; implib ntdll.dll, NlsAnsiCodePage
+; implib ntdll.dll, NlsMbCodePageTag
+; implib ntdll.dll, NlsMbOemCodePageTag
+; implib ntdll.dll, Wow64Transition
+; implib ntdll.dll, _errno
+; implib ntdll.dll, _fltused
+
+implib ntdll.dll, A_SHAFinal, _A_SHAFinal@8
+implib ntdll.dll, A_SHAInit, _A_SHAInit@4
+implib ntdll.dll, A_SHAUpdate, _A_SHAUpdate@12
+implib ntdll.dll, AlpcAdjustCompletionListConcurrencyCount, _AlpcAdjustCompletionListConcurrencyCount@8
+implib ntdll.dll, AlpcFreeCompletionListMessage, _AlpcFreeCompletionListMessage@8
+implib ntdll.dll, AlpcGetCompletionListLastMessageInformation, _AlpcGetCompletionListLastMessageInformation@12
+implib ntdll.dll, AlpcGetCompletionListMessageAttributes, _AlpcGetCompletionListMessageAttributes@8
+implib ntdll.dll, AlpcGetHeaderSize, _AlpcGetHeaderSize@4
+implib ntdll.dll, AlpcGetMessageAttribute, _AlpcGetMessageAttribute@8
+implib ntdll.dll, AlpcGetMessageFromCompletionList, _AlpcGetMessageFromCompletionList@8
+implib ntdll.dll, AlpcGetOutstandingCompletionListMessageCount, _AlpcGetOutstandingCompletionListMessageCount@4
+implib ntdll.dll, AlpcInitializeMessageAttribute, _AlpcInitializeMessageAttribute@16
+implib ntdll.dll, AlpcMaxAllowedMessageLength, _AlpcMaxAllowedMessageLength@0
+implib ntdll.dll, AlpcRegisterCompletionList, _AlpcRegisterCompletionList@20
+implib ntdll.dll, AlpcRegisterCompletionListWorkerThread, _AlpcRegisterCompletionListWorkerThread@4
+implib ntdll.dll, AlpcRundownCompletionList, _AlpcRundownCompletionList@4
+implib ntdll.dll, AlpcUnregisterCompletionList, _AlpcUnregisterCompletionList@4
+implib ntdll.dll, AlpcUnregisterCompletionListWorkerThread, _AlpcUnregisterCompletionListWorkerThread@4
+implib ntdll.dll, ApiSetQueryApiSetPresence, _ApiSetQueryApiSetPresence@8
+implib ntdll.dll, ApiSetQueryApiSetPresenceEx, _ApiSetQueryApiSetPresenceEx@12
+implib ntdll.dll, CsrAllocateCaptureBuffer, _CsrAllocateCaptureBuffer@8
+; implib ntdll.dll, CsrAllocateMessagePointer, _CsrAllocateMessagePointer@12 ; CsrAllocateMessagePointer is an alias for NtWow64CsrAllocateMessagePointer
+; implib ntdll.dll, CsrCaptureMessageBuffer, _CsrCaptureMessageBuffer@16 ; CsrCaptureMessageBuffer is an alias for NtWow64CsrCaptureMessageBuffer
+implib ntdll.dll, CsrCaptureMessageMultiUnicodeStringsInPlace, _CsrCaptureMessageMultiUnicodeStringsInPlace@12
+; implib ntdll.dll, CsrCaptureMessageString, _CsrCaptureMessageString@20 ; CsrCaptureMessageString is an alias for NtWow64CsrCaptureMessageString
+implib ntdll.dll, CsrCaptureTimeout, _CsrCaptureTimeout@8
+; implib ntdll.dll, CsrClientCallServer, _CsrClientCallServer@16 ; CsrClientCallServer is an alias for NtWow64CsrClientCallServer
+implib ntdll.dll, CsrClientConnectToServer, _CsrClientConnectToServer@20
+; implib ntdll.dll, CsrFreeCaptureBuffer, _CsrFreeCaptureBuffer@4 ; CsrFreeCaptureBuffer is an alias for NtWow64CsrFreeCaptureBuffer
+; implib ntdll.dll, CsrGetProcessId, _CsrGetProcessId@0 ; CsrGetProcessId is an alias for NtWow64CsrGetProcessId
+; implib ntdll.dll, CsrIdentifyAlertableThread, _CsrIdentifyAlertableThread@0 ; CsrIdentifyAlertableThread is an alias for NtWow64CsrIdentifyAlertableThread
+; implib ntdll.dll, CsrSetPriorityClass, _CsrSetPriorityClass@8 ; CsrSetPriorityClass triggers STATUS_INVALID_PARAMETER in Windows 10
+; implib ntdll.dll, CsrVerifyRegion, _CsrVerifyRegion@8 ; CsrVerifyRegion is an alias for NtWow64CsrVerifyRegion
+; implib ntdll.dll, DbgBreakPoint, _DbgBreakPoint@0 ; DbgBreakPoint triggers a trap to debugger (int3)
+implib ntdll.dll, DbgPrint, _DbgPrint                             ; This function uses the CDECL calling convention!
+implib ntdll.dll, DbgPrintEx, _DbgPrintEx                         ; This function uses the CDECL calling convention!
+implib ntdll.dll, DbgPrintReturnControlC, _DbgPrintReturnControlC ; This function uses the CDECL calling convention!
+implib ntdll.dll, DbgPrompt, _DbgPrompt@12
+implib ntdll.dll, DbgQueryDebugFilterState, _DbgQueryDebugFilterState@8
+implib ntdll.dll, DbgSetDebugFilterState, _DbgSetDebugFilterState@12
+implib ntdll.dll, DbgUiConnectToDbg, _DbgUiConnectToDbg@0
+implib ntdll.dll, DbgUiContinue, _DbgUiContinue@8
+implib ntdll.dll, DbgUiConvertStateChangeStructure, _DbgUiConvertStateChangeStructure@8
+implib ntdll.dll, DbgUiConvertStateChangeStructureEx, _DbgUiConvertStateChangeStructureEx@8
+implib ntdll.dll, DbgUiDebugActiveProcess, _DbgUiDebugActiveProcess@4
+implib ntdll.dll, DbgUiGetThreadDebugObject, _DbgUiGetThreadDebugObject@0
+implib ntdll.dll, DbgUiIssueRemoteBreakin, _DbgUiIssueRemoteBreakin@4
+implib ntdll.dll, DbgUiRemoteBreakin, _DbgUiRemoteBreakin@4
+implib ntdll.dll, DbgUiSetThreadDebugObject, _DbgUiSetThreadDebugObject@4
+implib ntdll.dll, DbgUiStopDebugging, _DbgUiStopDebugging@4
+implib ntdll.dll, DbgUiWaitStateChange, _DbgUiWaitStateChange@8
+; implib ntdll.dll, DbgUserBreakPoint, _DbgUserBreakPoint@0 ; DbgUserBreakPoint triggers a trap to debugger (int3)
+implib ntdll.dll, EtwCheckCoverage, _EtwCheckCoverage@4
+implib ntdll.dll, EtwCreateTraceInstanceId, _EtwCreateTraceInstanceId@8
+implib ntdll.dll, EtwDeliverDataBlock, _EtwDeliverDataBlock@4
+implib ntdll.dll, EtwEnumerateProcessRegGuids, _EtwEnumerateProcessRegGuids@12
+implib ntdll.dll, EtwEventActivityIdControl, _EtwEventActivityIdControl@8
+implib ntdll.dll, EtwEventEnabled, _EtwEventEnabled@12
+implib ntdll.dll, EtwEventProviderEnabled, _EtwEventProviderEnabled@20
+implib ntdll.dll, EtwEventRegister, _EtwEventRegister@16
+implib ntdll.dll, EtwEventSetInformation, _EtwEventSetInformation@20
+implib ntdll.dll, EtwEventUnregister, _EtwEventUnregister@8
+implib ntdll.dll, EtwEventWrite, _EtwEventWrite@20
+implib ntdll.dll, EtwEventWriteEndScenario, _EtwEventWriteEndScenario@20
+implib ntdll.dll, EtwEventWriteEx, _EtwEventWriteEx@40
+implib ntdll.dll, EtwEventWriteFull, _EtwEventWriteFull@32
+implib ntdll.dll, EtwEventWriteNoRegistration, _EtwEventWriteNoRegistration@16
+implib ntdll.dll, EtwEventWriteStartScenario, _EtwEventWriteStartScenario@20
+implib ntdll.dll, EtwEventWriteString, _EtwEventWriteString@24
+implib ntdll.dll, EtwEventWriteTransfer, _EtwEventWriteTransfer@28
+implib ntdll.dll, EtwGetTraceEnableFlags, _EtwGetTraceEnableFlags@8
+implib ntdll.dll, EtwGetTraceEnableLevel, _EtwGetTraceEnableLevel@8
+implib ntdll.dll, EtwGetTraceLoggerHandle, _EtwGetTraceLoggerHandle@4
+implib ntdll.dll, EtwLogTraceEvent, _EtwLogTraceEvent@12
+implib ntdll.dll, EtwNotificationRegister, _EtwNotificationRegister@20
+implib ntdll.dll, EtwNotificationUnregister, _EtwNotificationUnregister@12
+implib ntdll.dll, EtwProcessPrivateLoggerRequest, _EtwProcessPrivateLoggerRequest@4
+implib ntdll.dll, EtwRegisterSecurityProvider, _EtwRegisterSecurityProvider@0
+implib ntdll.dll, EtwRegisterTraceGuidsA, _EtwRegisterTraceGuidsA@32
+implib ntdll.dll, EtwRegisterTraceGuidsW, _EtwRegisterTraceGuidsW@32
+implib ntdll.dll, EtwReplyNotification, _EtwReplyNotification@4
+implib ntdll.dll, EtwSendNotification, _EtwSendNotification@20
+implib ntdll.dll, EtwSetMark, _EtwSetMark@16
+implib ntdll.dll, EtwTraceEventInstance, _EtwTraceEventInstance@20
+implib ntdll.dll, EtwTraceMessage, _EtwTraceMessage ; This function uses the CDECL calling convention!
+implib ntdll.dll, EtwTraceMessageVa, _EtwTraceMessageVa@24
+implib ntdll.dll, EtwUnregisterTraceGuids, _EtwUnregisterTraceGuids@8
+implib ntdll.dll, EtwWriteUMSecurityEvent, _EtwWriteUMSecurityEvent@16
+implib ntdll.dll, EtwpCreateEtwThread, _EtwpCreateEtwThread@8
+implib ntdll.dll, EtwpGetCpuSpeed, _EtwpGetCpuSpeed@8
+implib ntdll.dll, EvtIntReportAuthzEventAndSourceAsync, _EvtIntReportAuthzEventAndSourceAsync@44
+implib ntdll.dll, EvtIntReportEventAndSourceAsync, _EvtIntReportEventAndSourceAsync@44
+implib ntdll.dll, KiFastSystemCall, _KiFastSystemCall@0
+implib ntdll.dll, KiFastSystemCallRet, _KiFastSystemCallRet@0
+implib ntdll.dll, KiIntSystemCall, _KiIntSystemCall@0
+implib ntdll.dll, KiRaiseUserExceptionDispatcher, _KiRaiseUserExceptionDispatcher@0
+implib ntdll.dll, KiUserApcDispatcher, _KiUserApcDispatcher@20
+implib ntdll.dll, KiUserCallbackDispatcher, _KiUserCallbackDispatcher@12
+implib ntdll.dll, KiUserExceptionDispatcher, _KiUserExceptionDispatcher@8
+implib ntdll.dll, LdrAccessResource, _LdrAccessResource@16
+implib ntdll.dll, LdrAddDllDirectory, _LdrAddDllDirectory@8
+implib ntdll.dll, LdrAddLoadAsDataTable, _LdrAddLoadAsDataTable@20
+implib ntdll.dll, LdrAddRefDll, _LdrAddRefDll@8
+implib ntdll.dll, LdrAppxHandleIntegrityFailure, _LdrAppxHandleIntegrityFailure@4
+; implib ntdll.dll, LdrCallEnclave, _LdrCallEnclave@12 ; LdrCallEnclave is an alias for LdrLoadEnclaveModule
+implib ntdll.dll, LdrControlFlowGuardEnforced, _LdrControlFlowGuardEnforced@0
+implib ntdll.dll, LdrCreateEnclave, _LdrCreateEnclave@36
+implib ntdll.dll, LdrDeleteEnclave, _LdrDeleteEnclave@4
+implib ntdll.dll, LdrDisableThreadCalloutsForDll, _LdrDisableThreadCalloutsForDll@4
+implib ntdll.dll, LdrEnumResources, _LdrEnumResources@20
+implib ntdll.dll, LdrEnumerateLoadedModules, _LdrEnumerateLoadedModules@12
+implib ntdll.dll, LdrFastFailInLoaderCallout, _LdrFastFailInLoaderCallout@0
+implib ntdll.dll, LdrFindEntryForAddress, _LdrFindEntryForAddress@8
+implib ntdll.dll, LdrFindResourceDirectory_U, _LdrFindResourceDirectory_U@16
+implib ntdll.dll, LdrFindResourceEx_U, _LdrFindResourceEx_U@20
+implib ntdll.dll, LdrFindResource_U, _LdrFindResource_U@16
+implib ntdll.dll, LdrFlushAlternateResourceModules, _LdrFlushAlternateResourceModules@0
+implib ntdll.dll, LdrGetDllDirectory, _LdrGetDllDirectory@4
+implib ntdll.dll, LdrGetDllFullName, _LdrGetDllFullName@8
+implib ntdll.dll, LdrGetDllHandle, _LdrGetDllHandle@16
+implib ntdll.dll, LdrGetDllHandleByMapping, _LdrGetDllHandleByMapping@8
+implib ntdll.dll, LdrGetDllHandleByName, _LdrGetDllHandleByName@12
+implib ntdll.dll, LdrGetDllHandleEx, _LdrGetDllHandleEx@20
+implib ntdll.dll, LdrGetDllPath, _LdrGetDllPath@16
+implib ntdll.dll, LdrGetFailureData, _LdrGetFailureData@0
+implib ntdll.dll, LdrGetFileNameFromLoadAsDataTable, _LdrGetFileNameFromLoadAsDataTable@8
+implib ntdll.dll, LdrGetProcedureAddress, _LdrGetProcedureAddress@16
+implib ntdll.dll, LdrGetProcedureAddressEx, _LdrGetProcedureAddressEx@20
+implib ntdll.dll, LdrGetProcedureAddressForCaller, _LdrGetProcedureAddressForCaller@24
+implib ntdll.dll, LdrInitShimEngineDynamic, _LdrInitShimEngineDynamic@4
+implib ntdll.dll, LdrInitializeEnclave, _LdrInitializeEnclave@20
+implib ntdll.dll, LdrInitializeThunk, _LdrInitializeThunk@16
+implib ntdll.dll, LdrIsModuleSxsRedirected, _LdrIsModuleSxsRedirected@4
+implib ntdll.dll, LdrLoadAlternateResourceModule, _LdrLoadAlternateResourceModule@16
+implib ntdll.dll, LdrLoadAlternateResourceModuleEx, _LdrLoadAlternateResourceModuleEx@20
+implib ntdll.dll, LdrLoadDll, _LdrLoadDll@16
+; implib ntdll.dll, LdrLoadEnclaveModule, _LdrLoadEnclaveModule@12 ; LdrLoadEnclaveModule triggers STATUS_NOT_SUPPORTED in Windows 10
+implib ntdll.dll, LdrLockLoaderLock, _LdrLockLoaderLock@12
+implib ntdll.dll, LdrOpenImageFileOptionsKey, _LdrOpenImageFileOptionsKey@12
+implib ntdll.dll, LdrProcessRelocationBlock, _LdrProcessRelocationBlock@16
+implib ntdll.dll, LdrProcessRelocationBlockEx, _LdrProcessRelocationBlockEx@20
+implib ntdll.dll, LdrQueryImageFileExecutionOptions, _LdrQueryImageFileExecutionOptions@24
+implib ntdll.dll, LdrQueryImageFileExecutionOptionsEx, _LdrQueryImageFileExecutionOptionsEx@28
+implib ntdll.dll, LdrQueryImageFileKeyOption, _LdrQueryImageFileKeyOption@24
+implib ntdll.dll, LdrQueryModuleServiceTags, _LdrQueryModuleServiceTags@12
+implib ntdll.dll, LdrQueryOptionalDelayLoadedAPI, _LdrQueryOptionalDelayLoadedAPI@16
+implib ntdll.dll, LdrQueryProcessModuleInformation, _LdrQueryProcessModuleInformation@12
+implib ntdll.dll, LdrRegisterDllNotification, _LdrRegisterDllNotification@16
+implib ntdll.dll, LdrRemoveDllDirectory, _LdrRemoveDllDirectory@4
+implib ntdll.dll, LdrRemoveLoadAsDataTable, _LdrRemoveLoadAsDataTable@16
+implib ntdll.dll, LdrResFindResource, _LdrResFindResource@36
+implib ntdll.dll, LdrResFindResourceDirectory, _LdrResFindResourceDirectory@28
+implib ntdll.dll, LdrResGetRCConfig, _LdrResGetRCConfig@20
+implib ntdll.dll, LdrResRelease, _LdrResRelease@12
+implib ntdll.dll, LdrResSearchResource, _LdrResSearchResource@32
+implib ntdll.dll, LdrResolveDelayLoadedAPI, _LdrResolveDelayLoadedAPI@24
+implib ntdll.dll, LdrResolveDelayLoadsFromDll, _LdrResolveDelayLoadsFromDll@12
+implib ntdll.dll, LdrRscIsTypeExist, _LdrRscIsTypeExist@16
+; implib ntdll.dll, LdrSetAppCompatDllRedirectionCallback, _LdrSetAppCompatDllRedirectionCallback@12 ; LdrSetAppCompatDllRedirectionCallback works in XP and below (it does nothing in later versions)
+implib ntdll.dll, LdrSetDefaultDllDirectories, _LdrSetDefaultDllDirectories@4
+implib ntdll.dll, LdrSetDllDirectory, _LdrSetDllDirectory@4
+implib ntdll.dll, LdrSetDllManifestProber, _LdrSetDllManifestProber@4
+implib ntdll.dll, LdrSetImplicitPathOptions, _LdrSetImplicitPathOptions@8
+implib ntdll.dll, LdrSetMUICacheType, _LdrSetMUICacheType@4
+implib ntdll.dll, LdrShutdownProcess, _LdrShutdownProcess@0
+implib ntdll.dll, LdrShutdownThread, _LdrShutdownThread@0
+implib ntdll.dll, LdrStandardizeSystemPath, _LdrStandardizeSystemPath@4
+implib ntdll.dll, LdrUnloadAlternateResourceModule, _LdrUnloadAlternateResourceModule@4
+implib ntdll.dll, LdrUnloadAlternateResourceModuleEx, _LdrUnloadAlternateResourceModuleEx@8
+implib ntdll.dll, LdrUnloadDll, _LdrUnloadDll@4
+implib ntdll.dll, LdrUnlockLoaderLock, _LdrUnlockLoaderLock@8
+implib ntdll.dll, LdrUnregisterDllNotification, _LdrUnregisterDllNotification@4
+implib ntdll.dll, LdrUpdatePackageSearchPath, _LdrUpdatePackageSearchPath@4
+implib ntdll.dll, LdrVerifyImageMatchesChecksum, _LdrVerifyImageMatchesChecksum@16
+implib ntdll.dll, LdrVerifyImageMatchesChecksumEx, _LdrVerifyImageMatchesChecksumEx@8
+implib ntdll.dll, LdrpResGetMappingSize, _LdrpResGetMappingSize@16
+implib ntdll.dll, LdrpResGetResourceDirectory, _LdrpResGetResourceDirectory@20
+implib ntdll.dll, MD4Final, _MD4Final@4
+implib ntdll.dll, MD4Init, _MD4Init@4
+implib ntdll.dll, MD4Update, _MD4Update@12
+implib ntdll.dll, MD5Final, _MD5Final@4
+implib ntdll.dll, MD5Init, _MD5Init@4
+implib ntdll.dll, MD5Update, _MD5Update@12
+implib ntdll.dll, NtAcceptConnectPort, _NtAcceptConnectPort@24
+implib ntdll.dll, NtAccessCheck, _NtAccessCheck@32
+implib ntdll.dll, NtAccessCheckAndAuditAlarm, _NtAccessCheckAndAuditAlarm@44
+implib ntdll.dll, NtAccessCheckByType, _NtAccessCheckByType@44
+implib ntdll.dll, NtAccessCheckByTypeAndAuditAlarm, _NtAccessCheckByTypeAndAuditAlarm@64
+implib ntdll.dll, NtAccessCheckByTypeResultList, _NtAccessCheckByTypeResultList@44
+implib ntdll.dll, NtAccessCheckByTypeResultListAndAuditAlarm, _NtAccessCheckByTypeResultListAndAuditAlarm@64
+implib ntdll.dll, NtAccessCheckByTypeResultListAndAuditAlarmByHandle, _NtAccessCheckByTypeResultListAndAuditAlarmByHandle@68
+implib ntdll.dll, NtAcquireCrossVmMutant, _NtAcquireCrossVmMutant@8
+implib ntdll.dll, NtAcquireProcessActivityReference, _NtAcquireProcessActivityReference@12
+implib ntdll.dll, NtAddAtom, _NtAddAtom@12
+implib ntdll.dll, NtAddAtomEx, _NtAddAtomEx@16
+implib ntdll.dll, NtAddBootEntry, _NtAddBootEntry@8
+implib ntdll.dll, NtAddDriverEntry, _NtAddDriverEntry@8
+implib ntdll.dll, NtAdjustGroupsToken, _NtAdjustGroupsToken@24
+implib ntdll.dll, NtAdjustPrivilegesToken, _NtAdjustPrivilegesToken@24
+implib ntdll.dll, NtAdjustTokenClaimsAndDeviceGroups, _NtAdjustTokenClaimsAndDeviceGroups@64
+implib ntdll.dll, NtAlertResumeThread, _NtAlertResumeThread@8
+implib ntdll.dll, NtAlertThread, _NtAlertThread@4
+implib ntdll.dll, NtAlertThreadByThreadId, _NtAlertThreadByThreadId@4
+implib ntdll.dll, NtAllocateLocallyUniqueId, _NtAllocateLocallyUniqueId@4
+implib ntdll.dll, NtAllocateReserveObject, _NtAllocateReserveObject@12
+implib ntdll.dll, NtAllocateUserPhysicalPages, _NtAllocateUserPhysicalPages@12
+implib ntdll.dll, NtAllocateUserPhysicalPagesEx, _NtAllocateUserPhysicalPagesEx@20
+implib ntdll.dll, NtAllocateUuids, _NtAllocateUuids@16
+implib ntdll.dll, NtAllocateVirtualMemory, _NtAllocateVirtualMemory@24
+implib ntdll.dll, NtAllocateVirtualMemoryEx, _NtAllocateVirtualMemoryEx@28
+implib ntdll.dll, NtAlpcAcceptConnectPort, _NtAlpcAcceptConnectPort@36
+implib ntdll.dll, NtAlpcCancelMessage, _NtAlpcCancelMessage@12
+implib ntdll.dll, NtAlpcConnectPort, _NtAlpcConnectPort@44
+implib ntdll.dll, NtAlpcConnectPortEx, _NtAlpcConnectPortEx@44
+implib ntdll.dll, NtAlpcCreatePort, _NtAlpcCreatePort@12
+implib ntdll.dll, NtAlpcCreatePortSection, _NtAlpcCreatePortSection@24
+implib ntdll.dll, NtAlpcCreateResourceReserve, _NtAlpcCreateResourceReserve@16
+implib ntdll.dll, NtAlpcCreateSectionView, _NtAlpcCreateSectionView@12
+implib ntdll.dll, NtAlpcCreateSecurityContext, _NtAlpcCreateSecurityContext@12
+implib ntdll.dll, NtAlpcDeletePortSection, _NtAlpcDeletePortSection@12
+implib ntdll.dll, NtAlpcDeleteResourceReserve, _NtAlpcDeleteResourceReserve@12
+implib ntdll.dll, NtAlpcDeleteSectionView, _NtAlpcDeleteSectionView@12
+implib ntdll.dll, NtAlpcDeleteSecurityContext, _NtAlpcDeleteSecurityContext@12
+implib ntdll.dll, NtAlpcDisconnectPort, _NtAlpcDisconnectPort@8
+implib ntdll.dll, NtAlpcImpersonateClientContainerOfPort, _NtAlpcImpersonateClientContainerOfPort@12
+implib ntdll.dll, NtAlpcImpersonateClientOfPort, _NtAlpcImpersonateClientOfPort@12
+implib ntdll.dll, NtAlpcOpenSenderProcess, _NtAlpcOpenSenderProcess@24
+implib ntdll.dll, NtAlpcOpenSenderThread, _NtAlpcOpenSenderThread@24
+implib ntdll.dll, NtAlpcQueryInformation, _NtAlpcQueryInformation@20
+implib ntdll.dll, NtAlpcQueryInformationMessage, _NtAlpcQueryInformationMessage@24
+implib ntdll.dll, NtAlpcRevokeSecurityContext, _NtAlpcRevokeSecurityContext@12
+implib ntdll.dll, NtAlpcSendWaitReceivePort, _NtAlpcSendWaitReceivePort@32
+implib ntdll.dll, NtAlpcSetInformation, _NtAlpcSetInformation@16
+implib ntdll.dll, NtApphelpCacheControl, _NtApphelpCacheControl@8
+implib ntdll.dll, NtAreMappedFilesTheSame, _NtAreMappedFilesTheSame@8
+implib ntdll.dll, NtAssignProcessToJobObject, _NtAssignProcessToJobObject@8
+implib ntdll.dll, NtAssociateWaitCompletionPacket, _NtAssociateWaitCompletionPacket@32
+implib ntdll.dll, NtCallEnclave, _NtCallEnclave@16
+implib ntdll.dll, NtCallbackReturn, _NtCallbackReturn@12
+implib ntdll.dll, NtCancelIoFile, _NtCancelIoFile@8
+implib ntdll.dll, NtCancelIoFileEx, _NtCancelIoFileEx@12
+implib ntdll.dll, NtCancelSynchronousIoFile, _NtCancelSynchronousIoFile@12
+implib ntdll.dll, NtCancelTimer, _NtCancelTimer@8
+implib ntdll.dll, NtCancelTimer2, _NtCancelTimer2@8
+implib ntdll.dll, NtCancelWaitCompletionPacket, _NtCancelWaitCompletionPacket@8
+implib ntdll.dll, NtClearEvent, _NtClearEvent@4
+implib ntdll.dll, NtClose, _NtClose@4
+implib ntdll.dll, NtCloseObjectAuditAlarm, _NtCloseObjectAuditAlarm@12
+implib ntdll.dll, NtCommitComplete, _NtCommitComplete@8
+implib ntdll.dll, NtCommitEnlistment, _NtCommitEnlistment@8
+implib ntdll.dll, NtCommitRegistryTransaction, _NtCommitRegistryTransaction@8
+implib ntdll.dll, NtCommitTransaction, _NtCommitTransaction@8
+implib ntdll.dll, NtCompactKeys, _NtCompactKeys@8
+implib ntdll.dll, NtCompareObjects, _NtCompareObjects@8
+implib ntdll.dll, NtCompareSigningLevels, _NtCompareSigningLevels@8
+implib ntdll.dll, NtCompareTokens, _NtCompareTokens@12
+implib ntdll.dll, NtCompleteConnectPort, _NtCompleteConnectPort@4
+implib ntdll.dll, NtCompressKey, _NtCompressKey@4
+implib ntdll.dll, NtConnectPort, _NtConnectPort@32
+implib ntdll.dll, NtContinue, _NtContinue@8
+implib ntdll.dll, NtContinueEx, _NtContinueEx@8
+implib ntdll.dll, NtConvertBetweenAuxiliaryCounterAndPerformanceCounter, _NtConvertBetweenAuxiliaryCounterAndPerformanceCounter@16
+implib ntdll.dll, NtCopyFileChunk, _NtCopyFileChunk@40
+implib ntdll.dll, NtCreateCrossVmEvent, _NtCreateCrossVmEvent@24
+implib ntdll.dll, NtCreateCrossVmMutant, _NtCreateCrossVmMutant@24
+implib ntdll.dll, NtCreateDebugObject, _NtCreateDebugObject@16
+implib ntdll.dll, NtCreateDirectoryObject, _NtCreateDirectoryObject@12
+implib ntdll.dll, NtCreateDirectoryObjectEx, _NtCreateDirectoryObjectEx@20
+implib ntdll.dll, NtCreateEnclave, _NtCreateEnclave@36
+implib ntdll.dll, NtCreateEnlistment, _NtCreateEnlistment@32
+implib ntdll.dll, NtCreateEvent, _NtCreateEvent@20
+implib ntdll.dll, NtCreateEventPair, _NtCreateEventPair@12
+implib ntdll.dll, NtCreateFile, _NtCreateFile@44
+implib ntdll.dll, NtCreateIRTimer, _NtCreateIRTimer@12
+implib ntdll.dll, NtCreateIoCompletion, _NtCreateIoCompletion@16
+implib ntdll.dll, NtCreateJobObject, _NtCreateJobObject@12
+implib ntdll.dll, NtCreateJobSet, _NtCreateJobSet@12
+implib ntdll.dll, NtCreateKey, _NtCreateKey@28
+implib ntdll.dll, NtCreateKeyTransacted, _NtCreateKeyTransacted@32
+implib ntdll.dll, NtCreateKeyedEvent, _NtCreateKeyedEvent@16
+implib ntdll.dll, NtCreateLowBoxToken, _NtCreateLowBoxToken@36
+implib ntdll.dll, NtCreateMailslotFile, _NtCreateMailslotFile@32
+implib ntdll.dll, NtCreateMutant
+implib ntdll.dll, NtCreateNamedPipeFile
+implib ntdll.dll, NtCreatePagingFile
+implib ntdll.dll, NtCreatePartition
+implib ntdll.dll, NtCreatePort
+implib ntdll.dll, NtCreatePrivateNamespace
+implib ntdll.dll, NtCreateProcess
+implib ntdll.dll, NtCreateProcessEx
+implib ntdll.dll, NtCreateProfile
+implib ntdll.dll, NtCreateProfileEx
+implib ntdll.dll, NtCreateRegistryTransaction
+implib ntdll.dll, NtCreateResourceManager
+implib ntdll.dll, NtCreateSection
+implib ntdll.dll, NtCreateSectionEx
+implib ntdll.dll, NtCreateSemaphore
+implib ntdll.dll, NtCreateSymbolicLinkObject
+implib ntdll.dll, NtCreateThread
+implib ntdll.dll, NtCreateThreadEx
+implib ntdll.dll, NtCreateTimer
+implib ntdll.dll, NtCreateTimer2
+implib ntdll.dll, NtCreateToken
+implib ntdll.dll, NtCreateTokenEx
+implib ntdll.dll, NtCreateTransaction
+implib ntdll.dll, NtCreateTransactionManager
+implib ntdll.dll, NtCreateUserProcess
+implib ntdll.dll, NtCreateWaitCompletionPacket
+implib ntdll.dll, NtCreateWaitablePort
+implib ntdll.dll, NtCreateWnfStateName
+implib ntdll.dll, NtCreateWorkerFactory
+implib ntdll.dll, NtCurrentTeb
+implib ntdll.dll, NtDebugActiveProcess
+implib ntdll.dll, NtDebugContinue
+implib ntdll.dll, NtDelayExecution
+implib ntdll.dll, NtDeleteAtom
+implib ntdll.dll, NtDeleteBootEntry
+implib ntdll.dll, NtDeleteDriverEntry
+implib ntdll.dll, NtDeleteFile
+implib ntdll.dll, NtDeleteKey
+implib ntdll.dll, NtDeleteObjectAuditAlarm
+implib ntdll.dll, NtDeletePrivateNamespace
+implib ntdll.dll, NtDeleteValueKey
+implib ntdll.dll, NtDeleteWnfStateData
+implib ntdll.dll, NtDeleteWnfStateName
+implib ntdll.dll, NtDeviceIoControlFile
+implib ntdll.dll, NtDirectGraphicsCall
+implib ntdll.dll, NtDisableLastKnownGood
+implib ntdll.dll, NtDisplayString
+implib ntdll.dll, NtDrawText
+implib ntdll.dll, NtDuplicateObject
+implib ntdll.dll, NtDuplicateToken
+implib ntdll.dll, NtEnableLastKnownGood
+implib ntdll.dll, NtEnumerateBootEntries
+implib ntdll.dll, NtEnumerateDriverEntries
+implib ntdll.dll, NtEnumerateKey
+implib ntdll.dll, NtEnumerateSystemEnvironmentValuesEx
+implib ntdll.dll, NtEnumerateTransactionObject
+implib ntdll.dll, NtEnumerateValueKey
+implib ntdll.dll, NtExtendSection
+implib ntdll.dll, NtFilterBootOption
+implib ntdll.dll, NtFilterToken
+implib ntdll.dll, NtFilterTokenEx
+implib ntdll.dll, NtFindAtom
+implib ntdll.dll, NtFlushBuffersFile
+implib ntdll.dll, NtFlushBuffersFileEx
+implib ntdll.dll, NtFlushInstallUILanguage
+implib ntdll.dll, NtFlushInstructionCache
+implib ntdll.dll, NtFlushKey
+implib ntdll.dll, NtFlushProcessWriteBuffers
+implib ntdll.dll, NtFlushVirtualMemory
+implib ntdll.dll, NtFlushWriteBuffer
+implib ntdll.dll, NtFreeUserPhysicalPages
+implib ntdll.dll, NtFreeVirtualMemory
+implib ntdll.dll, NtFreezeRegistry
+implib ntdll.dll, NtFreezeTransactions
+implib ntdll.dll, NtFsControlFile
+implib ntdll.dll, NtGetCachedSigningLevel
+implib ntdll.dll, NtGetCompleteWnfStateSubscription
+implib ntdll.dll, NtGetContextThread
+implib ntdll.dll, NtGetCurrentProcessorNumber
+implib ntdll.dll, NtGetCurrentProcessorNumberEx
+implib ntdll.dll, NtGetDevicePowerState
+implib ntdll.dll, NtGetMUIRegistryInfo
+implib ntdll.dll, NtGetNextProcess
+implib ntdll.dll, NtGetNextThread
+implib ntdll.dll, NtGetNlsSectionPtr
+implib ntdll.dll, NtGetNotificationResourceManager
+implib ntdll.dll, NtGetTickCount
+implib ntdll.dll, NtGetWriteWatch
+implib ntdll.dll, NtImpersonateAnonymousToken
+implib ntdll.dll, NtImpersonateClientOfPort
+implib ntdll.dll, NtImpersonateThread
+; implib ntdll.dll, NtInitializeEnclave, _NtInitializeEnclave@20 ; NtInitializeEnclave is an alias for LdrInitializeEnclave
+implib ntdll.dll, NtInitializeNlsFiles
+implib ntdll.dll, NtInitializeRegistry
+implib ntdll.dll, NtInitiatePowerAction
+implib ntdll.dll, NtIsProcessInJob
+implib ntdll.dll, NtIsSystemResumeAutomatic
+implib ntdll.dll, NtIsUILanguageComitted
+implib ntdll.dll, NtListenPort
+implib ntdll.dll, NtLoadDriver
+implib ntdll.dll, NtLoadEnclaveData
+implib ntdll.dll, NtLoadKey
+implib ntdll.dll, NtLoadKey2
+implib ntdll.dll, NtLoadKey3
+implib ntdll.dll, NtLoadKeyEx
+implib ntdll.dll, NtLockFile
+implib ntdll.dll, NtLockProductActivationKeys
+implib ntdll.dll, NtLockRegistryKey
+implib ntdll.dll, NtLockVirtualMemory
+implib ntdll.dll, NtMakePermanentObject
+implib ntdll.dll, NtMakeTemporaryObject
+implib ntdll.dll, NtManageHotPatch
+implib ntdll.dll, NtManagePartition
+implib ntdll.dll, NtMapCMFModule
+implib ntdll.dll, NtMapUserPhysicalPages
+implib ntdll.dll, NtMapUserPhysicalPagesScatter
+implib ntdll.dll, NtMapViewOfSection
+implib ntdll.dll, NtMapViewOfSectionEx
+implib ntdll.dll, NtModifyBootEntry
+implib ntdll.dll, NtModifyDriverEntry
+implib ntdll.dll, NtNotifyChangeDirectoryFile
+implib ntdll.dll, NtNotifyChangeDirectoryFileEx
+implib ntdll.dll, NtNotifyChangeKey
+implib ntdll.dll, NtNotifyChangeMultipleKeys
+implib ntdll.dll, NtNotifyChangeSession
+implib ntdll.dll, NtOpenDirectoryObject
+implib ntdll.dll, NtOpenEnlistment
+implib ntdll.dll, NtOpenEvent
+implib ntdll.dll, NtOpenEventPair
+implib ntdll.dll, NtOpenFile
+implib ntdll.dll, NtOpenIoCompletion
+implib ntdll.dll, NtOpenJobObject
+implib ntdll.dll, NtOpenKey
+implib ntdll.dll, NtOpenKeyEx
+implib ntdll.dll, NtOpenKeyTransacted
+implib ntdll.dll, NtOpenKeyTransactedEx
+implib ntdll.dll, NtOpenKeyedEvent
+implib ntdll.dll, NtOpenMutant
+implib ntdll.dll, NtOpenObjectAuditAlarm
+implib ntdll.dll, NtOpenPartition
+implib ntdll.dll, NtOpenPrivateNamespace
+implib ntdll.dll, NtOpenProcess
+implib ntdll.dll, NtOpenProcessToken
+implib ntdll.dll, NtOpenProcessTokenEx
+implib ntdll.dll, NtOpenRegistryTransaction
+implib ntdll.dll, NtOpenResourceManager
+implib ntdll.dll, NtOpenSection
+implib ntdll.dll, NtOpenSemaphore
+implib ntdll.dll, NtOpenSession
+implib ntdll.dll, NtOpenSymbolicLinkObject
+implib ntdll.dll, NtOpenThread
+implib ntdll.dll, NtOpenThreadToken
+implib ntdll.dll, NtOpenThreadTokenEx
+implib ntdll.dll, NtOpenTimer
+implib ntdll.dll, NtOpenTransaction
+implib ntdll.dll, NtOpenTransactionManager
+implib ntdll.dll, NtPlugPlayControl
+implib ntdll.dll, NtPowerInformation
+implib ntdll.dll, NtPrePrepareComplete
+implib ntdll.dll, NtPrePrepareEnlistment
+implib ntdll.dll, NtPrepareComplete
+implib ntdll.dll, NtPrepareEnlistment
+implib ntdll.dll, NtPrivilegeCheck
+implib ntdll.dll, NtPrivilegeObjectAuditAlarm
+implib ntdll.dll, NtPrivilegedServiceAuditAlarm
+implib ntdll.dll, NtPropagationComplete
+implib ntdll.dll, NtPropagationFailed
+implib ntdll.dll, NtProtectVirtualMemory
+implib ntdll.dll, NtPssCaptureVaSpaceBulk
+implib ntdll.dll, NtPulseEvent
+implib ntdll.dll, NtQueryAttributesFile
+implib ntdll.dll, NtQueryAuxiliaryCounterFrequency
+implib ntdll.dll, NtQueryBootEntryOrder
+implib ntdll.dll, NtQueryBootOptions
+; implib ntdll.dll, NtQueryDebugFilterState, _NtQueryDebugFilterState@8 ; NtQueryDebugFilterState is an alias for DbgQueryDebugFilterState
+implib ntdll.dll, NtQueryDefaultLocale
+implib ntdll.dll, NtQueryDefaultUILanguage
+implib ntdll.dll, NtQueryDirectoryFile
+implib ntdll.dll, NtQueryDirectoryFileEx
+implib ntdll.dll, NtQueryDirectoryObject
+implib ntdll.dll, NtQueryDriverEntryOrder
+implib ntdll.dll, NtQueryEaFile
+implib ntdll.dll, NtQueryEvent
+implib ntdll.dll, NtQueryFullAttributesFile
+implib ntdll.dll, NtQueryInformationAtom
+implib ntdll.dll, NtQueryInformationByName
+implib ntdll.dll, NtQueryInformationEnlistment
+implib ntdll.dll, NtQueryInformationFile
+implib ntdll.dll, NtQueryInformationJobObject
+implib ntdll.dll, NtQueryInformationPort
+implib ntdll.dll, NtQueryInformationProcess
+implib ntdll.dll, NtQueryInformationResourceManager
+implib ntdll.dll, NtQueryInformationThread
+implib ntdll.dll, NtQueryInformationToken
+implib ntdll.dll, NtQueryInformationTransaction
+implib ntdll.dll, NtQueryInformationTransactionManager
+implib ntdll.dll, NtQueryInformationWorkerFactory
+implib ntdll.dll, NtQueryInstallUILanguage
+implib ntdll.dll, NtQueryIntervalProfile
+implib ntdll.dll, NtQueryIoCompletion
+implib ntdll.dll, NtQueryKey
+implib ntdll.dll, NtQueryLicenseValue
+implib ntdll.dll, NtQueryMultipleValueKey
+implib ntdll.dll, NtQueryMutant
+implib ntdll.dll, NtQueryObject
+implib ntdll.dll, NtQueryOpenSubKeys
+implib ntdll.dll, NtQueryOpenSubKeysEx
+implib ntdll.dll, NtQueryPerformanceCounter
+implib ntdll.dll, NtQueryPortInformationProcess
+implib ntdll.dll, NtQueryQuotaInformationFile
+implib ntdll.dll, NtQuerySection
+implib ntdll.dll, NtQuerySecurityAttributesToken
+implib ntdll.dll, NtQuerySecurityObject
+implib ntdll.dll, NtQuerySecurityPolicy
+implib ntdll.dll, NtQuerySemaphore
+implib ntdll.dll, NtQuerySymbolicLinkObject
+implib ntdll.dll, NtQuerySystemEnvironmentValue
+implib ntdll.dll, NtQuerySystemEnvironmentValueEx
+implib ntdll.dll, NtQuerySystemInformation
+implib ntdll.dll, NtQuerySystemInformationEx
+implib ntdll.dll, NtQuerySystemTime
+implib ntdll.dll, NtQueryTimer
+implib ntdll.dll, NtQueryTimerResolution
+implib ntdll.dll, NtQueryValueKey
+implib ntdll.dll, NtQueryVirtualMemory
+implib ntdll.dll, NtQueryVolumeInformationFile
+implib ntdll.dll, NtQueryWnfStateData
+implib ntdll.dll, NtQueryWnfStateNameInformation
+implib ntdll.dll, NtQueueApcThread
+implib ntdll.dll, NtQueueApcThreadEx
+implib ntdll.dll, NtQueueApcThreadEx2
+implib ntdll.dll, NtRaiseException
+implib ntdll.dll, NtRaiseHardError
+implib ntdll.dll, NtReadFile
+implib ntdll.dll, NtReadFileScatter
+implib ntdll.dll, NtReadOnlyEnlistment
+implib ntdll.dll, NtReadRequestData
+implib ntdll.dll, NtReadVirtualMemory
+implib ntdll.dll, NtRecoverEnlistment
+implib ntdll.dll, NtRecoverResourceManager
+implib ntdll.dll, NtRecoverTransactionManager
+implib ntdll.dll, NtRegisterProtocolAddressInformation
+implib ntdll.dll, NtRegisterThreadTerminatePort
+implib ntdll.dll, NtReleaseKeyedEvent
+implib ntdll.dll, NtReleaseMutant
+implib ntdll.dll, NtReleaseSemaphore
+implib ntdll.dll, NtReleaseWorkerFactoryWorker
+implib ntdll.dll, NtRemoveIoCompletion
+implib ntdll.dll, NtRemoveIoCompletionEx
+implib ntdll.dll, NtRemoveProcessDebug
+implib ntdll.dll, NtRenameKey
+implib ntdll.dll, NtRenameTransactionManager
+implib ntdll.dll, NtReplaceKey
+implib ntdll.dll, NtReplacePartitionUnit
+implib ntdll.dll, NtReplyPort
+implib ntdll.dll, NtReplyWaitReceivePort
+implib ntdll.dll, NtReplyWaitReceivePortEx
+implib ntdll.dll, NtReplyWaitReplyPort
+implib ntdll.dll, NtRequestPort
+implib ntdll.dll, NtRequestWaitReplyPort
+implib ntdll.dll, NtResetEvent
+implib ntdll.dll, NtResetWriteWatch
+implib ntdll.dll, NtRestoreKey
+implib ntdll.dll, NtResumeProcess
+implib ntdll.dll, NtResumeThread
+implib ntdll.dll, NtRevertContainerImpersonation
+implib ntdll.dll, NtRollbackComplete
+implib ntdll.dll, NtRollbackEnlistment
+implib ntdll.dll, NtRollbackRegistryTransaction
+implib ntdll.dll, NtRollbackTransaction
+implib ntdll.dll, NtRollforwardTransactionManager
+implib ntdll.dll, NtSaveKey
+implib ntdll.dll, NtSaveKeyEx
+implib ntdll.dll, NtSaveMergedKeys
+implib ntdll.dll, NtSecureConnectPort
+implib ntdll.dll, NtSerializeBoot
+implib ntdll.dll, NtSetBootEntryOrder
+implib ntdll.dll, NtSetBootOptions
+implib ntdll.dll, NtSetCachedSigningLevel
+implib ntdll.dll, NtSetCachedSigningLevel2
+implib ntdll.dll, NtSetContextThread
+implib ntdll.dll, NtSetDebugFilterState
+implib ntdll.dll, NtSetDefaultHardErrorPort
+implib ntdll.dll, NtSetDefaultLocale
+implib ntdll.dll, NtSetDefaultUILanguage
+implib ntdll.dll, NtSetDriverEntryOrder
+implib ntdll.dll, NtSetEaFile
+implib ntdll.dll, NtSetEvent
+implib ntdll.dll, NtSetEventBoostPriority
+implib ntdll.dll, NtSetHighEventPair
+implib ntdll.dll, NtSetHighWaitLowEventPair
+implib ntdll.dll, NtSetIRTimer
+implib ntdll.dll, NtSetInformationDebugObject
+implib ntdll.dll, NtSetInformationEnlistment
+implib ntdll.dll, NtSetInformationFile
+implib ntdll.dll, NtSetInformationJobObject
+implib ntdll.dll, NtSetInformationKey
+implib ntdll.dll, NtSetInformationObject
+implib ntdll.dll, NtSetInformationProcess
+implib ntdll.dll, NtSetInformationResourceManager
+implib ntdll.dll, NtSetInformationSymbolicLink
+implib ntdll.dll, NtSetInformationThread
+implib ntdll.dll, NtSetInformationToken
+implib ntdll.dll, NtSetInformationTransaction
+implib ntdll.dll, NtSetInformationTransactionManager
+implib ntdll.dll, NtSetInformationVirtualMemory
+implib ntdll.dll, NtSetInformationWorkerFactory
+implib ntdll.dll, NtSetIntervalProfile
+implib ntdll.dll, NtSetIoCompletion
+implib ntdll.dll, NtSetIoCompletionEx
+implib ntdll.dll, NtSetLdtEntries
+implib ntdll.dll, NtSetLowEventPair
+implib ntdll.dll, NtSetLowWaitHighEventPair
+implib ntdll.dll, NtSetQuotaInformationFile
+implib ntdll.dll, NtSetSecurityObject
+implib ntdll.dll, NtSetSystemEnvironmentValue
+implib ntdll.dll, NtSetSystemEnvironmentValueEx
+implib ntdll.dll, NtSetSystemInformation
+implib ntdll.dll, NtSetSystemPowerState
+implib ntdll.dll, NtSetSystemTime
+implib ntdll.dll, NtSetThreadExecutionState
+implib ntdll.dll, NtSetTimer
+implib ntdll.dll, NtSetTimer2
+implib ntdll.dll, NtSetTimerEx
+implib ntdll.dll, NtSetTimerResolution
+implib ntdll.dll, NtSetUuidSeed
+implib ntdll.dll, NtSetValueKey
+implib ntdll.dll, NtSetVolumeInformationFile
+implib ntdll.dll, NtSetWnfProcessNotificationEvent
+implib ntdll.dll, NtShutdownSystem
+implib ntdll.dll, NtShutdownWorkerFactory
+implib ntdll.dll, NtSignalAndWaitForSingleObject
+implib ntdll.dll, NtSinglePhaseReject
+implib ntdll.dll, NtStartProfile
+implib ntdll.dll, NtStopProfile
+implib ntdll.dll, NtSubscribeWnfStateChange
+implib ntdll.dll, NtSuspendProcess
+implib ntdll.dll, NtSuspendThread
+implib ntdll.dll, NtSystemDebugControl
+implib ntdll.dll, NtTerminateEnclave
+implib ntdll.dll, NtTerminateJobObject
+implib ntdll.dll, NtTerminateProcess
+implib ntdll.dll, NtTerminateThread
+implib ntdll.dll, NtTestAlert
+implib ntdll.dll, NtThawRegistry
+implib ntdll.dll, NtThawTransactions
+implib ntdll.dll, NtTraceControl
+implib ntdll.dll, NtTraceEvent
+implib ntdll.dll, NtTranslateFilePath
+implib ntdll.dll, NtUmsThreadYield
+implib ntdll.dll, NtUnloadDriver
+implib ntdll.dll, NtUnloadKey
+implib ntdll.dll, NtUnloadKey2
+implib ntdll.dll, NtUnloadKeyEx
+implib ntdll.dll, NtUnlockFile
+implib ntdll.dll, NtUnlockVirtualMemory
+implib ntdll.dll, NtUnmapViewOfSection
+implib ntdll.dll, NtUnmapViewOfSectionEx
+implib ntdll.dll, NtUnsubscribeWnfStateChange
+implib ntdll.dll, NtUpdateWnfStateData
+implib ntdll.dll, NtVdmControl
+implib ntdll.dll, NtWaitForAlertByThreadId
+implib ntdll.dll, NtWaitForDebugEvent
+implib ntdll.dll, NtWaitForKeyedEvent
+implib ntdll.dll, NtWaitForMultipleObjects
+implib ntdll.dll, NtWaitForMultipleObjects32
+implib ntdll.dll, NtWaitForSingleObject
+implib ntdll.dll, NtWaitForWorkViaWorkerFactory
+implib ntdll.dll, NtWaitHighEventPair
+implib ntdll.dll, NtWaitLowEventPair
+implib ntdll.dll, NtWorkerFactoryWorkerReady
+implib ntdll.dll, NtWow64AllocateVirtualMemory64
+implib ntdll.dll, NtWow64CallFunction64
+; implib ntdll.dll, NtWow64CsrAllocateCaptureBuffer, _NtWow64CsrAllocateCaptureBuffer@8 ; NtWow64CsrAllocateCaptureBuffer is an alias for CsrAllocateCaptureBuffer
+implib ntdll.dll, NtWow64CsrAllocateMessagePointer, _NtWow64CsrAllocateMessagePointer@12
+implib ntdll.dll, NtWow64CsrCaptureMessageBuffer, _NtWow64CsrCaptureMessageBuffer@16
+implib ntdll.dll, NtWow64CsrCaptureMessageString, _NtWow64CsrCaptureMessageString@20
+implib ntdll.dll, NtWow64CsrClientCallServer, _NtWow64CsrClientCallServer@16
+implib ntdll.dll, NtWow64CsrClientConnectToServer, _NtWow64CsrClientConnectToServer@20
+implib ntdll.dll, NtWow64CsrFreeCaptureBuffer, _NtWow64CsrFreeCaptureBuffer@4
+implib ntdll.dll, NtWow64CsrGetProcessId, _NtWow64CsrGetProcessId@0
+implib ntdll.dll, NtWow64CsrIdentifyAlertableThread, _NtWow64CsrIdentifyAlertableThread@0
+implib ntdll.dll, NtWow64CsrVerifyRegion, _NtWow64CsrVerifyRegion@8
+implib ntdll.dll, NtWow64DebuggerCall, _NtWow64DebuggerCall@20
+implib ntdll.dll, NtWow64GetCurrentProcessorNumberEx, _NtWow64GetCurrentProcessorNumberEx@4
+implib ntdll.dll, NtWow64GetNativeSystemInformation, _NtWow64GetNativeSystemInformation@16
+implib ntdll.dll, NtWow64IsProcessorFeaturePresent, _NtWow64IsProcessorFeaturePresent@4
+implib ntdll.dll, NtWow64QueryInformationProcess64, _NtWow64QueryInformationProcess64@20
+implib ntdll.dll, NtWow64ReadVirtualMemory64, _NtWow64ReadVirtualMemory64@28
+implib ntdll.dll, NtWow64WriteVirtualMemory64, _NtWow64WriteVirtualMemory64@28
+implib ntdll.dll, NtWriteFile, _NtWriteFile@36
+implib ntdll.dll, NtWriteFileGather, _NtWriteFileGather@36
+implib ntdll.dll, NtWriteRequestData, _NtWriteRequestData@24
+implib ntdll.dll, NtWriteVirtualMemory, _NtWriteVirtualMemory@20
+implib ntdll.dll, NtYieldExecution, _NtYieldExecution@0
+implib ntdll.dll, NtdllDefWindowProc_A
+implib ntdll.dll, NtdllDefWindowProc_W
+implib ntdll.dll, NtdllDialogWndProc_A
+implib ntdll.dll, NtdllDialogWndProc_W
+implib ntdll.dll, PfxFindPrefix
+implib ntdll.dll, PfxInitialize
+implib ntdll.dll, PfxInsertPrefix
+implib ntdll.dll, PfxRemovePrefix
+implib ntdll.dll, PssNtCaptureSnapshot
+implib ntdll.dll, PssNtDuplicateSnapshot
+implib ntdll.dll, PssNtFreeRemoteSnapshot
+implib ntdll.dll, PssNtFreeSnapshot
+implib ntdll.dll, PssNtFreeWalkMarker
+implib ntdll.dll, PssNtQuerySnapshot
+implib ntdll.dll, PssNtValidateDescriptor
+implib ntdll.dll, PssNtWalkSnapshot
+implib ntdll.dll, RtlAbortRXact
+implib ntdll.dll, RtlAbsoluteToSelfRelativeSD
+implib ntdll.dll, RtlAcquirePebLock
+implib ntdll.dll, RtlAcquirePrivilege
+implib ntdll.dll, RtlAcquireReleaseSRWLockExclusive
+implib ntdll.dll, RtlAcquireResourceExclusive
+implib ntdll.dll, RtlAcquireResourceShared
+implib ntdll.dll, RtlAcquireSRWLockExclusive
+implib ntdll.dll, RtlAcquireSRWLockShared
+implib ntdll.dll, RtlActivateActivationContext
+implib ntdll.dll, RtlActivateActivationContextEx
+implib ntdll.dll, RtlActivateActivationContextUnsafeFast
+implib ntdll.dll, RtlAddAccessAllowedAce
+implib ntdll.dll, RtlAddAccessAllowedAceEx
+implib ntdll.dll, RtlAddAccessAllowedObjectAce
+implib ntdll.dll, RtlAddAccessDeniedAce
+implib ntdll.dll, RtlAddAccessDeniedAceEx
+implib ntdll.dll, RtlAddAccessDeniedObjectAce
+implib ntdll.dll, RtlAddAccessFilterAce
+implib ntdll.dll, RtlAddAce
+implib ntdll.dll, RtlAddActionToRXact
+implib ntdll.dll, RtlAddAtomToAtomTable
+implib ntdll.dll, RtlAddAttributeActionToRXact
+implib ntdll.dll, RtlAddAuditAccessAce
+implib ntdll.dll, RtlAddAuditAccessAceEx
+implib ntdll.dll, RtlAddAuditAccessObjectAce
+implib ntdll.dll, RtlAddCompoundAce
+implib ntdll.dll, RtlAddIntegrityLabelToBoundaryDescriptor
+implib ntdll.dll, RtlAddMandatoryAce
+implib ntdll.dll, RtlAddProcessTrustLabelAce
+implib ntdll.dll, RtlAddRefActivationContext
+implib ntdll.dll, RtlAddRefMemoryStream
+implib ntdll.dll, RtlAddResourceAttributeAce
+implib ntdll.dll, RtlAddSIDToBoundaryDescriptor
+implib ntdll.dll, RtlAddScopedPolicyIDAce
+implib ntdll.dll, RtlAddVectoredContinueHandler
+implib ntdll.dll, RtlAddVectoredExceptionHandler
+implib ntdll.dll, RtlAddressInSectionTable
+implib ntdll.dll, RtlAdjustPrivilege
+implib ntdll.dll, RtlAllocateActivationContextStack
+implib ntdll.dll, RtlAllocateAndInitializeSid
+implib ntdll.dll, RtlAllocateAndInitializeSidEx
+implib ntdll.dll, RtlAllocateHandle
+implib ntdll.dll, RtlAllocateHeap
+implib ntdll.dll, RtlAllocateMemoryBlockLookaside
+implib ntdll.dll, RtlAllocateMemoryZone
+implib ntdll.dll, RtlAllocateWnfSerializationGroup
+implib ntdll.dll, RtlAnsiCharToUnicodeChar
+implib ntdll.dll, RtlAnsiStringToUnicodeSize
+implib ntdll.dll, RtlAnsiStringToUnicodeString
+implib ntdll.dll, RtlAppendAsciizToString
+implib ntdll.dll, RtlAppendPathElement
+implib ntdll.dll, RtlAppendStringToString
+implib ntdll.dll, RtlAppendUnicodeStringToString
+implib ntdll.dll, RtlAppendUnicodeToString
+implib ntdll.dll, RtlApplicationVerifierStop
+implib ntdll.dll, RtlApplyRXact
+implib ntdll.dll, RtlApplyRXactNoFlush
+implib ntdll.dll, RtlAppxIsFileOwnedByTrustedInstaller
+implib ntdll.dll, RtlAreAllAccessesGranted
+implib ntdll.dll, RtlAreAnyAccessesGranted
+implib ntdll.dll, RtlAreBitsClear
+implib ntdll.dll, RtlAreBitsSet
+implib ntdll.dll, RtlAreLongPathsEnabled
+implib ntdll.dll, RtlAssert
+implib ntdll.dll, RtlAvlInsertNodeEx
+implib ntdll.dll, RtlAvlRemoveNode
+implib ntdll.dll, RtlBarrier
+implib ntdll.dll, RtlBarrierForDelete
+implib ntdll.dll, RtlCancelTimer
+implib ntdll.dll, RtlCanonicalizeDomainName
+implib ntdll.dll, RtlCapabilityCheck
+implib ntdll.dll, RtlCapabilityCheckForSingleSessionSku
+implib ntdll.dll, RtlCaptureContext
+implib ntdll.dll, RtlCaptureStackBackTrace
+implib ntdll.dll, RtlCaptureStackContext
+implib ntdll.dll, RtlCharToInteger
+implib ntdll.dll, RtlCheckBootStatusIntegrity
+implib ntdll.dll, RtlCheckForOrphanedCriticalSections
+implib ntdll.dll, RtlCheckPortableOperatingSystem
+implib ntdll.dll, RtlCheckRegistryKey
+implib ntdll.dll, RtlCheckSandboxedToken
+implib ntdll.dll, RtlCheckSystemBootStatusIntegrity
+implib ntdll.dll, RtlCheckTokenCapability
+implib ntdll.dll, RtlCheckTokenMembership
+implib ntdll.dll, RtlCheckTokenMembershipEx
+implib ntdll.dll, RtlCleanUpTEBLangLists
+implib ntdll.dll, RtlClearAllBits
+implib ntdll.dll, RtlClearBit
+implib ntdll.dll, RtlClearBits
+implib ntdll.dll, RtlClearThreadWorkOnBehalfTicket
+implib ntdll.dll, RtlCloneMemoryStream
+implib ntdll.dll, RtlCloneUserProcess
+implib ntdll.dll, RtlCmDecodeMemIoResource
+implib ntdll.dll, RtlCmEncodeMemIoResource
+implib ntdll.dll, RtlCommitDebugInfo
+implib ntdll.dll, RtlCommitMemoryStream
+implib ntdll.dll, RtlCompactHeap
+implib ntdll.dll, RtlCompareAltitudes
+implib ntdll.dll, RtlCompareMemory
+implib ntdll.dll, RtlCompareMemoryUlong
+implib ntdll.dll, RtlCompareString
+implib ntdll.dll, RtlCompareUnicodeString
+implib ntdll.dll, RtlCompareUnicodeStrings
+implib ntdll.dll, RtlCompressBuffer
+implib ntdll.dll, RtlComputeCrc32
+implib ntdll.dll, RtlComputeImportTableHash
+implib ntdll.dll, RtlComputePrivatizedDllName_U
+implib ntdll.dll, RtlConnectToSm
+implib ntdll.dll, RtlConsoleMultiByteToUnicodeN
+implib ntdll.dll, RtlConstructCrossVmEventPath
+implib ntdll.dll, RtlConstructCrossVmMutexPath
+implib ntdll.dll, RtlContractHashTable
+implib ntdll.dll, RtlConvertDeviceFamilyInfoToString
+implib ntdll.dll, RtlConvertExclusiveToShared
+implib ntdll.dll, RtlConvertLCIDToString
+implib ntdll.dll, RtlConvertLongToLargeInteger
+implib ntdll.dll, RtlConvertSRWLockExclusiveToShared
+implib ntdll.dll, RtlConvertSharedToExclusive
+implib ntdll.dll, RtlConvertSidToUnicodeString
+implib ntdll.dll, RtlConvertToAutoInheritSecurityObject
+implib ntdll.dll, RtlConvertUlongToLargeInteger
+implib ntdll.dll, RtlCopyBitMap
+implib ntdll.dll, RtlCopyContext
+implib ntdll.dll, RtlCopyExtendedContext
+implib ntdll.dll, RtlCopyLuid
+implib ntdll.dll, RtlCopyLuidAndAttributesArray
+implib ntdll.dll, RtlCopyMappedMemory
+implib ntdll.dll, RtlCopyMemoryStreamTo
+implib ntdll.dll, RtlCopyOutOfProcessMemoryStreamTo
+implib ntdll.dll, RtlCopySecurityDescriptor
+implib ntdll.dll, RtlCopySid
+implib ntdll.dll, RtlCopySidAndAttributesArray
+implib ntdll.dll, RtlCopyString
+implib ntdll.dll, RtlCopyUnicodeString
+implib ntdll.dll, RtlCrc32
+implib ntdll.dll, RtlCrc64
+implib ntdll.dll, RtlCreateAcl
+implib ntdll.dll, RtlCreateActivationContext
+implib ntdll.dll, RtlCreateAndSetSD
+implib ntdll.dll, RtlCreateAtomTable
+implib ntdll.dll, RtlCreateBootStatusDataFile
+implib ntdll.dll, RtlCreateBoundaryDescriptor
+implib ntdll.dll, RtlCreateEnvironment
+implib ntdll.dll, RtlCreateEnvironmentEx
+implib ntdll.dll, RtlCreateHashTable
+implib ntdll.dll, RtlCreateHashTableEx
+implib ntdll.dll, RtlCreateHeap
+implib ntdll.dll, RtlCreateMemoryBlockLookaside
+implib ntdll.dll, RtlCreateMemoryZone
+implib ntdll.dll, RtlCreateProcessParameters
+implib ntdll.dll, RtlCreateProcessParametersEx
+implib ntdll.dll, RtlCreateProcessParametersWithTemplate
+implib ntdll.dll, RtlCreateProcessReflection
+implib ntdll.dll, RtlCreateQueryDebugBuffer
+implib ntdll.dll, RtlCreateRegistryKey
+implib ntdll.dll, RtlCreateSecurityDescriptor
+implib ntdll.dll, RtlCreateServiceSid
+implib ntdll.dll, RtlCreateSystemVolumeInformationFolder
+implib ntdll.dll, RtlCreateTagHeap
+implib ntdll.dll, RtlCreateTimer
+implib ntdll.dll, RtlCreateTimerQueue
+implib ntdll.dll, RtlCreateUnicodeString
+implib ntdll.dll, RtlCreateUnicodeStringFromAsciiz
+implib ntdll.dll, RtlCreateUserProcess
+implib ntdll.dll, RtlCreateUserProcessEx
+implib ntdll.dll, RtlCreateUserSecurityObject
+implib ntdll.dll, RtlCreateUserStack
+implib ntdll.dll, RtlCreateUserThread
+implib ntdll.dll, RtlCreateVirtualAccountSid
+implib ntdll.dll, RtlCultureNameToLCID
+implib ntdll.dll, RtlCustomCPToUnicodeN
+implib ntdll.dll, RtlCutoverTimeToSystemTime
+implib ntdll.dll, RtlDeCommitDebugInfo
+implib ntdll.dll, RtlDeNormalizeProcessParams
+implib ntdll.dll, RtlDeactivateActivationContext
+implib ntdll.dll, RtlDeactivateActivationContextUnsafeFast
+implib ntdll.dll, RtlDebugPrintTimes
+implib ntdll.dll, RtlDecodePointer
+implib ntdll.dll, RtlDecodeRemotePointer
+implib ntdll.dll, RtlDecodeSystemPointer
+implib ntdll.dll, RtlDecompressBuffer
+implib ntdll.dll, RtlDecompressBufferEx
+implib ntdll.dll, RtlDecompressFragment
+implib ntdll.dll, RtlDefaultNpAcl
+implib ntdll.dll, RtlDelete
+implib ntdll.dll, RtlDeleteAce
+implib ntdll.dll, RtlDeleteAtomFromAtomTable
+implib ntdll.dll, RtlDeleteBarrier
+implib ntdll.dll, RtlDeleteBoundaryDescriptor
+implib ntdll.dll, RtlDeleteCriticalSection
+implib ntdll.dll, RtlDeleteElementGenericTable
+implib ntdll.dll, RtlDeleteElementGenericTableAvl
+implib ntdll.dll, RtlDeleteElementGenericTableAvlEx
+implib ntdll.dll, RtlDeleteHashTable
+implib ntdll.dll, RtlDeleteNoSplay
+implib ntdll.dll, RtlDeleteRegistryValue
+implib ntdll.dll, RtlDeleteResource
+implib ntdll.dll, RtlDeleteSecurityObject
+implib ntdll.dll, RtlDeleteTimer
+implib ntdll.dll, RtlDeleteTimerQueue
+implib ntdll.dll, RtlDeleteTimerQueueEx
+implib ntdll.dll, RtlDeregisterSecureMemoryCacheCallback
+implib ntdll.dll, RtlDeregisterWait
+implib ntdll.dll, RtlDeregisterWaitEx
+implib ntdll.dll, RtlDeriveCapabilitySidsFromName
+implib ntdll.dll, RtlDestroyAtomTable
+implib ntdll.dll, RtlDestroyEnvironment
+implib ntdll.dll, RtlDestroyHandleTable
+implib ntdll.dll, RtlDestroyHeap
+implib ntdll.dll, RtlDestroyMemoryBlockLookaside
+implib ntdll.dll, RtlDestroyMemoryZone
+implib ntdll.dll, RtlDestroyProcessParameters
+implib ntdll.dll, RtlDestroyQueryDebugBuffer
+implib ntdll.dll, RtlDetectHeapLeaks
+implib ntdll.dll, RtlDetermineDosPathNameType_U
+implib ntdll.dll, RtlDisableThreadProfiling
+implib ntdll.dll, RtlDisownModuleHeapAllocation
+implib ntdll.dll, RtlDispatchAPC
+implib ntdll.dll, RtlDllShutdownInProgress
+implib ntdll.dll, RtlDnsHostNameToComputerName
+implib ntdll.dll, RtlDoesFileExists_U
+implib ntdll.dll, RtlDoesNameContainWildCards
+implib ntdll.dll, RtlDosApplyFileIsolationRedirection_Ustr
+implib ntdll.dll, RtlDosLongPathNameToNtPathName_U_WithStatus
+implib ntdll.dll, RtlDosLongPathNameToRelativeNtPathName_U_WithStatus
+implib ntdll.dll, RtlDosPathNameToNtPathName_U
+implib ntdll.dll, RtlDosPathNameToNtPathName_U_WithStatus
+implib ntdll.dll, RtlDosPathNameToRelativeNtPathName_U
+implib ntdll.dll, RtlDosPathNameToRelativeNtPathName_U_WithStatus
+implib ntdll.dll, RtlDosSearchPath_U
+implib ntdll.dll, RtlDosSearchPath_Ustr
+implib ntdll.dll, RtlDowncaseUnicodeChar
+implib ntdll.dll, RtlDowncaseUnicodeString
+implib ntdll.dll, RtlDumpResource
+implib ntdll.dll, RtlDuplicateUnicodeString
+implib ntdll.dll, RtlEmptyAtomTable
+implib ntdll.dll, RtlEnableEarlyCriticalSectionEventCreation
+implib ntdll.dll, RtlEnableThreadProfiling
+implib ntdll.dll, RtlEncodePointer
+implib ntdll.dll, RtlEncodeRemotePointer
+implib ntdll.dll, RtlEncodeSystemPointer
+implib ntdll.dll, RtlEndEnumerationHashTable
+implib ntdll.dll, RtlEndStrongEnumerationHashTable
+implib ntdll.dll, RtlEndWeakEnumerationHashTable
+implib ntdll.dll, RtlEnlargedIntegerMultiply
+implib ntdll.dll, RtlEnlargedUnsignedMultiply
+implib ntdll.dll, RtlEnterCriticalSection
+implib ntdll.dll, RtlEnumProcessHeaps
+implib ntdll.dll, RtlEnumerateEntryHashTable
+implib ntdll.dll, RtlEnumerateGenericTable
+implib ntdll.dll, RtlEnumerateGenericTableAvl
+implib ntdll.dll, RtlEnumerateGenericTableLikeADirectory
+implib ntdll.dll, RtlEnumerateGenericTableWithoutSplaying
+implib ntdll.dll, RtlEnumerateGenericTableWithoutSplayingAvl
+implib ntdll.dll, RtlEqualComputerName
+implib ntdll.dll, RtlEqualDomainName
+implib ntdll.dll, RtlEqualLuid
+implib ntdll.dll, RtlEqualPrefixSid
+implib ntdll.dll, RtlEqualSid
+implib ntdll.dll, RtlEqualString
+implib ntdll.dll, RtlEqualUnicodeString
+implib ntdll.dll, RtlEqualWnfChangeStamps
+implib ntdll.dll, RtlEraseUnicodeString
+implib ntdll.dll, RtlEthernetAddressToStringA
+implib ntdll.dll, RtlEthernetAddressToStringW
+implib ntdll.dll, RtlEthernetStringToAddressA
+implib ntdll.dll, RtlEthernetStringToAddressW
+implib ntdll.dll, RtlExitUserProcess
+implib ntdll.dll, RtlExitUserThread
+implib ntdll.dll, RtlExpandEnvironmentStrings
+implib ntdll.dll, RtlExpandEnvironmentStrings_U
+implib ntdll.dll, RtlExpandHashTable
+implib ntdll.dll, RtlExtendCorrelationVector
+implib ntdll.dll, RtlExtendMemoryBlockLookaside
+implib ntdll.dll, RtlExtendMemoryZone
+implib ntdll.dll, RtlExtendedIntegerMultiply
+implib ntdll.dll, RtlExtendedLargeIntegerDivide
+implib ntdll.dll, RtlExtendedMagicDivide
+implib ntdll.dll, RtlExtractBitMap
+implib ntdll.dll, RtlFillMemory
+implib ntdll.dll, RtlFillMemoryUlong
+implib ntdll.dll, RtlFillMemoryUlonglong
+implib ntdll.dll, RtlFinalReleaseOutOfProcessMemoryStream
+implib ntdll.dll, RtlFindAceByType
+implib ntdll.dll, RtlFindActivationContextSectionGuid
+implib ntdll.dll, RtlFindActivationContextSectionString
+implib ntdll.dll, RtlFindCharInUnicodeString
+implib ntdll.dll, RtlFindClearBits
+implib ntdll.dll, RtlFindClearBitsAndSet
+implib ntdll.dll, RtlFindClearRuns
+implib ntdll.dll, RtlFindClosestEncodableLength
+implib ntdll.dll, RtlFindExportedRoutineByName
+implib ntdll.dll, RtlFindLastBackwardRunClear
+implib ntdll.dll, RtlFindLeastSignificantBit
+implib ntdll.dll, RtlFindLongestRunClear
+implib ntdll.dll, RtlFindMessage
+implib ntdll.dll, RtlFindMostSignificantBit
+implib ntdll.dll, RtlFindNextForwardRunClear
+implib ntdll.dll, RtlFindSetBits
+implib ntdll.dll, RtlFindSetBitsAndClear
+implib ntdll.dll, RtlFindUnicodeSubstring
+implib ntdll.dll, RtlFirstEntrySList
+implib ntdll.dll, RtlFirstFreeAce
+implib ntdll.dll, RtlFlsAlloc
+implib ntdll.dll, RtlFlsFree
+implib ntdll.dll, RtlFlsGetValue
+implib ntdll.dll, RtlFlsSetValue
+implib ntdll.dll, RtlFlushHeaps
+implib ntdll.dll, RtlFlushSecureMemoryCache
+implib ntdll.dll, RtlFormatCurrentUserKeyPath
+implib ntdll.dll, RtlFormatMessage
+implib ntdll.dll, RtlFormatMessageEx
+implib ntdll.dll, RtlFreeActivationContextStack
+implib ntdll.dll, RtlFreeAnsiString
+implib ntdll.dll, RtlFreeHandle
+implib ntdll.dll, RtlFreeHeap
+implib ntdll.dll, RtlFreeMemoryBlockLookaside
+implib ntdll.dll, RtlFreeOemString
+implib ntdll.dll, RtlFreeSid
+implib ntdll.dll, RtlFreeThreadActivationContextStack
+implib ntdll.dll, RtlFreeUTF8String
+implib ntdll.dll, RtlFreeUnicodeString
+implib ntdll.dll, RtlFreeUserStack
+implib ntdll.dll, RtlGUIDFromString
+implib ntdll.dll, RtlGenerate8dot3Name
+implib ntdll.dll, RtlGetAce
+implib ntdll.dll, RtlGetActiveActivationContext
+implib ntdll.dll, RtlGetActiveConsoleId
+implib ntdll.dll, RtlGetAppContainerNamedObjectPath
+implib ntdll.dll, RtlGetAppContainerParent
+implib ntdll.dll, RtlGetAppContainerSidType
+implib ntdll.dll, RtlGetCallersAddress
+implib ntdll.dll, RtlGetCompressionWorkSpaceSize
+implib ntdll.dll, RtlGetConsoleSessionForegroundProcessId
+implib ntdll.dll, RtlGetControlSecurityDescriptor
+implib ntdll.dll, RtlGetCriticalSectionRecursionCount
+implib ntdll.dll, RtlGetCurrentDirectory_U
+implib ntdll.dll, RtlGetCurrentPeb
+implib ntdll.dll, RtlGetCurrentProcessorNumber
+implib ntdll.dll, RtlGetCurrentProcessorNumberEx
+implib ntdll.dll, RtlGetCurrentServiceSessionId
+implib ntdll.dll, RtlGetCurrentTransaction
+implib ntdll.dll, RtlGetDaclSecurityDescriptor
+implib ntdll.dll, RtlGetDeviceFamilyInfoEnum
+implib ntdll.dll, RtlGetElementGenericTable
+implib ntdll.dll, RtlGetElementGenericTableAvl
+implib ntdll.dll, RtlGetEnabledExtendedFeatures
+implib ntdll.dll, RtlGetExePath
+implib ntdll.dll, RtlGetExtendedContextLength
+implib ntdll.dll, RtlGetExtendedContextLength2
+implib ntdll.dll, RtlGetExtendedFeaturesMask
+implib ntdll.dll, RtlGetFileMUIPath
+implib ntdll.dll, RtlGetFrame
+implib ntdll.dll, RtlGetFullPathName_U
+implib ntdll.dll, RtlGetFullPathName_UEx
+implib ntdll.dll, RtlGetFullPathName_UstrEx
+implib ntdll.dll, RtlGetGroupSecurityDescriptor
+implib ntdll.dll, RtlGetIntegerAtom
+implib ntdll.dll, RtlGetInterruptTimePrecise
+implib ntdll.dll, RtlGetLastNtStatus
+implib ntdll.dll, RtlGetLastWin32Error
+implib ntdll.dll, RtlGetLengthWithoutLastFullDosOrNtPathElement
+implib ntdll.dll, RtlGetLengthWithoutTrailingPathSeperators
+implib ntdll.dll, RtlGetLocaleFileMappingAddress
+implib ntdll.dll, RtlGetLongestNtPathLength
+implib ntdll.dll, RtlGetMultiTimePrecise
+; implib ntdll.dll, RtlGetNativeSystemInformation, _RtlGetNativeSystemInformation@16 ; RtlGetNativeSystemInformation is an alias for NtWow64GetNativeSystemInformation
+implib ntdll.dll, RtlGetNextEntryHashTable
+implib ntdll.dll, RtlGetNtGlobalFlags
+implib ntdll.dll, RtlGetNtProductType
+implib ntdll.dll, RtlGetNtSystemRoot
+implib ntdll.dll, RtlGetNtVersionNumbers
+implib ntdll.dll, RtlGetOwnerSecurityDescriptor
+implib ntdll.dll, RtlGetParentLocaleName
+implib ntdll.dll, RtlGetPersistedStateLocation
+implib ntdll.dll, RtlGetProcessHeaps
+implib ntdll.dll, RtlGetProcessPreferredUILanguages
+implib ntdll.dll, RtlGetProductInfo
+implib ntdll.dll, RtlGetReturnAddressHijackTarget
+implib ntdll.dll, RtlGetSaclSecurityDescriptor
+implib ntdll.dll, RtlGetSearchPath
+implib ntdll.dll, RtlGetSecurityDescriptorRMControl
+implib ntdll.dll, RtlGetSessionProperties
+implib ntdll.dll, RtlGetSetBootStatusData
+implib ntdll.dll, RtlGetSuiteMask
+implib ntdll.dll, RtlGetSystemBootStatus
+implib ntdll.dll, RtlGetSystemBootStatusEx
+implib ntdll.dll, RtlGetSystemPreferredUILanguages
+implib ntdll.dll, RtlGetSystemTimeAndBias
+implib ntdll.dll, RtlGetSystemTimePrecise
+implib ntdll.dll, RtlGetThreadErrorMode
+implib ntdll.dll, RtlGetThreadLangIdByIndex
+implib ntdll.dll, RtlGetThreadPreferredUILanguages
+implib ntdll.dll, RtlGetThreadWorkOnBehalfTicket
+implib ntdll.dll, RtlGetTokenNamedObjectPath
+implib ntdll.dll, RtlGetUILanguageInfo
+implib ntdll.dll, RtlGetUnloadEventTrace
+implib ntdll.dll, RtlGetUnloadEventTraceEx
+implib ntdll.dll, RtlGetUserInfoHeap
+implib ntdll.dll, RtlGetUserPreferredUILanguages
+implib ntdll.dll, RtlGetVersion
+implib ntdll.dll, RtlGuardCheckLongJumpTarget
+implib ntdll.dll, RtlHashUnicodeString
+implib ntdll.dll, RtlHeapTrkInitialize
+implib ntdll.dll, RtlIdentifierAuthoritySid
+implib ntdll.dll, RtlIdnToAscii
+implib ntdll.dll, RtlIdnToNameprepUnicode
+implib ntdll.dll, RtlIdnToUnicode
+implib ntdll.dll, RtlImageDirectoryEntryToData
+implib ntdll.dll, RtlImageNtHeader
+implib ntdll.dll, RtlImageNtHeaderEx
+implib ntdll.dll, RtlImageRvaToSection
+implib ntdll.dll, RtlImageRvaToVa
+implib ntdll.dll, RtlImpersonateSelf
+implib ntdll.dll, RtlImpersonateSelfEx
+implib ntdll.dll, RtlIncrementCorrelationVector
+implib ntdll.dll, RtlInitAnsiString
+implib ntdll.dll, RtlInitAnsiStringEx
+implib ntdll.dll, RtlInitBarrier
+implib ntdll.dll, RtlInitCodePageTable
+implib ntdll.dll, RtlInitEnumerationHashTable
+implib ntdll.dll, RtlInitMemoryStream
+implib ntdll.dll, RtlInitNlsTables
+implib ntdll.dll, RtlInitOutOfProcessMemoryStream
+implib ntdll.dll, RtlInitString
+implib ntdll.dll, RtlInitStringEx
+implib ntdll.dll, RtlInitStrongEnumerationHashTable
+implib ntdll.dll, RtlInitUTF8String
+implib ntdll.dll, RtlInitUTF8StringEx
+implib ntdll.dll, RtlInitUnicodeString
+implib ntdll.dll, RtlInitUnicodeStringEx
+implib ntdll.dll, RtlInitWeakEnumerationHashTable
+implib ntdll.dll, RtlInitializeAtomPackage
+implib ntdll.dll, RtlInitializeBitMap
+implib ntdll.dll, RtlInitializeConditionVariable
+implib ntdll.dll, RtlInitializeContext
+implib ntdll.dll, RtlInitializeCorrelationVector
+implib ntdll.dll, RtlInitializeCriticalSection
+implib ntdll.dll, RtlInitializeCriticalSectionAndSpinCount
+implib ntdll.dll, RtlInitializeCriticalSectionEx
+implib ntdll.dll, RtlInitializeExceptionChain
+implib ntdll.dll, RtlInitializeExtendedContext
+implib ntdll.dll, RtlInitializeExtendedContext2
+implib ntdll.dll, RtlInitializeGenericTable
+implib ntdll.dll, RtlInitializeGenericTableAvl
+implib ntdll.dll, RtlInitializeHandleTable
+implib ntdll.dll, RtlInitializeNtUserPfn
+implib ntdll.dll, RtlInitializeRXact
+implib ntdll.dll, RtlInitializeResource
+implib ntdll.dll, RtlInitializeSListHead
+implib ntdll.dll, RtlInitializeSRWLock
+implib ntdll.dll, RtlInitializeSid
+implib ntdll.dll, RtlInitializeSidEx
+implib ntdll.dll, RtlInsertElementGenericTable
+implib ntdll.dll, RtlInsertElementGenericTableAvl
+implib ntdll.dll, RtlInsertElementGenericTableFull
+implib ntdll.dll, RtlInsertElementGenericTableFullAvl
+implib ntdll.dll, RtlInsertEntryHashTable
+implib ntdll.dll, RtlInt64ToUnicodeString
+implib ntdll.dll, RtlIntegerToChar
+implib ntdll.dll, RtlIntegerToUnicodeString
+implib ntdll.dll, RtlInterlockedClearBitRun
+implib ntdll.dll, RtlInterlockedCompareExchange64
+implib ntdll.dll, RtlInterlockedFlushSList
+implib ntdll.dll, RtlInterlockedPopEntrySList
+implib ntdll.dll, RtlInterlockedPushEntrySList
+implib ntdll.dll, RtlInterlockedPushListSList
+implib ntdll.dll, RtlInterlockedPushListSListEx
+implib ntdll.dll, RtlInterlockedSetBitRun
+implib ntdll.dll, RtlIoDecodeMemIoResource
+implib ntdll.dll, RtlIoEncodeMemIoResource
+implib ntdll.dll, RtlIpv4AddressToStringA
+implib ntdll.dll, RtlIpv4AddressToStringExA
+implib ntdll.dll, RtlIpv4AddressToStringExW
+implib ntdll.dll, RtlIpv4AddressToStringW
+implib ntdll.dll, RtlIpv4StringToAddressA
+implib ntdll.dll, RtlIpv4StringToAddressExA
+implib ntdll.dll, RtlIpv4StringToAddressExW
+implib ntdll.dll, RtlIpv4StringToAddressW
+implib ntdll.dll, RtlIpv6AddressToStringA
+implib ntdll.dll, RtlIpv6AddressToStringExA
+implib ntdll.dll, RtlIpv6AddressToStringExW
+implib ntdll.dll, RtlIpv6AddressToStringW
+implib ntdll.dll, RtlIpv6StringToAddressA
+implib ntdll.dll, RtlIpv6StringToAddressExA
+implib ntdll.dll, RtlIpv6StringToAddressExW
+implib ntdll.dll, RtlIpv6StringToAddressW
+implib ntdll.dll, RtlIsActivationContextActive
+implib ntdll.dll, RtlIsCapabilitySid
+implib ntdll.dll, RtlIsCloudFilesPlaceholder
+implib ntdll.dll, RtlIsCriticalSectionLocked
+implib ntdll.dll, RtlIsCriticalSectionLockedByThread
+implib ntdll.dll, RtlIsCurrentProcess
+implib ntdll.dll, RtlIsCurrentThread
+implib ntdll.dll, RtlIsCurrentThreadAttachExempt
+implib ntdll.dll, RtlIsDosDeviceName_U
+implib ntdll.dll, RtlIsElevatedRid
+implib ntdll.dll, RtlIsGenericTableEmpty
+implib ntdll.dll, RtlIsGenericTableEmptyAvl
+implib ntdll.dll, RtlIsMultiSessionSku
+implib ntdll.dll, RtlIsMultiUsersInSessionSku
+implib ntdll.dll, RtlIsNameInExpression
+implib ntdll.dll, RtlIsNameInUnUpcasedExpression
+implib ntdll.dll, RtlIsNameLegalDOS8Dot3
+implib ntdll.dll, RtlIsNonEmptyDirectoryReparsePointAllowed
+implib ntdll.dll, RtlIsNormalizedString
+implib ntdll.dll, RtlIsPackageSid
+implib ntdll.dll, RtlIsParentOfChildAppContainer
+implib ntdll.dll, RtlIsPartialPlaceholder
+implib ntdll.dll, RtlIsPartialPlaceholderFileHandle
+implib ntdll.dll, RtlIsPartialPlaceholderFileInfo
+implib ntdll.dll, RtlIsProcessorFeaturePresent
+implib ntdll.dll, RtlIsStateSeparationEnabled
+implib ntdll.dll, RtlIsTextUnicode
+implib ntdll.dll, RtlIsThreadWithinLoaderCallout
+implib ntdll.dll, RtlIsUntrustedObject
+implib ntdll.dll, RtlIsValidHandle
+implib ntdll.dll, RtlIsValidIndexHandle
+implib ntdll.dll, RtlIsValidLocaleName
+implib ntdll.dll, RtlIsValidProcessTrustLabelSid
+implib ntdll.dll, RtlIsZeroMemory
+implib ntdll.dll, RtlKnownExceptionFilter
+implib ntdll.dll, RtlLCIDToCultureName
+implib ntdll.dll, RtlLargeIntegerAdd
+implib ntdll.dll, RtlLargeIntegerArithmeticShift
+implib ntdll.dll, RtlLargeIntegerDivide
+implib ntdll.dll, RtlLargeIntegerNegate
+implib ntdll.dll, RtlLargeIntegerShiftLeft
+implib ntdll.dll, RtlLargeIntegerShiftRight
+implib ntdll.dll, RtlLargeIntegerSubtract
+implib ntdll.dll, RtlLargeIntegerToChar
+implib ntdll.dll, RtlLcidToLocaleName
+implib ntdll.dll, RtlLeaveCriticalSection
+implib ntdll.dll, RtlLengthRequiredSid
+implib ntdll.dll, RtlLengthSecurityDescriptor
+implib ntdll.dll, RtlLengthSid
+implib ntdll.dll, RtlLengthSidAsUnicodeString
+implib ntdll.dll, RtlLoadString
+implib ntdll.dll, RtlLocalTimeToSystemTime
+implib ntdll.dll, RtlLocaleNameToLcid
+implib ntdll.dll, RtlLocateExtendedFeature
+implib ntdll.dll, RtlLocateExtendedFeature2
+implib ntdll.dll, RtlLocateLegacyContext
+implib ntdll.dll, RtlLockBootStatusData
+implib ntdll.dll, RtlLockCurrentThread
+implib ntdll.dll, RtlLockHeap
+implib ntdll.dll, RtlLockMemoryBlockLookaside
+implib ntdll.dll, RtlLockMemoryStreamRegion
+implib ntdll.dll, RtlLockMemoryZone
+implib ntdll.dll, RtlLockModuleSection
+implib ntdll.dll, RtlLogStackBackTrace
+implib ntdll.dll, RtlLookupAtomInAtomTable
+implib ntdll.dll, RtlLookupElementGenericTable
+implib ntdll.dll, RtlLookupElementGenericTableAvl
+implib ntdll.dll, RtlLookupElementGenericTableFull
+implib ntdll.dll, RtlLookupElementGenericTableFullAvl
+implib ntdll.dll, RtlLookupEntryHashTable
+implib ntdll.dll, RtlLookupFirstMatchingElementGenericTableAvl
+implib ntdll.dll, RtlMakeSelfRelativeSD
+implib ntdll.dll, RtlMapGenericMask
+implib ntdll.dll, RtlMapSecurityErrorToNtStatus
+implib ntdll.dll, RtlMoveMemory
+implib ntdll.dll, RtlMultiAppendUnicodeStringBuffer
+implib ntdll.dll, RtlMultiByteToUnicodeN
+implib ntdll.dll, RtlMultiByteToUnicodeSize
+implib ntdll.dll, RtlMultipleAllocateHeap
+implib ntdll.dll, RtlMultipleFreeHeap
+implib ntdll.dll, RtlNewInstanceSecurityObject
+implib ntdll.dll, RtlNewSecurityGrantedAccess
+implib ntdll.dll, RtlNewSecurityObject
+implib ntdll.dll, RtlNewSecurityObjectEx
+implib ntdll.dll, RtlNewSecurityObjectWithMultipleInheritance
+implib ntdll.dll, RtlNormalizeProcessParams
+implib ntdll.dll, RtlNormalizeSecurityDescriptor
+implib ntdll.dll, RtlNormalizeString
+implib ntdll.dll, RtlNotifyFeatureUsage
+implib ntdll.dll, RtlNtPathNameToDosPathName
+implib ntdll.dll, RtlNtStatusToDosError
+implib ntdll.dll, RtlNtStatusToDosErrorNoTeb
+implib ntdll.dll, RtlNumberGenericTableElements
+implib ntdll.dll, RtlNumberGenericTableElementsAvl
+implib ntdll.dll, RtlNumberOfClearBits
+implib ntdll.dll, RtlNumberOfClearBitsInRange
+implib ntdll.dll, RtlNumberOfSetBits
+implib ntdll.dll, RtlNumberOfSetBitsInRange
+implib ntdll.dll, RtlNumberOfSetBitsUlongPtr
+implib ntdll.dll, RtlOemStringToUnicodeSize
+implib ntdll.dll, RtlOemStringToUnicodeString
+implib ntdll.dll, RtlOemToUnicodeN
+implib ntdll.dll, RtlOpenCurrentUser
+implib ntdll.dll, RtlOsDeploymentState
+implib ntdll.dll, RtlOwnerAcesPresent
+implib ntdll.dll, RtlPcToFileHeader
+implib ntdll.dll, RtlPinAtomInAtomTable
+implib ntdll.dll, RtlPopFrame
+implib ntdll.dll, RtlPrefixString
+implib ntdll.dll, RtlPrefixUnicodeString
+implib ntdll.dll, RtlProcessFlsData
+implib ntdll.dll, RtlProtectHeap
+implib ntdll.dll, RtlPublishWnfStateData
+implib ntdll.dll, RtlPushFrame
+implib ntdll.dll, RtlQueryActivationContextApplicationSettings
+implib ntdll.dll, RtlQueryAllFeatureConfigurations
+implib ntdll.dll, RtlQueryAtomInAtomTable
+implib ntdll.dll, RtlQueryCriticalSectionOwner
+implib ntdll.dll, RtlQueryDepthSList
+implib ntdll.dll, RtlQueryDynamicTimeZoneInformation
+implib ntdll.dll, RtlQueryElevationFlags
+implib ntdll.dll, RtlQueryEnvironmentVariable
+implib ntdll.dll, RtlQueryEnvironmentVariable_U
+implib ntdll.dll, RtlQueryFeatureConfiguration
+implib ntdll.dll, RtlQueryFeatureConfigurationChangeStamp
+implib ntdll.dll, RtlQueryFeatureUsageNotificationSubscriptions
+implib ntdll.dll, RtlQueryHeapInformation
+implib ntdll.dll, RtlQueryImageMitigationPolicy
+implib ntdll.dll, RtlQueryInformationAcl
+implib ntdll.dll, RtlQueryInformationActivationContext
+implib ntdll.dll, RtlQueryInformationActiveActivationContext
+implib ntdll.dll, RtlQueryInterfaceMemoryStream
+implib ntdll.dll, RtlQueryModuleInformation
+implib ntdll.dll, RtlQueryPackageClaims
+implib ntdll.dll, RtlQueryPackageIdentity
+implib ntdll.dll, RtlQueryPackageIdentityEx
+implib ntdll.dll, RtlQueryPerformanceCounter
+implib ntdll.dll, RtlQueryPerformanceFrequency
+implib ntdll.dll, RtlQueryProcessBackTraceInformation
+implib ntdll.dll, RtlQueryProcessDebugInformation
+implib ntdll.dll, RtlQueryProcessHeapInformation
+implib ntdll.dll, RtlQueryProcessLockInformation
+implib ntdll.dll, RtlQueryProcessPlaceholderCompatibilityMode
+implib ntdll.dll, RtlQueryProtectedPolicy
+implib ntdll.dll, RtlQueryRegistryValueWithFallback
+implib ntdll.dll, RtlQueryRegistryValues
+implib ntdll.dll, RtlQueryRegistryValuesEx
+implib ntdll.dll, RtlQueryResourcePolicy
+implib ntdll.dll, RtlQuerySecurityObject
+implib ntdll.dll, RtlQueryTagHeap
+implib ntdll.dll, RtlQueryThreadPlaceholderCompatibilityMode
+implib ntdll.dll, RtlQueryThreadProfiling
+implib ntdll.dll, RtlQueryTimeZoneInformation
+implib ntdll.dll, RtlQueryTokenHostIdAsUlong64
+implib ntdll.dll, RtlQueryUnbiasedInterruptTime
+implib ntdll.dll, RtlQueryValidationRunlevel
+implib ntdll.dll, RtlQueryWnfMetaNotification
+implib ntdll.dll, RtlQueryWnfStateData
+implib ntdll.dll, RtlQueryWnfStateDataWithExplicitScope
+implib ntdll.dll, RtlQueueApcWow64Thread
+implib ntdll.dll, RtlQueueWorkItem
+implib ntdll.dll, RtlRaiseCustomSystemEventTrigger
+implib ntdll.dll, RtlRaiseException
+implib ntdll.dll, RtlRaiseStatus
+implib ntdll.dll, RtlRandom
+implib ntdll.dll, RtlRandomEx
+implib ntdll.dll, RtlRbInsertNodeEx
+implib ntdll.dll, RtlRbRemoveNode
+implib ntdll.dll, RtlReAllocateHeap
+implib ntdll.dll, RtlReadMemoryStream
+implib ntdll.dll, RtlReadOutOfProcessMemoryStream
+implib ntdll.dll, RtlReadThreadProfilingData
+implib ntdll.dll, RtlRealPredecessor
+implib ntdll.dll, RtlRealSuccessor
+implib ntdll.dll, RtlRegisterFeatureConfigurationChangeNotification
+implib ntdll.dll, RtlRegisterForWnfMetaNotification
+implib ntdll.dll, RtlRegisterSecureMemoryCacheCallback
+implib ntdll.dll, RtlRegisterThreadWithCsrss
+implib ntdll.dll, RtlRegisterWait
+implib ntdll.dll, RtlReleaseActivationContext
+implib ntdll.dll, RtlReleaseMemoryStream
+implib ntdll.dll, RtlReleasePath
+implib ntdll.dll, RtlReleasePebLock
+implib ntdll.dll, RtlReleasePrivilege
+implib ntdll.dll, RtlReleaseRelativeName
+implib ntdll.dll, RtlReleaseResource
+implib ntdll.dll, RtlReleaseSRWLockExclusive
+implib ntdll.dll, RtlReleaseSRWLockShared
+implib ntdll.dll, RtlRemoteCall
+implib ntdll.dll, RtlRemoveEntryHashTable
+implib ntdll.dll, RtlRemovePrivileges
+implib ntdll.dll, RtlRemoveVectoredContinueHandler
+implib ntdll.dll, RtlRemoveVectoredExceptionHandler
+implib ntdll.dll, RtlReplaceSidInSd
+implib ntdll.dll, RtlReplaceSystemDirectoryInPath
+implib ntdll.dll, RtlReportException
+implib ntdll.dll, RtlReportExceptionEx
+implib ntdll.dll, RtlReportSilentProcessExit
+implib ntdll.dll, RtlReportSqmEscalation
+implib ntdll.dll, RtlResetMemoryBlockLookaside
+implib ntdll.dll, RtlResetMemoryZone
+implib ntdll.dll, RtlResetNtUserPfn
+implib ntdll.dll, RtlResetRtlTranslations
+implib ntdll.dll, RtlRestoreBootStatusDefaults
+implib ntdll.dll, RtlRestoreLastWin32Error
+implib ntdll.dll, RtlRestoreSystemBootStatusDefaults
+implib ntdll.dll, RtlRestoreThreadPreferredUILanguages
+implib ntdll.dll, RtlRetrieveNtUserPfn
+implib ntdll.dll, RtlRevertMemoryStream
+implib ntdll.dll, RtlRunDecodeUnicodeString
+implib ntdll.dll, RtlRunEncodeUnicodeString
+implib ntdll.dll, RtlRunOnceBeginInitialize
+implib ntdll.dll, RtlRunOnceComplete
+implib ntdll.dll, RtlRunOnceExecuteOnce
+implib ntdll.dll, RtlRunOnceInitialize
+implib ntdll.dll, RtlSecondsSince1970ToTime
+implib ntdll.dll, RtlSecondsSince1980ToTime
+implib ntdll.dll, RtlSeekMemoryStream
+implib ntdll.dll, RtlSelfRelativeToAbsoluteSD
+implib ntdll.dll, RtlSelfRelativeToAbsoluteSD2
+implib ntdll.dll, RtlSendMsgToSm
+implib ntdll.dll, RtlSetAllBits
+implib ntdll.dll, RtlSetAttributesSecurityDescriptor
+implib ntdll.dll, RtlSetBit
+implib ntdll.dll, RtlSetBits
+implib ntdll.dll, RtlSetControlSecurityDescriptor
+implib ntdll.dll, RtlSetCriticalSectionSpinCount
+implib ntdll.dll, RtlSetCurrentDirectory_U
+implib ntdll.dll, RtlSetCurrentEnvironment
+implib ntdll.dll, RtlSetCurrentTransaction
+implib ntdll.dll, RtlSetDaclSecurityDescriptor
+implib ntdll.dll, RtlSetDynamicTimeZoneInformation
+implib ntdll.dll, RtlSetEnvironmentStrings
+implib ntdll.dll, RtlSetEnvironmentVar
+implib ntdll.dll, RtlSetEnvironmentVariable
+implib ntdll.dll, RtlSetExtendedFeaturesMask
+implib ntdll.dll, RtlSetFeatureConfigurations
+implib ntdll.dll, RtlSetGroupSecurityDescriptor
+implib ntdll.dll, RtlSetHeapInformation
+implib ntdll.dll, RtlSetImageMitigationPolicy
+implib ntdll.dll, RtlSetInformationAcl
+implib ntdll.dll, RtlSetIoCompletionCallback
+implib ntdll.dll, RtlSetLastWin32Error
+implib ntdll.dll, RtlSetLastWin32ErrorAndNtStatusFromNtStatus
+implib ntdll.dll, RtlSetMemoryStreamSize
+implib ntdll.dll, RtlSetOwnerSecurityDescriptor
+implib ntdll.dll, RtlSetPortableOperatingSystem
+implib ntdll.dll, RtlSetProcessDebugInformation
+implib ntdll.dll, RtlSetProcessIsCritical
+implib ntdll.dll, RtlSetProcessPlaceholderCompatibilityMode
+implib ntdll.dll, RtlSetProcessPreferredUILanguages
+implib ntdll.dll, RtlSetProtectedPolicy
+implib ntdll.dll, RtlSetProxiedProcessId
+implib ntdll.dll, RtlSetSaclSecurityDescriptor
+implib ntdll.dll, RtlSetSearchPathMode
+implib ntdll.dll, RtlSetSecurityDescriptorRMControl
+implib ntdll.dll, RtlSetSecurityObject
+implib ntdll.dll, RtlSetSecurityObjectEx
+implib ntdll.dll, RtlSetSystemBootStatus
+implib ntdll.dll, RtlSetSystemBootStatusEx
+implib ntdll.dll, RtlSetThreadErrorMode
+implib ntdll.dll, RtlSetThreadIsCritical
+implib ntdll.dll, RtlSetThreadPlaceholderCompatibilityMode
+implib ntdll.dll, RtlSetThreadPoolStartFunc
+implib ntdll.dll, RtlSetThreadPreferredUILanguages
+implib ntdll.dll, RtlSetThreadPreferredUILanguages2
+implib ntdll.dll, RtlSetThreadSubProcessTag
+implib ntdll.dll, RtlSetThreadWorkOnBehalfTicket
+implib ntdll.dll, RtlSetTimeZoneInformation
+implib ntdll.dll, RtlSetTimer
+implib ntdll.dll, RtlSetUnhandledExceptionFilter
+implib ntdll.dll, RtlSetUserCallbackExceptionFilter
+implib ntdll.dll, RtlSetUserFlagsHeap
+implib ntdll.dll, RtlSetUserValueHeap
+implib ntdll.dll, RtlSidDominates
+implib ntdll.dll, RtlSidDominatesForTrust
+implib ntdll.dll, RtlSidEqualLevel
+implib ntdll.dll, RtlSidHashInitialize
+implib ntdll.dll, RtlSidHashLookup
+implib ntdll.dll, RtlSidIsHigherLevel
+implib ntdll.dll, RtlSizeHeap
+implib ntdll.dll, RtlSleepConditionVariableCS
+implib ntdll.dll, RtlSleepConditionVariableSRW
+implib ntdll.dll, RtlSplay
+implib ntdll.dll, RtlStartRXact
+implib ntdll.dll, RtlStatMemoryStream
+implib ntdll.dll, RtlStringFromGUID
+implib ntdll.dll, RtlStringFromGUIDEx
+implib ntdll.dll, RtlStronglyEnumerateEntryHashTable
+implib ntdll.dll, RtlSubAuthorityCountSid
+implib ntdll.dll, RtlSubAuthoritySid
+implib ntdll.dll, RtlSubscribeForFeatureUsageNotification
+implib ntdll.dll, RtlSubscribeWnfStateChangeNotification
+implib ntdll.dll, RtlSubtreePredecessor
+implib ntdll.dll, RtlSubtreeSuccessor
+implib ntdll.dll, RtlSwitchedVVI
+implib ntdll.dll, RtlSystemTimeToLocalTime
+implib ntdll.dll, RtlTestAndPublishWnfStateData
+implib ntdll.dll, RtlTestBit
+implib ntdll.dll, RtlTestProtectedAccess
+implib ntdll.dll, RtlTimeFieldsToTime
+implib ntdll.dll, RtlTimeToElapsedTimeFields
+implib ntdll.dll, RtlTimeToSecondsSince1970
+implib ntdll.dll, RtlTimeToSecondsSince1980
+implib ntdll.dll, RtlTimeToTimeFields
+implib ntdll.dll, RtlTraceDatabaseAdd
+implib ntdll.dll, RtlTraceDatabaseCreate
+implib ntdll.dll, RtlTraceDatabaseDestroy
+implib ntdll.dll, RtlTraceDatabaseEnumerate
+implib ntdll.dll, RtlTraceDatabaseFind
+implib ntdll.dll, RtlTraceDatabaseLock
+implib ntdll.dll, RtlTraceDatabaseUnlock
+implib ntdll.dll, RtlTraceDatabaseValidate
+implib ntdll.dll, RtlTryAcquirePebLock
+implib ntdll.dll, RtlTryAcquireSRWLockExclusive
+implib ntdll.dll, RtlTryAcquireSRWLockShared
+implib ntdll.dll, RtlTryConvertSRWLockSharedToExclusiveOrRelease
+implib ntdll.dll, RtlTryEnterCriticalSection
+implib ntdll.dll, RtlUTF8StringToUnicodeString
+implib ntdll.dll, RtlUTF8ToUnicodeN
+implib ntdll.dll, RtlUdiv128
+implib ntdll.dll, RtlUlongByteSwap
+implib ntdll.dll, RtlUlonglongByteSwap
+implib ntdll.dll, RtlUnhandledExceptionFilter
+implib ntdll.dll, RtlUnhandledExceptionFilter2
+implib ntdll.dll, RtlUnicodeStringToAnsiSize
+implib ntdll.dll, RtlUnicodeStringToAnsiString
+implib ntdll.dll, RtlUnicodeStringToCountedOemString
+implib ntdll.dll, RtlUnicodeStringToInteger
+implib ntdll.dll, RtlUnicodeStringToOemSize
+implib ntdll.dll, RtlUnicodeStringToOemString
+implib ntdll.dll, RtlUnicodeStringToUTF8String
+implib ntdll.dll, RtlUnicodeToCustomCPN
+implib ntdll.dll, RtlUnicodeToMultiByteN
+implib ntdll.dll, RtlUnicodeToMultiByteSize
+implib ntdll.dll, RtlUnicodeToOemN
+implib ntdll.dll, RtlUnicodeToUTF8N
+implib ntdll.dll, RtlUniform
+implib ntdll.dll, RtlUnlockBootStatusData
+implib ntdll.dll, RtlUnlockCurrentThread
+implib ntdll.dll, RtlUnlockHeap
+implib ntdll.dll, RtlUnlockMemoryBlockLookaside
+implib ntdll.dll, RtlUnlockMemoryStreamRegion
+implib ntdll.dll, RtlUnlockMemoryZone
+implib ntdll.dll, RtlUnlockModuleSection
+implib ntdll.dll, RtlUnregisterFeatureConfigurationChangeNotification
+implib ntdll.dll, RtlUnsubscribeFromFeatureUsageNotifications
+implib ntdll.dll, RtlUnsubscribeWnfNotificationWaitForCompletion
+implib ntdll.dll, RtlUnsubscribeWnfNotificationWithCompletionCallback
+implib ntdll.dll, RtlUnsubscribeWnfStateChangeNotification
+implib ntdll.dll, RtlUnwind
+implib ntdll.dll, RtlUpcaseUnicodeChar
+implib ntdll.dll, RtlUpcaseUnicodeString
+implib ntdll.dll, RtlUpcaseUnicodeStringToAnsiString
+implib ntdll.dll, RtlUpcaseUnicodeStringToCountedOemString
+implib ntdll.dll, RtlUpcaseUnicodeStringToOemString
+implib ntdll.dll, RtlUpcaseUnicodeToCustomCPN
+implib ntdll.dll, RtlUpcaseUnicodeToMultiByteN
+implib ntdll.dll, RtlUpcaseUnicodeToOemN
+implib ntdll.dll, RtlUpdateClonedCriticalSection
+implib ntdll.dll, RtlUpdateClonedSRWLock
+implib ntdll.dll, RtlUpdateTimer
+implib ntdll.dll, RtlUpperChar
+implib ntdll.dll, RtlUpperString
+implib ntdll.dll, RtlUserFiberStart
+implib ntdll.dll, RtlUserThreadStart
+implib ntdll.dll, RtlUshortByteSwap
+implib ntdll.dll, RtlValidAcl
+implib ntdll.dll, RtlValidProcessProtection
+implib ntdll.dll, RtlValidRelativeSecurityDescriptor
+implib ntdll.dll, RtlValidSecurityDescriptor
+implib ntdll.dll, RtlValidSid
+implib ntdll.dll, RtlValidateCorrelationVector
+implib ntdll.dll, RtlValidateHeap
+implib ntdll.dll, RtlValidateProcessHeaps
+implib ntdll.dll, RtlValidateUnicodeString
+implib ntdll.dll, RtlVerifyVersionInfo
+implib ntdll.dll, RtlWaitForWnfMetaNotification
+implib ntdll.dll, RtlWaitOnAddress
+implib ntdll.dll, RtlWakeAddressAll
+implib ntdll.dll, RtlWakeAddressAllNoFence
+implib ntdll.dll, RtlWakeAddressSingle
+implib ntdll.dll, RtlWakeAddressSingleNoFence
+implib ntdll.dll, RtlWakeAllConditionVariable
+implib ntdll.dll, RtlWakeConditionVariable
+implib ntdll.dll, RtlWalkFrameChain
+implib ntdll.dll, RtlWalkHeap
+implib ntdll.dll, RtlWeaklyEnumerateEntryHashTable
+implib ntdll.dll, RtlWerpReportException
+implib ntdll.dll, RtlWnfCompareChangeStamp
+implib ntdll.dll, RtlWnfDllUnloadCallback
+implib ntdll.dll, RtlWow64CallFunction64
+implib ntdll.dll, RtlWow64EnableFsRedirection
+implib ntdll.dll, RtlWow64EnableFsRedirectionEx
+implib ntdll.dll, RtlWow64GetCurrentMachine
+implib ntdll.dll, RtlWow64GetEquivalentMachineCHPE
+implib ntdll.dll, RtlWow64GetProcessMachines
+implib ntdll.dll, RtlWow64GetSharedInfoProcess
+implib ntdll.dll, RtlWow64IsWowGuestMachineSupported
+implib ntdll.dll, RtlWow64LogMessageInEventLogger
+implib ntdll.dll, RtlWriteMemoryStream
+implib ntdll.dll, RtlWriteRegistryValue
+implib ntdll.dll, RtlZeroHeap
+implib ntdll.dll, RtlZeroMemory
+implib ntdll.dll, RtlZombifyActivationContext
+implib ntdll.dll, RtlpApplyLengthFunction
+implib ntdll.dll, RtlpCheckDynamicTimeZoneInformation
+implib ntdll.dll, RtlpCleanupRegistryKeys
+implib ntdll.dll, RtlpConvertAbsoluteToRelativeSecurityAttribute
+implib ntdll.dll, RtlpConvertCultureNamesToLCIDs
+implib ntdll.dll, RtlpConvertLCIDsToCultureNames
+implib ntdll.dll, RtlpConvertRelativeToAbsoluteSecurityAttribute
+implib ntdll.dll, RtlpCreateProcessRegistryInfo
+implib ntdll.dll, RtlpEnsureBufferSize
+implib ntdll.dll, RtlpFreezeTimeBias
+implib ntdll.dll, RtlpGetDeviceFamilyInfoEnum
+implib ntdll.dll, RtlpGetLCIDFromLangInfoNode
+implib ntdll.dll, RtlpGetNameFromLangInfoNode
+implib ntdll.dll, RtlpGetSystemDefaultUILanguage
+implib ntdll.dll, RtlpGetUserOrMachineUILanguage4NLS
+implib ntdll.dll, RtlpInitializeLangRegistryInfo
+implib ntdll.dll, RtlpIsQualifiedLanguage
+implib ntdll.dll, RtlpLoadMachineUIByPolicy
+implib ntdll.dll, RtlpLoadUserUIByPolicy
+implib ntdll.dll, RtlpMergeSecurityAttributeInformation
+implib ntdll.dll, RtlpMuiFreeLangRegistryInfo
+implib ntdll.dll, RtlpMuiRegCreateRegistryInfo
+implib ntdll.dll, RtlpMuiRegFreeRegistryInfo
+implib ntdll.dll, RtlpMuiRegLoadRegistryInfo
+implib ntdll.dll, RtlpNotOwnerCriticalSection
+implib ntdll.dll, RtlpNtCreateKey
+implib ntdll.dll, RtlpNtEnumerateSubKey
+implib ntdll.dll, RtlpNtMakeTemporaryKey
+implib ntdll.dll, RtlpNtOpenKey
+implib ntdll.dll, RtlpNtQueryValueKey
+implib ntdll.dll, RtlpNtSetValueKey
+implib ntdll.dll, RtlpQueryDefaultUILanguage
+implib ntdll.dll, RtlpQueryProcessDebugInformationRemote
+implib ntdll.dll, RtlpRefreshCachedUILanguage
+implib ntdll.dll, RtlpSetInstallLanguage
+implib ntdll.dll, RtlpSetPreferredUILanguages
+implib ntdll.dll, RtlpSetUserPreferredUILanguages
+implib ntdll.dll, RtlpTimeFieldsToTime
+implib ntdll.dll, RtlpTimeToTimeFields
+implib ntdll.dll, RtlpUnWaitCriticalSection
+implib ntdll.dll, RtlpVerifyAndCommitUILanguageSettings
+implib ntdll.dll, RtlpWaitForCriticalSection
+implib ntdll.dll, RtlxAnsiStringToUnicodeSize
+implib ntdll.dll, RtlxOemStringToUnicodeSize
+implib ntdll.dll, RtlxUnicodeStringToAnsiSize
+implib ntdll.dll, RtlxUnicodeStringToOemSize
+implib ntdll.dll, SbExecuteProcedure
+implib ntdll.dll, SbSelectProcedure
+implib ntdll.dll, ShipAssert
+implib ntdll.dll, ShipAssertGetBufferInfo
+implib ntdll.dll, ShipAssertMsgA
+implib ntdll.dll, ShipAssertMsgW
+implib ntdll.dll, TpAllocAlpcCompletion
+implib ntdll.dll, TpAllocAlpcCompletionEx
+implib ntdll.dll, TpAllocCleanupGroup
+implib ntdll.dll, TpAllocIoCompletion
+implib ntdll.dll, TpAllocJobNotification
+implib ntdll.dll, TpAllocPool
+implib ntdll.dll, TpAllocTimer
+implib ntdll.dll, TpAllocWait
+implib ntdll.dll, TpAllocWork
+implib ntdll.dll, TpAlpcRegisterCompletionList
+implib ntdll.dll, TpAlpcUnregisterCompletionList
+implib ntdll.dll, TpCallbackDetectedUnrecoverableError
+implib ntdll.dll, TpCallbackIndependent
+implib ntdll.dll, TpCallbackLeaveCriticalSectionOnCompletion
+implib ntdll.dll, TpCallbackMayRunLong
+implib ntdll.dll, TpCallbackReleaseMutexOnCompletion
+implib ntdll.dll, TpCallbackReleaseSemaphoreOnCompletion
+implib ntdll.dll, TpCallbackSendAlpcMessageOnCompletion
+implib ntdll.dll, TpCallbackSendPendingAlpcMessage
+implib ntdll.dll, TpCallbackSetEventOnCompletion
+implib ntdll.dll, TpCallbackUnloadDllOnCompletion
+implib ntdll.dll, TpCancelAsyncIoOperation
+implib ntdll.dll, TpCaptureCaller
+implib ntdll.dll, TpCheckTerminateWorker
+implib ntdll.dll, TpDbgDumpHeapUsage
+implib ntdll.dll, TpDbgSetLogRoutine
+implib ntdll.dll, TpDisablePoolCallbackChecks
+implib ntdll.dll, TpDisassociateCallback
+implib ntdll.dll, TpIsTimerSet
+implib ntdll.dll, TpPostWork
+implib ntdll.dll, TpQueryPoolStackInformation
+implib ntdll.dll, TpReleaseAlpcCompletion
+implib ntdll.dll, TpReleaseCleanupGroup
+implib ntdll.dll, TpReleaseCleanupGroupMembers
+implib ntdll.dll, TpReleaseIoCompletion
+implib ntdll.dll, TpReleaseJobNotification
+implib ntdll.dll, TpReleasePool
+implib ntdll.dll, TpReleaseTimer
+implib ntdll.dll, TpReleaseWait
+implib ntdll.dll, TpReleaseWork
+implib ntdll.dll, TpSetDefaultPoolMaxThreads
+implib ntdll.dll, TpSetDefaultPoolStackInformation
+implib ntdll.dll, TpSetPoolMaxThreads
+implib ntdll.dll, TpSetPoolMaxThreadsSoftLimit
+implib ntdll.dll, TpSetPoolMinThreads
+implib ntdll.dll, TpSetPoolStackInformation
+implib ntdll.dll, TpSetPoolThreadBasePriority
+implib ntdll.dll, TpSetPoolThreadCpuSets
+implib ntdll.dll, TpSetPoolWorkerThreadIdleTimeout, _TpSetPoolWorkerThreadIdleTimeout@12
+implib ntdll.dll, TpSetTimer, _TpSetTimer@16
+; implib ntdll.dll, TpSetTimerEx, _TpSetTimerEx@16 ; TpSetTimerEx is an alias for TpSetTimer
+implib ntdll.dll, TpSetWait, _TpSetWait@12
+implib ntdll.dll, TpSetWaitEx, _TpSetWaitEx@16
+implib ntdll.dll, TpSimpleTryPost, _TpSimpleTryPost@12
+implib ntdll.dll, TpStartAsyncIoOperation, _TpStartAsyncIoOperation@4
+implib ntdll.dll, TpTimerOutstandingCallbackCount, _TpTimerOutstandingCallbackCount@4
+implib ntdll.dll, TpTrimPools, _TpTrimPools@0
+implib ntdll.dll, TpWaitForAlpcCompletion, _TpWaitForAlpcCompletion@4
+implib ntdll.dll, TpWaitForIoCompletion, _TpWaitForIoCompletion@8
+implib ntdll.dll, TpWaitForJobNotification, _TpWaitForJobNotification@4
+implib ntdll.dll, TpWaitForTimer, _TpWaitForTimer@8
+implib ntdll.dll, TpWaitForWait, _TpWaitForWait@8
+implib ntdll.dll, TpWaitForWork, _TpWaitForWork@8
+implib ntdll.dll, VerSetConditionMask, _VerSetConditionMask@16
+implib ntdll.dll, WerReportExceptionWorker, _WerReportExceptionWorker@4
+implib ntdll.dll, WerReportSQMEvent, _WerReportSQMEvent@12
+implib ntdll.dll, WinSqmGetInstrumentationProperty, _WinSqmGetInstrumentationProperty@16
+
+implib ntdll.dll, ZwCreateMutant
+implib ntdll.dll, ZwCreateNamedPipeFile
+implib ntdll.dll, ZwCreatePagingFile
+implib ntdll.dll, ZwCreatePartition
+implib ntdll.dll, ZwCreatePort
+implib ntdll.dll, ZwCreatePrivateNamespace
+implib ntdll.dll, ZwCreateProcess
+implib ntdll.dll, ZwCreateProcessEx
+implib ntdll.dll, ZwCreateProfile
+implib ntdll.dll, ZwCreateProfileEx
+implib ntdll.dll, ZwCreateRegistryTransaction
+implib ntdll.dll, ZwCreateResourceManager
+implib ntdll.dll, ZwCreateSection
+implib ntdll.dll, ZwCreateSectionEx
+implib ntdll.dll, ZwCreateSemaphore
+implib ntdll.dll, ZwCreateSymbolicLinkObject
+implib ntdll.dll, ZwCreateThread
+implib ntdll.dll, ZwCreateThreadEx
+implib ntdll.dll, ZwCreateTimer
+implib ntdll.dll, ZwCreateTimer2
+implib ntdll.dll, ZwCreateToken
+implib ntdll.dll, ZwCreateTokenEx
+implib ntdll.dll, ZwCreateTransaction
+implib ntdll.dll, ZwCreateTransactionManager
+implib ntdll.dll, ZwCreateUserProcess
+implib ntdll.dll, ZwCreateWaitCompletionPacket
+implib ntdll.dll, ZwCreateWaitablePort
+implib ntdll.dll, ZwCreateWnfStateName
+implib ntdll.dll, ZwCreateWorkerFactory
+implib ntdll.dll, ZwDebugActiveProcess
+implib ntdll.dll, ZwDebugContinue
+implib ntdll.dll, ZwDelayExecution
+implib ntdll.dll, ZwDeleteAtom
+implib ntdll.dll, ZwDeleteBootEntry
+implib ntdll.dll, ZwDeleteDriverEntry
+implib ntdll.dll, ZwDeleteFile
+implib ntdll.dll, ZwDeleteKey
+implib ntdll.dll, ZwDeleteObjectAuditAlarm
+implib ntdll.dll, ZwDeletePrivateNamespace
+implib ntdll.dll, ZwDeleteValueKey
+implib ntdll.dll, ZwDeleteWnfStateData
+implib ntdll.dll, ZwDeleteWnfStateName
+implib ntdll.dll, ZwDeviceIoControlFile
+implib ntdll.dll, ZwDirectGraphicsCall
+implib ntdll.dll, ZwDisableLastKnownGood
+implib ntdll.dll, ZwDisplayString
+implib ntdll.dll, ZwDrawText
+implib ntdll.dll, ZwDuplicateObject
+implib ntdll.dll, ZwDuplicateToken
+implib ntdll.dll, ZwEnableLastKnownGood
+implib ntdll.dll, ZwEnumerateBootEntries
+implib ntdll.dll, ZwEnumerateDriverEntries
+implib ntdll.dll, ZwEnumerateKey
+implib ntdll.dll, ZwEnumerateSystemEnvironmentValuesEx
+implib ntdll.dll, ZwEnumerateTransactionObject
+implib ntdll.dll, ZwEnumerateValueKey
+implib ntdll.dll, ZwExtendSection
+implib ntdll.dll, ZwFilterBootOption
+implib ntdll.dll, ZwFilterToken
+implib ntdll.dll, ZwFilterTokenEx
+implib ntdll.dll, ZwFindAtom
+implib ntdll.dll, ZwFlushBuffersFile
+implib ntdll.dll, ZwFlushBuffersFileEx
+implib ntdll.dll, ZwFlushInstallUILanguage
+implib ntdll.dll, ZwFlushInstructionCache
+implib ntdll.dll, ZwFlushKey
+implib ntdll.dll, ZwFlushProcessWriteBuffers
+implib ntdll.dll, ZwFlushVirtualMemory
+implib ntdll.dll, ZwFlushWriteBuffer
+implib ntdll.dll, ZwFreeUserPhysicalPages
+implib ntdll.dll, ZwFreeVirtualMemory
+implib ntdll.dll, ZwFreezeRegistry
+implib ntdll.dll, ZwFreezeTransactions
+implib ntdll.dll, ZwFsControlFile
+implib ntdll.dll, ZwGetCachedSigningLevel
+implib ntdll.dll, ZwGetCompleteWnfStateSubscription
+implib ntdll.dll, ZwGetContextThread
+implib ntdll.dll, ZwGetCurrentProcessorNumber
+implib ntdll.dll, ZwGetCurrentProcessorNumberEx
+implib ntdll.dll, ZwGetDevicePowerState
+implib ntdll.dll, ZwGetMUIRegistryInfo
+implib ntdll.dll, ZwGetNextProcess
+implib ntdll.dll, ZwGetNextThread
+implib ntdll.dll, ZwGetNlsSectionPtr
+implib ntdll.dll, ZwGetNotificationResourceManager
+implib ntdll.dll, ZwGetWriteWatch
+implib ntdll.dll, ZwImpersonateAnonymousToken
+implib ntdll.dll, ZwImpersonateClientOfPort
+implib ntdll.dll, ZwImpersonateThread
+implib ntdll.dll, ZwInitializeEnclave
+implib ntdll.dll, ZwInitializeNlsFiles
+implib ntdll.dll, ZwInitializeRegistry
+implib ntdll.dll, ZwInitiatePowerAction
+implib ntdll.dll, ZwIsProcessInJob
+implib ntdll.dll, ZwIsSystemResumeAutomatic
+implib ntdll.dll, ZwIsUILanguageComitted
+implib ntdll.dll, ZwListenPort
+implib ntdll.dll, ZwLoadDriver
+implib ntdll.dll, ZwLoadEnclaveData
+implib ntdll.dll, ZwLoadKey
+implib ntdll.dll, ZwLoadKey2
+implib ntdll.dll, ZwLoadKey3
+implib ntdll.dll, ZwLoadKeyEx
+implib ntdll.dll, ZwLockFile
+implib ntdll.dll, ZwLockProductActivationKeys
+implib ntdll.dll, ZwLockRegistryKey
+implib ntdll.dll, ZwLockVirtualMemory
+implib ntdll.dll, ZwMakePermanentObject
+implib ntdll.dll, ZwMakeTemporaryObject
+implib ntdll.dll, ZwManageHotPatch
+implib ntdll.dll, ZwManagePartition
+implib ntdll.dll, ZwMapCMFModule
+implib ntdll.dll, ZwMapUserPhysicalPages
+implib ntdll.dll, ZwMapUserPhysicalPagesScatter
+implib ntdll.dll, ZwMapViewOfSection
+implib ntdll.dll, ZwMapViewOfSectionEx
+implib ntdll.dll, ZwModifyBootEntry
+implib ntdll.dll, ZwModifyDriverEntry
+implib ntdll.dll, ZwNotifyChangeDirectoryFile
+implib ntdll.dll, ZwNotifyChangeDirectoryFileEx
+implib ntdll.dll, ZwNotifyChangeKey
+implib ntdll.dll, ZwNotifyChangeMultipleKeys
+implib ntdll.dll, ZwNotifyChangeSession
+implib ntdll.dll, ZwOpenDirectoryObject
+implib ntdll.dll, ZwOpenEnlistment
+implib ntdll.dll, ZwOpenEvent
+implib ntdll.dll, ZwOpenEventPair
+implib ntdll.dll, ZwOpenFile
+implib ntdll.dll, ZwOpenIoCompletion
+implib ntdll.dll, ZwOpenJobObject
+implib ntdll.dll, ZwOpenKey
+implib ntdll.dll, ZwOpenKeyEx
+implib ntdll.dll, ZwOpenKeyTransacted
+implib ntdll.dll, ZwOpenKeyTransactedEx
+implib ntdll.dll, ZwOpenKeyedEvent
+implib ntdll.dll, ZwOpenMutant
+implib ntdll.dll, ZwOpenObjectAuditAlarm
+implib ntdll.dll, ZwOpenPartition
+implib ntdll.dll, ZwOpenPrivateNamespace
+implib ntdll.dll, ZwOpenProcess
+implib ntdll.dll, ZwOpenProcessToken
+implib ntdll.dll, ZwOpenProcessTokenEx
+implib ntdll.dll, ZwOpenRegistryTransaction
+implib ntdll.dll, ZwOpenResourceManager
+implib ntdll.dll, ZwOpenSection
+implib ntdll.dll, ZwOpenSemaphore
+implib ntdll.dll, ZwOpenSession
+implib ntdll.dll, ZwOpenSymbolicLinkObject
+implib ntdll.dll, ZwOpenThread
+implib ntdll.dll, ZwOpenThreadToken
+implib ntdll.dll, ZwOpenThreadTokenEx
+implib ntdll.dll, ZwOpenTimer
+implib ntdll.dll, ZwOpenTransaction
+implib ntdll.dll, ZwOpenTransactionManager
+implib ntdll.dll, ZwPlugPlayControl
+implib ntdll.dll, ZwPowerInformation
+implib ntdll.dll, ZwPrePrepareComplete
+implib ntdll.dll, ZwPrePrepareEnlistment
+implib ntdll.dll, ZwPrepareComplete
+implib ntdll.dll, ZwPrepareEnlistment
+implib ntdll.dll, ZwPrivilegeCheck
+implib ntdll.dll, ZwPrivilegeObjectAuditAlarm
+implib ntdll.dll, ZwPrivilegedServiceAuditAlarm
+implib ntdll.dll, ZwPropagationComplete
+implib ntdll.dll, ZwPropagationFailed
+implib ntdll.dll, ZwProtectVirtualMemory
+implib ntdll.dll, ZwPssCaptureVaSpaceBulk
+implib ntdll.dll, ZwPulseEvent
+implib ntdll.dll, ZwQueryAttributesFile
+implib ntdll.dll, ZwQueryAuxiliaryCounterFrequency
+implib ntdll.dll, ZwQueryBootEntryOrder
+implib ntdll.dll, ZwQueryBootOptions
+implib ntdll.dll, ZwQueryDebugFilterState
+implib ntdll.dll, ZwQueryDefaultLocale
+implib ntdll.dll, ZwQueryDefaultUILanguage
+implib ntdll.dll, ZwQueryDirectoryFile
+implib ntdll.dll, ZwQueryDirectoryFileEx
+implib ntdll.dll, ZwQueryDirectoryObject
+implib ntdll.dll, ZwQueryDriverEntryOrder
+implib ntdll.dll, ZwQueryEaFile
+implib ntdll.dll, ZwQueryEvent
+implib ntdll.dll, ZwQueryFullAttributesFile
+implib ntdll.dll, ZwQueryInformationAtom
+implib ntdll.dll, ZwQueryInformationByName
+implib ntdll.dll, ZwQueryInformationEnlistment
+implib ntdll.dll, ZwQueryInformationFile
+implib ntdll.dll, ZwQueryInformationJobObject
+implib ntdll.dll, ZwQueryInformationPort
+implib ntdll.dll, ZwQueryInformationProcess
+implib ntdll.dll, ZwQueryInformationResourceManager
+implib ntdll.dll, ZwQueryInformationThread
+implib ntdll.dll, ZwQueryInformationToken
+implib ntdll.dll, ZwQueryInformationTransaction
+implib ntdll.dll, ZwQueryInformationTransactionManager
+implib ntdll.dll, ZwQueryInformationWorkerFactory
+implib ntdll.dll, ZwQueryInstallUILanguage
+implib ntdll.dll, ZwQueryIntervalProfile
+implib ntdll.dll, ZwQueryIoCompletion
+implib ntdll.dll, ZwQueryKey
+implib ntdll.dll, ZwQueryLicenseValue
+implib ntdll.dll, ZwQueryMultipleValueKey
+implib ntdll.dll, ZwQueryMutant
+implib ntdll.dll, ZwQueryObject
+implib ntdll.dll, ZwQueryOpenSubKeys
+implib ntdll.dll, ZwQueryOpenSubKeysEx
+implib ntdll.dll, ZwQueryPerformanceCounter
+implib ntdll.dll, ZwQueryPortInformationProcess
+implib ntdll.dll, ZwQueryQuotaInformationFile
+implib ntdll.dll, ZwQuerySection
+implib ntdll.dll, ZwQuerySecurityAttributesToken
+implib ntdll.dll, ZwQuerySecurityObject
+implib ntdll.dll, ZwQuerySecurityPolicy
+implib ntdll.dll, ZwQuerySemaphore
+implib ntdll.dll, ZwQuerySymbolicLinkObject
+implib ntdll.dll, ZwQuerySystemEnvironmentValue
+implib ntdll.dll, ZwQuerySystemEnvironmentValueEx
+implib ntdll.dll, ZwQuerySystemInformation
+implib ntdll.dll, ZwQuerySystemInformationEx
+implib ntdll.dll, ZwQuerySystemTime
+implib ntdll.dll, ZwQueryTimer
+implib ntdll.dll, ZwQueryTimerResolution
+implib ntdll.dll, ZwQueryValueKey
+implib ntdll.dll, ZwQueryVirtualMemory
+implib ntdll.dll, ZwQueryVolumeInformationFile
+implib ntdll.dll, ZwQueryWnfStateData
+implib ntdll.dll, ZwQueryWnfStateNameInformation
+implib ntdll.dll, ZwQueueApcThread
+implib ntdll.dll, ZwQueueApcThreadEx
+implib ntdll.dll, ZwQueueApcThreadEx2
+implib ntdll.dll, ZwRaiseException
+implib ntdll.dll, ZwRaiseHardError
+implib ntdll.dll, ZwReadFile
+implib ntdll.dll, ZwReadFileScatter
+implib ntdll.dll, ZwReadOnlyEnlistment
+implib ntdll.dll, ZwReadRequestData
+implib ntdll.dll, ZwReadVirtualMemory
+implib ntdll.dll, ZwRecoverEnlistment
+implib ntdll.dll, ZwRecoverResourceManager
+implib ntdll.dll, ZwRecoverTransactionManager
+implib ntdll.dll, ZwRegisterProtocolAddressInformation
+implib ntdll.dll, ZwRegisterThreadTerminatePort
+implib ntdll.dll, ZwReleaseKeyedEvent
+implib ntdll.dll, ZwReleaseMutant
+implib ntdll.dll, ZwReleaseSemaphore
+implib ntdll.dll, ZwReleaseWorkerFactoryWorker
+implib ntdll.dll, ZwRemoveIoCompletion
+implib ntdll.dll, ZwRemoveIoCompletionEx
+implib ntdll.dll, ZwRemoveProcessDebug
+implib ntdll.dll, ZwRenameKey
+implib ntdll.dll, ZwRenameTransactionManager
+implib ntdll.dll, ZwReplaceKey
+implib ntdll.dll, ZwReplacePartitionUnit
+implib ntdll.dll, ZwReplyPort
+implib ntdll.dll, ZwReplyWaitReceivePort
+implib ntdll.dll, ZwReplyWaitReceivePortEx
+implib ntdll.dll, ZwReplyWaitReplyPort
+implib ntdll.dll, ZwRequestPort
+implib ntdll.dll, ZwRequestWaitReplyPort
+implib ntdll.dll, ZwResetEvent
+implib ntdll.dll, ZwResetWriteWatch
+implib ntdll.dll, ZwRestoreKey
+implib ntdll.dll, ZwResumeProcess
+implib ntdll.dll, ZwResumeThread
+implib ntdll.dll, ZwRevertContainerImpersonation
+implib ntdll.dll, ZwRollbackComplete
+implib ntdll.dll, ZwRollbackEnlistment
+implib ntdll.dll, ZwRollbackRegistryTransaction
+implib ntdll.dll, ZwRollbackTransaction
+implib ntdll.dll, ZwRollforwardTransactionManager
+implib ntdll.dll, ZwSaveKey
+implib ntdll.dll, ZwSaveKeyEx
+implib ntdll.dll, ZwSaveMergedKeys
+implib ntdll.dll, ZwSecureConnectPort
+implib ntdll.dll, ZwSerializeBoot
+implib ntdll.dll, ZwSetBootEntryOrder
+implib ntdll.dll, ZwSetBootOptions
+implib ntdll.dll, ZwSetCachedSigningLevel
+implib ntdll.dll, ZwSetCachedSigningLevel2
+implib ntdll.dll, ZwSetContextThread
+; implib ntdll.dll, ZwSetDebugFilterState, _ZwSetDebugFilterState@12 ; ZwSetDebugFilterState is an alias for DbgSetDebugFilterState
+implib ntdll.dll, ZwSetDefaultHardErrorPort
+implib ntdll.dll, ZwSetDefaultLocale
+implib ntdll.dll, ZwSetDefaultUILanguage
+implib ntdll.dll, ZwSetDriverEntryOrder
+implib ntdll.dll, ZwSetEaFile
+implib ntdll.dll, ZwSetEvent
+implib ntdll.dll, ZwSetEventBoostPriority
+implib ntdll.dll, ZwSetHighEventPair
+implib ntdll.dll, ZwSetHighWaitLowEventPair
+implib ntdll.dll, ZwSetIRTimer
+implib ntdll.dll, ZwSetInformationDebugObject
+implib ntdll.dll, ZwSetInformationEnlistment
+implib ntdll.dll, ZwSetInformationFile
+implib ntdll.dll, ZwSetInformationJobObject
+implib ntdll.dll, ZwSetInformationKey
+implib ntdll.dll, ZwSetInformationObject
+implib ntdll.dll, ZwSetInformationProcess
+implib ntdll.dll, ZwSetInformationResourceManager
+implib ntdll.dll, ZwSetInformationSymbolicLink
+implib ntdll.dll, ZwSetInformationThread
+implib ntdll.dll, ZwSetInformationToken
+implib ntdll.dll, ZwSetInformationTransaction
+implib ntdll.dll, ZwSetInformationTransactionManager
+implib ntdll.dll, ZwSetInformationVirtualMemory
+implib ntdll.dll, ZwSetInformationWorkerFactory
+implib ntdll.dll, ZwSetIntervalProfile
+implib ntdll.dll, ZwSetIoCompletion
+implib ntdll.dll, ZwSetIoCompletionEx
+implib ntdll.dll, ZwSetLdtEntries
+implib ntdll.dll, ZwSetLowEventPair
+implib ntdll.dll, ZwSetLowWaitHighEventPair
+implib ntdll.dll, ZwSetQuotaInformationFile
+implib ntdll.dll, ZwSetSecurityObject
+implib ntdll.dll, ZwSetSystemEnvironmentValue
+implib ntdll.dll, ZwSetSystemEnvironmentValueEx
+implib ntdll.dll, ZwSetSystemInformation
+implib ntdll.dll, ZwSetSystemPowerState
+implib ntdll.dll, ZwSetSystemTime
+implib ntdll.dll, ZwSetThreadExecutionState
+implib ntdll.dll, ZwSetTimer
+implib ntdll.dll, ZwSetTimer2
+implib ntdll.dll, ZwSetTimerEx
+implib ntdll.dll, ZwSetTimerResolution
+implib ntdll.dll, ZwSetUuidSeed
+implib ntdll.dll, ZwSetValueKey
+implib ntdll.dll, ZwSetVolumeInformationFile
+implib ntdll.dll, ZwSetWnfProcessNotificationEvent
+implib ntdll.dll, ZwShutdownSystem
+implib ntdll.dll, ZwShutdownWorkerFactory
+implib ntdll.dll, ZwSignalAndWaitForSingleObject
+implib ntdll.dll, ZwSinglePhaseReject
+implib ntdll.dll, ZwStartProfile
+implib ntdll.dll, ZwStopProfile
+implib ntdll.dll, ZwSubscribeWnfStateChange
+implib ntdll.dll, ZwSuspendProcess
+implib ntdll.dll, ZwSuspendThread
+implib ntdll.dll, ZwSystemDebugControl
+implib ntdll.dll, ZwTerminateEnclave
+implib ntdll.dll, ZwTerminateJobObject
+implib ntdll.dll, ZwTerminateProcess
+implib ntdll.dll, ZwTerminateThread
+implib ntdll.dll, ZwTestAlert
+implib ntdll.dll, ZwThawRegistry
+implib ntdll.dll, ZwThawTransactions
+implib ntdll.dll, ZwTraceControl
+implib ntdll.dll, ZwTraceEvent
+implib ntdll.dll, ZwTranslateFilePath
+implib ntdll.dll, ZwUmsThreadYield
+implib ntdll.dll, ZwUnloadDriver
+implib ntdll.dll, ZwUnloadKey
+implib ntdll.dll, ZwUnloadKey2
+implib ntdll.dll, ZwUnloadKeyEx
+implib ntdll.dll, ZwUnlockFile
+implib ntdll.dll, ZwUnlockVirtualMemory
+implib ntdll.dll, ZwUnmapViewOfSection
+implib ntdll.dll, ZwUnmapViewOfSectionEx
+implib ntdll.dll, ZwUnsubscribeWnfStateChange
+implib ntdll.dll, ZwUpdateWnfStateData
+implib ntdll.dll, ZwVdmControl
+implib ntdll.dll, ZwWaitForAlertByThreadId
+implib ntdll.dll, ZwWaitForDebugEvent
+implib ntdll.dll, ZwWaitForKeyedEvent
+implib ntdll.dll, ZwWaitForMultipleObjects
+implib ntdll.dll, ZwWaitForMultipleObjects32
+implib ntdll.dll, ZwWaitForSingleObject
+implib ntdll.dll, ZwWaitForWorkViaWorkerFactory
+implib ntdll.dll, ZwWaitHighEventPair
+implib ntdll.dll, ZwWaitLowEventPair
+implib ntdll.dll, ZwWorkerFactoryWorkerReady
+implib ntdll.dll, ZwWow64AllocateVirtualMemory64
+implib ntdll.dll, ZwWow64CallFunction64
+implib ntdll.dll, ZwWow64CsrAllocateCaptureBuffer
+implib ntdll.dll, _alldiv, __alldiv@16
+implib ntdll.dll, _alldvrm, __alldvrm@16
+implib ntdll.dll, _allmul, __allmul@16
+implib ntdll.dll, _allrem, __allrem@16
+implib ntdll.dll, _aulldiv, __aulldiv@16
+implib ntdll.dll, _aulldvrm, __aulldvrm@16
+implib ntdll.dll, _aullrem, __aullrem@16
+implib ntdll.dll, vDbgPrintEx, _vDbgPrintEx@16
+implib ntdll.dll, vDbgPrintExWithPrefix, _vDbgPrintExWithPrefix@20
+
+; The following functions use the CDECL calling convention!
+implib ntdll.dll, _CIcos, __CIcos
+implib ntdll.dll, _CIlog, __CIlog
+implib ntdll.dll, _CIpow, __CIpow
+implib ntdll.dll, _CIsin, __CIsin
+implib ntdll.dll, _CIsqrt, __CIsqrt
+implib ntdll.dll, __isascii, ___isascii
+implib ntdll.dll, __iscsym, ___iscsym
+implib ntdll.dll, __iscsymf, ___iscsymf
+implib ntdll.dll, __toascii, ___toascii
+; implib ntdll.dll, _alloca_probe, __alloca_probe ; _alloca_probe is an alias for _chkstk
+implib ntdll.dll, _alloca_probe_16, __alloca_probe_16
+implib ntdll.dll, _alloca_probe_8, __alloca_probe_8
+implib ntdll.dll, _allshl, __allshl
+implib ntdll.dll, _allshr, __allshr
+implib ntdll.dll, _atoi64, __atoi64
+implib ntdll.dll, _aullshr, __aullshr
+implib ntdll.dll, _chkstk, __chkstk
+implib ntdll.dll, _except_handler4_common, __except_handler4_common
+implib ntdll.dll, _ftol, __ftol
+implib ntdll.dll, _ftol2, __ftol2
+; implib ntdll.dll, _ftol2_sse, __ftol2_sse ; _ftol2_sse is an alias for _ftol2
+implib ntdll.dll, _i64toa, __i64toa
+implib ntdll.dll, _i64toa_s, __i64toa_s
+implib ntdll.dll, _i64tow, __i64tow
+implib ntdll.dll, _i64tow_s, __i64tow_s
+; implib ntdll.dll, _itoa, __itoa     ; _itoa is an alias for _ltoa
+; implib ntdll.dll, _itoa_s, __itoa_s ; _itoa_s is an alias for _ltoa_s
+; implib ntdll.dll, _itow, __itow     ; _itow is an alias for _ltow
+; implib ntdll.dll, _itow_s, __itow_s ; _itow_s is an alias for _ltow_s
+implib ntdll.dll, _lfind, __lfind
+implib ntdll.dll, _local_unwind4, __local_unwind4
+implib ntdll.dll, _ltoa, __ltoa
+implib ntdll.dll, _ltoa_s, __ltoa_s
+implib ntdll.dll, _ltow, __ltow
+implib ntdll.dll, _ltow_s, __ltow_s
+implib ntdll.dll, _makepath_s, __makepath_s
+implib ntdll.dll, _memccpy, __memccpy
+implib ntdll.dll, _memicmp, __memicmp
+implib ntdll.dll, _snprintf, __snprintf
+implib ntdll.dll, _snprintf_s, __snprintf_s
+implib ntdll.dll, _snscanf_s, __snscanf_s
+implib ntdll.dll, _snwprintf, __snwprintf
+implib ntdll.dll, _snwprintf_s, __snwprintf_s
+implib ntdll.dll, _snwscanf_s, __snwscanf_s
+implib ntdll.dll, _splitpath, __splitpath
+implib ntdll.dll, _splitpath_s, __splitpath_s
+implib ntdll.dll, _strcmpi, __strcmpi
+; implib ntdll.dll, _stricmp, __stricmp ; _stricmp is an alias for _strcmpi
+implib ntdll.dll, _strlwr, __strlwr
+implib ntdll.dll, _strlwr_s, __strlwr_s
+implib ntdll.dll, _strnicmp, __strnicmp
+implib ntdll.dll, _strnset_s, __strnset_s
+implib ntdll.dll, _strset_s, __strset_s
+implib ntdll.dll, _strupr, __strupr
+implib ntdll.dll, _strupr_s, __strupr_s
+; implib ntdll.dll, _swprintf, __swprintf ; _swprintf is an alias for swprintf
+implib ntdll.dll, _ui64toa, __ui64toa
+implib ntdll.dll, _ui64toa_s, __ui64toa_s
+implib ntdll.dll, _ui64tow, __ui64tow
+implib ntdll.dll, _ui64tow_s, __ui64tow_s
+implib ntdll.dll, _ultoa, __ultoa
+implib ntdll.dll, _ultoa_s, __ultoa_s
+implib ntdll.dll, _ultow, __ultow
+implib ntdll.dll, _ultow_s, __ultow_s
+implib ntdll.dll, _vscprintf, __vscprintf
+implib ntdll.dll, _vscwprintf, __vscwprintf
+implib ntdll.dll, _vsnprintf, __vsnprintf
+implib ntdll.dll, _vsnprintf_s, __vsnprintf_s
+implib ntdll.dll, _vsnwprintf, __vsnwprintf
+implib ntdll.dll, _vsnwprintf_s, __vsnwprintf_s
+implib ntdll.dll, _vswprintf, __vswprintf
+implib ntdll.dll, _wcsicmp, __wcsicmp
+implib ntdll.dll, _wcslwr, __wcslwr
+implib ntdll.dll, _wcslwr_s, __wcslwr_s
+implib ntdll.dll, _wcsnicmp, __wcsnicmp
+implib ntdll.dll, _wcsnset_s, __wcsnset_s
+implib ntdll.dll, _wcsset_s, __wcsset_s
+implib ntdll.dll, _wcstoi64, __wcstoi64
+implib ntdll.dll, _wcstoui64, __wcstoui64
+implib ntdll.dll, _wcsupr, __wcsupr
+implib ntdll.dll, _wcsupr_s, __wcsupr_s
+implib ntdll.dll, _wmakepath_s, __wmakepath_s
+implib ntdll.dll, _wsplitpath_s, __wsplitpath_s
+; implib ntdll.dll, _wtoi, __wtoi ; _wtoi is an alias for _wtol
+implib ntdll.dll, _wtoi64, __wtoi64
+implib ntdll.dll, _wtol, __wtol
+implib ntdll.dll, abs, _abs
+implib ntdll.dll, atan, _atan
+implib ntdll.dll, atan2, _atan2
+; implib ntdll.dll, atoi, _atoi ; atoi is an alias for atol
+implib ntdll.dll, atol, _atol
+implib ntdll.dll, bsearch, _bsearch
+implib ntdll.dll, bsearch_s, _bsearch_s
+implib ntdll.dll, ceil, _ceil
+implib ntdll.dll, cos, _cos
+implib ntdll.dll, fabs, _fabs
+implib ntdll.dll, floor, _floor
+implib ntdll.dll, isalnum, _isalnum
+implib ntdll.dll, isalpha, _isalpha
+implib ntdll.dll, iscntrl, _iscntrl
+implib ntdll.dll, isdigit, _isdigit
+implib ntdll.dll, isgraph, _isgraph
+implib ntdll.dll, islower, _islower
+implib ntdll.dll, isprint, _isprint
+implib ntdll.dll, ispunct, _ispunct
+implib ntdll.dll, isspace, _isspace
+implib ntdll.dll, isupper, _isupper
+implib ntdll.dll, iswalnum, _iswalnum
+implib ntdll.dll, iswalpha, _iswalpha
+implib ntdll.dll, iswascii, _iswascii
+implib ntdll.dll, iswctype, _iswctype
+implib ntdll.dll, iswdigit, _iswdigit
+implib ntdll.dll, iswgraph, _iswgraph
+implib ntdll.dll, iswlower, _iswlower
+implib ntdll.dll, iswprint, _iswprint
+implib ntdll.dll, iswspace, _iswspace
+implib ntdll.dll, iswxdigit, _iswxdigit
+implib ntdll.dll, isxdigit, _isxdigit
+; implib ntdll.dll, labs, _labs ; labs is an alias for abs
+implib ntdll.dll, log, _log
+implib ntdll.dll, mbstowcs, _mbstowcs
+implib ntdll.dll, memchr, _memchr
+implib ntdll.dll, memcmp, _memcmp
+implib ntdll.dll, memcpy, _memcpy
+implib ntdll.dll, memcpy_s, _memcpy_s
+implib ntdll.dll, memmove, _memmove
+implib ntdll.dll, memmove_s, _memmove_s
+implib ntdll.dll, memset, _memset
+implib ntdll.dll, pow, _pow
+implib ntdll.dll, qsort, _qsort
+implib ntdll.dll, qsort_s, _qsort_s
+implib ntdll.dll, sin, _sin
+implib ntdll.dll, sprintf, _sprintf
+implib ntdll.dll, sprintf_s, _sprintf_s
+implib ntdll.dll, sqrt, _sqrt
+implib ntdll.dll, sscanf, _sscanf
+implib ntdll.dll, sscanf_s, _sscanf_s
+implib ntdll.dll, strcat, _strcat
+implib ntdll.dll, strcat_s, _strcat_s
+implib ntdll.dll, strchr, _strchr
+implib ntdll.dll, strcmp, _strcmp
+implib ntdll.dll, strcpy, _strcpy
+implib ntdll.dll, strcpy_s, _strcpy_s
+implib ntdll.dll, strcspn, _strcspn
+implib ntdll.dll, strlen, _strlen
+implib ntdll.dll, strncat, _strncat
+implib ntdll.dll, strncat_s, _strncat_s
+implib ntdll.dll, strncmp, _strncmp
+implib ntdll.dll, strncpy, _strncpy
+implib ntdll.dll, strncpy_s, _strncpy_s
+implib ntdll.dll, strnlen, _strnlen
+implib ntdll.dll, strpbrk, _strpbrk
+implib ntdll.dll, strrchr, _strrchr
+implib ntdll.dll, strspn, _strspn
+implib ntdll.dll, strstr, _strstr
+implib ntdll.dll, strtok_s, _strtok_s
+implib ntdll.dll, strtol, _strtol
+implib ntdll.dll, strtoul, _strtoul
+implib ntdll.dll, swprintf, _swprintf
+implib ntdll.dll, swprintf_s, _swprintf_s
+implib ntdll.dll, swscanf_s, _swscanf_s
+implib ntdll.dll, tan, _tan
+implib ntdll.dll, tolower, _tolower
+implib ntdll.dll, toupper, _toupper
+implib ntdll.dll, towlower, _towlower
+implib ntdll.dll, towupper, _towupper
+implib ntdll.dll, vsprintf, _vsprintf
+implib ntdll.dll, vsprintf_s, _vsprintf_s
+implib ntdll.dll, vswprintf_s, _vswprintf_s
+implib ntdll.dll, wcscat, _wcscat
+implib ntdll.dll, wcscat_s, _wcscat_s
+implib ntdll.dll, wcschr, _wcschr
+implib ntdll.dll, wcscmp, _wcscmp
+implib ntdll.dll, wcscpy, _wcscpy
+implib ntdll.dll, wcscpy_s, _wcscpy_s
+implib ntdll.dll, wcscspn, _wcscspn
+implib ntdll.dll, wcslen, _wcslen
+implib ntdll.dll, wcsncat, _wcsncat
+implib ntdll.dll, wcsncat_s, _wcsncat_s
+implib ntdll.dll, wcsncmp, _wcsncmp
+implib ntdll.dll, wcsncpy, _wcsncpy
+implib ntdll.dll, wcsncpy_s, _wcsncpy_s
+implib ntdll.dll, wcsnlen, _wcsnlen
+implib ntdll.dll, wcspbrk, _wcspbrk
+implib ntdll.dll, wcsrchr, _wcsrchr
+implib ntdll.dll, wcsspn, _wcsspn
+implib ntdll.dll, wcsstr, _wcsstr
+implib ntdll.dll, wcstok_s, _wcstok_s
+implib ntdll.dll, wcstol, _wcstol
+implib ntdll.dll, wcstombs, _wcstombs
+implib ntdll.dll, wcstoul, _wcstoul
+
+endlib
