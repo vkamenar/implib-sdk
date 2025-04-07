@@ -1,8 +1,8 @@
 # Security Policy
 
-The following security policies are applicable to the **ImpLib SDK** source code, documentation and releases. Please, follow these rules if you wish to contribute to the project.
+The following security policies are applicable to the **ImpLib SDK** source code, documentation and releases. Please, follow these rules if you wish to report a vulnerability, request an enhancement or otherwise contribute to the project.
 
-## Goods practices to follow
+## Good practices to follow
 
 :warning: **Never store credentials information into source code or config file in a GitHub repository**
 - Block sensitive data being pushed to GitHub by git-secrets or its likes as a git pre-commit hook
