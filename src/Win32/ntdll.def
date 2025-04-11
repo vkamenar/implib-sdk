@@ -556,6 +556,7 @@ include '..\implib.inc'
 ; implib ntdll.dll, NlsAnsiCodePage
 ; implib ntdll.dll, NlsMbCodePageTag
 ; implib ntdll.dll, NlsMbOemCodePageTag
+; implib ntdll.dll, RtlpFreezeTimeBias
 ; implib ntdll.dll, Wow64Transition
 ; implib ntdll.dll, _errno
 ; implib ntdll.dll, _fltused
@@ -1487,226 +1488,226 @@ implib ntdll.dll, RtlDumpResource, _RtlDumpResource@4
 implib ntdll.dll, RtlDuplicateUnicodeString, _RtlDuplicateUnicodeString@12
 implib ntdll.dll, RtlEmptyAtomTable, _RtlEmptyAtomTable@8
 implib ntdll.dll, RtlEnableEarlyCriticalSectionEventCreation, _RtlEnableEarlyCriticalSectionEventCreation@0
-implib ntdll.dll, RtlEnableThreadProfiling
-implib ntdll.dll, RtlEncodePointer
-implib ntdll.dll, RtlEncodeRemotePointer
-implib ntdll.dll, RtlEncodeSystemPointer
-implib ntdll.dll, RtlEndEnumerationHashTable
-implib ntdll.dll, RtlEndStrongEnumerationHashTable
-implib ntdll.dll, RtlEndWeakEnumerationHashTable
-implib ntdll.dll, RtlEnlargedIntegerMultiply
-implib ntdll.dll, RtlEnlargedUnsignedMultiply
-implib ntdll.dll, RtlEnterCriticalSection
-implib ntdll.dll, RtlEnumProcessHeaps
-implib ntdll.dll, RtlEnumerateEntryHashTable
-implib ntdll.dll, RtlEnumerateGenericTable
-implib ntdll.dll, RtlEnumerateGenericTableAvl
-implib ntdll.dll, RtlEnumerateGenericTableLikeADirectory
-implib ntdll.dll, RtlEnumerateGenericTableWithoutSplaying
-implib ntdll.dll, RtlEnumerateGenericTableWithoutSplayingAvl
-implib ntdll.dll, RtlEqualComputerName
-implib ntdll.dll, RtlEqualDomainName
-implib ntdll.dll, RtlEqualLuid
-implib ntdll.dll, RtlEqualPrefixSid
-implib ntdll.dll, RtlEqualSid
-implib ntdll.dll, RtlEqualString
-implib ntdll.dll, RtlEqualUnicodeString
-implib ntdll.dll, RtlEqualWnfChangeStamps
-implib ntdll.dll, RtlEraseUnicodeString
-implib ntdll.dll, RtlEthernetAddressToStringA
-implib ntdll.dll, RtlEthernetAddressToStringW
-implib ntdll.dll, RtlEthernetStringToAddressA
-implib ntdll.dll, RtlEthernetStringToAddressW
-implib ntdll.dll, RtlExitUserProcess
-implib ntdll.dll, RtlExitUserThread
-implib ntdll.dll, RtlExpandEnvironmentStrings
-implib ntdll.dll, RtlExpandEnvironmentStrings_U
-implib ntdll.dll, RtlExpandHashTable
-implib ntdll.dll, RtlExtendCorrelationVector
-implib ntdll.dll, RtlExtendMemoryBlockLookaside
-implib ntdll.dll, RtlExtendMemoryZone
-implib ntdll.dll, RtlExtendedIntegerMultiply
-implib ntdll.dll, RtlExtendedLargeIntegerDivide
-implib ntdll.dll, RtlExtendedMagicDivide
-implib ntdll.dll, RtlExtractBitMap
-implib ntdll.dll, RtlFillMemory
-implib ntdll.dll, RtlFillMemoryUlong
-implib ntdll.dll, RtlFillMemoryUlonglong
+implib ntdll.dll, RtlEnableThreadProfiling, _RtlEnableThreadProfiling@20
+implib ntdll.dll, RtlEncodePointer, _RtlEncodePointer@4
+implib ntdll.dll, RtlEncodeRemotePointer, _RtlEncodeRemotePointer@12
+implib ntdll.dll, RtlEncodeSystemPointer, _RtlEncodeSystemPointer@4
+implib ntdll.dll, RtlEndEnumerationHashTable, _RtlEndEnumerationHashTable@8
+; implib ntdll.dll, RtlEndStrongEnumerationHashTable, _RtlEndStrongEnumerationHashTable@8 ; This function does nothing in Windows 10
+; implib ntdll.dll, RtlEndWeakEnumerationHashTable, _RtlEndWeakEnumerationHashTable@8 ; RtlEndWeakEnumerationHashTable is an alias for RtlEndEnumerationHashTable
+implib ntdll.dll, RtlEnlargedIntegerMultiply, _RtlEnlargedIntegerMultiply@8
+implib ntdll.dll, RtlEnlargedUnsignedMultiply, _RtlEnlargedUnsignedMultiply@8
+implib ntdll.dll, RtlEnterCriticalSection, _RtlEnterCriticalSection@4
+implib ntdll.dll, RtlEnumProcessHeaps, _RtlEnumProcessHeaps@8
+implib ntdll.dll, RtlEnumerateEntryHashTable, _RtlEnumerateEntryHashTable@8
+implib ntdll.dll, RtlEnumerateGenericTable, _RtlEnumerateGenericTable@8
+implib ntdll.dll, RtlEnumerateGenericTableAvl, _RtlEnumerateGenericTableAvl@8
+implib ntdll.dll, RtlEnumerateGenericTableLikeADirectory, _RtlEnumerateGenericTableLikeADirectory@28
+implib ntdll.dll, RtlEnumerateGenericTableWithoutSplaying, _RtlEnumerateGenericTableWithoutSplaying@8
+implib ntdll.dll, RtlEnumerateGenericTableWithoutSplayingAvl, _RtlEnumerateGenericTableWithoutSplayingAvl@8
+; implib ntdll.dll, RtlEqualComputerName, _RtlEqualComputerName@8 ; RtlEqualComputerName is an alias for RtlEqualDomainName
+implib ntdll.dll, RtlEqualDomainName, _RtlEqualDomainName@8
+implib ntdll.dll, RtlEqualLuid, _RtlEqualLuid@8
+implib ntdll.dll, RtlEqualPrefixSid, _RtlEqualPrefixSid@8
+implib ntdll.dll, RtlEqualSid, _RtlEqualSid@8
+implib ntdll.dll, RtlEqualString, _RtlEqualString@12
+implib ntdll.dll, RtlEqualUnicodeString, _RtlEqualUnicodeString@12
+implib ntdll.dll, RtlEqualWnfChangeStamps, _RtlEqualWnfChangeStamps@8
+implib ntdll.dll, RtlEraseUnicodeString, _RtlEraseUnicodeString@4
+implib ntdll.dll, RtlEthernetAddressToStringA, _RtlEthernetAddressToStringA@8
+implib ntdll.dll, RtlEthernetAddressToStringW, _RtlEthernetAddressToStringW@8
+implib ntdll.dll, RtlEthernetStringToAddressA, _RtlEthernetStringToAddressA@12
+implib ntdll.dll, RtlEthernetStringToAddressW, _RtlEthernetStringToAddressW@12
+implib ntdll.dll, RtlExitUserProcess, _RtlExitUserProcess@4
+implib ntdll.dll, RtlExitUserThread, _RtlExitUserThread@4
+implib ntdll.dll, RtlExpandEnvironmentStrings, _RtlExpandEnvironmentStrings@24
+implib ntdll.dll, RtlExpandEnvironmentStrings_U, _RtlExpandEnvironmentStrings_U@16
+implib ntdll.dll, RtlExpandHashTable, _RtlExpandHashTable@4
+implib ntdll.dll, RtlExtendCorrelationVector, _RtlExtendCorrelationVector@4
+implib ntdll.dll, RtlExtendMemoryBlockLookaside, _RtlExtendMemoryBlockLookaside@8
+implib ntdll.dll, RtlExtendMemoryZone, _RtlExtendMemoryZone@8
+implib ntdll.dll, RtlExtendedIntegerMultiply, _RtlExtendedIntegerMultiply@12
+implib ntdll.dll, RtlExtendedLargeIntegerDivide, _RtlExtendedLargeIntegerDivide@16
+implib ntdll.dll, RtlExtendedMagicDivide, _RtlExtendedMagicDivide@20
+implib ntdll.dll, RtlExtractBitMap, _RtlExtractBitMap@16
+implib ntdll.dll, RtlFillMemory, _RtlFillMemory@12
+implib ntdll.dll, RtlFillMemoryUlong, _RtlFillMemoryUlong@12
+implib ntdll.dll, RtlFillMemoryUlonglong, _RtlFillMemoryUlonglong@16
 ; implib ntdll.dll, RtlFinalReleaseOutOfProcessMemoryStream, _RtlFinalReleaseOutOfProcessMemoryStream@4 ; This function does nothing in Windows 10
-implib ntdll.dll, RtlFindAceByType
-implib ntdll.dll, RtlFindActivationContextSectionGuid
-implib ntdll.dll, RtlFindActivationContextSectionString
-implib ntdll.dll, RtlFindCharInUnicodeString
-implib ntdll.dll, RtlFindClearBits
-implib ntdll.dll, RtlFindClearBitsAndSet
-implib ntdll.dll, RtlFindClearRuns
-implib ntdll.dll, RtlFindClosestEncodableLength
-implib ntdll.dll, RtlFindExportedRoutineByName
-implib ntdll.dll, RtlFindLastBackwardRunClear
-implib ntdll.dll, RtlFindLeastSignificantBit
-implib ntdll.dll, RtlFindLongestRunClear
-implib ntdll.dll, RtlFindMessage
-implib ntdll.dll, RtlFindMostSignificantBit
-implib ntdll.dll, RtlFindNextForwardRunClear
-implib ntdll.dll, RtlFindSetBits
-implib ntdll.dll, RtlFindSetBitsAndClear
-implib ntdll.dll, RtlFindUnicodeSubstring
-implib ntdll.dll, RtlFirstEntrySList
-implib ntdll.dll, RtlFirstFreeAce
-implib ntdll.dll, RtlFlsAlloc
-implib ntdll.dll, RtlFlsFree
-implib ntdll.dll, RtlFlsGetValue
-implib ntdll.dll, RtlFlsSetValue
-implib ntdll.dll, RtlFlushHeaps
-implib ntdll.dll, RtlFlushSecureMemoryCache
-implib ntdll.dll, RtlFormatCurrentUserKeyPath
-implib ntdll.dll, RtlFormatMessage
-implib ntdll.dll, RtlFormatMessageEx
-implib ntdll.dll, RtlFreeActivationContextStack
-implib ntdll.dll, RtlFreeAnsiString
-implib ntdll.dll, RtlFreeHandle
-implib ntdll.dll, RtlFreeHeap
-implib ntdll.dll, RtlFreeMemoryBlockLookaside
-implib ntdll.dll, RtlFreeOemString
-implib ntdll.dll, RtlFreeSid
-implib ntdll.dll, RtlFreeThreadActivationContextStack
-implib ntdll.dll, RtlFreeUTF8String
-implib ntdll.dll, RtlFreeUnicodeString
-implib ntdll.dll, RtlFreeUserStack
-implib ntdll.dll, RtlGUIDFromString
-implib ntdll.dll, RtlGenerate8dot3Name
-implib ntdll.dll, RtlGetAce
-implib ntdll.dll, RtlGetActiveActivationContext
-implib ntdll.dll, RtlGetActiveConsoleId
-implib ntdll.dll, RtlGetAppContainerNamedObjectPath
-implib ntdll.dll, RtlGetAppContainerParent
-implib ntdll.dll, RtlGetAppContainerSidType
-implib ntdll.dll, RtlGetCallersAddress
-implib ntdll.dll, RtlGetCompressionWorkSpaceSize
-implib ntdll.dll, RtlGetConsoleSessionForegroundProcessId
-implib ntdll.dll, RtlGetControlSecurityDescriptor
-implib ntdll.dll, RtlGetCriticalSectionRecursionCount
-implib ntdll.dll, RtlGetCurrentDirectory_U
-implib ntdll.dll, RtlGetCurrentPeb
-implib ntdll.dll, RtlGetCurrentProcessorNumber
-implib ntdll.dll, RtlGetCurrentProcessorNumberEx
-implib ntdll.dll, RtlGetCurrentServiceSessionId
-implib ntdll.dll, RtlGetCurrentTransaction
-implib ntdll.dll, RtlGetDaclSecurityDescriptor
-implib ntdll.dll, RtlGetDeviceFamilyInfoEnum
-implib ntdll.dll, RtlGetElementGenericTable
-implib ntdll.dll, RtlGetElementGenericTableAvl
-implib ntdll.dll, RtlGetEnabledExtendedFeatures
-implib ntdll.dll, RtlGetExePath
-implib ntdll.dll, RtlGetExtendedContextLength
-implib ntdll.dll, RtlGetExtendedContextLength2
-implib ntdll.dll, RtlGetExtendedFeaturesMask
-implib ntdll.dll, RtlGetFileMUIPath
-implib ntdll.dll, RtlGetFrame
-implib ntdll.dll, RtlGetFullPathName_U
-implib ntdll.dll, RtlGetFullPathName_UEx
-implib ntdll.dll, RtlGetFullPathName_UstrEx
-implib ntdll.dll, RtlGetGroupSecurityDescriptor
-implib ntdll.dll, RtlGetIntegerAtom
-implib ntdll.dll, RtlGetInterruptTimePrecise
-implib ntdll.dll, RtlGetLastNtStatus
-implib ntdll.dll, RtlGetLastWin32Error
-implib ntdll.dll, RtlGetLengthWithoutLastFullDosOrNtPathElement
-implib ntdll.dll, RtlGetLengthWithoutTrailingPathSeperators
-implib ntdll.dll, RtlGetLocaleFileMappingAddress
-implib ntdll.dll, RtlGetLongestNtPathLength
-implib ntdll.dll, RtlGetMultiTimePrecise
+implib ntdll.dll, RtlFindAceByType, _RtlFindAceByType@12
+implib ntdll.dll, RtlFindActivationContextSectionGuid, _RtlFindActivationContextSectionGuid@20
+implib ntdll.dll, RtlFindActivationContextSectionString, _RtlFindActivationContextSectionString@20
+implib ntdll.dll, RtlFindCharInUnicodeString, _RtlFindCharInUnicodeString@16
+implib ntdll.dll, RtlFindClearBits, _RtlFindClearBits@12
+implib ntdll.dll, RtlFindClearBitsAndSet, _RtlFindClearBitsAndSet@12
+implib ntdll.dll, RtlFindClearRuns, _RtlFindClearRuns@16
+implib ntdll.dll, RtlFindClosestEncodableLength, _RtlFindClosestEncodableLength@12
+implib ntdll.dll, RtlFindExportedRoutineByName, _RtlFindExportedRoutineByName@8
+implib ntdll.dll, RtlFindLastBackwardRunClear, _RtlFindLastBackwardRunClear@12
+implib ntdll.dll, RtlFindLeastSignificantBit, _RtlFindLeastSignificantBit@8
+implib ntdll.dll, RtlFindLongestRunClear, _RtlFindLongestRunClear@8
+implib ntdll.dll, RtlFindMessage, _RtlFindMessage@20
+implib ntdll.dll, RtlFindMostSignificantBit, _RtlFindMostSignificantBit@8
+implib ntdll.dll, RtlFindNextForwardRunClear, _RtlFindNextForwardRunClear@12
+implib ntdll.dll, RtlFindSetBits, _RtlFindSetBits@12
+implib ntdll.dll, RtlFindSetBitsAndClear, _RtlFindSetBitsAndClear@12
+implib ntdll.dll, RtlFindUnicodeSubstring, _RtlFindUnicodeSubstring@12
+implib ntdll.dll, RtlFirstEntrySList, _RtlFirstEntrySList@4
+implib ntdll.dll, RtlFirstFreeAce, _RtlFirstFreeAce@8
+implib ntdll.dll, RtlFlsAlloc, _RtlFlsAlloc@8
+implib ntdll.dll, RtlFlsFree, _RtlFlsFree@4
+implib ntdll.dll, RtlFlsGetValue, _RtlFlsGetValue@8
+implib ntdll.dll, RtlFlsSetValue, _RtlFlsSetValue@8
+implib ntdll.dll, RtlFlushHeaps, _RtlFlushHeaps@0
+implib ntdll.dll, RtlFlushSecureMemoryCache, _RtlFlushSecureMemoryCache@8
+implib ntdll.dll, RtlFormatCurrentUserKeyPath, _RtlFormatCurrentUserKeyPath@4
+implib ntdll.dll, RtlFormatMessage, _RtlFormatMessage@36
+implib ntdll.dll, RtlFormatMessageEx, _RtlFormatMessageEx@40
+implib ntdll.dll, RtlFreeActivationContextStack, _RtlFreeActivationContextStack@4
+implib ntdll.dll, RtlFreeAnsiString, _RtlFreeAnsiString@4
+implib ntdll.dll, RtlFreeHandle, _RtlFreeHandle@8
+implib ntdll.dll, RtlFreeHeap, _RtlFreeHeap@12
+implib ntdll.dll, RtlFreeMemoryBlockLookaside, _RtlFreeMemoryBlockLookaside@8
+implib ntdll.dll, RtlFreeOemString, _RtlFreeOemString@4
+implib ntdll.dll, RtlFreeSid, _RtlFreeSid@4
+implib ntdll.dll, RtlFreeThreadActivationContextStack, _RtlFreeThreadActivationContextStack@0
+; implib ntdll.dll, RtlFreeUTF8String, _RtlFreeUTF8String@4 ; RtlFreeUTF8String is an alias for RtlFreeAnsiString
+; implib ntdll.dll, RtlFreeUnicodeString, _RtlFreeUnicodeString@4 ; RtlFreeUnicodeString@4 is an alias for RtlFreeAnsiString
+; implib ntdll.dll, RtlFreeUserStack, _RtlFreeUserStack@4 ; RtlFreeUserStack is an alias for LdrDeleteEnclave
+implib ntdll.dll, RtlGUIDFromString, _RtlGUIDFromString@8
+implib ntdll.dll, RtlGenerate8dot3Name, _RtlGenerate8dot3Name@16
+implib ntdll.dll, RtlGetAce, _RtlGetAce@12
+implib ntdll.dll, RtlGetActiveActivationContext, _RtlGetActiveActivationContext@4
+implib ntdll.dll, RtlGetActiveConsoleId, _RtlGetActiveConsoleId@0
+implib ntdll.dll, RtlGetAppContainerNamedObjectPath, _RtlGetAppContainerNamedObjectPath@16
+implib ntdll.dll, RtlGetAppContainerParent, _RtlGetAppContainerParent@8
+implib ntdll.dll, RtlGetAppContainerSidType, _RtlGetAppContainerSidType@8
+implib ntdll.dll, RtlGetCallersAddress, _RtlGetCallersAddress@8
+implib ntdll.dll, RtlGetCompressionWorkSpaceSize, _RtlGetCompressionWorkSpaceSize@12
+implib ntdll.dll, RtlGetConsoleSessionForegroundProcessId, _RtlGetConsoleSessionForegroundProcessId@0
+implib ntdll.dll, RtlGetControlSecurityDescriptor, _RtlGetControlSecurityDescriptor@12
+implib ntdll.dll, RtlGetCriticalSectionRecursionCount, _RtlGetCriticalSectionRecursionCount@4
+implib ntdll.dll, RtlGetCurrentDirectory_U, _RtlGetCurrentDirectory_U@8
+implib ntdll.dll, RtlGetCurrentPeb, _RtlGetCurrentPeb@0
+; implib ntdll.dll, RtlGetCurrentProcessorNumber, _RtlGetCurrentProcessorNumber@0 ; RtlGetCurrentProcessorNumberis an alias for NtGetCurrentProcessorNumber
+; implib ntdll.dll, RtlGetCurrentProcessorNumberEx, _RtlGetCurrentProcessorNumberEx@4 ; RtlGetCurrentProcessorNumberEx is an alias for NtWow64GetCurrentProcessorNumberEx
+implib ntdll.dll, RtlGetCurrentServiceSessionId, _RtlGetCurrentServiceSessionId@0
+implib ntdll.dll, RtlGetCurrentTransaction, _RtlGetCurrentTransaction@0
+implib ntdll.dll, RtlGetDaclSecurityDescriptor, _RtlGetDaclSecurityDescriptor@16
+; implib ntdll.dll, RtlGetDeviceFamilyInfoEnum, _RtlGetDeviceFamilyInfoEnum@12 ; RtlGetDeviceFamilyInfoEnum is an alias for RtlpGetDeviceFamilyInfoEnum
+implib ntdll.dll, RtlGetElementGenericTable, _RtlGetElementGenericTable@8
+implib ntdll.dll, RtlGetElementGenericTableAvl, _RtlGetElementGenericTableAvl@8
+implib ntdll.dll, RtlGetEnabledExtendedFeatures, _RtlGetEnabledExtendedFeatures@8
+implib ntdll.dll, RtlGetExePath, _RtlGetExePath@8
+implib ntdll.dll, RtlGetExtendedContextLength, _RtlGetExtendedContextLength@8
+implib ntdll.dll, RtlGetExtendedContextLength2, _RtlGetExtendedContextLength2@16
+implib ntdll.dll, RtlGetExtendedFeaturesMask, _RtlGetExtendedFeaturesMask@4
+implib ntdll.dll, RtlGetFileMUIPath, _RtlGetFileMUIPath@28
+implib ntdll.dll, RtlGetFrame, _RtlGetFrame@0
+implib ntdll.dll, RtlGetFullPathName_U, _RtlGetFullPathName_U@16
+implib ntdll.dll, RtlGetFullPathName_UEx, _RtlGetFullPathName_UEx@20
+implib ntdll.dll, RtlGetFullPathName_UstrEx, _RtlGetFullPathName_UstrEx@32
+implib ntdll.dll, RtlGetGroupSecurityDescriptor, _RtlGetGroupSecurityDescriptor@12
+implib ntdll.dll, RtlGetIntegerAtom, _RtlGetIntegerAtom@8
+implib ntdll.dll, RtlGetInterruptTimePrecise, _RtlGetInterruptTimePrecise@4
+implib ntdll.dll, RtlGetLastNtStatus, _RtlGetLastNtStatus@0
+implib ntdll.dll, RtlGetLastWin32Error, _RtlGetLastWin32Error@0
+implib ntdll.dll, RtlGetLengthWithoutLastFullDosOrNtPathElement, _RtlGetLengthWithoutLastFullDosOrNtPathElement@12
+implib ntdll.dll, RtlGetLengthWithoutTrailingPathSeperators, _RtlGetLengthWithoutTrailingPathSeperators@12
+implib ntdll.dll, RtlGetLocaleFileMappingAddress, _RtlGetLocaleFileMappingAddress@12
+implib ntdll.dll, RtlGetLongestNtPathLength, _RtlGetLongestNtPathLength@0
+implib ntdll.dll, RtlGetMultiTimePrecise, _RtlGetMultiTimePrecise@12
 ; implib ntdll.dll, RtlGetNativeSystemInformation, _RtlGetNativeSystemInformation@16 ; RtlGetNativeSystemInformation is an alias for NtWow64GetNativeSystemInformation
-implib ntdll.dll, RtlGetNextEntryHashTable
-implib ntdll.dll, RtlGetNtGlobalFlags
-implib ntdll.dll, RtlGetNtProductType
-implib ntdll.dll, RtlGetNtSystemRoot
-implib ntdll.dll, RtlGetNtVersionNumbers
-implib ntdll.dll, RtlGetOwnerSecurityDescriptor
-implib ntdll.dll, RtlGetParentLocaleName
-implib ntdll.dll, RtlGetPersistedStateLocation
-implib ntdll.dll, RtlGetProcessHeaps
-implib ntdll.dll, RtlGetProcessPreferredUILanguages
-implib ntdll.dll, RtlGetProductInfo
-implib ntdll.dll, RtlGetReturnAddressHijackTarget
-implib ntdll.dll, RtlGetSaclSecurityDescriptor
-implib ntdll.dll, RtlGetSearchPath
-implib ntdll.dll, RtlGetSecurityDescriptorRMControl
-implib ntdll.dll, RtlGetSessionProperties
-implib ntdll.dll, RtlGetSetBootStatusData
-implib ntdll.dll, RtlGetSuiteMask
-implib ntdll.dll, RtlGetSystemBootStatus
-implib ntdll.dll, RtlGetSystemBootStatusEx
-implib ntdll.dll, RtlGetSystemPreferredUILanguages
-implib ntdll.dll, RtlGetSystemTimeAndBias
-implib ntdll.dll, RtlGetSystemTimePrecise
-implib ntdll.dll, RtlGetThreadErrorMode
-implib ntdll.dll, RtlGetThreadLangIdByIndex
-implib ntdll.dll, RtlGetThreadPreferredUILanguages
-implib ntdll.dll, RtlGetThreadWorkOnBehalfTicket
-implib ntdll.dll, RtlGetTokenNamedObjectPath
-implib ntdll.dll, RtlGetUILanguageInfo
-implib ntdll.dll, RtlGetUnloadEventTrace
-implib ntdll.dll, RtlGetUnloadEventTraceEx
-implib ntdll.dll, RtlGetUserInfoHeap
-implib ntdll.dll, RtlGetUserPreferredUILanguages
-implib ntdll.dll, RtlGetVersion
-implib ntdll.dll, RtlGuardCheckLongJumpTarget
-implib ntdll.dll, RtlHashUnicodeString
-implib ntdll.dll, RtlHeapTrkInitialize
-implib ntdll.dll, RtlIdentifierAuthoritySid
-implib ntdll.dll, RtlIdnToAscii
-implib ntdll.dll, RtlIdnToNameprepUnicode
-implib ntdll.dll, RtlIdnToUnicode
-implib ntdll.dll, RtlImageDirectoryEntryToData
-implib ntdll.dll, RtlImageNtHeader
-implib ntdll.dll, RtlImageNtHeaderEx
-implib ntdll.dll, RtlImageRvaToSection
-implib ntdll.dll, RtlImageRvaToVa
-implib ntdll.dll, RtlImpersonateSelf
-implib ntdll.dll, RtlImpersonateSelfEx
-implib ntdll.dll, RtlIncrementCorrelationVector
-implib ntdll.dll, RtlInitAnsiString
-implib ntdll.dll, RtlInitAnsiStringEx
-implib ntdll.dll, RtlInitBarrier
-implib ntdll.dll, RtlInitCodePageTable
-implib ntdll.dll, RtlInitEnumerationHashTable
+implib ntdll.dll, RtlGetNextEntryHashTable, _RtlGetNextEntryHashTable@8
+implib ntdll.dll, RtlGetNtGlobalFlags, _RtlGetNtGlobalFlags@0
+implib ntdll.dll, RtlGetNtProductType, _RtlGetNtProductType@4
+implib ntdll.dll, RtlGetNtSystemRoot, _RtlGetNtSystemRoot@0
+implib ntdll.dll, RtlGetNtVersionNumbers, _RtlGetNtVersionNumbers@12
+implib ntdll.dll, RtlGetOwnerSecurityDescriptor, _RtlGetOwnerSecurityDescriptor@12
+implib ntdll.dll, RtlGetParentLocaleName, _RtlGetParentLocaleName@16
+implib ntdll.dll, RtlGetPersistedStateLocation, _RtlGetPersistedStateLocation@28
+implib ntdll.dll, RtlGetProcessHeaps, _RtlGetProcessHeaps@8
+implib ntdll.dll, RtlGetProcessPreferredUILanguages, _RtlGetProcessPreferredUILanguages@16
+implib ntdll.dll, RtlGetProductInfo, _RtlGetProductInfo@20
+; implib ntdll.dll, RtlGetReturnAddressHijackTarget, _RtlGetReturnAddressHijackTarget@0 ; This function does nothing and returns 0 in Windows 10
+implib ntdll.dll, RtlGetSaclSecurityDescriptor, _RtlGetSaclSecurityDescriptor@16
+implib ntdll.dll, RtlGetSearchPath, _RtlGetSearchPath@4
+implib ntdll.dll, RtlGetSecurityDescriptorRMControl, _RtlGetSecurityDescriptorRMControl@8
+implib ntdll.dll, RtlGetSessionProperties, _RtlGetSessionProperties@8
+implib ntdll.dll, RtlGetSetBootStatusData, _RtlGetSetBootStatusData@24
+implib ntdll.dll, RtlGetSuiteMask, _RtlGetSuiteMask@0
+implib ntdll.dll, RtlGetSystemBootStatus, _RtlGetSystemBootStatus@16
+implib ntdll.dll, RtlGetSystemBootStatusEx, _RtlGetSystemBootStatusEx@12
+implib ntdll.dll, RtlGetSystemPreferredUILanguages, _RtlGetSystemPreferredUILanguages@20
+implib ntdll.dll, RtlGetSystemTimeAndBias, _RtlGetSystemTimeAndBias@12
+implib ntdll.dll, RtlGetSystemTimePrecise, _RtlGetSystemTimePrecise@0
+implib ntdll.dll, RtlGetThreadErrorMode, _RtlGetThreadErrorMode@0
+implib ntdll.dll, RtlGetThreadLangIdByIndex, _RtlGetThreadLangIdByIndex@16
+implib ntdll.dll, RtlGetThreadPreferredUILanguages, _RtlGetThreadPreferredUILanguages@16
+implib ntdll.dll, RtlGetThreadWorkOnBehalfTicket, _RtlGetThreadWorkOnBehalfTicket@8
+implib ntdll.dll, RtlGetTokenNamedObjectPath, _RtlGetTokenNamedObjectPath@12
+implib ntdll.dll, RtlGetUILanguageInfo, _RtlGetUILanguageInfo@20
+implib ntdll.dll, RtlGetUnloadEventTrace, _RtlGetUnloadEventTrace@0
+implib ntdll.dll, RtlGetUnloadEventTraceEx, _RtlGetUnloadEventTraceEx@12
+implib ntdll.dll, RtlGetUserInfoHeap, _RtlGetUserInfoHeap@20
+implib ntdll.dll, RtlGetUserPreferredUILanguages, _RtlGetUserPreferredUILanguages@20
+implib ntdll.dll, RtlGetVersion, _RtlGetVersion@4
+implib ntdll.dll, RtlGuardCheckLongJumpTarget, _RtlGuardCheckLongJumpTarget@12
+implib ntdll.dll, RtlHashUnicodeString, _RtlHashUnicodeString@16
+implib ntdll.dll, RtlHeapTrkInitialize, _RtlHeapTrkInitialize@4
+implib ntdll.dll, RtlIdentifierAuthoritySid, _RtlIdentifierAuthoritySid@4
+implib ntdll.dll, RtlIdnToAscii, _RtlIdnToAscii@20
+implib ntdll.dll, RtlIdnToNameprepUnicode, _RtlIdnToNameprepUnicode@20
+implib ntdll.dll, RtlIdnToUnicode, _RtlIdnToUnicode@20
+implib ntdll.dll, RtlImageDirectoryEntryToData, _RtlImageDirectoryEntryToData@16
+implib ntdll.dll, RtlImageNtHeader, _RtlImageNtHeader@4
+implib ntdll.dll, RtlImageNtHeaderEx, _RtlImageNtHeaderEx@20
+implib ntdll.dll, RtlImageRvaToSection, _RtlImageRvaToSection@12
+implib ntdll.dll, RtlImageRvaToVa, _RtlImageRvaToVa@16
+implib ntdll.dll, RtlImpersonateSelf, _RtlImpersonateSelf@4
+implib ntdll.dll, RtlImpersonateSelfEx, _RtlImpersonateSelfEx@12
+implib ntdll.dll, RtlIncrementCorrelationVector, _RtlIncrementCorrelationVector@4
+implib ntdll.dll, RtlInitAnsiString, _RtlInitAnsiString@8
+implib ntdll.dll, RtlInitAnsiStringEx, _RtlInitAnsiStringEx@8
+implib ntdll.dll, RtlInitBarrier, _RtlInitBarrier@12
+implib ntdll.dll, RtlInitCodePageTable, _RtlInitCodePageTable@8
+implib ntdll.dll, RtlInitEnumerationHashTable, _RtlInitEnumerationHashTable@8
 ; implib ntdll.dll, RtlInitMemoryStream, _RtlInitMemoryStream@4 ; This function does nothing in Windows 10
-implib ntdll.dll, RtlInitNlsTables
+implib ntdll.dll, RtlInitNlsTables, _RtlInitNlsTables@16
 ; implib ntdll.dll, RtlInitOutOfProcessMemoryStream, _RtlInitOutOfProcessMemoryStream@4 ; This function does nothing in Windows 10
-implib ntdll.dll, RtlInitString
-implib ntdll.dll, RtlInitStringEx
-implib ntdll.dll, RtlInitStrongEnumerationHashTable
-implib ntdll.dll, RtlInitUTF8String
-implib ntdll.dll, RtlInitUTF8StringEx
-implib ntdll.dll, RtlInitUnicodeString
-implib ntdll.dll, RtlInitUnicodeStringEx
-implib ntdll.dll, RtlInitWeakEnumerationHashTable
+implib ntdll.dll, RtlInitString, _RtlInitString@8
+; implib ntdll.dll, RtlInitStringEx, _RtlInitStringEx@8 ; RtlInitStringEx is an alias for RtlInitAnsiStringEx
+implib ntdll.dll, RtlInitStrongEnumerationHashTable, _RtlInitStrongEnumerationHashTable@8
+; implib ntdll.dll, RtlInitUTF8String, _RtlInitUTF8String@8 ; RtlInitUTF8String is an alias for RtlInitString
+; implib ntdll.dll, RtlInitUTF8StringEx, _RtlInitUTF8StringEx@8 ; RtlInitUTF8StringEx is an alias for RtlInitAnsiStringEx
+implib ntdll.dll, RtlInitUnicodeString, _RtlInitUnicodeString@8
+implib ntdll.dll, RtlInitUnicodeStringEx, _RtlInitUnicodeStringEx@8
+; implib ntdll.dll, RtlInitWeakEnumerationHashTable, _RtlInitWeakEnumerationHashTable@8 ; RtlInitWeakEnumerationHashTable is an alias for RtlInitEnumerationHashTable
 ; implib ntdll.dll, RtlInitializeAtomPackage, _RtlInitializeAtomPackage@4 ; This function does nothing and returns 0 in Windows 10
-implib ntdll.dll, RtlInitializeBitMap
-implib ntdll.dll, RtlInitializeConditionVariable
-implib ntdll.dll, RtlInitializeContext
-implib ntdll.dll, RtlInitializeCorrelationVector
-implib ntdll.dll, RtlInitializeCriticalSection
-implib ntdll.dll, RtlInitializeCriticalSectionAndSpinCount
-implib ntdll.dll, RtlInitializeCriticalSectionEx
-implib ntdll.dll, RtlInitializeExceptionChain
-implib ntdll.dll, RtlInitializeExtendedContext
-implib ntdll.dll, RtlInitializeExtendedContext2
-implib ntdll.dll, RtlInitializeGenericTable
-implib ntdll.dll, RtlInitializeGenericTableAvl
-implib ntdll.dll, RtlInitializeHandleTable
-implib ntdll.dll, RtlInitializeNtUserPfn
-implib ntdll.dll, RtlInitializeRXact
-implib ntdll.dll, RtlInitializeResource
-implib ntdll.dll, RtlInitializeSListHead
-implib ntdll.dll, RtlInitializeSRWLock
-implib ntdll.dll, RtlInitializeSid
-implib ntdll.dll, RtlInitializeSidEx
-implib ntdll.dll, RtlInsertElementGenericTable
-implib ntdll.dll, RtlInsertElementGenericTableAvl
-implib ntdll.dll, RtlInsertElementGenericTableFull
-implib ntdll.dll, RtlInsertElementGenericTableFullAvl
+implib ntdll.dll, RtlInitializeBitMap, _RtlInitializeBitMap@12
+; implib ntdll.dll, RtlInitializeConditionVariable, _RtlInitializeConditionVariable@4 ; RtlInitializeConditionVariable is an alias for RtlInitializeSRWLock
+implib ntdll.dll, RtlInitializeContext, _RtlInitializeContext@20
+implib ntdll.dll, RtlInitializeCorrelationVector, _RtlInitializeCorrelationVector@12
+implib ntdll.dll, RtlInitializeCriticalSection, _RtlInitializeCriticalSection@4
+implib ntdll.dll, RtlInitializeCriticalSectionAndSpinCount, _RtlInitializeCriticalSectionAndSpinCount@8
+implib ntdll.dll, RtlInitializeCriticalSectionEx, _RtlInitializeCriticalSectionEx@12
+implib ntdll.dll, RtlInitializeExceptionChain, _RtlInitializeExceptionChain@4
+implib ntdll.dll, RtlInitializeExtendedContext, _RtlInitializeExtendedContext@12
+implib ntdll.dll, RtlInitializeExtendedContext2, _RtlInitializeExtendedContext2@20
+implib ntdll.dll, RtlInitializeGenericTable, _RtlInitializeGenericTable@20
+implib ntdll.dll, RtlInitializeGenericTableAvl, _RtlInitializeGenericTableAvl@20
+implib ntdll.dll, RtlInitializeHandleTable, _RtlInitializeHandleTable@12
+implib ntdll.dll, RtlInitializeNtUserPfn, _RtlInitializeNtUserPfn@24
+implib ntdll.dll, RtlInitializeRXact, _RtlInitializeRXact@12
+implib ntdll.dll, RtlInitializeResource, _RtlInitializeResource@4
+implib ntdll.dll, RtlInitializeSListHead, _RtlInitializeSListHead@4
+implib ntdll.dll, RtlInitializeSRWLock, _RtlInitializeSRWLock@4
+implib ntdll.dll, RtlInitializeSid, _RtlInitializeSid@12
+implib ntdll.dll, RtlInitializeSidEx, _RtlInitializeSidEx ; This function uses the CDECL calling convention!
+implib ntdll.dll, RtlInsertElementGenericTable, _RtlInsertElementGenericTable@16
+implib ntdll.dll, RtlInsertElementGenericTableAvl, _RtlInsertElementGenericTableAvl@16
+implib ntdll.dll, RtlInsertElementGenericTableFull, _RtlInsertElementGenericTableFull@24
+implib ntdll.dll, RtlInsertElementGenericTableFullAvl, _RtlInsertElementGenericTableFullAvl@24
 implib ntdll.dll, RtlInsertEntryHashTable
 implib ntdll.dll, RtlInt64ToUnicodeString
 implib ntdll.dll, RtlIntegerToChar
@@ -1946,7 +1947,7 @@ implib ntdll.dll, RtlRunEncodeUnicodeString
 implib ntdll.dll, RtlRunOnceBeginInitialize
 implib ntdll.dll, RtlRunOnceComplete
 implib ntdll.dll, RtlRunOnceExecuteOnce
-implib ntdll.dll, RtlRunOnceInitialize
+; implib ntdll.dll, RtlRunOnceInitialize, _RtlRunOnceInitialize@4 ; RtlRunOnceInitialize is an alias for RtlInitializeSRWLock
 implib ntdll.dll, RtlSecondsSince1970ToTime
 implib ntdll.dll, RtlSecondsSince1980ToTime
 implib ntdll.dll, RtlSelfRelativeToAbsoluteSD
@@ -2087,82 +2088,81 @@ implib ntdll.dll, RtlUpcaseUnicodeStringToOemString
 implib ntdll.dll, RtlUpcaseUnicodeToCustomCPN
 implib ntdll.dll, RtlUpcaseUnicodeToMultiByteN
 implib ntdll.dll, RtlUpcaseUnicodeToOemN
-implib ntdll.dll, RtlUpdateClonedCriticalSection
-implib ntdll.dll, RtlUpdateClonedSRWLock
-implib ntdll.dll, RtlUpdateTimer
-implib ntdll.dll, RtlUpperChar
-implib ntdll.dll, RtlUpperString
-implib ntdll.dll, RtlUserFiberStart
-implib ntdll.dll, RtlUserThreadStart
-implib ntdll.dll, RtlUshortByteSwap
-implib ntdll.dll, RtlValidAcl
-implib ntdll.dll, RtlValidProcessProtection
-implib ntdll.dll, RtlValidRelativeSecurityDescriptor
-implib ntdll.dll, RtlValidSecurityDescriptor
-implib ntdll.dll, RtlValidSid
-implib ntdll.dll, RtlValidateCorrelationVector
-implib ntdll.dll, RtlValidateHeap
-implib ntdll.dll, RtlValidateProcessHeaps
-implib ntdll.dll, RtlValidateUnicodeString
-implib ntdll.dll, RtlVerifyVersionInfo
-implib ntdll.dll, RtlWaitForWnfMetaNotification
-implib ntdll.dll, RtlWaitOnAddress
-implib ntdll.dll, RtlWakeAddressAll
-implib ntdll.dll, RtlWakeAddressAllNoFence
-implib ntdll.dll, RtlWakeAddressSingle
-implib ntdll.dll, RtlWakeAddressSingleNoFence
-implib ntdll.dll, RtlWakeAllConditionVariable
-implib ntdll.dll, RtlWakeConditionVariable
-implib ntdll.dll, RtlWalkFrameChain
-implib ntdll.dll, RtlWalkHeap
-implib ntdll.dll, RtlWeaklyEnumerateEntryHashTable
-implib ntdll.dll, RtlWerpReportException
-implib ntdll.dll, RtlWnfCompareChangeStamp
-implib ntdll.dll, RtlWnfDllUnloadCallback
-implib ntdll.dll, RtlWow64CallFunction64
-implib ntdll.dll, RtlWow64EnableFsRedirection
-implib ntdll.dll, RtlWow64EnableFsRedirectionEx
-implib ntdll.dll, RtlWow64GetCurrentMachine
-implib ntdll.dll, RtlWow64GetEquivalentMachineCHPE
-implib ntdll.dll, RtlWow64GetProcessMachines
-implib ntdll.dll, RtlWow64GetSharedInfoProcess
-implib ntdll.dll, RtlWow64IsWowGuestMachineSupported
-implib ntdll.dll, RtlWow64LogMessageInEventLogger
-implib ntdll.dll, RtlWriteRegistryValue
-implib ntdll.dll, RtlZeroHeap
-implib ntdll.dll, RtlZeroMemory
-implib ntdll.dll, RtlZombifyActivationContext
-implib ntdll.dll, RtlpApplyLengthFunction
-implib ntdll.dll, RtlpCheckDynamicTimeZoneInformation
-implib ntdll.dll, RtlpCleanupRegistryKeys
-implib ntdll.dll, RtlpConvertAbsoluteToRelativeSecurityAttribute
-implib ntdll.dll, RtlpConvertCultureNamesToLCIDs
-implib ntdll.dll, RtlpConvertLCIDsToCultureNames
-implib ntdll.dll, RtlpConvertRelativeToAbsoluteSecurityAttribute
-implib ntdll.dll, RtlpCreateProcessRegistryInfo
-implib ntdll.dll, RtlpEnsureBufferSize
-implib ntdll.dll, RtlpFreezeTimeBias
-implib ntdll.dll, RtlpGetDeviceFamilyInfoEnum
-implib ntdll.dll, RtlpGetLCIDFromLangInfoNode
-implib ntdll.dll, RtlpGetNameFromLangInfoNode
-implib ntdll.dll, RtlpGetSystemDefaultUILanguage
-implib ntdll.dll, RtlpGetUserOrMachineUILanguage4NLS
-implib ntdll.dll, RtlpInitializeLangRegistryInfo
-implib ntdll.dll, RtlpIsQualifiedLanguage
-implib ntdll.dll, RtlpLoadMachineUIByPolicy
-implib ntdll.dll, RtlpLoadUserUIByPolicy
-implib ntdll.dll, RtlpMergeSecurityAttributeInformation
-implib ntdll.dll, RtlpMuiFreeLangRegistryInfo
-implib ntdll.dll, RtlpMuiRegCreateRegistryInfo
-implib ntdll.dll, RtlpMuiRegFreeRegistryInfo
-implib ntdll.dll, RtlpMuiRegLoadRegistryInfo
-implib ntdll.dll, RtlpNotOwnerCriticalSection
-implib ntdll.dll, RtlpNtCreateKey
-implib ntdll.dll, RtlpNtEnumerateSubKey
-implib ntdll.dll, RtlpNtMakeTemporaryKey
-implib ntdll.dll, RtlpNtOpenKey
-implib ntdll.dll, RtlpNtQueryValueKey
-implib ntdll.dll, RtlpNtSetValueKey
+implib ntdll.dll, RtlUpdateClonedCriticalSection, _RtlUpdateClonedCriticalSection@4
+implib ntdll.dll, RtlUpdateClonedSRWLock, _RtlUpdateClonedSRWLock@8
+implib ntdll.dll, RtlUpdateTimer, _RtlUpdateTimer@16
+implib ntdll.dll, RtlUpperChar, _RtlUpperChar@4
+implib ntdll.dll, RtlUpperString, _RtlUpperString@8
+implib ntdll.dll, RtlUserFiberStart, _RtlUserFiberStart@0
+implib ntdll.dll, RtlUserThreadStart, _RtlUserThreadStart@8
+implib ntdll.dll, RtlUshortByteSwap, @RtlUshortByteSwap@4 ; This function uses the FASTCALL calling convention
+implib ntdll.dll, RtlValidAcl, _RtlValidAcl@4
+implib ntdll.dll, RtlValidProcessProtection, _RtlValidProcessProtection@4
+implib ntdll.dll, RtlValidRelativeSecurityDescriptor, _RtlValidRelativeSecurityDescriptor@12
+implib ntdll.dll, RtlValidSecurityDescriptor, _RtlValidSecurityDescriptor@4
+implib ntdll.dll, RtlValidSid, _RtlValidSid@4
+implib ntdll.dll, RtlValidateCorrelationVector, _RtlValidateCorrelationVector@4
+implib ntdll.dll, RtlValidateHeap, _RtlValidateHeap@12
+implib ntdll.dll, RtlValidateProcessHeaps, _RtlValidateProcessHeaps@0
+implib ntdll.dll, RtlValidateUnicodeString, _RtlValidateUnicodeString@8
+implib ntdll.dll, RtlVerifyVersionInfo, _RtlVerifyVersionInfo@16
+implib ntdll.dll, RtlWaitForWnfMetaNotification, _RtlWaitForWnfMetaNotification@24
+implib ntdll.dll, RtlWaitOnAddress, _RtlWaitOnAddress@16
+implib ntdll.dll, RtlWakeAddressAll, _RtlWakeAddressAll@4
+implib ntdll.dll, RtlWakeAddressAllNoFence, _RtlWakeAddressAllNoFence@4
+implib ntdll.dll, RtlWakeAddressSingle, _RtlWakeAddressSingle@4
+implib ntdll.dll, RtlWakeAddressSingleNoFence, _RtlWakeAddressSingleNoFence@4
+implib ntdll.dll, RtlWakeAllConditionVariable, _RtlWakeAllConditionVariable@4
+implib ntdll.dll, RtlWakeConditionVariable, _RtlWakeConditionVariable@4
+implib ntdll.dll, RtlWalkFrameChain, _RtlWalkFrameChain@12
+implib ntdll.dll, RtlWalkHeap, _RtlWalkHeap@8
+; implib ntdll.dll, RtlWeaklyEnumerateEntryHashTable, _RtlWeaklyEnumerateEntryHashTable@8 ; RtlWeaklyEnumerateEntryHashTable is an alias for RtlEnumerateEntryHashTable
+implib ntdll.dll, RtlWerpReportException, _RtlWerpReportException@16
+implib ntdll.dll, RtlWnfCompareChangeStamp, _RtlWnfCompareChangeStamp@8
+; implib ntdll.dll, RtlWnfDllUnloadCallback, _RtlWnfDllUnloadCallback@4 ; RtlWnfDllUnloadCallback is an alias for LdrUnloadDll
+; implib ntdll.dll, RtlWow64CallFunction64, _RtlWow64CallFunction64@28 ; RtlWow64CallFunction64 is an alias for NtWow64CallFunction64
+implib ntdll.dll, RtlWow64EnableFsRedirection, _RtlWow64EnableFsRedirection@4
+implib ntdll.dll, RtlWow64EnableFsRedirectionEx, _RtlWow64EnableFsRedirectionEx@8
+implib ntdll.dll, RtlWow64GetCurrentMachine, _RtlWow64GetCurrentMachine@0
+implib ntdll.dll, RtlWow64GetEquivalentMachineCHPE, _RtlWow64GetEquivalentMachineCHPE@4
+implib ntdll.dll, RtlWow64GetProcessMachines, _RtlWow64GetProcessMachines@12
+implib ntdll.dll, RtlWow64GetSharedInfoProcess, _RtlWow64GetSharedInfoProcess@12
+implib ntdll.dll, RtlWow64IsWowGuestMachineSupported, _RtlWow64IsWowGuestMachineSupported@8
+implib ntdll.dll, RtlWow64LogMessageInEventLogger, _RtlWow64LogMessageInEventLogger@12
+implib ntdll.dll, RtlWriteRegistryValue, _RtlWriteRegistryValue@24
+implib ntdll.dll, RtlZeroHeap, _RtlZeroHeap@8
+implib ntdll.dll, RtlZeroMemory, _RtlZeroMemory@8
+implib ntdll.dll, RtlZombifyActivationContext, _RtlZombifyActivationContext@4
+implib ntdll.dll, RtlpApplyLengthFunction, _RtlpApplyLengthFunction@16
+implib ntdll.dll, RtlpCheckDynamicTimeZoneInformation, _RtlpCheckDynamicTimeZoneInformation@8
+implib ntdll.dll, RtlpCleanupRegistryKeys, _RtlpCleanupRegistryKeys@0
+implib ntdll.dll, RtlpConvertAbsoluteToRelativeSecurityAttribute, _RtlpConvertAbsoluteToRelativeSecurityAttribute@12
+implib ntdll.dll, RtlpConvertCultureNamesToLCIDs, _RtlpConvertCultureNamesToLCIDs@8
+implib ntdll.dll, RtlpConvertLCIDsToCultureNames, _RtlpConvertLCIDsToCultureNames@8
+implib ntdll.dll, RtlpConvertRelativeToAbsoluteSecurityAttribute, _RtlpConvertRelativeToAbsoluteSecurityAttribute@16
+implib ntdll.dll, RtlpCreateProcessRegistryInfo, _RtlpCreateProcessRegistryInfo@4
+implib ntdll.dll, RtlpEnsureBufferSize, _RtlpEnsureBufferSize@12
+implib ntdll.dll, RtlpGetDeviceFamilyInfoEnum, _RtlpGetDeviceFamilyInfoEnum@12
+implib ntdll.dll, RtlpGetLCIDFromLangInfoNode, _RtlpGetLCIDFromLangInfoNode@12
+implib ntdll.dll, RtlpGetNameFromLangInfoNode, _RtlpGetNameFromLangInfoNode@12
+implib ntdll.dll, RtlpGetSystemDefaultUILanguage, _RtlpGetSystemDefaultUILanguage@8
+implib ntdll.dll, RtlpGetUserOrMachineUILanguage4NLS, _RtlpGetUserOrMachineUILanguage4NLS@12
+implib ntdll.dll, RtlpInitializeLangRegistryInfo, _RtlpInitializeLangRegistryInfo@4
+implib ntdll.dll, RtlpIsQualifiedLanguage, _RtlpIsQualifiedLanguage@12
+implib ntdll.dll, RtlpLoadMachineUIByPolicy, _RtlpLoadMachineUIByPolicy@12
+implib ntdll.dll, RtlpLoadUserUIByPolicy, _RtlpLoadUserUIByPolicy@12
+implib ntdll.dll, RtlpMergeSecurityAttributeInformation, _RtlpMergeSecurityAttributeInformation@16
+implib ntdll.dll, RtlpMuiFreeLangRegistryInfo, _RtlpMuiFreeLangRegistryInfo@4
+implib ntdll.dll, RtlpMuiRegCreateRegistryInfo, _RtlpMuiRegCreateRegistryInfo@0
+implib ntdll.dll, RtlpMuiRegFreeRegistryInfo, _RtlpMuiRegFreeRegistryInfo@8
+implib ntdll.dll, RtlpMuiRegLoadRegistryInfo, _RtlpMuiRegLoadRegistryInfo@8
+implib ntdll.dll, RtlpNotOwnerCriticalSection, _RtlpNotOwnerCriticalSection@4
+implib ntdll.dll, RtlpNtCreateKey, _RtlpNtCreateKey@24
+implib ntdll.dll, RtlpNtEnumerateSubKey, _RtlpNtEnumerateSubKey@16
+; implib ntdll.dll, RtlpNtMakeTemporaryKey, _RtlpNtMakeTemporaryKey@4 ; RtlpNtMakeTemporaryKey is an alias for NtDeleteKey
+implib ntdll.dll, RtlpNtOpenKey, _RtlpNtOpenKey@16
+implib ntdll.dll, RtlpNtQueryValueKey, _RtlpNtQueryValueKey@20
+implib ntdll.dll, RtlpNtSetValueKey, _RtlpNtSetValueKey@16
 implib ntdll.dll, RtlpQueryDefaultUILanguage, _RtlpQueryDefaultUILanguage@8
 implib ntdll.dll, RtlpQueryProcessDebugInformationRemote, _RtlpQueryProcessDebugInformationRemote@4
 implib ntdll.dll, RtlpRefreshCachedUILanguage, _RtlpRefreshCachedUILanguage@8
