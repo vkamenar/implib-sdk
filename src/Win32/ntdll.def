@@ -217,28 +217,29 @@ include '..\implib.inc'
 ; implib ntdll.dll, ZwFlushBuffersFileEx, _ZwFlushBuffersFileEx@20
 ; implib ntdll.dll, ZwFlushInstallUILanguage, _ZwFlushInstallUILanguage@8
 ; implib ntdll.dll, ZwFlushInstructionCache, _ZwFlushInstructionCache@12
-; implib ntdll.dll, ZwFlushKey
-; implib ntdll.dll, ZwFlushProcessWriteBuffers
-; implib ntdll.dll, ZwFlushVirtualMemory
-; implib ntdll.dll, ZwFlushWriteBuffer
-; implib ntdll.dll, ZwFreeUserPhysicalPages
-; implib ntdll.dll, ZwFreeVirtualMemory
-; implib ntdll.dll, ZwFreezeRegistry
-; implib ntdll.dll, ZwFreezeTransactions
-; implib ntdll.dll, ZwFsControlFile
-; implib ntdll.dll, ZwGetCachedSigningLevel
-; implib ntdll.dll, ZwGetCompleteWnfStateSubscription
-; implib ntdll.dll, ZwGetContextThread
-; implib ntdll.dll, ZwGetCurrentProcessorNumber
-; implib ntdll.dll, ZwGetCurrentProcessorNumberEx
-; implib ntdll.dll, ZwGetDevicePowerState
-; implib ntdll.dll, ZwGetMUIRegistryInfo
-; implib ntdll.dll, ZwGetNextProcess
-; implib ntdll.dll, ZwGetNextThread
-; implib ntdll.dll, ZwGetNlsSectionPtr
-; implib ntdll.dll, ZwGetNotificationResourceManager
-; implib ntdll.dll, ZwGetWriteWatch
-; implib ntdll.dll, ZwImpersonateAnonymousToken
+; implib ntdll.dll, ZwFlushKey, _ZwFlushKey@4
+; implib ntdll.dll, ZwFlushProcessWriteBuffers, _ZwFlushProcessWriteBuffers@0
+; implib ntdll.dll, ZwFlushVirtualMemory, _ZwFlushVirtualMemory@16
+; implib ntdll.dll, ZwFlushWriteBuffer, _ZwFlushWriteBuffer@0
+; implib ntdll.dll, ZwFreeUserPhysicalPages, _ZwFreeUserPhysicalPages@12
+; implib ntdll.dll, ZwFreeVirtualMemory, _ZwFreeVirtualMemory@16
+; implib ntdll.dll, ZwFreezeRegistry, _ZwFreezeRegistry@4
+; implib ntdll.dll, ZwFreezeTransactions, _ZwFreezeTransactions@8
+; implib ntdll.dll, ZwFsControlFile, _ZwFsControlFile@40
+; implib ntdll.dll, ZwGetCachedSigningLevel, _ZwGetCachedSigningLevel@24
+; implib ntdll.dll, ZwGetCompleteWnfStateSubscription, _ZwGetCompleteWnfStateSubscription@24
+; implib ntdll.dll, ZwGetContextThread, _ZwGetContextThread@8
+; implib ntdll.dll, ZwGetCurrentProcessorNumber, _ZwGetCurrentProcessorNumber@0
+; implib ntdll.dll, ZwGetCurrentProcessorNumberEx, _ZwGetCurrentProcessorNumberEx@4
+; implib ntdll.dll, ZwGetDevicePowerState, _ZwGetDevicePowerState@8
+; implib ntdll.dll, ZwGetMUIRegistryInfo, _ZwGetMUIRegistryInfo@12
+; implib ntdll.dll, ZwGetNextProcess, _ZwGetNextProcess@20
+; implib ntdll.dll, ZwGetNextThread, _ZwGetNextThread@24
+; implib ntdll.dll, ZwGetNlsSectionPtr, _ZwGetNlsSectionPtr@20
+; implib ntdll.dll, ZwGetNotificationResourceManager, _ZwGetNotificationResourceManager@28
+; implib ntdll.dll, ZwGetTickCount, _ZwGetTickCount@0 ; This function was removed in WinXP (only the Nt variant is available since WinXP)
+; implib ntdll.dll, ZwGetWriteWatch, _ZwGetWriteWatch@28
+; implib ntdll.dll, ZwImpersonateAnonymousToken, _ZwImpersonateAnonymousToken@4
 ; implib ntdll.dll, ZwImpersonateClientOfPort
 ; implib ntdll.dll, ZwImpersonateThread
 ; implib ntdll.dll, ZwInitializeEnclave
@@ -477,39 +478,39 @@ include '..\implib.inc'
 ; implib ntdll.dll, ZwSetTimerResolution
 ; implib ntdll.dll, ZwSetUuidSeed
 ; implib ntdll.dll, ZwSetValueKey
-; implib ntdll.dll, ZwSetVolumeInformationFile
-; implib ntdll.dll, ZwSetWnfProcessNotificationEvent
-; implib ntdll.dll, ZwShutdownSystem
-; implib ntdll.dll, ZwShutdownWorkerFactory
-; implib ntdll.dll, ZwSignalAndWaitForSingleObject
-; implib ntdll.dll, ZwSinglePhaseReject
-; implib ntdll.dll, ZwStartProfile
-; implib ntdll.dll, ZwStopProfile
-; implib ntdll.dll, ZwSubscribeWnfStateChange
-; implib ntdll.dll, ZwSuspendProcess
-; implib ntdll.dll, ZwSuspendThread
-; implib ntdll.dll, ZwSystemDebugControl
-; implib ntdll.dll, ZwTerminateEnclave
-; implib ntdll.dll, ZwTerminateJobObject
-; implib ntdll.dll, ZwTerminateProcess
-; implib ntdll.dll, ZwTerminateThread
-; implib ntdll.dll, ZwTestAlert
-; implib ntdll.dll, ZwThawRegistry
-; implib ntdll.dll, ZwThawTransactions
-; implib ntdll.dll, ZwTraceControl
-; implib ntdll.dll, ZwTraceEvent
-; implib ntdll.dll, ZwTranslateFilePath
-; implib ntdll.dll, ZwUmsThreadYield
-; implib ntdll.dll, ZwUnloadDriver
-; implib ntdll.dll, ZwUnloadKey
-; implib ntdll.dll, ZwUnloadKey2
-; implib ntdll.dll, ZwUnloadKeyEx
-; implib ntdll.dll, ZwUnlockFile
-; implib ntdll.dll, ZwUnlockVirtualMemory
-; implib ntdll.dll, ZwUnmapViewOfSection
-; implib ntdll.dll, ZwUnmapViewOfSectionEx
-; implib ntdll.dll, ZwUnsubscribeWnfStateChange
-; implib ntdll.dll, ZwUpdateWnfStateData
+; implib ntdll.dll, ZwSetVolumeInformationFile, _ZwSetVolumeInformationFile@20
+; implib ntdll.dll, ZwSetWnfProcessNotificationEvent, _ZwSetWnfProcessNotificationEvent@4
+; implib ntdll.dll, ZwShutdownSystem, _ZwShutdownSystem@4
+; implib ntdll.dll, ZwShutdownWorkerFactory, _ZwShutdownWorkerFactory@8
+; implib ntdll.dll, ZwSignalAndWaitForSingleObject, _ZwSignalAndWaitForSingleObject@16
+; implib ntdll.dll, ZwSinglePhaseReject, _ZwSinglePhaseReject@8
+; implib ntdll.dll, ZwStartProfile, _ZwStartProfile@4
+; implib ntdll.dll, ZwStopProfile, _ZwStopProfile@4
+; implib ntdll.dll, ZwSubscribeWnfStateChange, _ZwSubscribeWnfStateChange@16
+; implib ntdll.dll, ZwSuspendProcess, _ZwSuspendProcess@4
+; implib ntdll.dll, ZwSuspendThread, _ZwSuspendThread@8
+; implib ntdll.dll, ZwSystemDebugControl, _ZwSystemDebugControl@24
+; implib ntdll.dll, ZwTerminateEnclave, _ZwTerminateEnclave@8
+; implib ntdll.dll, ZwTerminateJobObject, _ZwTerminateJobObject@8
+; implib ntdll.dll, ZwTerminateProcess, _ZwTerminateProcess@8
+; implib ntdll.dll, ZwTerminateThread, _ZwTerminateThread@8
+; implib ntdll.dll, ZwTestAlert, _ZwTestAlert@0
+; implib ntdll.dll, ZwThawRegistry, _ZwThawRegistry@0
+; implib ntdll.dll, ZwThawTransactions, _ZwThawTransactions@0
+; implib ntdll.dll, ZwTraceControl, _ZwTraceControl@24
+; implib ntdll.dll, ZwTraceEvent, _ZwTraceEvent@16
+; implib ntdll.dll, ZwTranslateFilePath, _ZwTranslateFilePath@16
+; implib ntdll.dll, ZwUmsThreadYield, _ZwUmsThreadYield@4
+; implib ntdll.dll, ZwUnloadDriver, _ZwUnloadDriver@4
+; implib ntdll.dll, ZwUnloadKey, _ZwUnloadKey@4
+; implib ntdll.dll, ZwUnloadKey2, _ZwUnloadKey2@8
+; implib ntdll.dll, ZwUnloadKeyEx, _ZwUnloadKeyEx@8
+; implib ntdll.dll, ZwUnlockFile, _ZwUnlockFile@20
+; implib ntdll.dll, ZwUnlockVirtualMemory, _ZwUnlockVirtualMemory@16
+; implib ntdll.dll, ZwUnmapViewOfSection, _ZwUnmapViewOfSection@8
+; implib ntdll.dll, ZwUnmapViewOfSectionEx, _ZwUnmapViewOfSectionEx@12
+; implib ntdll.dll, ZwUnsubscribeWnfStateChange, _ZwUnsubscribeWnfStateChange@4
+; implib ntdll.dll, ZwUpdateWnfStateData, _ZwUpdateWnfStateData@28
 ; implib ntdll.dll, ZwVdmControl, _ZwVdmControl@8
 ; implib ntdll.dll, ZwWaitForAlertByThreadId, _ZwWaitForAlertByThreadId@8
 ; implib ntdll.dll, ZwWaitForDebugEvent, _ZwWaitForDebugEvent@16
@@ -909,29 +910,29 @@ implib ntdll.dll, NtFlushBuffersFile, _NtFlushBuffersFile@8
 implib ntdll.dll, NtFlushBuffersFileEx, _NtFlushBuffersFileEx@20
 implib ntdll.dll, NtFlushInstallUILanguage, _NtFlushInstallUILanguage@8
 implib ntdll.dll, NtFlushInstructionCache, _NtFlushInstructionCache@12
-implib ntdll.dll, NtFlushKey
-implib ntdll.dll, NtFlushProcessWriteBuffers
-implib ntdll.dll, NtFlushVirtualMemory
-implib ntdll.dll, NtFlushWriteBuffer
-implib ntdll.dll, NtFreeUserPhysicalPages
-implib ntdll.dll, NtFreeVirtualMemory
-implib ntdll.dll, NtFreezeRegistry
-implib ntdll.dll, NtFreezeTransactions
-implib ntdll.dll, NtFsControlFile
-implib ntdll.dll, NtGetCachedSigningLevel
-implib ntdll.dll, NtGetCompleteWnfStateSubscription
-implib ntdll.dll, NtGetContextThread
-implib ntdll.dll, NtGetCurrentProcessorNumber
-implib ntdll.dll, NtGetCurrentProcessorNumberEx
-implib ntdll.dll, NtGetDevicePowerState
-implib ntdll.dll, NtGetMUIRegistryInfo
-implib ntdll.dll, NtGetNextProcess
-implib ntdll.dll, NtGetNextThread
-implib ntdll.dll, NtGetNlsSectionPtr
-implib ntdll.dll, NtGetNotificationResourceManager
-implib ntdll.dll, NtGetTickCount
-implib ntdll.dll, NtGetWriteWatch
-implib ntdll.dll, NtImpersonateAnonymousToken
+implib ntdll.dll, NtFlushKey, _NtFlushKey@4
+implib ntdll.dll, NtFlushProcessWriteBuffers, _NtFlushProcessWriteBuffers@0
+implib ntdll.dll, NtFlushVirtualMemory, _NtFlushVirtualMemory@16
+implib ntdll.dll, NtFlushWriteBuffer, _NtFlushWriteBuffer@0
+implib ntdll.dll, NtFreeUserPhysicalPages, _NtFreeUserPhysicalPages@12
+implib ntdll.dll, NtFreeVirtualMemory, _NtFreeVirtualMemory@16
+implib ntdll.dll, NtFreezeRegistry, _NtFreezeRegistry@4
+implib ntdll.dll, NtFreezeTransactions, _NtFreezeTransactions@8
+implib ntdll.dll, NtFsControlFile, _NtFsControlFile@40
+implib ntdll.dll, NtGetCachedSigningLevel, _NtGetCachedSigningLevel@24
+implib ntdll.dll, NtGetCompleteWnfStateSubscription, _NtGetCompleteWnfStateSubscription@24
+implib ntdll.dll, NtGetContextThread, _NtGetContextThread@8
+implib ntdll.dll, NtGetCurrentProcessorNumber, _NtGetCurrentProcessorNumber@0
+implib ntdll.dll, NtGetCurrentProcessorNumberEx, _NtGetCurrentProcessorNumberEx@4
+implib ntdll.dll, NtGetDevicePowerState, _NtGetDevicePowerState@8
+implib ntdll.dll, NtGetMUIRegistryInfo, _NtGetMUIRegistryInfo@12
+implib ntdll.dll, NtGetNextProcess, _NtGetNextProcess@20
+implib ntdll.dll, NtGetNextThread, _NtGetNextThread@24
+implib ntdll.dll, NtGetNlsSectionPtr, _NtGetNlsSectionPtr@20
+implib ntdll.dll, NtGetNotificationResourceManager, _NtGetNotificationResourceManager@28
+implib ntdll.dll, NtGetTickCount, _NtGetTickCount@0
+implib ntdll.dll, NtGetWriteWatch, _NtGetWriteWatch@28
+implib ntdll.dll, NtImpersonateAnonymousToken, _NtImpersonateAnonymousToken@4
 implib ntdll.dll, NtImpersonateClientOfPort
 implib ntdll.dll, NtImpersonateThread
 ; implib ntdll.dll, NtInitializeEnclave, _NtInitializeEnclave@20 ; NtInitializeEnclave is an alias for LdrInitializeEnclave
@@ -1170,39 +1171,39 @@ implib ntdll.dll, NtSetTimerEx
 implib ntdll.dll, NtSetTimerResolution
 implib ntdll.dll, NtSetUuidSeed
 implib ntdll.dll, NtSetValueKey
-implib ntdll.dll, NtSetVolumeInformationFile
-implib ntdll.dll, NtSetWnfProcessNotificationEvent
-implib ntdll.dll, NtShutdownSystem
-implib ntdll.dll, NtShutdownWorkerFactory
-implib ntdll.dll, NtSignalAndWaitForSingleObject
-implib ntdll.dll, NtSinglePhaseReject
-implib ntdll.dll, NtStartProfile
-implib ntdll.dll, NtStopProfile
-implib ntdll.dll, NtSubscribeWnfStateChange
-implib ntdll.dll, NtSuspendProcess
-implib ntdll.dll, NtSuspendThread
-implib ntdll.dll, NtSystemDebugControl
-implib ntdll.dll, NtTerminateEnclave
-implib ntdll.dll, NtTerminateJobObject
-implib ntdll.dll, NtTerminateProcess
-implib ntdll.dll, NtTerminateThread
-implib ntdll.dll, NtTestAlert
-implib ntdll.dll, NtThawRegistry
-implib ntdll.dll, NtThawTransactions
-implib ntdll.dll, NtTraceControl
-implib ntdll.dll, NtTraceEvent
-implib ntdll.dll, NtTranslateFilePath
-implib ntdll.dll, NtUmsThreadYield
-implib ntdll.dll, NtUnloadDriver
-implib ntdll.dll, NtUnloadKey
-implib ntdll.dll, NtUnloadKey2
-implib ntdll.dll, NtUnloadKeyEx
-implib ntdll.dll, NtUnlockFile
-implib ntdll.dll, NtUnlockVirtualMemory
-implib ntdll.dll, NtUnmapViewOfSection
-implib ntdll.dll, NtUnmapViewOfSectionEx
-implib ntdll.dll, NtUnsubscribeWnfStateChange
-implib ntdll.dll, NtUpdateWnfStateData
+implib ntdll.dll, NtSetVolumeInformationFile, _NtSetVolumeInformationFile@20
+implib ntdll.dll, NtSetWnfProcessNotificationEvent, _NtSetWnfProcessNotificationEvent@4
+implib ntdll.dll, NtShutdownSystem, _NtShutdownSystem@4
+implib ntdll.dll, NtShutdownWorkerFactory, _NtShutdownWorkerFactory@8
+implib ntdll.dll, NtSignalAndWaitForSingleObject, _NtSignalAndWaitForSingleObject@16
+implib ntdll.dll, NtSinglePhaseReject, _NtSinglePhaseReject@8
+implib ntdll.dll, NtStartProfile, _NtStartProfile@4
+implib ntdll.dll, NtStopProfile, _NtStopProfile@4
+implib ntdll.dll, NtSubscribeWnfStateChange, _NtSubscribeWnfStateChange@16
+implib ntdll.dll, NtSuspendProcess, _NtSuspendProcess@4
+implib ntdll.dll, NtSuspendThread, _NtSuspendThread@8
+implib ntdll.dll, NtSystemDebugControl, _NtSystemDebugControl@24
+implib ntdll.dll, NtTerminateEnclave, _NtTerminateEnclave@8
+implib ntdll.dll, NtTerminateJobObject, _NtTerminateJobObject@8
+implib ntdll.dll, NtTerminateProcess, _NtTerminateProcess@8
+implib ntdll.dll, NtTerminateThread, _NtTerminateThread@8
+implib ntdll.dll, NtTestAlert, _NtTestAlert@0
+implib ntdll.dll, NtThawRegistry, _NtThawRegistry@0
+implib ntdll.dll, NtThawTransactions, _NtThawTransactions@0
+implib ntdll.dll, NtTraceControl, _NtTraceControl@24
+implib ntdll.dll, NtTraceEvent, _NtTraceEvent@16
+implib ntdll.dll, NtTranslateFilePath, _NtTranslateFilePath@16
+implib ntdll.dll, NtUmsThreadYield, _NtUmsThreadYield@4
+implib ntdll.dll, NtUnloadDriver, _NtUnloadDriver@4
+implib ntdll.dll, NtUnloadKey, _NtUnloadKey@4
+implib ntdll.dll, NtUnloadKey2, _NtUnloadKey2@8
+implib ntdll.dll, NtUnloadKeyEx, _NtUnloadKeyEx@8
+implib ntdll.dll, NtUnlockFile, _NtUnlockFile@20
+implib ntdll.dll, NtUnlockVirtualMemory, _NtUnlockVirtualMemory@16
+implib ntdll.dll, NtUnmapViewOfSection, _NtUnmapViewOfSection@8
+implib ntdll.dll, NtUnmapViewOfSectionEx, _NtUnmapViewOfSectionEx@12
+implib ntdll.dll, NtUnsubscribeWnfStateChange, _NtUnsubscribeWnfStateChange@4
+implib ntdll.dll, NtUpdateWnfStateData, _NtUpdateWnfStateData@28
 implib ntdll.dll, NtVdmControl, _NtVdmControl@8
 implib ntdll.dll, NtWaitForAlertByThreadId, _NtWaitForAlertByThreadId@8
 implib ntdll.dll, NtWaitForDebugEvent, _NtWaitForDebugEvent@16
