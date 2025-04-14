@@ -240,76 +240,76 @@ include '..\implib.inc'
 ; implib ntdll.dll, ZwGetTickCount, _ZwGetTickCount@0 ; This function was removed in WinXP (only the Nt variant is available since WinXP)
 ; implib ntdll.dll, ZwGetWriteWatch, _ZwGetWriteWatch@28
 ; implib ntdll.dll, ZwImpersonateAnonymousToken, _ZwImpersonateAnonymousToken@4
-; implib ntdll.dll, ZwImpersonateClientOfPort
-; implib ntdll.dll, ZwImpersonateThread
-; implib ntdll.dll, ZwInitializeEnclave
-; implib ntdll.dll, ZwInitializeNlsFiles
-; implib ntdll.dll, ZwInitializeRegistry
-; implib ntdll.dll, ZwInitiatePowerAction
-; implib ntdll.dll, ZwIsProcessInJob
-; implib ntdll.dll, ZwIsSystemResumeAutomatic
-; implib ntdll.dll, ZwIsUILanguageComitted
-; implib ntdll.dll, ZwListenPort
-; implib ntdll.dll, ZwLoadDriver
-; implib ntdll.dll, ZwLoadEnclaveData
-; implib ntdll.dll, ZwLoadKey
-; implib ntdll.dll, ZwLoadKey2
-; implib ntdll.dll, ZwLoadKey3
-; implib ntdll.dll, ZwLoadKeyEx
-; implib ntdll.dll, ZwLockFile
-; implib ntdll.dll, ZwLockProductActivationKeys
-; implib ntdll.dll, ZwLockRegistryKey
-; implib ntdll.dll, ZwLockVirtualMemory
-; implib ntdll.dll, ZwMakePermanentObject
-; implib ntdll.dll, ZwMakeTemporaryObject
-; implib ntdll.dll, ZwManageHotPatch
-; implib ntdll.dll, ZwManagePartition
-; implib ntdll.dll, ZwMapCMFModule
-; implib ntdll.dll, ZwMapUserPhysicalPages
-; implib ntdll.dll, ZwMapUserPhysicalPagesScatter
-; implib ntdll.dll, ZwMapViewOfSection
-; implib ntdll.dll, ZwMapViewOfSectionEx
-; implib ntdll.dll, ZwModifyBootEntry
-; implib ntdll.dll, ZwModifyDriverEntry
-; implib ntdll.dll, ZwNotifyChangeDirectoryFile
-; implib ntdll.dll, ZwNotifyChangeDirectoryFileEx
-; implib ntdll.dll, ZwNotifyChangeKey
-; implib ntdll.dll, ZwNotifyChangeMultipleKeys
-; implib ntdll.dll, ZwNotifyChangeSession
-; implib ntdll.dll, ZwOpenDirectoryObject
-; implib ntdll.dll, ZwOpenEnlistment
-; implib ntdll.dll, ZwOpenEvent
-; implib ntdll.dll, ZwOpenEventPair
-; implib ntdll.dll, ZwOpenFile
-; implib ntdll.dll, ZwOpenIoCompletion
-; implib ntdll.dll, ZwOpenJobObject
-; implib ntdll.dll, ZwOpenKey
-; implib ntdll.dll, ZwOpenKeyEx
-; implib ntdll.dll, ZwOpenKeyTransacted
-; implib ntdll.dll, ZwOpenKeyTransactedEx
-; implib ntdll.dll, ZwOpenKeyedEvent
-; implib ntdll.dll, ZwOpenMutant
-; implib ntdll.dll, ZwOpenObjectAuditAlarm
-; implib ntdll.dll, ZwOpenPartition
-; implib ntdll.dll, ZwOpenPrivateNamespace
-; implib ntdll.dll, ZwOpenProcess
-; implib ntdll.dll, ZwOpenProcessToken
-; implib ntdll.dll, ZwOpenProcessTokenEx
-; implib ntdll.dll, ZwOpenRegistryTransaction
-; implib ntdll.dll, ZwOpenResourceManager
-; implib ntdll.dll, ZwOpenSection
-; implib ntdll.dll, ZwOpenSemaphore
-; implib ntdll.dll, ZwOpenSession
-; implib ntdll.dll, ZwOpenSymbolicLinkObject
-; implib ntdll.dll, ZwOpenThread
-; implib ntdll.dll, ZwOpenThreadToken
-; implib ntdll.dll, ZwOpenThreadTokenEx
-; implib ntdll.dll, ZwOpenTimer
-; implib ntdll.dll, ZwOpenTransaction
-; implib ntdll.dll, ZwOpenTransactionManager
-; implib ntdll.dll, ZwPlugPlayControl
-; implib ntdll.dll, ZwPowerInformation
-; implib ntdll.dll, ZwPrePrepareComplete
+; implib ntdll.dll, ZwImpersonateClientOfPort, _ZwImpersonateClientOfPort@8
+; implib ntdll.dll, ZwImpersonateThread, _ZwImpersonateThread@12
+; implib ntdll.dll, ZwInitializeEnclave, _ZwInitializeEnclave@20
+; implib ntdll.dll, ZwInitializeNlsFiles, _ZwInitializeNlsFiles@12
+; implib ntdll.dll, ZwInitializeRegistry, _ZwInitializeRegistry@4
+; implib ntdll.dll, ZwInitiatePowerAction, _ZwInitiatePowerAction@16
+; implib ntdll.dll, ZwIsProcessInJob, _ZwIsProcessInJob@8
+; implib ntdll.dll, ZwIsSystemResumeAutomatic, _ZwIsSystemResumeAutomatic@0
+; implib ntdll.dll, ZwIsUILanguageComitted, _ZwIsUILanguageComitted@0
+; implib ntdll.dll, ZwListenPort, _ZwListenPort@8
+; implib ntdll.dll, ZwLoadDriver, _ZwLoadDriver@4
+; implib ntdll.dll, ZwLoadEnclaveData, _ZwLoadEnclaveData@36
+; implib ntdll.dll, ZwLoadKey, _ZwLoadKey@8
+; implib ntdll.dll, ZwLoadKey2, _ZwLoadKey2@12
+; implib ntdll.dll, ZwLoadKey3, _ZwLoadKey3@32
+; implib ntdll.dll, ZwLoadKeyEx, _ZwLoadKeyEx@32
+; implib ntdll.dll, ZwLockFile, _ZwLockFile@40
+; implib ntdll.dll, ZwLockProductActivationKeys, _ZwLockProductActivationKeys@8
+; implib ntdll.dll, ZwLockRegistryKey, _ZwLockRegistryKey@4
+; implib ntdll.dll, ZwLockVirtualMemory, _ZwLockVirtualMemory@16
+; implib ntdll.dll, ZwMakePermanentObject, _ZwMakePermanentObject@4
+; implib ntdll.dll, ZwMakeTemporaryObject, _ZwMakeTemporaryObject@4
+; implib ntdll.dll, ZwManageHotPatch, _ZwManageHotPatch@16
+; implib ntdll.dll, ZwManagePartition, _ZwManagePartition@20
+; implib ntdll.dll, ZwMapCMFModule, _ZwMapCMFModule@24
+; implib ntdll.dll, ZwMapUserPhysicalPages, _ZwMapUserPhysicalPages@12
+; implib ntdll.dll, ZwMapUserPhysicalPagesScatter, _ZwMapUserPhysicalPagesScatter@12
+; implib ntdll.dll, ZwMapViewOfSection, _ZwMapViewOfSection@40
+; implib ntdll.dll, ZwMapViewOfSectionEx, _ZwMapViewOfSectionEx@36
+; implib ntdll.dll, ZwModifyBootEntry, _ZwModifyBootEntry@4
+; implib ntdll.dll, ZwModifyDriverEntry, _ZwModifyDriverEntry@4
+; implib ntdll.dll, ZwNotifyChangeDirectoryFile, _ZwNotifyChangeDirectoryFile@36
+; implib ntdll.dll, ZwNotifyChangeDirectoryFileEx, _ZwNotifyChangeDirectoryFileEx@40
+; implib ntdll.dll, ZwNotifyChangeKey, _ZwNotifyChangeKey@40
+; implib ntdll.dll, ZwNotifyChangeMultipleKeys, _ZwNotifyChangeMultipleKeys@48
+; implib ntdll.dll, ZwNotifyChangeSession, _ZwNotifyChangeSession@32
+; implib ntdll.dll, ZwOpenDirectoryObject, _ZwOpenDirectoryObject@12
+; implib ntdll.dll, ZwOpenEnlistment, _ZwOpenEnlistment@20
+; implib ntdll.dll, ZwOpenEvent, _ZwOpenEvent@12
+; implib ntdll.dll, ZwOpenEventPair, _ZwOpenEventPair@12
+; implib ntdll.dll, ZwOpenFile, _ZwOpenFile@24
+; implib ntdll.dll, ZwOpenIoCompletion, _ZwOpenIoCompletion@12
+; implib ntdll.dll, ZwOpenJobObject, _ZwOpenJobObject@12
+; implib ntdll.dll, ZwOpenKey, _ZwOpenKey@12
+; implib ntdll.dll, ZwOpenKeyEx, _ZwOpenKeyEx@16
+; implib ntdll.dll, ZwOpenKeyTransacted, _ZwOpenKeyTransacted@16
+; implib ntdll.dll, ZwOpenKeyTransactedEx, _ZwOpenKeyTransactedEx@20
+; implib ntdll.dll, ZwOpenKeyedEvent, _ZwOpenKeyedEvent@12
+; implib ntdll.dll, ZwOpenMutant, _ZwOpenMutant@12
+; implib ntdll.dll, ZwOpenObjectAuditAlarm, _ZwOpenObjectAuditAlarm@48
+; implib ntdll.dll, ZwOpenPartition, _ZwOpenPartition@12
+; implib ntdll.dll, ZwOpenPrivateNamespace, _ZwOpenPrivateNamespace@16
+; implib ntdll.dll, ZwOpenProcess, _ZwOpenProcess@16
+; implib ntdll.dll, ZwOpenProcessToken, _ZwOpenProcessToken@12
+; implib ntdll.dll, ZwOpenProcessTokenEx, _ZwOpenProcessTokenEx@16
+; implib ntdll.dll, ZwOpenRegistryTransaction, _ZwOpenRegistryTransaction@12
+; implib ntdll.dll, ZwOpenResourceManager, _ZwOpenResourceManager@20
+; implib ntdll.dll, ZwOpenSection, _ZwOpenSection@12
+; implib ntdll.dll, ZwOpenSemaphore, _ZwOpenSemaphore@12
+; implib ntdll.dll, ZwOpenSession, _ZwOpenSession@12
+; implib ntdll.dll, ZwOpenSymbolicLinkObject, _ZwOpenSymbolicLinkObject@12
+; implib ntdll.dll, ZwOpenThread, _ZwOpenThread@16
+; implib ntdll.dll, ZwOpenThreadToken, _ZwOpenThreadToken@16
+; implib ntdll.dll, ZwOpenThreadTokenEx, _ZwOpenThreadTokenEx@20
+; implib ntdll.dll, ZwOpenTimer, _ZwOpenTimer@12
+; implib ntdll.dll, ZwOpenTransaction, _ZwOpenTransaction@20
+; implib ntdll.dll, ZwOpenTransactionManager, _ZwOpenTransactionManager@24
+; implib ntdll.dll, ZwPlugPlayControl, _ZwPlugPlayControl@12
+; implib ntdll.dll, ZwPowerInformation, _ZwPowerInformation@20
+; implib ntdll.dll, ZwPrePrepareComplete, _ZwPrePrepareComplete@8
 ; implib ntdll.dll, ZwPrePrepareEnlistment
 ; implib ntdll.dll, ZwPrepareComplete
 ; implib ntdll.dll, ZwPrepareEnlistment
@@ -421,63 +421,63 @@ include '..\implib.inc'
 ; implib ntdll.dll, ZwRollbackEnlistment
 ; implib ntdll.dll, ZwRollbackRegistryTransaction
 ; implib ntdll.dll, ZwRollbackTransaction
-; implib ntdll.dll, ZwRollforwardTransactionManager
-; implib ntdll.dll, ZwSaveKey
-; implib ntdll.dll, ZwSaveKeyEx
-; implib ntdll.dll, ZwSaveMergedKeys
-; implib ntdll.dll, ZwSecureConnectPort
-; implib ntdll.dll, ZwSerializeBoot
-; implib ntdll.dll, ZwSetBootEntryOrder
-; implib ntdll.dll, ZwSetBootOptions
-; implib ntdll.dll, ZwSetCachedSigningLevel
-; implib ntdll.dll, ZwSetCachedSigningLevel2
-; implib ntdll.dll, ZwSetContextThread
+; implib ntdll.dll, ZwRollforwardTransactionManager, _ZwRollforwardTransactionManager@8
+; implib ntdll.dll, ZwSaveKey, _ZwSaveKey@8
+; implib ntdll.dll, ZwSaveKeyEx, _ZwSaveKeyEx@12
+; implib ntdll.dll, ZwSaveMergedKeys, _ZwSaveMergedKeys@12
+; implib ntdll.dll, ZwSecureConnectPort, _ZwSecureConnectPort@36
+; implib ntdll.dll, ZwSerializeBoot, _ZwSerializeBoot@0
+; implib ntdll.dll, ZwSetBootEntryOrder, _ZwSetBootEntryOrder@8
+; implib ntdll.dll, ZwSetBootOptions, _ZwSetBootOptions@8
+; implib ntdll.dll, ZwSetCachedSigningLevel, _ZwSetCachedSigningLevel@20
+; implib ntdll.dll, ZwSetCachedSigningLevel2, _ZwSetCachedSigningLevel2@24
+; implib ntdll.dll, ZwSetContextThread, _ZwSetContextThread@8
 ; implib ntdll.dll, ZwSetDebugFilterState, _ZwSetDebugFilterState@12
-; implib ntdll.dll, ZwSetDefaultHardErrorPort
-; implib ntdll.dll, ZwSetDefaultLocale
-; implib ntdll.dll, ZwSetDefaultUILanguage
-; implib ntdll.dll, ZwSetDriverEntryOrder
-; implib ntdll.dll, ZwSetEaFile
-; implib ntdll.dll, ZwSetEvent
-; implib ntdll.dll, ZwSetEventBoostPriority
-; implib ntdll.dll, ZwSetHighEventPair
-; implib ntdll.dll, ZwSetHighWaitLowEventPair
-; implib ntdll.dll, ZwSetIRTimer
-; implib ntdll.dll, ZwSetInformationDebugObject
-; implib ntdll.dll, ZwSetInformationEnlistment
-; implib ntdll.dll, ZwSetInformationFile
-; implib ntdll.dll, ZwSetInformationJobObject
-; implib ntdll.dll, ZwSetInformationKey
-; implib ntdll.dll, ZwSetInformationObject
-; implib ntdll.dll, ZwSetInformationProcess
-; implib ntdll.dll, ZwSetInformationResourceManager
-; implib ntdll.dll, ZwSetInformationSymbolicLink
-; implib ntdll.dll, ZwSetInformationThread
-; implib ntdll.dll, ZwSetInformationToken
-; implib ntdll.dll, ZwSetInformationTransaction
-; implib ntdll.dll, ZwSetInformationTransactionManager
-; implib ntdll.dll, ZwSetInformationVirtualMemory
-; implib ntdll.dll, ZwSetInformationWorkerFactory
-; implib ntdll.dll, ZwSetIntervalProfile
-; implib ntdll.dll, ZwSetIoCompletion
-; implib ntdll.dll, ZwSetIoCompletionEx
-; implib ntdll.dll, ZwSetLdtEntries
-; implib ntdll.dll, ZwSetLowEventPair
-; implib ntdll.dll, ZwSetLowWaitHighEventPair
-; implib ntdll.dll, ZwSetQuotaInformationFile
-; implib ntdll.dll, ZwSetSecurityObject
-; implib ntdll.dll, ZwSetSystemEnvironmentValue
-; implib ntdll.dll, ZwSetSystemEnvironmentValueEx
-; implib ntdll.dll, ZwSetSystemInformation
-; implib ntdll.dll, ZwSetSystemPowerState
-; implib ntdll.dll, ZwSetSystemTime
-; implib ntdll.dll, ZwSetThreadExecutionState
-; implib ntdll.dll, ZwSetTimer
-; implib ntdll.dll, ZwSetTimer2
-; implib ntdll.dll, ZwSetTimerEx
-; implib ntdll.dll, ZwSetTimerResolution
-; implib ntdll.dll, ZwSetUuidSeed
-; implib ntdll.dll, ZwSetValueKey
+; implib ntdll.dll, ZwSetDefaultHardErrorPort, _ZwSetDefaultHardErrorPort@4
+; implib ntdll.dll, ZwSetDefaultLocale, _ZwSetDefaultLocale@8
+; implib ntdll.dll, ZwSetDefaultUILanguage, _ZwSetDefaultUILanguage@4
+; implib ntdll.dll, ZwSetDriverEntryOrder, _ZwSetDriverEntryOrder@8
+; implib ntdll.dll, ZwSetEaFile, _ZwSetEaFile@16
+; implib ntdll.dll, ZwSetEvent, _ZwSetEvent@8
+; implib ntdll.dll, ZwSetEventBoostPriority, _ZwSetEventBoostPriority@4
+; implib ntdll.dll, ZwSetHighEventPair, _ZwSetHighEventPair@4
+; implib ntdll.dll, ZwSetHighWaitLowEventPair, _ZwSetHighWaitLowEventPair@4
+; implib ntdll.dll, ZwSetIRTimer, _ZwSetIRTimer@8
+; implib ntdll.dll, ZwSetInformationDebugObject, _ZwSetInformationDebugObject@20
+; implib ntdll.dll, ZwSetInformationEnlistment, _ZwSetInformationEnlistment@16
+; implib ntdll.dll, ZwSetInformationFile, _ZwSetInformationFile@20
+; implib ntdll.dll, ZwSetInformationJobObject, _ZwSetInformationJobObject@16
+; implib ntdll.dll, ZwSetInformationKey, _ZwSetInformationKey@16
+; implib ntdll.dll, ZwSetInformationObject, _ZwSetInformationObject@16
+; implib ntdll.dll, ZwSetInformationProcess, _ZwSetInformationProcess@16
+; implib ntdll.dll, ZwSetInformationResourceManager, _ZwSetInformationResourceManager@16
+; implib ntdll.dll, ZwSetInformationSymbolicLink, _ZwSetInformationSymbolicLink@16
+; implib ntdll.dll, ZwSetInformationThread, _ZwSetInformationThread@16
+; implib ntdll.dll, ZwSetInformationToken, _ZwSetInformationToken@16
+; implib ntdll.dll, ZwSetInformationTransaction, _ZwSetInformationTransaction@16
+; implib ntdll.dll, ZwSetInformationTransactionManager, _ZwSetInformationTransactionManager@16
+; implib ntdll.dll, ZwSetInformationVirtualMemory, _ZwSetInformationVirtualMemory@24
+; implib ntdll.dll, ZwSetInformationWorkerFactory, _ZwSetInformationWorkerFactory@16
+; implib ntdll.dll, ZwSetIntervalProfile, _ZwSetIntervalProfile@8
+; implib ntdll.dll, ZwSetIoCompletion, _ZwSetIoCompletion@20
+; implib ntdll.dll, ZwSetIoCompletionEx, _ZwSetIoCompletionEx@24
+; implib ntdll.dll, ZwSetLdtEntries, _ZwSetLdtEntries@24
+; implib ntdll.dll, ZwSetLowEventPair, _ZwSetLowEventPair@4
+; implib ntdll.dll, ZwSetLowWaitHighEventPair, _ZwSetLowWaitHighEventPair@4
+; implib ntdll.dll, ZwSetQuotaInformationFile, _ZwSetQuotaInformationFile@16
+; implib ntdll.dll, ZwSetSecurityObject, _ZwSetSecurityObject@12
+; implib ntdll.dll, ZwSetSystemEnvironmentValue, _ZwSetSystemEnvironmentValue@8
+; implib ntdll.dll, ZwSetSystemEnvironmentValueEx, _ZwSetSystemEnvironmentValueEx@20
+; implib ntdll.dll, ZwSetSystemInformation, _ZwSetSystemInformation@12
+; implib ntdll.dll, ZwSetSystemPowerState, _ZwSetSystemPowerState@12
+; implib ntdll.dll, ZwSetSystemTime, _ZwSetSystemTime@8
+; implib ntdll.dll, ZwSetThreadExecutionState, _ZwSetThreadExecutionState@8
+; implib ntdll.dll, ZwSetTimer, _ZwSetTimer@28
+; implib ntdll.dll, ZwSetTimer2, _ZwSetTimer2@16
+; implib ntdll.dll, ZwSetTimerEx, _ZwSetTimerEx@16
+; implib ntdll.dll, ZwSetTimerResolution, _ZwSetTimerResolution@12
+; implib ntdll.dll, ZwSetUuidSeed, _ZwSetUuidSeed@4
+; implib ntdll.dll, ZwSetValueKey, _ZwSetValueKey@24
 ; implib ntdll.dll, ZwSetVolumeInformationFile, _ZwSetVolumeInformationFile@20
 ; implib ntdll.dll, ZwSetWnfProcessNotificationEvent, _ZwSetWnfProcessNotificationEvent@4
 ; implib ntdll.dll, ZwShutdownSystem, _ZwShutdownSystem@4
@@ -933,76 +933,76 @@ implib ntdll.dll, NtGetNotificationResourceManager, _NtGetNotificationResourceMa
 implib ntdll.dll, NtGetTickCount, _NtGetTickCount@0
 implib ntdll.dll, NtGetWriteWatch, _NtGetWriteWatch@28
 implib ntdll.dll, NtImpersonateAnonymousToken, _NtImpersonateAnonymousToken@4
-implib ntdll.dll, NtImpersonateClientOfPort
-implib ntdll.dll, NtImpersonateThread
+implib ntdll.dll, NtImpersonateClientOfPort, _NtImpersonateClientOfPort@8
+implib ntdll.dll, NtImpersonateThread, _NtImpersonateThread@12
 ; implib ntdll.dll, NtInitializeEnclave, _NtInitializeEnclave@20 ; NtInitializeEnclave is an alias for LdrInitializeEnclave
-implib ntdll.dll, NtInitializeNlsFiles
-implib ntdll.dll, NtInitializeRegistry
-implib ntdll.dll, NtInitiatePowerAction
-implib ntdll.dll, NtIsProcessInJob
-implib ntdll.dll, NtIsSystemResumeAutomatic
-implib ntdll.dll, NtIsUILanguageComitted
-implib ntdll.dll, NtListenPort
-implib ntdll.dll, NtLoadDriver
-implib ntdll.dll, NtLoadEnclaveData
-implib ntdll.dll, NtLoadKey
-implib ntdll.dll, NtLoadKey2
-implib ntdll.dll, NtLoadKey3
-implib ntdll.dll, NtLoadKeyEx
-implib ntdll.dll, NtLockFile
-implib ntdll.dll, NtLockProductActivationKeys
-implib ntdll.dll, NtLockRegistryKey
-implib ntdll.dll, NtLockVirtualMemory
-implib ntdll.dll, NtMakePermanentObject
-implib ntdll.dll, NtMakeTemporaryObject
-implib ntdll.dll, NtManageHotPatch
-implib ntdll.dll, NtManagePartition
-implib ntdll.dll, NtMapCMFModule
-implib ntdll.dll, NtMapUserPhysicalPages
-implib ntdll.dll, NtMapUserPhysicalPagesScatter
-implib ntdll.dll, NtMapViewOfSection
-implib ntdll.dll, NtMapViewOfSectionEx
-implib ntdll.dll, NtModifyBootEntry
-implib ntdll.dll, NtModifyDriverEntry
-implib ntdll.dll, NtNotifyChangeDirectoryFile
-implib ntdll.dll, NtNotifyChangeDirectoryFileEx
-implib ntdll.dll, NtNotifyChangeKey
-implib ntdll.dll, NtNotifyChangeMultipleKeys
-implib ntdll.dll, NtNotifyChangeSession
-implib ntdll.dll, NtOpenDirectoryObject
-implib ntdll.dll, NtOpenEnlistment
-implib ntdll.dll, NtOpenEvent
-implib ntdll.dll, NtOpenEventPair
-implib ntdll.dll, NtOpenFile
-implib ntdll.dll, NtOpenIoCompletion
-implib ntdll.dll, NtOpenJobObject
-implib ntdll.dll, NtOpenKey
-implib ntdll.dll, NtOpenKeyEx
-implib ntdll.dll, NtOpenKeyTransacted
-implib ntdll.dll, NtOpenKeyTransactedEx
-implib ntdll.dll, NtOpenKeyedEvent
-implib ntdll.dll, NtOpenMutant
-implib ntdll.dll, NtOpenObjectAuditAlarm
-implib ntdll.dll, NtOpenPartition
-implib ntdll.dll, NtOpenPrivateNamespace
-implib ntdll.dll, NtOpenProcess
-implib ntdll.dll, NtOpenProcessToken
-implib ntdll.dll, NtOpenProcessTokenEx
-implib ntdll.dll, NtOpenRegistryTransaction
-implib ntdll.dll, NtOpenResourceManager
-implib ntdll.dll, NtOpenSection
-implib ntdll.dll, NtOpenSemaphore
-implib ntdll.dll, NtOpenSession
-implib ntdll.dll, NtOpenSymbolicLinkObject
-implib ntdll.dll, NtOpenThread
-implib ntdll.dll, NtOpenThreadToken
-implib ntdll.dll, NtOpenThreadTokenEx
-implib ntdll.dll, NtOpenTimer
-implib ntdll.dll, NtOpenTransaction
-implib ntdll.dll, NtOpenTransactionManager
-implib ntdll.dll, NtPlugPlayControl
-implib ntdll.dll, NtPowerInformation
-implib ntdll.dll, NtPrePrepareComplete
+implib ntdll.dll, NtInitializeNlsFiles, _NtInitializeNlsFiles@12
+implib ntdll.dll, NtInitializeRegistry, _NtInitializeRegistry@4
+implib ntdll.dll, NtInitiatePowerAction, _NtInitiatePowerAction@16
+implib ntdll.dll, NtIsProcessInJob, _NtIsProcessInJob@8
+implib ntdll.dll, NtIsSystemResumeAutomatic, _NtIsSystemResumeAutomatic@0
+implib ntdll.dll, NtIsUILanguageComitted, _NtIsUILanguageComitted@0
+implib ntdll.dll, NtListenPort, _NtListenPort@8
+implib ntdll.dll, NtLoadDriver, _NtLoadDriver@4
+implib ntdll.dll, NtLoadEnclaveData, _NtLoadEnclaveData@36
+implib ntdll.dll, NtLoadKey, _NtLoadKey@8
+implib ntdll.dll, NtLoadKey2, _NtLoadKey2@12
+implib ntdll.dll, NtLoadKey3, _NtLoadKey3@32
+implib ntdll.dll, NtLoadKeyEx, _NtLoadKeyEx@32
+implib ntdll.dll, NtLockFile, _NtLockFile@40
+implib ntdll.dll, NtLockProductActivationKeys, _NtLockProductActivationKeys@8
+implib ntdll.dll, NtLockRegistryKey, _NtLockRegistryKey@4
+implib ntdll.dll, NtLockVirtualMemory, _NtLockVirtualMemory@16
+implib ntdll.dll, NtMakePermanentObject, _NtMakePermanentObject@4
+implib ntdll.dll, NtMakeTemporaryObject, _NtMakeTemporaryObject@4
+implib ntdll.dll, NtManageHotPatch, _NtManageHotPatch@16
+implib ntdll.dll, NtManagePartition, _NtManagePartition@20
+implib ntdll.dll, NtMapCMFModule, _NtMapCMFModule@24
+implib ntdll.dll, NtMapUserPhysicalPages, _NtMapUserPhysicalPages@12
+implib ntdll.dll, NtMapUserPhysicalPagesScatter, _NtMapUserPhysicalPagesScatter@12
+implib ntdll.dll, NtMapViewOfSection, _NtMapViewOfSection@40
+implib ntdll.dll, NtMapViewOfSectionEx, _NtMapViewOfSectionEx@36
+implib ntdll.dll, NtModifyBootEntry, _NtModifyBootEntry@4
+implib ntdll.dll, NtModifyDriverEntry, _NtModifyDriverEntry@4
+implib ntdll.dll, NtNotifyChangeDirectoryFile, _NtNotifyChangeDirectoryFile@36
+implib ntdll.dll, NtNotifyChangeDirectoryFileEx, _NtNotifyChangeDirectoryFileEx@40
+implib ntdll.dll, NtNotifyChangeKey, _NtNotifyChangeKey@40
+implib ntdll.dll, NtNotifyChangeMultipleKeys, _NtNotifyChangeMultipleKeys@48
+implib ntdll.dll, NtNotifyChangeSession, _NtNotifyChangeSession@32
+implib ntdll.dll, NtOpenDirectoryObject, _NtOpenDirectoryObject@12
+implib ntdll.dll, NtOpenEnlistment, _NtOpenEnlistment@20
+implib ntdll.dll, NtOpenEvent, _NtOpenEvent@12
+implib ntdll.dll, NtOpenEventPair, _NtOpenEventPair@12
+implib ntdll.dll, NtOpenFile, _NtOpenFile@24
+implib ntdll.dll, NtOpenIoCompletion, _NtOpenIoCompletion@12
+implib ntdll.dll, NtOpenJobObject, _NtOpenJobObject@12
+implib ntdll.dll, NtOpenKey, _NtOpenKey@12
+implib ntdll.dll, NtOpenKeyEx, _NtOpenKeyEx@16
+implib ntdll.dll, NtOpenKeyTransacted, _NtOpenKeyTransacted@16
+implib ntdll.dll, NtOpenKeyTransactedEx, _NtOpenKeyTransactedEx@20
+implib ntdll.dll, NtOpenKeyedEvent, _NtOpenKeyedEvent@12
+implib ntdll.dll, NtOpenMutant, _NtOpenMutant@12
+implib ntdll.dll, NtOpenObjectAuditAlarm, _NtOpenObjectAuditAlarm@48
+implib ntdll.dll, NtOpenPartition, _NtOpenPartition@12
+implib ntdll.dll, NtOpenPrivateNamespace, _NtOpenPrivateNamespace@16
+implib ntdll.dll, NtOpenProcess, _NtOpenProcess@16
+implib ntdll.dll, NtOpenProcessToken, _NtOpenProcessToken@12
+implib ntdll.dll, NtOpenProcessTokenEx, _NtOpenProcessTokenEx@16
+implib ntdll.dll, NtOpenRegistryTransaction, _NtOpenRegistryTransaction@12
+implib ntdll.dll, NtOpenResourceManager, _NtOpenResourceManager@20
+implib ntdll.dll, NtOpenSection, _NtOpenSection@12
+implib ntdll.dll, NtOpenSemaphore, _NtOpenSemaphore@12
+implib ntdll.dll, NtOpenSession, _NtOpenSession@12
+implib ntdll.dll, NtOpenSymbolicLinkObject, _NtOpenSymbolicLinkObject@12
+implib ntdll.dll, NtOpenThread, _NtOpenThread@16
+implib ntdll.dll, NtOpenThreadToken, _NtOpenThreadToken@16
+implib ntdll.dll, NtOpenThreadTokenEx, _NtOpenThreadTokenEx@20
+implib ntdll.dll, NtOpenTimer, _NtOpenTimer@12
+implib ntdll.dll, NtOpenTransaction, _NtOpenTransaction@20
+implib ntdll.dll, NtOpenTransactionManager, _NtOpenTransactionManager@24
+implib ntdll.dll, NtPlugPlayControl, _NtPlugPlayControl@12
+implib ntdll.dll, NtPowerInformation, _NtPowerInformation@20
+implib ntdll.dll, NtPrePrepareComplete, _NtPrePrepareComplete@8
 implib ntdll.dll, NtPrePrepareEnlistment
 implib ntdll.dll, NtPrepareComplete
 implib ntdll.dll, NtPrepareEnlistment
@@ -1114,63 +1114,63 @@ implib ntdll.dll, NtRollbackComplete
 implib ntdll.dll, NtRollbackEnlistment
 implib ntdll.dll, NtRollbackRegistryTransaction
 implib ntdll.dll, NtRollbackTransaction
-implib ntdll.dll, NtRollforwardTransactionManager
-implib ntdll.dll, NtSaveKey
-implib ntdll.dll, NtSaveKeyEx
-implib ntdll.dll, NtSaveMergedKeys
-implib ntdll.dll, NtSecureConnectPort
-implib ntdll.dll, NtSerializeBoot
-implib ntdll.dll, NtSetBootEntryOrder
-implib ntdll.dll, NtSetBootOptions
-implib ntdll.dll, NtSetCachedSigningLevel
-implib ntdll.dll, NtSetCachedSigningLevel2
-implib ntdll.dll, NtSetContextThread
-implib ntdll.dll, NtSetDebugFilterState
-implib ntdll.dll, NtSetDefaultHardErrorPort
-implib ntdll.dll, NtSetDefaultLocale
-implib ntdll.dll, NtSetDefaultUILanguage
-implib ntdll.dll, NtSetDriverEntryOrder
-implib ntdll.dll, NtSetEaFile
-implib ntdll.dll, NtSetEvent
-implib ntdll.dll, NtSetEventBoostPriority
-implib ntdll.dll, NtSetHighEventPair
-implib ntdll.dll, NtSetHighWaitLowEventPair
-implib ntdll.dll, NtSetIRTimer
-implib ntdll.dll, NtSetInformationDebugObject
-implib ntdll.dll, NtSetInformationEnlistment
-implib ntdll.dll, NtSetInformationFile
-implib ntdll.dll, NtSetInformationJobObject
-implib ntdll.dll, NtSetInformationKey
-implib ntdll.dll, NtSetInformationObject
-implib ntdll.dll, NtSetInformationProcess
-implib ntdll.dll, NtSetInformationResourceManager
-implib ntdll.dll, NtSetInformationSymbolicLink
-implib ntdll.dll, NtSetInformationThread
-implib ntdll.dll, NtSetInformationToken
-implib ntdll.dll, NtSetInformationTransaction
-implib ntdll.dll, NtSetInformationTransactionManager
-implib ntdll.dll, NtSetInformationVirtualMemory
-implib ntdll.dll, NtSetInformationWorkerFactory
-implib ntdll.dll, NtSetIntervalProfile
-implib ntdll.dll, NtSetIoCompletion
-implib ntdll.dll, NtSetIoCompletionEx
-implib ntdll.dll, NtSetLdtEntries
-implib ntdll.dll, NtSetLowEventPair
-implib ntdll.dll, NtSetLowWaitHighEventPair
-implib ntdll.dll, NtSetQuotaInformationFile
-implib ntdll.dll, NtSetSecurityObject
-implib ntdll.dll, NtSetSystemEnvironmentValue
-implib ntdll.dll, NtSetSystemEnvironmentValueEx
-implib ntdll.dll, NtSetSystemInformation
-implib ntdll.dll, NtSetSystemPowerState
-implib ntdll.dll, NtSetSystemTime
-implib ntdll.dll, NtSetThreadExecutionState
-implib ntdll.dll, NtSetTimer
-implib ntdll.dll, NtSetTimer2
-implib ntdll.dll, NtSetTimerEx
-implib ntdll.dll, NtSetTimerResolution
-implib ntdll.dll, NtSetUuidSeed
-implib ntdll.dll, NtSetValueKey
+implib ntdll.dll, NtRollforwardTransactionManager, _NtRollforwardTransactionManager@8
+implib ntdll.dll, NtSaveKey, _NtSaveKey@8
+implib ntdll.dll, NtSaveKeyEx, _NtSaveKeyEx@12
+implib ntdll.dll, NtSaveMergedKeys, _NtSaveMergedKeys@12
+implib ntdll.dll, NtSecureConnectPort, _NtSecureConnectPort@36
+implib ntdll.dll, NtSerializeBoot, _NtSerializeBoot@0
+implib ntdll.dll, NtSetBootEntryOrder, _NtSetBootEntryOrder@8
+implib ntdll.dll, NtSetBootOptions, _NtSetBootOptions@8
+implib ntdll.dll, NtSetCachedSigningLevel, _NtSetCachedSigningLevel@20
+implib ntdll.dll, NtSetCachedSigningLevel2, _NtSetCachedSigningLevel2@24
+implib ntdll.dll, NtSetContextThread, _NtSetContextThread@8
+implib ntdll.dll, NtSetDebugFilterState, _NtSetDebugFilterState@12
+implib ntdll.dll, NtSetDefaultHardErrorPort, _NtSetDefaultHardErrorPort@4
+implib ntdll.dll, NtSetDefaultLocale, _NtSetDefaultLocale@8
+implib ntdll.dll, NtSetDefaultUILanguage, _NtSetDefaultUILanguage@4
+implib ntdll.dll, NtSetDriverEntryOrder, _NtSetDriverEntryOrder@8
+implib ntdll.dll, NtSetEaFile, _NtSetEaFile@16
+implib ntdll.dll, NtSetEvent, _NtSetEvent@8
+implib ntdll.dll, NtSetEventBoostPriority, _NtSetEventBoostPriority@4
+implib ntdll.dll, NtSetHighEventPair, _NtSetHighEventPair@4
+implib ntdll.dll, NtSetHighWaitLowEventPair, _NtSetHighWaitLowEventPair@4
+implib ntdll.dll, NtSetIRTimer, _NtSetIRTimer@8
+implib ntdll.dll, NtSetInformationDebugObject, _NtSetInformationDebugObject@20
+implib ntdll.dll, NtSetInformationEnlistment, _NtSetInformationEnlistment@16
+implib ntdll.dll, NtSetInformationFile, _NtSetInformationFile@20
+implib ntdll.dll, NtSetInformationJobObject, _NtSetInformationJobObject@16
+implib ntdll.dll, NtSetInformationKey, _NtSetInformationKey@16
+implib ntdll.dll, NtSetInformationObject, _NtSetInformationObject@16
+implib ntdll.dll, NtSetInformationProcess, _NtSetInformationProcess@16
+implib ntdll.dll, NtSetInformationResourceManager, _NtSetInformationResourceManager@16
+implib ntdll.dll, NtSetInformationSymbolicLink, _NtSetInformationSymbolicLink@16
+implib ntdll.dll, NtSetInformationThread, _NtSetInformationThread@16
+implib ntdll.dll, NtSetInformationToken, _NtSetInformationToken@16
+implib ntdll.dll, NtSetInformationTransaction, _NtSetInformationTransaction@16
+implib ntdll.dll, NtSetInformationTransactionManager, _NtSetInformationTransactionManager@16
+implib ntdll.dll, NtSetInformationVirtualMemory, _NtSetInformationVirtualMemory@24
+implib ntdll.dll, NtSetInformationWorkerFactory, _NtSetInformationWorkerFactory@16
+implib ntdll.dll, NtSetIntervalProfile, _NtSetIntervalProfile@8
+implib ntdll.dll, NtSetIoCompletion, _NtSetIoCompletion@20
+implib ntdll.dll, NtSetIoCompletionEx, _NtSetIoCompletionEx@24
+implib ntdll.dll, NtSetLdtEntries, _NtSetLdtEntries@24
+implib ntdll.dll, NtSetLowEventPair, _NtSetLowEventPair@4
+implib ntdll.dll, NtSetLowWaitHighEventPair, _NtSetLowWaitHighEventPair@4
+implib ntdll.dll, NtSetQuotaInformationFile, _NtSetQuotaInformationFile@16
+implib ntdll.dll, NtSetSecurityObject, _NtSetSecurityObject@12
+implib ntdll.dll, NtSetSystemEnvironmentValue, _NtSetSystemEnvironmentValue@8
+implib ntdll.dll, NtSetSystemEnvironmentValueEx, _NtSetSystemEnvironmentValueEx@20
+implib ntdll.dll, NtSetSystemInformation, _NtSetSystemInformation@12
+implib ntdll.dll, NtSetSystemPowerState, _NtSetSystemPowerState@12
+implib ntdll.dll, NtSetSystemTime, _NtSetSystemTime@8
+implib ntdll.dll, NtSetThreadExecutionState, _NtSetThreadExecutionState@8
+implib ntdll.dll, NtSetTimer, _NtSetTimer@28
+implib ntdll.dll, NtSetTimer2, _NtSetTimer2@16
+implib ntdll.dll, NtSetTimerEx, _NtSetTimerEx@16
+implib ntdll.dll, NtSetTimerResolution, _NtSetTimerResolution@12
+implib ntdll.dll, NtSetUuidSeed, _NtSetUuidSeed@4
+implib ntdll.dll, NtSetValueKey, _NtSetValueKey@24
 implib ntdll.dll, NtSetVolumeInformationFile, _NtSetVolumeInformationFile@20
 implib ntdll.dll, NtSetWnfProcessNotificationEvent, _NtSetWnfProcessNotificationEvent@4
 implib ntdll.dll, NtShutdownSystem, _NtShutdownSystem@4
