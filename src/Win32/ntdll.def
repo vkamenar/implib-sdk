@@ -565,6 +565,11 @@ include '..\implib.inc'
 ; *** Ordinal-only functions available from v6.1 to v6.3
 ; implib ntdll.dll, ord.2, _AitFireParentUsageEvent@16
 ; implib ntdll.dll, ord.1, _AitLogFeatureUsageByApp@4
+; implib ntdll.dll, ord.5, _SbtDisableForCurrentProcess@0
+; implib ntdll.dll, ord.6, _SbtLogDllMapping@8
+; implib ntdll.dll, ord.7, _SbtLogExeInitializing@0
+; implib ntdll.dll, ord.3, _SbtLogSystemUsageByParent@32
+; implib ntdll.dll, ord.4, _SbtLogSystemUsageByStack@28
 
 ; *** Functions available from v3.10 to v4.0
 ; implib ntdll.dll, CsrAllocateCapturePointer, _CsrAllocateCapturePointer@12
@@ -573,6 +578,30 @@ include '..\implib.inc'
 ; implib ntdll.dll, RtlFindLongestRunSet, _RtlFindLongestRunSet@8
 ; implib ntdll.dll, ZwSetHighWaitLowThread, _ZwSetHighWaitLowThread@0
 ; implib ntdll.dll, ZwSetLowWaitHighThread, _ZwSetLowWaitHighThread@0
+
+; *** Functions available in v3.10 only
+; implib ntdll.dll, CsrDumpProfile, _CsrDumpProfile@0
+; implib ntdll.dll, CsrStartProfile, _CsrStartProfile@0
+; implib ntdll.dll, CsrStopDumpProfile, _CsrStopDumpProfile@0
+; implib ntdll.dll, CsrStopProfile, _CsrStopProfile@0
+; implib ntdll.dll, NtInitializeVDM, _NtInitializeVDM@0
+; implib ntdll.dll, NtRenameValueKey, _NtRenameValueKey@16
+; implib ntdll.dll, NtVdmStartExecution, _NtVdmStartExecution@0
+; implib ntdll.dll, RtlAnalyzeProfile, _RtlAnalyzeProfile@0
+; implib ntdll.dll, RtlGetHandleValueHeap, _RtlGetHandleValueHeap@12
+; implib ntdll.dll, RtlGetHeapUserValue, _RtlGetHeapUserValue@4
+; implib ntdll.dll, RtlInitializeProfile, _RtlInitializeProfile@4
+; implib ntdll.dll, RtlLookupSymbolByAddress, _RtlLookupSymbolByAddress@24
+; implib ntdll.dll, RtlLookupSymbolByName, _RtlLookupSymbolByName@16
+; implib ntdll.dll, RtlSetHandleValueHeap, _RtlSetHandleValueHeap@16
+; implib ntdll.dll, RtlSetHeapUserValue, _RtlSetHeapUserValue@8
+; implib ntdll.dll, RtlSnapshotHeap, _RtlSnapshotHeap@16
+; implib ntdll.dll, RtlStartProfile, _RtlStartProfile@0
+; implib ntdll.dll, RtlStopProfile, _RtlStopProfile@0
+; implib ntdll.dll, ZwInitializeVDM, _ZwInitializeVDM@0
+; implib ntdll.dll, ZwRenameValueKey, _ZwRenameValueKey@16
+; implib ntdll.dll, ZwVdmStartExecution, _ZwVdmStartExecution@0
+; implib ntdll.dll, xRtlDosPathNameToNtPathName, _xRtlDosPathNameToNtPathName@16
 
 implib ntdll.dll, A_SHAFinal, _A_SHAFinal@8
 implib ntdll.dll, A_SHAInit, _A_SHAInit@4
