@@ -4,7 +4,7 @@ include '..\implib.inc'
 ; They are available in specific apphelp versions only.
 ; Feel free to uncomment the necessary symbols and recompile the library.
 
-; *** Functions available from v6.2 to v6.3
+; *** Functions available from v6.2 (Windows 8) to v6.3 (Windows 8.1)
 ; implib apphelp.dll, ApphelpDebugPrintf, _ApphelpDebugPrintf ; This function uses the CDECL calling convention!
 ; implib apphelp.dll, ord.1, _DlCreate@12
 ; implib apphelp.dll, ord.3, _DlDebugPrintf ; This function uses the CDECL calling convention!
@@ -29,17 +29,17 @@ include '..\implib.inc'
 ; implib apphelp.dll, DlSnapshot, _DlSnapshot@16
 ; implib apphelp.dll, ord.18, _DlVPrintf@12
 
-; *** Functions available in v6.2 only
+; *** Functions available in v6.2 only (Windows 8)
 ; implib apphelp.dll, ord.26, _SdbGetAppCompatData@12
 ; implib apphelp.dll, ord.28, _SdbGetPermLayerPath@12
 
-; *** Function available in v5.2 only
+; *** Function available in v5.2 only (Windows Server 2003)
 ; implib apphelp.dll, ApphelpReleaseExe, _ApphelpReleaseExe@4
 
-; *** Function available from v5.1 to v5.2
+; *** Function available from v5.1 (Windows XP) to v5.2 (Windows Server 2003)
 ; implib apphelp.dll, ApphelpShowUI, _ApphelpShowUI@24
 
-; *** Functions available in v5.1 before Windows XP SP1
+; *** Functions available in v5.1 (Windows XP) before SP1
 ; implib apphelp.dll, DeleteAppcompatModeW
 ; implib apphelp.dll, PersistAppcompatModeW
 
