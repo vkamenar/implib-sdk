@@ -571,6 +571,133 @@ include '..\implib.inc'
 ; implib ntdll.dll, ord.3, _SbtLogSystemUsageByParent@32
 ; implib ntdll.dll, ord.4, _SbtLogSystemUsageByStack@28
 
+; *** Function available from v3.10 to v6.0 before SP1
+; implib ntdll.dll, CsrNewThread, _CsrNewThread@0
+
+; *** Functions available from v3.10 to v5.2
+; implib ntdll.dll, CsrProbeForRead, _CsrProbeForRead@12
+; implib ntdll.dll, CsrProbeForWrite, _CsrProbeForWrite@12
+
+; *** Functions available from v3.10 to v5.0
+; implib ntdll.dll, DbgSsHandleKmApiMsg, _DbgSsHandleKmApiMsg@8
+; implib ntdll.dll, DbgSsInitialize, _DbgSsInitialize@16
+
+; *** The floating point emulator available from v3.10 to v5.0, v5.1 before SP2 and v5.2 before SP1
+; implib ntdll.dll, NPXEMULATORTABLE ; This entry is not a function, but a DATA symbol
+; implib ntdll.dll, RestoreEm87Context
+; implib ntdll.dll, SaveEm87Context
+; implib ntdll.dll, __eCommonExceptions
+; implib ntdll.dll, __eEmulatorInit ; __eEmulatorInit is an alias for __eFINIT
+; implib ntdll.dll, __eF2XM1
+; implib ntdll.dll, __eFABS
+; implib ntdll.dll, __eFADD32
+; implib ntdll.dll, __eFADD64
+; implib ntdll.dll, __eFADDPreg
+; implib ntdll.dll, __eFADDreg
+; implib ntdll.dll, __eFADDtop
+; implib ntdll.dll, __eFCHS
+; implib ntdll.dll, __eFCOM
+; implib ntdll.dll, __eFCOM32
+; implib ntdll.dll, __eFCOM64
+; implib ntdll.dll, __eFCOMP
+; implib ntdll.dll, __eFCOMP32
+; implib ntdll.dll, __eFCOMP64
+; implib ntdll.dll, __eFCOMPP
+; implib ntdll.dll, __eFCOS
+; implib ntdll.dll, __eFDECSTP
+; implib ntdll.dll, __eFDIV32
+; implib ntdll.dll, __eFDIV64
+; implib ntdll.dll, __eFDIVPreg
+; implib ntdll.dll, __eFDIVR32
+; implib ntdll.dll, __eFDIVR64
+; implib ntdll.dll, __eFDIVRPreg
+; implib ntdll.dll, __eFDIVRreg
+; implib ntdll.dll, __eFDIVRtop
+; implib ntdll.dll, __eFDIVreg
+; implib ntdll.dll, __eFDIVtop
+; implib ntdll.dll, __eFFREE
+; implib ntdll.dll, __eFIADD16
+; implib ntdll.dll, __eFIADD32
+; implib ntdll.dll, __eFICOM16
+; implib ntdll.dll, __eFICOM32
+; implib ntdll.dll, __eFICOMP16
+; implib ntdll.dll, __eFICOMP32
+; implib ntdll.dll, __eFIDIV16
+; implib ntdll.dll, __eFIDIV32
+; implib ntdll.dll, __eFIDIVR16
+; implib ntdll.dll, __eFIDIVR32
+; implib ntdll.dll, __eFILD16
+; implib ntdll.dll, __eFILD32
+; implib ntdll.dll, __eFILD64
+; implib ntdll.dll, __eFIMUL16
+; implib ntdll.dll, __eFIMUL32
+; implib ntdll.dll, __eFINCSTP
+; implib ntdll.dll, __eFINIT
+; implib ntdll.dll, __eFIST16
+; implib ntdll.dll, __eFIST32
+; implib ntdll.dll, __eFISTP16
+; implib ntdll.dll, __eFISTP32
+; implib ntdll.dll, __eFISTP64
+; implib ntdll.dll, __eFISUB16
+; implib ntdll.dll, __eFISUB32
+; implib ntdll.dll, __eFISUBR16
+; implib ntdll.dll, __eFISUBR32
+; implib ntdll.dll, __eFLD1
+; implib ntdll.dll, __eFLD32
+; implib ntdll.dll, __eFLD64
+; implib ntdll.dll, __eFLD80
+; implib ntdll.dll, __eFLDCW
+; implib ntdll.dll, __eFLDENV
+; implib ntdll.dll, __eFLDL2E
+; implib ntdll.dll, __eFLDLN2
+; implib ntdll.dll, __eFLDPI
+; implib ntdll.dll, __eFLDZ
+; implib ntdll.dll, __eFMUL32
+; implib ntdll.dll, __eFMUL64
+; implib ntdll.dll, __eFMULPreg
+; implib ntdll.dll, __eFMULreg
+; implib ntdll.dll, __eFMULtop
+; implib ntdll.dll, __eFPATAN
+; implib ntdll.dll, __eFPREM
+; implib ntdll.dll, __eFPREM1
+; implib ntdll.dll, __eFPTAN
+; implib ntdll.dll, __eFRNDINT
+; implib ntdll.dll, __eFRSTOR
+; implib ntdll.dll, __eFSAVE
+; implib ntdll.dll, __eFSCALE
+; implib ntdll.dll, __eFSIN
+; implib ntdll.dll, __eFSQRT
+; implib ntdll.dll, __eFST
+; implib ntdll.dll, __eFST32
+; implib ntdll.dll, __eFST64
+; implib ntdll.dll, __eFSTCW
+; implib ntdll.dll, __eFSTENV
+; implib ntdll.dll, __eFSTP
+; implib ntdll.dll, __eFSTP32
+; implib ntdll.dll, __eFSTP64
+; implib ntdll.dll, __eFSTP80
+; implib ntdll.dll, __eFSTSW
+; implib ntdll.dll, __eFSUB32
+; implib ntdll.dll, __eFSUB64
+; implib ntdll.dll, __eFSUBPreg
+; implib ntdll.dll, __eFSUBR32
+; implib ntdll.dll, __eFSUBR64
+; implib ntdll.dll, __eFSUBRPreg
+; implib ntdll.dll, __eFSUBRreg
+; implib ntdll.dll, __eFSUBRtop
+; implib ntdll.dll, __eFSUBreg
+; implib ntdll.dll, __eFSUBtop
+; implib ntdll.dll, __eFTST
+; implib ntdll.dll, __eFUCOM
+; implib ntdll.dll, __eFUCOMP
+; implib ntdll.dll, __eFUCOMPP
+; implib ntdll.dll, __eFXAM
+; implib ntdll.dll, __eFXCH
+; implib ntdll.dll, __eFXTRACT
+; implib ntdll.dll, __eFYL2X
+; implib ntdll.dll, __eFYL2XP1
+; implib ntdll.dll, __eGetStatusWord
+
 ; *** Functions available from v3.10 to v4.0
 ; implib ntdll.dll, CsrAllocateCapturePointer, _CsrAllocateCapturePointer@12
 ; implib ntdll.dll, NtSetHighWaitLowThread, _NtSetHighWaitLowThread@0
@@ -578,6 +705,17 @@ include '..\implib.inc'
 ; implib ntdll.dll, RtlFindLongestRunSet, _RtlFindLongestRunSet@8
 ; implib ntdll.dll, ZwSetHighWaitLowThread, _ZwSetHighWaitLowThread@0
 ; implib ntdll.dll, ZwSetLowWaitHighThread, _ZwSetLowWaitHighThread@0
+
+; *** Functions available from v3.10 to v3.51
+; implib ntdll.dll, CsrClientMaxMessage, _CsrClientMaxMessage@0
+; implib ntdll.dll, CsrClientSendMessage, _CsrClientSendMessage@0
+; implib ntdll.dll, CsrClientThreadConnect, _CsrClientThreadConnect@0
+; implib ntdll.dll, CsrpProcessCallbackRequest, _CsrpProcessCallbackRequest@4
+; implib ntdll.dll, NtReleaseProcessMutant, _NtReleaseProcessMutant@0
+; implib ntdll.dll, NtWaitForProcessMutant, _NtWaitForProcessMutant@0
+; implib ntdll.dll, RtlpInitializeRtl, _RtlpInitializeRtl@12
+; implib ntdll.dll, ZwReleaseProcessMutant, _ZwReleaseProcessMutant@0
+; implib ntdll.dll, ZwWaitForProcessMutant, _ZwWaitForProcessMutant@0
 
 ; *** Functions available in v3.10 only
 ; implib ntdll.dll, CsrDumpProfile, _CsrDumpProfile@0
