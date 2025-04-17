@@ -4,10 +4,10 @@ include '..\implib.inc'
 ; They are either stubs or available in specific kernel32 versions only.
 ; Feel free to uncomment the necessary symbols and recompile the library.
 
-; *** Function available in v6.3 only
+; *** Function available in v6.3 only (Windows 8.1)
 ; implib KERNEL32.DLL, CalloutOnFiberStack, _CalloutOnFiberStack@12
 
-; *** Functions available in v6.2 only
+; *** Functions available in v6.2 only (Windows 8)
 ; implib KERNEL32.DLL, AcquireStateLock, _AcquireStateLock@12
 ; implib KERNEL32.DLL, AppContainerDeriveSidFromMoniker, _AppContainerDeriveSidFromMoniker@8
 ; implib KERNEL32.DLL, AppContainerFreeMemory, _AppContainerFreeMemory@4
@@ -70,11 +70,11 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, WriteStateAtomValue, _WriteStateAtomValue@20
 ; implib KERNEL32.DLL, WriteStateContainerValue, _WriteStateContainerValue@24
 
-; *** Functions available in v6.1 only
+; *** Functions available in v6.1 only (Windows 7 / Windows Server 2008 R2)
 ; implib KERNEL32.DLL, RegKrnGetGlobalState, _RegKrnGetGlobalState@0
 ; implib KERNEL32.DLL, RegKrnInitialize, _RegKrnInitialize@12
 
-; *** Functions available in v6.1 before Windows 7 SP1
+; *** Functions available in v6.1 (Windows 7) before SP1
 ; implib KERNEL32.DLL, CopyExtendedContext, _CopyExtendedContext@12
 ; implib KERNEL32.DLL, GetEnabledExtendedFeatures, _GetEnabledExtendedFeatures@8
 ; implib KERNEL32.DLL, GetExtendedContextLength, _GetExtendedContextLength@8
@@ -84,11 +84,11 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, LocateLegacyContext, _LocateLegacyContext@8
 ; implib KERNEL32.DLL, SetExtendedFeaturesMask, _SetExtendedFeaturesMask@12
 
-; *** Functions available in v6.1 from Windows 7 SP1 only
+; *** Functions available in v6.1 (Windows 7) from SP1 only
 ; implib KERNEL32.DLL, GetProcessUserModeExceptionPolicy, _GetProcessUserModeExceptionPolicy@4
 ; implib KERNEL32.DLL, SetProcessUserModeExceptionPolicy, _SetProcessUserModeExceptionPolicy@4
 
-; *** Stub functions available since v6.2
+; *** Stub functions available since v6.2 (Windows 8)
 ; implib KERNEL32.DLL, BaseCheckAppcompatCacheExWorker, _BaseCheckAppcompatCacheExWorker@32
 ; implib KERNEL32.DLL, BaseCheckAppcompatCacheWorker, _BaseCheckAppcompatCacheWorker@16
 ; implib KERNEL32.DLL, BaseCleanupAppcompatCacheSupportWorker, _BaseCleanupAppcompatCacheSupportWorker@4
@@ -108,45 +108,45 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, WerpNotifyUseStringResource, _WerpNotifyUseStringResource@4
 ; implib KERNEL32.DLL, WerpStringLookup, _WerpStringLookup@8
 
-; *** Stub function available since v5.2
+; *** Stub function available since v5.2 (Windows Server 2003)
 ; implib KERNEL32.DLL, BaseIsAppcompatInfrastructureDisabled, _BaseIsAppcompatInfrastructureDisabled@0
 
-; *** Functions available from v5.2 to v6.3
+; *** Functions available from v5.2 (Windows Server 2003) to v6.3 (Windows 8.1)
 ; implib KERNEL32.DLL, BaseCheckRunApp, _BaseCheckRunApp@56
 ; implib KERNEL32.DLL, BasepCheckBadapp, _BasepCheckBadapp@72
 
-; *** Function available from v5.2 to v6.1
+; *** Function available from v5.2 (Windows Server 2003) to v6.1 (Windows 7 / Windows Server 2008 R2)
 ; implib KERNEL32.DLL, IsTimeZoneRedirectionEnabled, _IsTimeZoneRedirectionEnabled@0
 
-; *** Function available from v5.1 to v6.1
+; *** Function available from v5.1 (Windows XP) to v6.1 (Windows 7 / Windows Server 2008 R2)
 ; implib KERNEL32.DLL, SetClientTimeZoneInformation, _SetClientTimeZoneInformation@4
 
-; *** Function available from v5.1 (WinXP SP1) to v6.0
+; *** Function available from v5.1 (Windows XP) SP1 to v6.0 (Windows Vista / Windows Server 2008)
 ; implib KERNEL32.DLL, GetCPFileNameFromRegistry, _GetCPFileNameFromRegistry@12
 
-; *** Functions available in v5.1 and v5.2
+; *** Functions available in v5.1 (Windows XP) and v5.2 (Windows Server 2003)
 ; implib KERNEL32.DLL, BaseProcessInitPostImport, _BaseProcessInitPostImport@0
 ; implib KERNEL32.DLL, CreateNlsSecurityDescriptor, _CreateNlsSecurityDescriptor@12
 ; implib KERNEL32.DLL, IsValidUILanguage, _IsValidUILanguage@4
 
-; *** Functions available in v5.1 only
+; *** Functions available in v5.1 only (Windows XP)
 ; implib KERNEL32.DLL, BaseCleanupAppcompatCache, _BaseCleanupAppcompatCache@0
 ; implib KERNEL32.DLL, BaseInitAppcompatCache, _BaseInitAppcompatCache@0
 ; implib KERNEL32.DLL, GetNumaAvailableMemory, _GetNumaAvailableMemory@12
 ; implib KERNEL32.DLL, GetNumaProcessorMap, _GetNumaProcessorMap@12
 ; implib KERNEL32.DLL, NumaVirtualQueryNode, _NumaVirtualQueryNode@16
 
-; *** Function available in v5.0 only
+; *** Function available in v5.0 only (Windows 2000)
 ; implib KERNEL32.DLL, BaseAttachCompleteThunk, _BaseAttachCompleteThunk@16
 
-; *** Stub functions available since v5.1
+; *** Stub functions available since v5.1 (Windows XP)
 ; implib KERNEL32.DLL, LZDone, _LZDone@0
 ; implib KERNEL32.DLL, LZStart, _LZStart@0
 
-; *** Function available from v5.0 to v6.0
+; *** Function available from v5.0 (Windows 2000) to v6.0 (Windows Vista / Windows Server 2008)
 ; implib KERNEL32.DLL, NlsConvertIntegerToString, _NlsConvertIntegerToString@20
 
-; *** Functions available from v5.0 to v5.2
+; *** Functions available from v5.0 (Windows 2000) to v5.2 (Windows Server 2003)
 ; implib KERNEL32.DLL, CreateVirtualBuffer, _CreateVirtualBuffer@12
 ; implib KERNEL32.DLL, ExtendVirtualBuffer, _ExtendVirtualBuffer@8
 ; implib KERNEL32.DLL, FreeVirtualBuffer, _FreeVirtualBuffer@4
@@ -166,13 +166,13 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, ValidateLocale, _ValidateLocale@4
 ; implib KERNEL32.DLL, VirtualBufferExceptionHandler, _VirtualBufferExceptionHandler@12
 
-; *** Function available in v5.0 (Win2000 SP4) and v5.1 (WinXP SP2)
+; *** Function available in v5.0 (Windows 2000) SP4 and v5.1 (Windows XP) SP2
 ; implib KERNEL32.DLL, CreateProcessInternalWSecure, _CreateProcessInternalWSecure@0
 
-; *** Function available in v4.90 only
+; *** Function available in v4.90 only (Windows Me)
 ; implib KERNEL32.DLL, GetModuleNameFromProc
 
-; *** Functions available from v4.0 to v4.90
+; *** Functions available from v4.0 (Windows 95 / Windows NT 4.0) to v4.90 (Windows Me)
 ; implib KERNEL32.DLL, AllocLSCallback, _AllocLSCallback@8
 ; implib KERNEL32.DLL, ord.38, _AllocMappedBuffer@0
 ; implib KERNEL32.DLL, AllocSLCallback, _AllocSLCallback@8
@@ -313,7 +313,7 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, ord.15, _k32wsprintfA ; This function uses the CDECL calling convention!
 ; implib KERNEL32.DLL, ord.16, _k32wvsprintfA ; This function uses the CDECL calling convention!
 
-; *** These functions, available from v4.0 to v4.90, manage the stack frame for the thunk code
+; *** These functions, available from v4.0 (Windows 95 / Windows NT 4.0) to v4.90 (Windows Me), manage the stack frame for the thunk code
 ; implib KERNEL32.DLL, FT_Exit0
 ; implib KERNEL32.DLL, FT_Exit4
 ; implib KERNEL32.DLL, FT_Exit8
@@ -333,7 +333,7 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, ord.89, _FT_PrologPrime@0
 ; implib KERNEL32.DLL, FT_Thunk
 
-; *** These functions, available from v4.0 to v4.90, manage the memory addresses mapping
+; *** These functions, available from v4.0 (Windows 95 / Windows NT 4.0) to v4.90 (Windows Me), manage the memory addresses mapping
 ;     when calling 16-bit code (16:16 format) from 32-bit code (0:32 protected mode)
 ; implib KERNEL32.DLL, SMapLS
 ; implib KERNEL32.DLL, SMapLS_IP_EBP_8
@@ -358,7 +358,7 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, UnMapLS, _UnMapLS@4
 ; implib KERNEL32.DLL, UnMapLSFixArray
 
-; *** Functions available from v4.10 to v4.90
+; *** Functions available from v4.10 (Windows 98) to v4.90 (Windows Me)
 ; implib KERNEL32.DLL, ord.120, _GetCryptApiExponentValue@0
 ; implib KERNEL32.DLL, K32_NtCreateFile, _K32_NtCreateFile@44
 ; implib KERNEL32.DLL, K32_RtlNtStatusToDosError, _K32_RtlNtStatusToDosError@4
@@ -386,10 +386,10 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, ord.112, _lstrstrA@8
 ; implib KERNEL32.DLL, ord.105, _lstrtolW@12
 
-; *** Stub function available since v4.0
+; *** Stub function available since v4.0 (Windows 95 / Windows NT 4.0)
 ; implib KERNEL32.DLL, UTUnRegister, _UTUnRegister@4
 
-; *** Function available from v3.51 to v5.1 (NT)
+; *** Function available from v3.51 (Windows NT 3.51) to v5.1 (Windows XP)
 ; implib KERNEL32.DLL, QueryWin31IniFilesMappedToRegistry, _QueryWin31IniFilesMappedToRegistry@16
 
 ; *** Functions available since v5.0 (currently stubs)
