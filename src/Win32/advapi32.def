@@ -4,16 +4,16 @@ include '..\implib.inc'
 ; They are available in specific advapi32 versions only.
 ; Feel free to uncomment the necessary symbols and recompile the library.
 
-; *** Functions available in v6.2 only
+; *** Functions available in v6.2 only (Windows 8)
 ; implib advapi32.dll, PsmActivateApplication, _PsmActivateApplication@12
 ; implib advapi32.dll, PsmAdjustActivationToken, _PsmAdjustActivationToken@24
 ; implib advapi32.dll, PsmQueryBackgroundActivationType, _PsmQueryBackgroundActivationType@8
 ; implib advapi32.dll, PsmRegisterApplicationProcess, _PsmRegisterApplicationProcess@8
 
-; *** Function available in v6.0 only
+; *** Function available in v6.0 only (Windows Vista / Windows Server 2008)
 ; implib advapi32.dll, CheckAppInitBlockedServiceIdentity, _CheckAppInitBlockedServiceIdentity@4
 
-; *** Functions available in v5.0 only
+; *** Functions available in v5.0 only (Windows 2000)
 ; implib advapi32.dll, GetMangledSiteSid, _GetMangledSiteSid@12
 ; implib advapi32.dll, GetSiteDirectoryA, _GetSiteDirectoryA@12
 ; implib advapi32.dll, GetSiteDirectoryW, _GetSiteDirectoryW@12
@@ -22,36 +22,36 @@ include '..\implib.inc'
 ; implib advapi32.dll, GetSiteSidFromUrl, _GetSiteSidFromUrl@4
 ; implib advapi32.dll, IsInSandbox, _IsInSandbox@0 ; IsInSandbox is an alias for IsProcessRestricted
 
-; *** Function available in v4.90 only
+; *** Function available in v4.90 only (Windows Me)
 ; implib advapi32.dll, CryptGetLocalKeyLimits, _CryptGetLocalKeyLimits@16
 
-; *** Functions available in v4.0 before Windows NT 4.0 SP4
-; implib advapi32.dll, BuildAccessRequestA
-; implib advapi32.dll, BuildAccessRequestW
-; implib advapi32.dll, DenyAccessRightsA
-; implib advapi32.dll, DenyAccessRightsW
-; implib advapi32.dll, GetAuditedPermissionsFromSDA
-; implib advapi32.dll, GetAuditedPermissionsFromSDW
-; implib advapi32.dll, GetEffectiveAccessRightsA
-; implib advapi32.dll, GetEffectiveAccessRightsW
+; *** Functions available in v4.0 (Windows NT 4.0) before SP4
+; implib advapi32.dll, BuildAccessRequestA, _BuildAccessRequestA@12
+; implib advapi32.dll, BuildAccessRequestW, _BuildAccessRequestW@12
+; implib advapi32.dll, DenyAccessRightsA, _DenyAccessRightsA@16
+; implib advapi32.dll, DenyAccessRightsW, _DenyAccessRightsW@16
+; implib advapi32.dll, GetAuditedPermissionsFromSDA, _GetAuditedPermissionsFromSDA@16
+; implib advapi32.dll, GetAuditedPermissionsFromSDW, _GetAuditedPermissionsFromSDW@16 ; Triggers STATUS_NOT_SUPPORTED
+; implib advapi32.dll, GetEffectiveAccessRightsA, _GetEffectiveAccessRightsA@16
+; implib advapi32.dll, GetEffectiveAccessRightsW, _GetEffectiveAccessRightsW@16
 ; implib advapi32.dll, GetEffectiveRightsFromSDA, _GetEffectiveRightsFromSDA@12
-; implib advapi32.dll, GetEffectiveRightsFromSDW, _GetEffectiveRightsFromSDW@12
-; implib advapi32.dll, GetExplicitAccessRightsA
-; implib advapi32.dll, GetExplicitAccessRightsW
+; implib advapi32.dll, GetEffectiveRightsFromSDW, _GetEffectiveRightsFromSDW@12 ; Triggers STATUS_NOT_SUPPORTED
+; implib advapi32.dll, GetExplicitAccessRightsA, _GetExplicitAccessRightsA@16
+; implib advapi32.dll, GetExplicitAccessRightsW, _GetExplicitAccessRightsW@16
 ; implib advapi32.dll, GrantAccessRightsA, _GrantAccessRightsA@16
 ; implib advapi32.dll, GrantAccessRightsW, _GrantAccessRightsW@16
 ; implib advapi32.dll, IsAccessPermittedA, _IsAccessPermittedA@20
 ; implib advapi32.dll, IsAccessPermittedW, _IsAccessPermittedW@20
 ; implib advapi32.dll, NTAccessMaskToProvAccessRights, _NTAccessMaskToProvAccessRights@12
-; implib advapi32.dll, ProvAccessRightsToNTAccessMask
-; implib advapi32.dll, ReplaceAllAccessRightsA
-; implib advapi32.dll, ReplaceAllAccessRightsW
+; implib advapi32.dll, ProvAccessRightsToNTAccessMask, _ProvAccessRightsToNTAccessMask@8
+; implib advapi32.dll, ReplaceAllAccessRightsA, _ReplaceAllAccessRightsA@16
+; implib advapi32.dll, ReplaceAllAccessRightsW, _ReplaceAllAccessRightsW@16
 ; implib advapi32.dll, RevokeExplicitAccessRightsA, _RevokeExplicitAccessRightsA@16
 ; implib advapi32.dll, RevokeExplicitAccessRightsW, _RevokeExplicitAccessRightsW@16
 ; implib advapi32.dll, SetAccessRightsA, _SetAccessRightsA@16
 ; implib advapi32.dll, SetAccessRightsW, _SetAccessRightsW@16
 
-; *** Function available from v4.0 to v4.90
+; *** Function available from v4.0 (Windows 95 / Windows NT 4.0) to v4.90 (Windows Me)
 ; implib advapi32.dll, RegRemapPreDefKey, _RegRemapPreDefKey@8
 
 implib advapi32.dll, A_SHAFinal, _A_SHAFinal@8
