@@ -562,7 +562,7 @@ include '..\implib.inc'
 ; implib ntdll.dll, _errno
 ; implib ntdll.dll, _fltused
 
-; *** Ordinal-only functions available from v6.1 to v6.3
+; *** Ordinal-only functions available from v6.1 (Windows 7 / Windows Server 2008 R2) to v6.3 (Windows 8.1)
 ; implib ntdll.dll, ord.2, _AitFireParentUsageEvent@16
 ; implib ntdll.dll, ord.1, _AitLogFeatureUsageByApp@4
 ; implib ntdll.dll, ord.5, _SbtDisableForCurrentProcess@0
@@ -571,18 +571,43 @@ include '..\implib.inc'
 ; implib ntdll.dll, ord.3, _SbtLogSystemUsageByParent@32
 ; implib ntdll.dll, ord.4, _SbtLogSystemUsageByStack@28
 
-; *** Function available from v3.10 to v6.0 before SP1
+; *** Function available from v3.10 (Windows NT 3.10) to v6.0 (Windows Vista / Windows Server 2008) before SP1
 ; implib ntdll.dll, CsrNewThread, _CsrNewThread@0
 
-; *** Functions available from v3.10 to v5.2
+; *** Functions available in v5.2 only (Windows Server 2003)
+; implib ntdll.dll, EtwControlTraceA, _EtwControlTraceA@20
+; implib ntdll.dll, EtwControlTraceW, _EtwControlTraceW@20
+; implib ntdll.dll, EtwEnableTrace, _EtwEnableTrace@24
+; implib ntdll.dll, EtwEnumerateTraceGuids, _EtwEnumerateTraceGuids@12
+; implib ntdll.dll, EtwFlushTraceA, _EtwFlushTraceA@16
+; implib ntdll.dll, EtwFlushTraceW, _EtwFlushTraceW@16
+; implib ntdll.dll, EtwNotificationRegistrationA, _EtwNotificationRegistrationA@20
+; implib ntdll.dll, EtwNotificationRegistrationW, _EtwNotificationRegistrationW@20
+; implib ntdll.dll, EtwQueryAllTracesA, _EtwQueryAllTracesA@12
+; implib ntdll.dll, EtwQueryAllTracesW, _EtwQueryAllTracesW@12
+; implib ntdll.dll, EtwQueryTraceA, _EtwQueryTraceA@16
+; implib ntdll.dll, EtwQueryTraceW, _EtwQueryTraceW@16
+; implib ntdll.dll, EtwReceiveNotificationsA, _EtwReceiveNotificationsA@16
+; implib ntdll.dll, EtwReceiveNotificationsW, _EtwReceiveNotificationsW@16
+; implib ntdll.dll, EtwStartTraceA, _EtwStartTraceA@12
+; implib ntdll.dll, EtwStartTraceW, _EtwStartTraceW@12
+; implib ntdll.dll, EtwStopTraceA, _EtwStopTraceA@16
+; implib ntdll.dll, EtwStopTraceW, _EtwStopTraceW@16
+; implib ntdll.dll, EtwTraceEvent, _EtwTraceEvent@12
+; implib ntdll.dll, EtwUpdateTraceA, _EtwUpdateTraceA@16
+; implib ntdll.dll, EtwUpdateTraceW, _EtwUpdateTraceW@16
+; implib ntdll.dll, EtwpGetTraceBuffer, _EtwpGetTraceBuffer@16
+; implib ntdll.dll, EtwpSetHWConfigFunction, _EtwpSetHWConfigFunction@8
+
+; *** Functions available from v3.10 (Windows NT 3.10) to v5.2 (Windows Server 2003)
 ; implib ntdll.dll, CsrProbeForRead, _CsrProbeForRead@12
 ; implib ntdll.dll, CsrProbeForWrite, _CsrProbeForWrite@12
 
-; *** Functions available from v3.10 to v5.0
+; *** Functions available from v3.10 (Windows NT 3.10) to v5.0 (Windows 2000)
 ; implib ntdll.dll, DbgSsHandleKmApiMsg, _DbgSsHandleKmApiMsg@8
 ; implib ntdll.dll, DbgSsInitialize, _DbgSsInitialize@16
 
-; *** The floating point emulator available from v3.10 to v5.0, v5.1 before SP2 and v5.2 before SP1
+; *** The floating point emulator available from v3.10 (Windows NT 3.10) to v5.0 (Windows 2000), v5.1 (Windows XP) before SP2 and v5.2 (Windows Server 2003) before SP1
 ; implib ntdll.dll, NPXEMULATORTABLE ; This entry is not a function, but a DATA symbol
 ; implib ntdll.dll, RestoreEm87Context
 ; implib ntdll.dll, SaveEm87Context
@@ -698,7 +723,7 @@ include '..\implib.inc'
 ; implib ntdll.dll, __eFYL2XP1
 ; implib ntdll.dll, __eGetStatusWord
 
-; *** Functions available from v3.10 to v4.0
+; *** Functions available from v3.10 (Windows NT 3.10) to v4.0 (Windows 95 / Windows NT 4.0)
 ; implib ntdll.dll, CsrAllocateCapturePointer, _CsrAllocateCapturePointer@12
 ; implib ntdll.dll, NtSetHighWaitLowThread, _NtSetHighWaitLowThread@0
 ; implib ntdll.dll, NtSetLowWaitHighThread, _NtSetLowWaitHighThread@0
@@ -706,7 +731,7 @@ include '..\implib.inc'
 ; implib ntdll.dll, ZwSetHighWaitLowThread, _ZwSetHighWaitLowThread@0
 ; implib ntdll.dll, ZwSetLowWaitHighThread, _ZwSetLowWaitHighThread@0
 
-; *** Functions available from v3.10 to v3.51
+; *** Functions available from v3.10 (Windows NT 3.10) to v3.51 (Windows NT 3.51)
 ; implib ntdll.dll, CsrClientMaxMessage, _CsrClientMaxMessage@0
 ; implib ntdll.dll, CsrClientSendMessage, _CsrClientSendMessage@0
 ; implib ntdll.dll, CsrClientThreadConnect, _CsrClientThreadConnect@0
@@ -717,7 +742,7 @@ include '..\implib.inc'
 ; implib ntdll.dll, ZwReleaseProcessMutant, _ZwReleaseProcessMutant@0
 ; implib ntdll.dll, ZwWaitForProcessMutant, _ZwWaitForProcessMutant@0
 
-; *** Functions available in v3.10 only
+; *** Functions available in v3.10 only (Windows NT 3.10)
 ; implib ntdll.dll, CsrDumpProfile, _CsrDumpProfile@0
 ; implib ntdll.dll, CsrStartProfile, _CsrStartProfile@0
 ; implib ntdll.dll, CsrStopDumpProfile, _CsrStopDumpProfile@0
