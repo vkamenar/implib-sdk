@@ -571,6 +571,31 @@ include '..\implib.inc'
 ; implib ntdll.dll, ord.3, _SbtLogSystemUsageByParent@32
 ; implib ntdll.dll, ord.4, _SbtLogSystemUsageByStack@28
 
+; *** Functions available in v6.0 (Windows Vista / Windows Server 2008) only
+; implib ntdll.dll, NtAcquireCMFViewOwnership, _NtAcquireCMFViewOwnership@12
+; implib ntdll.dll, NtReleaseCMFViewOwnership, _NtReleaseCMFViewOwnership@0
+; implib ntdll.dll, WerCheckEventEscalation, _WerCheckEventEscalation@8
+; implib ntdll.dll, WerReportWatsonEvent, _WerReportWatsonEvent@16
+; implib ntdll.dll, ZwAcquireCMFViewOwnership, _ZwAcquireCMFViewOwnership@12
+; implib ntdll.dll, ZwReleaseCMFViewOwnership, _ZwReleaseCMFViewOwnership@0
+
+; *** Function available in v6.0 (Windows Vista / Windows Server 2008) SP1 and SP2
+; implib ntdll.dll, LdrpResGetRCConfig, _LdrpResGetRCConfig@20
+
+; *** Hotpatching function available from v5.1 (Windows XP) SP2 to v6.2 (Windows 8)
+; implib ntdll.dll, LdrHotPatchRoutine, _LdrHotPatchRoutine@4
+
+; *** Function available from v6.0 (Windows Vista / Windows Server 2008) to v6.2 (Windows 8)
+; implib ntdll.dll, EtwpNotificationThread, _EtwpNotificationThread@0
+
+; *** Functions available from v5.0 (Windows 2000) to v6.0 (Windows Vista / Windows Server 2008)
+; implib ntdll.dll, NtCancelDeviceWakeupRequest, _NtCancelDeviceWakeupRequest@4
+; implib ntdll.dll, NtRequestDeviceWakeup, _NtRequestDeviceWakeup@4
+; implib ntdll.dll, NtRequestWakeupLatency, _NtRequestWakeupLatency@4
+; implib ntdll.dll, ZwCancelDeviceWakeupRequest, _ZwCancelDeviceWakeupRequest@4
+; implib ntdll.dll, ZwRequestDeviceWakeup, _ZwRequestDeviceWakeup@4
+; implib ntdll.dll, ZwRequestWakeupLatency, _ZwRequestWakeupLatency@4
+
 ; *** Function available from v3.10 (Windows NT 3.10) to v6.0 (Windows Vista / Windows Server 2008) before SP1
 ; implib ntdll.dll, CsrNewThread, _CsrNewThread@0
 
@@ -598,6 +623,16 @@ include '..\implib.inc'
 ; implib ntdll.dll, EtwUpdateTraceW, _EtwUpdateTraceW@16
 ; implib ntdll.dll, EtwpGetTraceBuffer, _EtwpGetTraceBuffer@16
 ; implib ntdll.dll, EtwpSetHWConfigFunction, _EtwpSetHWConfigFunction@8
+
+; *** Function available from v5.0 (Windows 2000) to v5.2 (Windows Server 2003)
+; implib ntdll.dll, LdrAlternateResourcesEnabled, _LdrAlternateResourcesEnabled@0
+
+; *** Functions available from v5.1 (Windows XP) to v5.2 (Windows Server 2003)
+; implib ntdll.dll, LdrAccessOutOfProcessResource, _LdrAccessOutOfProcessResource@20
+; implib ntdll.dll, LdrCreateOutOfProcessImage, _LdrCreateOutOfProcessImage@20
+; implib ntdll.dll, LdrDestroyOutOfProcessImage, _LdrDestroyOutOfProcessImage@4
+; implib ntdll.dll, LdrFindCreateProcessManifest, _LdrFindCreateProcessManifest@20
+; implib ntdll.dll, RtlCheckProcessParameters, _RtlCheckProcessParameters@16
 
 ; *** Functions available from v3.10 (Windows NT 3.10) to v5.2 (Windows Server 2003)
 ; implib ntdll.dll, CsrProbeForRead, _CsrProbeForRead@12
