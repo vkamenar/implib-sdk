@@ -728,6 +728,20 @@ include '..\implib.inc'
 ; implib ntdll.dll, LdrFindCreateProcessManifest, _LdrFindCreateProcessManifest@20
 ; implib ntdll.dll, RtlCheckProcessParameters, _RtlCheckProcessParameters@16
 
+; *** Functions available from v4.0 (Windows 95 / Windows NT 4.0) to v5.0 (Windows 2000)
+; implib ntdll.dll, NtCreateChannel, _NtCreateChannel@8
+; implib ntdll.dll, NtListenChannel, _NtListenChannel@8
+; implib ntdll.dll, NtOpenChannel, _NtOpenChannel@8
+; implib ntdll.dll, NtReplyWaitSendChannel, _NtReplyWaitSendChannel@12
+; implib ntdll.dll, NtSendWaitReplyChannel, _NtSendWaitReplyChannel@16
+; implib ntdll.dll, NtSetContextChannel, _NtSetContextChannel@4
+; implib ntdll.dll, ZwCreateChannel, _ZwCreateChannel@8
+; implib ntdll.dll, ZwListenChannel, _ZwListenChannel@8
+; implib ntdll.dll, ZwOpenChannel, _ZwOpenChannel@8
+; implib ntdll.dll, ZwReplyWaitSendChannel, _ZwReplyWaitSendChannel@12
+; implib ntdll.dll, ZwSendWaitReplyChannel, _ZwSendWaitReplyChannel@16
+; implib ntdll.dll, ZwSetContextChannel, _ZwSetContextChannel@4
+
 ; *** Functions available from v3.10 (Windows NT 3.10) to v5.2 (Windows Server 2003)
 ; implib ntdll.dll, CsrProbeForRead, _CsrProbeForRead@12
 ; implib ntdll.dll, CsrProbeForWrite, _CsrProbeForWrite@12
