@@ -682,6 +682,10 @@ include '..\implib.inc'
 ; *** Function available from v6.0 (Windows Vista / Windows Server 2008) to v6.2 (Windows 8)
 ; implib ntdll.dll, EtwpNotificationThread, _EtwpNotificationThread@0
 
+; *** Functions available from v3.51 (Windows NT 3.51) to v6.1 (Windows 7 / Windows Server 2008 R2)
+; implib ntdll.dll, NtGetPlugPlayEvent, _NtGetPlugPlayEvent@16
+; implib ntdll.dll, ZwGetPlugPlayEvent, _ZwGetPlugPlayEvent@16
+
 ; *** Functions available from v5.0 (Windows 2000) to v6.0 (Windows Vista / Windows Server 2008)
 ; implib ntdll.dll, NtCancelDeviceWakeupRequest, _NtCancelDeviceWakeupRequest@4
 ; implib ntdll.dll, NtRequestDeviceWakeup, _NtRequestDeviceWakeup@4
@@ -741,6 +745,24 @@ include '..\implib.inc'
 ; implib ntdll.dll, ZwReplyWaitSendChannel, _ZwReplyWaitSendChannel@12
 ; implib ntdll.dll, ZwSendWaitReplyChannel, _ZwSendWaitReplyChannel@16
 ; implib ntdll.dll, ZwSetContextChannel, _ZwSetContextChannel@4
+
+; *** Functions available in v4.0 (Windows 95 / Windows NT 4.0) only
+; implib ntdll.dll, ?Allocate@CBufferAllocator@@UAEPAXK@Z ; void* __thiscall CBufferAllocator::Allocate(unsigned long)
+; implib ntdll.dll, NtQueryOleDirectoryFile, _NtQueryOleDirectoryFile@44
+; implib ntdll.dll, RtlClosePropertySet, _RtlClosePropertySet@4
+; implib ntdll.dll, RtlCompareVariants, _RtlCompareVariants@12
+; implib ntdll.dll, RtlCreatePropertySet, _RtlCreatePropertySet@36
+; implib ntdll.dll, RtlEnumerateProperties, _RtlEnumerateProperties@24
+; implib ntdll.dll, RtlFlushPropertySet, _RtlFlushPropertySet@4
+; implib ntdll.dll, RtlGuidToPropertySetName, _RtlGuidToPropertySetName@8
+; implib ntdll.dll, RtlPropertySetNameToGuid, _RtlPropertySetNameToGuid@12
+; implib ntdll.dll, RtlQueryProperties, _RtlQueryProperties@28
+; implib ntdll.dll, RtlQueryPropertyNames, _RtlQueryPropertyNames@16
+; implib ntdll.dll, RtlQueryPropertySet, _RtlQueryPropertySet@8
+; implib ntdll.dll, RtlSetProperties, _RtlSetProperties@28
+; implib ntdll.dll, RtlSetPropertyNames, _RtlSetPropertyNames@16
+; implib ntdll.dll, RtlSetPropertySetClassId, _RtlSetPropertySetClassId@8
+; implib ntdll.dll, ZwQueryOleDirectoryFile, _ZwQueryOleDirectoryFile@44
 
 ; *** Functions available from v3.10 (Windows NT 3.10) to v5.2 (Windows Server 2003)
 ; implib ntdll.dll, CsrProbeForRead, _CsrProbeForRead@12
@@ -873,6 +895,16 @@ include '..\implib.inc'
 ; implib ntdll.dll, RtlFindLongestRunSet, _RtlFindLongestRunSet@8
 ; implib ntdll.dll, ZwSetHighWaitLowThread, _ZwSetHighWaitLowThread@0
 ; implib ntdll.dll, ZwSetLowWaitHighThread, _ZwSetLowWaitHighThread@0
+
+; *** Functions available from v3.51 (Windows NT 3.51) to v4.0 (Windows 95 / Windows NT 4.0) SP3
+; implib ntdll.dll, NtW32Call, _NtW32Call@20
+; implib ntdll.dll, ZwW32Call, _ZwW32Call@20
+
+; *** Functions available in v3.51 only (Windows NT 3.51)
+; implib ntdll.dll, NtEnumerateBus, _NtEnumerateBus@8
+; implib ntdll.dll, NtRegisterNewDevice, _NtRegisterNewDevice@8
+; implib ntdll.dll, ZwEnumerateBus, _ZwEnumerateBus@8
+; implib ntdll.dll, ZwRegisterNewDevice, _ZwRegisterNewDevice@8
 
 ; *** Functions available from v3.10 (Windows NT 3.10) to v3.51 (Windows NT 3.51)
 ; implib ntdll.dll, CsrClientMaxMessage, _CsrClientMaxMessage@0
