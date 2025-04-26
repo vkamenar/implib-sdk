@@ -576,6 +576,12 @@ include '..\implib.inc'
 ; implib ntdll.dll, RtlpWnfNotificationThread, _RtlpWnfNotificationThread@4
 ; implib ntdll.dll, ZwWaitForWnfNotifications, _ZwWaitForWnfNotifications@8
 
+; *** Functions available in v6.1 (Windows 7 / Windows Server 2008 R2) only
+; implib ntdll.dll, NtWow64InterlockedPopEntrySList, _NtWow64InterlockedPopEntrySList@4
+; implib ntdll.dll, TpDbgGetFreeInfo, _TpDbgGetFreeInfo@8
+; implib ntdll.dll, TpPoolFreeUnusedNodes, _TpPoolFreeUnusedNodes@4
+; implib ntdll.dll, ZwWow64InterlockedPopEntrySList, _ZwWow64InterlockedPopEntrySList@4
+
 ; *** Functions available in v6.0 (Windows Vista / Windows Server 2008) only
 ; implib ntdll.dll, NtAcquireCMFViewOwnership, _NtAcquireCMFViewOwnership@12
 ; implib ntdll.dll, NtReleaseCMFViewOwnership, _NtReleaseCMFViewOwnership@0
@@ -702,6 +708,10 @@ include '..\implib.inc'
 ; *** Function available from v3.10 (Windows NT 3.10) to v6.0 (Windows Vista / Windows Server 2008) before SP1
 ; implib ntdll.dll, CsrNewThread, _CsrNewThread@0
 
+; *** Wow64 functions available from v5.2 (Windows Server 2003) SP1 to v6.3 (Windows 8.1)
+; implib ntdll.dll, NtWow64QueryVirtualMemory64, _NtWow64QueryVirtualMemory64@32
+; implib ntdll.dll, ZwWow64QueryVirtualMemory64, _ZwWow64QueryVirtualMemory64@32
+
 ; *** Wow64 functions available from v5.2 (Windows Server 2003) SP1 to v6.0 (Windows Vista / Windows Server 2008) before SP1
 ; implib ntdll.dll, NtWow64CsrNewThread, _NtWow64CsrNewThread@0
 ; implib ntdll.dll, NtWow64CsrSetPriorityClass, _NtWow64CsrSetPriorityClass@8
@@ -742,6 +752,15 @@ include '..\implib.inc'
 ; implib ntdll.dll, LdrDestroyOutOfProcessImage, _LdrDestroyOutOfProcessImage@4
 ; implib ntdll.dll, LdrFindCreateProcessManifest, _LdrFindCreateProcessManifest@20
 ; implib ntdll.dll, RtlCheckProcessParameters, _RtlCheckProcessParameters@16
+
+; *** Functions available from v4.0 (Windows 95 / Windows NT 4.0) to v5.2 (Windows Server 2003)
+; implib ntdll.dll, PropertyLengthAsVariant, _PropertyLengthAsVariant@16
+; implib ntdll.dll, RtlConvertPropertyToVariant, _RtlConvertPropertyToVariant@16
+; implib ntdll.dll, RtlConvertVariantToProperty, _RtlConvertVariantToProperty@28
+; implib ntdll.dll, RtlFreeUserThreadStack, _RtlFreeUserThreadStack@8
+; implib ntdll.dll, RtlSetUnicodeCallouts, _RtlSetUnicodeCallouts@4
+; implib ntdll.dll, _tolower, __tolower ; This function uses the CDECL calling convention!
+; implib ntdll.dll, _toupper, __toupper ; This function uses the CDECL calling convention!
 
 ; *** Functions available from v4.0 (Windows 95 / Windows NT 4.0) to v5.0 (Windows 2000)
 ; implib ntdll.dll, NtCreateChannel, _NtCreateChannel@8
