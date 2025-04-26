@@ -753,6 +753,20 @@ include '..\implib.inc'
 ; implib ntdll.dll, LdrFindCreateProcessManifest, _LdrFindCreateProcessManifest@20
 ; implib ntdll.dll, RtlCheckProcessParameters, _RtlCheckProcessParameters@16
 
+; *** Function available from v5.0 (Windows 2000) to v5.1 (Windows XP)
+; implib ntdll.dll, RtlAddRange, _RtlAddRange@36
+; implib ntdll.dll, RtlCopyRangeList, _RtlCopyRangeList@8
+; implib ntdll.dll, RtlDeleteOwnersRanges, _RtlDeleteOwnersRanges@8
+; implib ntdll.dll, RtlDeleteRange, _RtlDeleteRange@24
+; implib ntdll.dll, RtlFindRange, _RtlFindRange@48
+; implib ntdll.dll, RtlFreeRangeList, _RtlFreeRangeList@4
+; implib ntdll.dll, RtlGetFirstRange, _RtlGetFirstRange@12
+; implib ntdll.dll, RtlGetNextRange, _RtlGetNextRange@12
+; implib ntdll.dll, RtlInitializeRangeList, _RtlInitializeRangeList@4
+; implib ntdll.dll, RtlInvertRangeList, _RtlInvertRangeList@8
+; implib ntdll.dll, RtlIsRangeAvailable, _RtlIsRangeAvailable@40
+; implib ntdll.dll, RtlMergeRangeLists, _RtlMergeRangeLists@16
+
 ; *** Functions available from v4.0 (Windows 95 / Windows NT 4.0) to v5.2 (Windows Server 2003)
 ; implib ntdll.dll, PropertyLengthAsVariant, _PropertyLengthAsVariant@16
 ; implib ntdll.dll, RtlConvertPropertyToVariant, _RtlConvertPropertyToVariant@16
