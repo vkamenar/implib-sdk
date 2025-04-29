@@ -54,6 +54,7 @@ include '..\implib.inc'
 ; *** Function available from v4.0 (Windows 95 / Windows NT 4.0) to v4.90 (Windows Me)
 ; implib advapi32.dll, RegRemapPreDefKey, _RegRemapPreDefKey@8
 
+; *** Functions available up to v10.0 (Windows 10)
 implib advapi32.dll, A_SHAFinal, _A_SHAFinal@8
 implib advapi32.dll, A_SHAInit, _A_SHAInit@4
 implib advapi32.dll, A_SHAUpdate, _A_SHAUpdate@12
