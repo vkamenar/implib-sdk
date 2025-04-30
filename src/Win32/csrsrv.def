@@ -1,0 +1,70 @@
+include '..\implib.inc'
+
+; *** Functions available from v5.1 (Windows XP) to v6.0 (Windows Vista / Windows Server 2008)
+implib csrsrv.dll, CsrDebugProcessStop, _CsrDebugProcessStop@8 ; returns STATUS_UNSUCCESSFUL in Windows XP
+implib csrsrv.dll, CsrMoveSatisfiedWait, _CsrMoveSatisfiedWait@8
+
+; *** Function available from v5.0 (Windows 2000) to v6.0 (Windows Vista / Windows Server 2008)
+implib csrsrv.dll, CsrPopulateDosDevices, _CsrPopulateDosDevices@0
+
+; *** Functions available from v3.10 (Windows NT 3.1) to v6.0 (Windows Vista / Windows Server 2008)
+implib csrsrv.dll, CsrCreateWait, _CsrCreateWait@24
+implib csrsrv.dll, CsrDebugProcess, _CsrDebugProcess@12
+implib csrsrv.dll, CsrDereferenceWait, _CsrDereferenceWait@4
+implib csrsrv.dll, CsrNotifyWait, _CsrNotifyWait@16
+implib csrsrv.dll, CsrSetCallingSpooler, _CsrSetCallingSpooler@4
+
+; *** Function available from v3.10 (Windows NT 3.1) to v5.0 (Windows 2000)
+implib csrsrv.dll, CsrGetApiPorts, _CsrGetApiPorts@8
+
+; *** Functions available from v3.10 (Windows NT 3.1) to v4.0 (Windows 95 / Windows NT 4.0)
+implib csrsrv.dll, CsrComputePriorityClass, _CsrComputePriorityClass@4
+implib csrsrv.dll, CsrDestroyWait, _CsrDestroyWait@4
+implib csrsrv.dll, CsrLocateThreadInProcess, _CsrLocateThreadInProcess@8
+
+; *** Functions available from v3.10 (Windows NT 3.1) to v3.51 (Windows NT 3.51)
+implib csrsrv.dll, CsrClientCallback, _CsrClientCallback@0
+implib csrsrv.dll, CsrSetLastQlpcError, _CsrSetLastQlpcError@4
+implib csrsrv.dll, CsrSetQuickThreadCreateRoutine, _CsrSetQuickThreadCreateRoutine@4
+implib csrsrv.dll, CsrpInitializeDlls, _CsrpInitializeDlls@0
+implib csrsrv.dll, CsrpProcessApiRequest, _CsrpProcessApiRequest@8
+
+; *** Functions available in v3.51 only (Windows NT 3.51)
+implib csrsrv.dll, CsrDelayedThreadCleanup, _CsrDelayedThreadCleanup@0
+implib csrsrv.dll, CsrRegisterCleanupEvent, _CsrRegisterCleanupEvent@4
+
+; *** Functions available up to v10.0 (Windows 10)
+implib csrsrv.dll, CsrAddStaticServerThread, _CsrAddStaticServerThread@12
+implib csrsrv.dll, CsrCallServerFromServer, _CsrCallServerFromServer@8
+implib csrsrv.dll, CsrConnectToUser, _CsrConnectToUser@0
+implib csrsrv.dll, CsrCreateProcess, _CsrCreateProcess@24
+implib csrsrv.dll, CsrCreateRemoteThread, _CsrCreateRemoteThread@8
+implib csrsrv.dll, CsrCreateThread, _CsrCreateThread@16 ; _CsrCreateThread@12 in older versions
+implib csrsrv.dll, CsrDeferredCreateProcess, _CsrDeferredCreateProcess@24
+implib csrsrv.dll, CsrDereferenceProcess, _CsrDereferenceProcess@4
+implib csrsrv.dll, CsrDereferenceThread, _CsrDereferenceThread@4
+implib csrsrv.dll, CsrDestroyProcess, _CsrDestroyProcess@8
+implib csrsrv.dll, CsrDestroyThread, _CsrDestroyThread@4
+implib csrsrv.dll, CsrExecServerThread, _CsrExecServerThread@8
+implib csrsrv.dll, CsrGetProcessLuid, _CsrGetProcessLuid@8
+implib csrsrv.dll, CsrImpersonateClient, _CsrImpersonateClient@4
+implib csrsrv.dll, CsrIsClientSandboxed, _CsrIsClientSandboxed@8
+implib csrsrv.dll, CsrLockProcessByClientId, _CsrLockProcessByClientId@8
+implib csrsrv.dll, CsrLockThreadByClientId, _CsrLockThreadByClientId@12
+implib csrsrv.dll, CsrLockedReferenceProcess, _CsrLockedReferenceProcess@4
+implib csrsrv.dll, CsrQueryApiPort, _CsrQueryApiPort@0
+implib csrsrv.dll, CsrReferenceThread, _CsrReferenceThread@4
+implib csrsrv.dll, CsrRegisterClientThreadSetup, _CsrRegisterClientThreadSetup@4
+implib csrsrv.dll, CsrReplyToMessage, _CsrReplyToMessage@4
+implib csrsrv.dll, CsrRevertToSelf, _CsrRevertToSelf@0
+implib csrsrv.dll, CsrServerInitialization, _CsrServerInitialization@8
+implib csrsrv.dll, CsrSetBackgroundPriority, _CsrSetBackgroundPriority@4
+implib csrsrv.dll, CsrSetForegroundPriority, _CsrSetForegroundPriority@4
+implib csrsrv.dll, CsrShutdownProcesses, _CsrShutdownProcesses@8
+implib csrsrv.dll, CsrUnhandledExceptionFilter, _CsrUnhandledExceptionFilter@4
+implib csrsrv.dll, CsrUnlockProcess, _CsrUnlockProcess@4
+implib csrsrv.dll, CsrUnlockThread, _CsrUnlockThread@4
+implib csrsrv.dll, CsrValidateMessageBuffer, _CsrValidateMessageBuffer@16
+implib csrsrv.dll, CsrValidateMessageString, _CsrValidateMessageString@8
+
+endlib
