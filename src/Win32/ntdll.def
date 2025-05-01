@@ -571,18 +571,18 @@ include '..\implib.inc'
 ; implib ntdll.dll, ord.3, _SbtLogSystemUsageByParent@32
 ; implib ntdll.dll, ord.4, _SbtLogSystemUsageByStack@28
 
-; *** WNF functions available in v6.2 (Windows 8) only
+; *** WNF functions available in v6.2 only (Windows 8)
 ; implib ntdll.dll, NtWaitForWnfNotifications, _NtWaitForWnfNotifications@8
 ; implib ntdll.dll, RtlpWnfNotificationThread, _RtlpWnfNotificationThread@4
 ; implib ntdll.dll, ZwWaitForWnfNotifications, _ZwWaitForWnfNotifications@8
 
-; *** Functions available in v6.1 (Windows 7 / Windows Server 2008 R2) only
+; *** Functions available in v6.1 only (Windows 7 / Windows Server 2008 R2)
 ; implib ntdll.dll, NtWow64InterlockedPopEntrySList, _NtWow64InterlockedPopEntrySList@4
 ; implib ntdll.dll, TpDbgGetFreeInfo, _TpDbgGetFreeInfo@8
 ; implib ntdll.dll, TpPoolFreeUnusedNodes, _TpPoolFreeUnusedNodes@4
 ; implib ntdll.dll, ZwWow64InterlockedPopEntrySList, _ZwWow64InterlockedPopEntrySList@4
 
-; *** Functions available in v6.0 (Windows Vista / Windows Server 2008) only
+; *** Functions available in v6.0 only (Windows Vista / Windows Server 2008)
 ; implib ntdll.dll, NtAcquireCMFViewOwnership, _NtAcquireCMFViewOwnership@12
 ; implib ntdll.dll, NtReleaseCMFViewOwnership, _NtReleaseCMFViewOwnership@0
 ; implib ntdll.dll, WerCheckEventEscalation, _WerCheckEventEscalation@8
@@ -697,6 +697,10 @@ include '..\implib.inc'
 ; implib ntdll.dll, NtGetPlugPlayEvent, _NtGetPlugPlayEvent@16
 ; implib ntdll.dll, ZwGetPlugPlayEvent, _ZwGetPlugPlayEvent@16
 
+; *** Functions available from v3.51 (Windows NT 3.51) to v5.2 (Windows Server 2003)
+; implib ntdll.dll, RtlExtendHeap, _RtlExtendHeap@16
+; implib ntdll.dll, RtlUsageHeap, _RtlUsageHeap@12
+
 ; *** Functions available from v5.0 (Windows 2000) to v6.0 (Windows Vista / Windows Server 2008)
 ; implib ntdll.dll, NtCancelDeviceWakeupRequest, _NtCancelDeviceWakeupRequest@4
 ; implib ntdll.dll, NtRequestDeviceWakeup, _NtRequestDeviceWakeup@4
@@ -704,6 +708,12 @@ include '..\implib.inc'
 ; implib ntdll.dll, ZwCancelDeviceWakeupRequest, _ZwCancelDeviceWakeupRequest@4
 ; implib ntdll.dll, ZwRequestDeviceWakeup, _ZwRequestDeviceWakeup@4
 ; implib ntdll.dll, ZwRequestWakeupLatency, _ZwRequestWakeupLatency@4
+
+; *** Function available from v3.10 (Windows NT 3.10) to v6.2 (Windows 8)
+; implib ntdll.dll, RtlConvertUiListToApiList, _RtlConvertUiListToApiList@12
+
+; *** Function available from v3.10 (Windows NT 3.10) to v6.1 (Windows 7 / Windows Server 2008 R2)
+; implib ntdll.dll, RtlEnlargedUnsignedDivide, _RtlEnlargedUnsignedDivide@16
 
 ; *** Function available from v3.10 (Windows NT 3.10) to v6.0 (Windows Vista / Windows Server 2008) before SP1
 ; implib ntdll.dll, CsrNewThread, _CsrNewThread@0
@@ -753,7 +763,10 @@ include '..\implib.inc'
 ; implib ntdll.dll, LdrFindCreateProcessManifest, _LdrFindCreateProcessManifest@20
 ; implib ntdll.dll, RtlCheckProcessParameters, _RtlCheckProcessParameters@16
 
-; *** Function available from v5.0 (Windows 2000) to v5.1 (Windows XP)
+; *** Function available in v5.1 only (Windows XP)
+; implib ntdll.dll, RtlAssert2, _RtlAssert2@20
+
+; *** Functions available from v5.0 (Windows 2000) to v5.1 (Windows XP)
 ; implib ntdll.dll, RtlAddRange, _RtlAddRange@36
 ; implib ntdll.dll, RtlCopyRangeList, _RtlCopyRangeList@8
 ; implib ntdll.dll, RtlDeleteOwnersRanges, _RtlDeleteOwnersRanges@8
@@ -766,6 +779,12 @@ include '..\implib.inc'
 ; implib ntdll.dll, RtlInvertRangeList, _RtlInvertRangeList@8
 ; implib ntdll.dll, RtlIsRangeAvailable, _RtlIsRangeAvailable@40
 ; implib ntdll.dll, RtlMergeRangeLists, _RtlMergeRangeLists@16
+
+; *** Functions available in v5.0 only (Windows 2000)
+; implib ntdll.dll, RtlCallbackLpcClient, _RtlCallbackLpcClient@12
+; implib ntdll.dll, RtlCreateLpcServer, _RtlCreateLpcServer@24
+; implib ntdll.dll, RtlImpersonateLpcClient, _RtlImpersonateLpcClient@8
+; implib ntdll.dll, RtlShutdownLpcServer, _RtlShutdownLpcServer@4
 
 ; *** Functions available from v4.0 (Windows 95 / Windows NT 4.0) to v5.2 (Windows Server 2003)
 ; implib ntdll.dll, PropertyLengthAsVariant, _PropertyLengthAsVariant@16
@@ -790,7 +809,7 @@ include '..\implib.inc'
 ; implib ntdll.dll, ZwSendWaitReplyChannel, _ZwSendWaitReplyChannel@16
 ; implib ntdll.dll, ZwSetContextChannel, _ZwSetContextChannel@4
 
-; *** Functions available in v4.0 (Windows 95 / Windows NT 4.0) only
+; *** Functions available in v4.0 only (Windows 95 / Windows NT 4.0)
 ; implib ntdll.dll, ?Allocate@CBufferAllocator@@UAEPAXK@Z ; void* __thiscall CBufferAllocator::Allocate(unsigned long)
 ; implib ntdll.dll, NtQueryOleDirectoryFile, _NtQueryOleDirectoryFile@44
 ; implib ntdll.dll, RtlClosePropertySet, _RtlClosePropertySet@4
@@ -807,6 +826,14 @@ include '..\implib.inc'
 ; implib ntdll.dll, RtlSetPropertyNames, _RtlSetPropertyNames@16
 ; implib ntdll.dll, RtlSetPropertySetClassId, _RtlSetPropertySetClassId@8
 ; implib ntdll.dll, ZwQueryOleDirectoryFile, _ZwQueryOleDirectoryFile@44
+
+; *** Functions available in v3.50 only (Windows NT 3.5)
+; implib ntdll.dll, RtlGetUserFlagsHeap, _RtlGetUserFlagsHeap@16
+; implib ntdll.dll, RtlGetUserValueHeap, _RtlGetUserValueHeap@16
+; implib ntdll.dll, _abnormal_termination, __abnormal_termination ; This function uses the CDECL calling convention!
+; implib ntdll.dll, _except_handler2, __except_handler2 ; This function uses the CDECL calling convention!
+; implib ntdll.dll, _global_unwind2, __global_unwind2 ; This function uses the CDECL calling convention!
+; implib ntdll.dll, _local_unwind2, __local_unwind2 ; This function uses the CDECL calling convention!
 
 ; *** Functions available from v3.10 (Windows NT 3.10) to v5.2 (Windows Server 2003)
 ; implib ntdll.dll, CsrProbeForRead, _CsrProbeForRead@12
@@ -985,6 +1012,7 @@ include '..\implib.inc'
 ; implib ntdll.dll, ZwVdmStartExecution, _ZwVdmStartExecution@0
 ; implib ntdll.dll, xRtlDosPathNameToNtPathName, _xRtlDosPathNameToNtPathName@16
 
+; *** Functions available up to v10.0 (Windows 10)
 implib ntdll.dll, A_SHAFinal, _A_SHAFinal@8
 implib ntdll.dll, A_SHAInit, _A_SHAInit@4
 implib ntdll.dll, A_SHAUpdate, _A_SHAUpdate@12
