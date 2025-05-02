@@ -590,6 +590,11 @@ include '..\implib.inc'
 ; implib ntdll.dll, ZwAcquireCMFViewOwnership, _ZwAcquireCMFViewOwnership@12
 ; implib ntdll.dll, ZwReleaseCMFViewOwnership, _ZwReleaseCMFViewOwnership@0
 
+; *** Functions available in v6.0 (Windows Vista / Windows Server 2008), SP2 and higher
+; implib ntdll.dll, RtlpInterlockedPopEntrySeqSListEnd, _RtlpInterlockedPopEntrySeqSListEnd@0
+; implib ntdll.dll, RtlpInterlockedPopEntrySeqSListFault, _RtlpInterlockedPopEntrySeqSListFault@0
+; implib ntdll.dll, RtlpInterlockedPopEntrySeqSListResume, _RtlpInterlockedPopEntrySeqSListResume@0
+
 ; *** Function available in v6.0 (Windows Vista / Windows Server 2008) SP1 and SP2
 ; implib ntdll.dll, LdrpResGetRCConfig, _LdrpResGetRCConfig@20
 
@@ -809,6 +814,9 @@ include '..\implib.inc'
 ; implib ntdll.dll, ZwSendWaitReplyChannel, _ZwSendWaitReplyChannel@16
 ; implib ntdll.dll, ZwSetContextChannel, _ZwSetContextChannel@4
 
+; *** Function available in v4.0 only (Windows 95 / Windows NT 4.0), from SP2 to SP6
+; implib ntdll.dll, RtlOnMappedStreamEvent, _RtlOnMappedStreamEvent@12
+
 ; *** Functions available in v4.0 only (Windows 95 / Windows NT 4.0)
 ; implib ntdll.dll, ?Allocate@CBufferAllocator@@UAEPAXK@Z ; void* __thiscall CBufferAllocator::Allocate(unsigned long)
 ; implib ntdll.dll, NtQueryOleDirectoryFile, _NtQueryOleDirectoryFile@44
@@ -987,6 +995,9 @@ include '..\implib.inc'
 ; implib ntdll.dll, RtlpInitializeRtl, _RtlpInitializeRtl@12
 ; implib ntdll.dll, ZwReleaseProcessMutant, _ZwReleaseProcessMutant@0
 ; implib ntdll.dll, ZwWaitForProcessMutant, _ZwWaitForProcessMutant@0
+
+; *** Function available in v3.10 (Windows NT 3.10), then from v5.1 (Windows XP) SP2 to v5.2 (Windows Server 2003)
+; implib ntdll.dll, RtlInitializeStackTraceDataBase, _RtlInitializeStackTraceDataBase@12
 
 ; *** Functions available in v3.10 only (Windows NT 3.10)
 ; implib ntdll.dll, CsrDumpProfile, _CsrDumpProfile@0
