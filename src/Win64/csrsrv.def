@@ -1,0 +1,46 @@
+include '..\implib64.inc'
+
+; *** Functions available in v6.0 only (Windows Vista / Windows Server 2008)
+implib csrsrv.dll, CsrCreateWait
+implib csrsrv.dll, CsrDebugProcess ; returns STATUS_UNSUCCESSFUL in Windows Vista
+implib csrsrv.dll, CsrDebugProcessStop ; returns STATUS_UNSUCCESSFUL in Windows Vista
+implib csrsrv.dll, CsrDereferenceWait
+implib csrsrv.dll, CsrMoveSatisfiedWait
+implib csrsrv.dll, CsrNotifyWait
+implib csrsrv.dll, CsrPopulateDosDevices
+implib csrsrv.dll, CsrSetCallingSpooler ; does nothing
+
+implib csrsrv.dll, CsrAddStaticServerThread
+implib csrsrv.dll, CsrCallServerFromServer
+implib csrsrv.dll, CsrConnectToUser
+implib csrsrv.dll, CsrCreateProcess
+implib csrsrv.dll, CsrCreateRemoteThread
+implib csrsrv.dll, CsrCreateThread
+implib csrsrv.dll, CsrDeferredCreateProcess
+implib csrsrv.dll, CsrDereferenceProcess
+implib csrsrv.dll, CsrDereferenceThread
+implib csrsrv.dll, CsrDestroyProcess
+implib csrsrv.dll, CsrDestroyThread
+implib csrsrv.dll, CsrExecServerThread
+implib csrsrv.dll, CsrGetProcessLuid
+implib csrsrv.dll, CsrImpersonateClient
+implib csrsrv.dll, CsrIsClientSandboxed
+implib csrsrv.dll, CsrLockProcessByClientId
+implib csrsrv.dll, CsrLockThreadByClientId
+implib csrsrv.dll, CsrLockedReferenceProcess
+implib csrsrv.dll, CsrQueryApiPort
+implib csrsrv.dll, CsrReferenceThread
+implib csrsrv.dll, CsrRegisterClientThreadSetup
+implib csrsrv.dll, CsrReplyToMessage
+implib csrsrv.dll, CsrRevertToSelf
+implib csrsrv.dll, CsrServerInitialization
+implib csrsrv.dll, CsrSetBackgroundPriority
+implib csrsrv.dll, CsrSetForegroundPriority
+implib csrsrv.dll, CsrShutdownProcesses
+implib csrsrv.dll, CsrUnhandledExceptionFilter
+implib csrsrv.dll, CsrUnlockProcess
+implib csrsrv.dll, CsrUnlockThread
+implib csrsrv.dll, CsrValidateMessageBuffer
+implib csrsrv.dll, CsrValidateMessageString
+
+endlib
