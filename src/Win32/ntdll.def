@@ -835,6 +835,9 @@ include '..\implib.inc'
 ; implib ntdll.dll, RtlSetPropertySetClassId, _RtlSetPropertySetClassId@8
 ; implib ntdll.dll, ZwQueryOleDirectoryFile, _ZwQueryOleDirectoryFile@44
 
+; *** Function available from v3.50 (Windows NT 3.5) to v3.51 (Windows NT 3.51)
+; implib ntdll.dll, wcstok, _wcstok ; This function uses the CDECL calling convention!
+
 ; *** Functions available in v3.50 only (Windows NT 3.5)
 ; implib ntdll.dll, RtlGetUserFlagsHeap, _RtlGetUserFlagsHeap@16
 ; implib ntdll.dll, RtlGetUserValueHeap, _RtlGetUserValueHeap@16
