@@ -1,0 +1,11 @@
+include '..\implib.inc'
+
+implib basesrv.dll, BaseGetProcessCrtlRoutine, _BaseGetProcessCrtlRoutine@8
+implib basesrv.dll, BaseSetProcessCreateNotify, _BaseSetProcessCreateNotify@4
+implib basesrv.dll, BaseSrvDestroyGlobalAtomTable, _BaseSrvDestroyGlobalAtomTable@4 ; Function available in v3.51 only (Windows NT 3.51)
+implib basesrv.dll, BaseSrvNlsLogon, _BaseSrvNlsLogon@4
+implib basesrv.dll, BaseSrvNlsUpdateRegistryCache, _BaseSrvNlsUpdateRegistryCache@8
+implib basesrv.dll, BaseSrvRegisterSxS, _BaseSrvRegisterSxS@4
+implib basesrv.dll, ServerDllInitialization, _ServerDllInitialization@4
+
+endlib
