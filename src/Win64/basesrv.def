@@ -1,0 +1,10 @@
+include '..\implib64.inc'
+
+implib basesrv.dll, BaseGetProcessCrtlRoutine
+implib basesrv.dll, BaseSetProcessCreateNotify
+implib basesrv.dll, BaseSrvNlsLogon
+implib basesrv.dll, BaseSrvNlsUpdateRegistryCache
+implib basesrv.dll, BaseSrvRegisterSxS
+implib basesrv.dll, ServerDllInitialization
+
+endlib
