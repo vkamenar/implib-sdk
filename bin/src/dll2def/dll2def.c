@@ -113,7 +113,7 @@ char *cur1, *cur2, *buf = buf1k, c, x64;
 RVA_2_FileOffset export_dir;
 RVA_2_FileOffset_node *sections = 0, **current_node = &sections;
 int dll_name_len, aux, i, file_pos, size_of_optional_header, is_PE32plus, num_sections, imppfxlen;
-int ordinal_base, num_pointers, ordinals_array, pointers_array, psymbols_array, pub_name_len;
+int ordinal_base, ordinals_array, pointers_array, psymbols_array, pub_name_len;
 WORD ordinal;
 	if(hOut == INVALID_HANDLE_VALUE)
 		return ERR_OUTPUT;
@@ -229,11 +229,10 @@ WORD ordinal;
 		return ERR_NO_EXPORT;
 
 	// Jump to the Optional Header -> Data Directories -> Export Table
-	aux -= 0xA;
-	file_pos += aux;
-	if(SetFilePointer(hFile, aux, 0, FILE_CURRENT) != file_pos)
+	aux += file_pos - 0xA;
+	if(SetFilePointer(hFile, aux, 0, FILE_BEGIN) != aux)
 		return ERR_BAD_FORMAT;
-	file_pos = file_pos - aux + size_of_optional_header - 2;
+	file_pos += size_of_optional_header - 2;
 	if(!ReadFile(hFile, &export_dir, 8, &aux, 0) || aux != 8)
 		return ERR_BAD_FORMAT;
 	if(!export_dir.VirtualAddress || !export_dir.VirtualSize)
@@ -247,35 +246,31 @@ WORD ordinal;
 	while(num_sections--){
 		if(!ReadFile(hFile, buf, 0x28, &aux, 0) || aux != 0x28)
 			return ERR_BAD_FORMAT;
-		*current_node = (RVA_2_FileOffset_node*)HeapAlloc(hHeap, HEAP_NO_SERIALIZE | HEAP_ZERO_MEMORY, sizeof(RVA_2_FileOffset_node));
+		*current_node = (RVA_2_FileOffset_node*)HeapAlloc(hHeap, 0, sizeof(RVA_2_FileOffset_node));
 		if(!*current_node)
 			return ERR_NO_FREE_MEM;
 		(*(*current_node)).node.VirtualAddress = *(DWORD*)(buf + 0x0C);
-		(*(*current_node)).node.VirtualSize    = *(DWORD*)(buf + 0x08);
+		if((aux = *(DWORD*)(buf + 0x08)) == 0) // Virtual Size
+			aux = *(DWORD*)(buf + 0x10);   // Size of Raw Data
+		(*(*current_node)).node.VirtualSize    = aux;
 		(*(*current_node)).node.FileOffset     = *(DWORD*)(buf + 0x14);
 		current_node = &(RVA_2_FileOffset_node*)(*(*current_node)).next_node;
 	}
 
 	// Jump to the Export directory
-	export_dir.FileOffset = do_RVA_2_FileOffset(sections, export_dir.VirtualAddress);
-	file_pos = export_dir.FileOffset;
+	file_pos = do_RVA_2_FileOffset(sections, export_dir.VirtualAddress);
 	if(!file_pos || SetFilePointer(hFile, file_pos, 0, FILE_BEGIN) != file_pos)
 		return ERR_BAD_FORMAT;
 
 	// Read in the Export directory Table
-	aux = 40;
-	if(export_dir.VirtualSize < 40){
-		aux = export_dir.VirtualSize;
-		memset(buf, 0, 40);
-	}
-	ReadFile(hFile, buf, aux, &aux, 0);
+	memset(buf, 0, 40);
+	ReadFile(hFile, buf, 40, &aux, 0);
 	ordinal_base = *(WORD*)(buf + 0x10);
-	num_pointers = *(DWORD*)(buf + 0x14);
 	num_sections = *(DWORD*)(buf + 0x18);
 	pointers_array = do_RVA_2_FileOffset(sections, *(DWORD*)(buf + 0x1C));
 	psymbols_array = do_RVA_2_FileOffset(sections, *(DWORD*)(buf + 0x20));
 	ordinals_array = do_RVA_2_FileOffset(sections, *(DWORD*)(buf + 0x24));
-	if(!num_pointers || !num_sections || !pointers_array || !psymbols_array || !ordinals_array)
+	if(!num_sections || !pointers_array || !psymbols_array || !ordinals_array)
 		return ERR_NO_EXPORT;
 
 	// Parse the Name Pointer RVA Table
