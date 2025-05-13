@@ -26,7 +26,7 @@
     <_ProjectFileVersion>16.0.30523.133</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>.\</OutDir>
+    <OutDir>..\..\</OutDir>
     <IntDir>.\</IntDir>
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>false</GenerateManifest>
