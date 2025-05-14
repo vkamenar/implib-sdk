@@ -1,5 +1,48 @@
 include '..\implib.inc'
 
+; *** Functions available from v3.10 (Windows NT 3.10) to v6.0 (Windows Vista) SP2
+implib netapi32.dll, I_NetListCanonicalize, _I_NetListCanonicalize@36
+implib netapi32.dll, I_NetListTraverse, _I_NetListTraverse@12
+implib netapi32.dll, I_NetNameCanonicalize, _I_NetNameCanonicalize@24
+implib netapi32.dll, I_NetNameCompare, _I_NetNameCompare@20
+implib netapi32.dll, I_NetNameValidate, _I_NetNameValidate@16
+implib netapi32.dll, I_NetPathCanonicalize, _I_NetPathCanonicalize@28
+implib netapi32.dll, I_NetPathCompare, _I_NetPathCompare@20
+implib netapi32.dll, I_NetPathType, _I_NetPathType@16
+implib netapi32.dll, NetpAccessCheckAndAudit, _NetpAccessCheckAndAudit@20
+implib netapi32.dll, NetpAllocConfigName, _NetpAllocConfigName@16
+implib netapi32.dll, NetpAllocStrFromWStr, _NetpAllocStrFromWStr@4
+implib netapi32.dll, NetpAllocWStrFromStr, _NetpAllocWStrFromStr@4
+implib netapi32.dll, NetpApiStatusToNtStatus, _NetpApiStatusToNtStatus@4
+implib netapi32.dll, NetpCopyStringToBuffer, _NetpCopyStringToBuffer@20
+implib netapi32.dll, NetpCreateSecurityObject, _NetpCreateSecurityObject@24
+implib netapi32.dll, NetpDeleteSecurityObject, _NetpDeleteSecurityObject@4
+implib netapi32.dll, NetpGetComputerName, _NetpGetComputerName@4
+implib netapi32.dll, NetpGetDomainName, _NetpGetDomainName@4
+implib netapi32.dll, NetpGetPrivilege, _NetpGetPrivilege@8
+implib netapi32.dll, NetpLogonPutUnicodeString, _NetpLogonPutUnicodeString@12
+implib netapi32.dll, NetpNtStatusToApiStatus, _NetpNtStatusToApiStatus@4
+implib netapi32.dll, NetpPackString, _NetpPackString@12
+implib netapi32.dll, NetpReleasePrivilege, _NetpReleasePrivilege@0
+
+; *** Functions available from v3.10 (Windows NT 3.10) to v5.2 (Windows Server 2003) SP2
+implib netapi32.dll, NetpInitOemString, _NetpInitOemString@8
+implib netapi32.dll, NetpNetBiosAddName, _NetpNetBiosAddName@12
+implib netapi32.dll, NetpNetBiosCall, _NetpNetBiosCall@16
+implib netapi32.dll, NetpNetBiosDelName, _NetpNetBiosDelName@8
+implib netapi32.dll, NetpNetBiosGetAdapterNumbers, _NetpNetBiosGetAdapterNumbers@8
+implib netapi32.dll, NetpNetBiosHangup, _NetpNetBiosHangup@8
+implib netapi32.dll, NetpNetBiosReceive, _NetpNetBiosReceive@24
+implib netapi32.dll, NetpNetBiosSend, _NetpNetBiosSend@16
+implib netapi32.dll, NetpSmbCheck, _NetpSmbCheck@20
+implib netapi32.dll, NetpStringToNetBiosName, _NetpStringToNetBiosName@16
+
+; *** Functions available from v3.10 (Windows NT 3.10) to v5.0 (Windows 2000)
+implib netapi32.dll, NetpDbgDisplayServerInfo, _NetpDbgDisplayServerInfo@8
+implib netapi32.dll, NetpSetConfigBool, _NetpSetConfigBool@12
+implib netapi32.dll, NetpSetConfigDword, _NetpSetConfigDword@12
+implib netapi32.dll, NetpSetConfigTStrArray, _NetpSetConfigTStrArray@12
+
 implib netapi32.dll, DavAddConnection, _DavAddConnection@24
 implib netapi32.dll, DavDeleteConnection, _DavDeleteConnection@4
 implib netapi32.dll, DavFlushFile, _DavFlushFile@4
