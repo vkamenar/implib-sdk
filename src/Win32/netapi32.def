@@ -1,6 +1,57 @@
 include '..\implib.inc'
 
-; *** Functions available from v3.10 (Windows NT 3.10) to v6.0 (Windows Vista) SP2
+; *** Functions available from v4.0 (Windows 95 / Windows NT 4.0) to v6.0 (Windows Vista / Windows Server 2008) SP2
+implib netapi32.dll, I_NetDfsCreateExitPoint, _I_NetDfsCreateExitPoint@24
+implib netapi32.dll, I_NetDfsCreateLocalPartition, _I_NetDfsCreateLocalPartition@28
+implib netapi32.dll, I_NetDfsDeleteExitPoint, _I_NetDfsDeleteExitPoint@16
+implib netapi32.dll, I_NetDfsDeleteLocalPartition, _I_NetDfsDeleteLocalPartition@12
+implib netapi32.dll, I_NetDfsFixLocalVolume, _I_NetDfsFixLocalVolume@36
+implib netapi32.dll, I_NetDfsModifyPrefix, _I_NetDfsModifyPrefix@12
+implib netapi32.dll, I_NetDfsSetLocalVolumeState, _I_NetDfsSetLocalVolumeState@16
+implib netapi32.dll, I_NetDfsSetServerInfo, _I_NetDfsSetServerInfo@12
+implib netapi32.dll, NetpAccessCheck, _NetpAccessCheck@12
+
+; *** Functions available from v4.0 (Windows 95 / Windows NT 4.0) to v5.0 (Windows 2000)
+implib netapi32.dll, NetpAllocStrFromStr, _NetpAllocStrFromStr@4
+implib netapi32.dll, NetpAllocTStrFromString, _NetpAllocTStrFromString@8
+
+; *** Functions available from v3.50 (Windows NT 3.50) to v6.0 (Windows Vista / Windows Server 2008) SP2
+implib netapi32.dll, NetpAllocWStrFromWStr, _NetpAllocWStrFromWStr@4
+implib netapi32.dll, NetpLocalTimeZoneOffset, _NetpLocalTimeZoneOffset@0
+implib netapi32.dll, NetpTStrArrayEntryCount, _NetpTStrArrayEntryCount@4
+
+; *** Functions available from v3.50 (Windows NT 3.50) to v4.0 (Windows 95 / Windows NT 4.0)
+implib netapi32.dll, NetRplAdapterAdd, _NetRplAdapterAdd@16
+implib netapi32.dll, NetRplAdapterDel, _NetRplAdapterDel@8
+implib netapi32.dll, NetRplAdapterEnum, _NetRplAdapterEnum@28
+implib netapi32.dll, NetRplBootAdd, _NetRplBootAdd@16
+implib netapi32.dll, NetRplBootDel, _NetRplBootDel@12
+implib netapi32.dll, NetRplBootEnum, _NetRplBootEnum@28
+implib netapi32.dll, NetRplClose, _NetRplClose@4
+implib netapi32.dll, NetRplConfigAdd, _NetRplConfigAdd@16
+implib netapi32.dll, NetRplConfigDel, _NetRplConfigDel@8
+implib netapi32.dll, NetRplConfigEnum, _NetRplConfigEnum@32
+implib netapi32.dll, NetRplGetInfo, _NetRplGetInfo@12
+implib netapi32.dll, NetRplOpen, _NetRplOpen@8
+implib netapi32.dll, NetRplProfileAdd, _NetRplProfileAdd@16
+implib netapi32.dll, NetRplProfileClone, _NetRplProfileClone@16
+implib netapi32.dll, NetRplProfileDel, _NetRplProfileDel@8
+implib netapi32.dll, NetRplProfileEnum, _NetRplProfileEnum@32
+implib netapi32.dll, NetRplProfileGetInfo, _NetRplProfileGetInfo@16
+implib netapi32.dll, NetRplProfileSetInfo, _NetRplProfileSetInfo@20
+implib netapi32.dll, NetRplSetInfo, _NetRplSetInfo@16
+implib netapi32.dll, NetRplSetSecurity, _NetRplSetSecurity@16
+implib netapi32.dll, NetRplVendorAdd, _NetRplVendorAdd@16
+implib netapi32.dll, NetRplVendorDel, _NetRplVendorDel@8
+implib netapi32.dll, NetRplVendorEnum, _NetRplVendorEnum@28
+implib netapi32.dll, NetRplWkstaAdd, _NetRplWkstaAdd@16
+implib netapi32.dll, NetRplWkstaClone, _NetRplWkstaClone@24
+implib netapi32.dll, NetRplWkstaDel, _NetRplWkstaDel@8
+implib netapi32.dll, NetRplWkstaEnum, _NetRplWkstaEnum@32
+implib netapi32.dll, NetRplWkstaGetInfo, _NetRplWkstaGetInfo@16
+implib netapi32.dll, NetRplWkstaSetInfo, _NetRplWkstaSetInfo@20
+
+; *** Functions available from v3.10 (Windows NT 3.10) to v6.0 (Windows Vista / Windows Server 2008) SP2
 implib netapi32.dll, I_NetListCanonicalize, _I_NetListCanonicalize@36
 implib netapi32.dll, I_NetListTraverse, _I_NetListTraverse@12
 implib netapi32.dll, I_NetNameCanonicalize, _I_NetNameCanonicalize@24
