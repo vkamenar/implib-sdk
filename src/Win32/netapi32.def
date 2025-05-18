@@ -15,6 +15,9 @@ implib netapi32.dll, NetpAccessCheck, _NetpAccessCheck@12
 implib netapi32.dll, NetpAllocStrFromStr, _NetpAllocStrFromStr@4
 implib netapi32.dll, NetpAllocTStrFromString, _NetpAllocTStrFromString@8
 
+; *** Function available from v3.50 (Windows NT 3.50) to v6.3 (Windows 8.1)
+implib netapi32.dll, NetBrowserStatisticsGet, _NetBrowserStatisticsGet@12
+
 ; *** Functions available from v3.50 (Windows NT 3.50) to v6.0 (Windows Vista / Windows Server 2008) SP2
 implib netapi32.dll, NetpAllocWStrFromWStr, _NetpAllocWStrFromWStr@4
 implib netapi32.dll, NetpLocalTimeZoneOffset, _NetpLocalTimeZoneOffset@0
@@ -50,6 +53,15 @@ implib netapi32.dll, NetRplWkstaDel, _NetRplWkstaDel@8
 implib netapi32.dll, NetRplWkstaEnum, _NetRplWkstaEnum@32
 implib netapi32.dll, NetRplWkstaGetInfo, _NetRplWkstaGetInfo@16
 implib netapi32.dll, NetRplWkstaSetInfo, _NetRplWkstaSetInfo@20
+
+; *** Functions available from v3.10 (Windows NT 3.10) to v6.3 (Windows 8.1)
+implib netapi32.dll, I_BrowserDebugCall, _I_BrowserDebugCall@12
+implib netapi32.dll, I_BrowserDebugTrace, _I_BrowserDebugTrace@8
+implib netapi32.dll, I_BrowserQueryOtherDomains, _I_BrowserQueryOtherDomains@16
+implib netapi32.dll, I_BrowserQueryStatistics, _I_BrowserQueryStatistics@8
+implib netapi32.dll, I_BrowserResetNetlogonState, _I_BrowserResetNetlogonState@4
+implib netapi32.dll, I_BrowserResetStatistics, _I_BrowserResetStatistics@4
+implib netapi32.dll, I_BrowserServerEnum, _I_BrowserServerEnum@44
 
 ; *** Functions available from v3.10 (Windows NT 3.10) to v6.0 (Windows Vista / Windows Server 2008) SP2
 implib netapi32.dll, I_NetListCanonicalize, _I_NetListCanonicalize@36
