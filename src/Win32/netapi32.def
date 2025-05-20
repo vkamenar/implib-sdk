@@ -1,5 +1,8 @@
 include '..\implib.inc'
 
+; *** Function available from v4.0 (Windows 95 / Windows NT 4.0) to v6.3 (Windows 8.1)
+implib netapi32.dll, I_BrowserQueryEmulatedDomains, _I_BrowserQueryEmulatedDomains@12
+
 ; *** Functions available from v4.0 (Windows 95 / Windows NT 4.0) to v6.0 (Windows Vista / Windows Server 2008) SP2
 implib netapi32.dll, I_NetDfsCreateExitPoint, _I_NetDfsCreateExitPoint@24
 implib netapi32.dll, I_NetDfsCreateLocalPartition, _I_NetDfsCreateLocalPartition@28
