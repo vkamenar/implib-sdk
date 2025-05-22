@@ -1,5 +1,29 @@
 include '..\implib.inc'
 
+; *** Functions available from v5.0 (Windows 2000) to v6.3 (Windows 8.1)
+implib netapi32.dll, DsGetDcClose, _DsGetDcClose@4
+implib netapi32.dll, DsGetDcNext, _DsGetDcNext@16
+implib netapi32.dll, DsGetDcOpen, _DsGetDcOpen@28
+implib netapi32.dll, DsRoleAbortDownlevelServerUpgrade, _DsRoleAbortDownlevelServerUpgrade@16
+implib netapi32.dll, DsRoleCancel, _DsRoleCancel@8
+implib netapi32.dll, DsRoleDcAsDc, _DsRoleDcAsDc@68
+implib netapi32.dll, DsRoleDcAsReplica, _DsRoleDcAsReplica@12
+implib netapi32.dll, DsRoleDemoteDc, _DsRoleDemoteDc@44
+implib netapi32.dll, DsRoleDnsNameToFlatName, _DsRoleDnsNameToFlatName@16
+implib netapi32.dll, DsRoleGetDcOperationProgress, _DsRoleGetDcOperationProgress@12
+implib netapi32.dll, DsRoleGetDcOperationResults, _DsRoleGetDcOperationResults@12
+implib netapi32.dll, DsRoleServerSaveStateForUpgrade, _DsRoleServerSaveStateForUpgrade@4
+implib netapi32.dll, DsRoleUpgradeDownlevelServer, _DsRoleUpgradeDownlevelServer@48
+implib netapi32.dll, I_NetDfsGetFtServers, _I_NetDfsGetFtServers@16
+implib netapi32.dll, I_NetDfsManagerReportSiteInfo, _I_NetDfsManagerReportSiteInfo@8
+implib netapi32.dll, I_NetlogonGetTrustRid, _I_NetlogonGetTrustRid@12
+implib netapi32.dll, NetpParmsQueryUserProperty, _NetpParmsQueryUserProperty@16
+implib netapi32.dll, NetpParmsQueryUserPropertyWithLength, _NetpParmsQueryUserPropertyWithLength@16
+implib netapi32.dll, NetpParmsSetUserProperty, _NetpParmsSetUserProperty@28
+implib netapi32.dll, NetpParmsSetUserPropertyWithLength, _NetpParmsSetUserPropertyWithLength@28
+implib netapi32.dll, NetpParmsUserPropertyFree, _NetpParmsUserPropertyFree@4
+implib netapi32.dll, NetpUpgradePreNT5JoinInfo, _NetpUpgradePreNT5JoinInfo@0
+
 ; *** Function available from v4.0 (Windows 95 / Windows NT 4.0) to v6.3 (Windows 8.1)
 implib netapi32.dll, I_BrowserQueryEmulatedDomains, _I_BrowserQueryEmulatedDomains@12
 
