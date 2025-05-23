@@ -1,5 +1,11 @@
 include '..\implib.inc'
 
+; *** Functions available from v5.1 (Windows XP) SP2 to v6.3 (Windows 8.1)
+implib netapi32.dll, CredpValidateTargetName, _CredpValidateTargetName@52
+implib netapi32.dll, DsRoleGetDatabaseFacts, _DsRoleGetDatabaseFacts@24
+implib netapi32.dll, I_NetWkstaResetDfsCache, _I_NetWkstaResetDfsCache@0
+implib netapi32.dll, NetpStoreIntialDcRecord, _NetpStoreIntialDcRecord@4
+
 ; *** Functions available from v5.0 (Windows 2000) to v6.3 (Windows 8.1)
 implib netapi32.dll, DsGetDcClose, _DsGetDcClose@4
 implib netapi32.dll, DsGetDcNext, _DsGetDcNext@16
