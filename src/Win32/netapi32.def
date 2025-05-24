@@ -1,5 +1,14 @@
 include '..\implib.inc'
 
+; *** Functions available from v6.0 (Windows Vista / Windows Server 2008) to v6.3 (Windows 8.1)
+implib netapi32.dll, NetpAccessCheckAndAuditEx, _NetpAccessCheckAndAuditEx@28
+implib netapi32.dll, NetpEventlogClose, _NetpEventlogClose@4
+implib netapi32.dll, NetpEventlogOpen, _NetpEventlogOpen@8
+implib netapi32.dll, NetpEventlogWriteEx, _NetpEventlogWriteEx@32
+
+; *** Function available from v5.2 (Windows Server 2003) SP2 to v6.3 (Windows 8.1)
+implib netapi32.dll, DsRoleIfmHandleFree, _DsRoleIfmHandleFree@8
+
 ; *** Functions available from v5.1 (Windows XP) SP2 to v6.3 (Windows 8.1)
 implib netapi32.dll, CredpValidateTargetName, _CredpValidateTargetName@52
 implib netapi32.dll, DsRoleGetDatabaseFacts, _DsRoleGetDatabaseFacts@24
