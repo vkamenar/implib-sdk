@@ -1,5 +1,20 @@
 include '..\implib.inc'
 
+; *** Stub functions available from v3.1 (Windows NT 3.10) to v5.2 (Windows Server 2003) SP2
+implib WINMM.DLL, winmmDbgOut, _winmmDbgOut@0
+implib WINMM.DLL, winmmSetDebugLevel, _winmmSetDebugLevel@4
+
+; *** Functions available from v3.1 (Windows NT 3.10) to v3.5 (Windows NT 3.50)
+implib WINMM.DLL, FindCommandItem, _FindCommandItem@20
+implib WINMM.DLL, joySetCalibration, _joySetCalibration@28
+implib WINMM.DLL, mciEatCommandEntry, _mciEatCommandEntry@12
+implib WINMM.DLL, mciGetParamSize, _mciGetParamSize@8
+implib WINMM.DLL, mciUnlockCommandTable, _mciUnlockCommandTable@4 ; This function does nothing and returns 1
+
+; *** Functions available in v3.1 only (Windows NT 3.10)
+implib WINMM.DLL, mciSoundInit, _mciSoundInit@0
+implib WINMM.DLL, mmioInstallIOProc16, _mmioInstallIOProc16@16
+
 implib WINMM.DLL, CloseDriver, _CloseDriver@12
 implib WINMM.DLL, DefDriverProc, _DefDriverProc@20
 implib WINMM.DLL, DriverCallback, _DriverCallback@28
@@ -206,8 +221,6 @@ implib WINMM.DLL, waveOutSetVolume, _waveOutSetVolume@8
 implib WINMM.DLL, waveOutUnprepareHeader, _waveOutUnprepareHeader@12
 implib WINMM.DLL, waveOutWrite, _waveOutWrite@12
 implib WINMM.DLL, wid32Message, _wid32Message@20
-implib WINMM.DLL, winmmDbgOut, _winmmDbgOut@0
-implib WINMM.DLL, winmmSetDebugLevel, _winmmSetDebugLevel@4
 implib WINMM.DLL, wod32Message, _wod32Message@20
 
 endlib
