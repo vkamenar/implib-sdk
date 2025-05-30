@@ -11,6 +11,24 @@ implib WINMM.DLL, mciEatCommandEntry, _mciEatCommandEntry@12
 implib WINMM.DLL, mciGetParamSize, _mciGetParamSize@8
 implib WINMM.DLL, mciUnlockCommandTable, _mciUnlockCommandTable@4 ; This function does nothing and returns 1
 
+; *** Private functions available in v3.5 only (Windows NT 3.50)
+; *** Feel free to uncomment the necessary symbols and recompile the library
+; implib WINMM.DLL, private1, _private1@4
+; implib WINMM.DLL, private2, _private2@52
+; implib WINMM.DLL, private3, _private3@0
+; implib WINMM.DLL, private4, _private4@4
+; implib WINMM.DLL, private5, _private5@0
+; implib WINMM.DLL, private6, _private6@4
+; implib WINMM.DLL, private7, _private7@32
+; implib WINMM.DLL, private8, _private8@4
+; implib WINMM.DLL, private9, _private9@20
+; implib WINMM.DLL, private10, _private10@12
+; implib WINMM.DLL, private11, _private11@4
+; implib WINMM.DLL, private12, _private12@16
+; implib WINMM.DLL, private13, _private13@16
+; implib WINMM.DLL, private14, _private14@16
+; implib WINMM.DLL, private15, _private15@16
+
 ; *** Functions available in v3.1 only (Windows NT 3.10)
 implib WINMM.DLL, mciSoundInit, _mciSoundInit@0
 implib WINMM.DLL, mmioInstallIOProc16, _mmioInstallIOProc16@16
