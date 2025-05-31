@@ -1,5 +1,13 @@
 include '..\implib64.inc'
 
+; *** Functions available from v6.0 (Windows Vista / Windows Server 2008) to v6.0 SP2
+implib bcrypt.dll, GetAsymmetricEncryptionInterface
+implib bcrypt.dll, GetCipherInterface
+implib bcrypt.dll, GetHashInterface
+implib bcrypt.dll, GetRngInterface
+implib bcrypt.dll, GetSecretAgreementInterface
+implib bcrypt.dll, GetSignatureInterface
+
 implib bcrypt.dll, BCryptAddContextFunction
 implib bcrypt.dll, BCryptAddContextFunctionProvider
 implib bcrypt.dll, BCryptCloseAlgorithmProvider
