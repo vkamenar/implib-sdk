@@ -1,184 +1,265 @@
-include '..\implib64.inc'
+include '..\implib.inc'
 
-implib winmm.dll, CloseDriver
-implib winmm.dll, DefDriverProc
-implib winmm.dll, DriverCallback
-implib winmm.dll, DrvGetModuleHandle
-implib winmm.dll, GetDriverModuleHandle
-implib winmm.dll, OpenDriver
-implib winmm.dll, PlaySound
-implib winmm.dll, PlaySoundA
-implib winmm.dll, PlaySoundW
-implib winmm.dll, SendDriverMessage
-implib winmm.dll, WOWAppExit
-implib winmm.dll, auxGetDevCapsA
-implib winmm.dll, auxGetDevCapsW
-implib winmm.dll, auxGetNumDevs
-implib winmm.dll, auxGetVolume
-implib winmm.dll, auxOutMessage
-implib winmm.dll, auxSetVolume
-implib winmm.dll, joyConfigChanged
-implib winmm.dll, joyGetDevCapsA
-implib winmm.dll, joyGetDevCapsW
-implib winmm.dll, joyGetNumDevs
-implib winmm.dll, joyGetPos
-implib winmm.dll, joyGetPosEx
-implib winmm.dll, joyGetThreshold
-implib winmm.dll, joyReleaseCapture
-implib winmm.dll, joySetCapture
-implib winmm.dll, joySetThreshold
-implib winmm.dll, mciDriverNotify
-implib winmm.dll, mciDriverYield
-implib winmm.dll, mciExecute
-implib winmm.dll, mciFreeCommandResource
-implib winmm.dll, mciGetCreatorTask
-implib winmm.dll, mciGetDeviceIDA
-implib winmm.dll, mciGetDeviceIDFromElementIDA
-implib winmm.dll, mciGetDeviceIDFromElementIDW
-implib winmm.dll, mciGetDeviceIDW
-implib winmm.dll, mciGetDriverData
-implib winmm.dll, mciGetErrorStringA
-implib winmm.dll, mciGetErrorStringW
-implib winmm.dll, mciGetYieldProc
-implib winmm.dll, mciLoadCommandResource
-implib winmm.dll, mciSendCommandA
-implib winmm.dll, mciSendCommandW
-implib winmm.dll, mciSendStringA
-implib winmm.dll, mciSendStringW
-implib winmm.dll, mciSetDriverData
-implib winmm.dll, mciSetYieldProc
-implib winmm.dll, midiConnect
-implib winmm.dll, midiDisconnect
-implib winmm.dll, midiInAddBuffer
-implib winmm.dll, midiInClose
-implib winmm.dll, midiInGetDevCapsA
-implib winmm.dll, midiInGetDevCapsW
-implib winmm.dll, midiInGetErrorTextA
-implib winmm.dll, midiInGetErrorTextW
-implib winmm.dll, midiInGetID
-implib winmm.dll, midiInGetNumDevs
-implib winmm.dll, midiInMessage
-implib winmm.dll, midiInOpen
-implib winmm.dll, midiInPrepareHeader
-implib winmm.dll, midiInReset
-implib winmm.dll, midiInStart
-implib winmm.dll, midiInStop
-implib winmm.dll, midiInUnprepareHeader
-implib winmm.dll, midiOutCacheDrumPatches
-implib winmm.dll, midiOutCachePatches
-implib winmm.dll, midiOutClose
-implib winmm.dll, midiOutGetDevCapsA
-implib winmm.dll, midiOutGetDevCapsW
-implib winmm.dll, midiOutGetErrorTextA
-implib winmm.dll, midiOutGetErrorTextW
-implib winmm.dll, midiOutGetID
-implib winmm.dll, midiOutGetNumDevs
-implib winmm.dll, midiOutGetVolume
-implib winmm.dll, midiOutLongMsg
-implib winmm.dll, midiOutMessage
-implib winmm.dll, midiOutOpen
-implib winmm.dll, midiOutPrepareHeader
-implib winmm.dll, midiOutReset
-implib winmm.dll, midiOutSetVolume
-implib winmm.dll, midiOutShortMsg
-implib winmm.dll, midiOutUnprepareHeader
-implib winmm.dll, midiStreamClose
-implib winmm.dll, midiStreamOpen
-implib winmm.dll, midiStreamOut
-implib winmm.dll, midiStreamPause
-implib winmm.dll, midiStreamPosition
-implib winmm.dll, midiStreamProperty
-implib winmm.dll, midiStreamRestart
-implib winmm.dll, midiStreamStop
-implib winmm.dll, mixerClose
-implib winmm.dll, mixerGetControlDetailsA
-implib winmm.dll, mixerGetControlDetailsW
-implib winmm.dll, mixerGetDevCapsA
-implib winmm.dll, mixerGetDevCapsW
-implib winmm.dll, mixerGetID
-implib winmm.dll, mixerGetLineControlsA
-implib winmm.dll, mixerGetLineControlsW
-implib winmm.dll, mixerGetLineInfoA
-implib winmm.dll, mixerGetLineInfoW
-implib winmm.dll, mixerGetNumDevs
-implib winmm.dll, mixerMessage
-implib winmm.dll, mixerOpen
-implib winmm.dll, mixerSetControlDetails
-implib winmm.dll, mmDrvInstall
-implib winmm.dll, mmGetCurrentTask
-implib winmm.dll, mmTaskBlock
-implib winmm.dll, mmTaskCreate
-implib winmm.dll, mmTaskSignal
-implib winmm.dll, mmTaskYield
-implib winmm.dll, mmioAdvance
-implib winmm.dll, mmioAscend
-implib winmm.dll, mmioClose
-implib winmm.dll, mmioCreateChunk
-implib winmm.dll, mmioDescend
-implib winmm.dll, mmioFlush
-implib winmm.dll, mmioGetInfo
-implib winmm.dll, mmioInstallIOProcA
-implib winmm.dll, mmioInstallIOProcW
-implib winmm.dll, mmioOpenA
-implib winmm.dll, mmioOpenW
-implib winmm.dll, mmioRead
-implib winmm.dll, mmioRenameA
-implib winmm.dll, mmioRenameW
-implib winmm.dll, mmioSeek
-implib winmm.dll, mmioSendMessage
-implib winmm.dll, mmioSetBuffer
-implib winmm.dll, mmioSetInfo
-implib winmm.dll, mmioStringToFOURCCA
-implib winmm.dll, mmioStringToFOURCCW
-implib winmm.dll, mmioWrite
-implib winmm.dll, mmsystemGetVersion
-implib winmm.dll, sndPlaySoundA
-implib winmm.dll, sndPlaySoundW
-implib winmm.dll, timeBeginPeriod
-implib winmm.dll, timeEndPeriod
-implib winmm.dll, timeGetDevCaps
-implib winmm.dll, timeGetSystemTime
-implib winmm.dll, timeGetTime
-implib winmm.dll, timeKillEvent
-implib winmm.dll, timeSetEvent
-implib winmm.dll, waveInAddBuffer
-implib winmm.dll, waveInClose
-implib winmm.dll, waveInGetDevCapsA
-implib winmm.dll, waveInGetDevCapsW
-implib winmm.dll, waveInGetErrorTextA
-implib winmm.dll, waveInGetErrorTextW
-implib winmm.dll, waveInGetID
-implib winmm.dll, waveInGetNumDevs
-implib winmm.dll, waveInGetPosition
-implib winmm.dll, waveInMessage
-implib winmm.dll, waveInOpen
-implib winmm.dll, waveInPrepareHeader
-implib winmm.dll, waveInReset
-implib winmm.dll, waveInStart
-implib winmm.dll, waveInStop
-implib winmm.dll, waveInUnprepareHeader
-implib winmm.dll, waveOutBreakLoop
-implib winmm.dll, waveOutClose
-implib winmm.dll, waveOutGetDevCapsA
-implib winmm.dll, waveOutGetDevCapsW
-implib winmm.dll, waveOutGetErrorTextA
-implib winmm.dll, waveOutGetErrorTextW
-implib winmm.dll, waveOutGetID
-implib winmm.dll, waveOutGetNumDevs
-implib winmm.dll, waveOutGetPitch
-implib winmm.dll, waveOutGetPlaybackRate
-implib winmm.dll, waveOutGetPosition
-implib winmm.dll, waveOutGetVolume
-implib winmm.dll, waveOutMessage
-implib winmm.dll, waveOutOpen
-implib winmm.dll, waveOutPause
-implib winmm.dll, waveOutPrepareHeader
-implib winmm.dll, waveOutReset
-implib winmm.dll, waveOutRestart
-implib winmm.dll, waveOutSetPitch
-implib winmm.dll, waveOutSetPlaybackRate
-implib winmm.dll, waveOutSetVolume
-implib winmm.dll, waveOutUnprepareHeader
-implib winmm.dll, waveOutWrite
+; *** Functions available from v5.1 (Windows XP) SP2 to v5.2 (Windows Server 2003) SP2
+; implib WINMM.DLL, _gfxLogoff@0 ; This function is an alias for gfxLogoff
+; implib WINMM.DLL, _gfxLogon@4  ; This function is an alias for gfxLogon
+implib WINMM.DLL, gfxAddGfx, _gfxAddGfx@20
+implib WINMM.DLL, gfxBatchChange, _gfxBatchChange@24
+implib WINMM.DLL, gfxCreateGfxFactoriesList, _gfxCreateGfxFactoriesList@8
+implib WINMM.DLL, gfxCreateZoneFactoriesList, _gfxCreateZoneFactoriesList@4
+implib WINMM.DLL, gfxDestroyDeviceInterfaceList, _gfxDestroyDeviceInterfaceList@4
+implib WINMM.DLL, gfxEnumerateGfxs, _gfxEnumerateGfxs@12
+implib WINMM.DLL, gfxModifyGfx, _gfxModifyGfx@8
+implib WINMM.DLL, gfxOpenGfx, _gfxOpenGfx@8
+implib WINMM.DLL, gfxRemoveGfx, _gfxRemoveGfx@4
+
+; *** Function available from v4.0 (Windows 95 / Windows NT 4.0) to v5.0 (Windows 2000)
+implib WINMM.DLL, MigrateMidiUser, _MigrateMidiUser@0
+
+; *** Stub functions available from v3.1 (Windows NT 3.10) to v5.2 (Windows Server 2003) SP2
+implib WINMM.DLL, winmmDbgOut, _winmmDbgOut@0
+implib WINMM.DLL, winmmSetDebugLevel, _winmmSetDebugLevel@4
+
+; *** Functions available from v3.1 (Windows NT 3.10) to v3.5 (Windows NT 3.50)
+implib WINMM.DLL, FindCommandItem, _FindCommandItem@20
+implib WINMM.DLL, joySetCalibration, _joySetCalibration@28
+implib WINMM.DLL, mciEatCommandEntry, _mciEatCommandEntry@12
+implib WINMM.DLL, mciGetParamSize, _mciGetParamSize@8
+implib WINMM.DLL, mciUnlockCommandTable, _mciUnlockCommandTable@4 ; This function does nothing and returns 1
+
+; *** Functions available in v4.90 only (Windows Me)
+; *** Feel free to uncomment the necessary symbols and recompile the library
+; implib WINMM.DLL, DrvClose, _DrvClose@12
+; implib WINMM.DLL, DrvDefDriverProc, _DrvDefDriverProc@20 ; an alias for DefDriverProc
+; implib WINMM.DLL, DrvOpen, _DrvOpen@12                   ; an alias for OpenDriver
+; implib WINMM.DLL, DrvOpenA, _DrvOpenA@12                 ; an alias for OpenDriverA
+; implib WINMM.DLL, DrvSendMessage, _DrvSendMessage@16     ; an alias for SendDriverMessage
+; implib WINMM.DLL, GetDriverFlags, _GetDriverFlags@4
+; implib WINMM.DLL, OpenDriverA, _OpenDriverA@12
+; implib WINMM.DLL, winmmf_ThunkData32  ; not a function, but a DATA symbol
+; implib WINMM.DLL, winmmsl_ThunkData32 ; not a function, but a DATA symbol
+
+; *** Private functions available in v3.5 only (Windows NT 3.50)
+; *** Feel free to uncomment the necessary symbols and recompile the library
+; implib WINMM.DLL, private1, _private1@4
+; implib WINMM.DLL, private2, _private2@52
+; implib WINMM.DLL, private3, _private3@0
+; implib WINMM.DLL, private4, _private4@4
+; implib WINMM.DLL, private5, _private5@0
+; implib WINMM.DLL, private6, _private6@4
+; implib WINMM.DLL, private7, _private7@32
+; implib WINMM.DLL, private8, _private8@4
+; implib WINMM.DLL, private9, _private9@20
+; implib WINMM.DLL, private10, _private10@12
+; implib WINMM.DLL, private11, _private11@4
+; implib WINMM.DLL, private12, _private12@16
+; implib WINMM.DLL, private13, _private13@16
+; implib WINMM.DLL, private14, _private14@16
+; implib WINMM.DLL, private15, _private15@16
+
+; *** Function available in v3.1 (Windows NT 3.10) and v4.90 (Windows Me)
+implib WINMM.DLL, mmioInstallIOProc16, _mmioInstallIOProc16@12 ; _mmioInstallIOProc16@16 in Windows NT 3.10
+
+; *** Function available in v3.1 only (Windows NT 3.10)
+implib WINMM.DLL, mciSoundInit, _mciSoundInit@0
+
+implib WINMM.DLL, CloseDriver, _CloseDriver@12
+implib WINMM.DLL, DefDriverProc, _DefDriverProc@20
+implib WINMM.DLL, DriverCallback, _DriverCallback@28
+implib WINMM.DLL, DrvGetModuleHandle, _DrvGetModuleHandle@4
+implib WINMM.DLL, GetDriverModuleHandle, _GetDriverModuleHandle@4
+implib WINMM.DLL, MigrateAllDrivers, _MigrateAllDrivers@0
+implib WINMM.DLL, MigrateSoundEvents, _MigrateSoundEvents@0
+implib WINMM.DLL, NotifyCallbackData, _NotifyCallbackData@20
+implib WINMM.DLL, OpenDriver, _OpenDriver@12
+implib WINMM.DLL, PlaySound, _PlaySound@12
+implib WINMM.DLL, PlaySoundA, _PlaySoundA@12
+implib WINMM.DLL, PlaySoundW, _PlaySoundW@12
+implib WINMM.DLL, SendDriverMessage, _SendDriverMessage@16
+implib WINMM.DLL, WOW32DriverCallback, _WOW32DriverCallback@28
+implib WINMM.DLL, WOW32ResolveMultiMediaHandle, _WOW32ResolveMultiMediaHandle@24
+implib WINMM.DLL, WOWAppExit, _WOWAppExit@4
+implib WINMM.DLL, WinmmLogoff, _WinmmLogoff@0
+implib WINMM.DLL, WinmmLogon, _WinmmLogon@4
+implib WINMM.DLL, gfxLogoff, _gfxLogoff@0
+implib WINMM.DLL, gfxLogon, _gfxLogon@4
+implib WINMM.DLL, aux32Message, _aux32Message@20
+implib WINMM.DLL, auxGetDevCapsA, _auxGetDevCapsA@12
+implib WINMM.DLL, auxGetDevCapsW, _auxGetDevCapsW@12
+implib WINMM.DLL, auxGetNumDevs, _auxGetNumDevs@0
+implib WINMM.DLL, auxGetVolume, _auxGetVolume@8
+implib WINMM.DLL, auxOutMessage, _auxOutMessage@16
+implib WINMM.DLL, auxSetVolume, _auxSetVolume@8
+implib WINMM.DLL, joy32Message, _joy32Message@20
+implib WINMM.DLL, joyConfigChanged, _joyConfigChanged@4
+implib WINMM.DLL, joyGetDevCapsA, _joyGetDevCapsA@12
+implib WINMM.DLL, joyGetDevCapsW, _joyGetDevCapsW@12
+implib WINMM.DLL, joyGetNumDevs, _joyGetNumDevs@0
+implib WINMM.DLL, joyGetPos, _joyGetPos@8
+implib WINMM.DLL, joyGetPosEx, _joyGetPosEx@8
+implib WINMM.DLL, joyGetThreshold, _joyGetThreshold@8
+implib WINMM.DLL, joyReleaseCapture, _joyReleaseCapture@4
+implib WINMM.DLL, joySetCapture, _joySetCapture@16
+implib WINMM.DLL, joySetThreshold, _joySetThreshold@8
+implib WINMM.DLL, mci32Message, _mci32Message@20
+implib WINMM.DLL, mciDriverNotify, _mciDriverNotify@12
+implib WINMM.DLL, mciDriverYield, _mciDriverYield@4
+implib WINMM.DLL, mciExecute, _mciExecute@4
+implib WINMM.DLL, mciFreeCommandResource, _mciFreeCommandResource@4
+implib WINMM.DLL, mciGetCreatorTask, _mciGetCreatorTask@4
+implib WINMM.DLL, mciGetDeviceIDA, _mciGetDeviceIDA@4
+implib WINMM.DLL, mciGetDeviceIDFromElementIDA, _mciGetDeviceIDFromElementIDA@8
+implib WINMM.DLL, mciGetDeviceIDFromElementIDW, _mciGetDeviceIDFromElementIDW@8
+implib WINMM.DLL, mciGetDeviceIDW, _mciGetDeviceIDW@4
+implib WINMM.DLL, mciGetDriverData, _mciGetDriverData@4
+implib WINMM.DLL, mciGetErrorStringA, _mciGetErrorStringA@12
+implib WINMM.DLL, mciGetErrorStringW, _mciGetErrorStringW@12
+implib WINMM.DLL, mciGetYieldProc, _mciGetYieldProc@8
+implib WINMM.DLL, mciLoadCommandResource, _mciLoadCommandResource@12
+implib WINMM.DLL, mciSendCommandA, _mciSendCommandA@16
+implib WINMM.DLL, mciSendCommandW, _mciSendCommandW@16
+implib WINMM.DLL, mciSendStringA, _mciSendStringA@16
+implib WINMM.DLL, mciSendStringW, _mciSendStringW@16
+implib WINMM.DLL, mciSetDriverData, _mciSetDriverData@8
+implib WINMM.DLL, mciSetYieldProc, _mciSetYieldProc@12
+implib WINMM.DLL, mid32Message, _mid32Message@20
+implib WINMM.DLL, midiConnect, _midiConnect@12
+implib WINMM.DLL, midiDisconnect, _midiDisconnect@12
+implib WINMM.DLL, midiInAddBuffer, _midiInAddBuffer@12
+implib WINMM.DLL, midiInClose, _midiInClose@4
+implib WINMM.DLL, midiInGetDevCapsA, _midiInGetDevCapsA@12
+implib WINMM.DLL, midiInGetDevCapsW, _midiInGetDevCapsW@12
+implib WINMM.DLL, midiInGetErrorTextA, _midiInGetErrorTextA@12
+implib WINMM.DLL, midiInGetErrorTextW, _midiInGetErrorTextW@12
+implib WINMM.DLL, midiInGetID, _midiInGetID@8
+implib WINMM.DLL, midiInGetNumDevs, _midiInGetNumDevs@0
+implib WINMM.DLL, midiInMessage, _midiInMessage@16
+implib WINMM.DLL, midiInOpen, _midiInOpen@20
+implib WINMM.DLL, midiInPrepareHeader, _midiInPrepareHeader@12
+implib WINMM.DLL, midiInReset, _midiInReset@4
+implib WINMM.DLL, midiInStart, _midiInStart@4
+implib WINMM.DLL, midiInStop, _midiInStop@4
+implib WINMM.DLL, midiInUnprepareHeader, _midiInUnprepareHeader@12
+implib WINMM.DLL, midiOutCacheDrumPatches, _midiOutCacheDrumPatches@16
+implib WINMM.DLL, midiOutCachePatches, _midiOutCachePatches@16
+implib WINMM.DLL, midiOutClose, _midiOutClose@4
+implib WINMM.DLL, midiOutGetDevCapsA, _midiOutGetDevCapsA@12
+implib WINMM.DLL, midiOutGetDevCapsW, _midiOutGetDevCapsW@12
+implib WINMM.DLL, midiOutGetErrorTextA, _midiOutGetErrorTextA@12
+implib WINMM.DLL, midiOutGetErrorTextW, _midiOutGetErrorTextW@12
+implib WINMM.DLL, midiOutGetID, _midiOutGetID@8
+implib WINMM.DLL, midiOutGetNumDevs, _midiOutGetNumDevs@0
+implib WINMM.DLL, midiOutGetVolume, _midiOutGetVolume@8
+implib WINMM.DLL, midiOutLongMsg, _midiOutLongMsg@12
+implib WINMM.DLL, midiOutMessage, _midiOutMessage@16
+implib WINMM.DLL, midiOutOpen, _midiOutOpen@20
+implib WINMM.DLL, midiOutPrepareHeader, _midiOutPrepareHeader@12
+implib WINMM.DLL, midiOutReset, _midiOutReset@4
+implib WINMM.DLL, midiOutSetVolume, _midiOutSetVolume@8
+implib WINMM.DLL, midiOutShortMsg, _midiOutShortMsg@8
+implib WINMM.DLL, midiOutUnprepareHeader, _midiOutUnprepareHeader@12
+implib WINMM.DLL, midiStreamClose, _midiStreamClose@4
+implib WINMM.DLL, midiStreamOpen, _midiStreamOpen@24
+implib WINMM.DLL, midiStreamOut, _midiStreamOut@12
+implib WINMM.DLL, midiStreamPause, _midiStreamPause@4
+implib WINMM.DLL, midiStreamPosition, _midiStreamPosition@12
+implib WINMM.DLL, midiStreamProperty, _midiStreamProperty@12
+implib WINMM.DLL, midiStreamRestart, _midiStreamRestart@4
+implib WINMM.DLL, midiStreamStop, _midiStreamStop@4
+implib WINMM.DLL, mixerClose, _mixerClose@4
+implib WINMM.DLL, mixerGetControlDetailsA, _mixerGetControlDetailsA@12
+implib WINMM.DLL, mixerGetControlDetailsW, _mixerGetControlDetailsW@12
+implib WINMM.DLL, mixerGetDevCapsA, _mixerGetDevCapsA@12
+implib WINMM.DLL, mixerGetDevCapsW, _mixerGetDevCapsW@12
+implib WINMM.DLL, mixerGetID, _mixerGetID@12
+implib WINMM.DLL, mixerGetLineControlsA, _mixerGetLineControlsA@12
+implib WINMM.DLL, mixerGetLineControlsW, _mixerGetLineControlsW@12
+implib WINMM.DLL, mixerGetLineInfoA, _mixerGetLineInfoA@12
+implib WINMM.DLL, mixerGetLineInfoW, _mixerGetLineInfoW@12
+implib WINMM.DLL, mixerGetNumDevs, _mixerGetNumDevs@0
+implib WINMM.DLL, mixerMessage, _mixerMessage@16
+implib WINMM.DLL, mixerOpen, _mixerOpen@20
+implib WINMM.DLL, mixerSetControlDetails, _mixerSetControlDetails@12
+implib WINMM.DLL, mmDrvInstall, _mmDrvInstall@16
+implib WINMM.DLL, mmGetCurrentTask, _mmGetCurrentTask@0
+implib WINMM.DLL, mmTaskBlock, _mmTaskBlock@4
+implib WINMM.DLL, mmTaskCreate, _mmTaskCreate@12
+implib WINMM.DLL, mmTaskSignal, _mmTaskSignal@4
+implib WINMM.DLL, mmTaskYield, _mmTaskYield@0
+implib WINMM.DLL, mmioAdvance, _mmioAdvance@12
+implib WINMM.DLL, mmioAscend, _mmioAscend@12
+implib WINMM.DLL, mmioClose, _mmioClose@8
+implib WINMM.DLL, mmioCreateChunk, _mmioCreateChunk@12
+implib WINMM.DLL, mmioDescend, _mmioDescend@16
+implib WINMM.DLL, mmioFlush, _mmioFlush@8
+implib WINMM.DLL, mmioGetInfo, _mmioGetInfo@12
+implib WINMM.DLL, mmioInstallIOProcA, _mmioInstallIOProcA@12
+implib WINMM.DLL, mmioInstallIOProcW, _mmioInstallIOProcW@12
+implib WINMM.DLL, mmioOpenA, _mmioOpenA@12
+implib WINMM.DLL, mmioOpenW, _mmioOpenW@12
+implib WINMM.DLL, mmioRead, _mmioRead@12
+implib WINMM.DLL, mmioRenameA, _mmioRenameA@16
+implib WINMM.DLL, mmioRenameW, _mmioRenameW@16
+implib WINMM.DLL, mmioSeek, _mmioSeek@12
+implib WINMM.DLL, mmioSendMessage, _mmioSendMessage@16
+implib WINMM.DLL, mmioSetBuffer, _mmioSetBuffer@16
+implib WINMM.DLL, mmioSetInfo, _mmioSetInfo@12
+implib WINMM.DLL, mmioStringToFOURCCA, _mmioStringToFOURCCA@8
+implib WINMM.DLL, mmioStringToFOURCCW, _mmioStringToFOURCCW@8
+implib WINMM.DLL, mmioWrite, _mmioWrite@12
+implib WINMM.DLL, mmsystemGetVersion, _mmsystemGetVersion@0
+implib WINMM.DLL, mod32Message, _mod32Message@20
+implib WINMM.DLL, mxd32Message, _mxd32Message@20
+implib WINMM.DLL, sndPlaySoundA, _sndPlaySoundA@8
+implib WINMM.DLL, sndPlaySoundW, _sndPlaySoundW@8
+implib WINMM.DLL, tid32Message, _tid32Message@20
+implib WINMM.DLL, timeBeginPeriod, _timeBeginPeriod@4
+implib WINMM.DLL, timeEndPeriod, _timeEndPeriod@4
+implib WINMM.DLL, timeGetDevCaps, _timeGetDevCaps@8
+implib WINMM.DLL, timeGetSystemTime, _timeGetSystemTime@8
+implib WINMM.DLL, timeGetTime, _timeGetTime@0
+implib WINMM.DLL, timeKillEvent, _timeKillEvent@4
+implib WINMM.DLL, timeSetEvent, _timeSetEvent@20
+implib WINMM.DLL, waveInAddBuffer, _waveInAddBuffer@12
+implib WINMM.DLL, waveInClose, _waveInClose@4
+implib WINMM.DLL, waveInGetDevCapsA, _waveInGetDevCapsA@12
+implib WINMM.DLL, waveInGetDevCapsW, _waveInGetDevCapsW@12
+implib WINMM.DLL, waveInGetErrorTextA, _waveInGetErrorTextA@12
+implib WINMM.DLL, waveInGetErrorTextW, _waveInGetErrorTextW@12
+implib WINMM.DLL, waveInGetID, _waveInGetID@8
+implib WINMM.DLL, waveInGetNumDevs, _waveInGetNumDevs@0
+implib WINMM.DLL, waveInGetPosition, _waveInGetPosition@12
+implib WINMM.DLL, waveInMessage, _waveInMessage@16
+implib WINMM.DLL, waveInOpen, _waveInOpen@24
+implib WINMM.DLL, waveInPrepareHeader, _waveInPrepareHeader@12
+implib WINMM.DLL, waveInReset, _waveInReset@4
+implib WINMM.DLL, waveInStart, _waveInStart@4
+implib WINMM.DLL, waveInStop, _waveInStop@4
+implib WINMM.DLL, waveInUnprepareHeader, _waveInUnprepareHeader@12
+implib WINMM.DLL, waveOutBreakLoop, _waveOutBreakLoop@4
+implib WINMM.DLL, waveOutClose, _waveOutClose@4
+implib WINMM.DLL, waveOutGetDevCapsA, _waveOutGetDevCapsA@12
+implib WINMM.DLL, waveOutGetDevCapsW, _waveOutGetDevCapsW@12
+implib WINMM.DLL, waveOutGetErrorTextA, _waveOutGetErrorTextA@12
+implib WINMM.DLL, waveOutGetErrorTextW, _waveOutGetErrorTextW@12
+implib WINMM.DLL, waveOutGetID, _waveOutGetID@8
+implib WINMM.DLL, waveOutGetNumDevs, _waveOutGetNumDevs@0
+implib WINMM.DLL, waveOutGetPitch, _waveOutGetPitch@8
+implib WINMM.DLL, waveOutGetPlaybackRate, _waveOutGetPlaybackRate@8
+implib WINMM.DLL, waveOutGetPosition, _waveOutGetPosition@12
+implib WINMM.DLL, waveOutGetVolume, _waveOutGetVolume@8
+implib WINMM.DLL, waveOutMessage, _waveOutMessage@16
+implib WINMM.DLL, waveOutOpen, _waveOutOpen@24
+implib WINMM.DLL, waveOutPause, _waveOutPause@4
+implib WINMM.DLL, waveOutPrepareHeader, _waveOutPrepareHeader@12
+implib WINMM.DLL, waveOutReset, _waveOutReset@4
+implib WINMM.DLL, waveOutRestart, _waveOutRestart@4
+implib WINMM.DLL, waveOutSetPitch, _waveOutSetPitch@8
+implib WINMM.DLL, waveOutSetPlaybackRate, _waveOutSetPlaybackRate@8
+implib WINMM.DLL, waveOutSetVolume, _waveOutSetVolume@8
+implib WINMM.DLL, waveOutUnprepareHeader, _waveOutUnprepareHeader@12
+implib WINMM.DLL, waveOutWrite, _waveOutWrite@12
+implib WINMM.DLL, wid32Message, _wid32Message@20
+implib WINMM.DLL, wod32Message, _wod32Message@20
 
 endlib
