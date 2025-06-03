@@ -1,5 +1,25 @@
 include '..\implib64.inc'
 
+; *** Functions available in v5.2 only (Windows Server 2003)
+implib winmm.dll, MigrateAllDrivers
+implib winmm.dll, MigrateSoundEvents
+implib winmm.dll, WinmmLogoff
+implib winmm.dll, WinmmLogon
+implib winmm.dll, gfxAddGfx
+implib winmm.dll, gfxBatchChange
+implib winmm.dll, gfxCreateGfxFactoriesList
+implib winmm.dll, gfxCreateZoneFactoriesList
+implib winmm.dll, gfxDestroyDeviceInterfaceList
+implib winmm.dll, gfxEnumerateGfxs
+implib winmm.dll, gfxLogoff
+implib winmm.dll, gfxLogon
+implib winmm.dll, gfxModifyGfx
+implib winmm.dll, gfxOpenGfx
+implib winmm.dll, gfxRemoveGfx
+implib winmm.dll, winmmDbgOut
+implib winmm.dll, winmmSetDebugLevel
+
+; *** Functions available in v10.0 (Windows 10)
 implib winmm.dll, CloseDriver
 implib winmm.dll, DefDriverProc
 implib winmm.dll, DriverCallback
