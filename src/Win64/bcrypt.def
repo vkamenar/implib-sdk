@@ -8,6 +8,7 @@ implib bcrypt.dll, GetRngInterface
 implib bcrypt.dll, GetSecretAgreementInterface
 implib bcrypt.dll, GetSignatureInterface
 
+; *** Functions available in v10.0 (Windows 10)
 implib bcrypt.dll, BCryptAddContextFunction
 implib bcrypt.dll, BCryptAddContextFunctionProvider
 implib bcrypt.dll, BCryptCloseAlgorithmProvider
