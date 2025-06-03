@@ -1,8 +1,8 @@
 include '..\implib.inc'
 
-; *** Functions available from v5.1 (Windows XP) SP2 to v5.2 (Windows Server 2003) SP2
-; implib WINMM.DLL, _gfxLogoff@0 ; This function is an alias for gfxLogoff
-; implib WINMM.DLL, _gfxLogon@4  ; This function is an alias for gfxLogon
+; *** GFX functions available from v5.1 (Windows XP) SP2 to v5.2 (Windows Server 2003) SP2
+implib WINMM.DLL, _gfxLogoff@0, _gfxLogoff@0 ; Exported with STDCALL mangling
+implib WINMM.DLL, _gfxLogon@4, _gfxLogon@4   ; Exported with STDCALL mangling
 implib WINMM.DLL, gfxAddGfx, _gfxAddGfx@20
 implib WINMM.DLL, gfxBatchChange, _gfxBatchChange@24
 implib WINMM.DLL, gfxCreateGfxFactoriesList, _gfxCreateGfxFactoriesList@8
@@ -12,6 +12,14 @@ implib WINMM.DLL, gfxEnumerateGfxs, _gfxEnumerateGfxs@12
 implib WINMM.DLL, gfxModifyGfx, _gfxModifyGfx@8
 implib WINMM.DLL, gfxOpenGfx, _gfxOpenGfx@8
 implib WINMM.DLL, gfxRemoveGfx, _gfxRemoveGfx@4
+
+; *** Functions available from v5.0 (Windows 2000) to v5.2 (Windows Server 2003) SP2
+implib WINMM.DLL, WinmmLogoff, _WinmmLogoff@0
+implib WINMM.DLL, WinmmLogon, _WinmmLogon@4
+
+; *** Functions available from v4.0 (Windows 95 / Windows NT 4.0) to v5.2 (Windows Server 2003) SP2
+implib WINMM.DLL, MigrateAllDrivers, _MigrateAllDrivers@0
+implib WINMM.DLL, MigrateSoundEvents, _MigrateSoundEvents@0
 
 ; *** Function available from v4.0 (Windows 95 / Windows NT 4.0) to v5.0 (Windows 2000)
 implib WINMM.DLL, MigrateMidiUser, _MigrateMidiUser@0
@@ -68,8 +76,6 @@ implib WINMM.DLL, DefDriverProc, _DefDriverProc@20
 implib WINMM.DLL, DriverCallback, _DriverCallback@28
 implib WINMM.DLL, DrvGetModuleHandle, _DrvGetModuleHandle@4
 implib WINMM.DLL, GetDriverModuleHandle, _GetDriverModuleHandle@4
-implib WINMM.DLL, MigrateAllDrivers, _MigrateAllDrivers@0
-implib WINMM.DLL, MigrateSoundEvents, _MigrateSoundEvents@0
 implib WINMM.DLL, NotifyCallbackData, _NotifyCallbackData@20
 implib WINMM.DLL, OpenDriver, _OpenDriver@12
 implib WINMM.DLL, PlaySound, _PlaySound@12
@@ -79,10 +85,6 @@ implib WINMM.DLL, SendDriverMessage, _SendDriverMessage@16
 implib WINMM.DLL, WOW32DriverCallback, _WOW32DriverCallback@28
 implib WINMM.DLL, WOW32ResolveMultiMediaHandle, _WOW32ResolveMultiMediaHandle@24
 implib WINMM.DLL, WOWAppExit, _WOWAppExit@4
-implib WINMM.DLL, WinmmLogoff, _WinmmLogoff@0
-implib WINMM.DLL, WinmmLogon, _WinmmLogon@4
-implib WINMM.DLL, gfxLogoff, _gfxLogoff@0
-implib WINMM.DLL, gfxLogon, _gfxLogon@4
 implib WINMM.DLL, aux32Message, _aux32Message@20
 implib WINMM.DLL, auxGetDevCapsA, _auxGetDevCapsA@12
 implib WINMM.DLL, auxGetDevCapsW, _auxGetDevCapsW@12
