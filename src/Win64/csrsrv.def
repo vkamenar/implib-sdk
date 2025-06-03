@@ -10,6 +10,7 @@ implib csrsrv.dll, CsrNotifyWait
 implib csrsrv.dll, CsrPopulateDosDevices
 implib csrsrv.dll, CsrSetCallingSpooler ; does nothing
 
+; *** Functions available in v10.0 (Windows 10)
 implib csrsrv.dll, CsrAddStaticServerThread
 implib csrsrv.dll, CsrCallServerFromServer
 implib csrsrv.dll, CsrConnectToUser
