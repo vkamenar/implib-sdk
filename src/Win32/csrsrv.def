@@ -33,7 +33,7 @@ implib csrsrv.dll, CsrpProcessApiRequest, _CsrpProcessApiRequest@8
 implib csrsrv.dll, CsrDelayedThreadCleanup, _CsrDelayedThreadCleanup@0
 implib csrsrv.dll, CsrRegisterCleanupEvent, _CsrRegisterCleanupEvent@4
 
-; *** Functions available up to v10.0 (Windows 10)
+; *** Functions available in v10.0 (Windows 10)
 implib csrsrv.dll, CsrAddStaticServerThread, _CsrAddStaticServerThread@12
 implib csrsrv.dll, CsrCallServerFromServer, _CsrCallServerFromServer@8
 implib csrsrv.dll, CsrConnectToUser, _CsrConnectToUser@0
