@@ -43,7 +43,7 @@ include '..\implib.inc'
 ; implib apphelp.dll, DeleteAppcompatModeW
 ; implib apphelp.dll, PersistAppcompatModeW
 
-; *** Functions available up to v10.0 (Windows 10)
+; *** Functions available in v10.0 (Windows 10)
 implib apphelp.dll, AllowPermLayer, _AllowPermLayer@4
 implib apphelp.dll, ApphelpCheckExe, _ApphelpCheckExe@16
 implib apphelp.dll, ApphelpCheckIME, _ApphelpCheckIME@4
