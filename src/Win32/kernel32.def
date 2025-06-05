@@ -451,7 +451,7 @@ include '..\implib.inc'
 ; implib KERNEL32.DLL, timeGetSystemTime, _timeGetSystemTime@8
 ; implib KERNEL32.DLL, timeGetTime, _timeGetTime@0
 
-; *** Functions available up to v10.0 (Windows 10)
+; *** Functions available in v10.0 (Windows 10)
 implib KERNEL32.DLL, AcquireSRWLockExclusive, _AcquireSRWLockExclusive@4
 implib KERNEL32.DLL, AcquireSRWLockShared, _AcquireSRWLockShared@4
 implib KERNEL32.DLL, ActivateActCtx, _ActivateActCtx@8
