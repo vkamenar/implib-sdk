@@ -148,6 +148,7 @@ implib netapi32.dll, NetpSetConfigBool, _NetpSetConfigBool@12
 implib netapi32.dll, NetpSetConfigDword, _NetpSetConfigDword@12
 implib netapi32.dll, NetpSetConfigTStrArray, _NetpSetConfigTStrArray@12
 
+; *** Functions available in v10.0 (Windows 10)
 implib netapi32.dll, DavAddConnection, _DavAddConnection@24
 implib netapi32.dll, DavDeleteConnection, _DavDeleteConnection@4
 implib netapi32.dll, DavFlushFile, _DavFlushFile@4
