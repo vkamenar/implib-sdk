@@ -1026,7 +1026,7 @@ include '..\implib.inc'
 ; implib ntdll.dll, ZwVdmStartExecution, _ZwVdmStartExecution@0
 ; implib ntdll.dll, xRtlDosPathNameToNtPathName, _xRtlDosPathNameToNtPathName@16
 
-; *** Functions available up to v10.0 (Windows 10)
+; *** Functions available in v10.0 (Windows 10)
 implib ntdll.dll, A_SHAFinal, _A_SHAFinal@8
 implib ntdll.dll, A_SHAInit, _A_SHAInit@4
 implib ntdll.dll, A_SHAUpdate, _A_SHAUpdate@12
