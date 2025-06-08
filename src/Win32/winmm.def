@@ -71,6 +71,7 @@ implib WINMM.DLL, mmioInstallIOProc16, _mmioInstallIOProc16@12 ; _mmioInstallIOP
 ; *** Function available in v3.1 only (Windows NT 3.10)
 implib WINMM.DLL, mciSoundInit, _mciSoundInit@0
 
+; *** Functions available in v10.0 (Windows 10)
 implib WINMM.DLL, CloseDriver, _CloseDriver@12
 implib WINMM.DLL, DefDriverProc, _DefDriverProc@20
 implib WINMM.DLL, DriverCallback, _DriverCallback@28
