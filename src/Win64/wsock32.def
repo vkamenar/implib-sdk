@@ -1,5 +1,7 @@
 include '..\implib64.inc'
 
+; *** Functions available in v10.0 (Windows 10)
+; *** Same symbols availabe in previous 64-bit versions
 implib wsock32.dll, AcceptEx
 implib wsock32.dll, EnumProtocolsA
 implib wsock32.dll, EnumProtocolsW
