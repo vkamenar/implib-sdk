@@ -1,5 +1,15 @@
 include '..\implib.inc'
 
+; *** Functions available from v4.10 (Windows 98) to v4.90 (Windows Me)
+; *** Feel free to uncomment the necessary symbols and recompile the library
+; implib wsock32.dll, Arecv, _Arecv@16
+; implib wsock32.dll, Asend, _Asend@16
+; implib wsock32.dll, NSPStartup, _NSPStartup@8
+; implib wsock32.dll, WSHEnumProtocols, _WSHEnumProtocols ; This function uses the CDECL calling convention!
+; implib wsock32.dll, WsControl, _WsControl@24
+; implib wsock32.dll, closesockinfo, _closesockinfo@4
+
+; *** Functions available in v10.0 (Windows 10)
 implib wsock32.dll, AcceptEx, _AcceptEx@32
 implib wsock32.dll, EnumProtocolsA, _EnumProtocolsA@12
 implib wsock32.dll, EnumProtocolsW, _EnumProtocolsW@12
