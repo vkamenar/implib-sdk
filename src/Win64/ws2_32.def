@@ -1,5 +1,7 @@
 include '..\implib64.inc'
 
+; *** Functions available in v10.0 (Windows 10)
+; *** There are no symbols removed from previous versions
 implib ws2_32.dll, FreeAddrInfoEx
 implib ws2_32.dll, FreeAddrInfoExW
 implib ws2_32.dll, FreeAddrInfoW
@@ -12,6 +14,7 @@ implib ws2_32.dll, GetHostNameW
 implib ws2_32.dll, GetNameInfoW
 implib ws2_32.dll, InetNtopW
 implib ws2_32.dll, InetPtonW
+implib ws2_32.dll, ProcessSocketNotifications
 implib ws2_32.dll, SetAddrInfoExA
 implib ws2_32.dll, SetAddrInfoExW
 implib ws2_32.dll, WEP
