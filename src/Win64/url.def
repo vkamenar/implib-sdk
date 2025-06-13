@@ -1,5 +1,10 @@
 include '..\implib64.inc'
 
+; *** Functions available until v7 (Windows Vista)
+implib url.dll, NewsProtocolHandler
+implib url.dll, NewsProtocolHandlerA
+
+; *** Functions available in v11.0 (Windows 11)
 implib url.dll, AddMIMEFileTypesPS
 implib url.dll, AutodialHookCallback
 implib url.dll, FileProtocolHandler
@@ -11,6 +16,7 @@ implib url.dll, MailToProtocolHandler
 implib url.dll, MailToProtocolHandlerA
 implib url.dll, OpenURL
 implib url.dll, OpenURLA
+implib url.dll, ord.101, SetInetOffline
 implib url.dll, TelnetProtocolHandler
 implib url.dll, TelnetProtocolHandlerA
 implib url.dll, TranslateURLA
