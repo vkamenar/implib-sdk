@@ -1,4 +1,4 @@
-; IMPLIB.INC v2.0.2
+; IMPLIB.INC v2.0.3
 ; =================
 ; (c) 2006-2025 Vladimir Kamenar
 
