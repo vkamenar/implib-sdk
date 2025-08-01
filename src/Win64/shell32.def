@@ -1,12 +1,44 @@
 include '..\implib64.inc'
 
+; *** Functions discontinued in Windows Vista
+; Feel free to uncomment the necessary symbols and recompile the library.
+; implib shell32.dll, Activate_RunDLL
+; implib shell32.dll, CheckEscapesA
+; implib shell32.dll, Control_FillCache_RunDLL
+; implib shell32.dll, Control_FillCache_RunDLLA
+; implib shell32.dll, Control_FillCache_RunDLLW
+; implib shell32.dll, ExtractIconResInfoA
+; implib shell32.dll, ExtractIconResInfoW
+; implib shell32.dll, ExtractVersionResource16W
+; implib shell32.dll, FindExeDlgProc
+; implib shell32.dll, SheChangeDirExA
+; implib shell32.dll, SheChangeDirW
+; implib shell32.dll, SheConvertPathW
+; implib shell32.dll, SheFullPathA
+; implib shell32.dll, SheFullPathW
+; implib shell32.dll, SheGetCurDrive
+; implib shell32.dll, SheGetDirExW
+; implib shell32.dll, SheGetDirW
+; implib shell32.dll, SheGetPathOffsetW
+; implib shell32.dll, SheRemoveQuotesA
+; implib shell32.dll, SheRemoveQuotesW
+; implib shell32.dll, SheShortenPathA
+; implib shell32.dll, SheShortenPathW
+; implib shell32.dll, StrCpyNA
+; implib shell32.dll, StrCpyNW
+; implib shell32.dll, StrNCpyA
+; implib shell32.dll, StrNCpyW
+
+; *** Functions available in v10.0 (Windows 10)
 implib shell32.dll, AppCompat_RunDLLW
 implib shell32.dll, AssocCreateForClasses
 implib shell32.dll, AssocElemCreateForKey
 implib shell32.dll, AssocGetDetailsOfPropKey
+implib shell32.dll, ord.700, CDefFolderMenu_Create
 implib shell32.dll, CDefFolderMenu_Create2
 implib shell32.dll, CIDLData_CreateFromIDArray
 implib shell32.dll, CStorageItem_GetValidatedStorageItemObject
+implib shell32.dll, ord.166, CallCPLEntry16
 implib shell32.dll, CheckEscapesW
 implib shell32.dll, CommandLineToArgvW
 implib shell32.dll, Control_RunDLL
@@ -74,6 +106,7 @@ implib shell32.dll, ILGetNext
 implib shell32.dll, ILGetSize
 implib shell32.dll, ILIsEqual
 implib shell32.dll, ILIsParent
+implib shell32.dll, ord.26, ILLoadFromStream
 implib shell32.dll, ILLoadFromStreamEx
 implib shell32.dll, ILRemoveLastID
 implib shell32.dll, ILSaveToStream
@@ -101,6 +134,7 @@ implib shell32.dll, PathIsExe
 implib shell32.dll, PathIsSlowA
 implib shell32.dll, PathIsSlowW
 implib shell32.dll, PathMakeUniqueName
+implib shell32.dll, ord.653, PathProcessCommand
 implib shell32.dll, PathQualify
 implib shell32.dll, PathResolve
 implib shell32.dll, PathYetAnotherMakeUniqueName
@@ -127,6 +161,7 @@ implib shell32.dll, SHAddDefaultPropertiesByExt
 implib shell32.dll, SHAddFromPropSheetExtArray
 implib shell32.dll, SHAddToRecentDocs
 implib shell32.dll, SHAlloc
+implib shell32.dll, ord.520, SHAllocShared
 implib shell32.dll, SHAppBarMessage
 implib shell32.dll, SHAssocEnumHandlers
 implib shell32.dll, SHAssocEnumHandlersForProtocolByApplication
@@ -315,10 +350,12 @@ implib shell32.dll, SHFileOperationA
 implib shell32.dll, SHFileOperationW
 implib shell32.dll, SHFindFiles
 implib shell32.dll, SHFind_InitMenuPopup
+implib shell32.dll, ord.121, SHFlushClipboard
 implib shell32.dll, SHFlushSFCache
 implib shell32.dll, SHFormatDrive
 implib shell32.dll, SHFree
 implib shell32.dll, SHFreeNameMappings
+implib shell32.dll, ord.523, SHFreeShared
 implib shell32.dll, SHGetAttributesFromDataObject
 implib shell32.dll, SHGetDataFromIDListA
 implib shell32.dll, SHGetDataFromIDListW
@@ -361,8 +398,10 @@ implib shell32.dll, SHGetPropertyStoreFromIDList
 implib shell32.dll, SHGetPropertyStoreFromParsingName
 implib shell32.dll, SHGetRealIDL
 implib shell32.dll, SHGetSetFolderCustomSettings
+implib shell32.dll, ord.709, SHGetSetFolderCustomSettingsW
 implib shell32.dll, SHGetSetSettings
 implib shell32.dll, SHGetSettings
+implib shell32.dll, ord.749, SHGetShellStyleHInstance
 implib shell32.dll, SHGetSpecialFolderLocation
 implib shell32.dll, SHGetSpecialFolderPathA
 implib shell32.dll, SHGetSpecialFolderPathW
@@ -380,6 +419,9 @@ implib shell32.dll, SHIsFileAvailableOffline
 implib shell32.dll, SHLimitInputEdit
 implib shell32.dll, SHLoadInProc
 implib shell32.dll, SHLoadNonloadedIconOverlayIdentifiers
+implib shell32.dll, ord.151, SHLoadOLE
+implib shell32.dll, ord.521, SHLockShared
+implib shell32.dll, ord.148, SHMapIDListToImageListIndexAsync
 implib shell32.dll, SHMapPIDLToSystemImageListIndex
 implib shell32.dll, SHMultiFileProperties
 implib shell32.dll, SHObjectProperties
@@ -399,6 +441,7 @@ implib shell32.dll, SHRemoveLocalizedName
 implib shell32.dll, SHReplaceFromPropSheetExtArray
 implib shell32.dll, SHResolveLibrary
 implib shell32.dll, SHRestricted
+implib shell32.dll, ord.161, SHRunControlPanel
 implib shell32.dll, SHSetDefaultProperties
 implib shell32.dll, SHSetFolderPathA
 implib shell32.dll, SHSetFolderPathW
@@ -412,6 +455,7 @@ implib shell32.dll, SHShowManageLibraryUI
 implib shell32.dll, SHSimpleIDListFromPath
 implib shell32.dll, SHStartNetConnectionDialogW
 implib shell32.dll, SHTestTokenMembership
+implib shell32.dll, ord.522, SHUnlockShared
 implib shell32.dll, SHUpdateImageA
 implib shell32.dll, SHUpdateImageW
 implib shell32.dll, SHUpdateRecycleBinIcon
