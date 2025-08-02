@@ -30,16 +30,26 @@ include '..\implib64.inc'
 ; implib shell32.dll, StrNCpyW
 
 ; *** Functions available in v10.0 (Windows 10)
+implib shell32.dll, ord.203, AddCommasW ; also known as AddCommasExportW
+implib shell32.dll, ord.903, AddToRecentDocs
 implib shell32.dll, AppCompat_RunDLLW
+implib shell32.dll, ord.184, ArrangeWindows
+implib shell32.dll, ord.764, AssocCreateElement
 implib shell32.dll, AssocCreateForClasses
+implib shell32.dll, ord.767, AssocCreateListForClasses
 implib shell32.dll, AssocElemCreateForKey
 implib shell32.dll, AssocGetDetailsOfPropKey
+implib shell32.dll, ord.778, AssocGetPropListForExt
 implib shell32.dll, ord.700, CDefFolderMenu_Create
-implib shell32.dll, CDefFolderMenu_Create2
+implib shell32.dll, CDefFolderMenu_Create2 ; ordinal-only export before WinXP SP1 (ordinal 701)
+implib shell32.dll, ord.702, CDefFolderMenu_MergeMenu
 implib shell32.dll, CIDLData_CreateFromIDArray
 implib shell32.dll, CStorageItem_GetValidatedStorageItemObject
 implib shell32.dll, ord.166, CallCPLEntry16
+implib shell32.dll, ord.733, CheckDiskSpace
 implib shell32.dll, CheckEscapesW
+implib shell32.dll, ord.753, CheckStagingArea
+implib shell32.dll, ord.711, CheckWinIniForAssocs
 implib shell32.dll, CommandLineToArgvW
 implib shell32.dll, Control_RunDLL
 implib shell32.dll, Control_RunDLLA
