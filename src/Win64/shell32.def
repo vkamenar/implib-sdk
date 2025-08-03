@@ -43,18 +43,31 @@ implib shell32.dll, ord.778, AssocGetPropListForExt
 implib shell32.dll, ord.700, CDefFolderMenu_Create
 implib shell32.dll, CDefFolderMenu_Create2 ; ordinal-only export before WinXP SP1 (ordinal 701)
 implib shell32.dll, ord.702, CDefFolderMenu_MergeMenu
-implib shell32.dll, CIDLData_CreateFromIDArray
+implib shell32.dll, ord.83, CIDLData_CreateFromIDArray
+implib shell32.dll, ord.856, CPL_ExecuteTask
+implib shell32.dll, ord.857, CPL_CreateCondition
 implib shell32.dll, CStorageItem_GetValidatedStorageItemObject
 implib shell32.dll, ord.166, CallCPLEntry16
 implib shell32.dll, ord.733, CheckDiskSpace
 implib shell32.dll, CheckEscapesW
 implib shell32.dll, ord.753, CheckStagingArea
 implib shell32.dll, ord.711, CheckWinIniForAssocs
+implib shell32.dll, ord.896, ClearDestinationsForAllApps
+implib shell32.dll, ord.890, ClearStartMenuItem
 implib shell32.dll, CommandLineToArgvW
 implib shell32.dll, Control_RunDLL
 implib shell32.dll, Control_RunDLLA
 implib shell32.dll, Control_RunDLLAsUserW
+implib shell32.dll, ord.44, Control_RunDLLNoFallback
 implib shell32.dll, Control_RunDLLW
+implib shell32.dll, ord.726, CopyStreamUI
+implib shell32.dll, ord.880, CreateAutoListParser
+implib shell32.dll, ord.845, CreateConditionRange
+implib shell32.dll, ord.260, CreateInfoTipFromItem
+implib shell32.dll, ord.264, CreateInfoTipFromItem2
+implib shell32.dll, ord.839, CreateSingleVisibleInList
+implib shell32.dll, ord.867, CreateVisibleInDescription
+implib shell32.dll, ord.868, CreateVisibleInList
 implib shell32.dll, CreateStorageItemFromPath_FullTrustCaller
 implib shell32.dll, CreateStorageItemFromPath_FullTrustCaller_ForPackage
 implib shell32.dll, CreateStorageItemFromPath_PartialTrustCaller
@@ -62,13 +75,20 @@ implib shell32.dll, CreateStorageItemFromShellItem_FullTrustCaller
 implib shell32.dll, CreateStorageItemFromShellItem_FullTrustCaller_ForPackage
 implib shell32.dll, CreateStorageItemFromShellItem_FullTrustCaller_ForPackage_WithProcessHandle
 implib shell32.dll, CreateStorageItemFromShellItem_FullTrustCaller_UseImplicitFlagsAndPackage
-implib shell32.dll, DAD_AutoScroll
-implib shell32.dll, DAD_DragEnterEx
-implib shell32.dll, DAD_DragEnterEx2
-implib shell32.dll, DAD_DragLeave
-implib shell32.dll, DAD_DragMove
-implib shell32.dll, DAD_SetDragImage
-implib shell32.dll, DAD_ShowDragImage
+implib shell32.dll, ord.744, Create_IEnumUICommand
+implib shell32.dll, ord.763, Create_IEnumUICommandFromDefArray
+implib shell32.dll, ord.762, Create_IUICommandFromDef
+implib shell32.dll, ord.745, Create_IUIElement
+implib shell32.dll, ord.129, DAD_AutoScroll
+implib shell32.dll, ord.130, DAD_DragEnter
+implib shell32.dll, ord.131, DAD_DragEnterEx
+implib shell32.dll, ord.22, DAD_DragEnterEx2
+implib shell32.dll, ord.132, DAD_DragLeave
+implib shell32.dll, ord.134, DAD_DragMove
+implib shell32.dll, ord.136, DAD_SetDragImage
+implib shell32.dll, ord.177, DAD_SetDragImageFromListView
+implib shell32.dll, ord.137, DAD_ShowDragImage
+implib shell32.dll, ord.82, DDECreatePostNotify
 implib shell32.dll, DllCanUnloadNow
 implib shell32.dll, DllGetActivationFactory
 implib shell32.dll, DllGetClassObject
