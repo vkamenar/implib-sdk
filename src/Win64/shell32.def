@@ -89,9 +89,15 @@ implib shell32.dll, ord.136, DAD_SetDragImage
 implib shell32.dll, ord.177, DAD_SetDragImageFromListView
 implib shell32.dll, ord.137, DAD_ShowDragImage
 implib shell32.dll, ord.82, DDECreatePostNotify
+implib shell32.dll, ord.202, DDEHandleViewFolderNotify
+implib shell32.dll, ord.870, DUI_Shell32_StartDeferUninitialization
+implib shell32.dll, ord.871, DUI_Shell32_EndDeferUninitialization
+implib shell32.dll, ord.756, DeleteFileThumbnail
+implib shell32.dll, ord.254, DisconnectWindowsDialog
+implib shell32.dll, ord.757, DisplayNameOfW
 implib shell32.dll, DllCanUnloadNow
 implib shell32.dll, DllGetActivationFactory
-implib shell32.dll, DllGetClassObject
+implib shell32.dll, ord.128, DllGetClassObject
 implib shell32.dll, DllGetVersion
 implib shell32.dll, DllInstall
 implib shell32.dll, DllRegisterServer
@@ -104,9 +110,13 @@ implib shell32.dll, DragQueryFile
 implib shell32.dll, DragQueryFileA
 implib shell32.dll, DragQueryFileAorW
 implib shell32.dll, DragQueryFileW
+implib shell32.dll, ord.76, DragQueryInfo
 implib shell32.dll, DragQueryPoint
-implib shell32.dll, DriveType
+implib shell32.dll, ord.828, DrawMenuItem
+implib shell32.dll, ord.64, DriveType
 implib shell32.dll, DuplicateIcon
+implib shell32.dll, ord.876, EnumCommonTasks
+implib shell32.dll, ord.60, ExitWindowsDialog
 implib shell32.dll, ExtractAssociatedIconA
 implib shell32.dll, ExtractAssociatedIconExA
 implib shell32.dll, ExtractAssociatedIconExW
@@ -116,6 +126,9 @@ implib shell32.dll, ExtractIconEx
 implib shell32.dll, ExtractIconExA
 implib shell32.dll, ExtractIconExW
 implib shell32.dll, ExtractIconW
+implib shell32.dll, ord.660, FileIconInit
+implib shell32.dll, ord.120, FileMenu_AbortInitMenu
+implib shell32.dll, ord.124, FileMenu_AppendFilesForPidl
 implib shell32.dll, FindExecutableA
 implib shell32.dll, FindExecutableW
 implib shell32.dll, FreeIconList
