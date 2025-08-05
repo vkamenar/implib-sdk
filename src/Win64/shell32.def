@@ -3,14 +3,80 @@ include '..\implib64.inc'
 ; *** Functions discontinued in Windows Vista
 ; Feel free to uncomment the necessary symbols and recompile the library.
 ; implib shell32.dll, Activate_RunDLL
+; implib shell32.dll, ord.166, CallCPLEntry16
 ; implib shell32.dll, CheckEscapesA
 ; implib shell32.dll, Control_FillCache_RunDLL
 ; implib shell32.dll, Control_FillCache_RunDLLA
 ; implib shell32.dll, Control_FillCache_RunDLLW
+; implib shell32.dll, ord.130, DAD_DragEnter
+; implib shell32.dll, ord.177, DAD_SetDragImageFromListView
+; implib shell32.dll, ord.139, Desktop_UpdateBriefcaseOnEvent
 ; implib shell32.dll, ExtractIconResInfoA
 ; implib shell32.dll, ExtractIconResInfoW
 ; implib shell32.dll, ExtractVersionResource16W
+; implib shell32.dll, ord.120, FileMenu_AbortInitMenu
+; implib shell32.dll, ord.124, FileMenu_AppendFilesForPidl
+; implib shell32.dll, ord.115, FileMenu_AppendItem
+; implib shell32.dll, ord.114, FileMenu_Create
+; implib shell32.dll, ord.227, FileMenu_CreateFromMenu
+; implib shell32.dll, ord.224, FileMenu_DelayedInvalidate
+; implib shell32.dll, ord.104, FileMenu_DeleteAllItems
+; implib shell32.dll, ord.117, FileMenu_DeleteItemByCmd
+; implib shell32.dll, ord.140, FileMenu_DeleteItemByIndex
+; implib shell32.dll, ord.141, FileMenu_DeleteMenuItemByFirstID
+; implib shell32.dll, ord.142, FileMenu_DeleteSeparator
+; implib shell32.dll, ord.118, FileMenu_Destroy
+; implib shell32.dll, ord.105, FileMenu_DrawItem
+; implib shell32.dll, ord.221, FileMenu_EditMode
+; implib shell32.dll, ord.143, FileMenu_EnableItemByCmd
+; implib shell32.dll, ord.106, FileMenu_FindSubMenuByPidl
+; implib shell32.dll, ord.144, FileMenu_GetItemExtent
+; implib shell32.dll, ord.107, FileMenu_GetLastSelectedItemPidls
+; implib shell32.dll, ord.220, FileMenu_GetPidl
+; implib shell32.dll, ord.108, FileMenu_HandleMenuChar
+; implib shell32.dll, ord.222, FileMenu_HandleMenuSelect
+; implib shell32.dll, ord.101, FileMenu_HandleNotify
+; implib shell32.dll, ord.109, FileMenu_InitMenuPopup
+; implib shell32.dll, ord.218, FileMenu_InsertItem
+; implib shell32.dll, ord.219, FileMenu_InsertSeparator
+; implib shell32.dll, ord.110, FileMenu_InsertUsingPidl
+; implib shell32.dll, ord.111, FileMenu_Invalidate
+; implib shell32.dll, ord.225, FileMenu_IsDelayedInvalid
+; implib shell32.dll, ord.216, FileMenu_IsFileMenu
+; implib shell32.dll, ord.223, FileMenu_IsUnexpanded
+; implib shell32.dll, ord.112, FileMenu_MeasureItem
+; implib shell32.dll, ord.217, FileMenu_ProcessCommand
+; implib shell32.dll, ord.113, FileMenu_ReplaceUsingPidl
+; implib shell32.dll, ord.116, FileMenu_TrackPopupMenuEx
 ; implib shell32.dll, FindExeDlgProc
+; implib shell32.dll, ord.26, ILLoadFromStream
+; implib shell32.dll, ord.206, Link_AddExtraDataSection
+; implib shell32.dll, ord.207, Link_ReadExtraDataSection
+; implib shell32.dll, ord.208, Link_RemoveExtraDataSection
+; implib shell32.dll, ord.641, NTSHChangeNotifyDeregister
+; implib shell32.dll, ord.640, NTSHChangeNotifyRegister
+; implib shell32.dll, ord.78, OleStrToStrN
+; implib shell32.dll, ord.653, PathProcessCommand
+; implib shell32.dll, ord.146, RLBuildListOfPaths
+; implib shell32.dll, ord.647, ReceiveAddToRecentDocs
+; implib shell32.dll, ord.122, RunDll_CallEntry16
+; implib shell32.dll, ord.198, SHAbortInvokeCommand
+; implib shell32.dll, ord.520, SHAllocShared
+; implib shell32.dll, ord.643, SHChangeNotifyReceive
+; implib shell32.dll, ord.5, SHChangeNotifyUpdateEntryList
+; implib shell32.dll, ord.646, SHChangeRegistrationReceive
+; implib shell32.dll, ord.121, SHFlushClipboard
+; implib shell32.dll, ord.523, SHFreeShared
+; implib shell32.dll, ord.123, SHFreeUnusedLibraries
+; implib shell32.dll, ord.197, SHGlobalDefect
+; implib shell32.dll, ord.84, SHIsBadInterfacePtr
+; implib shell32.dll, ord.151, SHLoadOLE
+; implib shell32.dll, ord.521, SHLockShared
+; implib shell32.dll, ord.126, SHOutOfMemoryMessageBox
+; implib shell32.dll, ord.86, SHRegisterDragDrop
+; implib shell32.dll, ord.87, SHRevokeDragDrop
+; implib shell32.dll, ord.161, SHRunControlPanel
+; implib shell32.dll, ord.522, SHUnlockShared
 ; implib shell32.dll, SheChangeDirExA
 ; implib shell32.dll, SheChangeDirW
 ; implib shell32.dll, SheConvertPathW
@@ -28,6 +94,8 @@ include '..\implib64.inc'
 ; implib shell32.dll, StrCpyNW
 ; implib shell32.dll, StrNCpyA
 ; implib shell32.dll, StrNCpyW
+; implib shell32.dll, ord.163, StrToOleStr
+; implib shell32.dll, ord.79, StrToOleStrN
 
 ; *** Functions available in v10.0 (Windows 10)
 implib shell32.dll, ord.203, AddCommasW ; also known as AddCommasExportW
@@ -47,7 +115,6 @@ implib shell32.dll, ord.83, CIDLData_CreateFromIDArray
 implib shell32.dll, ord.856, CPL_ExecuteTask
 implib shell32.dll, ord.857, CPL_CreateCondition
 implib shell32.dll, CStorageItem_GetValidatedStorageItemObject
-implib shell32.dll, ord.166, CallCPLEntry16
 implib shell32.dll, ord.733, CheckDiskSpace
 implib shell32.dll, CheckEscapesW
 implib shell32.dll, ord.753, CheckStagingArea
@@ -80,13 +147,11 @@ implib shell32.dll, ord.763, Create_IEnumUICommandFromDefArray
 implib shell32.dll, ord.762, Create_IUICommandFromDef
 implib shell32.dll, ord.745, Create_IUIElement
 implib shell32.dll, ord.129, DAD_AutoScroll
-implib shell32.dll, ord.130, DAD_DragEnter
 implib shell32.dll, ord.131, DAD_DragEnterEx
 implib shell32.dll, ord.22, DAD_DragEnterEx2
 implib shell32.dll, ord.132, DAD_DragLeave
 implib shell32.dll, ord.134, DAD_DragMove
 implib shell32.dll, ord.136, DAD_SetDragImage
-implib shell32.dll, ord.177, DAD_SetDragImageFromListView
 implib shell32.dll, ord.137, DAD_ShowDragImage
 implib shell32.dll, ord.82, DDECreatePostNotify
 implib shell32.dll, ord.202, DDEHandleViewFolderNotify
@@ -127,11 +192,12 @@ implib shell32.dll, ExtractIconExA
 implib shell32.dll, ExtractIconExW
 implib shell32.dll, ExtractIconW
 implib shell32.dll, ord.660, FileIconInit
-implib shell32.dll, ord.120, FileMenu_AbortInitMenu
-implib shell32.dll, ord.124, FileMenu_AppendFilesForPidl
 implib shell32.dll, FindExecutableA
 implib shell32.dll, FindExecutableW
+implib shell32.dll, ord.230, FirstUserLogon
 implib shell32.dll, FreeIconList
+implib shell32.dll, ord.900, GetAppIDRoot
+implib shell32.dll, ord.895, GetAppPathFromLink
 implib shell32.dll, GetCurrentProcessExplicitAppUserModelID
 implib shell32.dll, GetFileNameFromBrowse
 implib shell32.dll, GetSystemPersistedStorageItemList
@@ -149,7 +215,6 @@ implib shell32.dll, ILGetNext
 implib shell32.dll, ILGetSize
 implib shell32.dll, ILIsEqual
 implib shell32.dll, ILIsParent
-implib shell32.dll, ord.26, ILLoadFromStream
 implib shell32.dll, ILLoadFromStreamEx
 implib shell32.dll, ILRemoveLastID
 implib shell32.dll, ILSaveToStream
@@ -177,7 +242,6 @@ implib shell32.dll, PathIsExe
 implib shell32.dll, PathIsSlowA
 implib shell32.dll, PathIsSlowW
 implib shell32.dll, PathMakeUniqueName
-implib shell32.dll, ord.653, PathProcessCommand
 implib shell32.dll, PathQualify
 implib shell32.dll, PathResolve
 implib shell32.dll, PathYetAnotherMakeUniqueName
@@ -204,7 +268,6 @@ implib shell32.dll, SHAddDefaultPropertiesByExt
 implib shell32.dll, SHAddFromPropSheetExtArray
 implib shell32.dll, SHAddToRecentDocs
 implib shell32.dll, SHAlloc
-implib shell32.dll, ord.520, SHAllocShared
 implib shell32.dll, SHAppBarMessage
 implib shell32.dll, SHAssocEnumHandlers
 implib shell32.dll, SHAssocEnumHandlersForProtocolByApplication
@@ -393,12 +456,10 @@ implib shell32.dll, SHFileOperationA
 implib shell32.dll, SHFileOperationW
 implib shell32.dll, SHFindFiles
 implib shell32.dll, SHFind_InitMenuPopup
-implib shell32.dll, ord.121, SHFlushClipboard
 implib shell32.dll, SHFlushSFCache
 implib shell32.dll, SHFormatDrive
 implib shell32.dll, SHFree
 implib shell32.dll, SHFreeNameMappings
-implib shell32.dll, ord.523, SHFreeShared
 implib shell32.dll, SHGetAttributesFromDataObject
 implib shell32.dll, SHGetDataFromIDListA
 implib shell32.dll, SHGetDataFromIDListW
@@ -462,8 +523,6 @@ implib shell32.dll, SHIsFileAvailableOffline
 implib shell32.dll, SHLimitInputEdit
 implib shell32.dll, SHLoadInProc
 implib shell32.dll, SHLoadNonloadedIconOverlayIdentifiers
-implib shell32.dll, ord.151, SHLoadOLE
-implib shell32.dll, ord.521, SHLockShared
 implib shell32.dll, ord.148, SHMapIDListToImageListIndexAsync
 implib shell32.dll, SHMapPIDLToSystemImageListIndex
 implib shell32.dll, SHMultiFileProperties
@@ -484,7 +543,6 @@ implib shell32.dll, SHRemoveLocalizedName
 implib shell32.dll, SHReplaceFromPropSheetExtArray
 implib shell32.dll, SHResolveLibrary
 implib shell32.dll, SHRestricted
-implib shell32.dll, ord.161, SHRunControlPanel
 implib shell32.dll, SHSetDefaultProperties
 implib shell32.dll, SHSetFolderPathA
 implib shell32.dll, SHSetFolderPathW
@@ -498,7 +556,6 @@ implib shell32.dll, SHShowManageLibraryUI
 implib shell32.dll, SHSimpleIDListFromPath
 implib shell32.dll, SHStartNetConnectionDialogW
 implib shell32.dll, SHTestTokenMembership
-implib shell32.dll, ord.522, SHUnlockShared
 implib shell32.dll, SHUpdateImageA
 implib shell32.dll, SHUpdateImageW
 implib shell32.dll, SHUpdateRecycleBinIcon
