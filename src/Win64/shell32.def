@@ -49,6 +49,7 @@ include '..\implib64.inc'
 ; implib shell32.dll, ord.113, FileMenu_ReplaceUsingPidl
 ; implib shell32.dll, ord.116, FileMenu_TrackPopupMenuEx
 ; implib shell32.dll, FindExeDlgProc
+; implib shell32.dll, ord.725, GetFileDescriptor
 ; implib shell32.dll, ord.26, ILLoadFromStream
 ; implib shell32.dll, ord.206, Link_AddExtraDataSection
 ; implib shell32.dll, ord.207, Link_ReadExtraDataSection
@@ -196,15 +197,20 @@ implib shell32.dll, FindExecutableA
 implib shell32.dll, FindExecutableW
 implib shell32.dll, ord.230, FirstUserLogon
 implib shell32.dll, FreeIconList
+implib shell32.dll, ord.703, GUIDFromStringA
+implib shell32.dll, ord.704, GUIDFromStringW
 implib shell32.dll, ord.900, GetAppIDRoot
 implib shell32.dll, ord.895, GetAppPathFromLink
 implib shell32.dll, GetCurrentProcessExplicitAppUserModelID
-implib shell32.dll, GetFileNameFromBrowse
+implib shell32.dll, ord.878, GetDataIndexFromFolderType
+implib shell32.dll, ord.63, GetFileNameFromBrowse
+implib shell32.dll, ord.892, GetSqmableFileName
 implib shell32.dll, GetSystemPersistedStorageItemList
-implib shell32.dll, ILAppendID
-implib shell32.dll, ILClone
-implib shell32.dll, ILCloneFirst
-implib shell32.dll, ILCombine
+implib shell32.dll, ord.863, GetTryHarderIDList
+implib shell32.dll, ord.154, ILAppendID
+implib shell32.dll, ord.18, ILClone
+implib shell32.dll, ord.19, ILCloneFirst
+implib shell32.dll, ord.25, ILCombine
 implib shell32.dll, ILCreateFromPath
 implib shell32.dll, ILCreateFromPathA
 implib shell32.dll, ILCreateFromPathW
