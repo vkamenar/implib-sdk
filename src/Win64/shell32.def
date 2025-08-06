@@ -211,19 +211,25 @@ implib shell32.dll, ord.154, ILAppendID
 implib shell32.dll, ord.18, ILClone
 implib shell32.dll, ord.19, ILCloneFirst
 implib shell32.dll, ord.25, ILCombine
-implib shell32.dll, ILCreateFromPath
-implib shell32.dll, ILCreateFromPathA
-implib shell32.dll, ILCreateFromPathW
-implib shell32.dll, ILFindChild
-implib shell32.dll, ILFindLastID
-implib shell32.dll, ILFree
-implib shell32.dll, ILGetNext
-implib shell32.dll, ILGetSize
-implib shell32.dll, ILIsEqual
-implib shell32.dll, ILIsParent
+implib shell32.dll, ord.157, ILCreateFromPath
+implib shell32.dll, ord.189, ILCreateFromPathA
+implib shell32.dll, ord.190, ILCreateFromPathW
+implib shell32.dll, ord.24, ILFindChild
+implib shell32.dll, ord.16, ILFindLastID
+implib shell32.dll, ord.155, ILFree
+implib shell32.dll, ord.15, ILGetDisplayName
+implib shell32.dll, ord.186, ILGetDisplayNameEx
+implib shell32.dll, ord.153, ILGetNext
+implib shell32.dll, ord.187, ILGetPseudoNameW
+implib shell32.dll, ord.152, ILGetSize
+implib shell32.dll, ord.20, ILGlobalClone
+implib shell32.dll, ord.156, ILGlobalFree
+implib shell32.dll, ord.21, ILIsEqual
+implib shell32.dll, ord.23, ILIsParent
 implib shell32.dll, ILLoadFromStreamEx
-implib shell32.dll, ILRemoveLastID
-implib shell32.dll, ILSaveToStream
+implib shell32.dll, ord.17, ILRemoveLastID
+implib shell32.dll, ord.27, ILSaveToStream
+implib shell32.dll, ord.889, InitializeStartMenuItem
 implib shell32.dll, InitNetworkAddressControl
 implib shell32.dll, InternalExtractIconListA
 implib shell32.dll, InternalExtractIconListW
