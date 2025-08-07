@@ -231,15 +231,22 @@ implib shell32.dll, ord.17, ILRemoveLastID
 implib shell32.dll, ord.27, ILSaveToStream
 implib shell32.dll, ord.889, InitializeStartMenuItem
 implib shell32.dll, InitNetworkAddressControl
+implib shell32.dll, ord.209, Int64ToString
 implib shell32.dll, InternalExtractIconListA
 implib shell32.dll, InternalExtractIconListW
+implib shell32.dll, ord.65, InvalidateDriveType
 implib shell32.dll, IsDesktopExplorerProcess
-implib shell32.dll, IsLFNDrive
-implib shell32.dll, IsLFNDriveA
-implib shell32.dll, IsLFNDriveW
-implib shell32.dll, IsNetDrive
+implib shell32.dll, ord.865, IsElevationRequired
+implib shell32.dll, ord.119, IsLFNDrive
+implib shell32.dll, ord.41, IsLFNDriveA
+implib shell32.dll, ord.42, IsLFNDriveW
+implib shell32.dll, ord.66, IsNetDrive
 implib shell32.dll, IsProcessAnExplorer
-implib shell32.dll, IsUserAnAdmin
+implib shell32.dll, ord.902, IsSearchEnabled
+implib shell32.dll, ord.854, IsShellItemInSearchIndex
+implib shell32.dll, ord.53, IsSuspendAllowed
+implib shell32.dll, ord.680, IsUserAnAdmin
+implib shell32.dll, ord.210, LargeIntegerToString
 implib shell32.dll, LaunchMSHelp_RunDLLW
 implib shell32.dll, OpenAs_RunDLL
 implib shell32.dll, OpenAs_RunDLLA
