@@ -54,6 +54,8 @@ include '..\implib64.inc'
 ; implib shell32.dll, ord.206, Link_AddExtraDataSection
 ; implib shell32.dll, ord.207, Link_ReadExtraDataSection
 ; implib shell32.dll, ord.208, Link_RemoveExtraDataSection
+; implib shell32.dll, ord.720, MakeShellURLFromPathA
+; implib shell32.dll, ord.721, MakeShellURLFromPathW
 ; implib shell32.dll, ord.641, NTSHChangeNotifyDeregister
 ; implib shell32.dll, ord.640, NTSHChangeNotifyRegister
 ; implib shell32.dll, ord.78, OleStrToStrN
@@ -248,14 +250,25 @@ implib shell32.dll, ord.53, IsSuspendAllowed
 implib shell32.dll, ord.680, IsUserAnAdmin
 implib shell32.dll, ord.210, LargeIntegerToString
 implib shell32.dll, LaunchMSHelp_RunDLLW
+implib shell32.dll, ord.875, LegacyEnumSpecialTasksByType
+implib shell32.dll, ord.874, LegacyEnumTasks ; In Windows Vista SP1 and SP2 ordinal 874 is allocated to SHLaunchSearch
+implib shell32.dll, ord.258, LinkWindow_RegisterClass
+implib shell32.dll, ord.259, LinkWindow_UnregisterClass
+implib shell32.dll, ord.54, LogoffWindowsDialog
+implib shell32.dll, ord.894, MakeDestinationItem
+implib shell32.dll, ord.829, MeasureMenuItem
 implib shell32.dll, OpenAs_RunDLL
 implib shell32.dll, OpenAs_RunDLLA
 implib shell32.dll, OpenAs_RunDLLW
-implib shell32.dll, OpenRegStream
+implib shell32.dll, ord.85, OpenRegStream
 implib shell32.dll, Options_RunDLL
 implib shell32.dll, Options_RunDLLA
 implib shell32.dll, Options_RunDLLW
-implib shell32.dll, PathCleanupSpec
+implib shell32.dll, ord.58, ParseField
+implib shell32.dll, ord.32, PathAddBackslash
+implib shell32.dll, ord.36, PathAppend
+implib shell32.dll, ord.30, PathBuildRoot
+implib shell32.dll, ord.171, PathCleanupSpec
 implib shell32.dll, PathGetShortPath
 implib shell32.dll, PathIsExe
 implib shell32.dll, PathIsSlowA
