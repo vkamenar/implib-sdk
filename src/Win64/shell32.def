@@ -269,6 +269,14 @@ implib shell32.dll, ord.32, PathAddBackslash
 implib shell32.dll, ord.36, PathAppend
 implib shell32.dll, ord.30, PathBuildRoot
 implib shell32.dll, ord.171, PathCleanupSpec
+implib shell32.dll, ord.37, PathCombine
+implib shell32.dll, ord.850, PathComparePaths
+implib shell32.dll, ord.45, PathFileExists
+implib shell32.dll, ord.31, PathFindExtension
+implib shell32.dll, ord.34, PathFindFileName
+implib shell32.dll, ord.145, PathFindOnPath
+implib shell32.dll, ord.52, PathGetArgs
+implib shell32.dll, ord.57, PathGetDriveNumber
 implib shell32.dll, PathGetShortPath
 implib shell32.dll, PathIsExe
 implib shell32.dll, PathIsSlowA
