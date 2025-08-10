@@ -277,7 +277,12 @@ implib shell32.dll, ord.34, PathFindFileName
 implib shell32.dll, ord.145, PathFindOnPath
 implib shell32.dll, ord.52, PathGetArgs
 implib shell32.dll, ord.57, PathGetDriveNumber
-implib shell32.dll, PathGetShortPath
+implib shell32.dll, ord.158, PathGetExtension
+implib shell32.dll, ord.840, PathGetPathDisplayName
+implib shell32.dll, ord.869, PathGetPathDisplayNameAlloc
+implib shell32.dll, ord.92, PathGetShortPath
+implib shell32.dll, ord.159, PathIsDirectory
+implib shell32.dll, ord.755, PathIsEqualOrSubFolder
 implib shell32.dll, PathIsExe
 implib shell32.dll, PathIsSlowA
 implib shell32.dll, PathIsSlowW
