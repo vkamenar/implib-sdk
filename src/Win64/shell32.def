@@ -283,10 +283,17 @@ implib shell32.dll, ord.869, PathGetPathDisplayNameAlloc
 implib shell32.dll, ord.92, PathGetShortPath
 implib shell32.dll, ord.159, PathIsDirectory
 implib shell32.dll, ord.755, PathIsEqualOrSubFolder
-implib shell32.dll, PathIsExe
-implib shell32.dll, PathIsSlowA
-implib shell32.dll, PathIsSlowW
-implib shell32.dll, PathMakeUniqueName
+implib shell32.dll, ord.43, PathIsExe
+implib shell32.dll, ord.40, PathIsRelative
+implib shell32.dll, ord.29, PathIsRoot
+implib shell32.dll, ord.650, PathIsSameRoot
+implib shell32.dll, ord.240, PathIsSlowA
+implib shell32.dll, ord.239, PathIsSlowW
+implib shell32.dll, ord.713, PathIsTemporaryA
+implib shell32.dll, ord.714, PathIsTemporaryW
+implib shell32.dll, ord.39, PathIsUNC
+implib shell32.dll, ord.252, PathIsURL
+implib shell32.dll, ord.47, PathMakeUniqueName
 implib shell32.dll, PathQualify
 implib shell32.dll, PathResolve
 implib shell32.dll, PathYetAnotherMakeUniqueName
