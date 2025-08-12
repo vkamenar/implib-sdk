@@ -294,8 +294,15 @@ implib shell32.dll, ord.714, PathIsTemporaryW
 implib shell32.dll, ord.39, PathIsUNC
 implib shell32.dll, ord.252, PathIsURL
 implib shell32.dll, ord.47, PathMakeUniqueName
-implib shell32.dll, PathQualify
-implib shell32.dll, PathResolve
+implib shell32.dll, ord.46, PathMatchSpec
+implib shell32.dll, ord.249, PathParseIconLocation
+implib shell32.dll, ord.49, PathQualify
+implib shell32.dll, ord.55, PathQuoteSpaces
+implib shell32.dll, ord.251, PathRemoveArgs
+implib shell32.dll, ord.33, PathRemoveBlanks
+implib shell32.dll, ord.250, PathRemoveExtension
+implib shell32.dll, ord.35, PathRemoveFileSpec
+implib shell32.dll, ord.51, PathResolve
 implib shell32.dll, PathYetAnotherMakeUniqueName
 implib shell32.dll, PickIconDlg
 implib shell32.dll, PifMgr_CloseProperties
