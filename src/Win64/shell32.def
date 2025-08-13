@@ -264,6 +264,7 @@ implib shell32.dll, ord.85, OpenRegStream
 implib shell32.dll, Options_RunDLL
 implib shell32.dll, Options_RunDLLA
 implib shell32.dll, Options_RunDLLW
+implib shell32.dll, ord.858, POOBE_CreateIndirectGraphic
 implib shell32.dll, ord.58, ParseField
 implib shell32.dll, ord.32, PathAddBackslash
 implib shell32.dll, ord.36, PathAppend
@@ -303,22 +304,35 @@ implib shell32.dll, ord.33, PathRemoveBlanks
 implib shell32.dll, ord.250, PathRemoveExtension
 implib shell32.dll, ord.35, PathRemoveFileSpec
 implib shell32.dll, ord.51, PathResolve
-implib shell32.dll, PathYetAnotherMakeUniqueName
-implib shell32.dll, PickIconDlg
-implib shell32.dll, PifMgr_CloseProperties
-implib shell32.dll, PifMgr_GetProperties
-implib shell32.dll, PifMgr_OpenProperties
-implib shell32.dll, PifMgr_SetProperties
+implib shell32.dll, ord.48, PathSetDlgItemPath
+implib shell32.dll, ord.38, PathStripPath
+implib shell32.dll, ord.50, PathStripToRoot
+implib shell32.dll, ord.56, PathUnquoteSpaces
+implib shell32.dll, ord.75, PathYetAnotherMakeUniqueName
+implib shell32.dll, ord.62, PickIconDlg
+implib shell32.dll, ord.13, PifMgr_CloseProperties
+implib shell32.dll, ord.10, PifMgr_GetProperties
+implib shell32.dll, ord.9, PifMgr_OpenProperties
+implib shell32.dll, ord.11, PifMgr_SetProperties
+implib shell32.dll, ord.877, PlaceTasksUnderHeader
 implib shell32.dll, PrepareDiscForBurnRunDllW
+implib shell32.dll, ord.883, PrepareURLForDisplayUTF8W
 implib shell32.dll, PrintersGetCommand_RunDLL
 implib shell32.dll, PrintersGetCommand_RunDLLA
 implib shell32.dll, PrintersGetCommand_RunDLLW
-implib shell32.dll, ReadCabinetState
-implib shell32.dll, RealDriveType
+implib shell32.dll, ord.211, Printers_GetPidl
+implib shell32.dll, ord.213, Printers_RegisterWindowW
+implib shell32.dll, ord.214, Printers_UnregisterWindow
+implib shell32.dll, ord.212, Printer_AddPrinterPropPages
+implib shell32.dll, ord.205, Printer_LoadIconsW
+implib shell32.dll, ord.654, ReadCabinetState
+implib shell32.dll, ord.524, RealDriveType
+implib shell32.dll, ord.525, RealDriveTypeFlags
 implib shell32.dll, RealShellExecuteA
 implib shell32.dll, RealShellExecuteExA
 implib shell32.dll, RealShellExecuteExW
 implib shell32.dll, RealShellExecuteW
+implib shell32.dll, ord.891, RefreshBrowserLayout
 implib shell32.dll, RegenerateUserEnvironment
 implib shell32.dll, RestartDialog
 implib shell32.dll, RestartDialogEx
