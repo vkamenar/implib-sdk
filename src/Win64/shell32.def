@@ -334,9 +334,12 @@ implib shell32.dll, RealShellExecuteExW
 implib shell32.dll, RealShellExecuteW
 implib shell32.dll, ord.891, RefreshBrowserLayout
 implib shell32.dll, RegenerateUserEnvironment
-implib shell32.dll, RestartDialog
-implib shell32.dll, RestartDialogEx
+implib shell32.dll, ord.181, RegisterShellHook
+implib shell32.dll, ord.59, RestartDialog
+implib shell32.dll, ord.730, RestartDialogEx
 implib shell32.dll, RunAsNewUser_RunDLLW
+implib shell32.dll, ord.61, RunFileDlg
+implib shell32.dll, ord.885, RunInstallUninstallStubs
 implib shell32.dll, SHAddDefaultPropertiesByExt
 implib shell32.dll, SHAddFromPropSheetExtArray
 implib shell32.dll, SHAddToRecentDocs
@@ -633,6 +636,8 @@ implib shell32.dll, SHUpdateImageA
 implib shell32.dll, SHUpdateImageW
 implib shell32.dll, SHUpdateRecycleBinIcon
 implib shell32.dll, SHValidateUNC
+implib shell32.dll, ord.897, SaveTopViewSettings
+implib shell32.dll, ord.99, SetAppStartingCursor
 implib shell32.dll, SetCurrentProcessExplicitAppUserModelID
 implib shell32.dll, SheChangeDirA
 implib shell32.dll, SheChangeDirExW
