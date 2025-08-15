@@ -341,10 +341,11 @@ implib shell32.dll, RunAsNewUser_RunDLLW
 implib shell32.dll, ord.61, RunFileDlg
 implib shell32.dll, ord.885, RunInstallUninstallStubs
 implib shell32.dll, SHAddDefaultPropertiesByExt
-implib shell32.dll, SHAddFromPropSheetExtArray
+implib shell32.dll, ord.167, SHAddFromPropSheetExtArray
 implib shell32.dll, SHAddToRecentDocs
-implib shell32.dll, SHAlloc
+implib shell32.dll, ord.196, SHAlloc
 implib shell32.dll, SHAppBarMessage
+implib shell32.dll, ord.781, SHApplyPropertiesToItem
 implib shell32.dll, SHAssocEnumHandlers
 implib shell32.dll, SHAssocEnumHandlersForProtocolByApplication
 implib shell32.dll, SHBindToFolderIDListParent
@@ -639,6 +640,8 @@ implib shell32.dll, SHValidateUNC
 implib shell32.dll, ord.897, SaveTopViewSettings
 implib shell32.dll, ord.99, SetAppStartingCursor
 implib shell32.dll, SetCurrentProcessExplicitAppUserModelID
+implib shell32.dll, ord.899, SetExplorerServerMode
+implib shell32.dll, ord.893, SetWindowRelaunchProperties
 implib shell32.dll, SheChangeDirA
 implib shell32.dll, SheChangeDirExW
 implib shell32.dll, SheGetDirA
