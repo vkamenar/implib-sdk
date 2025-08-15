@@ -68,6 +68,7 @@ include '..\implib64.inc'
 ; implib shell32.dll, ord.643, SHChangeNotifyReceive
 ; implib shell32.dll, ord.5, SHChangeNotifyUpdateEntryList
 ; implib shell32.dll, ord.646, SHChangeRegistrationReceive
+; implib shell32.dll, ord.712, SHCopyMonikerToTemp
 ; implib shell32.dll, ord.121, SHFlushClipboard
 ; implib shell32.dll, ord.523, SHFreeShared
 ; implib shell32.dll, ord.123, SHFreeUnusedLibraries
@@ -355,17 +356,25 @@ implib shell32.dll, SHBindToParent
 implib shell32.dll, SHBrowseForFolder
 implib shell32.dll, SHBrowseForFolderA
 implib shell32.dll, SHBrowseForFolderW
-implib shell32.dll, SHCLSIDFromString
-implib shell32.dll, SHChangeNotification_Lock
-implib shell32.dll, SHChangeNotification_Unlock
+implib shell32.dll, ord.147, SHCLSIDFromString
+implib shell32.dll, ord.644, SHChangeNotification_Lock
+implib shell32.dll, ord.645, SHChangeNotification_Unlock
 implib shell32.dll, SHChangeNotify
-implib shell32.dll, SHChangeNotifyDeregister
-implib shell32.dll, SHChangeNotifyRegister
+implib shell32.dll, ord.4, SHChangeNotifyDeregister
+implib shell32.dll, ord.761, SHChangeNotifyDeregisterWindow
+implib shell32.dll, ord.2, SHChangeNotifyRegister
 implib shell32.dll, SHChangeNotifyRegisterThread
 implib shell32.dll, SHChangeNotifySuspendResume
-implib shell32.dll, SHCloneSpecialIDList
-implib shell32.dll, SHCoCreateInstance
+implib shell32.dll, ord.89, SHCloneSpecialIDList
+implib shell32.dll, ord.102, SHCoCreateInstance
 implib shell32.dll, SHCoCreateInstanceWorker
+implib shell32.dll, ord.825, SHCombineMultipleConditions
+implib shell32.dll, ord.847, SHCombineMultipleConditionsEx
+implib shell32.dll, ord.862, SHCompareIDsFull
+implib shell32.dll, ord.760, SHConfirmOperation
+implib shell32.dll, ord.766, SHCopyStreamWithProgress
+implib shell32.dll, ord.816, SHCreateAndOrCondition
+implib shell32.dll, ord.815, SHCreateAndOrConditionEx
 implib shell32.dll, SHCreateAssociationRegistration
 implib shell32.dll, SHCreateCategoryEnum
 implib shell32.dll, SHCreateDataObject
