@@ -376,11 +376,16 @@ implib shell32.dll, ord.766, SHCopyStreamWithProgress
 implib shell32.dll, ord.816, SHCreateAndOrCondition
 implib shell32.dll, ord.815, SHCreateAndOrConditionEx
 implib shell32.dll, SHCreateAssociationRegistration
-implib shell32.dll, SHCreateCategoryEnum
+implib shell32.dll, ord.820, SHCreateAutoList
+implib shell32.dll, ord.826, SHCreateAutoListWithID
+implib shell32.dll, ord.786, SHCreateCategoryEnum
+implib shell32.dll, ord.849, SHCreateConditionFactory
 implib shell32.dll, SHCreateDataObject
 implib shell32.dll, SHCreateDefaultContextMenu
 implib shell32.dll, SHCreateDefaultExtractIcon
 implib shell32.dll, SHCreateDefaultPropertiesOp
+implib shell32.dll, ord.70, SHCreateDefClassObject
+implib shell32.dll, ord.200, SHCreateDesktop
 implib shell32.dll, SHCreateDirectory
 implib shell32.dll, SHCreateDirectoryExA
 implib shell32.dll, SHCreateDirectoryExW
