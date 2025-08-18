@@ -386,16 +386,21 @@ implib shell32.dll, SHCreateDefaultExtractIcon
 implib shell32.dll, SHCreateDefaultPropertiesOp
 implib shell32.dll, ord.70, SHCreateDefClassObject
 implib shell32.dll, ord.200, SHCreateDesktop
-implib shell32.dll, SHCreateDirectory
+implib shell32.dll, ord.165, SHCreateDirectory
 implib shell32.dll, SHCreateDirectoryExA
 implib shell32.dll, SHCreateDirectoryExW
 implib shell32.dll, SHCreateDrvExtIcon
-implib shell32.dll, SHCreateFileExtractIconW
+implib shell32.dll, ord.740, SHCreateFileDataObject
+implib shell32.dll, ord.743, SHCreateFileExtractIconW
+implib shell32.dll, ord.818, SHCreateFilter
+implib shell32.dll, ord.831, SHCreateFilterFromFullText
+implib shell32.dll, ord.722, SHCreateInstance
 implib shell32.dll, SHCreateItemFromIDList
 implib shell32.dll, SHCreateItemFromParsingName
 implib shell32.dll, SHCreateItemFromRelativeName
 implib shell32.dll, SHCreateItemInKnownFolder
 implib shell32.dll, SHCreateItemWithParent
+implib shell32.dll, ord.872, SHCreateKindFilter
 implib shell32.dll, SHCreateLocalServerRunDll
 implib shell32.dll, SHCreateProcessAsUserW
 implib shell32.dll, SHCreatePropSheetExtArray
