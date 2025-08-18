@@ -69,6 +69,7 @@ include '..\implib64.inc'
 ; implib shell32.dll, ord.5, SHChangeNotifyUpdateEntryList
 ; implib shell32.dll, ord.646, SHChangeRegistrationReceive
 ; implib shell32.dll, ord.712, SHCopyMonikerToTemp
+; implib shell32.dll, ord.715, SHCreatePropertyBag
 ; implib shell32.dll, ord.121, SHFlushClipboard
 ; implib shell32.dll, ord.523, SHFreeShared
 ; implib shell32.dll, ord.123, SHFreeUnusedLibraries
@@ -401,10 +402,18 @@ implib shell32.dll, SHCreateItemFromRelativeName
 implib shell32.dll, SHCreateItemInKnownFolder
 implib shell32.dll, SHCreateItemWithParent
 implib shell32.dll, ord.872, SHCreateKindFilter
+implib shell32.dll, ord.817, SHCreateLeafCondition
+implib shell32.dll, ord.814, SHCreateLeafConditionEx
+implib shell32.dll, ord.172, SHCreateLinks
+implib shell32.dll, ord.898, SHCreateLinksEx
 implib shell32.dll, SHCreateLocalServerRunDll
+implib shell32.dll, ord.844, SHCreateNotCondition
+implib shell32.dll, ord.830, SHCreateNotConditionEx
 implib shell32.dll, SHCreateProcessAsUserW
-implib shell32.dll, SHCreatePropSheetExtArray
+implib shell32.dll, ord.168, SHCreatePropSheetExtArray
+implib shell32.dll, ord.194, SHCreatePropSheetExtArrayEx
 implib shell32.dll, SHCreateQueryCancelAutoPlayMoniker
+implib shell32.dll, ord.791, SHCreateRelatedItem
 implib shell32.dll, SHCreateShellFolderView
 implib shell32.dll, SHCreateShellFolderViewEx
 implib shell32.dll, SHCreateShellItem
