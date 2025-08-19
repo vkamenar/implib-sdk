@@ -414,18 +414,33 @@ implib shell32.dll, ord.168, SHCreatePropSheetExtArray
 implib shell32.dll, ord.194, SHCreatePropSheetExtArrayEx
 implib shell32.dll, SHCreateQueryCancelAutoPlayMoniker
 implib shell32.dll, ord.791, SHCreateRelatedItem
-implib shell32.dll, SHCreateShellFolderView
-implib shell32.dll, SHCreateShellFolderViewEx
+implib shell32.dll, ord.788, SHCreateRelatedItemFromIDList
+implib shell32.dll, ord.789, SHCreateRelatedItemWithParent
+implib shell32.dll, ord.834, SHCreateScopeFromIDLists
+implib shell32.dll, ord.836, SHCreateScopeFromShellItemArray
+implib shell32.dll, ord.835, SHCreateScopeItemFromIDList
+implib shell32.dll, ord.838, SHCreateScopeItemFromKnownFolder
+implib shell32.dll, ord.837, SHCreateScopeItemFromShellItem
+implib shell32.dll, ord.822, SHCreateSearchIDList
+implib shell32.dll, ord.821, SHCreateSearchIDListFromAutoList
+implib shell32.dll, ord.723, SHCreateSessionKey
+implib shell32.dll, ord.256, SHCreateShellFolderView
+implib shell32.dll, ord.174, SHCreateShellFolderViewEx
 implib shell32.dll, SHCreateShellItem
 implib shell32.dll, SHCreateShellItemArray
 implib shell32.dll, SHCreateShellItemArrayFromDataObject
 implib shell32.dll, SHCreateShellItemArrayFromIDLists
 implib shell32.dll, SHCreateShellItemArrayFromShellItem
-implib shell32.dll, SHCreateStdEnumFmtEtc
-implib shell32.dll, SHDefExtractIconA
-implib shell32.dll, SHDefExtractIconW
-implib shell32.dll, SHDestroyPropSheetExtArray
-implib shell32.dll, SHDoDragDrop
+implib shell32.dll, ord.74, SHCreateStdEnumFmtEtc
+implib shell32.dll, ord.758, SHCreateThreadUndoManager
+implib shell32.dll, ord.827, SHCreateTransientVFolderIDList
+implib shell32.dll, ord.3, SHDefExtractIconA
+implib shell32.dll, ord.6, SHDefExtractIconW
+implib shell32.dll, ord.201, SHDesktopMessageLoop
+implib shell32.dll, ord.169, SHDestroyPropSheetExtArray
+implib shell32.dll, ord.861, SHDisplayNameFromScopeAndSubQueries
+implib shell32.dll, ord.88, SHDoDragDrop
+implib shell32.dll, ord.884, SHDoDragDropWithPreferredEffect
 implib shell32.dll, SHELL32_AddToBackIconTable
 implib shell32.dll, SHELL32_AddToFrontIconTable
 implib shell32.dll, SHELL32_AreAllItemsAvailable
@@ -687,10 +702,10 @@ implib shell32.dll, ShellExecuteW
 implib shell32.dll, ShellHookProc
 implib shell32.dll, ShellMessageBoxA
 implib shell32.dll, ShellMessageBoxW
-implib shell32.dll, Shell_GetCachedImageIndex
+implib shell32.dll, ord.72, Shell_GetCachedImageIndex
 implib shell32.dll, Shell_GetCachedImageIndexA
 implib shell32.dll, Shell_GetCachedImageIndexW
-implib shell32.dll, Shell_GetImageLists
+implib shell32.dll, ord.71, Shell_GetImageLists
 implib shell32.dll, Shell_MergeMenus
 implib shell32.dll, Shell_NotifyIcon
 implib shell32.dll, Shell_NotifyIconA
