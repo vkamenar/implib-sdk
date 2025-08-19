@@ -691,22 +691,25 @@ implib shell32.dll, SheGetDirA
 implib shell32.dll, SheSetCurDrive
 implib shell32.dll, ShellAboutA
 implib shell32.dll, ShellAboutW
+implib shell32.dll, ord.188, ShellDDEInit
 implib shell32.dll, ShellExec_RunDLL
 implib shell32.dll, ShellExec_RunDLLA
 implib shell32.dll, ShellExec_RunDLLW
+implib shell32.dll, ord.265, ShellExecCmdLine
+implib shell32.dll, ord.266, ShellExecPidl
 implib shell32.dll, ShellExecuteA
 implib shell32.dll, ShellExecuteEx
 implib shell32.dll, ShellExecuteExA
 implib shell32.dll, ShellExecuteExW
 implib shell32.dll, ShellExecuteW
 implib shell32.dll, ShellHookProc
-implib shell32.dll, ShellMessageBoxA
-implib shell32.dll, ShellMessageBoxW
+implib shell32.dll, ord.183, ShellMessageBoxA
+implib shell32.dll, ord.182, ShellMessageBoxW
 implib shell32.dll, ord.72, Shell_GetCachedImageIndex
 implib shell32.dll, Shell_GetCachedImageIndexA
 implib shell32.dll, Shell_GetCachedImageIndexW
 implib shell32.dll, ord.71, Shell_GetImageLists
-implib shell32.dll, Shell_MergeMenus
+implib shell32.dll, ord.67, Shell_MergeMenus
 implib shell32.dll, Shell_NotifyIcon
 implib shell32.dll, Shell_NotifyIconA
 implib shell32.dll, Shell_NotifyIconGetRect
