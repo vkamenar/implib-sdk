@@ -70,6 +70,7 @@ include '..\implib64.inc'
 ; implib shell32.dll, ord.646, SHChangeRegistrationReceive
 ; implib shell32.dll, ord.712, SHCopyMonikerToTemp
 ; implib shell32.dll, ord.715, SHCreatePropertyBag
+; implib shell32.dll, ord.691, SHFileSysBindToStorage
 ; implib shell32.dll, ord.121, SHFlushClipboard
 ; implib shell32.dll, ord.523, SHFreeShared
 ; implib shell32.dll, ord.123, SHFreeUnusedLibraries
@@ -567,13 +568,18 @@ implib shell32.dll, SHELL32_VerifySaferTrust
 implib shell32.dll, SHEmptyRecycleBinA
 implib shell32.dll, SHEmptyRecycleBinW
 implib shell32.dll, SHEnableServiceObject
+implib shell32.dll, ord.881, SHEnumClassesOfCategories
 implib shell32.dll, SHEnumerateUnreadMailAccountsW
 implib shell32.dll, SHEvaluateSystemCommandTemplate
 implib shell32.dll, SHExecuteErrorMessageBox
+implib shell32.dll, ord.866, SHExtCoCreateInstance
+implib shell32.dll, ord.887, SHExtCoCreateInstanceCheckCategory
 implib shell32.dll, SHExtractIconsW
 implib shell32.dll, SHFileOperation
 implib shell32.dll, SHFileOperationA
 implib shell32.dll, SHFileOperationW
+implib shell32.dll, ord.841, SHFilterConditionFromString
+implib shell32.dll, ord.842, SHFilterConditionToString
 implib shell32.dll, SHFindFiles
 implib shell32.dll, SHFind_InitMenuPopup
 implib shell32.dll, SHFlushSFCache
