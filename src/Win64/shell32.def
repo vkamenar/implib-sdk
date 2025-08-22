@@ -580,13 +580,19 @@ implib shell32.dll, SHFileOperationA
 implib shell32.dll, SHFileOperationW
 implib shell32.dll, ord.841, SHFilterConditionFromString
 implib shell32.dll, ord.842, SHFilterConditionToString
-implib shell32.dll, SHFindFiles
-implib shell32.dll, SHFind_InitMenuPopup
-implib shell32.dll, SHFlushSFCache
+implib shell32.dll, ord.91, SHFindComputer
+implib shell32.dll, ord.90, SHFindFiles
+implib shell32.dll, ord.149, SHFind_InitMenuPopup
+implib shell32.dll, ord.526, SHFlushSFCache
 implib shell32.dll, SHFormatDrive
-implib shell32.dll, SHFree
+implib shell32.dll, ord.195, SHFree
 implib shell32.dll, SHFreeNameMappings
-implib shell32.dll, SHGetAttributesFromDataObject
+implib shell32.dll, ord.247, SHGetActiveConsoleSessionId
+implib shell32.dll, ord.681, SHGetAppCompatFlags
+implib shell32.dll, ord.777, SHGetAssocKeys
+implib shell32.dll, ord.750, SHGetAttributesFromDataObject
+implib shell32.dll, ord.752, SHGetComputerDisplayNameW
+implib shell32.dll, ord.860, SHGetCorrectOwnerSid
 implib shell32.dll, SHGetDataFromIDListA
 implib shell32.dll, SHGetDataFromIDListW
 implib shell32.dll, SHGetDesktopFolder
