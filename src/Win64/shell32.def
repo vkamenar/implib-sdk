@@ -74,6 +74,9 @@ include '..\implib64.inc'
 ; implib shell32.dll, ord.121, SHFlushClipboard
 ; implib shell32.dll, ord.523, SHFreeShared
 ; implib shell32.dll, ord.123, SHFreeUnusedLibraries
+; implib shell32.dll, ord.708, SHGetSetFolderCustomSettingsA
+; implib shell32.dll, ord.749, SHGetShellStyleHInstance
+; implib shell32.dll, ord.233, SHGetUserPicturePathW
 ; implib shell32.dll, ord.197, SHGlobalDefect
 ; implib shell32.dll, ord.84, SHIsBadInterfacePtr
 ; implib shell32.dll, ord.151, SHLoadOLE
@@ -595,6 +598,7 @@ implib shell32.dll, ord.752, SHGetComputerDisplayNameW
 implib shell32.dll, ord.860, SHGetCorrectOwnerSid
 implib shell32.dll, SHGetDataFromIDListA
 implib shell32.dll, SHGetDataFromIDListW
+implib shell32.dll, ord.811, SHGetDefaultUserPicture
 implib shell32.dll, SHGetDesktopFolder
 implib shell32.dll, SHGetDiskFreeSpaceA
 implib shell32.dll, SHGetDiskFreeSpaceExA
@@ -609,10 +613,13 @@ implib shell32.dll, SHGetFolderPathAndSubDirA
 implib shell32.dll, SHGetFolderPathAndSubDirW
 implib shell32.dll, SHGetFolderPathEx
 implib shell32.dll, SHGetFolderPathW
+implib shell32.dll, ord.823, SHGetFolderTypeDescription
+implib shell32.dll, ord.824, SHGetFolderTypeFromCanonicalName
 implib shell32.dll, SHGetIDListFromObject
 implib shell32.dll, SHGetIconOverlayIndexA
 implib shell32.dll, SHGetIconOverlayIndexW
-implib shell32.dll, SHGetImageList
+implib shell32.dll, ord.843, SHGetIdentifyItem
+implib shell32.dll, ord.727, SHGetImageList
 implib shell32.dll, SHGetInstanceExplorer
 implib shell32.dll, SHGetItemFromDataObject
 implib shell32.dll, SHGetItemFromObject
@@ -622,35 +629,48 @@ implib shell32.dll, SHGetKnownFolderPath
 implib shell32.dll, SHGetLocalizedName
 implib shell32.dll, SHGetMalloc
 implib shell32.dll, SHGetNameFromIDList
+implib shell32.dll, ord.69, SHGetNetResource
 implib shell32.dll, SHGetNewLinkInfo
-implib shell32.dll, SHGetNewLinkInfoA
-implib shell32.dll, SHGetNewLinkInfoW
+implib shell32.dll, ord.179, SHGetNewLinkInfoA
+implib shell32.dll, ord.180, SHGetNewLinkInfoW
+implib shell32.dll, ord.848, SHGetNoAssocIconIndex
 implib shell32.dll, SHGetPathFromIDList
 implib shell32.dll, SHGetPathFromIDListA
 implib shell32.dll, SHGetPathFromIDListEx
 implib shell32.dll, SHGetPathFromIDListW
+implib shell32.dll, ord.242, SHGetProcessDword
 implib shell32.dll, SHGetPropertyStoreForWindow
 implib shell32.dll, SHGetPropertyStoreFromIDList
 implib shell32.dll, SHGetPropertyStoreFromParsingName
-implib shell32.dll, SHGetRealIDL
+implib shell32.dll, ord.98, SHGetRealIDL
 implib shell32.dll, SHGetSetFolderCustomSettings
-implib shell32.dll, ord.709, SHGetSetFolderCustomSettingsW
-implib shell32.dll, SHGetSetSettings
+implib shell32.dll, ord.709, SHGetSetFolderCustomSettings ; Renamed from SHGetSetFolderCustomSettingsW in Windows Vista
+implib shell32.dll, ord.68, SHGetSetSettings
 implib shell32.dll, SHGetSettings
-implib shell32.dll, ord.749, SHGetShellStyleHInstance
+implib shell32.dll, ord.257, SHGetShellFolderViewCB
 implib shell32.dll, SHGetSpecialFolderLocation
 implib shell32.dll, SHGetSpecialFolderPathA
-implib shell32.dll, SHGetSpecialFolderPathW
+implib shell32.dll, ord.175, SHGetSpecialFolderPathW
 implib shell32.dll, SHGetStockIconInfo
 implib shell32.dll, SHGetTemporaryPropertyForItem
+implib shell32.dll, ord.759, SHGetThreadUndoManager
+implib shell32.dll, ord.851, SHGetTopViewDescription
 implib shell32.dll, SHGetUnreadMailCountW
-implib shell32.dll, SHHandleUpdateImage
+implib shell32.dll, ord.241, SHGetUserDisplayName
+implib shell32.dll, ord.261, SHGetUserPicturePath
+implib shell32.dll, ord.248, SHGetUserSessionId
+implib shell32.dll, ord.810, SHGetUserPicturePathEx
+implib shell32.dll, ord.185, SHHandleDiskFull
+implib shell32.dll, ord.193, SHHandleUpdateImage
 implib shell32.dll, SHHelpShortcuts_RunDLL
 implib shell32.dll, SHHelpShortcuts_RunDLLA
 implib shell32.dll, SHHelpShortcuts_RunDLLW
-implib shell32.dll, SHILCreateFromPath
+implib shell32.dll, ord.28, SHILCreateFromPath
+implib shell32.dll, ord.873, SHIconIndexFromPIDL
+implib shell32.dll, ord.852, SHInitializeControlPanelRegkeys
 implib shell32.dll, SHInvokePrinterCommandA
 implib shell32.dll, SHInvokePrinterCommandW
+implib shell32.dll, ord.246, SHInvokePrivilegedFunctionW
 implib shell32.dll, SHIsFileAvailableOffline
 implib shell32.dll, SHLimitInputEdit
 implib shell32.dll, SHLoadInProc
