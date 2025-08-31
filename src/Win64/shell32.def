@@ -696,23 +696,28 @@ implib shell32.dll, ord.790, SHMapIDListToSystemImageListIndex
 implib shell32.dll, ord.787, SHMapIDListToSystemImageListIndexAsync
 implib shell32.dll, ord.77, SHMapPIDLToSystemImageListIndex
 implib shell32.dll, ord.716, SHMultiFileProperties
-implib shell32.dll, SHObjectProperties
+implib shell32.dll, ord.160, SHNetConnectionDialog
+implib shell32.dll, ord.178, SHObjectProperties
 implib shell32.dll, SHOpenFolderAndSelectItems
-implib shell32.dll, SHOpenPropSheetW
+implib shell32.dll, ord.80, SHOpenPropSheetW
 implib shell32.dll, SHOpenWithDialog
+implib shell32.dll, ord.719, SHParseDarwinIDFromCacheW
 implib shell32.dll, SHParseDisplayName
 implib shell32.dll, SHPathPrepareForWriteA
 implib shell32.dll, SHPathPrepareForWriteW
-implib shell32.dll, SHPropStgCreate
-implib shell32.dll, SHPropStgReadMultiple
-implib shell32.dll, SHPropStgWriteMultiple
+implib shell32.dll, ord.685, SHPropStgCreate
+implib shell32.dll, ord.688, SHPropStgReadMultiple
+implib shell32.dll, ord.689, SHPropStgWriteMultiple
 implib shell32.dll, SHQueryRecycleBinA
 implib shell32.dll, SHQueryRecycleBinW
 implib shell32.dll, SHQueryUserNotificationState
+implib shell32.dll, ord.731, SHRegisterDarwinLink
 implib shell32.dll, SHRemoveLocalizedName
-implib shell32.dll, SHReplaceFromPropSheetExtArray
+implib shell32.dll, ord.170, SHReplaceFromPropSheetExtArray
 implib shell32.dll, SHResolveLibrary
-implib shell32.dll, SHRestricted
+implib shell32.dll, ord.270, SHResolveUserNames
+implib shell32.dll, ord.100, SHRestricted
+implib shell32.dll, ord.732, SHReValidateDarwinCache
 implib shell32.dll, SHSetDefaultProperties
 implib shell32.dll, SHSetFolderPathA
 implib shell32.dll, SHSetFolderPathW
@@ -764,6 +769,7 @@ implib shell32.dll, Shell_NotifyIcon
 implib shell32.dll, Shell_NotifyIconA
 implib shell32.dll, Shell_NotifyIconGetRect
 implib shell32.dll, Shell_NotifyIconW
+implib shell32.dll, ord.204, ShortSizeFormatW
 implib shell32.dll, SignalFileOpen
 implib shell32.dll, StateRepoNewMenuCache_EnsureCacheAsync
 implib shell32.dll, StateRepoNewMenuCache_RebuildCacheAsync
