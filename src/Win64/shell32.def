@@ -719,17 +719,26 @@ implib shell32.dll, ord.270, SHResolveUserNames
 implib shell32.dll, ord.100, SHRestricted
 implib shell32.dll, ord.732, SHReValidateDarwinCache
 implib shell32.dll, SHSetDefaultProperties
-implib shell32.dll, SHSetFolderPathA
-implib shell32.dll, SHSetFolderPathW
-implib shell32.dll, SHSetInstanceExplorer
+implib shell32.dll, ord.231, SHSetFolderPathA
+implib shell32.dll, ord.232, SHSetFolderPathW
+implib shell32.dll, ord.176, SHSetInstanceExplorer
 implib shell32.dll, SHSetKnownFolderPath
 implib shell32.dll, SHSetLocalizedName
+implib shell32.dll, ord.243, SHSetShellWindowEx
 implib shell32.dll, SHSetTemporaryPropertyForItem
 implib shell32.dll, SHSetUnreadMailCountW
-implib shell32.dll, SHShellFolderView_Message
+implib shell32.dll, ord.262, SHSetUserPicturePath
+implib shell32.dll, ord.244, SHSettingsChanged
+implib shell32.dll, ord.73, SHShellFolderView_Message
+implib shell32.dll, ord.237, SHShouldShowWizards
 implib shell32.dll, SHShowManageLibraryUI
-implib shell32.dll, SHSimpleIDListFromPath
-implib shell32.dll, SHStartNetConnectionDialogW
+implib shell32.dll, ord.162, SHSimpleIDListFromPath
+implib shell32.dll, ord.751, SHSimulateDropOnClsid
+implib shell32.dll, ord.215, SHStartNetConnectionDialog
+implib shell32.dll, ord.12, SHStartNetConnectionDialogA
+implib shell32.dll, ord.14, SHStartNetConnectionDialogW
+implib shell32.dll, ord.684, SHStgOpenStorageA
+implib shell32.dll, ord.683, SHStgOpenStorageW
 implib shell32.dll, SHTestTokenMembership
 implib shell32.dll, SHUpdateImageA
 implib shell32.dll, SHUpdateImageW
