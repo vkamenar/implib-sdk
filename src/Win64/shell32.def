@@ -739,11 +739,18 @@ implib shell32.dll, ord.12, SHStartNetConnectionDialogA
 implib shell32.dll, ord.14, SHStartNetConnectionDialogW
 implib shell32.dll, ord.684, SHStgOpenStorageA
 implib shell32.dll, ord.683, SHStgOpenStorageW
-implib shell32.dll, SHTestTokenMembership
-implib shell32.dll, SHUpdateImageA
-implib shell32.dll, SHUpdateImageW
+implib shell32.dll, ord.245, SHTestTokenMembership
+implib shell32.dll, ord.236, SHTestTokenPrivilegeW
+implib shell32.dll, ord.191, SHUpdateImageA
+implib shell32.dll, ord.192, SHUpdateImageW
 implib shell32.dll, SHUpdateRecycleBinIcon
-implib shell32.dll, SHValidateUNC
+implib shell32.dll, ord.812, SHUserGetPasswordHint
+implib shell32.dll, ord.813, SHUserSetPasswordHint
+implib shell32.dll, ord.173, SHValidateUNC
+implib shell32.dll, ord.97, SHWaitForFileToOpen
+implib shell32.dll, ord.648, SHWaitOp_Operate
+implib shell32.dll, ord.127, SHWinHelp
+implib shell32.dll, ord.882, SHWriteClassesOfCategories
 implib shell32.dll, ord.897, SaveTopViewSettings
 implib shell32.dll, ord.99, SetAppStartingCursor
 implib shell32.dll, SetCurrentProcessExplicitAppUserModelID
@@ -779,7 +786,8 @@ implib shell32.dll, Shell_NotifyIconA
 implib shell32.dll, Shell_NotifyIconGetRect
 implib shell32.dll, Shell_NotifyIconW
 implib shell32.dll, ord.204, ShortSizeFormatW
-implib shell32.dll, SignalFileOpen
+implib shell32.dll, ord.103, SignalFileOpen
+implib shell32.dll, ord.864, StampIconForElevation
 implib shell32.dll, StateRepoNewMenuCache_EnsureCacheAsync
 implib shell32.dll, StateRepoNewMenuCache_RebuildCacheAsync
 implib shell32.dll, StgMakeUniqueName
@@ -803,14 +811,19 @@ implib shell32.dll, StrRStrA
 implib shell32.dll, StrRStrIA
 implib shell32.dll, StrRStrIW
 implib shell32.dll, StrRStrW
+implib shell32.dll, ord.96, StrRetToStrN
 implib shell32.dll, StrStrA
 implib shell32.dll, StrStrIA
 implib shell32.dll, StrStrIW
 implib shell32.dll, StrStrW
+implib shell32.dll, ord.901, UpdateWallpaperTransition
 implib shell32.dll, UsersLibrariesFolderUI_CreateInstance
 implib shell32.dll, WOWShellExecute
+implib shell32.dll, ord.859, WPC_InstallState
 implib shell32.dll, WaitForExplorerRestartW
-implib shell32.dll, Win32DeleteFile
-implib shell32.dll, WriteCabinetState
+implib shell32.dll, ord.93, Win32CreateDirectory
+implib shell32.dll, ord.164, Win32DeleteFile
+implib shell32.dll, ord.94, Win32RemoveDirectory
+implib shell32.dll, ord.652, WriteCabinetState
 
 endlib
