@@ -177,9 +177,9 @@ implib ole32.dll, DdeBindToObject
 implib ole32.dll, DeletePatternAndExtensionTables
 implib ole32.dll, DestroyRunningObjectTable
 implib ole32.dll, DllDebugObjectRPCHook
-implib ole32.dll, DllGetClassObject
-implib ole32.dll, DllGetClassObjectWOW
-implib ole32.dll, DllRegisterServer
+implib ole32.dll, DllGetClassObject, OLE32_DllGetClassObject
+implib ole32.dll, DllGetClassObjectWOW, OLE32_DllGetClassObjectWOW
+implib ole32.dll, DllRegisterServer, OLE32_DllRegisterServer
 implib ole32.dll, DoDragDrop
 implib ole32.dll, DragDropSetFDT
 implib ole32.dll, EnableHookObject
