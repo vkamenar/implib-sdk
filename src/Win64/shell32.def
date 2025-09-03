@@ -175,13 +175,13 @@ implib shell32.dll, ord.870, DUI_Shell32_StartDeferUninitialization
 implib shell32.dll, ord.871, DUI_Shell32_EndDeferUninitialization
 implib shell32.dll, ord.254, DisconnectWindowsDialog
 implib shell32.dll, ord.757, DisplayNameOfW
-implib shell32.dll, DllCanUnloadNow
+implib shell32.dll, DllCanUnloadNow, SHELL32_DllCanUnloadNow
 implib shell32.dll, DllGetActivationFactory
-implib shell32.dll, ord.128, DllGetClassObject
-implib shell32.dll, DllGetVersion
-implib shell32.dll, DllInstall
-implib shell32.dll, DllRegisterServer
-implib shell32.dll, DllUnregisterServer
+implib shell32.dll, ord.128, SHELL32_DllGetClassObject
+implib shell32.dll, DllGetVersion, SHELL32_DllGetVersion
+implib shell32.dll, DllInstall, SHELL32_DllInstall
+implib shell32.dll, DllRegisterServer, SHELL32_DllRegisterServer
+implib shell32.dll, DllUnregisterServer, SHELL32_DllUnregisterServer
 implib shell32.dll, DoEnvironmentSubstA
 implib shell32.dll, DoEnvironmentSubstW
 implib shell32.dll, DragAcceptFiles
