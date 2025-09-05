@@ -1,5 +1,16 @@
 include '..\implib.inc'
 
+; The following symbols are commented out to limit the size of the library.
+; They are available in specific shell32 versions only.
+; Feel free to uncomment the necessary symbols and recompile the library.
+
+; *** Functions available from v3.51 (Windows NT 3.51) to v6.0 (Windows Vista)
+; implib shell32.dll, CheckEscapesA, _CheckEscapesA@8
+; implib shell32.dll, Control_FillCache_RunDLL, _Control_FillCache_RunDLL@16
+; implib shell32.dll, ExtractIconResInfoA, _ExtractIconResInfoA@20
+; implib shell32.dll, ExtractIconResInfoW, _ExtractIconResInfoW@20
+; implib shell32.dll, ExtractVersionResource16W, _ExtractVersionResource16W@8
+
 implib shell32.dll, Activate_RunDLL, _Activate_RunDLL@16
 implib shell32.dll, AppCompat_RunDLLW, _AppCompat_RunDLLW@16
 implib shell32.dll, AssocCreateForClasses, _AssocCreateForClasses@16
@@ -10,10 +21,8 @@ implib shell32.dll, CDefFolderMenu_Create2, _CDefFolderMenu_Create2@36
 implib shell32.dll, CStorageItem_GetValidatedStorageItemObject
 implib shell32.dll, CallCPLEntry16, _CallCPLEntry16@24
 implib shell32.dll, CallFileCopyHook, _CallFileCopyHook@32
-implib shell32.dll, CheckEscapesA, _CheckEscapesA@8
 implib shell32.dll, CheckEscapesW, _CheckEscapesW@8
 implib shell32.dll, CommandLineToArgvW, _CommandLineToArgvW@8
-implib shell32.dll, Control_FillCache_RunDLL, _Control_FillCache_RunDLL@16
 implib shell32.dll, Control_FillCache_RunDLLA, _Control_FillCache_RunDLLA@16
 implib shell32.dll, Control_FillCache_RunDLLW, _Control_FillCache_RunDLLW@16
 implib shell32.dll, Control_RunDLL, _Control_RunDLL@16
@@ -62,10 +71,7 @@ implib shell32.dll, ExtractIconA, _ExtractIconA@12
 implib shell32.dll, ExtractIconEx, _ExtractIconEx@20
 implib shell32.dll, ExtractIconExA, _ExtractIconExA@20
 implib shell32.dll, ExtractIconExW, _ExtractIconExW@20
-implib shell32.dll, ExtractIconResInfoA, _ExtractIconResInfoA@20
-implib shell32.dll, ExtractIconResInfoW, _ExtractIconResInfoW@20
 implib shell32.dll, ExtractIconW, _ExtractIconW@12
-implib shell32.dll, ExtractVersionResource16W, _ExtractVersionResource16W@8
 implib shell32.dll, ord.660, _FileIconInit@4
 implib shell32.dll, FindExeDlgProc, _FindExeDlgProc@16
 implib shell32.dll, FindExecutableA, _FindExecutableA@12
