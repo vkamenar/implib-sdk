@@ -5,8 +5,8 @@ implib comdlg32.dll, ChooseColorW
 implib comdlg32.dll, ChooseFontA
 implib comdlg32.dll, ChooseFontW
 implib comdlg32.dll, CommDlgExtendedError
-implib comdlg32.dll, DllCanUnloadNow
-implib comdlg32.dll, DllGetClassObject
+implib comdlg32.dll, DllCanUnloadNow, COMDLG32_DllCanUnloadNow
+implib comdlg32.dll, DllGetClassObject, COMDLG32_DllGetClassObject
 implib comdlg32.dll, FindTextA
 implib comdlg32.dll, FindTextW
 implib comdlg32.dll, GetFileTitleA
