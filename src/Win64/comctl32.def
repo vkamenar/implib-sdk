@@ -42,7 +42,7 @@ implib comctl32.dll, DSA_InsertItem
 implib comctl32.dll, DSA_SetItem
 implib comctl32.dll, DefSubclassProc
 implib comctl32.dll, DestroyPropertySheetPage
-implib comctl32.dll, DllGetVersion
+implib comctl32.dll, DllGetVersion, COMCTL32_DllGetVersion
 implib comctl32.dll, DrawInsert
 implib comctl32.dll, DrawStatusText
 implib comctl32.dll, DrawStatusTextA
