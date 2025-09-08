@@ -93,7 +93,7 @@ implib BluetoothApis.dll, BthpSetServiceStateEx, _BthpSetServiceStateEx@40
 implib BluetoothApis.dll, BthpTranspose16Bits, _BthpTranspose16Bits@4
 implib BluetoothApis.dll, BthpTranspose32Bits, _BthpTranspose32Bits@4
 implib BluetoothApis.dll, BthpTransposeAndExtendBytes, _BthpTransposeAndExtendBytes@12
-implib BluetoothApis.dll, DllCanUnloadNow, _DllCanUnloadNow@0
+implib BluetoothApis.dll, DllCanUnloadNow, _BluetoothApis_DllCanUnloadNow@0
 implib BluetoothApis.dll, FindNextOpenVCOMPort, _FindNextOpenVCOMPort@4
 implib BluetoothApis.dll, InstallIncomingComPort, _InstallIncomingComPort@8
 implib BluetoothApis.dll, ShouldForceAuthentication, _ShouldForceAuthentication@4
