@@ -11,6 +11,6 @@ implib DSOUND.DLL, DirectSoundEnumerateW, _DirectSoundEnumerateW@8
 implib DSOUND.DLL, DirectSoundFullDuplexCreate, _DirectSoundFullDuplexCreate8@40
 implib DSOUND.DLL, DllCanUnloadNow, _DSOUND_DllCanUnloadNow@0
 implib DSOUND.DLL, DllGetClassObject, _DSOUND_DllGetClassObject@12
-implib DSOUND.DLL, GetDeviceID, _DSOUND_GetDeviceID@8
+implib DSOUND.DLL, GetDeviceID, _GetDeviceID@8
 
 endlib
