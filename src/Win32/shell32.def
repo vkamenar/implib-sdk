@@ -17,6 +17,9 @@ include '..\implib.inc'
 ; implib shell32.dll, SheFullPathA, _SheFullPathA@12
 ; implib shell32.dll, SheFullPathW, _SheFullPathW@12
 ; implib shell32.dll, SheGetCurDrive, _SheGetCurDrive@0
+; implib shell32.dll, SheGetDirExW, _SheGetDirExW@12
+; implib shell32.dll, SheGetDirW, _SheGetDirW@8
+; implib shell32.dll, SheGetPathOffsetW, _SheGetPathOffsetW@4
 
 implib shell32.dll, Activate_RunDLL, _Activate_RunDLL@16
 implib shell32.dll, AppCompat_RunDLLW, _AppCompat_RunDLLW@16
@@ -491,9 +494,6 @@ implib shell32.dll, SetCurrentProcessExplicitAppUserModelID, _SetCurrentProcessE
 implib shell32.dll, SheChangeDirA, _SheChangeDirA@4
 implib shell32.dll, SheChangeDirExW, _SheChangeDirExW@4
 implib shell32.dll, SheGetDirA, _SheGetDirA@8
-implib shell32.dll, SheGetDirExW, _SheGetDirExW@12
-implib shell32.dll, SheGetDirW, _SheGetDirW@8
-implib shell32.dll, SheGetPathOffsetW, _SheGetPathOffsetW@4
 implib shell32.dll, SheRemoveQuotesA, _SheRemoveQuotesA@4
 implib shell32.dll, SheRemoveQuotesW, _SheRemoveQuotesW@4
 implib shell32.dll, SheSetCurDrive, _SheSetCurDrive@4
