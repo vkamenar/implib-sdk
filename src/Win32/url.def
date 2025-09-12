@@ -5,8 +5,8 @@ implib url.dll, NewsProtocolHandler, _NewsProtocolHandler@16
 implib url.dll, NewsProtocolHandlerA, _NewsProtocolHandlerA@16 ; This function is an alias for NewsProtocolHandler
 
 ; *** Functions available until v6 (Windows XP)
-implib url.dll, DllCanUnloadNow, _DllCanUnloadNow@0
-implib url.dll, DllGetClassObject, _DllGetClassObject@12
+implib url.dll, DllCanUnloadNow, _URL_DllCanUnloadNow@0
+implib url.dll, DllGetClassObject, _URL_DllGetClassObject@12
 
 ; *** Dummy functions available until v5.50 (Windows 2000)
 ; implib url.dll, DummyEntryPoint, _DummyEntryPoint@0
