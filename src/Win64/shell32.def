@@ -176,7 +176,7 @@ implib shell32.dll, ord.871, DUI_Shell32_EndDeferUninitialization
 implib shell32.dll, ord.254, DisconnectWindowsDialog
 implib shell32.dll, ord.757, DisplayNameOfW
 implib shell32.dll, DllCanUnloadNow, SHELL32_DllCanUnloadNow
-implib shell32.dll, DllGetActivationFactory
+implib shell32.dll, SHELL32_DllGetActivationFactory
 implib shell32.dll, ord.128, SHELL32_DllGetClassObject
 implib shell32.dll, DllGetVersion, SHELL32_DllGetVersion
 implib shell32.dll, DllInstall, SHELL32_DllInstall
