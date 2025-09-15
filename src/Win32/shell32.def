@@ -4,13 +4,17 @@ include '..\implib.inc'
 ; They are available in specific shell32 versions only.
 ; Feel free to uncomment the necessary symbols and recompile the library.
 
-; *** Functions available from v3.51 (Windows NT 3.51) to v6.0 (Windows Vista)
+; *** Functions discontinued in v6.0 (Windows Vista)
 ; implib shell32.dll, CheckEscapesA, _CheckEscapesA@8
 ; implib shell32.dll, Control_FillCache_RunDLL, _Control_FillCache_RunDLL@16
+; implib shell32.dll, Control_FillCache_RunDLLA, _Control_FillCache_RunDLLA@16
+; implib shell32.dll, Control_FillCache_RunDLLW, _Control_FillCache_RunDLLW@16
 ; implib shell32.dll, ExtractIconResInfoA, _ExtractIconResInfoA@20
 ; implib shell32.dll, ExtractIconResInfoW, _ExtractIconResInfoW@20
 ; implib shell32.dll, ExtractVersionResource16W, _ExtractVersionResource16W@8
 ; implib shell32.dll, FindExeDlgProc, _FindExeDlgProc@16
+; implib shell32.dll, ILLoadFromStream, _ILLoadFromStream@8
+; implib shell32.dll, ord.5, _SHChangeNotifyUpdateEntryList@16
 ; implib shell32.dll, SheChangeDirExA, _SheChangeDirExA@4
 ; implib shell32.dll, SheChangeDirW, _SheChangeDirW@4
 ; implib shell32.dll, SheConvertPathW, _SheConvertPathW@12
@@ -20,6 +24,14 @@ include '..\implib.inc'
 ; implib shell32.dll, SheGetDirExW, _SheGetDirExW@12
 ; implib shell32.dll, SheGetDirW, _SheGetDirW@8
 ; implib shell32.dll, SheGetPathOffsetW, _SheGetPathOffsetW@4
+; implib shell32.dll, SheRemoveQuotesA, _SheRemoveQuotesA@4
+; implib shell32.dll, SheRemoveQuotesW, _SheRemoveQuotesW@4
+; implib shell32.dll, SheShortenPathA, _SheShortenPathA@8
+; implib shell32.dll, SheShortenPathW, _SheShortenPathW@8
+
+; *** Stub functions avilable in v4.0 only (Windows 95)
+; implib shell32.dll, Shl1632_ThunkData32
+; implib shell32.dll, Shl3216_ThunkData32
 
 implib shell32.dll, Activate_RunDLL, _Activate_RunDLL@16
 implib shell32.dll, AppCompat_RunDLLW, _AppCompat_RunDLLW@16
@@ -33,8 +45,6 @@ implib shell32.dll, CallCPLEntry16, _CallCPLEntry16@24
 implib shell32.dll, CallFileCopyHook, _CallFileCopyHook@32
 implib shell32.dll, CheckEscapesW, _CheckEscapesW@8
 implib shell32.dll, CommandLineToArgvW, _CommandLineToArgvW@8
-implib shell32.dll, Control_FillCache_RunDLLA, _Control_FillCache_RunDLLA@16
-implib shell32.dll, Control_FillCache_RunDLLW, _Control_FillCache_RunDLLW@16
 implib shell32.dll, Control_RunDLL, _Control_RunDLL@16
 implib shell32.dll, Control_RunDLLA, _Control_RunDLLA@16
 implib shell32.dll, Control_RunDLLAsUserW, _Control_RunDLLAsUserW@16
@@ -103,14 +113,15 @@ implib shell32.dll, ILCreateFromPathW, _ILCreateFromPathW@4
 implib shell32.dll, ILFindChild, _ILFindChild@8
 implib shell32.dll, ILFindLastID, _ILFindLastID@4
 implib shell32.dll, ILFree, _ILFree@4
+implib shell32.dll, ord.15, _ILGetDisplayName@8
 implib shell32.dll, ILGetNext, _ILGetNext@4
 implib shell32.dll, ILGetSize, _ILGetSize@4
+implib shell32.dll, ord.20, _ILGlobalClone@4
 implib shell32.dll, ILIsAligned, _ILIsAligned@4
 implib shell32.dll, ILIsChild, _ILIsChild@4
 implib shell32.dll, ILIsEmpty, _ILIsEmpty@4
 implib shell32.dll, ILIsEqual, _ILIsEqual@8
 implib shell32.dll, ILIsParent, _ILIsParent@12
-implib shell32.dll, ILLoadFromStream, _ILLoadFromStream@8
 implib shell32.dll, ILLoadFromStreamEx, _ILLoadFromStreamEx@8
 implib shell32.dll, ILMakeChild, _ILMakeChild@4
 implib shell32.dll, ILMakeFull, _ILMakeFull@4
@@ -145,6 +156,7 @@ implib shell32.dll, ParseField, _ParseField@16
 implib shell32.dll, PathCleanupSpec, _PathCleanupSpec@8
 implib shell32.dll, PathGetShortPath, _PathGetShortPath@4
 implib shell32.dll, PathIsExe, _PathIsExe@4
+implib shell32.dll, ord.29, _PathIsRoot@4
 implib shell32.dll, PathIsSlowA, _PathIsSlowA@8
 implib shell32.dll, PathIsSlowW, _PathIsSlowW@8
 implib shell32.dll, PathMakeUniqueName, _PathMakeUniqueName@20
@@ -438,7 +450,7 @@ implib shell32.dll, SHInvokePrinterCommandA, _SHInvokePrinterCommandA@20
 implib shell32.dll, SHInvokePrinterCommandW, _SHInvokePrinterCommandW@20
 implib shell32.dll, SHIsFileAvailableOffline, _SHIsFileAvailableOffline@8
 implib shell32.dll, SHLimitInputEdit, _SHLimitInputEdit@8
-implib shell32.dll, SHLoadInProc, _SHLoadInProc@4
+implib shell32.dll, SHLoadInProc, _SHLoadInProc@4 ; Since Windows Vista, this function does nothing and returns E_NOTIMPL
 implib shell32.dll, SHLoadNonloadedIconOverlayIdentifiers, _SHLoadNonloadedIconOverlayIdentifiers@0
 implib shell32.dll, SHLoadOLE, _SHLoadOLE@4
 implib shell32.dll, SHLocalStrDupA, _SHLocalStrDupA@8
@@ -494,11 +506,7 @@ implib shell32.dll, SetCurrentProcessExplicitAppUserModelID, _SetCurrentProcessE
 implib shell32.dll, SheChangeDirA, _SheChangeDirA@4
 implib shell32.dll, SheChangeDirExW, _SheChangeDirExW@4
 implib shell32.dll, SheGetDirA, _SheGetDirA@8
-implib shell32.dll, SheRemoveQuotesA, _SheRemoveQuotesA@4
-implib shell32.dll, SheRemoveQuotesW, _SheRemoveQuotesW@4
 implib shell32.dll, SheSetCurDrive, _SheSetCurDrive@4
-implib shell32.dll, SheShortenPathA, _SheShortenPathA@8
-implib shell32.dll, SheShortenPathW, _SheShortenPathW@8
 implib shell32.dll, ShellAboutA, _ShellAboutA@16
 implib shell32.dll, ShellAboutW, _ShellAboutW@16
 implib shell32.dll, ShellExec_RunDLL, _ShellExec_RunDLL@16
