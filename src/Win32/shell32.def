@@ -153,7 +153,13 @@ implib shell32.dll, Options_RunDLL, _Options_RunDLL@16
 implib shell32.dll, Options_RunDLLA, _Options_RunDLLA@16
 implib shell32.dll, Options_RunDLLW, _Options_RunDLLW@16
 implib shell32.dll, ParseField, _ParseField@16
+implib shell32.dll, ord.32, _PathAddBackslash@4
+implib shell32.dll, ord.36, _PathAppend@8
+implib shell32.dll, ord.30, _PathBuildRoot@8
 implib shell32.dll, PathCleanupSpec, _PathCleanupSpec@8
+implib shell32.dll, ord.37, _PathCombine@12
+implib shell32.dll, ord.31, _PathFindExtension@4
+implib shell32.dll, ord.34, _PathFindFileName@4
 implib shell32.dll, PathGetShortPath, _PathGetShortPath@4
 implib shell32.dll, PathIsExe, _PathIsExe@4
 implib shell32.dll, ord.29, _PathIsRoot@4
@@ -162,6 +168,8 @@ implib shell32.dll, PathIsSlowW, _PathIsSlowW@8
 implib shell32.dll, PathMakeUniqueName, _PathMakeUniqueName@20
 implib shell32.dll, PathProcessCommand, _PathProcessCommand@16
 implib shell32.dll, PathQualify, _PathQualify@4
+implib shell32.dll, ord.33, _PathRemoveBlanks@4
+implib shell32.dll, ord.35, _PathRemoveFileSpec@4
 implib shell32.dll, PathResolve, _PathResolve@12
 implib shell32.dll, PathYetAnotherMakeUniqueName, _PathYetAnotherMakeUniqueName@16
 implib shell32.dll, PickIconDlg, _PickIconDlg@16
