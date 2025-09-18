@@ -80,6 +80,7 @@ implib shell32.dll, DragQueryFile, _DragQueryFile@16
 implib shell32.dll, DragQueryFileA, _DragQueryFileA@16
 implib shell32.dll, DragQueryFileAorW, _DragQueryFileAorW@24
 implib shell32.dll, DragQueryFileW, _DragQueryFileW@16
+implib shell32.dll, ord.76, _DragQueryInfo@8
 implib shell32.dll, DragQueryPoint, _DragQueryPoint@8
 implib shell32.dll, DriveType, _DriveType@4
 implib shell32.dll, DuplicateIcon, _DuplicateIcon@8
@@ -133,6 +134,7 @@ implib shell32.dll, ILSkip, _ILSkip@8
 implib shell32.dll, InitNetworkAddressControl, _InitNetworkAddressControl@0
 implib shell32.dll, InternalExtractIconListA, _InternalExtractIconListA@12
 implib shell32.dll, InternalExtractIconListW, _InternalExtractIconListW@12
+implib shell32.dll, ord.65, _InvalidateDriveType@4
 implib shell32.dll, IsDesktopExplorerProcess, _IsDesktopExplorerProcess@0
 implib shell32.dll, IsLFNDrive, _IsLFNDrive@4
 implib shell32.dll, IsLFNDriveA, _IsLFNDriveA@4
@@ -234,6 +236,7 @@ implib shell32.dll, SHCoCreateInstanceWorker, _SHCoCreateInstanceWorker@20
 implib shell32.dll, SHCreateAssociationRegistration, _SHCreateAssociationRegistration@8
 implib shell32.dll, SHCreateCategoryEnum, _SHCreateCategoryEnum@44
 implib shell32.dll, SHCreateDataObject, _SHCreateDataObject@24
+implib shell32.dll, ord.70, _SHCreateDefClassObject@20
 implib shell32.dll, SHCreateDefaultContextMenu, _SHCreateDefaultContextMenu@12
 implib shell32.dll, SHCreateDefaultExtractIcon, _SHCreateDefaultExtractIcon@8
 implib shell32.dll, SHCreateDefaultPropertiesOp, _SHCreateDefaultPropertiesOp@8
@@ -440,6 +443,7 @@ implib shell32.dll, SHGetLocalizedName, _SHGetLocalizedName@16
 implib shell32.dll, SHGetMalloc, _SHGetMalloc@4
 implib shell32.dll, SHGetNameFromIDList, _SHGetNameFromIDList@12
 implib shell32.dll, SHGetNameFromPropertyKey, _SHGetNameFromPropertyKey@8
+implib shell32.dll, ord.69, _SHGetNetResource@16
 implib shell32.dll, SHGetNewLinkInfo, _SHGetNewLinkInfo@20
 implib shell32.dll, SHGetNewLinkInfoA, _SHGetNewLinkInfoA@20
 implib shell32.dll, SHGetNewLinkInfoW, _SHGetNewLinkInfoW@20
