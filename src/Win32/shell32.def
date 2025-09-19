@@ -14,7 +14,11 @@ include '..\implib.inc'
 ; implib shell32.dll, ExtractVersionResource16W, _ExtractVersionResource16W@8
 ; implib shell32.dll, FindExeDlgProc, _FindExeDlgProc@16
 ; implib shell32.dll, ILLoadFromStream, _ILLoadFromStream@8
+; implib shell32.dll, ord.78, _OleStrToStrN@16
 ; implib shell32.dll, ord.5, _SHChangeNotifyUpdateEntryList@16
+; implib shell32.dll, ord.84, _SHIsBadInterfacePtr@8
+; implib shell32.dll, ord.86, _SHRegisterDragDrop@8
+; implib shell32.dll, ord.87, _SHRevokeDragDrop@4
 ; implib shell32.dll, SheChangeDirExA, _SheChangeDirExA@4
 ; implib shell32.dll, SheChangeDirW, _SheChangeDirW@4
 ; implib shell32.dll, SheConvertPathW, _SheConvertPathW@12
@@ -28,6 +32,7 @@ include '..\implib.inc'
 ; implib shell32.dll, SheRemoveQuotesW, _SheRemoveQuotesW@4
 ; implib shell32.dll, SheShortenPathA, _SheShortenPathA@8
 ; implib shell32.dll, SheShortenPathW, _SheShortenPathW@8
+; implib shell32.dll, ord.79, _StrToOleStrN@16
 
 ; *** Stub functions avilable in v4.0 only (Windows 95)
 ; implib shell32.dll, Shl1632_ThunkData32
@@ -400,6 +405,7 @@ implib shell32.dll, SHExtractIconsW, _SHExtractIconsW@32
 implib shell32.dll, SHFileOperation, _SHFileOperation@4
 implib shell32.dll, SHFileOperationA, _SHFileOperationA@4
 implib shell32.dll, SHFileOperationW, _SHFileOperationW@4
+implib shell32.dll, ord.91, _SHFindComputer@8
 implib shell32.dll, SHFindFiles, _SHFindFiles@8
 implib shell32.dll, SHFind_InitMenuPopup, _SHFind_InitMenuPopup@16
 implib shell32.dll, SHFlushClipboard, _SHFlushClipboard@0
