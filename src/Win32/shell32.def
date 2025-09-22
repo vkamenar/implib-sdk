@@ -9,6 +9,8 @@ include '..\implib.inc'
 ; implib shell32.dll, Control_FillCache_RunDLL, _Control_FillCache_RunDLL@16
 ; implib shell32.dll, Control_FillCache_RunDLLA, _Control_FillCache_RunDLLA@16
 ; implib shell32.dll, Control_FillCache_RunDLLW, _Control_FillCache_RunDLLW@16
+; implib shell32.dll, ord.130, _DAD_DragEnter@4
+; implib shell32.dll, ord.139, _Desktop_UpdateBriefcaseOnEvent@8
 ; implib shell32.dll, ExtractIconResInfoA, _ExtractIconResInfoA@20
 ; implib shell32.dll, ExtractIconResInfoW, _ExtractIconResInfoW@20
 ; implib shell32.dll, ExtractVersionResource16W, _ExtractVersionResource16W@8
@@ -18,9 +20,14 @@ include '..\implib.inc'
 ; implib shell32.dll, ord.114, _FileMenu_Create@20
 ; implib shell32.dll, ord.104, _FileMenu_DeleteAllItems@4
 ; implib shell32.dll, ord.117, _FileMenu_DeleteItemByCmd@8
+; implib shell32.dll, ord.140, _FileMenu_DeleteItemByIndex@8
+; implib shell32.dll, ord.141, _FileMenu_DeleteMenuItemByFirstID@8
+; implib shell32.dll, ord.142, _FileMenu_DeleteSeparator@4
 ; implib shell32.dll, ord.118, _FileMenu_Destroy@4
 ; implib shell32.dll, ord.105, _FileMenu_DrawItem@8
+; implib shell32.dll, ord.143, _FileMenu_EnableItemByCmd@12
 ; implib shell32.dll, ord.106, _FileMenu_FindSubMenuByPidl@8
+; implib shell32.dll, ord.144, _FileMenu_GetItemExtent@8
 ; implib shell32.dll, ord.107, _FileMenu_GetLastSelectedItemPidls@12
 ; implib shell32.dll, ord.108, _FileMenu_HandleMenuChar@8
 ; implib shell32.dll, ord.109, _FileMenu_InitMenuPopup@4
@@ -32,11 +39,13 @@ include '..\implib.inc'
 ; implib shell32.dll, FindExeDlgProc, _FindExeDlgProc@16
 ; implib shell32.dll, ILLoadFromStream, _ILLoadFromStream@8
 ; implib shell32.dll, ord.78, _OleStrToStrN@16
+; implib shell32.dll, ord.146, _RLBuildListOfPaths@0
 ; implib shell32.dll, ord.122, _RunDll_CallEntry16@20
 ; implib shell32.dll, ord.5, _SHChangeNotifyUpdateEntryList@16
 ; implib shell32.dll, SHFlushClipboard, _SHFlushClipboard@0
 ; implib shell32.dll, ord.123, _SHFreeUnusedLibraries@0
 ; implib shell32.dll, ord.84, _SHIsBadInterfacePtr@8
+; implib shell32.dll, SHLoadOLE, _SHLoadOLE@4
 ; implib shell32.dll, ord.126, _SHOutOfMemoryMessageBox@12
 ; implib shell32.dll, ord.86, _SHRegisterDragDrop@8
 ; implib shell32.dll, ord.87, _SHRevokeDragDrop@4
@@ -148,6 +157,7 @@ implib shell32.dll, ord.15, _ILGetDisplayName@8
 implib shell32.dll, ILGetNext, _ILGetNext@4
 implib shell32.dll, ILGetSize, _ILGetSize@4
 implib shell32.dll, ord.20, _ILGlobalClone@4
+implib shell32.dll, ord.156, _ILGlobalFree@4
 implib shell32.dll, ILIsAligned, _ILIsAligned@4
 implib shell32.dll, ILIsChild, _ILIsChild@4
 implib shell32.dll, ILIsEmpty, _ILIsEmpty@4
@@ -193,9 +203,12 @@ implib shell32.dll, ord.37, _PathCombine@12
 implib shell32.dll, ord.45, _PathFileExists@4
 implib shell32.dll, ord.31, _PathFindExtension@4
 implib shell32.dll, ord.34, _PathFindFileName@4
+implib shell32.dll, ord.145, _PathFindOnPath@8
 implib shell32.dll, ord.52, _PathGetArgs@4
 implib shell32.dll, ord.57, _PathGetDriveNumber@4
+implib shell32.dll, ord.158, _PathGetExtension@12
 implib shell32.dll, PathGetShortPath, _PathGetShortPath@4
+implib shell32.dll, ord.159, _PathIsDirectory@4
 implib shell32.dll, PathIsExe, _PathIsExe@4
 implib shell32.dll, ord.40, _PathIsRelative@4
 implib shell32.dll, ord.29, _PathIsRoot@4
@@ -506,7 +519,6 @@ implib shell32.dll, SHIsFileAvailableOffline, _SHIsFileAvailableOffline@8
 implib shell32.dll, SHLimitInputEdit, _SHLimitInputEdit@8
 implib shell32.dll, SHLoadInProc, _SHLoadInProc@4 ; Since Windows Vista, this function does nothing and returns E_NOTIMPL
 implib shell32.dll, SHLoadNonloadedIconOverlayIdentifiers, _SHLoadNonloadedIconOverlayIdentifiers@0
-implib shell32.dll, SHLoadOLE, _SHLoadOLE@4
 implib shell32.dll, SHLocalStrDupA, _SHLocalStrDupA@8
 implib shell32.dll, SHLocalStrDupW, _SHLocalStrDupW@8
 implib shell32.dll, SHLockShared, _SHLockShared@8
@@ -514,6 +526,7 @@ implib shell32.dll, ord.95, _SHLogILFromFSIL@4
 implib shell32.dll, SHMapIDListToImageListIndexAsync, _SHMapIDListToImageListIndexAsync@36
 implib shell32.dll, SHMapPIDLToSystemImageListIndex, _SHMapPIDLToSystemImageListIndex@12
 implib shell32.dll, SHMultiFileProperties, _SHMultiFileProperties@8
+implib shell32.dll, ord.160, _SHNetConnectionDialog@12
 implib shell32.dll, SHObjectProperties, _SHObjectProperties@16
 implib shell32.dll, SHOpenFolderAndSelectItems, _SHOpenFolderAndSelectItems@16
 implib shell32.dll, SHOpenPropSheetW, _SHOpenPropSheetW@28
