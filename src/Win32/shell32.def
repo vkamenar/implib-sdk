@@ -43,9 +43,11 @@ include '..\implib.inc'
 ; implib shell32.dll, ord.78, _OleStrToStrN@16
 ; implib shell32.dll, ord.146, _RLBuildListOfPaths@0
 ; implib shell32.dll, ord.122, _RunDll_CallEntry16@20
+; implib shell32.dll, ord.198, _SHAbortInvokeCommand@0
 ; implib shell32.dll, ord.5, _SHChangeNotifyUpdateEntryList@16
 ; implib shell32.dll, SHFlushClipboard, _SHFlushClipboard@0
 ; implib shell32.dll, ord.123, _SHFreeUnusedLibraries@0
+; implib shell32.dll, ord.197, _SHGlobalDefect@4
 ; implib shell32.dll, ord.84, _SHIsBadInterfacePtr@8
 ; implib shell32.dll, SHLoadOLE, _SHLoadOLE@4
 ; implib shell32.dll, ord.126, _SHOutOfMemoryMessageBox@12
@@ -74,9 +76,14 @@ include '..\implib.inc'
 ; *** Stub functions avilable in v4.0 only (Windows 95)
 ; implib shell32.dll, Shl1632_ThunkData32
 ; implib shell32.dll, Shl3216_ThunkData32
+; implib shell32.dll, ord.199, _SHGetFileIcon@16
+; implib shell32.dll, ord.200, _SHLocalAlloc@8    ; Ordinal 200 reused in v5 (see SHCreateDesktop)
+; implib shell32.dll, ord.201, _SHLocalFree@4     ; Ordinal 201 reused in v5 (see SHDesktopMessageLoop)
+; implib shell32.dll, ord.202, _SHLocalReAlloc@12 ; Ordinal 202 reused in v5 (see DDEHandleViewFolderNotify)
 
 ; *** Functions available in v10.0 (Windows 10)
 implib shell32.dll, Activate_RunDLL, _Activate_RunDLL@16
+implib shell32.dll, ord.203, _AddCommasW@8  ; Also known as AddCommasExportW
 implib shell32.dll, AppCompat_RunDLLW, _AppCompat_RunDLLW@16
 implib shell32.dll, ord.184, _ArrangeWindows@20
 implib shell32.dll, AssocCreateForClasses, _AssocCreateForClasses@16
@@ -514,6 +521,7 @@ implib shell32.dll, SHGetSpecialFolderPathW, _SHGetSpecialFolderPathW@16
 implib shell32.dll, SHGetStockIconInfo, _SHGetStockIconInfo@12
 implib shell32.dll, SHGetTemporaryPropertyForItem, _SHGetTemporaryPropertyForItem@12
 implib shell32.dll, SHGetUnreadMailCountW, _SHGetUnreadMailCountW@24
+implib shell32.dll, ord.185, _SHHandleDiskFull@8
 implib shell32.dll, SHHandleUpdateImage, _SHHandleUpdateImage@4
 implib shell32.dll, SHHelpShortcuts_RunDLL, _SHHelpShortcuts_RunDLL@16
 implib shell32.dll, SHHelpShortcuts_RunDLLA, _SHHelpShortcuts_RunDLLA@16
