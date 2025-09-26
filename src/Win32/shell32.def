@@ -40,6 +40,9 @@ include '..\implib.inc'
 ; implib shell32.dll, ord.116, _FileMenu_TrackPopupMenuEx@24
 ; implib shell32.dll, FindExeDlgProc, _FindExeDlgProc@16
 ; implib shell32.dll, ILLoadFromStream, _ILLoadFromStream@8
+; implib shell32.dll, ord.206, _Link_AddExtraDataSection@8
+; implib shell32.dll, ord.207, _Link_ReadExtraDataSection@8
+; implib shell32.dll, ord.208, _Link_RemoveExtraDataSection@8
 ; implib shell32.dll, ord.78, _OleStrToStrN@16
 ; implib shell32.dll, ord.146, _RLBuildListOfPaths@0
 ; implib shell32.dll, ord.122, _RunDll_CallEntry16@20
@@ -183,6 +186,7 @@ implib shell32.dll, ILRemoveLastID, _ILRemoveLastID@4
 implib shell32.dll, ILSaveToStream, _ILSaveToStream@8
 implib shell32.dll, ILSkip, _ILSkip@8
 implib shell32.dll, InitNetworkAddressControl, _InitNetworkAddressControl@0
+implib shell32.dll, ord.209, _Int64ToString@28
 implib shell32.dll, InternalExtractIconListA, _InternalExtractIconListA@12
 implib shell32.dll, InternalExtractIconListW, _InternalExtractIconListW@12
 implib shell32.dll, ord.65, _InvalidateDriveType@4
@@ -193,6 +197,7 @@ implib shell32.dll, IsLFNDriveW, _IsLFNDriveW@4
 implib shell32.dll, IsNetDrive, _IsNetDrive@4
 implib shell32.dll, IsProcessAnExplorer, _IsProcessAnExplorer@0
 implib shell32.dll, IsUserAnAdmin, _IsUserAnAdmin@0
+implib shell32.dll, ord.210, _LargIntegerToString@24
 implib shell32.dll, LaunchMSHelp_RunDLLW, _LaunchMSHelp_RunDLLW@16
 implib shell32.dll, ord.258, _LinkWindow_RegisterClass@0
 implib shell32.dll, ord.259, _LinkWindow_UnregisterClass@0
@@ -229,6 +234,7 @@ implib shell32.dll, PathIsSlowW, _PathIsSlowW@8
 implib shell32.dll, ord.39, _PathIsUNC@4
 implib shell32.dll, PathMakeUniqueName, _PathMakeUniqueName@20
 implib shell32.dll, ord.46, _PathMatchSpec@8
+implib shell32.dll, ord.249, _PathParseIconLocation@4
 implib shell32.dll, PathProcessCommand, _PathProcessCommand@16
 implib shell32.dll, PathQualify, _PathQualify@4
 implib shell32.dll, ord.55, _PathQuoteSpaces@4
@@ -246,6 +252,11 @@ implib shell32.dll, PifMgr_GetProperties, _PifMgr_GetProperties@20
 implib shell32.dll, PifMgr_OpenProperties, _PifMgr_OpenProperties@16
 implib shell32.dll, PifMgr_SetProperties, _PifMgr_SetProperties@20
 implib shell32.dll, PrepareDiscForBurnRunDllW, _PrepareDiscForBurnRunDllW@16
+implib shell32.dll, ord.212, _Printer_AddPrinterPropPages@8
+implib shell32.dll, ord.205, _Printer_LoadIconsW@12
+implib shell32.dll, ord.211, _Printers_GetPidl@16 ; This function expects 2 arguments in v4.0 (_Printers_GetPidl@8)
+implib shell32.dll, ord.213, _Printers_RegisterWindowW@16
+implib shell32.dll, ord.214, _Printers_UnregisterWindow@8
 implib shell32.dll, PrintersGetCommand_RunDLL, _PrintersGetCommand_RunDLL@16
 implib shell32.dll, PrintersGetCommand_RunDLLA, _PrintersGetCommand_RunDLLA@16
 implib shell32.dll, PrintersGetCommand_RunDLLW, _PrintersGetCommand_RunDLLW@16
@@ -613,6 +624,7 @@ implib shell32.dll, Shell_NotifyIcon, _Shell_NotifyIcon@8
 implib shell32.dll, Shell_NotifyIconA, _Shell_NotifyIconA@8
 implib shell32.dll, Shell_NotifyIconGetRect, _Shell_NotifyIconGetRect@8
 implib shell32.dll, Shell_NotifyIconW, _Shell_NotifyIconW@8
+implib shell32.dll, ord.204, _ShortSizeFormatW@8
 implib shell32.dll, SignalFileOpen, _SignalFileOpen@4
 implib shell32.dll, StateRepoNewMenuCache_EnsureCacheAsync, _StateRepoNewMenuCache_EnsureCacheAsync@0
 implib shell32.dll, StateRepoNewMenuCache_RebuildCacheAsync, _StateRepoNewMenuCache_RebuildCacheAsync@0
