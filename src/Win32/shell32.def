@@ -43,20 +43,30 @@ include '..\implib.inc'
 ; implib shell32.dll, ord.206, _Link_AddExtraDataSection@8
 ; implib shell32.dll, ord.207, _Link_ReadExtraDataSection@8
 ; implib shell32.dll, ord.208, _Link_RemoveExtraDataSection@8
+; implib shell32.dll, ord.641, _NTSHChangeNotifyDeregister@4
+; implib shell32.dll, ord.640, _NTSHChangeNotifyRegister@24
 ; implib shell32.dll, ord.78, _OleStrToStrN@16
+; implib shell32.dll, PathProcessCommand, _PathProcessCommand@16
 ; implib shell32.dll, ord.146, _RLBuildListOfPaths@0
+; implib shell32.dll, ord.647, _ReceiveAddToRecentDocs@8
 ; implib shell32.dll, ord.122, _RunDll_CallEntry16@20
 ; implib shell32.dll, ord.198, _SHAbortInvokeCommand@0
+; implib shell32.dll, SHAllocShared, _SHAllocShared@12
+; implib shell32.dll, ord.643, _SHChangeNotifyReceive@16
 ; implib shell32.dll, ord.5, _SHChangeNotifyUpdateEntryList@16
+; implib shell32.dll, ord.646, _SHChangeRegistrationReceive@8
 ; implib shell32.dll, SHFlushClipboard, _SHFlushClipboard@0
+; implib shell32.dll, SHFreeShared, _SHFreeShared@8
 ; implib shell32.dll, ord.123, _SHFreeUnusedLibraries@0
 ; implib shell32.dll, ord.197, _SHGlobalDefect@4
 ; implib shell32.dll, ord.84, _SHIsBadInterfacePtr@8
 ; implib shell32.dll, SHLoadOLE, _SHLoadOLE@4
+; implib shell32.dll, SHLockShared, _SHLockShared@8
 ; implib shell32.dll, ord.126, _SHOutOfMemoryMessageBox@12
 ; implib shell32.dll, ord.86, _SHRegisterDragDrop@8
 ; implib shell32.dll, ord.87, _SHRevokeDragDrop@4
 ; implib shell32.dll, SHRunControlPanel, _SHRunControlPanel@8
+; implib shell32.dll, SHUnlockShared, _SHUnlockShared@4
 ; implib shell32.dll, SheChangeDirExA, _SheChangeDirExA@4
 ; implib shell32.dll, SheChangeDirW, _SheChangeDirW@4
 ; implib shell32.dll, SheConvertPathW, _SheConvertPathW@12
@@ -72,6 +82,16 @@ include '..\implib.inc'
 ; implib shell32.dll, SheShortenPathW, _SheShortenPathW@8
 ; implib shell32.dll, ord.163, _StrToOleStr@8
 ; implib shell32.dll, ord.79, _StrToOleStrN@16
+
+; *** Functions discontinued in v5.0 (Windows 2000)
+; implib shell32.dll, ord.505, _SHRegCloseKey@4
+; implib shell32.dll, ord.512, _SHRegDeleteKeyW@8
+; implib shell32.dll, ord.506, _SHRegOpenKeyA@12
+; implib shell32.dll, ord.507, _SHRegOpenKeyW@12
+; implib shell32.dll, ord.508, _SHRegQueryValueA@16
+; implib shell32.dll, ord.509, _SHRegQueryValueExA@24
+; implib shell32.dll, ord.511, _SHRegQueryValueExW@24
+; implib shell32.dll, ord.510, _SHRegQueryValueW@16
 
 ; *** Function discontinued in v4.71 (Internet Explorer 4.0)
 ; implib shell32.dll, ord.125, _FileMenu_AddFilesForPidl@28
@@ -201,8 +221,6 @@ implib shell32.dll, ord.210, _LargIntegerToString@24
 implib shell32.dll, LaunchMSHelp_RunDLLW, _LaunchMSHelp_RunDLLW@16
 implib shell32.dll, ord.258, _LinkWindow_RegisterClass@0
 implib shell32.dll, ord.259, _LinkWindow_UnregisterClass@0
-implib shell32.dll, ord.641, _NTSHChangeNotifyDeregister@4
-implib shell32.dll, ord.640, _NTSHChangeNotifyRegister@24
 implib shell32.dll, OpenAsDialog, _OpenAsDialog@8
 implib shell32.dll, OpenAs_RunDLL, _OpenAs_RunDLL@16
 implib shell32.dll, OpenAs_RunDLLA, _OpenAs_RunDLLA@16
@@ -229,16 +247,18 @@ implib shell32.dll, ord.159, _PathIsDirectory@4
 implib shell32.dll, PathIsExe, _PathIsExe@4
 implib shell32.dll, ord.40, _PathIsRelative@4
 implib shell32.dll, ord.29, _PathIsRoot@4
+implib shell32.dll, ord.650, _PathIsSameRoot@8
 implib shell32.dll, PathIsSlowA, _PathIsSlowA@8
 implib shell32.dll, PathIsSlowW, _PathIsSlowW@8
 implib shell32.dll, ord.39, _PathIsUNC@4
 implib shell32.dll, PathMakeUniqueName, _PathMakeUniqueName@20
 implib shell32.dll, ord.46, _PathMatchSpec@8
 implib shell32.dll, ord.249, _PathParseIconLocation@4
-implib shell32.dll, PathProcessCommand, _PathProcessCommand@16
 implib shell32.dll, PathQualify, _PathQualify@4
 implib shell32.dll, ord.55, _PathQuoteSpaces@4
+implib shell32.dll, ord.251, _PathRemoveArgs@4
 implib shell32.dll, ord.33, _PathRemoveBlanks@4
+implib shell32.dll, ord.250, _PathRemoveExtension@4
 implib shell32.dll, ord.35, _PathRemoveFileSpec@4
 implib shell32.dll, PathResolve, _PathResolve@12
 implib shell32.dll, ord.48, _PathSetDlgItemPath@12
@@ -262,6 +282,7 @@ implib shell32.dll, PrintersGetCommand_RunDLLA, _PrintersGetCommand_RunDLLA@16
 implib shell32.dll, PrintersGetCommand_RunDLLW, _PrintersGetCommand_RunDLLW@16
 implib shell32.dll, ReadCabinetState, _ReadCabinetState@8
 implib shell32.dll, RealDriveType, _RealDriveType@8
+implib shell32.dll, ord.525, _RealDriveTypeFlags@8
 implib shell32.dll, RealShellExecuteA, _RealShellExecuteA@40
 implib shell32.dll, RealShellExecuteExA, _RealShellExecuteExA@44
 implib shell32.dll, RealShellExecuteExW, _RealShellExecuteExW@44
@@ -276,7 +297,6 @@ implib shell32.dll, SHAddDefaultPropertiesByExt, _SHAddDefaultPropertiesByExt@8
 implib shell32.dll, SHAddFromPropSheetExtArray, _SHAddFromPropSheetExtArray@12
 implib shell32.dll, SHAddToRecentDocs, _SHAddToRecentDocs@8
 implib shell32.dll, SHAlloc, _SHAlloc@4
-implib shell32.dll, SHAllocShared, _SHAllocShared@12
 implib shell32.dll, SHAppBarMessage, _SHAppBarMessage@8
 implib shell32.dll, SHAssocEnumHandlers, _SHAssocEnumHandlers@12
 implib shell32.dll, SHAssocEnumHandlersForProtocolByApplication, _SHAssocEnumHandlersForProtocolByApplication@12
@@ -475,7 +495,6 @@ implib shell32.dll, SHFormatForDisplay, _SHFormatForDisplay@20
 implib shell32.dll, SHFormatPropertyValue, _SHFormatPropertyValue@16
 implib shell32.dll, SHFree, _SHFree@4
 implib shell32.dll, SHFreeNameMappings, _SHFreeNameMappings@4
-implib shell32.dll, SHFreeShared, _SHFreeShared@8
 implib shell32.dll, SHGetAttributesFromDataObject, _SHGetAttributesFromDataObject@16
 implib shell32.dll, SHGetControlPanelPath, _SHGetControlPanelPath@12
 implib shell32.dll, SHGetDataFromIDListA, _SHGetDataFromIDListA@20
@@ -546,7 +565,6 @@ implib shell32.dll, SHLoadInProc, _SHLoadInProc@4 ; Since Windows Vista, this fu
 implib shell32.dll, SHLoadNonloadedIconOverlayIdentifiers, _SHLoadNonloadedIconOverlayIdentifiers@0
 implib shell32.dll, SHLocalStrDupA, _SHLocalStrDupA@8
 implib shell32.dll, SHLocalStrDupW, _SHLocalStrDupW@8
-implib shell32.dll, SHLockShared, _SHLockShared@8
 implib shell32.dll, ord.95, _SHLogILFromFSIL@4
 implib shell32.dll, SHMapIDListToImageListIndexAsync, _SHMapIDListToImageListIndexAsync@36
 implib shell32.dll, SHMapPIDLToSystemImageListIndex, _SHMapPIDLToSystemImageListIndex@12
@@ -589,12 +607,12 @@ implib shell32.dll, ord.215, _SHStartNetConnectionDialog@12
 implib shell32.dll, ord.12, _SHStartNetConnectionDialogA@12
 implib shell32.dll, ord.14, _SHStartNetConnectionDialogW@12
 implib shell32.dll, SHTestTokenMembership, _SHTestTokenMembership@8
-implib shell32.dll, SHUnlockShared, _SHUnlockShared@4
 implib shell32.dll, SHUpdateImageA, _SHUpdateImageA@16
 implib shell32.dll, SHUpdateImageW, _SHUpdateImageW@16
 implib shell32.dll, SHUpdateRecycleBinIcon, _SHUpdateRecycleBinIcon@0
 implib shell32.dll, SHValidateUNC, _SHValidateUNC@12
 implib shell32.dll, ord.97, _SHWaitForFileToOpen@12
+implib shell32.dll, ord.648, _SHWaitOp_Operate@8
 implib shell32.dll, ord.127, _SHWinHelp@16
 implib shell32.dll, ord.99, _SetAppStartingCursor@8
 implib shell32.dll, SetCurrentProcessExplicitAppUserModelID, _SetCurrentProcessExplicitAppUserModelID@4
