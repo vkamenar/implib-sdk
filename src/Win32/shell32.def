@@ -62,6 +62,8 @@ include '..\implib.inc'
 ; implib shell32.dll, ord.84, _SHIsBadInterfacePtr@8
 ; implib shell32.dll, SHLoadOLE, _SHLoadOLE@4
 ; implib shell32.dll, SHLockShared, _SHLockShared@8
+; implib shell32.dll, ord.7, _SHLookupIconIndexA@12
+; implib shell32.dll, ord.8, _SHLookupIconIndexW@12
 ; implib shell32.dll, ord.126, _SHOutOfMemoryMessageBox@12
 ; implib shell32.dll, ord.86, _SHRegisterDragDrop@8
 ; implib shell32.dll, ord.87, _SHRevokeDragDrop@4
@@ -216,11 +218,13 @@ implib shell32.dll, IsLFNDriveA, _IsLFNDriveA@4
 implib shell32.dll, IsLFNDriveW, _IsLFNDriveW@4
 implib shell32.dll, IsNetDrive, _IsNetDrive@4
 implib shell32.dll, IsProcessAnExplorer, _IsProcessAnExplorer@0
+implib shell32.dll, ord.53, _IsSuspendAllowed@0
 implib shell32.dll, IsUserAnAdmin, _IsUserAnAdmin@0
 implib shell32.dll, ord.210, _LargIntegerToString@24
 implib shell32.dll, LaunchMSHelp_RunDLLW, _LaunchMSHelp_RunDLLW@16
 implib shell32.dll, ord.258, _LinkWindow_RegisterClass@0
 implib shell32.dll, ord.259, _LinkWindow_UnregisterClass@0
+implib shell32.dll, ord.54, _LogoffWindowsDialog@4
 implib shell32.dll, OpenAsDialog, _OpenAsDialog@8
 implib shell32.dll, OpenAs_RunDLL, _OpenAs_RunDLL@16
 implib shell32.dll, OpenAs_RunDLLA, _OpenAs_RunDLLA@16
