@@ -12,6 +12,7 @@ include '..\implib.inc'
 ; implib shell32.dll, Control_FillCache_RunDLLW, _Control_FillCache_RunDLLW@16
 ; implib shell32.dll, ord.130, _DAD_DragEnter@4
 ; implib shell32.dll, ord.177, _DAD_SetDragImageFromListView@12
+; implib shell32.dll, ord.82, _DDECreatePostNotify@4
 ; implib shell32.dll, ord.139, _Desktop_UpdateBriefcaseOnEvent@8
 ; implib shell32.dll, ExtractIconResInfoA, _ExtractIconResInfoA@20
 ; implib shell32.dll, ExtractIconResInfoW, _ExtractIconResInfoW@20
@@ -32,9 +33,11 @@ include '..\implib.inc'
 ; implib shell32.dll, ord.144, _FileMenu_GetItemExtent@8
 ; implib shell32.dll, ord.107, _FileMenu_GetLastSelectedItemPidls@12
 ; implib shell32.dll, ord.108, _FileMenu_HandleMenuChar@8
+; implib shell32.dll, ord.101, _FileMenu_HandleNotify@12
 ; implib shell32.dll, ord.109, _FileMenu_InitMenuPopup@4
 ; implib shell32.dll, ord.110, _FileMenu_InsertUsingPidl@24
 ; implib shell32.dll, ord.111, _FileMenu_Invalidate@4
+; implib shell32.dll, ord.216, _FileMenu_IsFileMenu@4
 ; implib shell32.dll, ord.112, _FileMenu_MeasureItem@8
 ; implib shell32.dll, ord.113, _FileMenu_ReplaceUsingPidl@20
 ; implib shell32.dll, ord.116, _FileMenu_TrackPopupMenuEx@24
@@ -191,6 +194,7 @@ implib shell32.dll, ILFindChild, _ILFindChild@8
 implib shell32.dll, ILFindLastID, _ILFindLastID@4
 implib shell32.dll, ILFree, _ILFree@4
 implib shell32.dll, ord.15, _ILGetDisplayName@8
+implib shell32.dll, ord.186, _ILGetDisplayNameEx@16
 implib shell32.dll, ILGetNext, _ILGetNext@4
 implib shell32.dll, ILGetSize, _ILGetSize@4
 implib shell32.dll, ord.20, _ILGlobalClone@4
@@ -343,6 +347,7 @@ implib shell32.dll, ord.172, _SHCreateLinks@20
 implib shell32.dll, SHCreateLocalServerRunDll, _SHCreateLocalServerRunDll@16
 implib shell32.dll, SHCreateProcessAsUserW, _SHCreateProcessAsUserW@4
 implib shell32.dll, SHCreatePropSheetExtArray, _SHCreatePropSheetExtArray@12
+implib shell32.dll, ord.194, _SHCreatePropSheetExtArrayEx@16 ; Ordinal 194 is allocated to RealShellExecuteExA in v4.7x
 implib shell32.dll, SHCreateQueryCancelAutoPlayMoniker, _SHCreateQueryCancelAutoPlayMoniker@4
 implib shell32.dll, SHCreateShellFolderView, _SHCreateShellFolderView@8
 implib shell32.dll, SHCreateShellFolderViewEx, _SHCreateShellFolderViewEx@8
