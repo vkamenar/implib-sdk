@@ -77,6 +77,7 @@ include '..\implib.inc'
 ; implib shell32.dll, SHLockShared, _SHLockShared@8
 ; implib shell32.dll, ord.7, _SHLookupIconIndexA@12
 ; implib shell32.dll, ord.8, _SHLookupIconIndexW@12
+; implib shell32.dll, ord.707, _SHOpenPropSheetA@28
 ; implib shell32.dll, ord.126, _SHOutOfMemoryMessageBox@12
 ; implib shell32.dll, ord.86, _SHRegisterDragDrop@8
 ; implib shell32.dll, ord.87, _SHRevokeDragDrop@4
@@ -97,6 +98,13 @@ include '..\implib.inc'
 ; implib shell32.dll, SheShortenPathW, _SheShortenPathW@8
 ; implib shell32.dll, ord.163, _StrToOleStr@8
 ; implib shell32.dll, ord.79, _StrToOleStrN@16
+
+; *** Function available from v4.72 (Windows 98) to v5.50 (Windows Me)
+; implib shell32.dll, SHExitWindowsEx, _SHExitWindowsEx@16
+
+; *** Functions available in v5.0 (Windows 2000) SP3 and SP4 only
+; implib shell32.dll, FixupOptionalComponents, _FixupOptionalComponents@4
+; implib shell32.dll, OCInstall, _OCInstall@16
 
 ; *** Functions discontinued in v5.0 (Windows 2000)
 ; implib shell32.dll, ord.505, _SHRegCloseKey@4
@@ -130,11 +138,13 @@ implib shell32.dll, ord.184, _ArrangeWindows@20
 implib shell32.dll, AssocCreateForClasses, _AssocCreateForClasses@16
 implib shell32.dll, AssocElemCreateForKey, _AssocElemCreateForKey@16
 implib shell32.dll, AssocGetDetailsOfPropKey, _AssocGetDetailsOfPropKey@20
-implib shell32.dll, CDefFolderMenu_Create, _CDefFolderMenu_Create@36
+implib shell32.dll, ord.700, _CDefFolderMenu_Create@36
 implib shell32.dll, CDefFolderMenu_Create2, _CDefFolderMenu_Create2@36
+implib shell32.dll, ord.702, _CDefFolderMenu_MergeMenu@16
 implib shell32.dll, CStorageItem_GetValidatedStorageItemObject
 implib shell32.dll, CallFileCopyHook, _CallFileCopyHook@32
 implib shell32.dll, CheckEscapesW, _CheckEscapesW@8
+implib shell32.dll, ord.711, _CheckWinIniForAssocs@0
 implib shell32.dll, CommandLineToArgvW, _CommandLineToArgvW@8
 implib shell32.dll, Control_RunDLL, _Control_RunDLL@16
 implib shell32.dll, Control_RunDLLA, _Control_RunDLLA@16
@@ -567,6 +577,7 @@ implib shell32.dll, SHGetSetFolderCustomSettings, _SHGetSetFolderCustomSettings@
 implib shell32.dll, SHGetSetFolderCustomSettingsW, _SHGetSetFolderCustomSettingsW@12
 implib shell32.dll, SHGetSetSettings, _SHGetSetSettings@12
 implib shell32.dll, SHGetSettings, _SHGetSettings@8
+implib shell32.dll, ord.257, _SHGetShellFolderViewCB@4
 implib shell32.dll, SHGetShellStyleHInstance, _SHGetShellStyleHInstance@0
 implib shell32.dll, SHGetSpecialFolderLocation, _SHGetSpecialFolderLocation@12
 implib shell32.dll, SHGetSpecialFolderPathA, _SHGetSpecialFolderPathA@16
