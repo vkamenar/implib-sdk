@@ -54,7 +54,7 @@ include '..\implib.inc'
 ; implib shell32.dll, ord.113, _FileMenu_ReplaceUsingPidl@20
 ; implib shell32.dll, ord.116, _FileMenu_TrackPopupMenuEx@24
 ; implib shell32.dll, FindExeDlgProc, _FindExeDlgProc@16
-; implib shell32.dll, ILLoadFromStream, _ILLoadFromStream@8
+; implib shell32.dll, ord.26, _ILLoadFromStream@8
 ; implib shell32.dll, ord.206, _Link_AddExtraDataSection@8
 ; implib shell32.dll, ord.207, _Link_ReadExtraDataSection@8
 ; implib shell32.dll, ord.208, _Link_RemoveExtraDataSection@8
@@ -210,36 +210,36 @@ implib shell32.dll, ord.704, _GUIDFromStringW@8
 implib shell32.dll, GetCurrentProcessExplicitAppUserModelID, _GetCurrentProcessExplicitAppUserModelID@4
 implib shell32.dll, ord.63, _GetFileNameFromBrowse@28
 implib shell32.dll, GetSystemPersistedStorageItemList, _GetSystemPersistedStorageItemList@8
-implib shell32.dll, ILAppendID, _ILAppendID@12
-implib shell32.dll, ILClone, _ILClone@4
+implib shell32.dll, ord.154, _ILAppendID@12
+implib shell32.dll, ord.18, _ILClone@4
 implib shell32.dll, ILCloneChild, _ILCloneChild@4
-implib shell32.dll, ILCloneFirst, _ILCloneFirst@4
+implib shell32.dll, ord.19, _ILCloneFirst@4
 implib shell32.dll, ILCloneFull, _ILCloneFull@4
-implib shell32.dll, ILCombine, _ILCombine@8
-implib shell32.dll, ILCreateFromPath, _ILCreateFromPath@4
-implib shell32.dll, ILCreateFromPathA, _ILCreateFromPathA@4
-implib shell32.dll, ILCreateFromPathW, _ILCreateFromPathW@4
-implib shell32.dll, ILFindChild, _ILFindChild@8
-implib shell32.dll, ILFindLastID, _ILFindLastID@4
-implib shell32.dll, ILFree, _ILFree@4
+implib shell32.dll, ord.25, _ILCombine@8
+implib shell32.dll, ord.157, _ILCreateFromPath@4
+implib shell32.dll, ord.189, _ILCreateFromPathA@4
+implib shell32.dll, ord.190, _ILCreateFromPathW@4
+implib shell32.dll, ord.24, _ILFindChild@8
+implib shell32.dll, ord.16, _ILFindLastID@4
+implib shell32.dll, ord.155, _ILFree@4
 implib shell32.dll, ord.15, _ILGetDisplayName@8
 implib shell32.dll, ord.186, _ILGetDisplayNameEx@16
-implib shell32.dll, ILGetNext, _ILGetNext@4
+implib shell32.dll, ord.153, _ILGetNext@4
 implib shell32.dll, ord.187, _ILGetPseudoNameW@16
-implib shell32.dll, ILGetSize, _ILGetSize@4
+implib shell32.dll, ord.152, _ILGetSize@4
 implib shell32.dll, ord.20, _ILGlobalClone@4
 implib shell32.dll, ord.156, _ILGlobalFree@4
 implib shell32.dll, ILIsAligned, _ILIsAligned@4
 implib shell32.dll, ILIsChild, _ILIsChild@4
 implib shell32.dll, ILIsEmpty, _ILIsEmpty@4
-implib shell32.dll, ILIsEqual, _ILIsEqual@8
-implib shell32.dll, ILIsParent, _ILIsParent@12
+implib shell32.dll, ord.21, _ILIsEqual@8
+implib shell32.dll, ord.23, _ILIsParent@12
 implib shell32.dll, ILLoadFromStreamEx, _ILLoadFromStreamEx@8
 implib shell32.dll, ILMakeChild, _ILMakeChild@4
 implib shell32.dll, ILMakeFull, _ILMakeFull@4
 implib shell32.dll, ILNext, _ILNext@4
-implib shell32.dll, ILRemoveLastID, _ILRemoveLastID@4
-implib shell32.dll, ILSaveToStream, _ILSaveToStream@8
+implib shell32.dll, ord.17, _ILRemoveLastID@4
+implib shell32.dll, ord.27, _ILSaveToStream@8
 implib shell32.dll, ILSkip, _ILSkip@8
 implib shell32.dll, InitNetworkAddressControl, _InitNetworkAddressControl@0
 implib shell32.dll, ord.209, _Int64ToString@28
@@ -247,13 +247,13 @@ implib shell32.dll, InternalExtractIconListA, _InternalExtractIconListA@12
 implib shell32.dll, InternalExtractIconListW, _InternalExtractIconListW@12
 implib shell32.dll, ord.65, _InvalidateDriveType@4
 implib shell32.dll, IsDesktopExplorerProcess, _IsDesktopExplorerProcess@0
-implib shell32.dll, IsLFNDrive, _IsLFNDrive@4
-implib shell32.dll, IsLFNDriveA, _IsLFNDriveA@4
-implib shell32.dll, IsLFNDriveW, _IsLFNDriveW@4
-implib shell32.dll, IsNetDrive, _IsNetDrive@4
+implib shell32.dll, ord.119, _IsLFNDrive@4
+implib shell32.dll, ord.41, _IsLFNDriveA@4
+implib shell32.dll, ord.42, _IsLFNDriveW@4
+implib shell32.dll, ord.66, _IsNetDrive@4
 implib shell32.dll, IsProcessAnExplorer, _IsProcessAnExplorer@0
 implib shell32.dll, ord.53, _IsSuspendAllowed@0
-implib shell32.dll, IsUserAnAdmin, _IsUserAnAdmin@0
+implib shell32.dll, ord.680, _IsUserAnAdmin@0
 implib shell32.dll, ord.210, _LargIntegerToString@24
 implib shell32.dll, LaunchMSHelp_RunDLLW, _LaunchMSHelp_RunDLLW@16
 implib shell32.dll, ord.258, _LinkWindow_RegisterClass@0
