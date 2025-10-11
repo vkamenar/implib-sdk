@@ -73,8 +73,8 @@ include '..\implib.inc'
 ; implib shell32.dll, ord.5, _SHChangeNotifyUpdateEntryList@16
 ; implib shell32.dll, ord.646, _SHChangeRegistrationReceive@8
 ; implib shell32.dll, ord.712, _SHCopyMonikerToTemp@16
-; implib shell32.dll, SHFlushClipboard, _SHFlushClipboard@0
-; implib shell32.dll, SHFreeShared, _SHFreeShared@8
+; implib shell32.dll, ord.121, _SHFlushClipboard@0
+; implib shell32.dll, ord.523, _SHFreeShared@8
 ; implib shell32.dll, ord.123, _SHFreeUnusedLibraries@0
 ; implib shell32.dll, ord.708, _SHGetSetFolderCustomSettingsA@12
 ; implib shell32.dll, ord.197, _SHGlobalDefect@4
@@ -394,11 +394,11 @@ implib shell32.dll, SHCreateShellItemArrayFromIDLists, _SHCreateShellItemArrayFr
 implib shell32.dll, SHCreateShellItemArrayFromShellItem, _SHCreateShellItemArrayFromShellItem@12
 implib shell32.dll, ord.74, _SHCreateStdEnumFmtEtc@12
 implib shell32.dll, SHCreateThreadWithHandle, _SHCreateThreadWithHandle@20
-implib shell32.dll, SHDefExtractIconA, _SHDefExtractIconA@24
-implib shell32.dll, SHDefExtractIconW, _SHDefExtractIconW@24
+implib shell32.dll, ord.3, _SHDefExtractIconA@24
+implib shell32.dll, ord.6, _SHDefExtractIconW@24
 implib shell32.dll, ord.201, _SHDesktopMessageLoop@4 ; Ordinal 201 allocated to SHLocalFree in v4.0
-implib shell32.dll, SHDestroyPropSheetExtArray, _SHDestroyPropSheetExtArray@4
-implib shell32.dll, SHDoDragDrop, _SHDoDragDrop@20
+implib shell32.dll, ord.169, _SHDestroyPropSheetExtArray@4
+implib shell32.dll, ord.88, _SHDoDragDrop@20
 implib shell32.dll, SHELL32_AddToBackIconTable, _SHELL32_AddToBackIconTable@8
 implib shell32.dll, SHELL32_AddToFrontIconTable, _SHELL32_AddToFrontIconTable@16
 implib shell32.dll, SHELL32_AreAllItemsAvailable, _SHELL32_AreAllItemsAvailable@12
@@ -533,16 +533,16 @@ implib shell32.dll, SHFileOperation, _SHFileOperation@4
 implib shell32.dll, SHFileOperationA, _SHFileOperationA@4
 implib shell32.dll, SHFileOperationW, _SHFileOperationW@4
 implib shell32.dll, ord.91, _SHFindComputer@8
-implib shell32.dll, SHFindFiles, _SHFindFiles@8
-implib shell32.dll, SHFind_InitMenuPopup, _SHFind_InitMenuPopup@16
-implib shell32.dll, SHFlushSFCache, _SHFlushSFCache@0
+implib shell32.dll, ord.90, _SHFindFiles@8
+implib shell32.dll, ord.149, _SHFind_InitMenuPopup@16
+implib shell32.dll, ord.526, _SHFlushSFCache@0
 implib shell32.dll, SHFormatDrive, _SHFormatDrive@16
 implib shell32.dll, SHFormatForDisplay, _SHFormatForDisplay@20
 implib shell32.dll, SHFormatPropertyValue, _SHFormatPropertyValue@16
-implib shell32.dll, SHFree, _SHFree@4
+implib shell32.dll, ord.195, _SHFree@4
 implib shell32.dll, SHFreeNameMappings, _SHFreeNameMappings@4
 implib shell32.dll, ord.681, _SHGetAppCompatFlags@4
-implib shell32.dll, SHGetAttributesFromDataObject, _SHGetAttributesFromDataObject@16
+implib shell32.dll, ord.750, _SHGetAttributesFromDataObject@16
 implib shell32.dll, SHGetControlPanelPath, _SHGetControlPanelPath@12
 implib shell32.dll, SHGetDataFromIDListA, _SHGetDataFromIDListA@20
 implib shell32.dll, SHGetDataFromIDListW, _SHGetDataFromIDListW@20
