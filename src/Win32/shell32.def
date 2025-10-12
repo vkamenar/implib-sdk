@@ -77,10 +77,11 @@ include '..\implib.inc'
 ; implib shell32.dll, ord.523, _SHFreeShared@8
 ; implib shell32.dll, ord.123, _SHFreeUnusedLibraries@0
 ; implib shell32.dll, ord.708, _SHGetSetFolderCustomSettingsA@12
+; implib shell32.dll, ord.749, _SHGetShellStyleHInstance@0
 ; implib shell32.dll, ord.197, _SHGlobalDefect@4
 ; implib shell32.dll, ord.84, _SHIsBadInterfacePtr@8
-; implib shell32.dll, SHLoadOLE, _SHLoadOLE@4
-; implib shell32.dll, SHLockShared, _SHLockShared@8
+; implib shell32.dll, ord.151, _SHLoadOLE@4
+; implib shell32.dll, ord.521, _SHLockShared@8
 ; implib shell32.dll, ord.7, _SHLookupIconIndexA@12
 ; implib shell32.dll, ord.8, _SHLookupIconIndexW@12
 ; implib shell32.dll, ord.707, _SHOpenPropSheetA@28
@@ -586,12 +587,11 @@ implib shell32.dll, SHGetPathFromIDListW, _SHGetPathFromIDListW@8
 implib shell32.dll, SHGetPropertyStoreForWindow, _SHGetPropertyStoreForWindow@12
 implib shell32.dll, SHGetPropertyStoreFromIDList, _SHGetPropertyStoreFromIDList@16
 implib shell32.dll, SHGetPropertyStoreFromParsingName, _SHGetPropertyStoreFromParsingName@20
-implib shell32.dll, SHGetRealIDL, _SHGetRealIDL@12
-implib shell32.dll, SHGetSetFolderCustomSettings, _SHGetSetFolderCustomSettings@12 ; Previously exported as SHGetSetFolderCustomSettingsW, before v6.0 (Windows Vista)
-implib shell32.dll, SHGetSetSettings, _SHGetSetSettings@12
+implib shell32.dll, ord.98, _SHGetRealIDL@12
+implib shell32.dll, ord.709, _SHGetSetFolderCustomSettings@12 ; Previously exported as SHGetSetFolderCustomSettingsW, before v6.0 (Windows Vista)
+implib shell32.dll, ord.68, _SHGetSetSettings@12
 implib shell32.dll, SHGetSettings, _SHGetSettings@8
 implib shell32.dll, ord.257, _SHGetShellFolderViewCB@4
-implib shell32.dll, SHGetShellStyleHInstance, _SHGetShellStyleHInstance@0
 implib shell32.dll, SHGetSpecialFolderLocation, _SHGetSpecialFolderLocation@12
 implib shell32.dll, SHGetSpecialFolderPathA, _SHGetSpecialFolderPathA@16
 implib shell32.dll, SHGetSpecialFolderPathW, _SHGetSpecialFolderPathW@16
@@ -599,35 +599,35 @@ implib shell32.dll, SHGetStockIconInfo, _SHGetStockIconInfo@12
 implib shell32.dll, SHGetTemporaryPropertyForItem, _SHGetTemporaryPropertyForItem@12
 implib shell32.dll, SHGetUnreadMailCountW, _SHGetUnreadMailCountW@24
 implib shell32.dll, ord.185, _SHHandleDiskFull@8
-implib shell32.dll, SHHandleUpdateImage, _SHHandleUpdateImage@4
+implib shell32.dll, ord.193, _SHHandleUpdateImage@4
 implib shell32.dll, SHHelpShortcuts_RunDLL, _SHHelpShortcuts_RunDLL@16
 implib shell32.dll, SHHelpShortcuts_RunDLLA, _SHHelpShortcuts_RunDLLA@16
 implib shell32.dll, SHHelpShortcuts_RunDLLW, _SHHelpShortcuts_RunDLLW@16
-implib shell32.dll, SHILCreateFromPath, _SHILCreateFromPath@12
+implib shell32.dll, ord.28, _SHILCreateFromPath@12
 implib shell32.dll, SHInvokePrinterCommandA, _SHInvokePrinterCommandA@20
 implib shell32.dll, SHInvokePrinterCommandW, _SHInvokePrinterCommandW@20
 implib shell32.dll, SHIsFileAvailableOffline, _SHIsFileAvailableOffline@8
 implib shell32.dll, ord.690, _SHIsLegacyAnsiProperty@12
-implib shell32.dll, SHLimitInputEdit, _SHLimitInputEdit@8
+implib shell32.dll, ord.747, _SHLimitInputEdit@8
 implib shell32.dll, SHLoadInProc, _SHLoadInProc@4 ; Since Windows Vista, this function does nothing and returns E_NOTIMPL
 implib shell32.dll, SHLoadNonloadedIconOverlayIdentifiers, _SHLoadNonloadedIconOverlayIdentifiers@0
 implib shell32.dll, SHLocalStrDupA, _SHLocalStrDupA@8
 implib shell32.dll, SHLocalStrDupW, _SHLocalStrDupW@8
 implib shell32.dll, ord.95, _SHLogILFromFSIL@4
-implib shell32.dll, SHMapIDListToImageListIndexAsync, _SHMapIDListToImageListIndexAsync@36
-implib shell32.dll, SHMapPIDLToSystemImageListIndex, _SHMapPIDLToSystemImageListIndex@12
-implib shell32.dll, SHMultiFileProperties, _SHMultiFileProperties@8
+implib shell32.dll, ord.148, _SHMapIDListToImageListIndexAsync@36
+implib shell32.dll, ord.77, _SHMapPIDLToSystemImageListIndex@12
+implib shell32.dll, ord.716, _SHMultiFileProperties@8
 implib shell32.dll, ord.160, _SHNetConnectionDialog@12
-implib shell32.dll, SHObjectProperties, _SHObjectProperties@16
+implib shell32.dll, ord.178, _SHObjectProperties@16
 implib shell32.dll, SHOpenFolderAndSelectItems, _SHOpenFolderAndSelectItems@16
-implib shell32.dll, SHOpenPropSheetW, _SHOpenPropSheetW@28
+implib shell32.dll, ord.80, _SHOpenPropSheetW@28
 implib shell32.dll, SHOpenWithDialog, _SHOpenWithDialog@8
 implib shell32.dll, SHParseDisplayName, _SHParseDisplayName@20
 implib shell32.dll, SHPathPrepareForWriteA, _SHPathPrepareForWriteA@16
 implib shell32.dll, SHPathPrepareForWriteW, _SHPathPrepareForWriteW@16
-implib shell32.dll, SHPropStgCreate, _SHPropStgCreate@32
-implib shell32.dll, SHPropStgReadMultiple, _SHPropStgReadMultiple@20
-implib shell32.dll, SHPropStgWriteMultiple, _SHPropStgWriteMultiple@24
+implib shell32.dll, ord.685, _SHPropStgCreate@32
+implib shell32.dll, ord.688, _SHPropStgReadMultiple@20
+implib shell32.dll, ord.689, _SHPropStgWriteMultiple@24
 implib shell32.dll, SHQueryRecycleBinA, _SHQueryRecycleBinA@8
 implib shell32.dll, SHQueryRecycleBinW, _SHQueryRecycleBinW@8
 implib shell32.dll, SHQueryUserNotificationState, _SHQueryUserNotificationState@4
@@ -635,9 +635,9 @@ implib shell32.dll, SHRefreshPropertyDescriptions, _SHRefreshPropertyDescription
 implib shell32.dll, SHRegGetBoolValueFromHKCUHKLM, _SHRegGetBoolValueFromHKCUHKLM@12
 implib shell32.dll, SHRegGetValueFromHKCUHKLM, _SHRegGetValueFromHKCUHKLM@24
 implib shell32.dll, SHRemoveLocalizedName, _SHRemoveLocalizedName@4
-implib shell32.dll, SHReplaceFromPropSheetExtArray, _SHReplaceFromPropSheetExtArray@16
+implib shell32.dll, ord.170, _SHReplaceFromPropSheetExtArray@16
 implib shell32.dll, SHResolveLibrary, _SHResolveLibrary@4
-implib shell32.dll, SHRestricted, _SHRestricted@4
+implib shell32.dll, ord.100, _SHRestricted@4
 implib shell32.dll, SHSetDefaultProperties, _SHSetDefaultProperties@16
 implib shell32.dll, ord.231, _SHSetFolderPathA@16
 implib shell32.dll, ord.232, _SHSetFolderPathW@16
