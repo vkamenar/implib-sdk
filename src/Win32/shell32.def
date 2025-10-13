@@ -88,8 +88,8 @@ include '..\implib.inc'
 ; implib shell32.dll, ord.126, _SHOutOfMemoryMessageBox@12
 ; implib shell32.dll, ord.86, _SHRegisterDragDrop@8
 ; implib shell32.dll, ord.87, _SHRevokeDragDrop@4
-; implib shell32.dll, SHRunControlPanel, _SHRunControlPanel@8
-; implib shell32.dll, SHUnlockShared, _SHUnlockShared@4
+; implib shell32.dll, ord.161, _SHRunControlPanel@8
+; implib shell32.dll, ord.522, _SHUnlockShared@4
 ; implib shell32.dll, SheChangeDirExA, _SheChangeDirExA@4
 ; implib shell32.dll, SheChangeDirW, _SheChangeDirW@4
 ; implib shell32.dll, SheConvertPathW, _SheConvertPathW@12
@@ -642,7 +642,7 @@ implib shell32.dll, SHSetDefaultProperties, _SHSetDefaultProperties@16
 implib shell32.dll, ord.231, _SHSetFolderPathA@16
 implib shell32.dll, ord.232, _SHSetFolderPathW@16
 implib shell32.dll, SHSetFolderPathEx, _SHSetFolderPathEx@16
-implib shell32.dll, SHSetInstanceExplorer, _SHSetInstanceExplorer@4
+implib shell32.dll, ord.176, _SHSetInstanceExplorer@4
 implib shell32.dll, SHSetKnownFolderPath, _SHSetKnownFolderPath@16
 implib shell32.dll, SHSetLocalizedName, _SHSetLocalizedName@12
 implib shell32.dll, SHSetPropertyValue, _SHSetPropertyValue@12
@@ -650,19 +650,19 @@ implib shell32.dll, ord.243, _SHSetShellWindowEx@8 ; Redirects to USER32!SetShel
 implib shell32.dll, SHSetTemporaryPropertyForItem, _SHSetTemporaryPropertyForItem@12
 implib shell32.dll, SHSetUnreadMailCountW, _SHSetUnreadMailCountW@12
 implib shell32.dll, ord.244, _SHSettingsChanged@8
-implib shell32.dll, SHShellFolderView_Message, _SHShellFolderView_Message@12
+implib shell32.dll, ord.73, _SHShellFolderView_Message@12
 implib shell32.dll, SHShowManageLibraryUI, _SHShowManageLibraryUI@20
-implib shell32.dll, SHSimpleIDListFromPath, _SHSimpleIDListFromPath@4
+implib shell32.dll, ord.162, _SHSimpleIDListFromPath@4
 implib shell32.dll, ord.215, _SHStartNetConnectionDialog@12
 implib shell32.dll, ord.12, _SHStartNetConnectionDialogA@12
 implib shell32.dll, ord.14, _SHStartNetConnectionDialogW@12
 implib shell32.dll, ord.684, _SHStgOpenStorageA@24
 implib shell32.dll, ord.683, _SHStgOpenStorageW@24
-implib shell32.dll, SHTestTokenMembership, _SHTestTokenMembership@8
-implib shell32.dll, SHUpdateImageA, _SHUpdateImageA@16
-implib shell32.dll, SHUpdateImageW, _SHUpdateImageW@16
+implib shell32.dll, ord.245, _SHTestTokenMembership@8
+implib shell32.dll, ord.191, _SHUpdateImageA@16
+implib shell32.dll, ord.192, _SHUpdateImageW@16
 implib shell32.dll, SHUpdateRecycleBinIcon, _SHUpdateRecycleBinIcon@0
-implib shell32.dll, SHValidateUNC, _SHValidateUNC@12
+implib shell32.dll, ord.173, _SHValidateUNC@12
 implib shell32.dll, ord.97, _SHWaitForFileToOpen@12
 implib shell32.dll, ord.648, _SHWaitOp_Operate@8
 implib shell32.dll, ord.127, _SHWinHelp@16
@@ -684,19 +684,19 @@ implib shell32.dll, ShellExecuteExA, _ShellExecuteExA@4
 implib shell32.dll, ShellExecuteExW, _ShellExecuteExW@4
 implib shell32.dll, ShellExecuteW, _ShellExecuteW@24
 implib shell32.dll, ShellHookProc, _ShellHookProc@12
-implib shell32.dll, ShellMessageBoxA, _ShellMessageBoxA
-implib shell32.dll, ShellMessageBoxW, _ShellMessageBoxW
-implib shell32.dll, Shell_GetCachedImageIndex, _Shell_GetCachedImageIndex@12
+implib shell32.dll, ord.183, _ShellMessageBoxA
+implib shell32.dll, ord.182, _ShellMessageBoxW
+implib shell32.dll, ord.72, _Shell_GetCachedImageIndex@12
 implib shell32.dll, Shell_GetCachedImageIndexA, _Shell_GetCachedImageIndexA@12
 implib shell32.dll, Shell_GetCachedImageIndexW, _Shell_GetCachedImageIndexW@12
-implib shell32.dll, Shell_GetImageLists, _Shell_GetImageLists@8
-implib shell32.dll, Shell_MergeMenus, _Shell_MergeMenus@24
+implib shell32.dll, ord.71, _Shell_GetImageLists@8
+implib shell32.dll, ord.67, _Shell_MergeMenus@24
 implib shell32.dll, Shell_NotifyIcon, _Shell_NotifyIcon@8
 implib shell32.dll, Shell_NotifyIconA, _Shell_NotifyIconA@8
 implib shell32.dll, Shell_NotifyIconGetRect, _Shell_NotifyIconGetRect@8
 implib shell32.dll, Shell_NotifyIconW, _Shell_NotifyIconW@8
 implib shell32.dll, ord.204, _ShortSizeFormatW@8
-implib shell32.dll, SignalFileOpen, _SignalFileOpen@4
+implib shell32.dll, ord.103, _SignalFileOpen@4
 implib shell32.dll, StateRepoNewMenuCache_EnsureCacheAsync, _StateRepoNewMenuCache_EnsureCacheAsync@0
 implib shell32.dll, StateRepoNewMenuCache_RebuildCacheAsync, _StateRepoNewMenuCache_RebuildCacheAsync@0
 implib shell32.dll, StgMakeUniqueName, _StgMakeUniqueName@20
@@ -735,8 +735,8 @@ implib shell32.dll, UsersLibrariesFolderUI_CreateInstance, _UsersLibrariesFolder
 implib shell32.dll, WOWShellExecute, _WOWShellExecute@28
 implib shell32.dll, WaitForExplorerRestartW, _WaitForExplorerRestartW@16
 implib shell32.dll, ord.93, _Win32CreateDirectory@8
-implib shell32.dll, Win32DeleteFile, _Win32DeleteFile@4
+implib shell32.dll, ord.164, _Win32DeleteFile@4
 implib shell32.dll, ord.94, _Win32RemoveDirectory@4
-implib shell32.dll, WriteCabinetState, _WriteCabinetState@4
+implib shell32.dll, ord.652, _WriteCabinetState@4
 
 endlib
