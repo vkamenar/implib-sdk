@@ -76,6 +76,7 @@ include '..\implib.inc'
 ; implib shell32.dll, ord.121, _SHFlushClipboard@0
 ; implib shell32.dll, ord.523, _SHFreeShared@8
 ; implib shell32.dll, ord.123, _SHFreeUnusedLibraries@0
+; implib shell32.dll, ord.233, _SHGetUserPicturePathW@12
 ; implib shell32.dll, ord.708, _SHGetSetFolderCustomSettingsA@12
 ; implib shell32.dll, ord.749, _SHGetShellStyleHInstance@0
 ; implib shell32.dll, ord.197, _SHGlobalDefect@4
@@ -84,11 +85,14 @@ include '..\implib.inc'
 ; implib shell32.dll, ord.521, _SHLockShared@8
 ; implib shell32.dll, ord.7, _SHLookupIconIndexA@12
 ; implib shell32.dll, ord.8, _SHLookupIconIndexW@12
+; implib shell32.dll, ord.148, _SHMapIDListToImageListIndexAsync@36
+; implib shell32.dll, ord.235, _SHOpenEffectiveToken@4
 ; implib shell32.dll, ord.707, _SHOpenPropSheetA@28
 ; implib shell32.dll, ord.126, _SHOutOfMemoryMessageBox@12
 ; implib shell32.dll, ord.86, _SHRegisterDragDrop@8
 ; implib shell32.dll, ord.87, _SHRevokeDragDrop@4
 ; implib shell32.dll, ord.161, _SHRunControlPanel@8
+; implib shell32.dll, ord.234, _SHSetUserPicturePathW@12
 ; implib shell32.dll, ord.522, _SHUnlockShared@4
 ; implib shell32.dll, SheChangeDirExA, _SheChangeDirExA@4
 ; implib shell32.dll, SheChangeDirW, _SheChangeDirW@4
@@ -155,6 +159,7 @@ implib shell32.dll, CommandLineToArgvW, _CommandLineToArgvW@8
 implib shell32.dll, Control_RunDLL, _Control_RunDLL@16
 implib shell32.dll, Control_RunDLLA, _Control_RunDLLA@16
 implib shell32.dll, Control_RunDLLAsUserW, _Control_RunDLLAsUserW@16
+implib shell32.dll, ord.44, _Control_RunDLLNoFallback@16 ; Ordinal 44 allocated to OpenAs_RunDLL(A) until v6.0
 implib shell32.dll, Control_RunDLLW, _Control_RunDLLW@16
 implib shell32.dll, CIDLData_CreateFromIDArray, _CIDLData_CreateFromIDArray@16
 implib shell32.dll, CreateStorageItemFromPath_FullTrustCaller
@@ -614,7 +619,6 @@ implib shell32.dll, SHLoadNonloadedIconOverlayIdentifiers, _SHLoadNonloadedIconO
 implib shell32.dll, SHLocalStrDupA, _SHLocalStrDupA@8
 implib shell32.dll, SHLocalStrDupW, _SHLocalStrDupW@8
 implib shell32.dll, ord.95, _SHLogILFromFSIL@4
-implib shell32.dll, ord.148, _SHMapIDListToImageListIndexAsync@36
 implib shell32.dll, ord.77, _SHMapPIDLToSystemImageListIndex@12
 implib shell32.dll, ord.716, _SHMultiFileProperties@8
 implib shell32.dll, ord.160, _SHNetConnectionDialog@12
@@ -651,6 +655,7 @@ implib shell32.dll, SHSetTemporaryPropertyForItem, _SHSetTemporaryPropertyForIte
 implib shell32.dll, SHSetUnreadMailCountW, _SHSetUnreadMailCountW@12
 implib shell32.dll, ord.244, _SHSettingsChanged@8
 implib shell32.dll, ord.73, _SHShellFolderView_Message@12
+implib shell32.dll, ord.237, _SHShouldShowWizards@4
 implib shell32.dll, SHShowManageLibraryUI, _SHShowManageLibraryUI@20
 implib shell32.dll, ord.162, _SHSimpleIDListFromPath@4
 implib shell32.dll, ord.215, _SHStartNetConnectionDialog@12
@@ -659,6 +664,7 @@ implib shell32.dll, ord.14, _SHStartNetConnectionDialogW@12
 implib shell32.dll, ord.684, _SHStgOpenStorageA@24
 implib shell32.dll, ord.683, _SHStgOpenStorageW@24
 implib shell32.dll, ord.245, _SHTestTokenMembership@8
+implib shell32.dll, ord.236, _SHTestTokenPrivilegeW@8
 implib shell32.dll, ord.191, _SHUpdateImageA@16
 implib shell32.dll, ord.192, _SHUpdateImageW@16
 implib shell32.dll, SHUpdateRecycleBinIcon, _SHUpdateRecycleBinIcon@0
