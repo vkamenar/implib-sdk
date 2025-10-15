@@ -547,6 +547,7 @@ implib shell32.dll, SHFormatForDisplay, _SHFormatForDisplay@20
 implib shell32.dll, SHFormatPropertyValue, _SHFormatPropertyValue@16
 implib shell32.dll, ord.195, _SHFree@4
 implib shell32.dll, SHFreeNameMappings, _SHFreeNameMappings@4
+implib shell32.dll, ord.247, _SHGetActiveConsoleSessionId@0
 implib shell32.dll, ord.681, _SHGetAppCompatFlags@4
 implib shell32.dll, ord.750, _SHGetAttributesFromDataObject@16
 implib shell32.dll, SHGetControlPanelPath, _SHGetControlPanelPath@12
@@ -603,6 +604,8 @@ implib shell32.dll, SHGetSpecialFolderPathW, _SHGetSpecialFolderPathW@16
 implib shell32.dll, SHGetStockIconInfo, _SHGetStockIconInfo@12
 implib shell32.dll, SHGetTemporaryPropertyForItem, _SHGetTemporaryPropertyForItem@12
 implib shell32.dll, SHGetUnreadMailCountW, _SHGetUnreadMailCountW@24
+implib shell32.dll, ord.241, _SHGetUserDisplayName@8
+implib shell32.dll, ord.248, _SHGetUserSessionId@4
 implib shell32.dll, ord.185, _SHHandleDiskFull@8
 implib shell32.dll, ord.193, _SHHandleUpdateImage@4
 implib shell32.dll, SHHelpShortcuts_RunDLL, _SHHelpShortcuts_RunDLL@16
@@ -611,6 +614,8 @@ implib shell32.dll, SHHelpShortcuts_RunDLLW, _SHHelpShortcuts_RunDLLW@16
 implib shell32.dll, ord.28, _SHILCreateFromPath@12
 implib shell32.dll, SHInvokePrinterCommandA, _SHInvokePrinterCommandA@20
 implib shell32.dll, SHInvokePrinterCommandW, _SHInvokePrinterCommandW@20
+implib shell32.dll, ord.246, _SHInvokePrivilegedFunctionW@12
+implib shell32.dll, ord.253, _SHIsCurrentProcessConsoleSession@0
 implib shell32.dll, SHIsFileAvailableOffline, _SHIsFileAvailableOffline@8
 implib shell32.dll, ord.690, _SHIsLegacyAnsiProperty@12
 implib shell32.dll, ord.747, _SHLimitInputEdit@8
