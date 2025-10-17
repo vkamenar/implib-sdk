@@ -163,6 +163,7 @@ implib shell32.dll, ord.44, _Control_RunDLLNoFallback@16 ; Ordinal 44 allocated 
 implib shell32.dll, Control_RunDLLW, _Control_RunDLLW@16
 implib shell32.dll, CIDLData_CreateFromIDArray, _CIDLData_CreateFromIDArray@16
 implib shell32.dll, ord.260, _CreateInfoTipFromItem@20 ; Ordinal 260 allocated to Options_RunDLLW until v6.0
+implib shell32.dll, ord.264, _CreateInfoTipFromItem2@24 ; Ordinal 264 allocated to RealShellExecuteA until v6.0
 implib shell32.dll, CreateStorageItemFromPath_FullTrustCaller
 implib shell32.dll, CreateStorageItemFromPath_FullTrustCaller_ForPackage
 implib shell32.dll, CreateStorageItemFromPath_PartialTrustCaller
@@ -607,7 +608,7 @@ implib shell32.dll, SHGetStockIconInfo, _SHGetStockIconInfo@12
 implib shell32.dll, SHGetTemporaryPropertyForItem, _SHGetTemporaryPropertyForItem@12
 implib shell32.dll, SHGetUnreadMailCountW, _SHGetUnreadMailCountW@24
 implib shell32.dll, ord.241, _SHGetUserDisplayName@8
-implib shell32.dll, ord.261, _SHGetUserPicturePath@16 ; Ordinal 261 allocated to PrintersGetCommand_RunDLL(A) until v6.0
+implib shell32.dll, ord.261, _SHGetUserPicturePath@16 ; Ordinal 261 allocated to PrintersGetCommand_RunDLL until v6.0
 implib shell32.dll, ord.248, _SHGetUserSessionId@4
 implib shell32.dll, ord.185, _SHHandleDiskFull@8
 implib shell32.dll, ord.193, _SHHandleUpdateImage@4
@@ -649,6 +650,7 @@ implib shell32.dll, SHRegGetValueFromHKCUHKLM, _SHRegGetValueFromHKCUHKLM@24
 implib shell32.dll, SHRemoveLocalizedName, _SHRemoveLocalizedName@4
 implib shell32.dll, ord.170, _SHReplaceFromPropSheetExtArray@16
 implib shell32.dll, SHResolveLibrary, _SHResolveLibrary@4
+implib shell32.dll, ord.270, _SHResolveUserNames@12 ; Ordinal 270 allocated to SHAppBarMessage until v6.0
 implib shell32.dll, ord.100, _SHRestricted@4
 implib shell32.dll, SHSetDefaultProperties, _SHSetDefaultProperties@16
 implib shell32.dll, ord.231, _SHSetFolderPathA@16
@@ -661,6 +663,7 @@ implib shell32.dll, SHSetPropertyValue, _SHSetPropertyValue@12
 implib shell32.dll, ord.243, _SHSetShellWindowEx@8 ; Redirects to USER32!SetShellWindowEx
 implib shell32.dll, SHSetTemporaryPropertyForItem, _SHSetTemporaryPropertyForItem@12
 implib shell32.dll, SHSetUnreadMailCountW, _SHSetUnreadMailCountW@12
+implib shell32.dll, ord.262, _SHSetUserPicturePath@12 ; Ordinal 262 allocated to PrintersGetCommand_RunDLLA until v6.0
 implib shell32.dll, ord.244, _SHSettingsChanged@8
 implib shell32.dll, ord.73, _SHShellFolderView_Message@12
 implib shell32.dll, ord.237, _SHShouldShowWizards@4
@@ -689,6 +692,8 @@ implib shell32.dll, SheSetCurDrive, _SheSetCurDrive@4
 implib shell32.dll, ShellAboutA, _ShellAboutA@16
 implib shell32.dll, ShellAboutW, _ShellAboutW@16
 implib shell32.dll, ord.188, _ShellDDEInit@4
+implib shell32.dll, ord.265, _ShellExecCmdLine@24 ; Ordinal 265 allocated to RealShellExecuteExA until v6.0
+implib shell32.dll, ord.266, _ShellExecPidl@24 ; Ordinal 266 allocated to RealShellExecuteExW until v6.0
 implib shell32.dll, ShellExec_RunDLL, _ShellExec_RunDLL@16
 implib shell32.dll, ShellExec_RunDLLA, _ShellExec_RunDLLA@16
 implib shell32.dll, ShellExec_RunDLLW, _ShellExec_RunDLLW@16
