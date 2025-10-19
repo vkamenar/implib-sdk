@@ -11,6 +11,7 @@ include '..\implib.inc'
 ; implib shell32.dll, Control_FillCache_RunDLL, _Control_FillCache_RunDLL@16
 ; implib shell32.dll, Control_FillCache_RunDLLA, _Control_FillCache_RunDLLA@16
 ; implib shell32.dll, Control_FillCache_RunDLLW, _Control_FillCache_RunDLLW@16
+; implib shell32.dll, ord.726, _CopyStreamUI@20
 ; implib shell32.dll, ord.130, _DAD_DragEnter@4
 ; implib shell32.dll, ord.177, _DAD_SetDragImageFromListView@12
 ; implib shell32.dll, ord.82, _DDECreatePostNotify@4
@@ -54,6 +55,7 @@ include '..\implib.inc'
 ; implib shell32.dll, ord.113, _FileMenu_ReplaceUsingPidl@20
 ; implib shell32.dll, ord.116, _FileMenu_TrackPopupMenuEx@24
 ; implib shell32.dll, FindExeDlgProc, _FindExeDlgProc@16
+; implib shell32.dll, ord.725, _GetFileDescriptor@16
 ; implib shell32.dll, ord.26, _ILLoadFromStream@8
 ; implib shell32.dll, ord.206, _Link_AddExtraDataSection@8
 ; implib shell32.dll, ord.207, _Link_ReadExtraDataSection@8
@@ -73,6 +75,7 @@ include '..\implib.inc'
 ; implib shell32.dll, ord.5, _SHChangeNotifyUpdateEntryList@16
 ; implib shell32.dll, ord.646, _SHChangeRegistrationReceive@8
 ; implib shell32.dll, ord.712, _SHCopyMonikerToTemp@16
+; implib shell32.dll, ord.691, _SHFileSysBindToStorage@24
 ; implib shell32.dll, ord.121, _SHFlushClipboard@0
 ; implib shell32.dll, ord.523, _SHFreeShared@8
 ; implib shell32.dll, ord.123, _SHFreeUnusedLibraries@0
@@ -394,6 +397,7 @@ implib shell32.dll, ord.168, _SHCreatePropSheetExtArray@12
 implib shell32.dll, ord.194, _SHCreatePropSheetExtArrayEx@16 ; Ordinal 194 allocated to RealShellExecuteExA in v4.7x
 implib shell32.dll, ord.715, _SHCreatePropertyBag@8
 implib shell32.dll, SHCreateQueryCancelAutoPlayMoniker, _SHCreateQueryCancelAutoPlayMoniker@4
+implib shell32.dll, ord.723, _SHCreateSessionKey@8
 implib shell32.dll, ord.256, _SHCreateShellFolderView@8
 implib shell32.dll, ord.174, _SHCreateShellFolderViewEx@8
 implib shell32.dll, SHCreateShellItem, _SHCreateShellItem@16
@@ -622,6 +626,7 @@ implib shell32.dll, ord.246, _SHInvokePrivilegedFunctionW@12
 implib shell32.dll, ord.253, _SHIsCurrentProcessConsoleSession@0
 implib shell32.dll, SHIsFileAvailableOffline, _SHIsFileAvailableOffline@8
 implib shell32.dll, ord.690, _SHIsLegacyAnsiProperty@12
+implib shell32.dll, ord.724, _SHIsTempDisplayMode@0
 implib shell32.dll, ord.747, _SHLimitInputEdit@8
 implib shell32.dll, SHLoadInProc, _SHLoadInProc@4 ; Since Windows Vista, this function does nothing and returns E_NOTIMPL
 implib shell32.dll, SHLoadNonloadedIconOverlayIdentifiers, _SHLoadNonloadedIconOverlayIdentifiers@0
@@ -635,6 +640,7 @@ implib shell32.dll, ord.178, _SHObjectProperties@16
 implib shell32.dll, SHOpenFolderAndSelectItems, _SHOpenFolderAndSelectItems@16
 implib shell32.dll, ord.80, _SHOpenPropSheetW@28
 implib shell32.dll, SHOpenWithDialog, _SHOpenWithDialog@8
+implib shell32.dll, ord.719, _SHParseDarwinIDFromCacheW@8
 implib shell32.dll, SHParseDisplayName, _SHParseDisplayName@20
 implib shell32.dll, SHPathPrepareForWriteA, _SHPathPrepareForWriteA@16
 implib shell32.dll, SHPathPrepareForWriteW, _SHPathPrepareForWriteW@16
