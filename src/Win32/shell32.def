@@ -156,6 +156,7 @@ implib shell32.dll, ord.701, _CDefFolderMenu_Create2@36
 implib shell32.dll, ord.702, _CDefFolderMenu_MergeMenu@16
 implib shell32.dll, CStorageItem_GetValidatedStorageItemObject
 implib shell32.dll, CallFileCopyHook, _CallFileCopyHook@32
+implib shell32.dll, ord.733, _CheckDiskSpace@0
 implib shell32.dll, CheckEscapesW, _CheckEscapesW@8
 implib shell32.dll, ord.711, _CheckWinIniForAssocs@0
 implib shell32.dll, CommandLineToArgvW, _CommandLineToArgvW@8
@@ -650,9 +651,11 @@ implib shell32.dll, ord.689, _SHPropStgWriteMultiple@24
 implib shell32.dll, SHQueryRecycleBinA, _SHQueryRecycleBinA@8
 implib shell32.dll, SHQueryRecycleBinW, _SHQueryRecycleBinW@8
 implib shell32.dll, SHQueryUserNotificationState, _SHQueryUserNotificationState@4
+implib shell32.dll, ord.732, _SHReValidateDarwinCache@0
 implib shell32.dll, SHRefreshPropertyDescriptions, _SHRefreshPropertyDescriptions@0
 implib shell32.dll, SHRegGetBoolValueFromHKCUHKLM, _SHRegGetBoolValueFromHKCUHKLM@12
 implib shell32.dll, SHRegGetValueFromHKCUHKLM, _SHRegGetValueFromHKCUHKLM@24
+implib shell32.dll, ord.731, _SHRegisterDarwinLink@12
 implib shell32.dll, SHRemoveLocalizedName, _SHRemoveLocalizedName@4
 implib shell32.dll, ord.170, _SHReplaceFromPropSheetExtArray@16
 implib shell32.dll, SHResolveLibrary, _SHResolveLibrary@4
