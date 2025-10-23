@@ -178,6 +178,7 @@ implib shell32.dll, CreateStorageItemFromShellItem_FullTrustCaller_ForPackage
 implib shell32.dll, CreateStorageItemFromShellItem_FullTrustCaller_ForPackage_WithProcessHandle
 implib shell32.dll, CreateStorageItemFromShellItem_FullTrustCaller_UseImplicitFlagsAndPackage
 implib shell32.dll, ord.744, _Create_IEnumUICommand@16
+implib shell32.dll, ord.762, _Create_IUICommandFromDef@12
 implib shell32.dll, ord.745, _Create_IUIElement@8
 implib shell32.dll, ord.129, _DAD_AutoScroll@12
 implib shell32.dll, ord.131, _DAD_DragEnterEx@12
@@ -372,12 +373,14 @@ implib shell32.dll, ord.644, _SHChangeNotification_Lock@16
 implib shell32.dll, ord.645, _SHChangeNotification_Unlock@4
 implib shell32.dll, SHChangeNotify, _SHChangeNotify@16
 implib shell32.dll, ord.4, _SHChangeNotifyDeregister@4
+implib shell32.dll, ord.761, _SHChangeNotifyDeregisterWindow@4
 implib shell32.dll, ord.2, _SHChangeNotifyRegister@24
 implib shell32.dll, SHChangeNotifyRegisterThread, _SHChangeNotifyRegisterThread@4
 implib shell32.dll, SHChangeNotifySuspendResume, _SHChangeNotifySuspendResume@16
 implib shell32.dll, ord.89, _SHCloneSpecialIDList@12
 implib shell32.dll, ord.102, _SHCoCreateInstance@20
 implib shell32.dll, SHCoCreateInstanceWorker, _SHCoCreateInstanceWorker@20
+implib shell32.dll, ord.760, _SHConfirmOperation@12
 implib shell32.dll, SHCreateAssociationRegistration, _SHCreateAssociationRegistration@8
 implib shell32.dll, SHCreateCategoryEnum, _SHCreateCategoryEnum@44
 implib shell32.dll, SHCreateDataObject, _SHCreateDataObject@24
@@ -414,6 +417,7 @@ implib shell32.dll, SHCreateShellItemArrayFromDataObject, _SHCreateShellItemArra
 implib shell32.dll, SHCreateShellItemArrayFromIDLists, _SHCreateShellItemArrayFromIDLists@12
 implib shell32.dll, SHCreateShellItemArrayFromShellItem, _SHCreateShellItemArrayFromShellItem@12
 implib shell32.dll, ord.74, _SHCreateStdEnumFmtEtc@12
+implib shell32.dll, ord.758, _SHCreateThreadUndoManager@8
 implib shell32.dll, SHCreateThreadWithHandle, _SHCreateThreadWithHandle@20
 implib shell32.dll, ord.3, _SHDefExtractIconA@24
 implib shell32.dll, ord.6, _SHDefExtractIconW@24
@@ -619,6 +623,7 @@ implib shell32.dll, SHGetSpecialFolderPathA, _SHGetSpecialFolderPathA@16
 implib shell32.dll, SHGetSpecialFolderPathW, _SHGetSpecialFolderPathW@16
 implib shell32.dll, SHGetStockIconInfo, _SHGetStockIconInfo@12
 implib shell32.dll, SHGetTemporaryPropertyForItem, _SHGetTemporaryPropertyForItem@12
+implib shell32.dll, ord.759, _SHGetThreadUndoManager@8
 implib shell32.dll, SHGetUnreadMailCountW, _SHGetUnreadMailCountW@24
 implib shell32.dll, ord.241, _SHGetUserDisplayName@8
 implib shell32.dll, ord.261, _SHGetUserPicturePath@16 ; Ordinal 261 allocated to PrintersGetCommand_RunDLL until v6.0
