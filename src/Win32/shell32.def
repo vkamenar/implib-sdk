@@ -149,9 +149,11 @@ include '..\implib.inc'
 implib shell32.dll, ord.203, _AddCommasW@8  ; Also known as AddCommasExportW
 implib shell32.dll, AppCompat_RunDLLW, _AppCompat_RunDLLW@16
 implib shell32.dll, ord.184, _ArrangeWindows@20
+implib shell32.dll, ord.764, _AssocCreateElement@12
 implib shell32.dll, AssocCreateForClasses, _AssocCreateForClasses@16
 implib shell32.dll, AssocElemCreateForKey, _AssocElemCreateForKey@16
 implib shell32.dll, AssocGetDetailsOfPropKey, _AssocGetDetailsOfPropKey@20
+implib shell32.dll, ord.778, _AssocGetPropListForExt@16
 implib shell32.dll, ord.700, _CDefFolderMenu_Create@36
 implib shell32.dll, ord.701, _CDefFolderMenu_Create2@36
 implib shell32.dll, ord.702, _CDefFolderMenu_MergeMenu@16
@@ -178,6 +180,7 @@ implib shell32.dll, CreateStorageItemFromShellItem_FullTrustCaller_ForPackage
 implib shell32.dll, CreateStorageItemFromShellItem_FullTrustCaller_ForPackage_WithProcessHandle
 implib shell32.dll, CreateStorageItemFromShellItem_FullTrustCaller_UseImplicitFlagsAndPackage
 implib shell32.dll, ord.744, _Create_IEnumUICommand@16
+implib shell32.dll, ord.763, _Create_IEnumUICommandFromDefArray@16
 implib shell32.dll, ord.762, _Create_IUICommandFromDef@12
 implib shell32.dll, ord.745, _Create_IUIElement@8
 implib shell32.dll, ord.129, _DAD_AutoScroll@12
@@ -359,6 +362,7 @@ implib shell32.dll, ord.167, _SHAddFromPropSheetExtArray@12
 implib shell32.dll, SHAddToRecentDocs, _SHAddToRecentDocs@8
 implib shell32.dll, ord.196, _SHAlloc@4
 implib shell32.dll, SHAppBarMessage, _SHAppBarMessage@8
+implib shell32.dll, ord.781, _SHApplyPropertiesToItem@16
 implib shell32.dll, SHAssocEnumHandlers, _SHAssocEnumHandlers@12
 implib shell32.dll, SHAssocEnumHandlersForProtocolByApplication, _SHAssocEnumHandlersForProtocolByApplication@12
 implib shell32.dll, SHBindToFolderIDListParent, _SHBindToFolderIDListParent@20
@@ -381,6 +385,7 @@ implib shell32.dll, ord.89, _SHCloneSpecialIDList@12
 implib shell32.dll, ord.102, _SHCoCreateInstance@20
 implib shell32.dll, SHCoCreateInstanceWorker, _SHCoCreateInstanceWorker@20
 implib shell32.dll, ord.760, _SHConfirmOperation@12
+; implib shell32.dll, ord.766, _SHCopyStreamWithProgress@28 ; This function does nothing and returns E_NOTIMPL in Windows 10
 implib shell32.dll, SHCreateAssociationRegistration, _SHCreateAssociationRegistration@8
 implib shell32.dll, SHCreateCategoryEnum, _SHCreateCategoryEnum@44
 implib shell32.dll, SHCreateDataObject, _SHCreateDataObject@24
@@ -568,6 +573,7 @@ implib shell32.dll, ord.195, _SHFree@4
 implib shell32.dll, SHFreeNameMappings, _SHFreeNameMappings@4
 implib shell32.dll, ord.247, _SHGetActiveConsoleSessionId@0
 implib shell32.dll, ord.681, _SHGetAppCompatFlags@4
+implib shell32.dll, ord.777, _SHGetAssocKeys@12
 implib shell32.dll, ord.750, _SHGetAttributesFromDataObject@16
 implib shell32.dll, ord.752, _SHGetComputerDisplayNameW@16
 implib shell32.dll, SHGetControlPanelPath, _SHGetControlPanelPath@12
@@ -649,6 +655,7 @@ implib shell32.dll, SHLoadNonloadedIconOverlayIdentifiers, _SHLoadNonloadedIconO
 implib shell32.dll, SHLocalStrDupA, _SHLocalStrDupA@8
 implib shell32.dll, SHLocalStrDupW, _SHLocalStrDupW@8
 implib shell32.dll, ord.95, _SHLogILFromFSIL@4
+implib shell32.dll, ord.787, _SHMapIDListToSystemImageListIndexAsync@32
 implib shell32.dll, ord.77, _SHMapPIDLToSystemImageListIndex@12
 implib shell32.dll, ord.716, _SHMultiFileProperties@8
 implib shell32.dll, ord.160, _SHNetConnectionDialog@12
