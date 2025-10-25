@@ -413,6 +413,8 @@ implib shell32.dll, ord.168, _SHCreatePropSheetExtArray@12
 implib shell32.dll, ord.194, _SHCreatePropSheetExtArrayEx@16 ; Ordinal 194 allocated to RealShellExecuteExA in v4.7x
 implib shell32.dll, ord.715, _SHCreatePropertyBag@8
 implib shell32.dll, SHCreateQueryCancelAutoPlayMoniker, _SHCreateQueryCancelAutoPlayMoniker@4
+implib shell32.dll, ord.788, _SHCreateRelatedItemFromIDList@12
+implib shell32.dll, ord.789, _SHCreateRelatedItemWithParent@16
 implib shell32.dll, ord.723, _SHCreateSessionKey@8
 implib shell32.dll, ord.256, _SHCreateShellFolderView@8
 implib shell32.dll, ord.174, _SHCreateShellFolderViewEx@8
@@ -579,6 +581,7 @@ implib shell32.dll, ord.752, _SHGetComputerDisplayNameW@16
 implib shell32.dll, SHGetControlPanelPath, _SHGetControlPanelPath@12
 implib shell32.dll, SHGetDataFromIDListA, _SHGetDataFromIDListA@20
 implib shell32.dll, SHGetDataFromIDListW, _SHGetDataFromIDListW@20
+implib shell32.dll, ord.811, _SHGetDefaultUserPicture@8
 implib shell32.dll, SHGetDesktopFolder, _SHGetDesktopFolder@4
 implib shell32.dll, SHGetDiskFreeSpaceA, _SHGetDiskFreeSpaceA@16
 implib shell32.dll, SHGetDiskFreeSpaceExA, _SHGetDiskFreeSpaceExA@16
@@ -633,6 +636,7 @@ implib shell32.dll, ord.759, _SHGetThreadUndoManager@8
 implib shell32.dll, SHGetUnreadMailCountW, _SHGetUnreadMailCountW@24
 implib shell32.dll, ord.241, _SHGetUserDisplayName@8
 implib shell32.dll, ord.261, _SHGetUserPicturePath@16 ; Ordinal 261 allocated to PrintersGetCommand_RunDLL until v6.0
+implib shell32.dll, ord.810, _SHGetUserPicturePathEx@28
 implib shell32.dll, ord.248, _SHGetUserSessionId@4
 implib shell32.dll, ord.185, _SHHandleDiskFull@8
 implib shell32.dll, ord.193, _SHHandleUpdateImage@4
@@ -655,6 +659,7 @@ implib shell32.dll, SHLoadNonloadedIconOverlayIdentifiers, _SHLoadNonloadedIconO
 implib shell32.dll, SHLocalStrDupA, _SHLocalStrDupA@8
 implib shell32.dll, SHLocalStrDupW, _SHLocalStrDupW@8
 implib shell32.dll, ord.95, _SHLogILFromFSIL@4
+implib shell32.dll, ord.790, _SHMapIDListToSystemImageListIndex@16
 implib shell32.dll, ord.787, _SHMapIDListToSystemImageListIndexAsync@32
 implib shell32.dll, ord.77, _SHMapPIDLToSystemImageListIndex@12
 implib shell32.dll, ord.716, _SHMultiFileProperties@8
@@ -711,6 +716,8 @@ implib shell32.dll, ord.236, _SHTestTokenPrivilegeW@8
 implib shell32.dll, ord.191, _SHUpdateImageA@16
 implib shell32.dll, ord.192, _SHUpdateImageW@16
 implib shell32.dll, SHUpdateRecycleBinIcon, _SHUpdateRecycleBinIcon@0
+implib shell32.dll, ord.812, _SHUserGetPasswordHint@8
+implib shell32.dll, ord.813, _SHUserSetPasswordHint@8
 implib shell32.dll, ord.173, _SHValidateUNC@12
 implib shell32.dll, ord.97, _SHWaitForFileToOpen@12
 implib shell32.dll, ord.648, _SHWaitOp_Operate@8
