@@ -386,7 +386,10 @@ implib shell32.dll, ord.102, _SHCoCreateInstance@20
 implib shell32.dll, SHCoCreateInstanceWorker, _SHCoCreateInstanceWorker@20
 implib shell32.dll, ord.760, _SHConfirmOperation@12
 ; implib shell32.dll, ord.766, _SHCopyStreamWithProgress@28 ; This function does nothing and returns E_NOTIMPL in Windows 10
+implib shell32.dll, ord.816, _SHCreateAndOrCondition@16
+implib shell32.dll, ord.815, _SHCreateAndOrConditionEx@20
 implib shell32.dll, SHCreateAssociationRegistration, _SHCreateAssociationRegistration@8
+implib shell32.dll, ord.820, _SHCreateAutoList@12
 implib shell32.dll, SHCreateCategoryEnum, _SHCreateCategoryEnum@44
 implib shell32.dll, SHCreateDataObject, _SHCreateDataObject@24
 implib shell32.dll, ord.70, _SHCreateDefClassObject@20
@@ -400,12 +403,15 @@ implib shell32.dll, SHCreateDirectoryExW, _SHCreateDirectoryExW@12
 implib shell32.dll, SHCreateDrvExtIcon, _SHCreateDrvExtIcon@12
 implib shell32.dll, ord.740, _SHCreateFileDataObject@20
 implib shell32.dll, ord.743, _SHCreateFileExtractIconW@16
+implib shell32.dll, ord.818, _SHCreateFilter@28
 implib shell32.dll, ord.722, _SHCreateInstance@12
 implib shell32.dll, SHCreateItemFromIDList, _SHCreateItemFromIDList@12
 implib shell32.dll, SHCreateItemFromParsingName, _SHCreateItemFromParsingName@16
 implib shell32.dll, SHCreateItemFromRelativeName, _SHCreateItemFromRelativeName@20
 implib shell32.dll, SHCreateItemInKnownFolder, _SHCreateItemInKnownFolder@20
 implib shell32.dll, SHCreateItemWithParent, _SHCreateItemWithParent@20
+implib shell32.dll, ord.817, _SHCreateLeafCondition@24
+implib shell32.dll, ord.814, _SHCreateLeafConditionEx@44
 implib shell32.dll, ord.172, _SHCreateLinks@20
 implib shell32.dll, SHCreateLocalServerRunDll, _SHCreateLocalServerRunDll@16
 implib shell32.dll, SHCreateProcessAsUserW, _SHCreateProcessAsUserW@4
@@ -415,6 +421,8 @@ implib shell32.dll, ord.715, _SHCreatePropertyBag@8
 implib shell32.dll, SHCreateQueryCancelAutoPlayMoniker, _SHCreateQueryCancelAutoPlayMoniker@4
 implib shell32.dll, ord.788, _SHCreateRelatedItemFromIDList@12
 implib shell32.dll, ord.789, _SHCreateRelatedItemWithParent@16
+implib shell32.dll, ord.822, _SHCreateSearchIDList@20
+implib shell32.dll, ord.821, _SHCreateSearchIDListFromAutoList@12
 implib shell32.dll, ord.723, _SHCreateSessionKey@8
 implib shell32.dll, ord.256, _SHCreateShellFolderView@8
 implib shell32.dll, ord.174, _SHCreateShellFolderViewEx@8
@@ -597,6 +605,7 @@ implib shell32.dll, SHGetFolderPathAndSubDirA, _SHGetFolderPathAndSubDirA@24
 implib shell32.dll, SHGetFolderPathAndSubDirW, _SHGetFolderPathAndSubDirW@24
 implib shell32.dll, SHGetFolderPathEx, _SHGetFolderPathEx@20
 implib shell32.dll, SHGetFolderPathW, _SHGetFolderPathW@20
+implib shell32.dll, ord.823, _SHGetFolderTypeDescription@12
 implib shell32.dll, SHGetIDListFromObject, _SHGetIDListFromObject@8
 implib shell32.dll, SHGetIconOverlayIndexA, _SHGetIconOverlayIndexA@8
 implib shell32.dll, SHGetIconOverlayIndexW, _SHGetIconOverlayIndexW@8
@@ -654,6 +663,7 @@ implib shell32.dll, ord.724, _SHIsTempDisplayMode@0
 implib shell32.dll, ord.748, _SHLimitInputCombo@8
 implib shell32.dll, ord.747, _SHLimitInputEdit@8
 implib shell32.dll, ord.754, _SHLimitInputEditWithFlags@8
+implib shell32.dll, ord.819, _SHLoadFilterFromStream@12
 implib shell32.dll, SHLoadInProc, _SHLoadInProc@4 ; Since Windows Vista, this function does nothing and returns E_NOTIMPL
 implib shell32.dll, SHLoadNonloadedIconOverlayIdentifiers, _SHLoadNonloadedIconOverlayIdentifiers@0
 implib shell32.dll, SHLocalStrDupA, _SHLocalStrDupA@8
