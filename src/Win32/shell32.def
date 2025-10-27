@@ -210,6 +210,7 @@ implib shell32.dll, DragQueryFileAorW, _DragQueryFileAorW@24
 implib shell32.dll, DragQueryFileW, _DragQueryFileW@16
 implib shell32.dll, ord.76, _DragQueryInfo@8
 implib shell32.dll, DragQueryPoint, _DragQueryPoint@8
+implib shell32.dll, ord.828, _DrawMenuItem@20
 implib shell32.dll, ord.64, _DriveType@4
 implib shell32.dll, DuplicateIcon, _DuplicateIcon@8
 implib shell32.dll, ord.60, _ExitWindowsDialog@4
@@ -281,6 +282,7 @@ implib shell32.dll, LaunchMSHelp_RunDLLW, _LaunchMSHelp_RunDLLW@16
 implib shell32.dll, ord.258, _LinkWindow_RegisterClass@0
 implib shell32.dll, ord.259, _LinkWindow_UnregisterClass@0
 implib shell32.dll, ord.54, _LogoffWindowsDialog@4
+implib shell32.dll, ord.829, _MeasureMenuItem@16
 implib shell32.dll, OpenAsDialog, _OpenAsDialog@8
 implib shell32.dll, OpenAs_RunDLL, _OpenAs_RunDLL@16
 implib shell32.dll, OpenAs_RunDLLA, _OpenAs_RunDLLA@16
@@ -384,12 +386,14 @@ implib shell32.dll, SHChangeNotifySuspendResume, _SHChangeNotifySuspendResume@16
 implib shell32.dll, ord.89, _SHCloneSpecialIDList@12
 implib shell32.dll, ord.102, _SHCoCreateInstance@20
 implib shell32.dll, SHCoCreateInstanceWorker, _SHCoCreateInstanceWorker@20
+implib shell32.dll, ord.825, _SHCombineMultipleConditions@20
 implib shell32.dll, ord.760, _SHConfirmOperation@12
 ; implib shell32.dll, ord.766, _SHCopyStreamWithProgress@28 ; This function does nothing and returns E_NOTIMPL in Windows 10
 implib shell32.dll, ord.816, _SHCreateAndOrCondition@16
 implib shell32.dll, ord.815, _SHCreateAndOrConditionEx@20
 implib shell32.dll, SHCreateAssociationRegistration, _SHCreateAssociationRegistration@8
 implib shell32.dll, ord.820, _SHCreateAutoList@12
+implib shell32.dll, ord.826, _SHCreateAutoListWithID@28
 implib shell32.dll, SHCreateCategoryEnum, _SHCreateCategoryEnum@44
 implib shell32.dll, SHCreateDataObject, _SHCreateDataObject@24
 implib shell32.dll, ord.70, _SHCreateDefClassObject@20
@@ -404,6 +408,7 @@ implib shell32.dll, SHCreateDrvExtIcon, _SHCreateDrvExtIcon@12
 implib shell32.dll, ord.740, _SHCreateFileDataObject@20
 implib shell32.dll, ord.743, _SHCreateFileExtractIconW@16
 implib shell32.dll, ord.818, _SHCreateFilter@28
+implib shell32.dll, ord.831, _SHCreateFilterFromFullText@20
 implib shell32.dll, ord.722, _SHCreateInstance@12
 implib shell32.dll, SHCreateItemFromIDList, _SHCreateItemFromIDList@12
 implib shell32.dll, SHCreateItemFromParsingName, _SHCreateItemFromParsingName@16
@@ -414,6 +419,7 @@ implib shell32.dll, ord.817, _SHCreateLeafCondition@24
 implib shell32.dll, ord.814, _SHCreateLeafConditionEx@44
 implib shell32.dll, ord.172, _SHCreateLinks@20
 implib shell32.dll, SHCreateLocalServerRunDll, _SHCreateLocalServerRunDll@16
+implib shell32.dll, ord.830, _SHCreateNotConditionEx@16
 implib shell32.dll, SHCreateProcessAsUserW, _SHCreateProcessAsUserW@4
 implib shell32.dll, ord.168, _SHCreatePropSheetExtArray@12
 implib shell32.dll, ord.194, _SHCreatePropSheetExtArrayEx@16 ; Ordinal 194 allocated to RealShellExecuteExA in v4.7x
@@ -434,6 +440,7 @@ implib shell32.dll, SHCreateShellItemArrayFromShellItem, _SHCreateShellItemArray
 implib shell32.dll, ord.74, _SHCreateStdEnumFmtEtc@12
 implib shell32.dll, ord.758, _SHCreateThreadUndoManager@8
 implib shell32.dll, SHCreateThreadWithHandle, _SHCreateThreadWithHandle@20
+implib shell32.dll, ord.827, _SHCreateTransientVFolderIDList@12
 implib shell32.dll, ord.3, _SHDefExtractIconA@24
 implib shell32.dll, ord.6, _SHDefExtractIconW@24
 implib shell32.dll, ord.201, _SHDesktopMessageLoop@4 ; Ordinal 201 allocated to SHLocalFree in v4.0
@@ -606,6 +613,7 @@ implib shell32.dll, SHGetFolderPathAndSubDirW, _SHGetFolderPathAndSubDirW@24
 implib shell32.dll, SHGetFolderPathEx, _SHGetFolderPathEx@20
 implib shell32.dll, SHGetFolderPathW, _SHGetFolderPathW@20
 implib shell32.dll, ord.823, _SHGetFolderTypeDescription@12
+implib shell32.dll, ord.824, _SHGetFolderTypeFromCanonicalName@8
 implib shell32.dll, SHGetIDListFromObject, _SHGetIDListFromObject@8
 implib shell32.dll, SHGetIconOverlayIndexA, _SHGetIconOverlayIndexA@8
 implib shell32.dll, SHGetIconOverlayIndexW, _SHGetIconOverlayIndexW@8
@@ -660,6 +668,8 @@ implib shell32.dll, ord.253, _SHIsCurrentProcessConsoleSession@0
 implib shell32.dll, SHIsFileAvailableOffline, _SHIsFileAvailableOffline@8
 implib shell32.dll, ord.690, _SHIsLegacyAnsiProperty@12
 implib shell32.dll, ord.724, _SHIsTempDisplayMode@0
+implib shell32.dll, ord.833, _SHKnownFolderFromCSIDL@8
+implib shell32.dll, ord.832, _SHKnownFolderToCSIDL@8
 implib shell32.dll, ord.748, _SHLimitInputCombo@8
 implib shell32.dll, ord.747, _SHLimitInputEdit@8
 implib shell32.dll, ord.754, _SHLimitInputEditWithFlags@8
