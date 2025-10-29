@@ -157,6 +157,9 @@ implib shell32.dll, ord.778, _AssocGetPropListForExt@16
 implib shell32.dll, ord.700, _CDefFolderMenu_Create@36
 implib shell32.dll, ord.701, _CDefFolderMenu_Create2@36
 implib shell32.dll, ord.702, _CDefFolderMenu_MergeMenu@16
+implib shell32.dll, CIDLData_CreateFromIDArray, _CIDLData_CreateFromIDArray@16
+implib shell32.dll, ord.857, _CPL_CreateCondition@16
+implib shell32.dll, ord.856, _CPL_ExecuteTask@8 ; In Windows 10, this function does nothing and returns E_NOTIMPL
 implib shell32.dll, CStorageItem_GetValidatedStorageItemObject
 implib shell32.dll, CallFileCopyHook, _CallFileCopyHook@32
 implib shell32.dll, ord.733, _CheckDiskSpace@0
@@ -169,7 +172,7 @@ implib shell32.dll, Control_RunDLLA, _Control_RunDLLA@16
 implib shell32.dll, Control_RunDLLAsUserW, _Control_RunDLLAsUserW@16
 implib shell32.dll, ord.44, _Control_RunDLLNoFallback@16 ; Ordinal 44 allocated to OpenAs_RunDLL(A) until v6.0
 implib shell32.dll, Control_RunDLLW, _Control_RunDLLW@16
-implib shell32.dll, CIDLData_CreateFromIDArray, _CIDLData_CreateFromIDArray@16
+implib shell32.dll, ord.845, _CreateConditionRange@32
 implib shell32.dll, ord.260, _CreateInfoTipFromItem@20 ; Ordinal 260 allocated to Options_RunDLLW until v6.0
 implib shell32.dll, ord.264, _CreateInfoTipFromItem2@24 ; Ordinal 264 allocated to RealShellExecuteA until v6.0
 implib shell32.dll, ord.839, _CreateSingleVisibleInList@12
@@ -276,6 +279,7 @@ implib shell32.dll, ord.41, _IsLFNDriveA@4
 implib shell32.dll, ord.42, _IsLFNDriveW@4
 implib shell32.dll, ord.66, _IsNetDrive@4
 implib shell32.dll, IsProcessAnExplorer, _IsProcessAnExplorer@0
+implib shell32.dll, ord.854, _IsShellItemInSearchIndex@8
 implib shell32.dll, ord.53, _IsSuspendAllowed@0
 implib shell32.dll, ord.680, _IsUserAnAdmin@0
 implib shell32.dll, ord.210, _LargIntegerToString@24
@@ -298,6 +302,7 @@ implib shell32.dll, ord.36, _PathAppend@8
 implib shell32.dll, ord.30, _PathBuildRoot@8
 implib shell32.dll, ord.171, _PathCleanupSpec@8
 implib shell32.dll, ord.37, _PathCombine@12
+implib shell32.dll, ord.850, _PathComparePaths@8
 implib shell32.dll, ord.45, _PathFileExists@4
 implib shell32.dll, ord.31, _PathFindExtension@4
 implib shell32.dll, ord.34, _PathFindFileName@4
@@ -389,6 +394,7 @@ implib shell32.dll, ord.89, _SHCloneSpecialIDList@12
 implib shell32.dll, ord.102, _SHCoCreateInstance@20
 implib shell32.dll, SHCoCreateInstanceWorker, _SHCoCreateInstanceWorker@20
 implib shell32.dll, ord.825, _SHCombineMultipleConditions@20
+implib shell32.dll, ord.847, _SHCombineMultipleConditionsEx@24
 implib shell32.dll, ord.760, _SHConfirmOperation@12
 ; implib shell32.dll, ord.766, _SHCopyStreamWithProgress@28 ; This function does nothing and returns E_NOTIMPL in Windows 10
 implib shell32.dll, ord.816, _SHCreateAndOrCondition@16
@@ -397,6 +403,7 @@ implib shell32.dll, SHCreateAssociationRegistration, _SHCreateAssociationRegistr
 implib shell32.dll, ord.820, _SHCreateAutoList@12
 implib shell32.dll, ord.826, _SHCreateAutoListWithID@28
 implib shell32.dll, SHCreateCategoryEnum, _SHCreateCategoryEnum@44
+implib shell32.dll, ord.849, _SHCreateConditionFactory@8
 implib shell32.dll, SHCreateDataObject, _SHCreateDataObject@24
 implib shell32.dll, ord.70, _SHCreateDefClassObject@20
 implib shell32.dll, SHCreateDefaultContextMenu, _SHCreateDefaultContextMenu@12
@@ -421,6 +428,7 @@ implib shell32.dll, ord.817, _SHCreateLeafCondition@24
 implib shell32.dll, ord.814, _SHCreateLeafConditionEx@44
 implib shell32.dll, ord.172, _SHCreateLinks@20
 implib shell32.dll, SHCreateLocalServerRunDll, _SHCreateLocalServerRunDll@16
+implib shell32.dll, ord.844, _SHCreateNotCondition@12
 implib shell32.dll, ord.830, _SHCreateNotConditionEx@16
 implib shell32.dll, SHCreateProcessAsUserW, _SHCreateProcessAsUserW@4
 implib shell32.dll, ord.168, _SHCreatePropSheetExtArray@12
@@ -642,6 +650,7 @@ implib shell32.dll, ord.69, _SHGetNetResource@16
 implib shell32.dll, SHGetNewLinkInfo, _SHGetNewLinkInfo@20
 implib shell32.dll, SHGetNewLinkInfoA, _SHGetNewLinkInfoA@20
 implib shell32.dll, SHGetNewLinkInfoW, _SHGetNewLinkInfoW@20
+implib shell32.dll, ord.848, _SHGetNoAssocIconIndex@0
 implib shell32.dll, SHGetPathFromIDList, _SHGetPathFromIDList@8
 implib shell32.dll, SHGetPathFromIDListA, _SHGetPathFromIDListA@8
 implib shell32.dll, SHGetPathFromIDListEx, _SHGetPathFromIDListEx@16
@@ -671,6 +680,7 @@ implib shell32.dll, SHHelpShortcuts_RunDLL, _SHHelpShortcuts_RunDLL@16
 implib shell32.dll, SHHelpShortcuts_RunDLLA, _SHHelpShortcuts_RunDLLA@16
 implib shell32.dll, SHHelpShortcuts_RunDLLW, _SHHelpShortcuts_RunDLLW@16
 implib shell32.dll, ord.28, _SHILCreateFromPath@12
+implib shell32.dll, ord.852, _SHInitializeControlPanelRegkeys@0 ; In Windows 10, this function does nothing and returns E_NOTIMPL
 implib shell32.dll, SHInvokePrinterCommandA, _SHInvokePrinterCommandA@20
 implib shell32.dll, SHInvokePrinterCommandW, _SHInvokePrinterCommandW@20
 implib shell32.dll, ord.246, _SHInvokePrivilegedFunctionW@12
