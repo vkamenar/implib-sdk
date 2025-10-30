@@ -183,6 +183,7 @@ implib shell32.dll, CreateStorageItemFromShellItem_FullTrustCaller
 implib shell32.dll, CreateStorageItemFromShellItem_FullTrustCaller_ForPackage
 implib shell32.dll, CreateStorageItemFromShellItem_FullTrustCaller_ForPackage_WithProcessHandle
 implib shell32.dll, CreateStorageItemFromShellItem_FullTrustCaller_UseImplicitFlagsAndPackage
+implib shell32.dll, ord.867, _CreateVisibleInDescription@12
 implib shell32.dll, ord.744, _Create_IEnumUICommand@16
 implib shell32.dll, ord.763, _Create_IEnumUICommandFromDefArray@16
 implib shell32.dll, ord.762, _Create_IUICommandFromDef@12
@@ -237,6 +238,7 @@ implib shell32.dll, ord.704, _GUIDFromStringW@8
 implib shell32.dll, GetCurrentProcessExplicitAppUserModelID, _GetCurrentProcessExplicitAppUserModelID@4
 implib shell32.dll, ord.63, _GetFileNameFromBrowse@28
 implib shell32.dll, GetSystemPersistedStorageItemList, _GetSystemPersistedStorageItemList@8
+implib shell32.dll, ord.863, _GetTryHarderIDList@36
 implib shell32.dll, ord.154, _ILAppendID@12
 implib shell32.dll, ord.18, _ILClone@4
 implib shell32.dll, ILCloneChild, _ILCloneChild@4
@@ -274,6 +276,7 @@ implib shell32.dll, InternalExtractIconListA, _InternalExtractIconListA@12
 implib shell32.dll, InternalExtractIconListW, _InternalExtractIconListW@12
 implib shell32.dll, ord.65, _InvalidateDriveType@4
 implib shell32.dll, IsDesktopExplorerProcess, _IsDesktopExplorerProcess@0
+implib shell32.dll, ord.865, _IsElevationRequired@4
 implib shell32.dll, ord.119, _IsLFNDrive@4
 implib shell32.dll, ord.41, _IsLFNDriveA@4
 implib shell32.dll, ord.42, _IsLFNDriveW@4
@@ -296,6 +299,7 @@ implib shell32.dll, ord.85, _OpenRegStream@16
 implib shell32.dll, Options_RunDLL, _Options_RunDLL@16
 implib shell32.dll, Options_RunDLLA, _Options_RunDLLA@16
 implib shell32.dll, Options_RunDLLW, _Options_RunDLLW@16
+implib shell32.dll, ord.858, _POOBE_CreateIndirectGraphic@16
 implib shell32.dll, ParseField, _ParseField@16
 implib shell32.dll, ord.32, _PathAddBackslash@4
 implib shell32.dll, ord.36, _PathAppend@8
@@ -395,6 +399,7 @@ implib shell32.dll, ord.102, _SHCoCreateInstance@20
 implib shell32.dll, SHCoCreateInstanceWorker, _SHCoCreateInstanceWorker@20
 implib shell32.dll, ord.825, _SHCombineMultipleConditions@20
 implib shell32.dll, ord.847, _SHCombineMultipleConditionsEx@24
+implib shell32.dll, ord.862, _SHCompareIDsFull@16
 implib shell32.dll, ord.760, _SHConfirmOperation@12
 ; implib shell32.dll, ord.766, _SHCopyStreamWithProgress@28 ; This function does nothing and returns E_NOTIMPL in Windows 10
 implib shell32.dll, ord.816, _SHCreateAndOrCondition@16
@@ -460,6 +465,7 @@ implib shell32.dll, ord.3, _SHDefExtractIconA@24
 implib shell32.dll, ord.6, _SHDefExtractIconW@24
 implib shell32.dll, ord.201, _SHDesktopMessageLoop@4 ; Ordinal 201 allocated to SHLocalFree in v4.0
 implib shell32.dll, ord.169, _SHDestroyPropSheetExtArray@4
+implib shell32.dll, ord.861, _SHDisplayNameFromScopeAndSubQueries@24
 implib shell32.dll, ord.88, _SHDoDragDrop@20
 implib shell32.dll, SHELL32_AddToBackIconTable, _SHELL32_AddToBackIconTable@8
 implib shell32.dll, SHELL32_AddToFrontIconTable, _SHELL32_AddToFrontIconTable@16
@@ -590,6 +596,7 @@ implib shell32.dll, SHEnableServiceObject, _SHEnableServiceObject@8
 implib shell32.dll, SHEnumerateUnreadMailAccountsW, _SHEnumerateUnreadMailAccountsW@16
 implib shell32.dll, SHEvaluateSystemCommandTemplate, _SHEvaluateSystemCommandTemplate@16
 implib shell32.dll, SHExecuteErrorMessageBox, _SHExecuteErrorMessageBox@20
+implib shell32.dll, ord.866, _SHExtCoCreateInstance@24
 implib shell32.dll, SHExtractIconsW, _SHExtractIconsW@32
 implib shell32.dll, SHFileOperation, _SHFileOperation@4
 implib shell32.dll, SHFileOperationA, _SHFileOperationA@4
@@ -611,6 +618,7 @@ implib shell32.dll, ord.777, _SHGetAssocKeys@12
 implib shell32.dll, ord.750, _SHGetAttributesFromDataObject@16
 implib shell32.dll, ord.752, _SHGetComputerDisplayNameW@16
 implib shell32.dll, SHGetControlPanelPath, _SHGetControlPanelPath@12
+implib shell32.dll, ord.860, _SHGetCorrectOwnerSid@12
 implib shell32.dll, SHGetDataFromIDListA, _SHGetDataFromIDListA@20
 implib shell32.dll, SHGetDataFromIDListW, _SHGetDataFromIDListW@20
 implib shell32.dll, ord.811, _SHGetDefaultUserPicture@8
@@ -795,6 +803,7 @@ implib shell32.dll, Shell_NotifyIconGetRect, _Shell_NotifyIconGetRect@8
 implib shell32.dll, Shell_NotifyIconW, _Shell_NotifyIconW@8
 implib shell32.dll, ord.204, _ShortSizeFormatW@8
 implib shell32.dll, ord.103, _SignalFileOpen@4
+implib shell32.dll, ord.864, _StampIconForElevation@12
 implib shell32.dll, StateRepoNewMenuCache_EnsureCacheAsync, _StateRepoNewMenuCache_EnsureCacheAsync@0
 implib shell32.dll, StateRepoNewMenuCache_RebuildCacheAsync, _StateRepoNewMenuCache_RebuildCacheAsync@0
 implib shell32.dll, StgMakeUniqueName, _StgMakeUniqueName@20
@@ -831,6 +840,7 @@ implib shell32.dll, StrStrNW, _StrStrNW@12
 implib shell32.dll, StrStrW, _StrStrW@8
 implib shell32.dll, UsersLibrariesFolderUI_CreateInstance, _UsersLibrariesFolderUI_CreateInstance@16
 implib shell32.dll, WOWShellExecute, _WOWShellExecute@28
+implib shell32.dll, ord.859, _WPC_InstallState@4
 implib shell32.dll, WaitForExplorerRestartW, _WaitForExplorerRestartW@16
 implib shell32.dll, ord.93, _Win32CreateDirectory@8
 implib shell32.dll, ord.164, _Win32DeleteFile@4
