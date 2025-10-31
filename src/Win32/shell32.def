@@ -150,6 +150,7 @@ implib shell32.dll, ord.203, _AddCommasW@8  ; Also known as AddCommasExportW
 implib shell32.dll, AppCompat_RunDLLW, _AppCompat_RunDLLW@16
 implib shell32.dll, ord.184, _ArrangeWindows@20
 implib shell32.dll, ord.764, _AssocCreateElement@12
+implib shell32.dll, ord.767, _AssocCreateListForClasses@16
 implib shell32.dll, AssocCreateForClasses, _AssocCreateForClasses@16
 implib shell32.dll, AssocElemCreateForKey, _AssocElemCreateForKey@16
 implib shell32.dll, AssocGetDetailsOfPropKey, _AssocGetDetailsOfPropKey@20
@@ -184,6 +185,7 @@ implib shell32.dll, CreateStorageItemFromShellItem_FullTrustCaller_ForPackage
 implib shell32.dll, CreateStorageItemFromShellItem_FullTrustCaller_ForPackage_WithProcessHandle
 implib shell32.dll, CreateStorageItemFromShellItem_FullTrustCaller_UseImplicitFlagsAndPackage
 implib shell32.dll, ord.867, _CreateVisibleInDescription@12
+implib shell32.dll, ord.868, _CreateVisibleInList@12
 implib shell32.dll, ord.744, _Create_IEnumUICommand@16
 implib shell32.dll, ord.763, _Create_IEnumUICommandFromDefArray@16
 implib shell32.dll, ord.762, _Create_IUICommandFromDef@12
@@ -195,6 +197,8 @@ implib shell32.dll, ord.132, _DAD_DragLeave@0
 implib shell32.dll, ord.134, _DAD_DragMove@8
 implib shell32.dll, ord.136, _DAD_SetDragImage@8
 implib shell32.dll, ord.137, _DAD_ShowDragImage@4
+implib shell32.dll, ord.871, _DUI_Shell32_EndDeferUninitialization@0
+implib shell32.dll, ord.870, _DUI_Shell32_StartDeferUninitialization@0
 implib shell32.dll, ord.254, _DisconnectWindowsDialog@4
 implib shell32.dll, ord.757, _DisplayNameOfW@20
 implib shell32.dll, DllCanUnloadNow, _SHELL32_DllCanUnloadNow@0
@@ -315,6 +319,7 @@ implib shell32.dll, ord.52, _PathGetArgs@4
 implib shell32.dll, ord.57, _PathGetDriveNumber@4
 implib shell32.dll, ord.158, _PathGetExtension@12
 implib shell32.dll, ord.840, _PathGetPathDisplayName@12
+implib shell32.dll, ord.869, _PathGetPathDisplayNameAlloc@8
 implib shell32.dll, ord.92, _PathGetShortPath@4
 implib shell32.dll, ord.159, _PathIsDirectory@4
 implib shell32.dll, ord.755, _PathIsEqualOrSubFolder@8
@@ -429,6 +434,7 @@ implib shell32.dll, SHCreateItemFromParsingName, _SHCreateItemFromParsingName@16
 implib shell32.dll, SHCreateItemFromRelativeName, _SHCreateItemFromRelativeName@20
 implib shell32.dll, SHCreateItemInKnownFolder, _SHCreateItemInKnownFolder@20
 implib shell32.dll, SHCreateItemWithParent, _SHCreateItemWithParent@20
+implib shell32.dll, ord.872, _SHCreateKindFilter@12
 implib shell32.dll, ord.817, _SHCreateLeafCondition@24
 implib shell32.dll, ord.814, _SHCreateLeafConditionEx@44
 implib shell32.dll, ord.172, _SHCreateLinks@20
@@ -440,6 +446,7 @@ implib shell32.dll, ord.168, _SHCreatePropSheetExtArray@12
 implib shell32.dll, ord.194, _SHCreatePropSheetExtArrayEx@16 ; Ordinal 194 allocated to RealShellExecuteExA in v4.7x
 implib shell32.dll, ord.715, _SHCreatePropertyBag@8
 implib shell32.dll, SHCreateQueryCancelAutoPlayMoniker, _SHCreateQueryCancelAutoPlayMoniker@4
+implib shell32.dll, ord.791, _SHCreateRelatedItem@12
 implib shell32.dll, ord.788, _SHCreateRelatedItemFromIDList@12
 implib shell32.dll, ord.789, _SHCreateRelatedItemWithParent@16
 implib shell32.dll, ord.834, _SHCreateScopeFromIDLists@16
@@ -492,7 +499,7 @@ implib shell32.dll, SHELL32_CDrivesDropTarget_Create, _SHELL32_CDrivesDropTarget
 implib shell32.dll, SHELL32_CDrives_CreateSFVCB, _SHELL32_CDrives_CreateSFVCB@8
 implib shell32.dll, SHELL32_CFSDropTarget_CreateInstance, _SHELL32_CFSDropTarget_CreateInstance@12
 implib shell32.dll, SHELL32_CFSFolderCallback_Create, _SHELL32_CFSFolderCallback_Create@8
-implib shell32.dll, SHELL32_CFillPropertiesTask_CreateInstance, _SHELL32_CFillPropertiesTask_CreateInstance@16
+implib shell32.dll, SHELL32_CFillPropertiesTask_CreateInstance, _SHELL32_CFillPropertiesTask_CreateInstance@16 ; Alias for AssocCreateListForClasses
 implib shell32.dll, SHELL32_CLibraryDropTarget_CreateInstance, _SHELL32_CLibraryDropTarget_CreateInstance@16
 implib shell32.dll, SHELL32_CLocationContextMenu_Create, _SHELL32_CLocationContextMenu_Create@16
 implib shell32.dll, SHELL32_CLocationFolderUI_CreateInstance, _SHELL32_CLocationFolderUI_CreateInstance@16
@@ -677,6 +684,7 @@ implib shell32.dll, SHGetSpecialFolderPathW, _SHGetSpecialFolderPathW@16
 implib shell32.dll, SHGetStockIconInfo, _SHGetStockIconInfo@12
 implib shell32.dll, SHGetTemporaryPropertyForItem, _SHGetTemporaryPropertyForItem@12
 implib shell32.dll, ord.759, _SHGetThreadUndoManager@8
+implib shell32.dll, ord.851, _SHGetTopViewDescription@12
 implib shell32.dll, SHGetUnreadMailCountW, _SHGetUnreadMailCountW@24
 implib shell32.dll, ord.241, _SHGetUserDisplayName@8
 implib shell32.dll, ord.261, _SHGetUserPicturePath@16 ; Ordinal 261 allocated to PrintersGetCommand_RunDLL until v6.0
@@ -688,6 +696,7 @@ implib shell32.dll, SHHelpShortcuts_RunDLL, _SHHelpShortcuts_RunDLL@16
 implib shell32.dll, SHHelpShortcuts_RunDLLA, _SHHelpShortcuts_RunDLLA@16
 implib shell32.dll, SHHelpShortcuts_RunDLLW, _SHHelpShortcuts_RunDLLW@16
 implib shell32.dll, ord.28, _SHILCreateFromPath@12
+implib shell32.dll, ord.873, _SHIconIndexFromPIDL@16
 implib shell32.dll, ord.852, _SHInitializeControlPanelRegkeys@0 ; In Windows 10, this function does nothing and returns E_NOTIMPL
 implib shell32.dll, SHInvokePrinterCommandA, _SHInvokePrinterCommandA@20
 implib shell32.dll, SHInvokePrinterCommandW, _SHInvokePrinterCommandW@20
@@ -698,6 +707,7 @@ implib shell32.dll, ord.690, _SHIsLegacyAnsiProperty@12
 implib shell32.dll, ord.724, _SHIsTempDisplayMode@0
 implib shell32.dll, ord.833, _SHKnownFolderFromCSIDL@8
 implib shell32.dll, ord.832, _SHKnownFolderToCSIDL@8
+implib shell32.dll, ord.886, _SHLaunchSearch@12 ; In Windows Vista SP1 and SP2 the ordinal was 874
 implib shell32.dll, ord.748, _SHLimitInputCombo@8
 implib shell32.dll, ord.747, _SHLimitInputEdit@8
 implib shell32.dll, ord.754, _SHLimitInputEditWithFlags@8
