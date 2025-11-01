@@ -4,6 +4,19 @@ include '..\implib.inc'
 ; They are available in specific shell32 versions only or not implemented.
 ; Feel free to uncomment the necessary symbols and recompile the library.
 
+; *** Functions discontinued in Windows 11
+; implib shell32.dll, SHELL32_BindToFilePlaceholderHandler, _SHELL32_BindToFilePlaceholderHandler@16
+; implib shell32.dll, SHELL32_CopyFilePlaceholderToNewFile, _SHELL32_CopyFilePlaceholderToNewFile@28
+; implib shell32.dll, SHELL32_CreatePlaceholderFile, _SHELL32_CreatePlaceholderFile@32
+; implib shell32.dll, SHELL32_CSyncRootManager_CreateInstance, _SHELL32_CSyncRootManager_CreateInstance@8
+; implib shell32.dll, SHELL32_FilePlaceholder_BindToPrimaryStream, _SHELL32_FilePlaceholder_BindToPrimaryStream@28
+; implib shell32.dll, SHELL32_FilePlaceholder_CreateInstance, _SHELL32_FilePlaceholder_CreateInstance@8
+; implib shell32.dll, SHELL32_GetPlaceholderStatesFromFileAttributesAndReparsePointTag, _SHELL32_GetPlaceholderStatesFromFileAttributesAndReparsePointTag@8
+; implib shell32.dll, SHELL32_GetSkyDriveNetworkStates, _SHELL32_GetSkyDriveNetworkStates@4
+; implib shell32.dll, SHELL32_SetPlaceholderReparsePointAttribute, _SHELL32_SetPlaceholderReparsePointAttribute@8
+; implib shell32.dll, SHELL32_SetPlaceholderReparsePointAttribute2, _SHELL32_SetPlaceholderReparsePointAttribute2@12
+; implib shell32.dll, SHELL32_UpdateFilePlaceholderStates, _SHELL32_UpdateFilePlaceholderStates@12
+
 ; *** Functions discontinued in v6.0 (Windows Vista)
 ; implib shell32.dll, Activate_RunDLL, _Activate_RunDLL@16
 ; implib shell32.dll, CallCPLEntry16, _CallCPLEntry16@24
@@ -145,7 +158,7 @@ include '..\implib.inc'
 ; *** Other stub functions
 ; implib shell32.dll, ord.242, _SHGetProcessDword@8
 
-; *** Functions available in v10.0 (Windows 10)
+; *** Functions available in Windows 11
 implib shell32.dll, ord.203, _AddCommasW@8  ; Also known as AddCommasExportW
 implib shell32.dll, AppCompat_RunDLLW, _AppCompat_RunDLLW@16
 implib shell32.dll, ord.184, _ArrangeWindows@20
@@ -173,6 +186,7 @@ implib shell32.dll, Control_RunDLLA, _Control_RunDLLA@16
 implib shell32.dll, Control_RunDLLAsUserW, _Control_RunDLLAsUserW@16
 implib shell32.dll, ord.44, _Control_RunDLLNoFallback@16 ; Ordinal 44 allocated to OpenAs_RunDLL(A) until v6.0
 implib shell32.dll, Control_RunDLLW, _Control_RunDLLW@16
+implib shell32.dll, ord.880, _CreateAutoListParser@8
 implib shell32.dll, ord.845, _CreateConditionRange@32
 implib shell32.dll, ord.260, _CreateInfoTipFromItem@20 ; Ordinal 260 allocated to Options_RunDLLW until v6.0
 implib shell32.dll, ord.264, _CreateInfoTipFromItem2@24 ; Ordinal 264 allocated to RealShellExecuteA until v6.0
@@ -222,6 +236,7 @@ implib shell32.dll, DragQueryPoint, _DragQueryPoint@8
 implib shell32.dll, ord.828, _DrawMenuItem@20
 implib shell32.dll, ord.64, _DriveType@4
 implib shell32.dll, DuplicateIcon, _DuplicateIcon@8
+implib shell32.dll, ord.876, _EnumCommonTasks@8
 implib shell32.dll, ord.60, _ExitWindowsDialog@4
 implib shell32.dll, ExtractAssociatedIconA, _ExtractAssociatedIconA@12
 implib shell32.dll, ExtractAssociatedIconExA, _ExtractAssociatedIconExA@16
@@ -240,6 +255,7 @@ implib shell32.dll, FreeIconList, _FreeIconList@8
 implib shell32.dll, ord.703, _GUIDFromStringA@8
 implib shell32.dll, ord.704, _GUIDFromStringW@8
 implib shell32.dll, GetCurrentProcessExplicitAppUserModelID, _GetCurrentProcessExplicitAppUserModelID@4
+implib shell32.dll, ord.878, _GetDataIndexFromFolderType@28
 implib shell32.dll, ord.63, _GetFileNameFromBrowse@28
 implib shell32.dll, GetSystemPersistedStorageItemList, _GetSystemPersistedStorageItemList@8
 implib shell32.dll, ord.863, _GetTryHarderIDList@36
@@ -291,6 +307,8 @@ implib shell32.dll, ord.53, _IsSuspendAllowed@0
 implib shell32.dll, ord.680, _IsUserAnAdmin@0
 implib shell32.dll, ord.210, _LargIntegerToString@24
 implib shell32.dll, LaunchMSHelp_RunDLLW, _LaunchMSHelp_RunDLLW@16
+implib shell32.dll, ord.875, _LegacyEnumSpecialTasksByType@8
+implib shell32.dll, ord.874, _LegacyEnumTasks@12 ; In Windows Vista SP1 and SP2 ordinal 874 is allocated to SHLaunchSearch
 implib shell32.dll, ord.258, _LinkWindow_RegisterClass@0
 implib shell32.dll, ord.259, _LinkWindow_UnregisterClass@0
 implib shell32.dll, ord.54, _LogoffWindowsDialog@4
@@ -353,6 +371,7 @@ implib shell32.dll, ord.13, _PifMgr_CloseProperties@8
 implib shell32.dll, ord.10, _PifMgr_GetProperties@20
 implib shell32.dll, ord.9, _PifMgr_OpenProperties@16
 implib shell32.dll, ord.11, _PifMgr_SetProperties@20
+implib shell32.dll, ord.877, _PlaceTasksUnderHeader@16
 implib shell32.dll, PrepareDiscForBurnRunDllW, _PrepareDiscForBurnRunDllW@16
 implib shell32.dll, ord.212, _Printer_AddPrinterPropPages@8
 implib shell32.dll, ord.205, _Printer_LoadIconsW@12
@@ -531,7 +550,7 @@ implib shell32.dll, SHELL32_Create_IEnumUICommand, _SHELL32_Create_IEnumUIComman
 implib shell32.dll, SHELL32_DestroyLinkInfo, _SHELL32_DestroyLinkInfo@4
 implib shell32.dll, SHELL32_EncryptDirectory, _SHELL32_EncryptDirectory@4
 implib shell32.dll, SHELL32_EncryptedFileKeyInfo, _SHELL32_EncryptedFileKeyInfo@12
-implib shell32.dll, SHELL32_EnumCommonTasks, _SHELL32_EnumCommonTasks@8
+implib shell32.dll, SHELL32_EnumCommonTasks, _SHELL32_EnumCommonTasks@8 ; Alias for EnumCommonTasks
 implib shell32.dll, SHELL32_FreeEncryptedFileKeyInfo, _SHELL32_FreeEncryptedFileKeyInfo@4
 implib shell32.dll, SHELL32_GenerateAppID, _SHELL32_GenerateAppID@16
 implib shell32.dll, SHELL32_GetAppIDRoot, _SHELL32_GetAppIDRoot@16
@@ -558,8 +577,8 @@ implib shell32.dll, SHELL32_IconOverlayManagerInit, _SHELL32_IconOverlayManagerI
 implib shell32.dll, SHELL32_IsGetKeyboardLayoutPresent, _SHELL32_IsGetKeyboardLayoutPresent@0
 implib shell32.dll, SHELL32_IsSystemUpgradeInProgress, _SHELL32_IsSystemUpgradeInProgress@0
 implib shell32.dll, SHELL32_IsValidLinkInfo, _SHELL32_IsValidLinkInfo@4
-implib shell32.dll, SHELL32_LegacyEnumSpecialTasksByType, _SHELL32_LegacyEnumSpecialTasksByType@8
-implib shell32.dll, SHELL32_LegacyEnumTasks, _SHELL32_LegacyEnumTasks@12
+implib shell32.dll, SHELL32_LegacyEnumSpecialTasksByType, _SHELL32_LegacyEnumSpecialTasksByType@8 ; Alias for LegacyEnumSpecialTasksByType
+implib shell32.dll, SHELL32_LegacyEnumTasks, _SHELL32_LegacyEnumTasks@12 ; Alias for LegacyEnumTasks
 implib shell32.dll, SHELL32_LookupBackIconIndex, _SHELL32_LookupBackIconIndex@12
 implib shell32.dll, SHELL32_LookupFrontIconIndex, _SHELL32_LookupFrontIconIndex@12
 implib shell32.dll, SHELL32_NormalizeRating, _SHELL32_NormalizeRating@8
@@ -600,6 +619,7 @@ implib shell32.dll, SHELL32_VerifySaferTrust, _SHELL32_VerifySaferTrust@8
 implib shell32.dll, SHEmptyRecycleBinA, _SHEmptyRecycleBinA@12
 implib shell32.dll, SHEmptyRecycleBinW, _SHEmptyRecycleBinW@12
 implib shell32.dll, SHEnableServiceObject, _SHEnableServiceObject@8
+implib shell32.dll, ord.881, _SHEnumClassesOfCategories@20
 implib shell32.dll, SHEnumerateUnreadMailAccountsW, _SHEnumerateUnreadMailAccountsW@16
 implib shell32.dll, SHEvaluateSystemCommandTemplate, _SHEvaluateSystemCommandTemplate@16
 implib shell32.dll, SHExecuteErrorMessageBox, _SHExecuteErrorMessageBox@20
@@ -724,6 +744,7 @@ implib shell32.dll, ord.716, _SHMultiFileProperties@8
 implib shell32.dll, ord.160, _SHNetConnectionDialog@12
 implib shell32.dll, ord.178, _SHObjectProperties@16
 implib shell32.dll, SHOpenFolderAndSelectItems, _SHOpenFolderAndSelectItems@16
+implib shell32.dll, SHOpenOrGetFolderView, _SHOpenOrGetFolderView@16
 implib shell32.dll, ord.80, _SHOpenPropSheetW@28
 implib shell32.dll, SHOpenWithDialog, _SHOpenWithDialog@8
 implib shell32.dll, ord.719, _SHParseDarwinIDFromCacheW@8
