@@ -158,7 +158,7 @@ include '..\implib.inc'
 ; *** Other stub functions
 ; implib shell32.dll, ord.242, _SHGetProcessDword@8
 
-; *** Functions available in Windows 11
+; *** Functions currently available (tested up to Windows 11)
 implib shell32.dll, ord.203, _AddCommasW@8  ; Also known as AddCommasExportW
 implib shell32.dll, AppCompat_RunDLLW, _AppCompat_RunDLLW@16
 implib shell32.dll, ord.184, _ArrangeWindows@20
@@ -291,6 +291,7 @@ implib shell32.dll, ord.17, _ILRemoveLastID@4
 implib shell32.dll, ord.27, _ILSaveToStream@8
 implib shell32.dll, ILSkip, _ILSkip@8
 implib shell32.dll, InitNetworkAddressControl, _InitNetworkAddressControl@0
+implib shell32.dll, ord.889, _InitializeStartMenuItem@4 ; This function does nothing in Windows 10
 implib shell32.dll, ord.209, _Int64ToString@28
 implib shell32.dll, InternalExtractIconListA, _InternalExtractIconListA@12
 implib shell32.dll, InternalExtractIconListW, _InternalExtractIconListW@12
@@ -373,6 +374,7 @@ implib shell32.dll, ord.9, _PifMgr_OpenProperties@16
 implib shell32.dll, ord.11, _PifMgr_SetProperties@20
 implib shell32.dll, ord.877, _PlaceTasksUnderHeader@16
 implib shell32.dll, PrepareDiscForBurnRunDllW, _PrepareDiscForBurnRunDllW@16
+implib shell32.dll, ord.883, _PrepareURLForDisplayUTF8W@16
 implib shell32.dll, ord.212, _Printer_AddPrinterPropPages@8
 implib shell32.dll, ord.205, _Printer_LoadIconsW@12
 implib shell32.dll, ord.211, _Printers_GetPidl@16 ; This function expects 2 arguments in v4.0 (_Printers_GetPidl@8)
@@ -394,6 +396,7 @@ implib shell32.dll, ord.59, _RestartDialog@12
 implib shell32.dll, ord.730, _RestartDialogEx@16
 implib shell32.dll, RunAsNewUser_RunDLLW, _RunAsNewUser_RunDLLW@16
 implib shell32.dll, ord.61, _RunFileDlg@24
+implib shell32.dll, ord.885, _RunInstallUninstallStubs@4
 implib shell32.dll, SHAddDefaultPropertiesByExt, _SHAddDefaultPropertiesByExt@8
 implib shell32.dll, ord.167, _SHAddFromPropSheetExtArray@12
 implib shell32.dll, SHAddToRecentDocs, _SHAddToRecentDocs@8
@@ -493,6 +496,7 @@ implib shell32.dll, ord.201, _SHDesktopMessageLoop@4 ; Ordinal 201 allocated to 
 implib shell32.dll, ord.169, _SHDestroyPropSheetExtArray@4
 implib shell32.dll, ord.861, _SHDisplayNameFromScopeAndSubQueries@24
 implib shell32.dll, ord.88, _SHDoDragDrop@20
+implib shell32.dll, ord.884, _SHDoDragDropWithPreferredEffect@20
 implib shell32.dll, SHELL32_AddToBackIconTable, _SHELL32_AddToBackIconTable@8
 implib shell32.dll, SHELL32_AddToFrontIconTable, _SHELL32_AddToFrontIconTable@16
 implib shell32.dll, SHELL32_AreAllItemsAvailable, _SHELL32_AreAllItemsAvailable@12
@@ -624,6 +628,7 @@ implib shell32.dll, SHEnumerateUnreadMailAccountsW, _SHEnumerateUnreadMailAccoun
 implib shell32.dll, SHEvaluateSystemCommandTemplate, _SHEvaluateSystemCommandTemplate@16
 implib shell32.dll, SHExecuteErrorMessageBox, _SHExecuteErrorMessageBox@20
 implib shell32.dll, ord.866, _SHExtCoCreateInstance@24
+implib shell32.dll, ord.887, _SHExtCoCreateInstanceCheckCategory@28
 implib shell32.dll, SHExtractIconsW, _SHExtractIconsW@32
 implib shell32.dll, SHFileOperation, _SHFileOperation@4
 implib shell32.dll, SHFileOperationA, _SHFileOperationA@4
@@ -731,6 +736,7 @@ implib shell32.dll, ord.886, _SHLaunchSearch@12 ; In Windows Vista SP1 and SP2 t
 implib shell32.dll, ord.748, _SHLimitInputCombo@8
 implib shell32.dll, ord.747, _SHLimitInputEdit@8
 implib shell32.dll, ord.754, _SHLimitInputEditWithFlags@8
+implib shell32.dll, ord.888, _SHLimitInputEndSubclass@4
 implib shell32.dll, ord.819, _SHLoadFilterFromStream@12
 implib shell32.dll, SHLoadInProc, _SHLoadInProc@4 ; Since Windows Vista, this function does nothing and returns E_NOTIMPL
 implib shell32.dll, SHLoadNonloadedIconOverlayIdentifiers, _SHLoadNonloadedIconOverlayIdentifiers@0
@@ -801,6 +807,7 @@ implib shell32.dll, ord.173, _SHValidateUNC@12
 implib shell32.dll, ord.97, _SHWaitForFileToOpen@12
 implib shell32.dll, ord.648, _SHWaitOp_Operate@8
 implib shell32.dll, ord.127, _SHWinHelp@16
+implib shell32.dll, ord.882, _SHWriteClassesOfCategories@28
 implib shell32.dll, ord.99, _SetAppStartingCursor@8
 implib shell32.dll, SetCurrentProcessExplicitAppUserModelID, _SetCurrentProcessExplicitAppUserModelID@4
 implib shell32.dll, SheChangeDirA, _SheChangeDirA@4
