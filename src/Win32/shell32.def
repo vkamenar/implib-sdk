@@ -180,6 +180,8 @@ implib shell32.dll, ord.733, _CheckDiskSpace@0
 implib shell32.dll, CheckEscapesW, _CheckEscapesW@8
 implib shell32.dll, ord.753, _CheckStagingArea@0
 implib shell32.dll, ord.711, _CheckWinIniForAssocs@0
+implib shell32.dll, ord.896, _ClearDestinationsForAllApps@4
+implib shell32.dll, ord.890, _ClearStartMenuItem@4 ; This function does nothing in Windows 10
 implib shell32.dll, CommandLineToArgvW, _CommandLineToArgvW@8
 implib shell32.dll, Control_RunDLL, _Control_RunDLL@16
 implib shell32.dll, Control_RunDLLA, _Control_RunDLLA@16
@@ -254,9 +256,11 @@ implib shell32.dll, ord.230, _FirstUserLogon@8
 implib shell32.dll, FreeIconList, _FreeIconList@8
 implib shell32.dll, ord.703, _GUIDFromStringA@8
 implib shell32.dll, ord.704, _GUIDFromStringW@8
+implib shell32.dll, ord.895, _GetAppPathFromLink@12
 implib shell32.dll, GetCurrentProcessExplicitAppUserModelID, _GetCurrentProcessExplicitAppUserModelID@4
 implib shell32.dll, ord.878, _GetDataIndexFromFolderType@28
 implib shell32.dll, ord.63, _GetFileNameFromBrowse@28
+implib shell32.dll, ord.892, _GetSqmableFileName@12
 implib shell32.dll, GetSystemPersistedStorageItemList, _GetSystemPersistedStorageItemList@8
 implib shell32.dll, ord.863, _GetTryHarderIDList@36
 implib shell32.dll, ord.154, _ILAppendID@12
@@ -313,6 +317,7 @@ implib shell32.dll, ord.874, _LegacyEnumTasks@12 ; In Windows Vista SP1 and SP2 
 implib shell32.dll, ord.258, _LinkWindow_RegisterClass@0
 implib shell32.dll, ord.259, _LinkWindow_UnregisterClass@0
 implib shell32.dll, ord.54, _LogoffWindowsDialog@4
+implib shell32.dll, ord.894, _MakeDestinationItem@28
 implib shell32.dll, ord.829, _MeasureMenuItem@16
 implib shell32.dll, OpenAsDialog, _OpenAsDialog@8
 implib shell32.dll, OpenAs_RunDLL, _OpenAs_RunDLL@16
@@ -390,6 +395,7 @@ implib shell32.dll, RealShellExecuteA, _RealShellExecuteA@40
 implib shell32.dll, RealShellExecuteExA, _RealShellExecuteExA@44
 implib shell32.dll, RealShellExecuteExW, _RealShellExecuteExW@44
 implib shell32.dll, RealShellExecuteW, _RealShellExecuteW@40
+implib shell32.dll, ord.891, _RefreshBrowserLayout@4
 implib shell32.dll, RegenerateUserEnvironment, _RegenerateUserEnvironment@8
 implib shell32.dll, ord.181, _RegisterShellHook@8
 implib shell32.dll, ord.59, _RestartDialog@12
@@ -460,6 +466,7 @@ implib shell32.dll, ord.872, _SHCreateKindFilter@12
 implib shell32.dll, ord.817, _SHCreateLeafCondition@24
 implib shell32.dll, ord.814, _SHCreateLeafConditionEx@44
 implib shell32.dll, ord.172, _SHCreateLinks@20
+implib shell32.dll, ord.898, _SHCreateLinksEx@28
 implib shell32.dll, SHCreateLocalServerRunDll, _SHCreateLocalServerRunDll@16
 implib shell32.dll, ord.844, _SHCreateNotCondition@12
 implib shell32.dll, ord.830, _SHCreateNotConditionEx@16
@@ -808,8 +815,10 @@ implib shell32.dll, ord.97, _SHWaitForFileToOpen@12
 implib shell32.dll, ord.648, _SHWaitOp_Operate@8
 implib shell32.dll, ord.127, _SHWinHelp@16
 implib shell32.dll, ord.882, _SHWriteClassesOfCategories@28
+implib shell32.dll, ord.897, _SaveTopViewSettings@8
 implib shell32.dll, ord.99, _SetAppStartingCursor@8
 implib shell32.dll, SetCurrentProcessExplicitAppUserModelID, _SetCurrentProcessExplicitAppUserModelID@4
+implib shell32.dll, ord.893, _SetWindowRelaunchProperties@24
 implib shell32.dll, SheChangeDirA, _SheChangeDirA@4
 implib shell32.dll, SheChangeDirExW, _SheChangeDirExW@4
 implib shell32.dll, SheGetDirA, _SheGetDirA@8
