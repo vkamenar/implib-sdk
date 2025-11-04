@@ -159,7 +159,8 @@ include '..\implib.inc'
 ; implib shell32.dll, ord.242, _SHGetProcessDword@8
 
 ; *** Functions currently available (tested up to Windows 11)
-implib shell32.dll, ord.203, _AddCommasW@8  ; Also known as AddCommasExportW
+implib shell32.dll, ord.203, _AddCommasW@8 ; Also known as AddCommasExportW
+implib shell32.dll, ord.903, _AddToRecentDocs@32
 implib shell32.dll, AppCompat_RunDLLW, _AppCompat_RunDLLW@16
 implib shell32.dll, ord.184, _ArrangeWindows@20
 implib shell32.dll, ord.764, _AssocCreateElement@12
@@ -256,6 +257,7 @@ implib shell32.dll, ord.230, _FirstUserLogon@8
 implib shell32.dll, FreeIconList, _FreeIconList@8
 implib shell32.dll, ord.703, _GUIDFromStringA@8
 implib shell32.dll, ord.704, _GUIDFromStringW@8
+implib shell32.dll, ord.900, _GetAppIDRoot@16
 implib shell32.dll, ord.895, _GetAppPathFromLink@12
 implib shell32.dll, GetCurrentProcessExplicitAppUserModelID, _GetCurrentProcessExplicitAppUserModelID@4
 implib shell32.dll, ord.878, _GetDataIndexFromFolderType@28
@@ -307,6 +309,7 @@ implib shell32.dll, ord.41, _IsLFNDriveA@4
 implib shell32.dll, ord.42, _IsLFNDriveW@4
 implib shell32.dll, ord.66, _IsNetDrive@4
 implib shell32.dll, IsProcessAnExplorer, _IsProcessAnExplorer@0
+implib shell32.dll, ord.902, _IsSearchEnabled@0 ; This function does nothing and returns 1 in Windows 10
 implib shell32.dll, ord.854, _IsShellItemInSearchIndex@8
 implib shell32.dll, ord.53, _IsSuspendAllowed@0
 implib shell32.dll, ord.680, _IsUserAnAdmin@0
@@ -467,6 +470,7 @@ implib shell32.dll, ord.817, _SHCreateLeafCondition@24
 implib shell32.dll, ord.814, _SHCreateLeafConditionEx@44
 implib shell32.dll, ord.172, _SHCreateLinks@20
 implib shell32.dll, ord.898, _SHCreateLinksEx@28
+implib shell32.dll, ord.915, _SHCreateLocalServer@16
 implib shell32.dll, SHCreateLocalServerRunDll, _SHCreateLocalServerRunDll@16
 implib shell32.dll, ord.844, _SHCreateNotCondition@12
 implib shell32.dll, ord.830, _SHCreateNotConditionEx@16
@@ -521,9 +525,9 @@ implib shell32.dll, SHELL32_CDBurn_IsLiveFS, _SHELL32_CDBurn_IsLiveFS@8
 implib shell32.dll, SHELL32_CDBurn_OnDeviceChange, _SHELL32_CDBurn_OnDeviceChange@8
 implib shell32.dll, SHELL32_CDBurn_OnEject, _SHELL32_CDBurn_OnEject@8
 implib shell32.dll, SHELL32_CDBurn_OnMediaChange, _SHELL32_CDBurn_OnMediaChange@8
-implib shell32.dll, SHELL32_CDefFolderMenu_Create2, _SHELL32_CDefFolderMenu_Create2@36
+implib shell32.dll, SHELL32_CDefFolderMenu_Create2, _SHELL32_CDefFolderMenu_Create2@36 ; Alias for CDefFolderMenu_Create2
 implib shell32.dll, SHELL32_CDefFolderMenu_Create2Ex, _SHELL32_CDefFolderMenu_Create2Ex@36
-implib shell32.dll, SHELL32_CDefFolderMenu_MergeMenu, _SHELL32_CDefFolderMenu_MergeMenu@16
+implib shell32.dll, SHELL32_CDefFolderMenu_MergeMenu, _SHELL32_CDefFolderMenu_MergeMenu@16 ; Alias for CDefFolderMenu_MergeMenu
 implib shell32.dll, SHELL32_CDrivesContextMenu_Create, _SHELL32_CDrivesContextMenu_Create@20
 implib shell32.dll, SHELL32_CDrivesDropTarget_Create, _SHELL32_CDrivesDropTarget_Create@12
 implib shell32.dll, SHELL32_CDrives_CreateSFVCB, _SHELL32_CDrives_CreateSFVCB@8
@@ -531,7 +535,7 @@ implib shell32.dll, SHELL32_CFSDropTarget_CreateInstance, _SHELL32_CFSDropTarget
 implib shell32.dll, SHELL32_CFSFolderCallback_Create, _SHELL32_CFSFolderCallback_Create@8
 implib shell32.dll, SHELL32_CFillPropertiesTask_CreateInstance, _SHELL32_CFillPropertiesTask_CreateInstance@16 ; Alias for AssocCreateListForClasses
 implib shell32.dll, SHELL32_CLibraryDropTarget_CreateInstance, _SHELL32_CLibraryDropTarget_CreateInstance@16
-implib shell32.dll, SHELL32_CLocationContextMenu_Create, _SHELL32_CLocationContextMenu_Create@16
+; implib shell32.dll, SHELL32_CLocationContextMenu_Create, _SHELL32_CLocationContextMenu_Create@16 ; This function does nothing and returns E_NOTIMPL in Windows 10
 implib shell32.dll, SHELL32_CLocationFolderUI_CreateInstance, _SHELL32_CLocationFolderUI_CreateInstance@16
 implib shell32.dll, SHELL32_CMountPoint_DoAutorun, _SHELL32_CMountPoint_DoAutorun@8
 implib shell32.dll, SHELL32_CMountPoint_DoAutorunPrompt, _SHELL32_CMountPoint_DoAutorunPrompt@4
@@ -564,11 +568,11 @@ implib shell32.dll, SHELL32_EncryptedFileKeyInfo, _SHELL32_EncryptedFileKeyInfo@
 implib shell32.dll, SHELL32_EnumCommonTasks, _SHELL32_EnumCommonTasks@8 ; Alias for EnumCommonTasks
 implib shell32.dll, SHELL32_FreeEncryptedFileKeyInfo, _SHELL32_FreeEncryptedFileKeyInfo@4
 implib shell32.dll, SHELL32_GenerateAppID, _SHELL32_GenerateAppID@16
-implib shell32.dll, SHELL32_GetAppIDRoot, _SHELL32_GetAppIDRoot@16
+implib shell32.dll, SHELL32_GetAppIDRoot, _SHELL32_GetAppIDRoot@16 ; Alias for GetAppIDRoot
 implib shell32.dll, SHELL32_GetCommandProviderForFolderType, _SHELL32_GetCommandProviderForFolderType@8
 implib shell32.dll, SHELL32_GetDPIAdjustedLogicalSize, _SHELL32_GetDPIAdjustedLogicalSize@12
 implib shell32.dll, SHELL32_GetDiskCleanupPath, _SHELL32_GetDiskCleanupPath@8
-implib shell32.dll, SHELL32_GetFileNameFromBrowse, _SHELL32_GetFileNameFromBrowse@28
+implib shell32.dll, SHELL32_GetFileNameFromBrowse, _SHELL32_GetFileNameFromBrowse@28 ; Alias for GetFileNameFromBrowse
 implib shell32.dll, SHELL32_GetIconOverlayManager, _SHELL32_GetIconOverlayManager@4
 implib shell32.dll, SHELL32_GetLinkInfoData, _SHELL32_GetLinkInfoData@12
 implib shell32.dll, SHELL32_GetRatingBucket, _SHELL32_GetRatingBucket@8
@@ -594,10 +598,10 @@ implib shell32.dll, SHELL32_LookupBackIconIndex, _SHELL32_LookupBackIconIndex@12
 implib shell32.dll, SHELL32_LookupFrontIconIndex, _SHELL32_LookupFrontIconIndex@12
 implib shell32.dll, SHELL32_NormalizeRating, _SHELL32_NormalizeRating@8
 implib shell32.dll, SHELL32_NotifyLinkTrackingServiceOfMove, _SHELL32_NotifyLinkTrackingServiceOfMove@16
-implib shell32.dll, SHELL32_PifMgr_CloseProperties, _SHELL32_PifMgr_CloseProperties@8
-implib shell32.dll, SHELL32_PifMgr_GetProperties, _SHELL32_PifMgr_GetProperties@20
-implib shell32.dll, SHELL32_PifMgr_OpenProperties, _SHELL32_PifMgr_OpenProperties@16
-implib shell32.dll, SHELL32_PifMgr_SetProperties, _SHELL32_PifMgr_SetProperties@20
+implib shell32.dll, SHELL32_PifMgr_CloseProperties, _SHELL32_PifMgr_CloseProperties@8 ; Alias for PifMgr_CloseProperties
+implib shell32.dll, SHELL32_PifMgr_GetProperties, _SHELL32_PifMgr_GetProperties@20 ; Alias for PifMgr_GetProperties
+implib shell32.dll, SHELL32_PifMgr_OpenProperties, _SHELL32_PifMgr_OpenProperties@16 ; Alias for PifMgr_OpenProperties
+implib shell32.dll, SHELL32_PifMgr_SetProperties, _SHELL32_PifMgr_SetProperties@20 ; Alias for PifMgr_SetProperties
 implib shell32.dll, SHELL32_Printers_CreateBindInfo, _SHELL32_Printers_CreateBindInfo@20
 implib shell32.dll, SHELL32_Printjob_GetPidl, _SHELL32_Printjob_GetPidl@8
 implib shell32.dll, SHELL32_PurgeSystemIcon, _SHELL32_PurgeSystemIcon@4
@@ -605,19 +609,19 @@ implib shell32.dll, SHELL32_RefreshOverlayImages, _SHELL32_RefreshOverlayImages@
 implib shell32.dll, SHELL32_ResolveLinkInfoW, _SHELL32_ResolveLinkInfoW@24
 implib shell32.dll, SHELL32_SHAddSparseIcon, _SHELL32_SHAddSparseIcon@12
 implib shell32.dll, SHELL32_SHCreateByValueOperationInterrupt, _SHELL32_SHCreateByValueOperationInterrupt@12
-implib shell32.dll, SHELL32_SHCreateDefaultContextMenu, _SHELL32_SHCreateDefaultContextMenu@12
-implib shell32.dll, SHELL32_SHCreateLocalServer, _SHELL32_SHCreateLocalServer@16
-implib shell32.dll, SHELL32_SHCreateShellFolderView, _SHELL32_SHCreateShellFolderView@8
+implib shell32.dll, SHELL32_SHCreateDefaultContextMenu, _SHELL32_SHCreateDefaultContextMenu@12 ; Alias for SHCreateDefaultContextMenu
+implib shell32.dll, SHELL32_SHCreateLocalServer, _SHELL32_SHCreateLocalServer@16 ; Alias for SHCreateLocalServer
+implib shell32.dll, SHELL32_SHCreateShellFolderView, _SHELL32_SHCreateShellFolderView@8 ; Alias for SHCreateShellFolderView
 implib shell32.dll, SHELL32_SHDuplicateEncryptionInfoFile, _SHELL32_SHDuplicateEncryptionInfoFile@8
 implib shell32.dll, SHELL32_SHEncryptFile, _SHELL32_SHEncryptFile@16
 implib shell32.dll, SHELL32_SHFormatDriveAsync, _SHELL32_SHFormatDriveAsync@16
-implib shell32.dll, SHELL32_SHGetThreadUndoManager, _SHELL32_SHGetThreadUndoManager@8
+implib shell32.dll, SHELL32_SHGetThreadUndoManager, _SHELL32_SHGetThreadUndoManager@8 ; Alias for SHGetThreadUndoManager
 implib shell32.dll, SHELL32_SHGetUserNameW, _SHELL32_SHGetUserNameW@8
 implib shell32.dll, SHELL32_SHIsVirtualDevice, _SHELL32_SHIsVirtualDevice@4
 implib shell32.dll, SHELL32_SHLaunchPropSheet, _SHELL32_SHLaunchPropSheet@12
-implib shell32.dll, SHELL32_SHLogILFromFSIL, _SHELL32_SHLogILFromFSIL@4
-implib shell32.dll, SHELL32_SHOpenWithDialog, _SHELL32_SHOpenWithDialog@8
-implib shell32.dll, SHELL32_SHStartNetConnectionDialogW, _SHELL32_SHStartNetConnectionDialogW@12
+implib shell32.dll, SHELL32_SHLogILFromFSIL, _SHELL32_SHLogILFromFSIL@4 ; Alias for SHLogILFromFSIL
+implib shell32.dll, SHELL32_SHOpenWithDialog, _SHELL32_SHOpenWithDialog@8 ; Alias for SHOpenWithDialog
+implib shell32.dll, SHELL32_SHStartNetConnectionDialogW, _SHELL32_SHStartNetConnectionDialogW@12 ; Alias for SHStartNetConnectionDialogW
 implib shell32.dll, SHELL32_SHUICommandFromGUID, _SHELL32_SHUICommandFromGUID@12
 implib shell32.dll, SHELL32_SendToMenu_InvokeTargetedCommand, _SHELL32_SendToMenu_InvokeTargetedCommand@16
 implib shell32.dll, SHELL32_SendToMenu_VerifyTargetedCommand, _SHELL32_SendToMenu_VerifyTargetedCommand@16
@@ -729,7 +733,7 @@ implib shell32.dll, SHHelpShortcuts_RunDLLA, _SHHelpShortcuts_RunDLLA@16
 implib shell32.dll, SHHelpShortcuts_RunDLLW, _SHHelpShortcuts_RunDLLW@16
 implib shell32.dll, ord.28, _SHILCreateFromPath@12
 implib shell32.dll, ord.873, _SHIconIndexFromPIDL@16
-implib shell32.dll, ord.852, _SHInitializeControlPanelRegkeys@0 ; In Windows 10, this function does nothing and returns E_NOTIMPL
+; implib shell32.dll, ord.852, _SHInitializeControlPanelRegkeys@0 ; In Windows 10, this function does nothing and returns E_NOTIMPL
 implib shell32.dll, SHInvokePrinterCommandA, _SHInvokePrinterCommandA@20
 implib shell32.dll, SHInvokePrinterCommandW, _SHInvokePrinterCommandW@20
 implib shell32.dll, ord.246, _SHInvokePrivilegedFunctionW@12
@@ -745,7 +749,7 @@ implib shell32.dll, ord.747, _SHLimitInputEdit@8
 implib shell32.dll, ord.754, _SHLimitInputEditWithFlags@8
 implib shell32.dll, ord.888, _SHLimitInputEndSubclass@4
 implib shell32.dll, ord.819, _SHLoadFilterFromStream@12
-implib shell32.dll, SHLoadInProc, _SHLoadInProc@4 ; Since Windows Vista, this function does nothing and returns E_NOTIMPL
+; implib shell32.dll, SHLoadInProc, _SHLoadInProc@4 ; Since Windows Vista, this function does nothing and returns E_NOTIMPL
 implib shell32.dll, SHLoadNonloadedIconOverlayIdentifiers, _SHLoadNonloadedIconOverlayIdentifiers@0
 implib shell32.dll, SHLocalStrDupA, _SHLocalStrDupA@8
 implib shell32.dll, SHLocalStrDupW, _SHLocalStrDupW@8
@@ -818,6 +822,7 @@ implib shell32.dll, ord.882, _SHWriteClassesOfCategories@28
 implib shell32.dll, ord.897, _SaveTopViewSettings@8
 implib shell32.dll, ord.99, _SetAppStartingCursor@8
 implib shell32.dll, SetCurrentProcessExplicitAppUserModelID, _SetCurrentProcessExplicitAppUserModelID@4
+implib shell32.dll, ord.899, _SetExplorerServerMode@4
 implib shell32.dll, ord.893, _SetWindowRelaunchProperties@24
 implib shell32.dll, SheChangeDirA, _SheChangeDirA@4
 implib shell32.dll, SheChangeDirExW, _SheChangeDirExW@4
@@ -885,6 +890,7 @@ implib shell32.dll, StrStrIW, _StrStrIW@8
 implib shell32.dll, StrStrNIW, _StrStrNIW@12
 implib shell32.dll, StrStrNW, _StrStrNW@12
 implib shell32.dll, StrStrW, _StrStrW@8
+implib shell32.dll, ord.901, _UpdateWallpaperTransition@8
 implib shell32.dll, UsersLibrariesFolderUI_CreateInstance, _UsersLibrariesFolderUI_CreateInstance@16
 implib shell32.dll, WOWShellExecute, _WOWShellExecute@28
 implib shell32.dll, ord.859, _WPC_InstallState@4
