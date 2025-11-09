@@ -30,6 +30,8 @@ implib shlwapi.dll, PathCompactPathW, _PathCompactPathW@12
 implib shlwapi.dll, PathCreateFromUrlA, _PathCreateFromUrlA@16
 implib shlwapi.dll, PathCreateFromUrlW, _PathCreateFromUrlW@16
 implib shlwapi.dll, PathFileExistsA, _PathFileExistsA@4
+implib shlwapi.dll, ord.3, _PathFileExistsDefExtA@8
+implib shlwapi.dll, ord.4, _PathFileExistsDefExtW@8
 implib shlwapi.dll, PathFileExistsW, _PathFileExistsW@4
 implib shlwapi.dll, PathFindExtensionA, _PathFindExtensionA@4
 implib shlwapi.dll, PathFindExtensionW, _PathFindExtensionW@4
@@ -38,6 +40,8 @@ implib shlwapi.dll, PathFindFileNameW, _PathFindFileNameW@4
 implib shlwapi.dll, PathFindNextComponentA, _PathFindNextComponentA@4
 implib shlwapi.dll, PathFindNextComponentW, _PathFindNextComponentW@4
 implib shlwapi.dll, PathFindOnPathA, _PathFindOnPathA@8
+implib shlwapi.dll, ord.5, _PathFindOnPathExA@12
+implib shlwapi.dll, ord.6, _PathFindOnPathExW@12
 implib shlwapi.dll, PathFindOnPathW, _PathFindOnPathW@8
 implib shlwapi.dll, PathGetArgsA, _PathGetArgsA@4
 implib shlwapi.dll, PathGetArgsW, _PathGetArgsW@4
@@ -145,6 +149,16 @@ implib shlwapi.dll, SHRegGetBoolUSValueA, _SHRegGetBoolUSValueA@16
 implib shlwapi.dll, SHRegGetBoolUSValueW, _SHRegGetBoolUSValueW@16
 implib shlwapi.dll, SHRegGetUSValueA, _SHRegGetUSValueA@32
 implib shlwapi.dll, SHRegGetUSValueW, _SHRegGetUSValueW@32
+implib shlwapi.dll, SHRegOpenUSKeyA, _SHRegOpenUSKeyA@20
+implib shlwapi.dll, SHRegOpenUSKeyW, _SHRegOpenUSKeyW@20
+implib shlwapi.dll, SHRegQueryInfoUSKeyA, _SHRegQueryInfoUSKeyA@24
+implib shlwapi.dll, SHRegQueryInfoUSKeyW, _SHRegQueryInfoUSKeyW@24
+implib shlwapi.dll, SHRegQueryUSValueA, _SHRegQueryUSValueA@32
+implib shlwapi.dll, SHRegQueryUSValueW, _SHRegQueryUSValueW@32
+implib shlwapi.dll, SHRegSetUSValueA, _SHRegSetUSValueA@24
+implib shlwapi.dll, SHRegSetUSValueW, _SHRegSetUSValueW@24
+implib shlwapi.dll, SHRegWriteUSValueA, _SHRegWriteUSValueA@24
+implib shlwapi.dll, SHRegWriteUSValueW, _SHRegWriteUSValueW@24
 implib shlwapi.dll, SHSetValueA, _SHSetValueA@24
 implib shlwapi.dll, SHSetValueW, _SHSetValueW@24
 implib shlwapi.dll, StrCSpnA, _StrCSpnA@8
@@ -172,6 +186,8 @@ implib shlwapi.dll, StrFromTimeIntervalA, _StrFromTimeIntervalA@16
 implib shlwapi.dll, StrFromTimeIntervalW, _StrFromTimeIntervalW@16
 implib shlwapi.dll, StrIsIntlEqualA, _StrIsIntlEqualA@16
 implib shlwapi.dll, StrIsIntlEqualW, _StrIsIntlEqualW@16
+implib shlwapi.dll, StrNCatA, _StrNCatA@12
+implib shlwapi.dll, StrNCatW, _StrNCatW@12
 implib shlwapi.dll, StrPBrkA, _StrPBrkA@8
 implib shlwapi.dll, StrPBrkW, _StrPBrkW@8
 implib shlwapi.dll, StrRChrA, _StrRChrA@12
@@ -190,5 +206,33 @@ implib shlwapi.dll, StrToIntA, _StrToIntA@4
 implib shlwapi.dll, StrToIntExA, _StrToIntExA@12
 implib shlwapi.dll, StrToIntExW, _StrToIntExW@12
 implib shlwapi.dll, StrToIntW, _StrToIntW@4
+implib shlwapi.dll, StrTrimA, _StrTrimA@8
+implib shlwapi.dll, StrTrimW, _StrTrimW@8
+implib shlwapi.dll, UrlApplySchemeA, _UrlApplySchemeA@16
+implib shlwapi.dll, UrlApplySchemeW, _UrlApplySchemeW@16
+implib shlwapi.dll, UrlCanonicalizeA, _UrlCanonicalizeA@16
+implib shlwapi.dll, UrlCanonicalizeW, _UrlCanonicalizeW@16
+implib shlwapi.dll, UrlCombineA, _UrlCombineA@20
+implib shlwapi.dll, UrlCombineW, _UrlCombineW@20
+implib shlwapi.dll, UrlCompareA, _UrlCompareA@12
+implib shlwapi.dll, UrlCompareW, _UrlCompareW@12
+implib shlwapi.dll, UrlCreateFromPathA, _UrlCreateFromPathA@16
+implib shlwapi.dll, UrlCreateFromPathW, _UrlCreateFromPathW@16
+implib shlwapi.dll, UrlEscapeA, _UrlEscapeA@16
+implib shlwapi.dll, UrlEscapeW, _UrlEscapeW@16
+implib shlwapi.dll, UrlGetLocationA, _UrlGetLocationA@4
+implib shlwapi.dll, UrlGetLocationW, _UrlGetLocationW@4
+implib shlwapi.dll, UrlGetPartA, _UrlGetPartA@20
+implib shlwapi.dll, UrlGetPartW, _UrlGetPartW@20
+implib shlwapi.dll, UrlHashA, _UrlHashA@12
+implib shlwapi.dll, UrlHashW, _UrlHashW@12
+implib shlwapi.dll, UrlIsA, _UrlIsA@8
+implib shlwapi.dll, UrlIsNoHistoryA, _UrlIsNoHistoryA@4
+implib shlwapi.dll, UrlIsNoHistoryW, _UrlIsNoHistoryW@4
+implib shlwapi.dll, UrlIsOpaqueA, _UrlIsOpaqueA@4
+implib shlwapi.dll, UrlIsOpaqueW, _UrlIsOpaqueW@4
+implib shlwapi.dll, UrlIsW, _UrlIsW@8
+implib shlwapi.dll, UrlUnescapeA, _UrlUnescapeA@16
+implib shlwapi.dll, UrlUnescapeW, _UrlUnescapeW@16
 
 endlib
