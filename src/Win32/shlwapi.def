@@ -3,6 +3,8 @@ include '..\implib.inc'
 implib shlwapi.dll, ChrCmpIA, _ChrCmpIA@8
 implib shlwapi.dll, ChrCmpIW, _ChrCmpIW@8
 implib shlwapi.dll, DllGetVersion, _SHLWAPI_DllGetVersion@4
+implib shlwapi.dll, ord.14, _GetAcceptLanguagesA@8
+implib shlwapi.dll, ord.15, _GetAcceptLanguagesW@8
 implib shlwapi.dll, GetMenuPosFromID, _GetMenuPosFromID@8
 implib shlwapi.dll, HashData, _HashData@16
 implib shlwapi.dll, IntlStrEqWorkerA, _IntlStrEqWorkerA@16 ; Alias for StrIsIntlEqualA
@@ -111,7 +113,11 @@ implib shlwapi.dll, PathUnmakeSystemFolderA, _PathUnmakeSystemFolderA@4
 implib shlwapi.dll, PathUnmakeSystemFolderW, _PathUnmakeSystemFolderW@4
 implib shlwapi.dll, PathUnquoteSpacesA, _PathUnquoteSpacesA@4
 implib shlwapi.dll, PathUnquoteSpacesW, _PathUnquoteSpacesW@4
+implib shlwapi.dll, ord.13, _RegisterDefaultAcceptHeaders@8
+implib shlwapi.dll, ord.7, _SHAllocShared@12
+implib shlwapi.dll, ord.12, _SHCreateMemStream@8
 implib shlwapi.dll, SHCreateShellPalette, _SHCreateShellPalette@4
+implib shlwapi.dll, ord.16, _SHCreateThread@16
 implib shlwapi.dll, SHDeleteEmptyKeyA, _SHDeleteEmptyKeyA@8
 implib shlwapi.dll, SHDeleteEmptyKeyW, _SHDeleteEmptyKeyW@8
 implib shlwapi.dll, SHDeleteKeyA, _SHDeleteKeyA@8
@@ -124,10 +130,13 @@ implib shlwapi.dll, SHEnumKeyExA, _SHEnumKeyExA@16
 implib shlwapi.dll, SHEnumKeyExW, _SHEnumKeyExW@16
 implib shlwapi.dll, SHEnumValueA, _SHEnumValueA@28
 implib shlwapi.dll, SHEnumValueW, _SHEnumValueW@28
+implib shlwapi.dll, ord.10, _SHFreeShared@8
 implib shlwapi.dll, SHGetInverseCMAP, _SHGetInverseCMAP@8
 implib shlwapi.dll, SHGetValueA, _SHGetValueA@24
 implib shlwapi.dll, SHGetValueW, _SHGetValueW@24
 implib shlwapi.dll, SHIsLowMemoryMachine, _SHIsLowMemoryMachine@4
+implib shlwapi.dll, ord.8, _SHLockShared@8
+implib shlwapi.dll, ord.11, _SHMapHandle@20
 implib shlwapi.dll, SHOpenRegStreamA, _SHOpenRegStreamA@16
 implib shlwapi.dll, SHOpenRegStreamW, _SHOpenRegStreamW@16
 implib shlwapi.dll, SHQueryInfoKeyA, _SHQueryInfoKeyA@20
@@ -161,6 +170,7 @@ implib shlwapi.dll, SHRegWriteUSValueA, _SHRegWriteUSValueA@24
 implib shlwapi.dll, SHRegWriteUSValueW, _SHRegWriteUSValueW@24
 implib shlwapi.dll, SHSetValueA, _SHSetValueA@24
 implib shlwapi.dll, SHSetValueW, _SHSetValueW@24
+implib shlwapi.dll, ord.9, _SHUnlockShared@4
 implib shlwapi.dll, StrCSpnA, _StrCSpnA@8
 implib shlwapi.dll, StrCSpnIA, _StrCSpnIA@8
 implib shlwapi.dll, StrCSpnIW, _StrCSpnIW@8
