@@ -9,6 +9,10 @@ implib shlwapi.dll, GetMenuPosFromID, _GetMenuPosFromID@8
 implib shlwapi.dll, HashData, _HashData@16
 implib shlwapi.dll, IntlStrEqWorkerA, _IntlStrEqWorkerA@16 ; Alias for StrIsIntlEqualA
 implib shlwapi.dll, IntlStrEqWorkerW, _IntlStrEqWorkerW@16 ; Alias for StrIsIntlEqualW
+implib shlwapi.dll, ord.28, _IsCharAlphaNumericWrapW@4
+implib shlwapi.dll, ord.25, _IsCharAlphaWrapW@4
+implib shlwapi.dll, ord.27, _IsCharLowerWrapW@4
+implib shlwapi.dll, ord.26, _IsCharUpperWrapW@4
 implib shlwapi.dll, ord.1, _ParseURLA@8
 implib shlwapi.dll, ord.2, _ParseURLW@8
 implib shlwapi.dll, PathAddBackslashA, _PathAddBackslashA@4
@@ -114,6 +118,7 @@ implib shlwapi.dll, PathUnmakeSystemFolderW, _PathUnmakeSystemFolderW@4
 implib shlwapi.dll, PathUnquoteSpacesA, _PathUnquoteSpacesA@4
 implib shlwapi.dll, PathUnquoteSpacesW, _PathUnquoteSpacesW@4
 implib shlwapi.dll, ord.13, _RegisterDefaultAcceptHeaders@8
+implib shlwapi.dll, ord.20, _SHAddDataBlock@8
 implib shlwapi.dll, ord.7, _SHAllocShared@12
 implib shlwapi.dll, ord.12, _SHCreateMemStream@8
 implib shlwapi.dll, SHCreateShellPalette, _SHCreateShellPalette@4
@@ -130,6 +135,8 @@ implib shlwapi.dll, SHEnumKeyExA, _SHEnumKeyExA@16
 implib shlwapi.dll, SHEnumKeyExW, _SHEnumKeyExW@16
 implib shlwapi.dll, SHEnumValueA, _SHEnumValueA@28
 implib shlwapi.dll, SHEnumValueW, _SHEnumValueW@28
+implib shlwapi.dll, ord.22, _SHFindDataBlock@8
+implib shlwapi.dll, ord.19, _SHFreeDataBlockList@4
 implib shlwapi.dll, ord.10, _SHFreeShared@8
 implib shlwapi.dll, SHGetInverseCMAP, _SHGetInverseCMAP@8
 implib shlwapi.dll, SHGetValueA, _SHGetValueA@24
@@ -143,6 +150,7 @@ implib shlwapi.dll, SHQueryInfoKeyA, _SHQueryInfoKeyA@20
 implib shlwapi.dll, SHQueryInfoKeyW, _SHQueryInfoKeyW@20
 implib shlwapi.dll, SHQueryValueExA, _SHQueryValueExA@24
 implib shlwapi.dll, SHQueryValueExW, _SHQueryValueExW@24
+implib shlwapi.dll, ord.18, _SHReadDataBlockList@8
 implib shlwapi.dll, SHRegCloseUSKey, _SHRegCloseUSKey@4
 implib shlwapi.dll, SHRegCreateUSKeyA, _SHRegCreateUSKeyA@20
 implib shlwapi.dll, SHRegCreateUSKeyW, _SHRegCreateUSKeyW@20
@@ -168,9 +176,13 @@ implib shlwapi.dll, SHRegSetUSValueA, _SHRegSetUSValueA@24
 implib shlwapi.dll, SHRegSetUSValueW, _SHRegSetUSValueW@24
 implib shlwapi.dll, SHRegWriteUSValueA, _SHRegWriteUSValueA@24
 implib shlwapi.dll, SHRegWriteUSValueW, _SHRegWriteUSValueW@24
+implib shlwapi.dll, ord.21, _SHRemoveDataBlock@8
 implib shlwapi.dll, SHSetValueA, _SHSetValueA@24
 implib shlwapi.dll, SHSetValueW, _SHSetValueW@24
+implib shlwapi.dll, ord.23, _SHStringFromGUIDA@12
+implib shlwapi.dll, ord.24, _SHStringFromGUIDW@12
 implib shlwapi.dll, ord.9, _SHUnlockShared@4
+implib shlwapi.dll, ord.17, _SHWriteDataBlockList@8
 implib shlwapi.dll, StrCSpnA, _StrCSpnA@8
 implib shlwapi.dll, StrCSpnIA, _StrCSpnIA@8
 implib shlwapi.dll, StrCSpnIW, _StrCSpnIW@8
