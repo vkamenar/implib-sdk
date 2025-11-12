@@ -1,18 +1,32 @@
 include '..\implib.inc'
 
+implib shlwapi.dll, ord.36, _AppendMenuWrapW@16
+implib shlwapi.dll, ord.37, _CallWindowProcWrapW@20
+implib shlwapi.dll, ord.39, _CharLowerBuffWrapW@8
+implib shlwapi.dll, ord.38, _CharLowerWrapW@4
+implib shlwapi.dll, ord.40, _CharNextWrapW@4
+implib shlwapi.dll, ord.41, _CharPrevWrapW@8
+implib shlwapi.dll, ord.42, _CharToOemWrapW@8
 implib shlwapi.dll, ChrCmpIA, _ChrCmpIA@8
 implib shlwapi.dll, ChrCmpIW, _ChrCmpIW@8
 implib shlwapi.dll, DllGetVersion, _SHLWAPI_DllGetVersion@4
 implib shlwapi.dll, ord.14, _GetAcceptLanguagesA@8
 implib shlwapi.dll, ord.15, _GetAcceptLanguagesW@8
 implib shlwapi.dll, GetMenuPosFromID, _GetMenuPosFromID@8
+implib shlwapi.dll, ord.35, _GetStringType3ExW@12
 implib shlwapi.dll, HashData, _HashData@16
 implib shlwapi.dll, IntlStrEqWorkerA, _IntlStrEqWorkerA@16 ; Alias for StrIsIntlEqualA
 implib shlwapi.dll, IntlStrEqWorkerW, _IntlStrEqWorkerW@16 ; Alias for StrIsIntlEqualW
 implib shlwapi.dll, ord.28, _IsCharAlphaNumericWrapW@4
 implib shlwapi.dll, ord.25, _IsCharAlphaWrapW@4
+implib shlwapi.dll, ord.30, _IsCharBlankW@4
+implib shlwapi.dll, ord.32, _IsCharCntrlW@4
+implib shlwapi.dll, ord.33, _IsCharDigitW@4
 implib shlwapi.dll, ord.27, _IsCharLowerWrapW@4
+implib shlwapi.dll, ord.31, _IsCharPunctW@4
+implib shlwapi.dll, ord.29, _IsCharSpaceW@4
 implib shlwapi.dll, ord.26, _IsCharUpperWrapW@4
+implib shlwapi.dll, ord.34, _IsCharXDigitW@4
 implib shlwapi.dll, ord.1, _ParseURLA@8
 implib shlwapi.dll, ord.2, _ParseURLW@8
 implib shlwapi.dll, PathAddBackslashA, _PathAddBackslashA@4
