@@ -48,8 +48,28 @@ implib shlwapi.dll, ord.75, _GetFileAttributesWrapW@4
 implib shlwapi.dll, ord.76, _GetFullPathNameWrapW@16
 implib shlwapi.dll, ord.77, _GetLocaleInfoWrapW@16
 implib shlwapi.dll, GetMenuPosFromID, _GetMenuPosFromID@8
+implib shlwapi.dll, ord.78, _GetMenuStringWrapW@20
+implib shlwapi.dll, ord.79, _GetMessageWrapW@16
+implib shlwapi.dll, ord.80, _GetModuleFileNameWrapW@12
+implib shlwapi.dll, ord.83, _GetModuleHandleWrapW@4
+implib shlwapi.dll, ord.84, _GetObjectWrapW@12
+implib shlwapi.dll, ord.85, _GetPrivateProfileIntWrapW@16
+implib shlwapi.dll, ord.86, _GetProfileStringWrapW@20
+implib shlwapi.dll, ord.87, _GetPropWrapW@8
 implib shlwapi.dll, ord.35, _GetStringType3ExW@12
+implib shlwapi.dll, ord.88, _GetStringTypeExWrapW@20
+implib shlwapi.dll, ord.81, _GetSystemDirectoryWrapW@8
+implib shlwapi.dll, ord.89, _GetTempFileNameWrapW@16
+implib shlwapi.dll, ord.90, _GetTempPathWrapW@8
+implib shlwapi.dll, ord.91, _GetTextExtentPoint32WrapW@16
+implib shlwapi.dll, ord.92, _GetTextFaceWrapW@12
+implib shlwapi.dll, ord.93, _GetTextMetricsWrapW@8
+implib shlwapi.dll, ord.94, _GetWindowLongWrapW@8
+implib shlwapi.dll, ord.96, _GetWindowTextLengthWrapW@4
+implib shlwapi.dll, ord.95, _GetWindowTextWrapW@12
+implib shlwapi.dll, ord.97, _GetWindowsDirectoryWrapW@8
 implib shlwapi.dll, HashData, _HashData@16
+implib shlwapi.dll, ord.98, _InsertMenuWrapW@20
 implib shlwapi.dll, IntlStrEqWorkerA, _IntlStrEqWorkerA@16 ; Alias for StrIsIntlEqualA
 implib shlwapi.dll, IntlStrEqWorkerW, _IntlStrEqWorkerW@16 ; Alias for StrIsIntlEqualW
 implib shlwapi.dll, ord.28, _IsCharAlphaNumericWrapW@4
@@ -62,6 +82,8 @@ implib shlwapi.dll, ord.31, _IsCharPunctW@4
 implib shlwapi.dll, ord.29, _IsCharSpaceW@4
 implib shlwapi.dll, ord.26, _IsCharUpperWrapW@4
 implib shlwapi.dll, ord.34, _IsCharXDigitW@4
+implib shlwapi.dll, ord.99, _IsDialogMessageWrapW@8
+implib shlwapi.dll, ord.100, _LoadAcceleratorsWrapW@8
 implib shlwapi.dll, ord.1, _ParseURLA@8
 implib shlwapi.dll, ord.2, _ParseURLW@8
 implib shlwapi.dll, PathAddBackslashA, _PathAddBackslashA@4
@@ -232,6 +254,7 @@ implib shlwapi.dll, ord.23, _SHStringFromGUIDA@12
 implib shlwapi.dll, ord.24, _SHStringFromGUIDW@12
 implib shlwapi.dll, ord.9, _SHUnlockShared@4
 implib shlwapi.dll, ord.17, _SHWriteDataBlockList@8
+implib shlwapi.dll, ord.82, _SearchPathWrapW@24
 implib shlwapi.dll, StrCSpnA, _StrCSpnA@8
 implib shlwapi.dll, StrCSpnIA, _StrCSpnIA@8
 implib shlwapi.dll, StrCSpnIW, _StrCSpnIW@8
