@@ -13,6 +13,7 @@ implib shlwapi.dll, ChrCmpIA, _ChrCmpIA@8
 implib shlwapi.dll, ChrCmpIW, _ChrCmpIW@8
 implib shlwapi.dll, ord.45, _CompareStringWrapW@24
 implib shlwapi.dll, ord.46, _CopyAcceleratorTableWrapW@12
+implib shlwapi.dll, ord.112, _CopyFileWrapW@12
 implib shlwapi.dll, ord.47, _CreateAcceleratorTableWrapW@8
 implib shlwapi.dll, ord.48, _CreateDCWrapW@16
 implib shlwapi.dll, ord.49, _CreateDialogParamWrapW@20
@@ -38,6 +39,8 @@ implib shlwapi.dll, ord.67, _FindWindowWrapW@8
 implib shlwapi.dll, ord.68, _FormatMessageWrapW@28
 implib shlwapi.dll, ord.14, _GetAcceptLanguagesA@8
 implib shlwapi.dll, ord.15, _GetAcceptLanguagesW@8
+implib shlwapi.dll, ord.110, _GetCharWidth32WrapW@16
+implib shlwapi.dll, ord.111, _GetCharacterPlacementWrapW@24
 implib shlwapi.dll, ord.69, _GetClassInfoWrapW@12
 implib shlwapi.dll, ord.70, _GetClassLongWrapW@8
 implib shlwapi.dll, ord.71, _GetClassNameWrapW@12
@@ -84,6 +87,18 @@ implib shlwapi.dll, ord.26, _IsCharUpperWrapW@4
 implib shlwapi.dll, ord.34, _IsCharXDigitW@4
 implib shlwapi.dll, ord.99, _IsDialogMessageWrapW@8
 implib shlwapi.dll, ord.100, _LoadAcceleratorsWrapW@8
+implib shlwapi.dll, ord.101, _LoadBitmapWrapW@8
+implib shlwapi.dll, ord.102, _LoadCursorWrapW@8
+implib shlwapi.dll, ord.103, _LoadIconWrapW@8
+implib shlwapi.dll, ord.104, _LoadImageWrapW@24
+implib shlwapi.dll, ord.105, _LoadLibraryExWrapW@12
+implib shlwapi.dll, ord.106, _LoadMenuWrapW@8
+implib shlwapi.dll, ord.107, _LoadStringWrapW@16
+implib shlwapi.dll, ord.108, _MessageBoxIndirectWrapW@4
+implib shlwapi.dll, ord.109, _ModifyMenuWrapW@20
+implib shlwapi.dll, ord.113, _MoveFileWrapW@8
+implib shlwapi.dll, ord.114, _OemToCharWrapW@8
+implib shlwapi.dll, ord.115, _OutputDebugStringWrapW@4
 implib shlwapi.dll, ord.1, _ParseURLA@8
 implib shlwapi.dll, ord.2, _ParseURLW@8
 implib shlwapi.dll, PathAddBackslashA, _PathAddBackslashA@4
