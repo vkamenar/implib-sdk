@@ -1,6 +1,7 @@
 include '..\implib.inc'
 
 implib shlwapi.dll, ord.36, _AppendMenuWrapW@16
+implib shlwapi.dll, AssocCreate, _AssocCreate@24
 implib shlwapi.dll, ord.37, _CallWindowProcWrapW@20
 implib shlwapi.dll, ord.39, _CharLowerBuffWrapW@8
 implib shlwapi.dll, ord.38, _CharLowerWrapW@4
@@ -11,6 +12,7 @@ implib shlwapi.dll, ord.44, _CharUpperBuffWrapW@8
 implib shlwapi.dll, ord.43, _CharUpperWrapW@4
 implib shlwapi.dll, ChrCmpIA, _ChrCmpIA@8
 implib shlwapi.dll, ChrCmpIW, _ChrCmpIW@8
+implib shlwapi.dll, ord.159, _CompareStringAltW@24
 implib shlwapi.dll, ord.45, _CompareStringWrapW@24
 implib shlwapi.dll, ord.46, _CopyAcceleratorTableWrapW@12
 implib shlwapi.dll, ord.112, _CopyFileWrapW@12
@@ -223,6 +225,8 @@ implib shlwapi.dll, ord.132, _RegisterClipboardFormatWrapW@4
 implib shlwapi.dll, ord.13, _RegisterDefaultAcceptHeaders@8
 implib shlwapi.dll, ord.133, _RegisterWindowMessageWrapW@4
 implib shlwapi.dll, ord.134, _RemovePropWrapW@8
+implib shlwapi.dll, ord.160, _SHAboutInfoA@8
+implib shlwapi.dll, ord.161, _SHAboutInfoW@8
 implib shlwapi.dll, ord.20, _SHAddDataBlock@8
 implib shlwapi.dll, ord.7, _SHAllocShared@12
 implib shlwapi.dll, ord.12, _SHCreateMemStream@8
@@ -308,9 +312,17 @@ implib shlwapi.dll, StrChrA, _StrChrA@8
 implib shlwapi.dll, StrChrIA, _StrChrIA@8
 implib shlwapi.dll, StrChrIW, _StrChrIW@8
 implib shlwapi.dll, StrChrW, _StrChrW@8
+implib shlwapi.dll, ord.155, _StrCmpCA@8
+implib shlwapi.dll, ord.156, _StrCmpCW@8
+implib shlwapi.dll, ord.157, _StrCmpICA@8
+implib shlwapi.dll, ord.158, _StrCmpICW@8
 implib shlwapi.dll, StrCmpIW, _StrCmpIW@8
 implib shlwapi.dll, StrCmpNA, _StrCmpNA@12
+implib shlwapi.dll, ord.151, _StrCmpNCA@12
+implib shlwapi.dll, ord.152, _StrCmpNCW@12
 implib shlwapi.dll, StrCmpNIA, _StrCmpNIA@12
+implib shlwapi.dll, ord.153, _StrCmpNICA@12
+implib shlwapi.dll, ord.154, _StrCmpNICW@12
 implib shlwapi.dll, StrCmpNIW, _StrCmpNIW@12
 implib shlwapi.dll, StrCmpNW, _StrCmpNW@12
 implib shlwapi.dll, StrCmpW, _StrCmpW@8
@@ -348,6 +360,7 @@ implib shlwapi.dll, StrTrimA, _StrTrimA@8
 implib shlwapi.dll, StrTrimW, _StrTrimW@8
 implib shlwapi.dll, ord.145, _SystemParametersInfoWrapW@16
 implib shlwapi.dll, ord.146, _TranslateAcceleratorWrapW@12
+implib shlwapi.dll, ord.147, _UnregisterClassWrapW@8
 implib shlwapi.dll, UrlApplySchemeA, _UrlApplySchemeA@16
 implib shlwapi.dll, UrlApplySchemeW, _UrlApplySchemeW@16
 implib shlwapi.dll, UrlCanonicalizeA, _UrlCanonicalizeA@16
@@ -374,5 +387,8 @@ implib shlwapi.dll, UrlIsOpaqueW, _UrlIsOpaqueW@4
 implib shlwapi.dll, UrlIsW, _UrlIsW@8
 implib shlwapi.dll, UrlUnescapeA, _UrlUnescapeA@16
 implib shlwapi.dll, UrlUnescapeW, _UrlUnescapeW@16
+implib shlwapi.dll, ord.148, _VkKeyScanWrapW@4
+implib shlwapi.dll, ord.149, _WinHelpWrapW@16
+implib shlwapi.dll, ord.150, _wvsprintfWrapW@12
 
 endlib
