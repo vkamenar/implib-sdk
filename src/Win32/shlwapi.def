@@ -2,6 +2,12 @@ include '..\implib.inc'
 
 implib shlwapi.dll, ord.36, _AppendMenuWrapW@16
 implib shlwapi.dll, AssocCreate, _AssocCreate@24
+implib shlwapi.dll, AssocQueryKeyA, _AssocQueryKeyA@20
+implib shlwapi.dll, AssocQueryKeyW, _AssocQueryKeyW@20
+implib shlwapi.dll, AssocQueryStringA, _AssocQueryStringA@24
+implib shlwapi.dll, AssocQueryStringByKeyA, _AssocQueryStringByKeyA@24
+implib shlwapi.dll, AssocQueryStringByKeyW, _AssocQueryStringByKeyW@24
+implib shlwapi.dll, AssocQueryStringW, _AssocQueryStringW@24
 implib shlwapi.dll, ord.37, _CallWindowProcWrapW@20
 implib shlwapi.dll, ord.39, _CharLowerBuffWrapW@8
 implib shlwapi.dll, ord.38, _CharLowerWrapW@4
@@ -12,6 +18,9 @@ implib shlwapi.dll, ord.44, _CharUpperBuffWrapW@8
 implib shlwapi.dll, ord.43, _CharUpperWrapW@4
 implib shlwapi.dll, ChrCmpIA, _ChrCmpIA@8
 implib shlwapi.dll, ChrCmpIW, _ChrCmpIW@8
+implib shlwapi.dll, ColorAdjustLuma, _ColorAdjustLuma@12
+implib shlwapi.dll, ColorHLSToRGB, _ColorHLSToRGB@12
+implib shlwapi.dll, ColorRGBToHLS, _ColorRGBToHLS@16
 implib shlwapi.dll, ord.159, _CompareStringAltW@24
 implib shlwapi.dll, ord.45, _CompareStringWrapW@24
 implib shlwapi.dll, ord.46, _CopyAcceleratorTableWrapW@12
@@ -137,6 +146,8 @@ implib shlwapi.dll, PathFindOnPathA, _PathFindOnPathA@8
 implib shlwapi.dll, ord.5, _PathFindOnPathExA@12
 implib shlwapi.dll, ord.6, _PathFindOnPathExW@12
 implib shlwapi.dll, PathFindOnPathW, _PathFindOnPathW@8
+implib shlwapi.dll, PathFindSuffixArrayA, _PathFindSuffixArrayA@12
+implib shlwapi.dll, PathFindSuffixArrayW, _PathFindSuffixArrayW@12
 implib shlwapi.dll, PathGetArgsA, _PathGetArgsA@4
 implib shlwapi.dll, PathGetArgsW, _PathGetArgsW@4
 implib shlwapi.dll, PathGetCharTypeA, _PathGetCharTypeA@4
@@ -146,6 +157,8 @@ implib shlwapi.dll, PathGetDriveNumberW, _PathGetDriveNumberW@4
 implib shlwapi.dll, PathIsContentTypeA, _PathIsContentTypeA@8
 implib shlwapi.dll, PathIsContentTypeW, _PathIsContentTypeW@8
 implib shlwapi.dll, PathIsDirectoryA, _PathIsDirectoryA@4
+implib shlwapi.dll, PathIsDirectoryEmptyA, _PathIsDirectoryEmptyA@4
+implib shlwapi.dll, PathIsDirectoryEmptyW, _PathIsDirectoryEmptyW@4
 implib shlwapi.dll, PathIsDirectoryW, _PathIsDirectoryW@4
 implib shlwapi.dll, PathIsFileSpecA, _PathIsFileSpecA@4
 implib shlwapi.dll, PathIsFileSpecW, _PathIsFileSpecW@4
