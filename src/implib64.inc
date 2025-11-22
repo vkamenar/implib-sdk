@@ -1,8 +1,8 @@
-; IMPLIB64.INC v2.0.3
+; IMPLIB64.INC v2.0.4
 ; ===================
 ; (c) 2006-2025 Vladimir Kamenar
 
-; FASM macros for building custom import libraries for Windows DLL (64-bit).
+; Build custom import libraries for Windows DLL (64-bit).
 ; These macros can be combined in a single library:
 ; implib   - a general purpose symbol definition macro.
 ; pbimplib - mod intended for PureBasic Userlib.
@@ -11,8 +11,8 @@
 ; Parameters:
 ;    dllname  : DLL file name. Enclose in quotes if the file name contains
 ;               whitespaces, '-' or other non-alphanumeric characters.
-;    name     : Symbol name or an ordinal value, prefixed with ord. This value should
-;               match exactly the required DLL exported symbol.
+;    name     : Symbol name or an ordinal value, prefixed with "ord." This value
+;               should match exactly the required DLL exported symbol.
 ;    pubname  : Optional public name. This symbolic name allows calling an external
 ;               function directly (not using a thunk). If not specified, 'name'
 ;               prefixed with '__imp_' is used as the pubname.
@@ -26,14 +26,14 @@
 ;    implib   kernel32.dll, ExitProcess, ExitProcess, __imp_ExitProcess
 ;    pbimplib openal64.dll, alGenBuffers
 
-; === CONFIG BEGIN ==================================================
+; === CONFIG BEGIN ===============================================
 
 ; Set to 0 to disable original thunk (lookup table) to reduce the IAT size in
-; the final executable by 8 x n bytes, n being the number of imported symbols.
-; You won't be able to bind (using BIND.EXE from PSDK) an IAT without original thunk!
+; the executable by 8 x n bytes, n being the number of imported symbols. You
+; won't be able to bind (using BIND.EXE from PSDK) an IAT without original thunk!
 KEEP_ORIGINAL_THUNK equ 1
 
-; A @comp.id symbol is appended by the MS linker, possibly for watermarking.
+; @comp.id symbols are appended by the MS linker, possibly for watermarking.
 USE_COMPID equ 0
 
 ; Rename archive members for compatibility with LLVM linker.
@@ -42,7 +42,7 @@ RENAME_AR_MEMBERS equ 0
 ; Disable the 2nd linker member.
 LINKER_MEMBER_2_REMOVE equ 1
 
-; === CONFIG END ====================================================
+; === CONFIG END =================================================
 
 str_tbl_size=0
 lng_tbl_size=0
