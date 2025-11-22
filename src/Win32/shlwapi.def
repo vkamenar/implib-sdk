@@ -1,5 +1,16 @@
 include '..\implib.inc'
 
+; The following symbols are commented out to limit the size of the library.
+; They are available in specific shlwapi versions only.
+; Feel free to uncomment the necessary symbols and recompile the library.
+
+; *** Function discontinued in v6.1 (Windows 7)
+; implib shlwapi.dll, SHCreateStreamWrapper, _SHCreateStreamWrapper@16
+
+; *** Functions discontinued in v5.0 (Windows 2000)
+; implib shlwapi.dll, SHCreateStreamOnFileAOld, _SHCreateStreamOnFileAOld@12
+; implib shlwapi.dll, SHCreateStreamOnFileWOld, _SHCreateStreamOnFileWOld@12
+
 implib shlwapi.dll, ord.36, _AppendMenuWrapW@16
 implib shlwapi.dll, AssocCreate, _AssocCreate@24
 implib shlwapi.dll, AssocQueryKeyA, _AssocQueryKeyA@20
@@ -162,6 +173,10 @@ implib shlwapi.dll, PathIsDirectoryEmptyW, _PathIsDirectoryEmptyW@4
 implib shlwapi.dll, PathIsDirectoryW, _PathIsDirectoryW@4
 implib shlwapi.dll, PathIsFileSpecA, _PathIsFileSpecA@4
 implib shlwapi.dll, PathIsFileSpecW, _PathIsFileSpecW@4
+implib shlwapi.dll, PathIsLFNFileSpecA, _PathIsLFNFileSpecA@4
+implib shlwapi.dll, PathIsLFNFileSpecW, _PathIsLFNFileSpecW@4
+implib shlwapi.dll, PathIsNetworkPathA, _PathIsNetworkPathA@4
+implib shlwapi.dll, PathIsNetworkPathW, _PathIsNetworkPathW@4
 implib shlwapi.dll, PathIsPrefixA, _PathIsPrefixA@8
 implib shlwapi.dll, PathIsPrefixW, _PathIsPrefixW@8
 implib shlwapi.dll, PathIsRelativeA, _PathIsRelativeA@4
@@ -214,6 +229,10 @@ implib shlwapi.dll, PathStripPathA, _PathStripPathA@4
 implib shlwapi.dll, PathStripPathW, _PathStripPathW@4
 implib shlwapi.dll, PathStripToRootA, _PathStripToRootA@4
 implib shlwapi.dll, PathStripToRootW, _PathStripToRootW@4
+implib shlwapi.dll, PathUnExpandEnvStringsA, _PathUnExpandEnvStringsA@12
+implib shlwapi.dll, PathUnExpandEnvStringsW, _PathUnExpandEnvStringsW@12
+implib shlwapi.dll, PathUndecorateA, _PathUndecorateA@4
+implib shlwapi.dll, PathUndecorateW, _PathUndecorateW@4
 implib shlwapi.dll, PathUnmakeSystemFolderA, _PathUnmakeSystemFolderA@4
 implib shlwapi.dll, PathUnmakeSystemFolderW, _PathUnmakeSystemFolderW@4
 implib shlwapi.dll, PathUnquoteSpacesA, _PathUnquoteSpacesA@4
@@ -242,8 +261,13 @@ implib shlwapi.dll, ord.160, _SHAboutInfoA@8
 implib shlwapi.dll, ord.161, _SHAboutInfoW@8
 implib shlwapi.dll, ord.20, _SHAddDataBlock@8
 implib shlwapi.dll, ord.7, _SHAllocShared@12
+implib shlwapi.dll, SHAutoComplete, _SHAutoComplete@8
+implib shlwapi.dll, SHCopyKeyA, _SHCopyKeyA@16
+implib shlwapi.dll, SHCopyKeyW, _SHCopyKeyW@16
 implib shlwapi.dll, ord.12, _SHCreateMemStream@8
 implib shlwapi.dll, SHCreateShellPalette, _SHCreateShellPalette@4
+implib shlwapi.dll, SHCreateStreamOnFileA, _SHCreateStreamOnFileA@12
+implib shlwapi.dll, SHCreateStreamOnFileW, _SHCreateStreamOnFileW@12
 implib shlwapi.dll, ord.16, _SHCreateThread@16
 implib shlwapi.dll, SHDeleteEmptyKeyA, _SHDeleteEmptyKeyA@8
 implib shlwapi.dll, SHDeleteEmptyKeyW, _SHDeleteEmptyKeyW@8
@@ -261,6 +285,7 @@ implib shlwapi.dll, ord.22, _SHFindDataBlock@8
 implib shlwapi.dll, ord.19, _SHFreeDataBlockList@4
 implib shlwapi.dll, ord.10, _SHFreeShared@8
 implib shlwapi.dll, SHGetInverseCMAP, _SHGetInverseCMAP@8
+implib shlwapi.dll, SHGetThreadRef, _SHGetThreadRef@4
 implib shlwapi.dll, SHGetValueA, _SHGetValueA@24
 implib shlwapi.dll, SHGetValueW, _SHGetValueW@24
 implib shlwapi.dll, SHIsLowMemoryMachine, _SHIsLowMemoryMachine@4
