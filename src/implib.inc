@@ -1,13 +1,13 @@
-; IMPLIB.INC v2.0.3
+; IMPLIB.INC v2.0.4
 ; =================
 ; (c) 2006-2025 Vladimir Kamenar
 
-; FASM macros for building custom import libraries for Windows DLL (32-bit).
+; Build custom import libraries for Windows DLL (32-bit).
 ; These macros can be combined in a single library:
 ; implib   - general purpose symbol definition macro.
 ; pbimplib - mod intended for PureBasic Userlib.
-; vbimplib - mod intended for Visual Basic 6. For instance, it is useful for
-;            calling CDECL DLL functions directly from Visual Basic 6, without
+; vbimplib - mod intended for Visual Basic 6. It is useful for calling
+;            CDECL DLL functions directly from Visual Basic 6, without
 ;            wrapper DLLs and/or delegators.
 ; MACRO implib   dllname, name, thunk, pubname
 ; MACRO pbimplib dllname, cconv, argcount, name, pb_name, pubname
@@ -17,8 +17,8 @@
 ;               whitespaces, '-' or other non-alphanumeric characters.
 ;    cconv    : Calling convention. Possible values: STDCALL, CDECL, PBCALL
 ;    argcount : Number of DWORD arguments. (QWORD counts as 2 DWORDs and so on.)
-;    name     : Symbol name or an ordinal value, prefixed with ord. This value should
-;               match exactly the required DLL exported symbol.
+;    name     : Symbol name or an ordinal value, prefixed with "ord." This value
+;               should match exactly the required DLL exported symbol.
 ;    module   : Visual Basic module name.
 ;    pubname  : Optional public name. This symbolic name allows calling an external
 ;               function directly (not using a thunk). If not specified, 'name'
@@ -36,18 +36,18 @@
 ;    pbimplib openal32.dll, CDECL, 2, ord.1, alGenBuffers
 ;    vbimplib openal32, openal32.dll, CDECL, 2, alGenBuffers
 
-; === CONFIG BEGIN ==================================================
+; === CONFIG BEGIN ===============================================
 
 ; Set to 0 to disable original thunk (lookup table) to reduce the IAT size in
-; the final executable by 4 x n bytes, n being the number of imported symbols.
-; You won't be able to bind (using BIND.EXE from PSDK) an IAT without original thunk!
+; the executable by 4 x n bytes, n being the number of imported symbols. You
+; won't be able to bind (using BIND.EXE from PSDK) an IAT without original thunk!
 KEEP_ORIGINAL_THUNK equ 1
 
 ; Optional header is not required in object files. Very old MS LINK versions
 ; may use it. The following option is included for compatibility.
 USE_OPTIONAL_HEADER equ 0
 
-; A @comp.id symbol is appended by the MS linker, possibly for watermarking.
+; @comp.id symbols are appended by the MS linker, possibly for watermarking.
 USE_COMPID equ 0
 
 ; Rename archive members for compatibility with LLVM linker.
@@ -56,7 +56,7 @@ RENAME_AR_MEMBERS equ 0
 ; Disable the 2nd linker member.
 LINKER_MEMBER_2_REMOVE equ 1
 
-; === CONFIG END ====================================================
+; === CONFIG END =================================================
 
 STDCALL=0
 CDECL=1
