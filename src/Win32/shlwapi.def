@@ -10,6 +10,7 @@ include '..\implib.inc'
 ; *** Functions discontinued in v5.0 (Windows 2000)
 ; implib shlwapi.dll, SHCreateStreamOnFileAOld, _SHCreateStreamOnFileAOld@12
 ; implib shlwapi.dll, SHCreateStreamOnFileWOld, _SHCreateStreamOnFileWOld@12
+; implib shlwapi.dll, _SHGetInstanceExplorer@4
 
 implib shlwapi.dll, ord.36, _AppendMenuWrapW@16
 implib shlwapi.dll, AssocCreate, _AssocCreate@24
@@ -340,6 +341,7 @@ implib shlwapi.dll, SHStrDupA, _SHStrDupA@8
 implib shlwapi.dll, SHStrDupW, _SHStrDupW@8
 implib shlwapi.dll, ord.23, _SHStringFromGUIDA@12
 implib shlwapi.dll, ord.24, _SHStringFromGUIDW@12
+implib shlwapi.dll, ord.162, _SHTruncateString@8
 implib shlwapi.dll, ord.9, _SHUnlockShared@4
 implib shlwapi.dll, ord.17, _SHWriteDataBlockList@8
 implib shlwapi.dll, ord.82, _SearchPathWrapW@24
@@ -385,6 +387,8 @@ implib shlwapi.dll, StrDupW, _StrDupW@4
 implib shlwapi.dll, StrFormatByteSize64A, _StrFormatByteSize64A@16
 implib shlwapi.dll, StrFormatByteSizeA, _StrFormatByteSizeA@12
 implib shlwapi.dll, StrFormatByteSizeW, _StrFormatByteSizeW@12
+implib shlwapi.dll, StrFormatKBSizeA, _StrFormatKBSizeA@16
+implib shlwapi.dll, StrFormatKBSizeW, _StrFormatKBSizeW@16
 implib shlwapi.dll, StrFromTimeIntervalA, _StrFromTimeIntervalA@16
 implib shlwapi.dll, StrFromTimeIntervalW, _StrFromTimeIntervalW@16
 implib shlwapi.dll, StrIsIntlEqualA, _StrIsIntlEqualA@16
@@ -399,6 +403,10 @@ implib shlwapi.dll, StrRChrIW, _StrRChrIW@12
 implib shlwapi.dll, StrRChrW, _StrRChrW@12
 implib shlwapi.dll, StrRStrIA, _StrRStrIA@12
 implib shlwapi.dll, StrRStrIW, _StrRStrIW@12
+implib shlwapi.dll, StrRetToBufA, _StrRetToBufA@16
+implib shlwapi.dll, StrRetToBufW, _StrRetToBufW@16
+implib shlwapi.dll, StrRetToStrA, _StrRetToStrA@12
+implib shlwapi.dll, StrRetToStrW, _StrRetToStrW@12
 implib shlwapi.dll, StrSpnA, _StrSpnA@8
 implib shlwapi.dll, StrSpnW, _StrSpnW@8
 implib shlwapi.dll, StrStrA, _StrStrA@8
@@ -442,6 +450,10 @@ implib shlwapi.dll, UrlUnescapeA, _UrlUnescapeA@16
 implib shlwapi.dll, UrlUnescapeW, _UrlUnescapeW@16
 implib shlwapi.dll, ord.148, _VkKeyScanWrapW@4
 implib shlwapi.dll, ord.149, _WinHelpWrapW@16
+implib shlwapi.dll, wnsprintfA, _wnsprintfA ; This function uses the CDECL calling convention!
+implib shlwapi.dll, wnsprintfW, _wnsprintfW ; This function uses the CDECL calling convention!
+implib shlwapi.dll, wvnsprintfA, _wvnsprintfA@16
+implib shlwapi.dll, wvnsprintfW, _wvnsprintfW@16
 implib shlwapi.dll, ord.150, _wvsprintfWrapW@12
 
 endlib
