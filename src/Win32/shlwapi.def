@@ -97,14 +97,18 @@ implib shlwapi.dll, ord.96, _GetWindowTextLengthWrapW@4
 implib shlwapi.dll, ord.95, _GetWindowTextWrapW@12
 implib shlwapi.dll, ord.97, _GetWindowsDirectoryWrapW@8
 implib shlwapi.dll, HashData, _HashData@16
+implib shlwapi.dll, ord.184, _IStream_Read@12
 implib shlwapi.dll, ord.169, _IUnknown_AtomicRelease@4
 implib shlwapi.dll, ord.164, _IUnknown_Exec@24
 implib shlwapi.dll, ord.175, _IUnknown_GetClassID@8
 implib shlwapi.dll, ord.172, _IUnknown_GetWindow@8
+implib shlwapi.dll, ord.190, _IUnknown_HandleIRestrict@20
+implib shlwapi.dll, ord.189, _IUnknown_OnFocusOCS@8
 implib shlwapi.dll, ord.176, _IUnknown_QueryService@16
 implib shlwapi.dll, ord.163, _IUnknown_QueryStatus@20
 implib shlwapi.dll, ord.173, _IUnknown_SetOwner@8
 implib shlwapi.dll, ord.174, _IUnknown_SetSite@8
+implib shlwapi.dll, ord.188, _IUnknown_TranslateAcceleratorOCS@12
 implib shlwapi.dll, ord.98, _InsertMenuWrapW@20
 implib shlwapi.dll, IntlStrEqWorkerA, _IntlStrEqWorkerA@16 ; Alias for StrIsIntlEqualA
 implib shlwapi.dll, IntlStrEqWorkerW, _IntlStrEqWorkerW@16 ; Alias for StrIsIntlEqualW
@@ -274,6 +278,7 @@ implib shlwapi.dll, ord.161, _SHAboutInfoW@8
 implib shlwapi.dll, ord.20, _SHAddDataBlock@8
 implib shlwapi.dll, ord.7, _SHAllocShared@12
 implib shlwapi.dll, SHAutoComplete, _SHAutoComplete@8
+implib shlwapi.dll, ord.182, _SHCheckMenuItem@12
 implib shlwapi.dll, SHCopyKeyA, _SHCopyKeyA@16
 implib shlwapi.dll, SHCopyKeyW, _SHCopyKeyW@16
 implib shlwapi.dll, ord.12, _SHCreateMemStream@8
@@ -289,6 +294,7 @@ implib shlwapi.dll, SHDeleteOrphanKeyA, _SHDeleteOrphanKeyA@8 ; Before Windows V
 implib shlwapi.dll, SHDeleteOrphanKeyW, _SHDeleteOrphanKeyW@8 ; Before Windows Vista, this function is an alias for SHDeleteEmptyKeyW
 implib shlwapi.dll, SHDeleteValueA, _SHDeleteValueA@12
 implib shlwapi.dll, SHDeleteValueW, _SHDeleteValueW@12
+implib shlwapi.dll, ord.181, _SHEnableMenuItem@12
 implib shlwapi.dll, SHEnumKeyExA, _SHEnumKeyExA@16
 implib shlwapi.dll, SHEnumKeyExW, _SHEnumKeyExW@16
 implib shlwapi.dll, SHEnumValueA, _SHEnumValueA@28
@@ -297,18 +303,24 @@ implib shlwapi.dll, ord.22, _SHFindDataBlock@8
 implib shlwapi.dll, ord.19, _SHFreeDataBlockList@4
 implib shlwapi.dll, ord.10, _SHFreeShared@8
 implib shlwapi.dll, SHGetInverseCMAP, _SHGetInverseCMAP@8
+implib shlwapi.dll, ord.192, _SHGetMenuFromID@8
 implib shlwapi.dll, SHGetThreadRef, _SHGetThreadRef@4
 implib shlwapi.dll, SHGetValueA, _SHGetValueA@24
 implib shlwapi.dll, SHGetValueW, _SHGetValueW@24
 implib shlwapi.dll, ord.166, _SHIsEmptyStream@4
 implib shlwapi.dll, SHIsLowMemoryMachine, _SHIsLowMemoryMachine@4
+implib shlwapi.dll, ord.187, _SHLoadFromPropertyBag@8
 implib shlwapi.dll, ord.177, _SHLoadMenuPopup@8
 implib shlwapi.dll, ord.8, _SHLockShared@8
 implib shlwapi.dll, ord.11, _SHMapHandle@20
+implib shlwapi.dll, ord.179, _SHMenuIndexFromID@8
+implib shlwapi.dll, ord.185, _SHMessageBoxCheckA@24
+implib shlwapi.dll, ord.191, _SHMessageBoxCheckW@24
 implib shlwapi.dll, SHOpenRegStream2A, _SHOpenRegStream2A@16
 implib shlwapi.dll, SHOpenRegStream2W, _SHOpenRegStream2W@16
 implib shlwapi.dll, SHOpenRegStreamA, _SHOpenRegStreamA@16
 implib shlwapi.dll, SHOpenRegStreamW, _SHOpenRegStreamW@16
+implib shlwapi.dll, ord.178, _SHPropagateMessage@20
 implib shlwapi.dll, SHQueryInfoKeyA, _SHQueryInfoKeyA@20
 implib shlwapi.dll, SHQueryInfoKeyW, _SHQueryInfoKeyW@20
 implib shlwapi.dll, SHQueryValueExA, _SHQueryValueExA@24
@@ -344,13 +356,16 @@ implib shlwapi.dll, SHRegSetUSValueA, _SHRegSetUSValueA@24
 implib shlwapi.dll, SHRegSetUSValueW, _SHRegSetUSValueW@24
 implib shlwapi.dll, SHRegWriteUSValueA, _SHRegWriteUSValueA@24
 implib shlwapi.dll, SHRegWriteUSValueW, _SHRegWriteUSValueW@24
+implib shlwapi.dll, ord.183, _SHRegisterClassA@4
 implib shlwapi.dll, SHRegisterValidateTemplate, _SHRegisterValidateTemplate@8
+implib shlwapi.dll, ord.180, _SHRemoveAllSubMenus@4
 implib shlwapi.dll, ord.21, _SHRemoveDataBlock@8
 implib shlwapi.dll, ord.167, _SHSetParentHwnd@8
 implib shlwapi.dll, SHSetThreadRef, _SHSetThreadRef@4
 implib shlwapi.dll, SHSetValueA, _SHSetValueA@24
 implib shlwapi.dll, SHSetValueW, _SHSetValueW@24
 implib shlwapi.dll, ord.165, _SHSetWindowBits@16
+implib shlwapi.dll, ord.186, _SHSimulateDrop@20
 implib shlwapi.dll, SHSkipJunction, _SHSkipJunction@8
 implib shlwapi.dll, SHStrDupA, _SHStrDupA@8
 implib shlwapi.dll, SHStrDupW, _SHStrDupW@8
