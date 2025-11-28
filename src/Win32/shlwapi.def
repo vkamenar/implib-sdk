@@ -7,6 +7,7 @@ include '..\implib.inc'
 ; *** Functions discontinued in v6.1 (Windows 7)
 ; implib shlwapi.dll, SHCreateStreamWrapper, _SHCreateStreamWrapper@16
 ; implib shlwapi.dll, ord.171, _SHIsSameObject@8
+; implib shlwapi.dll, ord.196, _SHVerbExistsNA@16
 
 ; *** Functions discontinued in v5.0 (Windows 2000)
 ; implib shlwapi.dll, SHCreateStreamOnFileAOld, _SHCreateStreamOnFileAOld@12
@@ -58,6 +59,7 @@ implib shlwapi.dll, ord.61, _DrawTextWrapW@20
 implib shlwapi.dll, ord.63, _EnumFontFamiliesExWrapW@20
 implib shlwapi.dll, ord.62, _EnumFontFamiliesWrapW@16
 implib shlwapi.dll, ord.64, _EnumResourceNamesWrapW@16
+implib shlwapi.dll, ord.208, _FDSA_Initialize@20
 implib shlwapi.dll, ord.65, _FindFirstFileWrapW@8
 implib shlwapi.dll, ord.66, _FindResourceWrapW@12
 implib shlwapi.dll, ord.67, _FindWindowWrapW@8
@@ -97,6 +99,7 @@ implib shlwapi.dll, ord.96, _GetWindowTextLengthWrapW@4
 implib shlwapi.dll, ord.95, _GetWindowTextWrapW@12
 implib shlwapi.dll, ord.97, _GetWindowsDirectoryWrapW@8
 implib shlwapi.dll, HashData, _HashData@16
+implib shlwapi.dll, ord.207, _IContextMenu_Invoke@16
 implib shlwapi.dll, ord.184, _IStream_Read@12
 implib shlwapi.dll, ord.169, _IUnknown_AtomicRelease@4
 implib shlwapi.dll, ord.164, _IUnknown_Exec@24
@@ -106,6 +109,7 @@ implib shlwapi.dll, ord.190, _IUnknown_HandleIRestrict@20
 implib shlwapi.dll, ord.189, _IUnknown_OnFocusOCS@8
 implib shlwapi.dll, ord.176, _IUnknown_QueryService@16
 implib shlwapi.dll, ord.163, _IUnknown_QueryStatus@20
+implib shlwapi.dll, ord.199, _IUnknown_Set@8
 implib shlwapi.dll, ord.173, _IUnknown_SetOwner@8
 implib shlwapi.dll, ord.174, _IUnknown_SetSite@8
 implib shlwapi.dll, ord.188, _IUnknown_TranslateAcceleratorOCS@12
@@ -123,6 +127,7 @@ implib shlwapi.dll, ord.29, _IsCharSpaceW@4
 implib shlwapi.dll, ord.26, _IsCharUpperWrapW@4
 implib shlwapi.dll, ord.34, _IsCharXDigitW@4
 implib shlwapi.dll, ord.99, _IsDialogMessageWrapW@8
+implib shlwapi.dll, ord.202, _IsQSForward@12
 implib shlwapi.dll, ord.100, _LoadAcceleratorsWrapW@8
 implib shlwapi.dll, ord.101, _LoadBitmapWrapW@8
 implib shlwapi.dll, ord.102, _LoadCursorWrapW@8
@@ -131,6 +136,8 @@ implib shlwapi.dll, ord.104, _LoadImageWrapW@24
 implib shlwapi.dll, ord.105, _LoadLibraryExWrapW@12
 implib shlwapi.dll, ord.106, _LoadMenuWrapW@8
 implib shlwapi.dll, ord.107, _LoadStringWrapW@16
+implib shlwapi.dll, ord.201, _MayExecForward@28
+implib shlwapi.dll, ord.200, _MayQSForward@24
 implib shlwapi.dll, ord.108, _MessageBoxIndirectWrapW@4
 implib shlwapi.dll, ord.109, _ModifyMenuWrapW@20
 implib shlwapi.dll, ord.113, _MoveFileWrapW@8
@@ -299,15 +306,21 @@ implib shlwapi.dll, SHEnumKeyExA, _SHEnumKeyExA@16
 implib shlwapi.dll, SHEnumKeyExW, _SHEnumKeyExW@16
 implib shlwapi.dll, SHEnumValueA, _SHEnumValueA@28
 implib shlwapi.dll, SHEnumValueW, _SHEnumValueW@28
+implib shlwapi.dll, ord.197, _SHFillRectClr@12
 implib shlwapi.dll, ord.22, _SHFindDataBlock@8
 implib shlwapi.dll, ord.19, _SHFreeDataBlockList@4
 implib shlwapi.dll, ord.10, _SHFreeShared@8
+implib shlwapi.dll, ord.193, _SHGetCurColorRes@0
 implib shlwapi.dll, SHGetInverseCMAP, _SHGetInverseCMAP@8
 implib shlwapi.dll, ord.192, _SHGetMenuFromID@8
 implib shlwapi.dll, SHGetThreadRef, _SHGetThreadRef@4
 implib shlwapi.dll, SHGetValueA, _SHGetValueA@24
+implib shlwapi.dll, ord.205, _SHGetValueGoodBootA@24
+implib shlwapi.dll, ord.206, _SHGetValueGoodBootW@24
 implib shlwapi.dll, SHGetValueW, _SHGetValueW@24
+implib shlwapi.dll, ord.204, _SHIsChildOrSelf@8
 implib shlwapi.dll, ord.166, _SHIsEmptyStream@4
+implib shlwapi.dll, ord.195, _SHIsExpandableFolder@8
 implib shlwapi.dll, SHIsLowMemoryMachine, _SHIsLowMemoryMachine@4
 implib shlwapi.dll, ord.187, _SHLoadFromPropertyBag@8
 implib shlwapi.dll, ord.177, _SHLoadMenuPopup@8
@@ -360,6 +373,7 @@ implib shlwapi.dll, ord.183, _SHRegisterClassA@4
 implib shlwapi.dll, SHRegisterValidateTemplate, _SHRegisterValidateTemplate@8
 implib shlwapi.dll, ord.180, _SHRemoveAllSubMenus@4
 implib shlwapi.dll, ord.21, _SHRemoveDataBlock@8
+implib shlwapi.dll, ord.198, _SHSearchMapInt@16
 implib shlwapi.dll, ord.167, _SHSetParentHwnd@8
 implib shlwapi.dll, SHSetThreadRef, _SHSetThreadRef@4
 implib shlwapi.dll, SHSetValueA, _SHSetValueA@24
@@ -371,8 +385,10 @@ implib shlwapi.dll, SHStrDupA, _SHStrDupA@8
 implib shlwapi.dll, SHStrDupW, _SHStrDupW@8
 implib shlwapi.dll, ord.23, _SHStringFromGUIDA@12
 implib shlwapi.dll, ord.24, _SHStringFromGUIDW@12
+implib shlwapi.dll, ord.203, _SHStripMneumonicA@4
 implib shlwapi.dll, ord.162, _SHTruncateString@8
 implib shlwapi.dll, ord.9, _SHUnlockShared@4
+implib shlwapi.dll, ord.194, _SHWaitForSendMessageThread@8
 implib shlwapi.dll, ord.17, _SHWriteDataBlockList@8
 implib shlwapi.dll, ord.82, _SearchPathWrapW@24
 implib shlwapi.dll, ord.135, _SendDlgItemMessageWrapW@20
