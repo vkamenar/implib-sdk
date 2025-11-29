@@ -59,7 +59,10 @@ implib shlwapi.dll, ord.61, _DrawTextWrapW@20
 implib shlwapi.dll, ord.63, _EnumFontFamiliesExWrapW@20
 implib shlwapi.dll, ord.62, _EnumFontFamiliesWrapW@16
 implib shlwapi.dll, ord.64, _EnumResourceNamesWrapW@16
+implib shlwapi.dll, ord.211, _FDSA_DeleteItem@8
+implib shlwapi.dll, ord.209, _FDSA_Destroy@4
 implib shlwapi.dll, ord.208, _FDSA_Initialize@20
+implib shlwapi.dll, ord.210, _FDSA_InsertItem@12
 implib shlwapi.dll, ord.65, _FindFirstFileWrapW@8
 implib shlwapi.dll, ord.66, _FindResourceWrapW@12
 implib shlwapi.dll, ord.67, _FindWindowWrapW@8
@@ -101,6 +104,9 @@ implib shlwapi.dll, ord.97, _GetWindowsDirectoryWrapW@8
 implib shlwapi.dll, HashData, _HashData@16
 implib shlwapi.dll, ord.207, _IContextMenu_Invoke@16
 implib shlwapi.dll, ord.184, _IStream_Read@12
+implib shlwapi.dll, ord.213, _IStream_Reset@4
+implib shlwapi.dll, ord.214, _IStream_Size@8
+implib shlwapi.dll, ord.212, _IStream_Write@12
 implib shlwapi.dll, ord.169, _IUnknown_AtomicRelease@4
 implib shlwapi.dll, ord.164, _IUnknown_Exec@24
 implib shlwapi.dll, ord.175, _IUnknown_GetClassID@8
@@ -263,6 +269,7 @@ implib shlwapi.dll, PathUnquoteSpacesW, _PathUnquoteSpacesW@4
 implib shlwapi.dll, ord.116, _PeekMessageWrapW@20
 implib shlwapi.dll, ord.117, _PostMessageWrapW@16
 implib shlwapi.dll, ord.118, _PostThreadMessageWrapW@16
+implib shlwapi.dll, ord.219, _QISearch@16
 implib shlwapi.dll, ord.120, _RegCreateKeyExWrapW@36
 implib shlwapi.dll, ord.119, _RegCreateKeyWrapW@12
 implib shlwapi.dll, ord.121, _RegDeleteKeyWrapW@8
@@ -284,6 +291,8 @@ implib shlwapi.dll, ord.160, _SHAboutInfoA@8
 implib shlwapi.dll, ord.161, _SHAboutInfoW@8
 implib shlwapi.dll, ord.20, _SHAddDataBlock@8
 implib shlwapi.dll, ord.7, _SHAllocShared@12
+implib shlwapi.dll, ord.215, _SHAnsiToUnicode@12
+implib shlwapi.dll, ord.216, _SHAnsiToUnicodeCP@16
 implib shlwapi.dll, SHAutoComplete, _SHAutoComplete@8
 implib shlwapi.dll, ord.182, _SHCheckMenuItem@12
 implib shlwapi.dll, SHCopyKeyA, _SHCopyKeyA@16
@@ -387,6 +396,8 @@ implib shlwapi.dll, ord.23, _SHStringFromGUIDA@12
 implib shlwapi.dll, ord.24, _SHStringFromGUIDW@12
 implib shlwapi.dll, ord.203, _SHStripMneumonicA@4
 implib shlwapi.dll, ord.162, _SHTruncateString@8
+implib shlwapi.dll, ord.217, _SHUnicodeToAnsi@12
+implib shlwapi.dll, ord.218, _SHUnicodeToAnsiCP@16
 implib shlwapi.dll, ord.9, _SHUnlockShared@4
 implib shlwapi.dll, ord.194, _SHWaitForSendMessageThread@8
 implib shlwapi.dll, ord.17, _SHWriteDataBlockList@8
