@@ -8,6 +8,13 @@ include '..\implib.inc'
 ; implib shlwapi.dll, SHCreateStreamWrapper, _SHCreateStreamWrapper@16
 ; implib shlwapi.dll, ord.171, _SHIsSameObject@8
 ; implib shlwapi.dll, ord.196, _SHVerbExistsNA@16
+; implib shlwapi.dll, ord.226, _ZoneCheckPathA@16
+; implib shlwapi.dll, ord.227, _ZoneCheckPathW@16
+
+; *** Functions discontinued in v6.0 (Windows Vista)
+; implib shlwapi.dll, ord.222, _SHGlobalCounterCreate@4
+; implib shlwapi.dll, ord.223, _SHGlobalCounterGetValue@4
+; implib shlwapi.dll, ord.224, _SHGlobalCounterIncrement@4
 
 ; *** Functions discontinued in v5.0 (Windows 2000)
 ; implib shlwapi.dll, SHCreateStreamOnFileAOld, _SHCreateStreamOnFileAOld@12
@@ -382,7 +389,9 @@ implib shlwapi.dll, ord.183, _SHRegisterClassA@4
 implib shlwapi.dll, SHRegisterValidateTemplate, _SHRegisterValidateTemplate@8
 implib shlwapi.dll, ord.180, _SHRemoveAllSubMenus@4
 implib shlwapi.dll, ord.21, _SHRemoveDataBlock@8
+implib shlwapi.dll, ord.221, _SHRemoveDefaultDialogFont@4
 implib shlwapi.dll, ord.198, _SHSearchMapInt@16
+implib shlwapi.dll, ord.220, _SHSetDefaultDialogFont@8
 implib shlwapi.dll, ord.167, _SHSetParentHwnd@8
 implib shlwapi.dll, SHSetThreadRef, _SHSetThreadRef@4
 implib shlwapi.dll, SHSetValueA, _SHSetValueA@24
@@ -395,6 +404,7 @@ implib shlwapi.dll, SHStrDupW, _SHStrDupW@8
 implib shlwapi.dll, ord.23, _SHStringFromGUIDA@12
 implib shlwapi.dll, ord.24, _SHStringFromGUIDW@12
 implib shlwapi.dll, ord.203, _SHStripMneumonicA@4
+implib shlwapi.dll, ord.225, _SHStripMneumonicW@4
 implib shlwapi.dll, ord.162, _SHTruncateString@8
 implib shlwapi.dll, ord.217, _SHUnicodeToAnsi@12
 implib shlwapi.dll, ord.218, _SHUnicodeToAnsiCP@16
@@ -507,6 +517,14 @@ implib shlwapi.dll, UrlUnescapeA, _UrlUnescapeA@16
 implib shlwapi.dll, UrlUnescapeW, _UrlUnescapeW@16
 implib shlwapi.dll, ord.148, _VkKeyScanWrapW@4
 implib shlwapi.dll, ord.149, _WinHelpWrapW@16
+implib shlwapi.dll, ord.234, _ZoneCheckHost@12
+implib shlwapi.dll, ord.235, _ZoneCheckHostEx@28
+implib shlwapi.dll, ord.228, _ZoneCheckUrlA@16
+implib shlwapi.dll, ord.230, _ZoneCheckUrlExA@32
+implib shlwapi.dll, ord.232, _ZoneCheckUrlExCacheA@36
+implib shlwapi.dll, ord.233, _ZoneCheckUrlExCacheW@36
+implib shlwapi.dll, ord.231, _ZoneCheckUrlExW@32
+implib shlwapi.dll, ord.229, _ZoneCheckUrlW@16
 implib shlwapi.dll, wnsprintfA, _wnsprintfA ; This function uses the CDECL calling convention!
 implib shlwapi.dll, wnsprintfW, _wnsprintfW ; This function uses the CDECL calling convention!
 implib shlwapi.dll, wvnsprintfA, _wvnsprintfA@16
