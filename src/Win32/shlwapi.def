@@ -12,9 +12,21 @@ include '..\implib.inc'
 ; implib shlwapi.dll, ord.227, _ZoneCheckPathW@16
 
 ; *** Functions discontinued in v6.0 (Windows Vista)
+; implib shlwapi.dll, ord.250, _GetPerfTime@0
 ; implib shlwapi.dll, ord.222, _SHGlobalCounterCreate@4
 ; implib shlwapi.dll, ord.223, _SHGlobalCounterGetValue@4
 ; implib shlwapi.dll, ord.224, _SHGlobalCounterIncrement@4
+; implib shlwapi.dll, ord.243, _StopWatchA@20
+; implib shlwapi.dll, ord.242, _StopWatchFlush@0
+; implib shlwapi.dll, ord.241, _StopWatchMode@0
+; implib shlwapi.dll, ord.244, _StopWatchW@20
+; implib shlwapi.dll, ord.246, _StopWatch_CheckMsg@36
+; implib shlwapi.dll, ord.251, _StopWatch_DispatchTime@36
+; implib shlwapi.dll, ord.247, _StopWatch_MarkFrameStart@4
+; implib shlwapi.dll, ord.249, _StopWatch_MarkJavaStop@12
+; implib shlwapi.dll, ord.248, _StopWatch_MarkSameFrameStart@4
+; implib shlwapi.dll, ord.252, _StopWatch_SetMsgLastLocation@4
+; implib shlwapi.dll, ord.245, _StopWatch_TimerHandler@16
 
 ; *** Functions discontinued in v5.0 (Windows 2000)
 ; implib shlwapi.dll, SHCreateStreamOnFileAOld, _SHCreateStreamOnFileAOld@12
@@ -117,6 +129,7 @@ implib shlwapi.dll, ord.212, _IStream_Write@12
 implib shlwapi.dll, ord.169, _IUnknown_AtomicRelease@4
 implib shlwapi.dll, ord.164, _IUnknown_Exec@24
 implib shlwapi.dll, ord.175, _IUnknown_GetClassID@8
+implib shlwapi.dll, ord.256, _IUnknown_GetSite@12
 implib shlwapi.dll, ord.172, _IUnknown_GetWindow@8
 implib shlwapi.dll, ord.190, _IUnknown_HandleIRestrict@20
 implib shlwapi.dll, ord.189, _IUnknown_OnFocusOCS@8
@@ -309,6 +322,8 @@ implib shlwapi.dll, SHCreateShellPalette, _SHCreateShellPalette@4
 implib shlwapi.dll, SHCreateStreamOnFileA, _SHCreateStreamOnFileA@12
 implib shlwapi.dll, SHCreateStreamOnFileW, _SHCreateStreamOnFileW@12
 implib shlwapi.dll, ord.16, _SHCreateThread@16
+implib shlwapi.dll, ord.257, _SHCreateWorkerWindowA@24
+implib shlwapi.dll, ord.240, _SHDefWindowProc@16
 implib shlwapi.dll, SHDeleteEmptyKeyA, _SHDeleteEmptyKeyA@8
 implib shlwapi.dll, SHDeleteEmptyKeyW, _SHDeleteEmptyKeyW@8
 implib shlwapi.dll, SHDeleteKeyA, _SHDeleteKeyA@8
@@ -349,6 +364,7 @@ implib shlwapi.dll, SHOpenRegStream2A, _SHOpenRegStream2A@16
 implib shlwapi.dll, SHOpenRegStream2W, _SHOpenRegStream2W@16
 implib shlwapi.dll, SHOpenRegStreamA, _SHOpenRegStreamA@16
 implib shlwapi.dll, SHOpenRegStreamW, _SHOpenRegStreamW@16
+implib shlwapi.dll, ord.236, _SHPinDllOfCLSID@4
 implib shlwapi.dll, ord.178, _SHPropagateMessage@20
 implib shlwapi.dll, SHQueryInfoKeyA, _SHQueryInfoKeyA@20
 implib shlwapi.dll, SHQueryInfoKeyW, _SHQueryInfoKeyW@20
@@ -386,6 +402,7 @@ implib shlwapi.dll, SHRegSetUSValueW, _SHRegSetUSValueW@24
 implib shlwapi.dll, SHRegWriteUSValueA, _SHRegWriteUSValueA@24
 implib shlwapi.dll, SHRegWriteUSValueW, _SHRegWriteUSValueW@24
 implib shlwapi.dll, ord.183, _SHRegisterClassA@4
+implib shlwapi.dll, ord.237, _SHRegisterClassW@4
 implib shlwapi.dll, SHRegisterValidateTemplate, _SHRegisterValidateTemplate@8
 implib shlwapi.dll, ord.180, _SHRemoveAllSubMenus@4
 implib shlwapi.dll, ord.21, _SHRemoveDataBlock@8
@@ -409,6 +426,8 @@ implib shlwapi.dll, ord.162, _SHTruncateString@8
 implib shlwapi.dll, ord.217, _SHUnicodeToAnsi@12
 implib shlwapi.dll, ord.218, _SHUnicodeToAnsiCP@16
 implib shlwapi.dll, ord.9, _SHUnlockShared@4
+implib shlwapi.dll, ord.238, _SHUnregisterClassesA@12
+implib shlwapi.dll, ord.239, _SHUnregisterClassesW@12
 implib shlwapi.dll, ord.194, _SHWaitForSendMessageThread@8
 implib shlwapi.dll, ord.17, _SHWriteDataBlockList@8
 implib shlwapi.dll, ord.82, _SearchPathWrapW@24
