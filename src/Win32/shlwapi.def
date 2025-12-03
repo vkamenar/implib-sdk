@@ -5,8 +5,12 @@ include '..\implib.inc'
 ; Feel free to uncomment the necessary symbols and recompile the library.
 
 ; *** Functions discontinued in v6.1 (Windows 7)
+; implib shlwapi.dll, ord.275, _RegisterGlobalHotkeyA@12
+; implib shlwapi.dll, ord.274, _RegisterGlobalHotkeyW@12
 ; implib shlwapi.dll, SHCreateStreamWrapper, _SHCreateStreamWrapper@16
+; implib shlwapi.dll, ord.277, _SHDialogBox@20
 ; implib shlwapi.dll, ord.171, _SHIsSameObject@8
+; implib shlwapi.dll, ord.290, _SHMirrorIcon@8
 ; implib shlwapi.dll, ord.196, _SHVerbExistsNA@16
 ; implib shlwapi.dll, ord.226, _ZoneCheckPathA@16
 ; implib shlwapi.dll, ord.227, _ZoneCheckPathW@16
@@ -20,6 +24,8 @@ include '..\implib.inc'
 ; implib shlwapi.dll, ord.223, _SHGlobalCounterGetValue@4
 ; implib shlwapi.dll, ord.224, _SHGlobalCounterIncrement@4
 ; implib shlwapi.dll, ord.258, _SHRegisterWaitForSingleObject@24
+; implib shlwapi.dll, ord.272, _SHSetThreadPoolLimits@4
+; implib shlwapi.dll, ord.273, _SHTerminateThreadPool@0
 ; implib shlwapi.dll, ord.259, _SHUnregisterWait@4
 ; implib shlwapi.dll, ord.243, _StopWatchA@20
 ; implib shlwapi.dll, ord.242, _StopWatchFlush@0
@@ -128,12 +134,18 @@ implib shlwapi.dll, ord.96, _GetWindowTextLengthWrapW@4
 implib shlwapi.dll, ord.95, _GetWindowTextWrapW@12
 implib shlwapi.dll, ord.97, _GetWindowsDirectoryWrapW@8
 implib shlwapi.dll, HashData, _HashData@16
+implib shlwapi.dll, ord.283, _IConnectionPoint_InvokeWithCancel@20
+implib shlwapi.dll, ord.285, _IConnectionPoint_OnChanged@8
+implib shlwapi.dll, ord.284, _IConnectionPoint_SimpleInvoke@12
 implib shlwapi.dll, ord.207, _IContextMenu_Invoke@16
 implib shlwapi.dll, ord.184, _IStream_Read@12
 implib shlwapi.dll, ord.213, _IStream_Reset@4
 implib shlwapi.dll, ord.214, _IStream_Size@8
 implib shlwapi.dll, ord.212, _IStream_Write@12
 implib shlwapi.dll, ord.169, _IUnknown_AtomicRelease@4
+implib shlwapi.dll, ord.288, _IUnknown_CPContainerInvokeIndirect@12
+implib shlwapi.dll, ord.286, _IUnknown_CPContainerInvokeParam ; This function uses the CDECL calling convention!
+implib shlwapi.dll, ord.287, _IUnknown_CPContainerOnChanged@8
 implib shlwapi.dll, ord.164, _IUnknown_Exec@24
 implib shlwapi.dll, ord.175, _IUnknown_GetClassID@8
 implib shlwapi.dll, ord.256, _IUnknown_GetSite@12
@@ -294,6 +306,7 @@ implib shlwapi.dll, PathUnmakeSystemFolderW, _PathUnmakeSystemFolderW@4
 implib shlwapi.dll, PathUnquoteSpacesA, _PathUnquoteSpacesA@4
 implib shlwapi.dll, PathUnquoteSpacesW, _PathUnquoteSpacesW@4
 implib shlwapi.dll, ord.116, _PeekMessageWrapW@20
+implib shlwapi.dll, ord.289, _PlaySoundWrapW@12
 implib shlwapi.dll, ord.117, _PostMessageWrapW@16
 implib shlwapi.dll, ord.118, _PostThreadMessageWrapW@16
 implib shlwapi.dll, ord.219, _QISearch@16
@@ -331,6 +344,7 @@ implib shlwapi.dll, SHCreateStreamOnFileA, _SHCreateStreamOnFileA@12
 implib shlwapi.dll, SHCreateStreamOnFileW, _SHCreateStreamOnFileW@12
 implib shlwapi.dll, ord.16, _SHCreateThread@16
 implib shlwapi.dll, ord.257, _SHCreateWorkerWindowA@24
+implib shlwapi.dll, ord.278, _SHCreateWorkerWindowW@24
 implib shlwapi.dll, ord.240, _SHDefWindowProc@16
 implib shlwapi.dll, SHDeleteEmptyKeyA, _SHDeleteEmptyKeyA@8
 implib shlwapi.dll, SHDeleteEmptyKeyW, _SHDeleteEmptyKeyW@8
@@ -352,11 +366,13 @@ implib shlwapi.dll, ord.10, _SHFreeShared@8
 implib shlwapi.dll, ord.193, _SHGetCurColorRes@0
 implib shlwapi.dll, SHGetInverseCMAP, _SHGetInverseCMAP@8
 implib shlwapi.dll, ord.192, _SHGetMenuFromID@8
+implib shlwapi.dll, ord.271, _SHGetRestriction@12
 implib shlwapi.dll, SHGetThreadRef, _SHGetThreadRef@4
 implib shlwapi.dll, SHGetValueA, _SHGetValueA@24
 implib shlwapi.dll, ord.205, _SHGetValueGoodBootA@24
 implib shlwapi.dll, ord.206, _SHGetValueGoodBootW@24
 implib shlwapi.dll, SHGetValueW, _SHGetValueW@24
+implib shlwapi.dll, ord.279, _SHInvokeDefaultCommand@12
 implib shlwapi.dll, ord.204, _SHIsChildOrSelf@8
 implib shlwapi.dll, ord.166, _SHIsEmptyStream@4
 implib shlwapi.dll, ord.195, _SHIsExpandableFolder@8
@@ -367,11 +383,15 @@ implib shlwapi.dll, ord.8, _SHLockShared@8
 implib shlwapi.dll, ord.11, _SHMapHandle@20
 implib shlwapi.dll, ord.179, _SHMenuIndexFromID@8
 implib shlwapi.dll, ord.185, _SHMessageBoxCheckA@24
+implib shlwapi.dll, ord.291, _SHMessageBoxCheckExA@28
+implib shlwapi.dll, ord.292, _SHMessageBoxCheckExW@28
 implib shlwapi.dll, ord.191, _SHMessageBoxCheckW@24
 implib shlwapi.dll, SHOpenRegStream2A, _SHOpenRegStream2A@16
 implib shlwapi.dll, SHOpenRegStream2W, _SHOpenRegStream2W@16
 implib shlwapi.dll, SHOpenRegStreamA, _SHOpenRegStreamA@16
 implib shlwapi.dll, SHOpenRegStreamW, _SHOpenRegStreamW@16
+implib shlwapi.dll, ord.282, _SHPackDispParams ; This function uses the CDECL calling convention!
+implib shlwapi.dll, ord.281, _SHPackDispParamsV@16
 implib shlwapi.dll, ord.236, _SHPinDllOfCLSID@4
 implib shlwapi.dll, ord.178, _SHPropagateMessage@20
 implib shlwapi.dll, SHQueryInfoKeyA, _SHQueryInfoKeyA@20
@@ -394,6 +414,7 @@ implib shlwapi.dll, SHRegEnumUSValueA, _SHRegEnumUSValueA@32
 implib shlwapi.dll, SHRegEnumUSValueW, _SHRegEnumUSValueW@32
 implib shlwapi.dll, SHRegGetBoolUSValueA, _SHRegGetBoolUSValueA@16
 implib shlwapi.dll, SHRegGetBoolUSValueW, _SHRegGetBoolUSValueW@16
+implib shlwapi.dll, ord.280, _SHRegGetIntW@12
 implib shlwapi.dll, SHRegGetPathA, _SHRegGetPathA@20
 implib shlwapi.dll, SHRegGetPathW, _SHRegGetPathW@20
 implib shlwapi.dll, SHRegGetUSValueA, _SHRegGetUSValueA@32
@@ -548,6 +569,7 @@ implib shlwapi.dll, UrlIsW, _UrlIsW@8
 implib shlwapi.dll, UrlUnescapeA, _UrlUnescapeA@16
 implib shlwapi.dll, UrlUnescapeW, _UrlUnescapeW@16
 implib shlwapi.dll, ord.148, _VkKeyScanWrapW@4
+implib shlwapi.dll, ord.276, _WhichPlatform@0
 implib shlwapi.dll, ord.149, _WinHelpWrapW@16
 implib shlwapi.dll, ord.234, _ZoneCheckHost@12
 implib shlwapi.dll, ord.235, _ZoneCheckHostEx@28
