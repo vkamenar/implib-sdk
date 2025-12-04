@@ -5,6 +5,8 @@ include '..\implib.inc'
 ; Feel free to uncomment the necessary symbols and recompile the library.
 
 ; *** Functions discontinued in v6.1 (Windows 7)
+; implib shlwapi.dll, ord.297, _CreateURLFileContentsA@8
+; implib shlwapi.dll, ord.296, _CreateURLFileContentsW@8
 ; implib shlwapi.dll, ord.275, _RegisterGlobalHotkeyA@12
 ; implib shlwapi.dll, ord.274, _RegisterGlobalHotkeyW@12
 ; implib shlwapi.dll, SHCreateStreamWrapper, _SHCreateStreamWrapper@16
@@ -17,6 +19,7 @@ include '..\implib.inc'
 
 ; *** Functions discontinued in v6.0 (Windows Vista)
 ; implib shlwapi.dll, ord.250, _GetPerfTime@0
+; implib shlwapi.dll, ord.293, _SHCancelUserWorkItems@8
 ; implib shlwapi.dll, ord.264, _SHChangeTimerQueueTimer@16
 ; implib shlwapi.dll, ord.261, _SHCreateTimerQueue@0
 ; implib shlwapi.dll, ord.262, _SHDeleteTimerQueue@4
@@ -77,6 +80,7 @@ implib shlwapi.dll, ord.50, _CreateDirectoryWrapW@8
 implib shlwapi.dll, ord.51, _CreateEventWrapW@16
 implib shlwapi.dll, ord.52, _CreateFileWrapW@28
 implib shlwapi.dll, ord.53, _CreateFontIndirectWrapW@4
+implib shlwapi.dll, ord.300, _CreateFontWrapW@56
 implib shlwapi.dll, ord.54, _CreateICWrapW@16
 implib shlwapi.dll, ord.55, _CreateWindowExWrapW@48
 implib shlwapi.dll, ord.56, _DefWindowProcWrapW@16
@@ -85,10 +89,12 @@ implib shlwapi.dll, ord.58, _DialogBoxIndirectParamWrapW@20
 implib shlwapi.dll, ord.59, _DialogBoxParamWrapW@20
 implib shlwapi.dll, ord.60, _DispatchMessageWrapW@4
 implib shlwapi.dll, DllGetVersion, _SHLWAPI_DllGetVersion@4
+implib shlwapi.dll, ord.301, _DrawTextExWrapW@24
 implib shlwapi.dll, ord.61, _DrawTextWrapW@20
 implib shlwapi.dll, ord.63, _EnumFontFamiliesExWrapW@20
 implib shlwapi.dll, ord.62, _EnumFontFamiliesWrapW@16
 implib shlwapi.dll, ord.64, _EnumResourceNamesWrapW@16
+implib shlwapi.dll, ord.299, _ExtTextOutWrapW@32
 implib shlwapi.dll, ord.211, _FDSA_DeleteItem@8
 implib shlwapi.dll, ord.209, _FDSA_Destroy@4
 implib shlwapi.dll, ord.208, _FDSA_Initialize@20
@@ -112,6 +118,7 @@ implib shlwapi.dll, ord.74, _GetDlgItemTextWrapW@16
 implib shlwapi.dll, ord.75, _GetFileAttributesWrapW@4
 implib shlwapi.dll, ord.76, _GetFullPathNameWrapW@16
 implib shlwapi.dll, ord.77, _GetLocaleInfoWrapW@16
+implib shlwapi.dll, ord.302, _GetMenuItemInfoWrapW@16
 implib shlwapi.dll, GetMenuPosFromID, _GetMenuPosFromID@8
 implib shlwapi.dll, ord.78, _GetMenuStringWrapW@20
 implib shlwapi.dll, ord.79, _GetMessageWrapW@16
@@ -364,6 +371,7 @@ implib shlwapi.dll, ord.22, _SHFindDataBlock@8
 implib shlwapi.dll, ord.19, _SHFreeDataBlockList@4
 implib shlwapi.dll, ord.10, _SHFreeShared@8
 implib shlwapi.dll, ord.193, _SHGetCurColorRes@0
+implib shlwapi.dll, ord.294, _SHGetIniStringW@20
 implib shlwapi.dll, SHGetInverseCMAP, _SHGetInverseCMAP@8
 implib shlwapi.dll, ord.192, _SHGetMenuFromID@8
 implib shlwapi.dll, ord.271, _SHGetRestriction@12
@@ -440,6 +448,7 @@ implib shlwapi.dll, ord.221, _SHRemoveDefaultDialogFont@4
 implib shlwapi.dll, ord.266, _SHRestrictionLookup@16
 implib shlwapi.dll, ord.198, _SHSearchMapInt@16
 implib shlwapi.dll, ord.220, _SHSetDefaultDialogFont@8
+implib shlwapi.dll, ord.295, _SHSetIniStringW@16
 implib shlwapi.dll, ord.167, _SHSetParentHwnd@8
 implib shlwapi.dll, SHSetThreadRef, _SHSetThreadRef@4
 implib shlwapi.dll, ord.263, _SHSetTimerQueueTimer@28
@@ -571,6 +580,7 @@ implib shlwapi.dll, UrlUnescapeW, _UrlUnescapeW@16
 implib shlwapi.dll, ord.148, _VkKeyScanWrapW@4
 implib shlwapi.dll, ord.276, _WhichPlatform@0
 implib shlwapi.dll, ord.149, _WinHelpWrapW@16
+implib shlwapi.dll, ord.298, _WritePrivateProfileStringWrapW@16
 implib shlwapi.dll, ord.234, _ZoneCheckHost@12
 implib shlwapi.dll, ord.235, _ZoneCheckHostEx@28
 implib shlwapi.dll, ord.228, _ZoneCheckUrlA@16
