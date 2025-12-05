@@ -82,6 +82,9 @@ implib shlwapi.dll, ord.52, _CreateFileWrapW@28
 implib shlwapi.dll, ord.53, _CreateFontIndirectWrapW@4
 implib shlwapi.dll, ord.300, _CreateFontWrapW@56
 implib shlwapi.dll, ord.54, _CreateICWrapW@16
+implib shlwapi.dll, ord.304, _CreateMetaFileWrapW@4
+implib shlwapi.dll, ord.305, _CreateMutexWrapW@12
+implib shlwapi.dll, ord.307, _CreateSemaphoreWrapW@16
 implib shlwapi.dll, ord.55, _CreateWindowExWrapW@48
 implib shlwapi.dll, ord.56, _DefWindowProcWrapW@16
 implib shlwapi.dll, ord.57, _DeleteFileWrapW@4
@@ -94,6 +97,7 @@ implib shlwapi.dll, ord.61, _DrawTextWrapW@20
 implib shlwapi.dll, ord.63, _EnumFontFamiliesExWrapW@20
 implib shlwapi.dll, ord.62, _EnumFontFamiliesWrapW@16
 implib shlwapi.dll, ord.64, _EnumResourceNamesWrapW@16
+implib shlwapi.dll, ord.306, _ExpandEnvironmentStringsWrapW@12
 implib shlwapi.dll, ord.299, _ExtTextOutWrapW@32
 implib shlwapi.dll, ord.211, _FDSA_DeleteItem@8
 implib shlwapi.dll, ord.209, _FDSA_Destroy@4
@@ -114,6 +118,7 @@ implib shlwapi.dll, ord.70, _GetClassLongWrapW@8
 implib shlwapi.dll, ord.71, _GetClassNameWrapW@12
 implib shlwapi.dll, ord.72, _GetClipboardFormatNameWrapW@12
 implib shlwapi.dll, ord.73, _GetCurrentDirectoryWrapW@8
+implib shlwapi.dll, ord.311, _GetDateFormatWrapW@24
 implib shlwapi.dll, ord.74, _GetDlgItemTextWrapW@16
 implib shlwapi.dll, ord.75, _GetFileAttributesWrapW@4
 implib shlwapi.dll, ord.76, _GetFullPathNameWrapW@16
@@ -136,6 +141,7 @@ implib shlwapi.dll, ord.90, _GetTempPathWrapW@8
 implib shlwapi.dll, ord.91, _GetTextExtentPoint32WrapW@16
 implib shlwapi.dll, ord.92, _GetTextFaceWrapW@12
 implib shlwapi.dll, ord.93, _GetTextMetricsWrapW@8
+implib shlwapi.dll, ord.310, _GetTimeFormatWrapW@24
 implib shlwapi.dll, ord.94, _GetWindowLongWrapW@8
 implib shlwapi.dll, ord.96, _GetWindowTextLengthWrapW@4
 implib shlwapi.dll, ord.95, _GetWindowTextWrapW@12
@@ -165,9 +171,11 @@ implib shlwapi.dll, ord.199, _IUnknown_Set@8
 implib shlwapi.dll, ord.173, _IUnknown_SetOwner@8
 implib shlwapi.dll, ord.174, _IUnknown_SetSite@8
 implib shlwapi.dll, ord.188, _IUnknown_TranslateAcceleratorOCS@12
+implib shlwapi.dll, ord.303, _InsertMenuItemWrapW@16
 implib shlwapi.dll, ord.98, _InsertMenuWrapW@20
 implib shlwapi.dll, IntlStrEqWorkerA, _IntlStrEqWorkerA@16 ; Alias for StrIsIntlEqualA
 implib shlwapi.dll, IntlStrEqWorkerW, _IntlStrEqWorkerW@16 ; Alias for StrIsIntlEqualW
+implib shlwapi.dll, ord.308, _IsBadStringPtrWrapW@8
 implib shlwapi.dll, ord.28, _IsCharAlphaNumericWrapW@4
 implib shlwapi.dll, ord.25, _IsCharAlphaWrapW@4
 implib shlwapi.dll, ord.30, _IsCharBlankW@4
@@ -186,6 +194,7 @@ implib shlwapi.dll, ord.102, _LoadCursorWrapW@8
 implib shlwapi.dll, ord.103, _LoadIconWrapW@8
 implib shlwapi.dll, ord.104, _LoadImageWrapW@24
 implib shlwapi.dll, ord.105, _LoadLibraryExWrapW@12
+implib shlwapi.dll, ord.309, _LoadLibraryWrapW@4
 implib shlwapi.dll, ord.106, _LoadMenuWrapW@8
 implib shlwapi.dll, ord.107, _LoadStringWrapW@16
 implib shlwapi.dll, ord.201, _MayExecForward@28
