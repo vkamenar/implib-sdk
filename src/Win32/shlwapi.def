@@ -92,6 +92,7 @@ implib shlwapi.dll, ord.58, _DialogBoxIndirectParamWrapW@20
 implib shlwapi.dll, ord.59, _DialogBoxParamWrapW@20
 implib shlwapi.dll, ord.60, _DispatchMessageWrapW@4
 implib shlwapi.dll, DllGetVersion, _SHLWAPI_DllGetVersion@4
+implib shlwapi.dll, ord.318, _DragQueryFileWrapW@16
 implib shlwapi.dll, ord.301, _DrawTextExWrapW@24
 implib shlwapi.dll, ord.61, _DrawTextWrapW@20
 implib shlwapi.dll, ord.63, _EnumFontFamiliesExWrapW@20
@@ -105,6 +106,7 @@ implib shlwapi.dll, ord.208, _FDSA_Initialize@20
 implib shlwapi.dll, ord.210, _FDSA_InsertItem@12
 implib shlwapi.dll, ord.65, _FindFirstFileWrapW@8
 implib shlwapi.dll, ord.66, _FindResourceWrapW@12
+implib shlwapi.dll, ord.319, _FindWindowExWrapW@16
 implib shlwapi.dll, ord.67, _FindWindowWrapW@8
 implib shlwapi.dll, ord.68, _FormatMessageWrapW@28
 implib shlwapi.dll, ord.269, _GUIDFromStringA@8
@@ -113,6 +115,7 @@ implib shlwapi.dll, ord.14, _GetAcceptLanguagesA@8
 implib shlwapi.dll, ord.15, _GetAcceptLanguagesW@8
 implib shlwapi.dll, ord.110, _GetCharWidth32WrapW@16
 implib shlwapi.dll, ord.111, _GetCharacterPlacementWrapW@24
+implib shlwapi.dll, ord.315, _GetClassInfoExWrapW@12
 implib shlwapi.dll, ord.69, _GetClassInfoWrapW@12
 implib shlwapi.dll, ord.70, _GetClassLongWrapW@8
 implib shlwapi.dll, ord.71, _GetClassNameWrapW@12
@@ -131,6 +134,7 @@ implib shlwapi.dll, ord.80, _GetModuleFileNameWrapW@12
 implib shlwapi.dll, ord.83, _GetModuleHandleWrapW@4
 implib shlwapi.dll, ord.84, _GetObjectWrapW@12
 implib shlwapi.dll, ord.85, _GetPrivateProfileIntWrapW@16
+implib shlwapi.dll, ord.312, _GetPrivateProfileStringWrapW@24
 implib shlwapi.dll, ord.86, _GetProfileStringWrapW@20
 implib shlwapi.dll, ord.87, _GetPropWrapW@8
 implib shlwapi.dll, ord.35, _GetStringType3ExW@12
@@ -151,6 +155,8 @@ implib shlwapi.dll, ord.283, _IConnectionPoint_InvokeWithCancel@20
 implib shlwapi.dll, ord.285, _IConnectionPoint_OnChanged@8
 implib shlwapi.dll, ord.284, _IConnectionPoint_SimpleInvoke@12
 implib shlwapi.dll, ord.207, _IContextMenu_Invoke@16
+implib shlwapi.dll, ord.316, _IShellFolder_GetDisplayNameOf@20
+implib shlwapi.dll, ord.317, _IShellFolder_ParseDisplayName@28
 implib shlwapi.dll, ord.184, _IStream_Read@12
 implib shlwapi.dll, ord.213, _IStream_Reset@4
 implib shlwapi.dll, ord.214, _IStream_Size@8
@@ -338,9 +344,12 @@ implib shlwapi.dll, ord.128, _RegQueryValueExWrapW@24
 implib shlwapi.dll, ord.127, _RegQueryValueWrapW@16
 implib shlwapi.dll, ord.130, _RegSetValueExWrapW@24
 implib shlwapi.dll, ord.129, _RegSetValueWrapW@20
+implib shlwapi.dll, ord.314, _RegisterClassExWrapW@4
 implib shlwapi.dll, ord.131, _RegisterClassWrapW@4
 implib shlwapi.dll, ord.132, _RegisterClipboardFormatWrapW@4
 implib shlwapi.dll, ord.13, _RegisterDefaultAcceptHeaders@8
+implib shlwapi.dll, ord.320, _RegisterMIMETypeForExtensionA@8
+implib shlwapi.dll, ord.321, _RegisterMIMETypeForExtensionW@8
 implib shlwapi.dll, ord.133, _RegisterWindowMessageWrapW@4
 implib shlwapi.dll, ord.134, _RemovePropWrapW@8
 implib shlwapi.dll, ord.160, _SHAboutInfoA@8
@@ -380,6 +389,7 @@ implib shlwapi.dll, ord.22, _SHFindDataBlock@8
 implib shlwapi.dll, ord.19, _SHFreeDataBlockList@4
 implib shlwapi.dll, ord.10, _SHFreeShared@8
 implib shlwapi.dll, ord.193, _SHGetCurColorRes@0
+implib shlwapi.dll, ord.313, _SHGetFileInfoWrapW@20
 implib shlwapi.dll, ord.294, _SHGetIniStringW@20
 implib shlwapi.dll, SHGetInverseCMAP, _SHGetInverseCMAP@8
 implib shlwapi.dll, ord.192, _SHGetMenuFromID@8
