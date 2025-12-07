@@ -55,6 +55,7 @@ implib shlwapi.dll, AssocQueryStringA, _AssocQueryStringA@24
 implib shlwapi.dll, AssocQueryStringByKeyA, _AssocQueryStringByKeyA@24
 implib shlwapi.dll, AssocQueryStringByKeyW, _AssocQueryStringByKeyW@24
 implib shlwapi.dll, AssocQueryStringW, _AssocQueryStringW@24
+implib shlwapi.dll, ord.332, _CallMsgFilterWrapW@8
 implib shlwapi.dll, ord.37, _CallWindowProcWrapW@20
 implib shlwapi.dll, ord.39, _CharLowerBuffWrapW@8
 implib shlwapi.dll, ord.38, _CharLowerWrapW@4
@@ -126,6 +127,8 @@ implib shlwapi.dll, ord.74, _GetDlgItemTextWrapW@16
 implib shlwapi.dll, ord.75, _GetFileAttributesWrapW@4
 implib shlwapi.dll, ord.76, _GetFullPathNameWrapW@16
 implib shlwapi.dll, ord.77, _GetLocaleInfoWrapW@16
+implib shlwapi.dll, ord.328, _GetMIMETypeSubKeyA@12
+implib shlwapi.dll, ord.329, _GetMIMETypeSubKeyW@12
 implib shlwapi.dll, ord.302, _GetMenuItemInfoWrapW@16
 implib shlwapi.dll, GetMenuPosFromID, _GetMenuPosFromID@8
 implib shlwapi.dll, ord.78, _GetMenuStringWrapW@20
@@ -203,6 +206,8 @@ implib shlwapi.dll, ord.105, _LoadLibraryExWrapW@12
 implib shlwapi.dll, ord.309, _LoadLibraryWrapW@4
 implib shlwapi.dll, ord.106, _LoadMenuWrapW@8
 implib shlwapi.dll, ord.107, _LoadStringWrapW@16
+implib shlwapi.dll, ord.330, _MIME_GetExtensionA@12
+implib shlwapi.dll, ord.331, _MIME_GetExtensionW@12
 implib shlwapi.dll, ord.201, _MayExecForward@28
 implib shlwapi.dll, ord.200, _MayQSForward@24
 implib shlwapi.dll, ord.108, _MessageBoxIndirectWrapW@4
@@ -348,6 +353,8 @@ implib shlwapi.dll, ord.314, _RegisterClassExWrapW@4
 implib shlwapi.dll, ord.131, _RegisterClassWrapW@4
 implib shlwapi.dll, ord.132, _RegisterClipboardFormatWrapW@4
 implib shlwapi.dll, ord.13, _RegisterDefaultAcceptHeaders@8
+implib shlwapi.dll, ord.324, _RegisterExtensionForMIMETypeA@8
+implib shlwapi.dll, ord.325, _RegisterExtensionForMIMETypeW@8
 implib shlwapi.dll, ord.320, _RegisterMIMETypeForExtensionA@8
 implib shlwapi.dll, ord.321, _RegisterMIMETypeForExtensionW@8
 implib shlwapi.dll, ord.133, _RegisterWindowMessageWrapW@4
@@ -359,6 +366,7 @@ implib shlwapi.dll, ord.7, _SHAllocShared@12
 implib shlwapi.dll, ord.215, _SHAnsiToUnicode@12
 implib shlwapi.dll, ord.216, _SHAnsiToUnicodeCP@16
 implib shlwapi.dll, SHAutoComplete, _SHAutoComplete@8
+implib shlwapi.dll, ord.333, _SHBrowseForFolderWrapW@4
 implib shlwapi.dll, ord.265, _SHCancelTimerQueueTimer@8
 implib shlwapi.dll, ord.182, _SHCheckMenuItem@12
 implib shlwapi.dll, SHCopyKeyA, _SHCopyKeyA@16
@@ -570,6 +578,10 @@ implib shlwapi.dll, StrTrimW, _StrTrimW@8
 implib shlwapi.dll, ord.145, _SystemParametersInfoWrapW@16
 implib shlwapi.dll, ord.146, _TranslateAcceleratorWrapW@12
 implib shlwapi.dll, ord.147, _UnregisterClassWrapW@8
+implib shlwapi.dll, ord.326, _UnregisterExtensionForMIMETypeA@4
+implib shlwapi.dll, ord.327, _UnregisterExtensionForMIMETypeW@4
+implib shlwapi.dll, ord.322, _UnregisterMIMETypeForExtensionA@4
+implib shlwapi.dll, ord.323, _UnregisterMIMETypeForExtensionW@4
 implib shlwapi.dll, UrlApplySchemeA, _UrlApplySchemeA@16
 implib shlwapi.dll, UrlApplySchemeW, _UrlApplySchemeW@16
 implib shlwapi.dll, UrlCanonicalizeA, _UrlCanonicalizeA@16
