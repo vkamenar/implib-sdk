@@ -18,6 +18,7 @@ include '..\implib.inc'
 ; implib shlwapi.dll, ord.227, _ZoneCheckPathW@16
 
 ; *** Functions discontinued in v6.0 (Windows Vista)
+; implib shlwapi.dll, ord.356, _CreateAllAccessSecurityAttributes@12
 ; implib shlwapi.dll, ord.250, _GetPerfTime@0
 ; implib shlwapi.dll, ord.293, _SHCancelUserWorkItems@8
 ; implib shlwapi.dll, ord.264, _SHChangeTimerQueueTimer@16
@@ -146,6 +147,7 @@ implib shlwapi.dll, ord.85, _GetPrivateProfileIntWrapW@16
 implib shlwapi.dll, ord.312, _GetPrivateProfileStringWrapW@24
 implib shlwapi.dll, ord.86, _GetProfileStringWrapW@20
 implib shlwapi.dll, ord.87, _GetPropWrapW@8
+implib shlwapi.dll, ord.361, _GetShortPathNameWrapW@12
 implib shlwapi.dll, ord.35, _GetStringType3ExW@12
 implib shlwapi.dll, ord.88, _GetStringTypeExWrapW@20
 implib shlwapi.dll, ord.81, _GetSystemDirectoryWrapW@8
@@ -155,6 +157,7 @@ implib shlwapi.dll, ord.91, _GetTextExtentPoint32WrapW@16
 implib shlwapi.dll, ord.92, _GetTextFaceWrapW@12
 implib shlwapi.dll, ord.93, _GetTextMetricsWrapW@8
 implib shlwapi.dll, ord.310, _GetTimeFormatWrapW@24
+implib shlwapi.dll, ord.362, _GetUserNameWrapW@8
 implib shlwapi.dll, ord.94, _GetWindowLongWrapW@8
 implib shlwapi.dll, ord.96, _GetWindowTextLengthWrapW@4
 implib shlwapi.dll, ord.95, _GetWindowTextWrapW@12
@@ -174,6 +177,7 @@ implib shlwapi.dll, ord.169, _IUnknown_AtomicRelease@4
 implib shlwapi.dll, ord.288, _IUnknown_CPContainerInvokeIndirect@12
 implib shlwapi.dll, ord.286, _IUnknown_CPContainerInvokeParam ; This function uses the CDECL calling convention!
 implib shlwapi.dll, ord.287, _IUnknown_CPContainerOnChanged@8
+implib shlwapi.dll, ord.355, _IUnknown_EnableModeless@8
 implib shlwapi.dll, ord.164, _IUnknown_Exec@24
 implib shlwapi.dll, ord.175, _IUnknown_GetClassID@8
 implib shlwapi.dll, ord.256, _IUnknown_GetSite@12
@@ -221,6 +225,7 @@ implib shlwapi.dll, ord.340, _MessageBoxWrapW@16
 implib shlwapi.dll, ord.109, _ModifyMenuWrapW@20
 implib shlwapi.dll, ord.113, _MoveFileWrapW@8
 implib shlwapi.dll, ord.114, _OemToCharWrapW@8
+implib shlwapi.dll, ord.359, _OpenEventWrapW@12
 implib shlwapi.dll, ord.115, _OutputDebugStringWrapW@4
 implib shlwapi.dll, ord.1, _ParseURLA@8
 implib shlwapi.dll, ord.2, _ParseURLW@8
@@ -366,6 +371,7 @@ implib shlwapi.dll, ord.325, _RegisterExtensionForMIMETypeW@8
 implib shlwapi.dll, ord.320, _RegisterMIMETypeForExtensionA@8
 implib shlwapi.dll, ord.321, _RegisterMIMETypeForExtensionW@8
 implib shlwapi.dll, ord.133, _RegisterWindowMessageWrapW@4
+implib shlwapi.dll, ord.360, _RemoveDirectoryWrapW@4
 implib shlwapi.dll, ord.134, _RemovePropWrapW@8
 implib shlwapi.dll, ord.160, _SHAboutInfoA@8
 implib shlwapi.dll, ord.161, _SHAboutInfoW@8
@@ -387,6 +393,7 @@ implib shlwapi.dll, SHCreateStreamOnFileW, _SHCreateStreamOnFileW@12
 implib shlwapi.dll, ord.16, _SHCreateThread@16
 implib shlwapi.dll, ord.257, _SHCreateWorkerWindowA@24
 implib shlwapi.dll, ord.278, _SHCreateWorkerWindowW@24
+implib shlwapi.dll, ord.358, _SHDefExtractIconWrapW@24
 implib shlwapi.dll, ord.240, _SHDefWindowProc@16
 implib shlwapi.dll, SHDeleteEmptyKeyA, _SHDeleteEmptyKeyA@8
 implib shlwapi.dll, SHDeleteEmptyKeyW, _SHDeleteEmptyKeyW@8
@@ -404,6 +411,8 @@ implib shlwapi.dll, SHEnumValueW, _SHEnumValueW@28
 implib shlwapi.dll, ord.336, _SHFileOperationWrapW@4
 implib shlwapi.dll, ord.197, _SHFillRectClr@12
 implib shlwapi.dll, ord.22, _SHFindDataBlock@8
+implib shlwapi.dll, ord.353, _SHFormatDateTimeA@16
+implib shlwapi.dll, ord.354, _SHFormatDateTimeW@16
 implib shlwapi.dll, ord.19, _SHFreeDataBlockList@4
 implib shlwapi.dll, ord.10, _SHFreeShared@8
 implib shlwapi.dll, ord.193, _SHGetCurColorRes@0
@@ -413,6 +422,7 @@ implib shlwapi.dll, ord.313, _SHGetFileInfoWrapW@20
 implib shlwapi.dll, ord.294, _SHGetIniStringW@20
 implib shlwapi.dll, SHGetInverseCMAP, _SHGetInverseCMAP@8
 implib shlwapi.dll, ord.192, _SHGetMenuFromID@8
+implib shlwapi.dll, ord.357, _SHGetNewLinkInfoWrapW@20
 implib shlwapi.dll, ord.334, _SHGetPathFromIDListWrapW@8
 implib shlwapi.dll, ord.271, _SHGetRestriction@12
 implib shlwapi.dll, SHGetThreadRef, _SHGetThreadRef@4
@@ -421,6 +431,7 @@ implib shlwapi.dll, ord.205, _SHGetValueGoodBootA@24
 implib shlwapi.dll, ord.206, _SHGetValueGoodBootW@24
 implib shlwapi.dll, SHGetValueW, _SHGetValueW@24
 implib shlwapi.dll, ord.342, _SHInterlockedCompareExchange@12
+implib shlwapi.dll, ord.363, _SHInvokeCommand@16
 implib shlwapi.dll, ord.279, _SHInvokeDefaultCommand@12
 implib shlwapi.dll, ord.204, _SHIsChildOrSelf@8
 implib shlwapi.dll, ord.166, _SHIsEmptyStream@4
