@@ -87,14 +87,18 @@ implib shlwapi.dll, ord.300, _CreateFontWrapW@56
 implib shlwapi.dll, ord.54, _CreateICWrapW@16
 implib shlwapi.dll, ord.304, _CreateMetaFileWrapW@4
 implib shlwapi.dll, ord.305, _CreateMutexWrapW@12
+implib shlwapi.dll, ord.369, _CreateProcessWrapW@40
 implib shlwapi.dll, ord.307, _CreateSemaphoreWrapW@16
 implib shlwapi.dll, ord.55, _CreateWindowExWrapW@48
+implib shlwapi.dll, ord.371, _DdeInitializeWrapW@16
 implib shlwapi.dll, ord.56, _DefWindowProcWrapW@16
 implib shlwapi.dll, ord.57, _DeleteFileWrapW@4
 implib shlwapi.dll, ord.58, _DialogBoxIndirectParamWrapW@20
 implib shlwapi.dll, ord.59, _DialogBoxParamWrapW@20
 implib shlwapi.dll, ord.60, _DispatchMessageWrapW@4
 implib shlwapi.dll, DllGetVersion, _SHLWAPI_DllGetVersion@4
+implib shlwapi.dll, ord.364, _DoesStringRoundTripA@12
+implib shlwapi.dll, ord.365, _DoesStringRoundTripW@12
 implib shlwapi.dll, ord.318, _DragQueryFileWrapW@16
 implib shlwapi.dll, ord.301, _DrawTextExWrapW@24
 implib shlwapi.dll, ord.61, _DrawTextWrapW@20
@@ -104,6 +108,7 @@ implib shlwapi.dll, ord.64, _EnumResourceNamesWrapW@16
 implib shlwapi.dll, ord.306, _ExpandEnvironmentStringsWrapW@12
 implib shlwapi.dll, ord.299, _ExtTextOutWrapW@32
 implib shlwapi.dll, ord.337, _ExtractIconExWrapW@20
+implib shlwapi.dll, ord.370, _ExtractIconWrapW@12
 implib shlwapi.dll, ord.211, _FDSA_DeleteItem@8
 implib shlwapi.dll, ord.209, _FDSA_Destroy@4
 implib shlwapi.dll, ord.208, _FDSA_Initialize@20
@@ -145,6 +150,7 @@ implib shlwapi.dll, ord.339, _GetNumberFormatWrapW@24
 implib shlwapi.dll, ord.84, _GetObjectWrapW@12
 implib shlwapi.dll, ord.85, _GetPrivateProfileIntWrapW@16
 implib shlwapi.dll, ord.312, _GetPrivateProfileStringWrapW@24
+implib shlwapi.dll, ord.368, _GetPrivateProfileStructWrapW@20
 implib shlwapi.dll, ord.86, _GetProfileStringWrapW@20
 implib shlwapi.dll, ord.87, _GetPropWrapW@8
 implib shlwapi.dll, ord.361, _GetShortPathNameWrapW@12
@@ -355,6 +361,7 @@ implib shlwapi.dll, ord.121, _RegDeleteKeyWrapW@8
 implib shlwapi.dll, ord.347, _RegDeleteValueWrapW@8
 implib shlwapi.dll, ord.123, _RegEnumKeyExWrapW@32
 implib shlwapi.dll, ord.122, _RegEnumKeyWrapW@16
+implib shlwapi.dll, ord.366, _RegEnumValueWrapW@32
 implib shlwapi.dll, ord.125, _RegOpenKeyExWrapW@20
 implib shlwapi.dll, ord.124, _RegOpenKeyWrapW@12
 implib shlwapi.dll, ord.126, _RegQueryInfoKeyWrapW@48
@@ -642,6 +649,7 @@ implib shlwapi.dll, ord.148, _VkKeyScanWrapW@4
 implib shlwapi.dll, ord.276, _WhichPlatform@0
 implib shlwapi.dll, ord.149, _WinHelpWrapW@16
 implib shlwapi.dll, ord.298, _WritePrivateProfileStringWrapW@16
+implib shlwapi.dll, ord.367, _WritePrivateProfileStructWrapW@20
 implib shlwapi.dll, ord.234, _ZoneCheckHost@12
 implib shlwapi.dll, ord.235, _ZoneCheckHostEx@28
 implib shlwapi.dll, ord.228, _ZoneCheckUrlA@16
