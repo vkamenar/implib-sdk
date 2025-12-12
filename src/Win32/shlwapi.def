@@ -9,6 +9,8 @@ include '..\implib.inc'
 ; implib shlwapi.dll, ord.296, _CreateURLFileContentsW@8
 ; implib shlwapi.dll, ord.275, _RegisterGlobalHotkeyA@12
 ; implib shlwapi.dll, ord.274, _RegisterGlobalHotkeyW@12
+; implib shlwapi.dll, ord.374, _SHCheckDiskForMediaA@16
+; implib shlwapi.dll, ord.375, _SHCheckDiskForMediaW@16
 ; implib shlwapi.dll, SHCreateStreamWrapper, _SHCreateStreamWrapper@16
 ; implib shlwapi.dll, ord.277, _SHDialogBox@20
 ; implib shlwapi.dll, ord.171, _SHIsSameObject@8
@@ -50,6 +52,7 @@ include '..\implib.inc'
 ; implib shlwapi.dll, _SHGetInstanceExplorer@4
 
 implib shlwapi.dll, ord.36, _AppendMenuWrapW@16
+implib shlwapi.dll, ord.381, _AssocCopyVerbs@8
 implib shlwapi.dll, AssocCreate, _AssocCreate@24
 implib shlwapi.dll, AssocQueryKeyA, _AssocQueryKeyA@20
 implib shlwapi.dll, AssocQueryKeyW, _AssocQueryKeyW@20
@@ -90,7 +93,9 @@ implib shlwapi.dll, ord.305, _CreateMutexWrapW@12
 implib shlwapi.dll, ord.369, _CreateProcessWrapW@40
 implib shlwapi.dll, ord.307, _CreateSemaphoreWrapW@16
 implib shlwapi.dll, ord.55, _CreateWindowExWrapW@48
+implib shlwapi.dll, ord.372, _DdeCreateStringHandleWrapW@12
 implib shlwapi.dll, ord.371, _DdeInitializeWrapW@16
+implib shlwapi.dll, ord.373, _DdeQueryStringWrapW@20
 implib shlwapi.dll, ord.56, _DefWindowProcWrapW@16
 implib shlwapi.dll, ord.57, _DeleteFileWrapW@4
 implib shlwapi.dll, ord.58, _DialogBoxIndirectParamWrapW@20
@@ -224,6 +229,9 @@ implib shlwapi.dll, ord.106, _LoadMenuWrapW@8
 implib shlwapi.dll, ord.107, _LoadStringWrapW@16
 implib shlwapi.dll, ord.330, _MIME_GetExtensionA@12
 implib shlwapi.dll, ord.331, _MIME_GetExtensionW@12
+implib shlwapi.dll, ord.376, _MLGetUILanguage@0
+implib shlwapi.dll, ord.377, _MLLoadLibraryA@12
+implib shlwapi.dll, ord.378, _MLLoadLibraryW@12
 implib shlwapi.dll, ord.201, _MayExecForward@28
 implib shlwapi.dll, ord.200, _MayQSForward@24
 implib shlwapi.dll, ord.108, _MessageBoxIndirectWrapW@4
@@ -546,6 +554,8 @@ implib shlwapi.dll, ord.141, _SetWindowLongWrapW@12
 implib shlwapi.dll, ord.143, _SetWindowTextWrapW@8
 implib shlwapi.dll, ord.142, _SetWindowsHookExWrapW@16
 implib shlwapi.dll, ord.335, _ShellExecuteExWrapW@4
+implib shlwapi.dll, ord.380, _Shell_GetCachedImageIndexWrapA@12
+implib shlwapi.dll, ord.379, _Shell_GetCachedImageIndexWrapW@12
 implib shlwapi.dll, ord.144, _StartDocWrapW@8
 implib shlwapi.dll, StrCSpnA, _StrCSpnA@8
 implib shlwapi.dll, StrCSpnIA, _StrCSpnIA@8
@@ -658,6 +668,8 @@ implib shlwapi.dll, ord.232, _ZoneCheckUrlExCacheA@36
 implib shlwapi.dll, ord.233, _ZoneCheckUrlExCacheW@36
 implib shlwapi.dll, ord.231, _ZoneCheckUrlExW@32
 implib shlwapi.dll, ord.229, _ZoneCheckUrlW@16
+implib shlwapi.dll, ord.382, _ZoneComputePaneSize@4
+implib shlwapi.dll, ord.383, _ZoneConfigureW@8
 implib shlwapi.dll, wnsprintfA, _wnsprintfA ; This function uses the CDECL calling convention!
 implib shlwapi.dll, wnsprintfW, _wnsprintfW ; This function uses the CDECL calling convention!
 implib shlwapi.dll, wvnsprintfA, _wvnsprintfA@16
