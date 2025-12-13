@@ -14,13 +14,16 @@ include '..\implib.inc'
 ; implib shlwapi.dll, SHCreateStreamWrapper, _SHCreateStreamWrapper@16
 ; implib shlwapi.dll, ord.277, _SHDialogBox@20
 ; implib shlwapi.dll, ord.171, _SHIsSameObject@8
+; implib shlwapi.dll, ord.385, _SHLoadRawAccelerators@8
 ; implib shlwapi.dll, ord.290, _SHMirrorIcon@8
+; implib shlwapi.dll, ord.386, _SHQueryRawAccelerator@20
+; implib shlwapi.dll, ord.387, _SHQueryRawAcceleratorMsg@12
 ; implib shlwapi.dll, ord.196, _SHVerbExistsNA@16
 ; implib shlwapi.dll, ord.226, _ZoneCheckPathA@16
 ; implib shlwapi.dll, ord.227, _ZoneCheckPathW@16
 
 ; *** Functions discontinued in v6.0 (Windows Vista)
-; implib shlwapi.dll, ord.356, _CreateAllAccessSecurityAttributes@12
+; implib shlwapi.dll, ord.356, _CreateAllAccessSecurityAttributes@12 ; Some earlier v6.0 builds assign ordinal 356 to AssocCreate
 ; implib shlwapi.dll, ord.250, _GetPerfTime@0
 ; implib shlwapi.dll, ord.293, _SHCancelUserWorkItems@8
 ; implib shlwapi.dll, ord.264, _SHChangeTimerQueueTimer@16
@@ -45,6 +48,7 @@ include '..\implib.inc'
 ; implib shlwapi.dll, ord.248, _StopWatch_MarkSameFrameStart@4
 ; implib shlwapi.dll, ord.252, _StopWatch_SetMsgLastLocation@4
 ; implib shlwapi.dll, ord.245, _StopWatch_TimerHandler@16
+; implib shlwapi.dll, ord.390, _WNetRestoreConnectionWrapW@8
 
 ; *** Functions discontinued in v5.0 (Windows 2000)
 ; implib shlwapi.dll, SHCreateStreamOnFileAOld, _SHCreateStreamOnFileAOld@12
@@ -81,6 +85,7 @@ implib shlwapi.dll, ord.46, _CopyAcceleratorTableWrapW@12
 implib shlwapi.dll, ord.112, _CopyFileWrapW@12
 implib shlwapi.dll, ord.47, _CreateAcceleratorTableWrapW@8
 implib shlwapi.dll, ord.48, _CreateDCWrapW@16
+implib shlwapi.dll, ord.393, _CreateDialogIndirectParamWrapW@20
 implib shlwapi.dll, ord.49, _CreateDialogParamWrapW@20
 implib shlwapi.dll, ord.50, _CreateDirectoryWrapW@8
 implib shlwapi.dll, ord.51, _CreateEventWrapW@16
@@ -107,6 +112,7 @@ implib shlwapi.dll, ord.365, _DoesStringRoundTripW@12
 implib shlwapi.dll, ord.318, _DragQueryFileWrapW@16
 implib shlwapi.dll, ord.301, _DrawTextExWrapW@24
 implib shlwapi.dll, ord.61, _DrawTextWrapW@20
+implib shlwapi.dll, ord.392, _EndDialogWrap@8
 implib shlwapi.dll, ord.63, _EnumFontFamiliesExWrapW@20
 implib shlwapi.dll, ord.62, _EnumFontFamiliesWrapW@16
 implib shlwapi.dll, ord.64, _EnumResourceNamesWrapW@16
@@ -158,6 +164,7 @@ implib shlwapi.dll, ord.312, _GetPrivateProfileStringWrapW@24
 implib shlwapi.dll, ord.368, _GetPrivateProfileStructWrapW@20
 implib shlwapi.dll, ord.86, _GetProfileStringWrapW@20
 implib shlwapi.dll, ord.87, _GetPropWrapW@8
+implib shlwapi.dll, ord.389, _GetSaveFileNameWrapW@4
 implib shlwapi.dll, ord.361, _GetShortPathNameWrapW@12
 implib shlwapi.dll, ord.35, _GetStringType3ExW@12
 implib shlwapi.dll, ord.88, _GetStringTypeExWrapW@20
@@ -514,6 +521,7 @@ implib shlwapi.dll, ord.180, _SHRemoveAllSubMenus@4
 implib shlwapi.dll, ord.21, _SHRemoveDataBlock@8
 implib shlwapi.dll, ord.221, _SHRemoveDefaultDialogFont@4
 implib shlwapi.dll, ord.266, _SHRestrictionLookup@16
+implib shlwapi.dll, ord.384, _SHRestrictedMessageBox@4 ; Some earlier v5.0 builds assign ordinal 384 to AssocQueryStringW
 implib shlwapi.dll, ord.198, _SHSearchMapInt@16
 implib shlwapi.dll, ord.220, _SHSetDefaultDialogFont@8
 implib shlwapi.dll, ord.295, _SHSetIniStringW@16
@@ -554,6 +562,7 @@ implib shlwapi.dll, ord.141, _SetWindowLongWrapW@12
 implib shlwapi.dll, ord.143, _SetWindowTextWrapW@8
 implib shlwapi.dll, ord.142, _SetWindowsHookExWrapW@16
 implib shlwapi.dll, ord.335, _ShellExecuteExWrapW@4
+implib shlwapi.dll, ord.388, _ShellMessageBoxW ; This function uses the CDECL calling convention! It was known as ShellMessageBoxWrapW until v6.0
 implib shlwapi.dll, ord.380, _Shell_GetCachedImageIndexWrapA@12
 implib shlwapi.dll, ord.379, _Shell_GetCachedImageIndexWrapW@12
 implib shlwapi.dll, ord.144, _StartDocWrapW@8
@@ -670,6 +679,7 @@ implib shlwapi.dll, ord.231, _ZoneCheckUrlExW@32
 implib shlwapi.dll, ord.229, _ZoneCheckUrlW@16
 implib shlwapi.dll, ord.382, _ZoneComputePaneSize@4
 implib shlwapi.dll, ord.383, _ZoneConfigureW@8
+implib shlwapi.dll, ord.391, _WNetGetLastErrorWrapW@20
 implib shlwapi.dll, wnsprintfA, _wnsprintfA ; This function uses the CDECL calling convention!
 implib shlwapi.dll, wnsprintfW, _wnsprintfW ; This function uses the CDECL calling convention!
 implib shlwapi.dll, wvnsprintfA, _wvnsprintfA@16
