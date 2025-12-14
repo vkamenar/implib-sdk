@@ -7,6 +7,9 @@ include '..\implib.inc'
 ; *** Functions discontinued in v6.1 (Windows 7)
 ; implib shlwapi.dll, ord.297, _CreateURLFileContentsA@8
 ; implib shlwapi.dll, ord.296, _CreateURLFileContentsW@8
+; implib shlwapi.dll, ord.404, _IShellFolder_EnumObjects@16
+; implib shlwapi.dll, ord.396, _MLHtmlHelpA@20
+; implib shlwapi.dll, ord.398, _MLHtmlHelpW@20
 ; implib shlwapi.dll, ord.275, _RegisterGlobalHotkeyA@12
 ; implib shlwapi.dll, ord.274, _RegisterGlobalHotkeyW@12
 ; implib shlwapi.dll, ord.374, _SHCheckDiskForMediaA@16
@@ -58,6 +61,7 @@ include '..\implib.inc'
 implib shlwapi.dll, ord.36, _AppendMenuWrapW@16
 implib shlwapi.dll, ord.381, _AssocCopyVerbs@8
 implib shlwapi.dll, AssocCreate, _AssocCreate@24
+implib shlwapi.dll, ord.407, _AssocMakeProgid@16
 implib shlwapi.dll, AssocQueryKeyA, _AssocQueryKeyA@20
 implib shlwapi.dll, AssocQueryKeyW, _AssocQueryKeyW@20
 implib shlwapi.dll, AssocQueryStringA, _AssocQueryStringA@24
@@ -159,6 +163,7 @@ implib shlwapi.dll, ord.80, _GetModuleFileNameWrapW@12
 implib shlwapi.dll, ord.83, _GetModuleHandleWrapW@4
 implib shlwapi.dll, ord.339, _GetNumberFormatWrapW@24
 implib shlwapi.dll, ord.84, _GetObjectWrapW@12
+implib shlwapi.dll, ord.403, _GetOpenFileNameWrapW@4
 implib shlwapi.dll, ord.85, _GetPrivateProfileIntWrapW@16
 implib shlwapi.dll, ord.312, _GetPrivateProfileStringWrapW@24
 implib shlwapi.dll, ord.368, _GetPrivateProfileStructWrapW@20
@@ -236,9 +241,13 @@ implib shlwapi.dll, ord.106, _LoadMenuWrapW@8
 implib shlwapi.dll, ord.107, _LoadStringWrapW@16
 implib shlwapi.dll, ord.330, _MIME_GetExtensionA@12
 implib shlwapi.dll, ord.331, _MIME_GetExtensionW@12
+implib shlwapi.dll, ord.405, _MLBuildResURLA@24
+implib shlwapi.dll, ord.406, _MLBuildResURLW@24
 implib shlwapi.dll, ord.376, _MLGetUILanguage@0
 implib shlwapi.dll, ord.377, _MLLoadLibraryA@12
 implib shlwapi.dll, ord.378, _MLLoadLibraryW@12
+implib shlwapi.dll, ord.395, _MLWinHelpA@16
+implib shlwapi.dll, ord.397, _MLWinHelpW@16
 implib shlwapi.dll, ord.201, _MayExecForward@28
 implib shlwapi.dll, ord.200, _MayQSForward@24
 implib shlwapi.dll, ord.108, _MessageBoxIndirectWrapW@4
@@ -248,6 +257,7 @@ implib shlwapi.dll, ord.113, _MoveFileWrapW@8
 implib shlwapi.dll, ord.114, _OemToCharWrapW@8
 implib shlwapi.dll, ord.359, _OpenEventWrapW@12
 implib shlwapi.dll, ord.115, _OutputDebugStringWrapW@4
+implib shlwapi.dll, ord.401, _PageSetupDlgWrapW@4
 implib shlwapi.dll, ord.1, _ParseURLA@8
 implib shlwapi.dll, ord.2, _ParseURLW@8
 implib shlwapi.dll, PathAddBackslashA, _PathAddBackslashA@4
@@ -369,6 +379,7 @@ implib shlwapi.dll, ord.116, _PeekMessageWrapW@20
 implib shlwapi.dll, ord.289, _PlaySoundWrapW@12
 implib shlwapi.dll, ord.117, _PostMessageWrapW@16
 implib shlwapi.dll, ord.118, _PostThreadMessageWrapW@16
+implib shlwapi.dll, ord.402, _PrintDlgWrapW@4
 implib shlwapi.dll, ord.219, _QISearch@16
 implib shlwapi.dll, ord.120, _RegCreateKeyExWrapW@36
 implib shlwapi.dll, ord.119, _RegCreateKeyWrapW@12
@@ -405,6 +416,7 @@ implib shlwapi.dll, ord.216, _SHAnsiToUnicodeCP@16
 implib shlwapi.dll, SHAutoComplete, _SHAutoComplete@8
 implib shlwapi.dll, ord.333, _SHBrowseForFolderWrapW@4
 implib shlwapi.dll, ord.265, _SHCancelTimerQueueTimer@8
+implib shlwapi.dll, ord.394, _SHChangeNotifyWrap@16
 implib shlwapi.dll, ord.182, _SHCheckMenuItem@12
 implib shlwapi.dll, SHCopyKeyA, _SHCopyKeyA@16
 implib shlwapi.dll, SHCopyKeyW, _SHCopyKeyW@16
@@ -592,6 +604,8 @@ implib shlwapi.dll, StrCmpNIW, _StrCmpNIW@12
 implib shlwapi.dll, StrCmpNW, _StrCmpNW@12
 implib shlwapi.dll, StrCmpW, _StrCmpW@8
 implib shlwapi.dll, StrCpyNW, _StrCpyNW@12
+implib shlwapi.dll, ord.399, _StrCpyNXA@12
+implib shlwapi.dll, ord.400, _StrCpyNXW@12
 implib shlwapi.dll, StrCpyW, _StrCpyW@8
 implib shlwapi.dll, StrDupA, _StrDupA@4
 implib shlwapi.dll, StrDupW, _StrDupW@4
