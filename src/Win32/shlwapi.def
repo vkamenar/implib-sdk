@@ -5,6 +5,8 @@ include '..\implib.inc'
 ; Feel free to uncomment the necessary symbols and recompile the library.
 
 ; *** Functions discontinued in v6.1 (Windows 7)
+; implib shlwapi.dll, ord.412, _AssocMakeFileExtsToApplicationA@12
+; implib shlwapi.dll, ord.411, _AssocMakeFileExtsToApplicationW@12
 ; implib shlwapi.dll, ord.297, _CreateURLFileContentsA@8
 ; implib shlwapi.dll, ord.296, _CreateURLFileContentsW@8
 ; implib shlwapi.dll, ord.404, _IShellFolder_EnumObjects@16
@@ -16,12 +18,16 @@ include '..\implib.inc'
 ; implib shlwapi.dll, ord.375, _SHCheckDiskForMediaW@16
 ; implib shlwapi.dll, SHCreateStreamWrapper, _SHCreateStreamWrapper@16
 ; implib shlwapi.dll, ord.277, _SHDialogBox@20
+; implib shlwapi.dll, ord.415, _SHHtmlHelpOnDemandA@24
+; implib shlwapi.dll, ord.414, _SHHtmlHelpOnDemandW@24
 ; implib shlwapi.dll, ord.171, _SHIsSameObject@8
 ; implib shlwapi.dll, ord.385, _SHLoadRawAccelerators@8
 ; implib shlwapi.dll, ord.290, _SHMirrorIcon@8
 ; implib shlwapi.dll, ord.386, _SHQueryRawAccelerator@20
 ; implib shlwapi.dll, ord.387, _SHQueryRawAcceleratorMsg@12
 ; implib shlwapi.dll, ord.196, _SHVerbExistsNA@16
+; implib shlwapi.dll, ord.417, _SHWinHelpOnDemandA@20
+; implib shlwapi.dll, ord.416, _SHWinHelpOnDemandW@20
 ; implib shlwapi.dll, ord.226, _ZoneCheckPathA@16
 ; implib shlwapi.dll, ord.227, _ZoneCheckPathW@16
 
@@ -61,7 +67,10 @@ include '..\implib.inc'
 implib shlwapi.dll, ord.36, _AppendMenuWrapW@16
 implib shlwapi.dll, ord.381, _AssocCopyVerbs@8
 implib shlwapi.dll, AssocCreate, _AssocCreate@24
+implib shlwapi.dll, ord.410, _AssocMakeApplicationByKeyA@12
+implib shlwapi.dll, ord.409, _AssocMakeApplicationByKeyW@12
 implib shlwapi.dll, ord.407, _AssocMakeProgid@16
+implib shlwapi.dll, ord.408, _AssocMakeShell@16
 implib shlwapi.dll, AssocQueryKeyA, _AssocQueryKeyA@20
 implib shlwapi.dll, AssocQueryKeyW, _AssocQueryKeyW@20
 implib shlwapi.dll, AssocQueryStringA, _AssocQueryStringA@24
@@ -243,6 +252,7 @@ implib shlwapi.dll, ord.330, _MIME_GetExtensionA@12
 implib shlwapi.dll, ord.331, _MIME_GetExtensionW@12
 implib shlwapi.dll, ord.405, _MLBuildResURLA@24
 implib shlwapi.dll, ord.406, _MLBuildResURLW@24
+implib shlwapi.dll, ord.418, _MLFreeLibrary@4
 implib shlwapi.dll, ord.376, _MLGetUILanguage@0
 implib shlwapi.dll, ord.377, _MLLoadLibraryA@12
 implib shlwapi.dll, ord.378, _MLLoadLibraryW@12
@@ -445,6 +455,7 @@ implib shlwapi.dll, SHEnumValueW, _SHEnumValueW@28
 implib shlwapi.dll, ord.336, _SHFileOperationWrapW@4
 implib shlwapi.dll, ord.197, _SHFillRectClr@12
 implib shlwapi.dll, ord.22, _SHFindDataBlock@8
+implib shlwapi.dll, ord.419, _SHFlushSFCacheWrap@0
 implib shlwapi.dll, ord.353, _SHFormatDateTimeA@16
 implib shlwapi.dll, ord.354, _SHFormatDateTimeW@16
 implib shlwapi.dll, ord.19, _SHFreeDataBlockList@4
@@ -455,6 +466,7 @@ implib shlwapi.dll, ord.348, _SHGetFileDescriptionW@20
 implib shlwapi.dll, ord.313, _SHGetFileInfoWrapW@20
 implib shlwapi.dll, ord.294, _SHGetIniStringW@20
 implib shlwapi.dll, SHGetInverseCMAP, _SHGetInverseCMAP@8
+implib shlwapi.dll, ord.413, _SHGetMachineInfo@4
 implib shlwapi.dll, ord.192, _SHGetMenuFromID@8
 implib shlwapi.dll, ord.357, _SHGetNewLinkInfoWrapW@20
 implib shlwapi.dll, ord.334, _SHGetPathFromIDListWrapW@8
