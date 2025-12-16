@@ -21,8 +21,10 @@ include '..\implib.inc'
 ; implib shlwapi.dll, ord.415, _SHHtmlHelpOnDemandA@24
 ; implib shlwapi.dll, ord.414, _SHHtmlHelpOnDemandW@24
 ; implib shlwapi.dll, ord.171, _SHIsSameObject@8
+; implib shlwapi.dll, ord.421, _SHLoadPersistedDataObject@8
 ; implib shlwapi.dll, ord.385, _SHLoadRawAccelerators@8
 ; implib shlwapi.dll, ord.290, _SHMirrorIcon@8
+; implib shlwapi.dll, ord.420, _SHPersistDataObject@8
 ; implib shlwapi.dll, ord.386, _SHQueryRawAccelerator@20
 ; implib shlwapi.dll, ord.387, _SHQueryRawAcceleratorMsg@12
 ; implib shlwapi.dll, ord.196, _SHVerbExistsNA@16
@@ -39,6 +41,9 @@ include '..\implib.inc'
 ; implib shlwapi.dll, ord.261, _SHCreateTimerQueue@0
 ; implib shlwapi.dll, ord.262, _SHDeleteTimerQueue@4
 ; implib shlwapi.dll, ord.222, _SHGlobalCounterCreate@4
+; implib shlwapi.dll, ord.422, _SHGlobalCounterCreateNamedA@8
+; implib shlwapi.dll, ord.423, _SHGlobalCounterCreateNamedW@8
+; implib shlwapi.dll, ord.424, _SHGlobalCounterDecrement@4
 ; implib shlwapi.dll, ord.223, _SHGlobalCounterGetValue@4
 ; implib shlwapi.dll, ord.224, _SHGlobalCounterIncrement@4
 ; implib shlwapi.dll, ord.343, _SHRegGetCLSIDKeyA@20
@@ -116,6 +121,8 @@ implib shlwapi.dll, ord.371, _DdeInitializeWrapW@16
 implib shlwapi.dll, ord.373, _DdeQueryStringWrapW@20
 implib shlwapi.dll, ord.56, _DefWindowProcWrapW@16
 implib shlwapi.dll, ord.57, _DeleteFileWrapW@4
+implib shlwapi.dll, ord.425, _DeleteMenuWrap@12
+implib shlwapi.dll, ord.426, _DestroyMenuWrap@4
 implib shlwapi.dll, ord.58, _DialogBoxIndirectParamWrapW@20
 implib shlwapi.dll, ord.59, _DialogBoxParamWrapW@20
 implib shlwapi.dll, ord.60, _DispatchMessageWrapW@4
@@ -657,6 +664,8 @@ implib shlwapi.dll, StrToIntW, _StrToIntW@4
 implib shlwapi.dll, StrTrimA, _StrTrimA@8
 implib shlwapi.dll, StrTrimW, _StrTrimW@8
 implib shlwapi.dll, ord.145, _SystemParametersInfoWrapW@16
+implib shlwapi.dll, ord.428, _TrackPopupMenuExWrap@24
+implib shlwapi.dll, ord.427, _TrackPopupMenuWrap@28
 implib shlwapi.dll, ord.146, _TranslateAcceleratorWrapW@12
 implib shlwapi.dll, ord.147, _UnregisterClassWrapW@8
 implib shlwapi.dll, ord.326, _UnregisterExtensionForMIMETypeA@4
