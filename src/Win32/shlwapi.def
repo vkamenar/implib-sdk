@@ -10,8 +10,11 @@ include '..\implib.inc'
 ; implib shlwapi.dll, ord.297, _CreateURLFileContentsA@8
 ; implib shlwapi.dll, ord.296, _CreateURLFileContentsW@8
 ; implib shlwapi.dll, ord.404, _IShellFolder_EnumObjects@16
+; implib shlwapi.dll, ord.431, _MLClearMLHInstance@4
 ; implib shlwapi.dll, ord.396, _MLHtmlHelpA@20
 ; implib shlwapi.dll, ord.398, _MLHtmlHelpW@20
+; implib shlwapi.dll, ord.429, _MLIsMLHInstance@4
+; implib shlwapi.dll, ord.430, _MLSetMLHInstance@8
 ; implib shlwapi.dll, ord.275, _RegisterGlobalHotkeyA@12
 ; implib shlwapi.dll, ord.274, _RegisterGlobalHotkeyW@12
 ; implib shlwapi.dll, ord.374, _SHCheckDiskForMediaA@16
@@ -82,6 +85,8 @@ implib shlwapi.dll, AssocQueryStringA, _AssocQueryStringA@24
 implib shlwapi.dll, AssocQueryStringByKeyA, _AssocQueryStringByKeyA@24
 implib shlwapi.dll, AssocQueryStringByKeyW, _AssocQueryStringByKeyW@24
 implib shlwapi.dll, AssocQueryStringW, _AssocQueryStringW@24
+implib shlwapi.dll, ord.435, _CLSIDFromProgIDWrap@8
+implib shlwapi.dll, ord.436, _CLSIDFromStringWrap@8
 implib shlwapi.dll, ord.332, _CallMsgFilterWrapW@8
 implib shlwapi.dll, ord.37, _CallWindowProcWrapW@20
 implib shlwapi.dll, ord.39, _CharLowerBuffWrapW@8
@@ -164,6 +169,7 @@ implib shlwapi.dll, ord.72, _GetClipboardFormatNameWrapW@12
 implib shlwapi.dll, ord.73, _GetCurrentDirectoryWrapW@8
 implib shlwapi.dll, ord.311, _GetDateFormatWrapW@24
 implib shlwapi.dll, ord.74, _GetDlgItemTextWrapW@16
+implib shlwapi.dll, ord.442, _GetEnvironmentVariableWrapW@12
 implib shlwapi.dll, ord.75, _GetFileAttributesWrapW@4
 implib shlwapi.dll, ord.350, _GetFileVersionInfoSizeWrapW@8
 implib shlwapi.dll, ord.351, _GetFileVersionInfoWrapW@16
@@ -245,6 +251,7 @@ implib shlwapi.dll, ord.29, _IsCharSpaceW@4
 implib shlwapi.dll, ord.26, _IsCharUpperWrapW@4
 implib shlwapi.dll, ord.34, _IsCharXDigitW@4
 implib shlwapi.dll, ord.99, _IsDialogMessageWrapW@8
+implib shlwapi.dll, ord.437, _IsOS@4
 implib shlwapi.dll, ord.202, _IsQSForward@12
 implib shlwapi.dll, ord.100, _LoadAcceleratorsWrapW@8
 implib shlwapi.dll, ord.101, _LoadBitmapWrapW@8
@@ -483,6 +490,8 @@ implib shlwapi.dll, SHGetValueA, _SHGetValueA@24
 implib shlwapi.dll, ord.205, _SHGetValueGoodBootA@24
 implib shlwapi.dll, ord.206, _SHGetValueGoodBootW@24
 implib shlwapi.dll, SHGetValueW, _SHGetValueW@24
+implib shlwapi.dll, ord.440, _SHGetWebFolderFilePathA@12
+implib shlwapi.dll, ord.441, _SHGetWebFolderFilePathW@12
 implib shlwapi.dll, ord.342, _SHInterlockedCompareExchange@12
 implib shlwapi.dll, ord.363, _SHInvokeCommand@16
 implib shlwapi.dll, ord.279, _SHInvokeDefaultCommand@12
@@ -492,6 +501,8 @@ implib shlwapi.dll, ord.195, _SHIsExpandableFolder@8
 implib shlwapi.dll, SHIsLowMemoryMachine, _SHIsLowMemoryMachine@4
 implib shlwapi.dll, ord.187, _SHLoadFromPropertyBag@8
 implib shlwapi.dll, ord.177, _SHLoadMenuPopup@8
+implib shlwapi.dll, ord.438, _SHLoadRegUIStringA@16
+implib shlwapi.dll, ord.439, _SHLoadRegUIStringW@16
 implib shlwapi.dll, ord.8, _SHLockShared@8
 implib shlwapi.dll, ord.11, _SHMapHandle@20
 implib shlwapi.dll, ord.179, _SHMenuIndexFromID@8
@@ -554,6 +565,8 @@ implib shlwapi.dll, ord.221, _SHRemoveDefaultDialogFont@4
 implib shlwapi.dll, ord.266, _SHRestrictionLookup@16
 implib shlwapi.dll, ord.384, _SHRestrictedMessageBox@4 ; Some earlier v5.0 builds assign ordinal 384 to AssocQueryStringW
 implib shlwapi.dll, ord.198, _SHSearchMapInt@16
+implib shlwapi.dll, ord.432, _SHSendMessageBroadcastA@12
+implib shlwapi.dll, ord.433, _SHSendMessageBroadcastW@12
 implib shlwapi.dll, ord.220, _SHSetDefaultDialogFont@8
 implib shlwapi.dll, ord.295, _SHSetIniStringW@16
 implib shlwapi.dll, ord.167, _SHSetParentHwnd@8
@@ -583,6 +596,7 @@ implib shlwapi.dll, ord.268, _SHWeakReleaseInterface@8
 implib shlwapi.dll, ord.17, _SHWriteDataBlockList@8
 implib shlwapi.dll, ord.82, _SearchPathWrapW@24
 implib shlwapi.dll, ord.135, _SendDlgItemMessageWrapW@20
+implib shlwapi.dll, ord.434, _SendMessageTimeoutWrapW@28
 implib shlwapi.dll, ord.136, _SendMessageWrapW@16
 implib shlwapi.dll, ord.137, _SetCurrentDirectoryWrapW@4
 implib shlwapi.dll, ord.138, _SetDlgItemTextWrapW@12
