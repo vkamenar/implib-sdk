@@ -90,11 +90,15 @@ implib shlwapi.dll, ord.436, _CLSIDFromStringWrap@8
 implib shlwapi.dll, ord.332, _CallMsgFilterWrapW@8
 implib shlwapi.dll, ord.37, _CallWindowProcWrapW@20
 implib shlwapi.dll, ord.39, _CharLowerBuffWrapW@8
+implib shlwapi.dll, ord.453, _CharLowerNoDBCSA@4
+implib shlwapi.dll, ord.454, _CharLowerNoDBCSW@4
 implib shlwapi.dll, ord.38, _CharLowerWrapW@4
 implib shlwapi.dll, ord.40, _CharNextWrapW@4
 implib shlwapi.dll, ord.41, _CharPrevWrapW@8
 implib shlwapi.dll, ord.42, _CharToOemWrapW@8
 implib shlwapi.dll, ord.44, _CharUpperBuffWrapW@8
+implib shlwapi.dll, ord.451, _CharUpperNoDBCSA@4
+implib shlwapi.dll, ord.452, _CharUpperNoDBCSW@4
 implib shlwapi.dll, ord.43, _CharUpperWrapW@4
 implib shlwapi.dll, ChrCmpIA, _ChrCmpIA@8
 implib shlwapi.dll, ChrCmpIW, _ChrCmpIW@8
@@ -154,6 +158,8 @@ implib shlwapi.dll, ord.341, _FindNextFileWrapW@8
 implib shlwapi.dll, ord.66, _FindResourceWrapW@12
 implib shlwapi.dll, ord.319, _FindWindowExWrapW@16
 implib shlwapi.dll, ord.67, _FindWindowWrapW@8
+implib shlwapi.dll, ord.447, _FixSlashesAndColonA@4
+implib shlwapi.dll, ord.448, _FixSlashesAndColonW@4
 implib shlwapi.dll, ord.68, _FormatMessageWrapW@28
 implib shlwapi.dll, ord.269, _GUIDFromStringA@8
 implib shlwapi.dll, ord.270, _GUIDFromStringW@8
@@ -175,6 +181,8 @@ implib shlwapi.dll, ord.350, _GetFileVersionInfoSizeWrapW@8
 implib shlwapi.dll, ord.351, _GetFileVersionInfoWrapW@16
 implib shlwapi.dll, ord.76, _GetFullPathNameWrapW@16
 implib shlwapi.dll, ord.77, _GetLocaleInfoWrapW@16
+implib shlwapi.dll, ord.458, _GetLongPathNameWrapA@12
+implib shlwapi.dll, ord.457, _GetLongPathNameWrapW@12
 implib shlwapi.dll, ord.328, _GetMIMETypeSubKeyA@12
 implib shlwapi.dll, ord.329, _GetMIMETypeSubKeyW@12
 implib shlwapi.dll, ord.302, _GetMenuItemInfoWrapW@16
@@ -278,6 +286,8 @@ implib shlwapi.dll, ord.108, _MessageBoxIndirectWrapW@4
 implib shlwapi.dll, ord.340, _MessageBoxWrapW@16
 implib shlwapi.dll, ord.109, _ModifyMenuWrapW@20
 implib shlwapi.dll, ord.113, _MoveFileWrapW@8
+implib shlwapi.dll, ord.449, _NextPathA@12
+implib shlwapi.dll, ord.450, _NextPathW@12
 implib shlwapi.dll, ord.114, _OemToCharWrapW@8
 implib shlwapi.dll, ord.359, _OpenEventWrapW@12
 implib shlwapi.dll, ord.115, _OutputDebugStringWrapW@4
@@ -305,6 +315,8 @@ implib shlwapi.dll, PathCompactPathW, _PathCompactPathW@12
 implib shlwapi.dll, PathCreateFromUrlA, _PathCreateFromUrlA@16
 implib shlwapi.dll, PathCreateFromUrlW, _PathCreateFromUrlW@16
 implib shlwapi.dll, PathFileExistsA, _PathFileExistsA@4
+implib shlwapi.dll, ord.445, _PathFileExistsAndAttributesA@8
+implib shlwapi.dll, ord.446, _PathFileExistsAndAttributesW@8
 implib shlwapi.dll, ord.3, _PathFileExistsDefExtA@8
 implib shlwapi.dll, ord.4, _PathFileExistsDefExtW@8
 implib shlwapi.dll, PathFileExistsW, _PathFileExistsW@4
@@ -356,6 +368,8 @@ implib shlwapi.dll, PathIsUNCServerW, _PathIsUNCServerW@4
 implib shlwapi.dll, PathIsUNCW, _PathIsUNCW@4
 implib shlwapi.dll, PathIsURLA, _PathIsURLA@4
 implib shlwapi.dll, PathIsURLW, _PathIsURLW@4
+implib shlwapi.dll, ord.455, _PathIsValidCharA@8
+implib shlwapi.dll, ord.456, _PathIsValidCharW@8
 implib shlwapi.dll, PathMakePrettyA, _PathMakePrettyA@4
 implib shlwapi.dll, PathMakePrettyW, _PathMakePrettyW@4
 implib shlwapi.dll, PathMakeSystemFolderA, _PathMakeSystemFolderA@4
@@ -466,6 +480,8 @@ implib shlwapi.dll, SHEnumKeyExA, _SHEnumKeyExA@16
 implib shlwapi.dll, SHEnumKeyExW, _SHEnumKeyExW@16
 implib shlwapi.dll, SHEnumValueA, _SHEnumValueA@28
 implib shlwapi.dll, SHEnumValueW, _SHEnumValueW@28
+implib shlwapi.dll, ord.459, _SHExpandEnvironmentStringsA@12
+implib shlwapi.dll, ord.460, _SHExpandEnvironmentStringsW@12
 implib shlwapi.dll, ord.336, _SHFileOperationWrapW@4
 implib shlwapi.dll, ord.197, _SHFillRectClr@12
 implib shlwapi.dll, ord.22, _SHFindDataBlock@8
@@ -474,6 +490,7 @@ implib shlwapi.dll, ord.353, _SHFormatDateTimeA@16
 implib shlwapi.dll, ord.354, _SHFormatDateTimeW@16
 implib shlwapi.dll, ord.19, _SHFreeDataBlockList@4
 implib shlwapi.dll, ord.10, _SHFreeShared@8
+implib shlwapi.dll, ord.461, _SHGetAppCompatFlags@4
 implib shlwapi.dll, ord.193, _SHGetCurColorRes@0
 implib shlwapi.dll, ord.349, _SHGetFileDescriptionA@20
 implib shlwapi.dll, ord.348, _SHGetFileDescriptionW@20
@@ -485,6 +502,8 @@ implib shlwapi.dll, ord.192, _SHGetMenuFromID@8
 implib shlwapi.dll, ord.357, _SHGetNewLinkInfoWrapW@20
 implib shlwapi.dll, ord.334, _SHGetPathFromIDListWrapW@8
 implib shlwapi.dll, ord.271, _SHGetRestriction@12
+implib shlwapi.dll, ord.443, _SHGetSystemWindowsDirectoryA@8
+implib shlwapi.dll, ord.444, _SHGetSystemWindowsDirectoryW@8
 implib shlwapi.dll, SHGetThreadRef, _SHGetThreadRef@4
 implib shlwapi.dll, SHGetValueA, _SHGetValueA@24
 implib shlwapi.dll, ord.205, _SHGetValueGoodBootA@24
