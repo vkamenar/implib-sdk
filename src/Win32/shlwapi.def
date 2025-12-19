@@ -10,6 +10,7 @@ include '..\implib.inc'
 ; implib shlwapi.dll, ord.297, _CreateURLFileContentsA@8
 ; implib shlwapi.dll, ord.296, _CreateURLFileContentsW@8
 ; implib shlwapi.dll, ord.404, _IShellFolder_EnumObjects@16
+; implib shlwapi.dll, ord.470, _IUnknown_ProfferServiceOld@20
 ; implib shlwapi.dll, ord.431, _MLClearMLHInstance@4
 ; implib shlwapi.dll, ord.396, _MLHtmlHelpA@20
 ; implib shlwapi.dll, ord.398, _MLHtmlHelpW@20
@@ -55,6 +56,8 @@ include '..\implib.inc'
 ; implib shlwapi.dll, ord.273, _SHTerminateThreadPool@0
 ; implib shlwapi.dll, ord.259, _SHUnregisterWait@4
 ; implib shlwapi.dll, ord.243, _StopWatchA@20
+; implib shlwapi.dll, ord.253, _StopWatchExA@24
+; implib shlwapi.dll, ord.254, _StopWatchExW@24
 ; implib shlwapi.dll, ord.242, _StopWatchFlush@0
 ; implib shlwapi.dll, ord.241, _StopWatchMode@0
 ; implib shlwapi.dll, ord.244, _StopWatchW@20
@@ -406,6 +409,8 @@ implib shlwapi.dll, PathStripPathW, _PathStripPathW@4
 implib shlwapi.dll, PathStripToRootA, _PathStripToRootA@4
 implib shlwapi.dll, PathStripToRootW, _PathStripToRootW@4
 implib shlwapi.dll, PathUnExpandEnvStringsA, _PathUnExpandEnvStringsA@12
+implib shlwapi.dll, ord.465, _PathUnExpandEnvStringsForUserA@16
+implib shlwapi.dll, ord.466, _PathUnExpandEnvStringsForUserW@16
 implib shlwapi.dll, PathUnExpandEnvStringsW, _PathUnExpandEnvStringsW@12
 implib shlwapi.dll, PathUndecorateA, _PathUndecorateA@4
 implib shlwapi.dll, PathUndecorateW, _PathUndecorateW@4
@@ -444,6 +449,8 @@ implib shlwapi.dll, ord.321, _RegisterMIMETypeForExtensionW@8
 implib shlwapi.dll, ord.133, _RegisterWindowMessageWrapW@4
 implib shlwapi.dll, ord.360, _RemoveDirectoryWrapW@4
 implib shlwapi.dll, ord.134, _RemovePropWrapW@8
+implib shlwapi.dll, ord.468, _RunIndirectRegCommand@16
+implib shlwapi.dll, ord.469, _RunRegCommand@12
 implib shlwapi.dll, ord.160, _SHAboutInfoA@8
 implib shlwapi.dll, ord.161, _SHAboutInfoW@8
 implib shlwapi.dll, ord.20, _SHAddDataBlock@8
@@ -459,6 +466,7 @@ implib shlwapi.dll, ord.182, _SHCheckMenuItem@12
 implib shlwapi.dll, SHCopyKeyA, _SHCopyKeyA@16
 implib shlwapi.dll, SHCopyKeyW, _SHCopyKeyW@16
 implib shlwapi.dll, ord.12, _SHCreateMemStream@8
+implib shlwapi.dll, ord.471, _SHCreatePropertyBagOnRegKey@20
 implib shlwapi.dll, SHCreateShellPalette, _SHCreateShellPalette@4
 implib shlwapi.dll, SHCreateStreamOnFileA, _SHCreateStreamOnFileA@12
 implib shlwapi.dll, SHCreateStreamOnFileW, _SHCreateStreamOnFileW@12
@@ -481,6 +489,8 @@ implib shlwapi.dll, SHEnumKeyExW, _SHEnumKeyExW@16
 implib shlwapi.dll, SHEnumValueA, _SHEnumValueA@28
 implib shlwapi.dll, SHEnumValueW, _SHEnumValueW@28
 implib shlwapi.dll, ord.459, _SHExpandEnvironmentStringsA@12
+implib shlwapi.dll, ord.463, _SHExpandEnvironmentStringsForUserA@16
+implib shlwapi.dll, ord.464, _SHExpandEnvironmentStringsForUserW@16
 implib shlwapi.dll, ord.460, _SHExpandEnvironmentStringsW@12
 implib shlwapi.dll, ord.336, _SHFileOperationWrapW@4
 implib shlwapi.dll, ord.197, _SHFillRectClr@12
@@ -583,6 +593,7 @@ implib shlwapi.dll, ord.21, _SHRemoveDataBlock@8
 implib shlwapi.dll, ord.221, _SHRemoveDefaultDialogFont@4
 implib shlwapi.dll, ord.266, _SHRestrictionLookup@16
 implib shlwapi.dll, ord.384, _SHRestrictedMessageBox@4 ; Some earlier v5.0 builds assign ordinal 384 to AssocQueryStringW
+implib shlwapi.dll, ord.467, _SHRunIndirectRegClientCommand@8
 implib shlwapi.dll, ord.198, _SHSearchMapInt@16
 implib shlwapi.dll, ord.432, _SHSendMessageBroadcastA@12
 implib shlwapi.dll, ord.433, _SHSendMessageBroadcastW@12
@@ -717,6 +728,7 @@ implib shlwapi.dll, UrlCreateFromPathA, _UrlCreateFromPathA@16
 implib shlwapi.dll, UrlCreateFromPathW, _UrlCreateFromPathW@16
 implib shlwapi.dll, UrlEscapeA, _UrlEscapeA@16
 implib shlwapi.dll, UrlEscapeW, _UrlEscapeW@16
+implib shlwapi.dll, ord.462, _UrlFixupW@12
 implib shlwapi.dll, UrlGetLocationA, _UrlGetLocationA@4
 implib shlwapi.dll, UrlGetLocationW, _UrlGetLocationW@4
 implib shlwapi.dll, UrlGetPartA, _UrlGetPartA@20
