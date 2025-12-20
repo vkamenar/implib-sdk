@@ -34,16 +34,19 @@ include '..\implib.inc'
 ; implib shlwapi.dll, ord.196, _SHVerbExistsNA@16
 ; implib shlwapi.dll, ord.417, _SHWinHelpOnDemandA@20
 ; implib shlwapi.dll, ord.416, _SHWinHelpOnDemandW@20
+; implib shlwapi.dll, ord.480, _UrlCrackW@16
 ; implib shlwapi.dll, ord.226, _ZoneCheckPathA@16
 ; implib shlwapi.dll, ord.227, _ZoneCheckPathW@16
 
 ; *** Functions discontinued in v6.0 (Windows Vista)
 ; implib shlwapi.dll, ord.356, _CreateAllAccessSecurityAttributes@12 ; Some earlier v6.0 builds assign ordinal 356 to AssocCreate
 ; implib shlwapi.dll, ord.250, _GetPerfTime@0
+; implib shlwapi.dll, ord.475, _GetShellSecurityDescriptor@8
 ; implib shlwapi.dll, ord.293, _SHCancelUserWorkItems@8
 ; implib shlwapi.dll, ord.264, _SHChangeTimerQueueTimer@16
 ; implib shlwapi.dll, ord.261, _SHCreateTimerQueue@0
 ; implib shlwapi.dll, ord.262, _SHDeleteTimerQueue@4
+; implib shlwapi.dll, ord.473, _SHGetIniStringUTF7W@20
 ; implib shlwapi.dll, ord.222, _SHGlobalCounterCreate@4
 ; implib shlwapi.dll, ord.422, _SHGlobalCounterCreateNamedA@8
 ; implib shlwapi.dll, ord.423, _SHGlobalCounterCreateNamedW@8
@@ -52,6 +55,7 @@ include '..\implib.inc'
 ; implib shlwapi.dll, ord.224, _SHGlobalCounterIncrement@4
 ; implib shlwapi.dll, ord.343, _SHRegGetCLSIDKeyA@20
 ; implib shlwapi.dll, ord.258, _SHRegisterWaitForSingleObject@24
+; implib shlwapi.dll, ord.474, _SHSetIniStringUTF7W@16
 ; implib shlwapi.dll, ord.272, _SHSetThreadPoolLimits@4
 ; implib shlwapi.dll, ord.273, _SHTerminateThreadPool@0
 ; implib shlwapi.dll, ord.259, _SHUnregisterWait@4
@@ -78,6 +82,8 @@ include '..\implib.inc'
 implib shlwapi.dll, ord.36, _AppendMenuWrapW@16
 implib shlwapi.dll, ord.381, _AssocCopyVerbs@8
 implib shlwapi.dll, AssocCreate, _AssocCreate@24
+implib shlwapi.dll, AssocGetPerceivedType, _AssocGetPerceivedType@16
+implib shlwapi.dll, AssocIsDangerous, _AssocIsDangerous@4
 implib shlwapi.dll, ord.410, _AssocMakeApplicationByKeyA@12
 implib shlwapi.dll, ord.409, _AssocMakeApplicationByKeyW@12
 implib shlwapi.dll, ord.407, _AssocMakeProgid@16
@@ -114,6 +120,7 @@ implib shlwapi.dll, ord.168, _ConnectToConnectionPoint@24
 implib shlwapi.dll, ord.46, _CopyAcceleratorTableWrapW@12
 implib shlwapi.dll, ord.112, _CopyFileWrapW@12
 implib shlwapi.dll, ord.47, _CreateAcceleratorTableWrapW@8
+implib shlwapi.dll, ord.543, _CreateColorSpaceWrapW@4
 implib shlwapi.dll, ord.48, _CreateDCWrapW@16
 implib shlwapi.dll, ord.393, _CreateDialogIndirectParamWrapW@20
 implib shlwapi.dll, ord.49, _CreateDialogParamWrapW@20
@@ -218,6 +225,8 @@ implib shlwapi.dll, ord.94, _GetWindowLongWrapW@8
 implib shlwapi.dll, ord.96, _GetWindowTextLengthWrapW@4
 implib shlwapi.dll, ord.95, _GetWindowTextWrapW@12
 implib shlwapi.dll, ord.97, _GetWindowsDirectoryWrapW@8
+implib shlwapi.dll, ord.489, _GlobalAddAtomWrapW@4
+implib shlwapi.dll, ord.490, _GlobalFindAtomWrapW@4
 implib shlwapi.dll, HashData, _HashData@16
 implib shlwapi.dll, ord.283, _IConnectionPoint_InvokeWithCancel@20
 implib shlwapi.dll, ord.285, _IConnectionPoint_OnChanged@8
@@ -258,6 +267,7 @@ implib shlwapi.dll, ord.32, _IsCharCntrlW@4
 implib shlwapi.dll, ord.33, _IsCharDigitW@4
 implib shlwapi.dll, ord.27, _IsCharLowerWrapW@4
 implib shlwapi.dll, ord.31, _IsCharPunctW@4
+implib shlwapi.dll, IsCharSpaceA, _IsCharSpaceA@4
 implib shlwapi.dll, ord.29, _IsCharSpaceW@4
 implib shlwapi.dll, ord.26, _IsCharUpperWrapW@4
 implib shlwapi.dll, ord.34, _IsCharXDigitW@4
@@ -466,6 +476,8 @@ implib shlwapi.dll, ord.182, _SHCheckMenuItem@12
 implib shlwapi.dll, SHCopyKeyA, _SHCopyKeyA@16
 implib shlwapi.dll, SHCopyKeyW, _SHCopyKeyW@16
 implib shlwapi.dll, ord.12, _SHCreateMemStream@8
+implib shlwapi.dll, ord.477, _SHCreatePropertyBagOnMemory@12
+implib shlwapi.dll, ord.472, _SHCreatePropertyBagOnProfileSection@20
 implib shlwapi.dll, ord.471, _SHCreatePropertyBagOnRegKey@20
 implib shlwapi.dll, SHCreateShellPalette, _SHCreateShellPalette@4
 implib shlwapi.dll, SHCreateStreamOnFileA, _SHCreateStreamOnFileA@12
@@ -510,6 +522,7 @@ implib shlwapi.dll, SHGetInverseCMAP, _SHGetInverseCMAP@8
 implib shlwapi.dll, ord.413, _SHGetMachineInfo@4
 implib shlwapi.dll, ord.192, _SHGetMenuFromID@8
 implib shlwapi.dll, ord.357, _SHGetNewLinkInfoWrapW@20
+implib shlwapi.dll, ord.476, _SHGetObjectCompatFlags@8
 implib shlwapi.dll, ord.334, _SHGetPathFromIDListWrapW@8
 implib shlwapi.dll, ord.271, _SHGetRestriction@12
 implib shlwapi.dll, ord.443, _SHGetSystemWindowsDirectoryA@8
