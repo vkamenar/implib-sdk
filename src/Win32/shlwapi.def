@@ -326,6 +326,7 @@ implib shlwapi.dll, PathCompactPathExA, _PathCompactPathExA@16
 implib shlwapi.dll, PathCompactPathExW, _PathCompactPathExW@16
 implib shlwapi.dll, PathCompactPathW, _PathCompactPathW@12
 implib shlwapi.dll, PathCreateFromUrlA, _PathCreateFromUrlA@16
+implib shlwapi.dll, PathCreateFromUrlAlloc, _PathCreateFromUrlAlloc@12
 implib shlwapi.dll, PathCreateFromUrlW, _PathCreateFromUrlW@16
 implib shlwapi.dll, PathFileExistsA, _PathFileExistsA@4
 implib shlwapi.dll, ord.445, _PathFileExistsAndAttributesA@8
@@ -388,6 +389,8 @@ implib shlwapi.dll, PathMakePrettyW, _PathMakePrettyW@4
 implib shlwapi.dll, PathMakeSystemFolderA, _PathMakeSystemFolderA@4
 implib shlwapi.dll, PathMakeSystemFolderW, _PathMakeSystemFolderW@4
 implib shlwapi.dll, PathMatchSpecA, _PathMatchSpecA@8
+implib shlwapi.dll, PathMatchSpecExA, _PathMatchSpecExA@12
+implib shlwapi.dll, PathMatchSpecExW, _PathMatchSpecExW@12
 implib shlwapi.dll, PathMatchSpecW, _PathMatchSpecW@8
 implib shlwapi.dll, PathParseIconLocationA, _PathParseIconLocationA@4
 implib shlwapi.dll, PathParseIconLocationW, _PathParseIconLocationW@4
@@ -481,8 +484,10 @@ implib shlwapi.dll, ord.472, _SHCreatePropertyBagOnProfileSection@20
 implib shlwapi.dll, ord.471, _SHCreatePropertyBagOnRegKey@20
 implib shlwapi.dll, SHCreateShellPalette, _SHCreateShellPalette@4
 implib shlwapi.dll, SHCreateStreamOnFileA, _SHCreateStreamOnFileA@12
+implib shlwapi.dll, SHCreateStreamOnFileEx, _SHCreateStreamOnFileEx@24
 implib shlwapi.dll, SHCreateStreamOnFileW, _SHCreateStreamOnFileW@12
 implib shlwapi.dll, ord.16, _SHCreateThread@16
+implib shlwapi.dll, SHCreateThreadRef, _SHCreateThreadRef@8
 implib shlwapi.dll, ord.257, _SHCreateWorkerWindowA@24
 implib shlwapi.dll, ord.278, _SHCreateWorkerWindowW@24
 implib shlwapi.dll, ord.358, _SHDefExtractIconWrapW@24
@@ -586,6 +591,8 @@ implib shlwapi.dll, SHRegGetPathA, _SHRegGetPathA@20
 implib shlwapi.dll, SHRegGetPathW, _SHRegGetPathW@20
 implib shlwapi.dll, SHRegGetUSValueA, _SHRegGetUSValueA@32
 implib shlwapi.dll, SHRegGetUSValueW, _SHRegGetUSValueW@32
+implib shlwapi.dll, SHRegGetValueA, _SHRegGetValueA@28
+implib shlwapi.dll, SHRegGetValueW, _SHRegGetValueW@28
 implib shlwapi.dll, SHRegOpenUSKeyA, _SHRegOpenUSKeyA@20
 implib shlwapi.dll, SHRegOpenUSKeyW, _SHRegOpenUSKeyW@20
 implib shlwapi.dll, SHRegQueryInfoUSKeyA, _SHRegQueryInfoUSKeyA@24
@@ -601,6 +608,7 @@ implib shlwapi.dll, SHRegWriteUSValueW, _SHRegWriteUSValueW@24
 implib shlwapi.dll, ord.183, _SHRegisterClassA@4
 implib shlwapi.dll, ord.237, _SHRegisterClassW@4
 implib shlwapi.dll, SHRegisterValidateTemplate, _SHRegisterValidateTemplate@8
+implib shlwapi.dll, SHReleaseThreadRef, _SHReleaseThreadRef@0
 implib shlwapi.dll, ord.180, _SHRemoveAllSubMenus@4
 implib shlwapi.dll, ord.21, _SHRemoveDataBlock@8
 implib shlwapi.dll, ord.221, _SHRemoveDefaultDialogFont@4
@@ -650,6 +658,7 @@ implib shlwapi.dll, ord.141, _SetWindowLongWrapW@12
 implib shlwapi.dll, ord.143, _SetWindowTextWrapW@8
 implib shlwapi.dll, ord.142, _SetWindowsHookExWrapW@16
 implib shlwapi.dll, ord.335, _ShellExecuteExWrapW@4
+implib shlwapi.dll, ShellMessageBoxA, _ShellMessageBoxA ; This function uses the CDECL calling convention!
 implib shlwapi.dll, ord.388, _ShellMessageBoxW ; This function uses the CDECL calling convention! It was known as ShellMessageBoxWrapW until v6.0
 implib shlwapi.dll, ord.380, _Shell_GetCachedImageIndexWrapA@12
 implib shlwapi.dll, ord.379, _Shell_GetCachedImageIndexWrapW@12
@@ -660,16 +669,20 @@ implib shlwapi.dll, StrCSpnIW, _StrCSpnIW@8
 implib shlwapi.dll, StrCSpnW, _StrCSpnW@8
 implib shlwapi.dll, StrCatBuffA, _StrCatBuffA@12
 implib shlwapi.dll, StrCatBuffW, _StrCatBuffW@12
+implib shlwapi.dll, StrCatChainW, _StrCatChainW@16
 implib shlwapi.dll, StrCatW, _StrCatW@8
 implib shlwapi.dll, StrChrA, _StrChrA@8
 implib shlwapi.dll, StrChrIA, _StrChrIA@8
 implib shlwapi.dll, StrChrIW, _StrChrIW@8
+implib shlwapi.dll, StrChrNIW, _StrChrNIW@12
+implib shlwapi.dll, StrChrNW, _StrChrNW@12
 implib shlwapi.dll, StrChrW, _StrChrW@8
 implib shlwapi.dll, ord.155, _StrCmpCA@8
 implib shlwapi.dll, ord.156, _StrCmpCW@8
 implib shlwapi.dll, ord.157, _StrCmpICA@8
 implib shlwapi.dll, ord.158, _StrCmpICW@8
 implib shlwapi.dll, StrCmpIW, _StrCmpIW@8
+implib shlwapi.dll, StrCmpLogicalW, _StrCmpLogicalW@8
 implib shlwapi.dll, StrCmpNA, _StrCmpNA@12
 implib shlwapi.dll, ord.151, _StrCmpNCA@12
 implib shlwapi.dll, ord.152, _StrCmpNCW@12
@@ -687,6 +700,7 @@ implib shlwapi.dll, StrDupA, _StrDupA@4
 implib shlwapi.dll, StrDupW, _StrDupW@4
 implib shlwapi.dll, StrFormatByteSize64A, _StrFormatByteSize64A@16
 implib shlwapi.dll, StrFormatByteSizeA, _StrFormatByteSizeA@12
+implib shlwapi.dll, StrFormatByteSizeEx, _StrFormatByteSizeEx@20
 implib shlwapi.dll, StrFormatByteSizeW, _StrFormatByteSizeW@12
 implib shlwapi.dll, StrFormatKBSizeA, _StrFormatKBSizeA@16
 implib shlwapi.dll, StrFormatKBSizeW, _StrFormatKBSizeW@16
@@ -704,6 +718,7 @@ implib shlwapi.dll, StrRChrIW, _StrRChrIW@12
 implib shlwapi.dll, StrRChrW, _StrRChrW@12
 implib shlwapi.dll, StrRStrIA, _StrRStrIA@12
 implib shlwapi.dll, StrRStrIW, _StrRStrIW@12
+implib shlwapi.dll, StrRetToBSTR, _StrRetToBSTR@12
 implib shlwapi.dll, StrRetToBufA, _StrRetToBufA@16
 implib shlwapi.dll, StrRetToBufW, _StrRetToBufW@16
 implib shlwapi.dll, StrRetToStrA, _StrRetToStrA@12
