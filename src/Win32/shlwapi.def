@@ -139,6 +139,7 @@ implib shlwapi.dll, ord.372, _DdeCreateStringHandleWrapW@12
 implib shlwapi.dll, ord.371, _DdeInitializeWrapW@16
 implib shlwapi.dll, ord.373, _DdeQueryStringWrapW@20
 implib shlwapi.dll, ord.56, _DefWindowProcWrapW@16
+implib shlwapi.dll, DelayLoadFailureHook, _DelayLoadFailureHook@8
 implib shlwapi.dll, ord.57, _DeleteFileWrapW@4
 implib shlwapi.dll, ord.425, _DeleteMenuWrap@12
 implib shlwapi.dll, ord.426, _DestroyMenuWrap@4
@@ -234,10 +235,13 @@ implib shlwapi.dll, ord.284, _IConnectionPoint_SimpleInvoke@12
 implib shlwapi.dll, ord.207, _IContextMenu_Invoke@16
 implib shlwapi.dll, ord.316, _IShellFolder_GetDisplayNameOf@20
 implib shlwapi.dll, ord.317, _IShellFolder_ParseDisplayName@28
+implib shlwapi.dll, ord.568, _IStream_Copy@12
 implib shlwapi.dll, ord.184, _IStream_Read@12
+implib shlwapi.dll, ord.596, _IStream_ReadStr@8
 implib shlwapi.dll, ord.213, _IStream_Reset@4
 implib shlwapi.dll, ord.214, _IStream_Size@8
 implib shlwapi.dll, ord.212, _IStream_Write@12
+implib shlwapi.dll, ord.597, _IStream_WriteStr@8
 implib shlwapi.dll, ord.169, _IUnknown_AtomicRelease@4
 implib shlwapi.dll, ord.288, _IUnknown_CPContainerInvokeIndirect@12
 implib shlwapi.dll, ord.286, _IUnknown_CPContainerInvokeParam ; This function uses the CDECL calling convention!
@@ -272,6 +276,7 @@ implib shlwapi.dll, ord.29, _IsCharSpaceW@4
 implib shlwapi.dll, ord.26, _IsCharUpperWrapW@4
 implib shlwapi.dll, ord.34, _IsCharXDigitW@4
 implib shlwapi.dll, ord.99, _IsDialogMessageWrapW@8
+implib shlwapi.dll, IsInternetESCEnabled, _IsInternetESCEnabled@0
 implib shlwapi.dll, ord.437, _IsOS@4
 implib shlwapi.dll, ord.202, _IsQSForward@12
 implib shlwapi.dll, ord.100, _LoadAcceleratorsWrapW@8
@@ -547,6 +552,7 @@ implib shlwapi.dll, ord.166, _SHIsEmptyStream@4
 implib shlwapi.dll, ord.195, _SHIsExpandableFolder@8
 implib shlwapi.dll, SHIsLowMemoryMachine, _SHIsLowMemoryMachine@4
 implib shlwapi.dll, ord.187, _SHLoadFromPropertyBag@8
+implib shlwapi.dll, ord.487, _SHLoadIndirectString@16
 implib shlwapi.dll, ord.177, _SHLoadMenuPopup@8
 implib shlwapi.dll, ord.438, _SHLoadRegUIStringA@16
 implib shlwapi.dll, ord.439, _SHLoadRegUIStringW@16
@@ -565,6 +571,7 @@ implib shlwapi.dll, ord.282, _SHPackDispParams ; This function uses the CDECL ca
 implib shlwapi.dll, ord.281, _SHPackDispParamsV@16
 implib shlwapi.dll, ord.236, _SHPinDllOfCLSID@4
 implib shlwapi.dll, ord.178, _SHPropagateMessage@20
+implib shlwapi.dll, ord.567, _SHPropertyBag_ReadStrAlloc@12
 implib shlwapi.dll, SHQueryInfoKeyA, _SHQueryInfoKeyA@20
 implib shlwapi.dll, SHQueryInfoKeyW, _SHQueryInfoKeyW@20
 implib shlwapi.dll, SHQueryValueExA, _SHQueryValueExA@24
@@ -728,7 +735,11 @@ implib shlwapi.dll, StrSpnW, _StrSpnW@8
 implib shlwapi.dll, StrStrA, _StrStrA@8
 implib shlwapi.dll, StrStrIA, _StrStrIA@8
 implib shlwapi.dll, StrStrIW, _StrStrIW@8
+implib shlwapi.dll, StrStrNIW, _StrStrNIW@12
+implib shlwapi.dll, StrStrNW, _StrStrNW@12
 implib shlwapi.dll, StrStrW, _StrStrW@8
+implib shlwapi.dll, StrToInt64ExA, _StrToInt64ExA@12
+implib shlwapi.dll, StrToInt64ExW, _StrToInt64ExW@12
 implib shlwapi.dll, StrToIntA, _StrToIntA@4
 implib shlwapi.dll, StrToIntExA, _StrToIntExA@12
 implib shlwapi.dll, StrToIntExW, _StrToIntExW@12
