@@ -27,6 +27,8 @@ include '..\implib.inc'
 ; implib shlwapi.dll, ord.171, _SHIsSameObject@8
 ; implib shlwapi.dll, ord.421, _SHLoadPersistedDataObject@8
 ; implib shlwapi.dll, ord.385, _SHLoadRawAccelerators@8
+; implib shlwapi.dll, ord.482, _SHMessageBoxHelpA@28
+; implib shlwapi.dll, ord.483, _SHMessageBoxHelpW@28
 ; implib shlwapi.dll, ord.290, _SHMirrorIcon@8
 ; implib shlwapi.dll, ord.420, _SHPersistDataObject@8
 ; implib shlwapi.dll, ord.386, _SHQueryRawAccelerator@20
@@ -40,6 +42,7 @@ include '..\implib.inc'
 
 ; *** Functions discontinued in v6.0 (Windows Vista)
 ; implib shlwapi.dll, ord.356, _CreateAllAccessSecurityAttributes@12 ; Some earlier v6.0 builds assign ordinal 356 to AssocCreate
+; implib shlwapi.dll, ord.255, _EventTraceHandler@8
 ; implib shlwapi.dll, ord.250, _GetPerfTime@0
 ; implib shlwapi.dll, ord.475, _GetShellSecurityDescriptor@8
 ; implib shlwapi.dll, ord.293, _SHCancelUserWorkItems@8
@@ -237,10 +240,12 @@ implib shlwapi.dll, ord.316, _IShellFolder_GetDisplayNameOf@20
 implib shlwapi.dll, ord.317, _IShellFolder_ParseDisplayName@28
 implib shlwapi.dll, ord.568, _IStream_Copy@12
 implib shlwapi.dll, ord.184, _IStream_Read@12
+implib shlwapi.dll, ord.512, _IStream_ReadPidl@8
 implib shlwapi.dll, ord.596, _IStream_ReadStr@8
 implib shlwapi.dll, ord.213, _IStream_Reset@4
 implib shlwapi.dll, ord.214, _IStream_Size@8
 implib shlwapi.dll, ord.212, _IStream_Write@12
+implib shlwapi.dll, ord.513, _IStream_WritePidl@8
 implib shlwapi.dll, ord.597, _IStream_WriteStr@8
 implib shlwapi.dll, ord.169, _IUnknown_AtomicRelease@4
 implib shlwapi.dll, ord.288, _IUnknown_CPContainerInvokeIndirect@12
@@ -252,13 +257,17 @@ implib shlwapi.dll, ord.175, _IUnknown_GetClassID@8
 implib shlwapi.dll, ord.256, _IUnknown_GetSite@12
 implib shlwapi.dll, ord.172, _IUnknown_GetWindow@8
 implib shlwapi.dll, ord.190, _IUnknown_HandleIRestrict@20
+implib shlwapi.dll, ord.481, _IUnknown_HasFocusIO@4
 implib shlwapi.dll, ord.189, _IUnknown_OnFocusOCS@8
 implib shlwapi.dll, ord.176, _IUnknown_QueryService@16
+implib shlwapi.dll, ord.484, _IUnknown_QueryServiceExec@28
 implib shlwapi.dll, ord.163, _IUnknown_QueryStatus@20
 implib shlwapi.dll, ord.199, _IUnknown_Set@8
 implib shlwapi.dll, ord.173, _IUnknown_SetOwner@8
 implib shlwapi.dll, ord.174, _IUnknown_SetSite@8
+implib shlwapi.dll, ord.478, _IUnknown_TranslateAcceleratorIO@8
 implib shlwapi.dll, ord.188, _IUnknown_TranslateAcceleratorOCS@12
+implib shlwapi.dll, ord.479, _IUnknown_UIActivateIO@12
 implib shlwapi.dll, ord.303, _InsertMenuItemWrapW@16
 implib shlwapi.dll, ord.98, _InsertMenuWrapW@20
 implib shlwapi.dll, IntlStrEqWorkerA, _IntlStrEqWorkerA@16 ; Alias for StrIsIntlEqualA
@@ -298,10 +307,12 @@ implib shlwapi.dll, ord.377, _MLLoadLibraryA@12
 implib shlwapi.dll, ord.378, _MLLoadLibraryW@12
 implib shlwapi.dll, ord.395, _MLWinHelpA@16
 implib shlwapi.dll, ord.397, _MLWinHelpW@16
+implib shlwapi.dll, ord.485, _MapWin32ErrorToSTG@4
 implib shlwapi.dll, ord.201, _MayExecForward@28
 implib shlwapi.dll, ord.200, _MayQSForward@24
 implib shlwapi.dll, ord.108, _MessageBoxIndirectWrapW@4
 implib shlwapi.dll, ord.340, _MessageBoxWrapW@16
+implib shlwapi.dll, ord.486, _ModeToCreateFileFlags@20
 implib shlwapi.dll, ord.109, _ModifyMenuWrapW@20
 implib shlwapi.dll, ord.113, _MoveFileWrapW@8
 implib shlwapi.dll, ord.449, _NextPathA@12
@@ -542,6 +553,7 @@ implib shlwapi.dll, SHGetValueA, _SHGetValueA@24
 implib shlwapi.dll, ord.205, _SHGetValueGoodBootA@24
 implib shlwapi.dll, ord.206, _SHGetValueGoodBootW@24
 implib shlwapi.dll, SHGetValueW, _SHGetValueW@24
+implib shlwapi.dll, ord.515, _SHGetViewStatePropertyBag@20
 implib shlwapi.dll, ord.440, _SHGetWebFolderFilePathA@12
 implib shlwapi.dll, ord.441, _SHGetWebFolderFilePathW@12
 implib shlwapi.dll, ord.342, _SHInterlockedCompareExchange@12
