@@ -16,10 +16,12 @@ include '..\implib.inc'
 ; implib shlwapi.dll, ord.398, _MLHtmlHelpW@20
 ; implib shlwapi.dll, ord.429, _MLIsMLHInstance@4
 ; implib shlwapi.dll, ord.430, _MLSetMLHInstance@8
+; implib shlwapi.dll, ord.492, _PrettifyFileDescriptionW@8
 ; implib shlwapi.dll, ord.275, _RegisterGlobalHotkeyA@12
 ; implib shlwapi.dll, ord.274, _RegisterGlobalHotkeyW@12
 ; implib shlwapi.dll, ord.374, _SHCheckDiskForMediaA@16
 ; implib shlwapi.dll, ord.375, _SHCheckDiskForMediaW@16
+; implib shlwapi.dll, ord.488, _SHConvertGraphicsFile@12
 ; implib shlwapi.dll, SHCreateStreamWrapper, _SHCreateStreamWrapper@16
 ; implib shlwapi.dll, ord.277, _SHDialogBox@20
 ; implib shlwapi.dll, ord.415, _SHHtmlHelpOnDemandA@24
@@ -31,6 +33,7 @@ include '..\implib.inc'
 ; implib shlwapi.dll, ord.483, _SHMessageBoxHelpW@28
 ; implib shlwapi.dll, ord.290, _SHMirrorIcon@8
 ; implib shlwapi.dll, ord.420, _SHPersistDataObject@8
+; implib shlwapi.dll, ord.498, _SHPropertyBag_ReadBOOLOld@12
 ; implib shlwapi.dll, ord.386, _SHQueryRawAccelerator@20
 ; implib shlwapi.dll, ord.387, _SHQueryRawAcceleratorMsg@12
 ; implib shlwapi.dll, ord.196, _SHVerbExistsNA@16
@@ -546,6 +549,7 @@ implib shlwapi.dll, ord.357, _SHGetNewLinkInfoWrapW@20
 implib shlwapi.dll, ord.476, _SHGetObjectCompatFlags@8
 implib shlwapi.dll, ord.334, _SHGetPathFromIDListWrapW@8
 implib shlwapi.dll, ord.271, _SHGetRestriction@12
+implib shlwapi.dll, ord.491, _SHGetShellKey@12
 implib shlwapi.dll, ord.443, _SHGetSystemWindowsDirectoryA@8
 implib shlwapi.dll, ord.444, _SHGetSystemWindowsDirectoryW@8
 implib shlwapi.dll, SHGetThreadRef, _SHGetThreadRef@4
@@ -583,7 +587,16 @@ implib shlwapi.dll, ord.282, _SHPackDispParams ; This function uses the CDECL ca
 implib shlwapi.dll, ord.281, _SHPackDispParamsV@16
 implib shlwapi.dll, ord.236, _SHPinDllOfCLSID@4
 implib shlwapi.dll, ord.178, _SHPropagateMessage@20
+implib shlwapi.dll, ord.505, _SHPropertyBag_ReadGUID@12
+implib shlwapi.dll, ord.529, _SHPropertyBag_ReadInt@12 ; SHPropertyBag_ReadInt is an alias for SHPropertyBag_ReadLONG
+implib shlwapi.dll, ord.496, _SHPropertyBag_ReadLONG@12
+implib shlwapi.dll, ord.494, _SHPropertyBag_ReadStr@16
 implib shlwapi.dll, ord.567, _SHPropertyBag_ReadStrAlloc@12
+implib shlwapi.dll, ord.493, _SHPropertyBag_ReadType@16
+implib shlwapi.dll, ord.499, _SHPropertyBag_WriteBOOL@12
+implib shlwapi.dll, ord.530, _SHPropertyBag_WriteInt@12 ; SHPropertyBag_WriteInt is an alias for SHPropertyBag_WriteLONG
+implib shlwapi.dll, ord.497, _SHPropertyBag_WriteLONG@12
+implib shlwapi.dll, ord.495, _SHPropertyBag_WriteStr@12
 implib shlwapi.dll, SHQueryInfoKeyA, _SHQueryInfoKeyA@20
 implib shlwapi.dll, SHQueryInfoKeyW, _SHQueryInfoKeyW@20
 implib shlwapi.dll, SHQueryValueExA, _SHQueryValueExA@24
