@@ -261,7 +261,9 @@ implib shlwapi.dll, ord.256, _IUnknown_GetSite@12
 implib shlwapi.dll, ord.172, _IUnknown_GetWindow@8
 implib shlwapi.dll, ord.190, _IUnknown_HandleIRestrict@20
 implib shlwapi.dll, ord.481, _IUnknown_HasFocusIO@4
+implib shlwapi.dll, ord.509, _IUnknown_OnFocusChangeIS@12
 implib shlwapi.dll, ord.189, _IUnknown_OnFocusOCS@8
+implib shlwapi.dll, ord.514, _IUnknown_ProfferService@16
 implib shlwapi.dll, ord.176, _IUnknown_QueryService@16
 implib shlwapi.dll, ord.484, _IUnknown_QueryServiceExec@28
 implib shlwapi.dll, ord.163, _IUnknown_QueryStatus@20
@@ -351,6 +353,7 @@ implib shlwapi.dll, PathFileExistsA, _PathFileExistsA@4
 implib shlwapi.dll, ord.445, _PathFileExistsAndAttributesA@8
 implib shlwapi.dll, ord.446, _PathFileExistsAndAttributesW@8
 implib shlwapi.dll, ord.3, _PathFileExistsDefExtA@8
+implib shlwapi.dll, ord.511, _PathFileExistsDefExtAndAttributesW@12
 implib shlwapi.dll, ord.4, _PathFileExistsDefExtW@8
 implib shlwapi.dll, PathFileExistsW, _PathFileExistsW@4
 implib shlwapi.dll, PathFindExtensionA, _PathFindExtensionA@4
@@ -573,6 +576,7 @@ implib shlwapi.dll, ord.177, _SHLoadMenuPopup@8
 implib shlwapi.dll, ord.438, _SHLoadRegUIStringA@16
 implib shlwapi.dll, ord.439, _SHLoadRegUIStringW@16
 implib shlwapi.dll, ord.8, _SHLockShared@8
+implib shlwapi.dll, ord.510, _SHLockSharedEx@12
 implib shlwapi.dll, ord.11, _SHMapHandle@20
 implib shlwapi.dll, ord.179, _SHMenuIndexFromID@8
 implib shlwapi.dll, ord.185, _SHMessageBoxCheckA@24
@@ -587,6 +591,7 @@ implib shlwapi.dll, ord.282, _SHPackDispParams ; This function uses the CDECL ca
 implib shlwapi.dll, ord.281, _SHPackDispParamsV@16
 implib shlwapi.dll, ord.236, _SHPinDllOfCLSID@4
 implib shlwapi.dll, ord.178, _SHPropagateMessage@20
+implib shlwapi.dll, ord.507, _SHPropertyBag_ReadDWORD@12
 implib shlwapi.dll, ord.505, _SHPropertyBag_ReadGUID@12
 implib shlwapi.dll, ord.529, _SHPropertyBag_ReadInt@12 ; SHPropertyBag_ReadInt is an alias for SHPropertyBag_ReadLONG
 implib shlwapi.dll, ord.496, _SHPropertyBag_ReadLONG@12
@@ -594,6 +599,8 @@ implib shlwapi.dll, ord.494, _SHPropertyBag_ReadStr@16
 implib shlwapi.dll, ord.567, _SHPropertyBag_ReadStrAlloc@12
 implib shlwapi.dll, ord.493, _SHPropertyBag_ReadType@16
 implib shlwapi.dll, ord.499, _SHPropertyBag_WriteBOOL@12
+implib shlwapi.dll, ord.508, _SHPropertyBag_WriteDWORD@12
+implib shlwapi.dll, ord.506, _SHPropertyBag_WriteGUID@12
 implib shlwapi.dll, ord.530, _SHPropertyBag_WriteInt@12 ; SHPropertyBag_WriteInt is an alias for SHPropertyBag_WriteLONG
 implib shlwapi.dll, ord.497, _SHPropertyBag_WriteLONG@12
 implib shlwapi.dll, ord.495, _SHPropertyBag_WriteStr@12
@@ -677,6 +684,8 @@ implib shlwapi.dll, ord.194, _SHWaitForSendMessageThread@8
 implib shlwapi.dll, ord.267, _SHWeakQueryInterface@16
 implib shlwapi.dll, ord.268, _SHWeakReleaseInterface@8
 implib shlwapi.dll, ord.17, _SHWriteDataBlockList@8
+implib shlwapi.dll, ord.516, _SKGetValueW@24
+implib shlwapi.dll, ord.517, _SKSetValueW@24
 implib shlwapi.dll, ord.82, _SearchPathWrapW@24
 implib shlwapi.dll, ord.135, _SendDlgItemMessageWrapW@20
 implib shlwapi.dll, ord.434, _SendMessageTimeoutWrapW@28
