@@ -591,19 +591,30 @@ implib shlwapi.dll, ord.282, _SHPackDispParams ; This function uses the CDECL ca
 implib shlwapi.dll, ord.281, _SHPackDispParamsV@16
 implib shlwapi.dll, ord.236, _SHPinDllOfCLSID@4
 implib shlwapi.dll, ord.178, _SHPropagateMessage@20
+implib shlwapi.dll, ord.520, _SHPropertyBag_ReadBSTR@12
 implib shlwapi.dll, ord.507, _SHPropertyBag_ReadDWORD@12
 implib shlwapi.dll, ord.505, _SHPropertyBag_ReadGUID@12
 implib shlwapi.dll, ord.529, _SHPropertyBag_ReadInt@12 ; SHPropertyBag_ReadInt is an alias for SHPropertyBag_ReadLONG
 implib shlwapi.dll, ord.496, _SHPropertyBag_ReadLONG@12
+implib shlwapi.dll, ord.521, _SHPropertyBag_ReadPOINTL@12
+implib shlwapi.dll, ord.525, _SHPropertyBag_ReadPOINTS@12
+implib shlwapi.dll, ord.523, _SHPropertyBag_ReadRECTL@12
+implib shlwapi.dll, ord.527, _SHPropertyBag_ReadSHORT@12
 implib shlwapi.dll, ord.494, _SHPropertyBag_ReadStr@16
 implib shlwapi.dll, ord.567, _SHPropertyBag_ReadStrAlloc@12
+implib shlwapi.dll, ord.531, _SHPropertyBag_ReadStream@12
 implib shlwapi.dll, ord.493, _SHPropertyBag_ReadType@16
 implib shlwapi.dll, ord.499, _SHPropertyBag_WriteBOOL@12
 implib shlwapi.dll, ord.508, _SHPropertyBag_WriteDWORD@12
 implib shlwapi.dll, ord.506, _SHPropertyBag_WriteGUID@12
 implib shlwapi.dll, ord.530, _SHPropertyBag_WriteInt@12 ; SHPropertyBag_WriteInt is an alias for SHPropertyBag_WriteLONG
 implib shlwapi.dll, ord.497, _SHPropertyBag_WriteLONG@12
+implib shlwapi.dll, ord.522, _SHPropertyBag_WritePOINTL@12
+implib shlwapi.dll, ord.526, _SHPropertyBag_WritePOINTS@12
+implib shlwapi.dll, ord.524, _SHPropertyBag_WriteRECTL@12
+implib shlwapi.dll, ord.528, _SHPropertyBag_WriteSHORT@12
 implib shlwapi.dll, ord.495, _SHPropertyBag_WriteStr@12
+implib shlwapi.dll, ord.532, _SHPropertyBag_WriteStream@12
 implib shlwapi.dll, SHQueryInfoKeyA, _SHQueryInfoKeyA@20
 implib shlwapi.dll, SHQueryInfoKeyW, _SHQueryInfoKeyW@20
 implib shlwapi.dll, SHQueryValueExA, _SHQueryValueExA@24
@@ -684,6 +695,8 @@ implib shlwapi.dll, ord.194, _SHWaitForSendMessageThread@8
 implib shlwapi.dll, ord.267, _SHWeakQueryInterface@16
 implib shlwapi.dll, ord.268, _SHWeakReleaseInterface@8
 implib shlwapi.dll, ord.17, _SHWriteDataBlockList@8
+implib shlwapi.dll, ord.519, _SKAllocValueW@24
+implib shlwapi.dll, ord.518, _SKDeleteValueW@12
 implib shlwapi.dll, ord.516, _SKGetValueW@24
 implib shlwapi.dll, ord.517, _SKSetValueW@24
 implib shlwapi.dll, ord.82, _SearchPathWrapW@24
