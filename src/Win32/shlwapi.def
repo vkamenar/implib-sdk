@@ -227,6 +227,7 @@ implib shlwapi.dll, ord.91, _GetTextExtentPoint32WrapW@16
 implib shlwapi.dll, ord.92, _GetTextFaceWrapW@12
 implib shlwapi.dll, ord.93, _GetTextMetricsWrapW@8
 implib shlwapi.dll, ord.310, _GetTimeFormatWrapW@24
+implib shlwapi.dll, ord.542, _GetUIVersion@0
 implib shlwapi.dll, ord.362, _GetUserNameWrapW@8
 implib shlwapi.dll, ord.94, _GetWindowLongWrapW@8
 implib shlwapi.dll, ord.96, _GetWindowTextLengthWrapW@4
@@ -254,6 +255,7 @@ implib shlwapi.dll, ord.169, _IUnknown_AtomicRelease@4
 implib shlwapi.dll, ord.288, _IUnknown_CPContainerInvokeIndirect@12
 implib shlwapi.dll, ord.286, _IUnknown_CPContainerInvokeParam ; This function uses the CDECL calling convention!
 implib shlwapi.dll, ord.287, _IUnknown_CPContainerOnChanged@8
+implib shlwapi.dll, ord.546, _IUnknown_DoContextMenuPopup@20
 implib shlwapi.dll, ord.355, _IUnknown_EnableModeless@8
 implib shlwapi.dll, ord.164, _IUnknown_Exec@24
 implib shlwapi.dll, ord.175, _IUnknown_GetClassID@8
@@ -266,10 +268,13 @@ implib shlwapi.dll, ord.189, _IUnknown_OnFocusOCS@8
 implib shlwapi.dll, ord.514, _IUnknown_ProfferService@16
 implib shlwapi.dll, ord.176, _IUnknown_QueryService@16
 implib shlwapi.dll, ord.484, _IUnknown_QueryServiceExec@28
+implib shlwapi.dll, ord.538, _IUnknown_QueryServiceForWebBrowserApp@12
+implib shlwapi.dll, ord.536, _IUnknown_QueryServicePropertyBag@16
 implib shlwapi.dll, ord.163, _IUnknown_QueryStatus@20
 implib shlwapi.dll, ord.199, _IUnknown_Set@8
 implib shlwapi.dll, ord.173, _IUnknown_SetOwner@8
 implib shlwapi.dll, ord.174, _IUnknown_SetSite@8
+implib shlwapi.dll, ord.539, _IUnknown_ShowBrowserBar@12
 implib shlwapi.dll, ord.478, _IUnknown_TranslateAcceleratorIO@8
 implib shlwapi.dll, ord.188, _IUnknown_TranslateAcceleratorOCS@12
 implib shlwapi.dll, ord.479, _IUnknown_UIActivateIO@12
@@ -459,6 +464,7 @@ implib shlwapi.dll, ord.117, _PostMessageWrapW@16
 implib shlwapi.dll, ord.118, _PostThreadMessageWrapW@16
 implib shlwapi.dll, ord.402, _PrintDlgWrapW@4
 implib shlwapi.dll, ord.219, _QISearch@16
+implib shlwapi.dll, ord.544, _QuerySourceCreateFromKey@20
 implib shlwapi.dll, ord.120, _RegCreateKeyExWrapW@36
 implib shlwapi.dll, ord.119, _RegCreateKeyWrapW@12
 implib shlwapi.dll, ord.121, _RegDeleteKeyWrapW@8
@@ -494,6 +500,7 @@ implib shlwapi.dll, ord.345, _SHAnsiToAnsi@12
 implib shlwapi.dll, ord.215, _SHAnsiToUnicode@12
 implib shlwapi.dll, ord.216, _SHAnsiToUnicodeCP@16
 implib shlwapi.dll, SHAutoComplete, _SHAutoComplete@8
+implib shlwapi.dll, ord.537, _SHBoolSystemParametersInfo@8
 implib shlwapi.dll, ord.333, _SHBrowseForFolderWrapW@4
 implib shlwapi.dll, ord.265, _SHCancelTimerQueueTimer@8
 implib shlwapi.dll, ord.394, _SHChangeNotifyWrap@16
@@ -537,6 +544,7 @@ implib shlwapi.dll, ord.22, _SHFindDataBlock@8
 implib shlwapi.dll, ord.419, _SHFlushSFCacheWrap@0
 implib shlwapi.dll, ord.353, _SHFormatDateTimeA@16
 implib shlwapi.dll, ord.354, _SHFormatDateTimeW@16
+implib shlwapi.dll, ord.545, _SHForwardContextMenuMsg@24
 implib shlwapi.dll, ord.19, _SHFreeDataBlockList@4
 implib shlwapi.dll, ord.10, _SHFreeShared@8
 implib shlwapi.dll, ord.461, _SHGetAppCompatFlags@4
@@ -551,6 +559,7 @@ implib shlwapi.dll, ord.192, _SHGetMenuFromID@8
 implib shlwapi.dll, ord.357, _SHGetNewLinkInfoWrapW@20
 implib shlwapi.dll, ord.476, _SHGetObjectCompatFlags@8
 implib shlwapi.dll, ord.334, _SHGetPathFromIDListWrapW@8
+implib shlwapi.dll, ord.533, _SHGetPerScreenResName@12
 implib shlwapi.dll, ord.271, _SHGetRestriction@12
 implib shlwapi.dll, ord.491, _SHGetShellKey@12
 implib shlwapi.dll, ord.443, _SHGetSystemWindowsDirectoryA@8
@@ -565,6 +574,8 @@ implib shlwapi.dll, ord.440, _SHGetWebFolderFilePathA@12
 implib shlwapi.dll, ord.441, _SHGetWebFolderFilePathW@12
 implib shlwapi.dll, ord.342, _SHInterlockedCompareExchange@12
 implib shlwapi.dll, ord.363, _SHInvokeCommand@16
+implib shlwapi.dll, ord.540, _SHInvokeCommandOnContextMenu@20
+implib shlwapi.dll, ord.541, _SHInvokeCommandsOnContextMenu@24
 implib shlwapi.dll, ord.279, _SHInvokeDefaultCommand@12
 implib shlwapi.dll, ord.204, _SHIsChildOrSelf@8
 implib shlwapi.dll, ord.166, _SHIsEmptyStream@4
@@ -591,6 +602,8 @@ implib shlwapi.dll, ord.282, _SHPackDispParams ; This function uses the CDECL ca
 implib shlwapi.dll, ord.281, _SHPackDispParamsV@16
 implib shlwapi.dll, ord.236, _SHPinDllOfCLSID@4
 implib shlwapi.dll, ord.178, _SHPropagateMessage@20
+implib shlwapi.dll, ord.535, _SHPropertyBag_Delete@8
+implib shlwapi.dll, ord.534, _SHPropertyBag_ReadBOOL@12
 implib shlwapi.dll, ord.520, _SHPropertyBag_ReadBSTR@12
 implib shlwapi.dll, ord.507, _SHPropertyBag_ReadDWORD@12
 implib shlwapi.dll, ord.505, _SHPropertyBag_ReadGUID@12
