@@ -45,14 +45,26 @@ include '..\implib.inc'
 
 ; *** Functions discontinued in v6.0 (Windows Vista)
 ; implib shlwapi.dll, ord.356, _CreateAllAccessSecurityAttributes@12 ; Some earlier v6.0 builds assign ordinal 356 to AssocCreate
+; implib shlwapi.dll, ord.547, _DelayLoadFailureHook@8
 ; implib shlwapi.dll, ord.255, _EventTraceHandler@8
 ; implib shlwapi.dll, ord.250, _GetPerfTime@0
 ; implib shlwapi.dll, ord.475, _GetShellSecurityDescriptor@8
+; implib shlwapi.dll, ord.550, _GetTemplateInfoFromHandle@12
+; implib shlwapi.dll, ord.551, _IShellFolder_CompareIDs@16
 ; implib shlwapi.dll, ord.293, _SHCancelUserWorkItems@8
 ; implib shlwapi.dll, ord.264, _SHChangeTimerQueueTimer@16
+; implib shlwapi.dll, ord.557, _SHCoCreateExtension ; Available in Windows 2003 Server SP1 and SP2 only, same ordinal assigned to SHGetPrivateProfileStruct
+; implib shlwapi.dll, ord.556, _SHCoExtensionAllowed ; Available in Windows 2003 Server SP1 and SP2 only, same ordinal assigned to SHGetPrivateProfileString
 ; implib shlwapi.dll, ord.261, _SHCreateTimerQueue@0
 ; implib shlwapi.dll, ord.262, _SHDeleteTimerQueue@4
+; implib shlwapi.dll, ord.552, _SHEvaluateSystemCommandTemplate@16
+; implib shlwapi.dll, ord.554, _SHGetAllAccessSA@0 ; Available in Windows 2003 Server SP1 and SP2 only, same ordinal assigned to SHGetPrivateProfileSection
 ; implib shlwapi.dll, ord.473, _SHGetIniStringUTF7W@20
+; implib shlwapi.dll, ord.553, _SHGetPrivateProfileInt@16 ; Available in XP SP2 and SP3 only, ordinal reassigned to IsInternetESCEnabled
+; implib shlwapi.dll, ord.554, _SHGetPrivateProfileSection@16 ; Same odinal assigned to SHGetAllAccessSA in Windows 2003 Server SP1 and SP2
+; implib shlwapi.dll, ord.555, _SHGetPrivateProfileSectionNames@12
+; implib shlwapi.dll, ord.556, _SHGetPrivateProfileString@24 ; Same odinal assigned to SHCoExtensionAllowed in Windows 2003 Server SP1 and SP2
+; implib shlwapi.dll, ord.557, _SHGetPrivateProfileStruct@20 ; Same odinal assigned to SHCoCreateExtension in Windows 2003 Server SP1 and SP2
 ; implib shlwapi.dll, ord.222, _SHGlobalCounterCreate@4
 ; implib shlwapi.dll, ord.422, _SHGlobalCounterCreateNamedA@8
 ; implib shlwapi.dll, ord.423, _SHGlobalCounterCreateNamedW@8
@@ -295,7 +307,7 @@ implib shlwapi.dll, ord.29, _IsCharSpaceW@4
 implib shlwapi.dll, ord.26, _IsCharUpperWrapW@4
 implib shlwapi.dll, ord.34, _IsCharXDigitW@4
 implib shlwapi.dll, ord.99, _IsDialogMessageWrapW@8
-implib shlwapi.dll, IsInternetESCEnabled, _IsInternetESCEnabled@0
+implib shlwapi.dll, ord.553, _IsInternetESCEnabled@0 ; Same ordinal assigned to SHGetPrivateProfileInt in XP SP2 and SP3
 implib shlwapi.dll, ord.437, _IsOS@4
 implib shlwapi.dll, ord.202, _IsQSForward@12
 implib shlwapi.dll, ord.100, _LoadAcceleratorsWrapW@8
@@ -499,12 +511,14 @@ implib shlwapi.dll, ord.7, _SHAllocShared@12
 implib shlwapi.dll, ord.345, _SHAnsiToAnsi@12
 implib shlwapi.dll, ord.215, _SHAnsiToUnicode@12
 implib shlwapi.dll, ord.216, _SHAnsiToUnicodeCP@16
+implib shlwapi.dll, ord.548, _SHAreIconsEqual@8
 implib shlwapi.dll, SHAutoComplete, _SHAutoComplete@8
 implib shlwapi.dll, ord.537, _SHBoolSystemParametersInfo@8
 implib shlwapi.dll, ord.333, _SHBrowseForFolderWrapW@4
 implib shlwapi.dll, ord.265, _SHCancelTimerQueueTimer@8
 implib shlwapi.dll, ord.394, _SHChangeNotifyWrap@16
 implib shlwapi.dll, ord.182, _SHCheckMenuItem@12
+implib shlwapi.dll, ord.549, _SHCoCreateInstanceAC@20
 implib shlwapi.dll, SHCopyKeyA, _SHCopyKeyA@16
 implib shlwapi.dll, SHCopyKeyW, _SHCopyKeyW@16
 implib shlwapi.dll, ord.12, _SHCreateMemStream@8
