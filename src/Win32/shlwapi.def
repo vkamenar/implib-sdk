@@ -12,6 +12,7 @@ include '..\implib.inc'
 ; implib shlwapi.dll, ord.404, _IShellFolder_EnumObjects@16
 ; implib shlwapi.dll, ord.573, _IShellFolder_ParseDisplayNameC ; The same ordinal is assigned to ColorRGBToHLS in v6.0
 ; implib shlwapi.dll, ord.470, _IUnknown_ProfferServiceOld@20
+; implib shlwapi.dll, ord.602, _IUnknown_QueryServiceQueryStatus@24
 ; implib shlwapi.dll, ord.574, _IWebBrowser_Navigate ; The same ordinal is assigned to DllGetVersion in v6.0
 ; implib shlwapi.dll, ord.431, _MLClearMLHInstance@4
 ; implib shlwapi.dll, ord.396, _MLHtmlHelpA@20
@@ -38,9 +39,14 @@ include '..\implib.inc'
 ; implib shlwapi.dll, ord.498, _SHPropertyBag_ReadBOOLOld@12
 ; implib shlwapi.dll, ord.386, _SHQueryRawAccelerator@20
 ; implib shlwapi.dll, ord.387, _SHQueryRawAcceleratorMsg@12
+; implib shlwapi.dll, ord.601, _SHSafeQueryInterface
 ; implib shlwapi.dll, ord.196, _SHVerbExistsNA@16
 ; implib shlwapi.dll, ord.417, _SHWinHelpOnDemandA@20
 ; implib shlwapi.dll, ord.416, _SHWinHelpOnDemandW@20
+; implib shlwapi.dll, ord.605, _StrIsCanonicalEqualA@8
+; implib shlwapi.dll, ord.603, _StrIsCanonicalEqualNA@12
+; implib shlwapi.dll, ord.604, _StrIsCanonicalEqualNW@12
+; implib shlwapi.dll, ord.606, _StrIsCanonicalEqualW@8
 ; implib shlwapi.dll, ord.480, _UrlCrackW@16
 ; implib shlwapi.dll, ord.226, _ZoneCheckPathA@16
 ; implib shlwapi.dll, ord.227, _ZoneCheckPathW@16
@@ -68,6 +74,7 @@ include '..\implib.inc'
 ; implib shlwapi.dll, ord.555, _SHGetPrivateProfileSectionNames@12 ; Also ordinal 564 in v6.0
 ; implib shlwapi.dll, ord.556, _SHGetPrivateProfileString@24 ; Same odinal assigned to SHCoExtensionAllowed in Windows 2003 Server SP1 and SP2, also ordinal 565 in v6.0
 ; implib shlwapi.dll, ord.557, _SHGetPrivateProfileStruct@20 ; Same odinal assigned to SHCoCreateExtension in Windows 2003 Server SP1 and SP2, also ordinal 566 in v6.0
+; implib shlwapi.dll, ord.598, _SHGetUserToken
 ; implib shlwapi.dll, ord.222, _SHGlobalCounterCreate@4
 ; implib shlwapi.dll, ord.422, _SHGlobalCounterCreateNamedA@8
 ; implib shlwapi.dll, ord.423, _SHGlobalCounterCreateNamedW@8
@@ -118,6 +125,7 @@ implib shlwapi.dll, AssocQueryStringByKeyW, _AssocQueryStringByKeyW@24
 implib shlwapi.dll, AssocQueryStringW, _AssocQueryStringW@24
 implib shlwapi.dll, ord.435, _CLSIDFromProgIDWrap@8
 implib shlwapi.dll, ord.436, _CLSIDFromStringWrap@8
+implib shlwapi.dll, ord.581, _CalculateAspectRatio@12
 implib shlwapi.dll, ord.332, _CallMsgFilterWrapW@8
 implib shlwapi.dll, ord.37, _CallWindowProcWrapW@20
 implib shlwapi.dll, ord.39, _CharLowerBuffWrapW@8
@@ -139,6 +147,7 @@ implib shlwapi.dll, ColorRGBToHLS, _ColorRGBToHLS@16
 implib shlwapi.dll, ord.159, _CompareStringAltW@24
 implib shlwapi.dll, ord.45, _CompareStringWrapW@24
 implib shlwapi.dll, ord.168, _ConnectToConnectionPoint@24
+implib shlwapi.dll, ord.580, _ConvertDIBSECTIONToThumbnail@32
 implib shlwapi.dll, ord.46, _CopyAcceleratorTableWrapW@12
 implib shlwapi.dll, ord.112, _CopyFileWrapW@12
 implib shlwapi.dll, ord.47, _CreateAcceleratorTableWrapW@8
@@ -156,6 +165,7 @@ implib shlwapi.dll, ord.304, _CreateMetaFileWrapW@4
 implib shlwapi.dll, ord.305, _CreateMutexWrapW@12
 implib shlwapi.dll, ord.369, _CreateProcessWrapW@40
 implib shlwapi.dll, ord.307, _CreateSemaphoreWrapW@16
+implib shlwapi.dll, ord.583, _CreateSizedDIBSECTION@28
 implib shlwapi.dll, ord.55, _CreateWindowExWrapW@48
 implib shlwapi.dll, ord.372, _DdeCreateStringHandleWrapW@12
 implib shlwapi.dll, ord.371, _DdeInitializeWrapW@16
@@ -186,6 +196,7 @@ implib shlwapi.dll, ord.211, _FDSA_DeleteItem@8
 implib shlwapi.dll, ord.209, _FDSA_Destroy@4
 implib shlwapi.dll, ord.208, _FDSA_Initialize@20
 implib shlwapi.dll, ord.210, _FDSA_InsertItem@12
+implib shlwapi.dll, ord.582, _FactorAspectRatio@48
 implib shlwapi.dll, ord.65, _FindFirstFileWrapW@8
 implib shlwapi.dll, ord.341, _FindNextFileWrapW@8
 implib shlwapi.dll, ord.66, _FindResourceWrapW@12
@@ -287,6 +298,7 @@ implib shlwapi.dll, ord.484, _IUnknown_QueryServiceExec@28
 implib shlwapi.dll, ord.538, _IUnknown_QueryServiceForWebBrowserApp@12
 implib shlwapi.dll, ord.536, _IUnknown_QueryServicePropertyBag@16
 implib shlwapi.dll, ord.163, _IUnknown_QueryStatus@20
+implib shlwapi.dll, ord.611, _IUnknown_RemoveBackReferences@4
 implib shlwapi.dll, ord.199, _IUnknown_Set@8
 implib shlwapi.dll, ord.173, _IUnknown_SetOwner@8
 implib shlwapi.dll, ord.174, _IUnknown_SetSite@8
@@ -638,6 +650,7 @@ implib shlwapi.dll, ord.494, _SHPropertyBag_ReadStr@16
 implib shlwapi.dll, ord.567, _SHPropertyBag_ReadStrAlloc@12 ; Same ordinal assigned to AssocQueryStringByKeyW in v6.0
 implib shlwapi.dll, ord.531, _SHPropertyBag_ReadStream@12
 implib shlwapi.dll, ord.493, _SHPropertyBag_ReadType@16
+implib shlwapi.dll, ord.577, _SHPropertyBag_ReadULONGLONG@16
 implib shlwapi.dll, ord.499, _SHPropertyBag_WriteBOOL@12
 implib shlwapi.dll, ord.508, _SHPropertyBag_WriteDWORD@12
 implib shlwapi.dll, ord.506, _SHPropertyBag_WriteGUID@12
@@ -645,10 +658,12 @@ implib shlwapi.dll, ord.530, _SHPropertyBag_WriteInt@12 ; SHPropertyBag_WriteInt
 implib shlwapi.dll, ord.497, _SHPropertyBag_WriteLONG@12
 implib shlwapi.dll, ord.522, _SHPropertyBag_WritePOINTL@12
 implib shlwapi.dll, ord.526, _SHPropertyBag_WritePOINTS@12
+implib shlwapi.dll, ord.613, _SHPropertyBag_WritePropertyKey@12
 implib shlwapi.dll, ord.524, _SHPropertyBag_WriteRECTL@12
 implib shlwapi.dll, ord.528, _SHPropertyBag_WriteSHORT@12
 implib shlwapi.dll, ord.495, _SHPropertyBag_WriteStr@12
 implib shlwapi.dll, ord.532, _SHPropertyBag_WriteStream@12
+implib shlwapi.dll, ord.578, _SHPropertyBag_WriteULONGLONG@16
 implib shlwapi.dll, SHQueryInfoKeyA, _SHQueryInfoKeyA@20
 implib shlwapi.dll, SHQueryInfoKeyW, _SHQueryInfoKeyW@20
 implib shlwapi.dll, SHQueryValueExA, _SHQueryValueExA@24
