@@ -10,10 +10,10 @@ include '..\implib.inc'
 ; implib shlwapi.dll, ord.297, _CreateURLFileContentsA@8
 ; implib shlwapi.dll, ord.296, _CreateURLFileContentsW@8
 ; implib shlwapi.dll, ord.404, _IShellFolder_EnumObjects@16
-; implib shlwapi.dll, ord.573, _IShellFolder_ParseDisplayNameC ; The same ordinal is assigned to ColorRGBToHLS in v6.0
+; implib shlwapi.dll, ord.573, _IShellFolder_ParseDisplayNameC
 ; implib shlwapi.dll, ord.470, _IUnknown_ProfferServiceOld@20
 ; implib shlwapi.dll, ord.602, _IUnknown_QueryServiceQueryStatus@24
-; implib shlwapi.dll, ord.574, _IWebBrowser_Navigate ; The same ordinal is assigned to DllGetVersion in v6.0
+; implib shlwapi.dll, ord.574, _IWebBrowser_Navigate
 ; implib shlwapi.dll, ord.431, _MLClearMLHInstance@4
 ; implib shlwapi.dll, ord.396, _MLHtmlHelpA@20
 ; implib shlwapi.dll, ord.398, _MLHtmlHelpW@20
@@ -61,13 +61,13 @@ include '..\implib.inc'
 ; implib shlwapi.dll, ord.551, _IShellFolder_CompareIDs@16
 ; implib shlwapi.dll, ord.293, _SHCancelUserWorkItems@8
 ; implib shlwapi.dll, ord.264, _SHChangeTimerQueueTimer@16
-; implib shlwapi.dll, ord.557, _SHCoCreateExtension ; Available in Windows 2003 Server SP1 and SP2 only, same ordinal assigned to SHGetPrivateProfileStruct, also ordinal 565 in v6.0
-; implib shlwapi.dll, ord.556, _SHCoExtensionAllowed ; Available in Windows 2003 Server SP1 and SP2 only, same ordinal assigned to SHGetPrivateProfileString, also ordinal 564 in v6.0
+; implib shlwapi.dll, ord.557, _SHCoCreateExtension ; Available in Windows 2003 Server SP1 and SP2 only, also ordinal 565 in v6.0
+; implib shlwapi.dll, ord.556, _SHCoExtensionAllowed ; Available in Windows 2003 Server SP1 and SP2 only, also ordinal 564 in v6.0
 ; implib shlwapi.dll, ord.558, _SHCoExtensionCollectStats@12
 ; implib shlwapi.dll, ord.261, _SHCreateTimerQueue@0
 ; implib shlwapi.dll, ord.262, _SHDeleteTimerQueue@4
 ; implib shlwapi.dll, ord.552, _SHEvaluateSystemCommandTemplate@16
-; implib shlwapi.dll, ord.554, _SHGetAllAccessSA@0 ; Available in Windows 2003 Server SP1 and SP2 only, same ordinal assigned to SHGetPrivateProfileSection, also ordinal 563 in v6.0
+; implib shlwapi.dll, ord.554, _SHGetAllAccessSA@0 ; Available in Windows 2003 Server SP1 and SP2 only, also ordinal 563 in v6.0
 ; implib shlwapi.dll, ord.473, _SHGetIniStringUTF7W@20
 ; implib shlwapi.dll, ord.553, _SHGetPrivateProfileInt@16 ; Available in XP SP2 and SP3 only, ordinal reassigned to IsInternetESCEnabled, also ordinal 562 in v6.0
 ; implib shlwapi.dll, ord.554, _SHGetPrivateProfileSection@16 ; Same odinal assigned to SHGetAllAccessSA in Windows 2003 Server SP1 and SP2, also ordinal 563 in v6.0
@@ -184,6 +184,7 @@ implib shlwapi.dll, ord.365, _DoesStringRoundTripW@12
 implib shlwapi.dll, ord.318, _DragQueryFileWrapW@16
 implib shlwapi.dll, ord.301, _DrawTextExWrapW@24
 implib shlwapi.dll, ord.61, _DrawTextWrapW@20
+implib shlwapi.dll, ord.617, _DupWideToAnsi@8
 implib shlwapi.dll, ord.392, _EndDialogWrap@8
 implib shlwapi.dll, ord.63, _EnumFontFamiliesExWrapW@20
 implib shlwapi.dll, ord.62, _EnumFontFamiliesWrapW@16
@@ -269,7 +270,7 @@ implib shlwapi.dll, ord.284, _IConnectionPoint_SimpleInvoke@12
 implib shlwapi.dll, ord.207, _IContextMenu_Invoke@16
 implib shlwapi.dll, ord.316, _IShellFolder_GetDisplayNameOf@20
 implib shlwapi.dll, ord.317, _IShellFolder_ParseDisplayName@28
-implib shlwapi.dll, ord.568, _IStream_Copy@12 ; Same ordinal assigned to AssocQueryStringW in v6.0
+implib shlwapi.dll, ord.568, _IStream_Copy@12
 implib shlwapi.dll, ord.184, _IStream_Read@12
 implib shlwapi.dll, ord.512, _IStream_ReadPidl@8
 implib shlwapi.dll, ord.596, _IStream_ReadStr@8
@@ -306,7 +307,7 @@ implib shlwapi.dll, ord.539, _IUnknown_ShowBrowserBar@12
 implib shlwapi.dll, ord.478, _IUnknown_TranslateAcceleratorIO@8
 implib shlwapi.dll, ord.188, _IUnknown_TranslateAcceleratorOCS@12
 implib shlwapi.dll, ord.479, _IUnknown_UIActivateIO@12
-implib shlwapi.dll, ord.575, _IWebBrowser_Navigate2@24 ; The same ordinal is assigned to GetMenuPosFromID in v6.0
+implib shlwapi.dll, ord.575, _IWebBrowser_Navigate2@24
 implib shlwapi.dll, ord.303, _InsertMenuItemWrapW@16
 implib shlwapi.dll, ord.98, _InsertMenuWrapW@20
 implib shlwapi.dll, IntlStrEqWorkerA, _IntlStrEqWorkerA@16 ; Alias for StrIsIntlEqualA
@@ -324,7 +325,7 @@ implib shlwapi.dll, ord.29, _IsCharSpaceW@4
 implib shlwapi.dll, ord.26, _IsCharUpperWrapW@4
 implib shlwapi.dll, ord.34, _IsCharXDigitW@4
 implib shlwapi.dll, ord.99, _IsDialogMessageWrapW@8
-implib shlwapi.dll, ord.553, _IsInternetESCEnabled@0 ; Same ordinal assigned to SHGetPrivateProfileInt in XP SP2 and SP3, also ordinal 562 in v6.0
+implib shlwapi.dll, ord.553, _IsInternetESCEnabled@0 ; Also ordinal 562 in v6.0
 implib shlwapi.dll, ord.437, _IsOS@4
 implib shlwapi.dll, ord.202, _IsQSForward@12
 implib shlwapi.dll, ord.100, _LoadAcceleratorsWrapW@8
@@ -535,19 +536,25 @@ implib shlwapi.dll, ord.333, _SHBrowseForFolderWrapW@4
 implib shlwapi.dll, ord.265, _SHCancelTimerQueueTimer@8
 implib shlwapi.dll, ord.394, _SHChangeNotifyWrap@16
 implib shlwapi.dll, ord.182, _SHCheckMenuItem@12
+implib shlwapi.dll, ord.616, _SHClearViewStatePropertyBag@4
 implib shlwapi.dll, ord.549, _SHCoCreateInstanceAC@20
 implib shlwapi.dll, SHCopyKeyA, _SHCopyKeyA@16
 implib shlwapi.dll, SHCopyKeyW, _SHCopyKeyW@16
 implib shlwapi.dll, ord.12, _SHCreateMemStream@8
+implib shlwapi.dll, ord.626, _SHCreatePropertyBagOnCachedProfileSection@20
 implib shlwapi.dll, ord.477, _SHCreatePropertyBagOnMemory@12
 implib shlwapi.dll, ord.472, _SHCreatePropertyBagOnProfileSection@20
 implib shlwapi.dll, ord.471, _SHCreatePropertyBagOnRegKey@20
+implib shlwapi.dll, ord.621, _SHCreatePropertyStoreOnXML@20
 implib shlwapi.dll, SHCreateShellPalette, _SHCreateShellPalette@4
+implib shlwapi.dll, ord.627, _SHCreateStreamOnDllResourceW@16
 implib shlwapi.dll, SHCreateStreamOnFileA, _SHCreateStreamOnFileA@12
 implib shlwapi.dll, SHCreateStreamOnFileEx, _SHCreateStreamOnFileEx@24
 implib shlwapi.dll, SHCreateStreamOnFileW, _SHCreateStreamOnFileW@12
+implib shlwapi.dll, ord.628, _SHCreateStreamOnModuleResourceW@16
 implib shlwapi.dll, ord.16, _SHCreateThread@16
 implib shlwapi.dll, SHCreateThreadRef, _SHCreateThreadRef@8
+implib shlwapi.dll, ord.615, _SHCreateThreadWithHandle@20
 implib shlwapi.dll, ord.257, _SHCreateWorkerWindowA@24
 implib shlwapi.dll, ord.278, _SHCreateWorkerWindowW@24
 implib shlwapi.dll, ord.358, _SHDefExtractIconWrapW@24
@@ -607,7 +614,7 @@ implib shlwapi.dll, ord.441, _SHGetWebFolderFilePathW@12
 implib shlwapi.dll, ord.342, _SHInterlockedCompareExchange@12
 implib shlwapi.dll, ord.363, _SHInvokeCommand@16
 implib shlwapi.dll, ord.540, _SHInvokeCommandOnContextMenu@20
-implib shlwapi.dll, ord.571, _SHInvokeCommandWithFlagsAndSite@24 ; The same ordinal is assigned to ColorAdjustLuma in v6.0
+implib shlwapi.dll, ord.571, _SHInvokeCommandWithFlagsAndSite@24
 implib shlwapi.dll, ord.541, _SHInvokeCommandsOnContextMenu@24
 implib shlwapi.dll, ord.279, _SHInvokeDefaultCommand@12
 implib shlwapi.dll, ord.204, _SHIsChildOrSelf@8
@@ -644,10 +651,11 @@ implib shlwapi.dll, ord.529, _SHPropertyBag_ReadInt@12 ; SHPropertyBag_ReadInt i
 implib shlwapi.dll, ord.496, _SHPropertyBag_ReadLONG@12
 implib shlwapi.dll, ord.521, _SHPropertyBag_ReadPOINTL@12
 implib shlwapi.dll, ord.525, _SHPropertyBag_ReadPOINTS@12
+implib shlwapi.dll, ord.614, _SHPropertyBag_ReadPropertyKey@12
 implib shlwapi.dll, ord.523, _SHPropertyBag_ReadRECTL@12
 implib shlwapi.dll, ord.527, _SHPropertyBag_ReadSHORT@12
 implib shlwapi.dll, ord.494, _SHPropertyBag_ReadStr@16
-implib shlwapi.dll, ord.567, _SHPropertyBag_ReadStrAlloc@12 ; Same ordinal assigned to AssocQueryStringByKeyW in v6.0
+implib shlwapi.dll, ord.567, _SHPropertyBag_ReadStrAlloc@12
 implib shlwapi.dll, ord.531, _SHPropertyBag_ReadStream@12
 implib shlwapi.dll, ord.493, _SHPropertyBag_ReadType@16
 implib shlwapi.dll, ord.577, _SHPropertyBag_ReadULONGLONG@16
@@ -684,6 +692,7 @@ implib shlwapi.dll, SHRegEnumUSValueA, _SHRegEnumUSValueA@32
 implib shlwapi.dll, SHRegEnumUSValueW, _SHRegEnumUSValueW@32
 implib shlwapi.dll, SHRegGetBoolUSValueA, _SHRegGetBoolUSValueA@16
 implib shlwapi.dll, SHRegGetBoolUSValueW, _SHRegGetBoolUSValueW@16
+implib shlwapi.dll, ord.630, _SHRegGetBoolValueFromHKCUHKLM@12
 implib shlwapi.dll, ord.344, _SHRegGetCLSIDKeyW@20
 implib shlwapi.dll, ord.280, _SHRegGetIntW@12
 implib shlwapi.dll, SHRegGetPathA, _SHRegGetPathA@20
@@ -691,6 +700,7 @@ implib shlwapi.dll, SHRegGetPathW, _SHRegGetPathW@20
 implib shlwapi.dll, SHRegGetUSValueA, _SHRegGetUSValueA@32
 implib shlwapi.dll, SHRegGetUSValueW, _SHRegGetUSValueW@32
 implib shlwapi.dll, SHRegGetValueA, _SHRegGetValueA@28
+implib shlwapi.dll, ord.629, _SHRegGetValueFromHKCUHKLM@24
 implib shlwapi.dll, SHRegGetValueW, _SHRegGetValueW@28
 implib shlwapi.dll, SHRegOpenUSKeyA, _SHRegOpenUSKeyA@20
 implib shlwapi.dll, SHRegOpenUSKeyW, _SHRegOpenUSKeyW@20
@@ -743,6 +753,7 @@ implib shlwapi.dll, ord.239, _SHUnregisterClassesW@12
 implib shlwapi.dll, ord.194, _SHWaitForSendMessageThread@8
 implib shlwapi.dll, ord.267, _SHWeakQueryInterface@16
 implib shlwapi.dll, ord.268, _SHWeakReleaseInterface@8
+implib shlwapi.dll, ord.618, _SHWindowsPolicy@4
 implib shlwapi.dll, ord.560, _SHWindowsPolicyGetValue@12
 implib shlwapi.dll, ord.17, _SHWriteDataBlockList@8
 implib shlwapi.dll, ord.519, _SKAllocValueW@24
