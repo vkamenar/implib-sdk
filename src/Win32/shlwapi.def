@@ -304,6 +304,7 @@ implib shlwapi.dll, ord.199, _IUnknown_Set@8
 implib shlwapi.dll, ord.173, _IUnknown_SetOwner@8
 implib shlwapi.dll, ord.174, _IUnknown_SetSite@8
 implib shlwapi.dll, ord.539, _IUnknown_ShowBrowserBar@12
+implib shlwapi.dll, ord.638, _IUnknown_TranslateAcceleratorGlobal@8
 implib shlwapi.dll, ord.478, _IUnknown_TranslateAcceleratorIO@8
 implib shlwapi.dll, ord.188, _IUnknown_TranslateAcceleratorOCS@12
 implib shlwapi.dll, ord.479, _IUnknown_UIActivateIO@12
@@ -573,6 +574,7 @@ implib shlwapi.dll, SHEnumKeyExW, _SHEnumKeyExW@16
 implib shlwapi.dll, SHEnumValueA, _SHEnumValueA@28
 implib shlwapi.dll, SHEnumValueW, _SHEnumValueW@28
 implib shlwapi.dll, ord.459, _SHExpandEnvironmentStringsA@12
+implib shlwapi.dll, ord.572, _SHExpandEnvironmentStringsAlloc@8
 implib shlwapi.dll, ord.463, _SHExpandEnvironmentStringsForUserA@16
 implib shlwapi.dll, ord.464, _SHExpandEnvironmentStringsForUserW@16
 implib shlwapi.dll, ord.460, _SHExpandEnvironmentStringsW@12
@@ -600,6 +602,7 @@ implib shlwapi.dll, ord.334, _SHGetPathFromIDListWrapW@8
 implib shlwapi.dll, ord.533, _SHGetPerScreenResName@12
 implib shlwapi.dll, ord.271, _SHGetRestriction@12
 implib shlwapi.dll, ord.491, _SHGetShellKey@12
+implib shlwapi.dll, ord.635, _SHGetShellKeyEx@16
 implib shlwapi.dll, ord.559, _SHGetSignatureInfo@12
 implib shlwapi.dll, ord.443, _SHGetSystemWindowsDirectoryA@8
 implib shlwapi.dll, ord.444, _SHGetSystemWindowsDirectoryW@8
@@ -611,11 +614,16 @@ implib shlwapi.dll, SHGetValueW, _SHGetValueW@24
 implib shlwapi.dll, ord.515, _SHGetViewStatePropertyBag@20
 implib shlwapi.dll, ord.440, _SHGetWebFolderFilePathA@12
 implib shlwapi.dll, ord.441, _SHGetWebFolderFilePathW@12
+implib shlwapi.dll, ord.634, _SHGlobalCounterDecrement@4
+implib shlwapi.dll, ord.632, _SHGlobalCounterGetValue@4
+implib shlwapi.dll, ord.633, _SHGlobalCounterIncrement@4
 implib shlwapi.dll, ord.342, _SHInterlockedCompareExchange@12
 implib shlwapi.dll, ord.363, _SHInvokeCommand@16
 implib shlwapi.dll, ord.540, _SHInvokeCommandOnContextMenu@20
+implib shlwapi.dll, ord.639, _SHInvokeCommandOnContextMenuEx@28
 implib shlwapi.dll, ord.571, _SHInvokeCommandWithFlagsAndSite@24
 implib shlwapi.dll, ord.541, _SHInvokeCommandsOnContextMenu@24
+implib shlwapi.dll, ord.640, _SHInvokeCommandsOnContextMenuEx@32
 implib shlwapi.dll, ord.279, _SHInvokeDefaultCommand@12
 implib shlwapi.dll, ord.204, _SHIsChildOrSelf@8
 implib shlwapi.dll, ord.166, _SHIsEmptyStream@4
@@ -659,7 +667,9 @@ implib shlwapi.dll, ord.567, _SHPropertyBag_ReadStrAlloc@12
 implib shlwapi.dll, ord.531, _SHPropertyBag_ReadStream@12
 implib shlwapi.dll, ord.493, _SHPropertyBag_ReadType@16
 implib shlwapi.dll, ord.577, _SHPropertyBag_ReadULONGLONG@16
+implib shlwapi.dll, ord.636, _SHPropertyBag_ReadUnknown@16
 implib shlwapi.dll, ord.499, _SHPropertyBag_WriteBOOL@12
+implib shlwapi.dll, SHPropertyBag_WriteBSTR, _SHPropertyBag_WriteBSTR@12
 implib shlwapi.dll, ord.508, _SHPropertyBag_WriteDWORD@12
 implib shlwapi.dll, ord.506, _SHPropertyBag_WriteGUID@12
 implib shlwapi.dll, ord.530, _SHPropertyBag_WriteInt@12 ; SHPropertyBag_WriteInt is an alias for SHPropertyBag_WriteLONG
@@ -672,6 +682,7 @@ implib shlwapi.dll, ord.528, _SHPropertyBag_WriteSHORT@12
 implib shlwapi.dll, ord.495, _SHPropertyBag_WriteStr@12
 implib shlwapi.dll, ord.532, _SHPropertyBag_WriteStream@12
 implib shlwapi.dll, ord.578, _SHPropertyBag_WriteULONGLONG@16
+implib shlwapi.dll, ord.637, _SHPropertyBag_WriteUnknown@12
 implib shlwapi.dll, SHQueryInfoKeyA, _SHQueryInfoKeyA@20
 implib shlwapi.dll, SHQueryInfoKeyW, _SHQueryInfoKeyW@20
 implib shlwapi.dll, SHQueryValueExA, _SHQueryValueExA@24
@@ -712,6 +723,7 @@ implib shlwapi.dll, SHRegSetPathA, _SHRegSetPathA@20
 implib shlwapi.dll, SHRegSetPathW, _SHRegSetPathW@20
 implib shlwapi.dll, SHRegSetUSValueA, _SHRegSetUSValueA@24
 implib shlwapi.dll, SHRegSetUSValueW, _SHRegSetUSValueW@24
+implib shlwapi.dll, ord.631, _SHRegSetValue@28
 implib shlwapi.dll, SHRegWriteUSValueA, _SHRegWriteUSValueA@24
 implib shlwapi.dll, SHRegWriteUSValueW, _SHRegWriteUSValueW@24
 implib shlwapi.dll, ord.183, _SHRegisterClassA@4
