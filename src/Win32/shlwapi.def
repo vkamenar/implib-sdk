@@ -171,7 +171,6 @@ implib shlwapi.dll, ord.372, _DdeCreateStringHandleWrapW@12
 implib shlwapi.dll, ord.371, _DdeInitializeWrapW@16
 implib shlwapi.dll, ord.373, _DdeQueryStringWrapW@20
 implib shlwapi.dll, ord.56, _DefWindowProcWrapW@16
-implib shlwapi.dll, DelayLoadFailureHook, _DelayLoadFailureHook@8
 implib shlwapi.dll, ord.57, _DeleteFileWrapW@4
 implib shlwapi.dll, ord.425, _DeleteMenuWrap@12
 implib shlwapi.dll, ord.426, _DestroyMenuWrap@4
@@ -274,11 +273,13 @@ implib shlwapi.dll, ord.568, _IStream_Copy@12
 implib shlwapi.dll, ord.184, _IStream_Read@12
 implib shlwapi.dll, ord.512, _IStream_ReadPidl@8
 implib shlwapi.dll, ord.596, _IStream_ReadStr@8
+implib shlwapi.dll, ord.644, _IStream_ReadStrLong@8
 implib shlwapi.dll, ord.213, _IStream_Reset@4
 implib shlwapi.dll, ord.214, _IStream_Size@8
 implib shlwapi.dll, ord.212, _IStream_Write@12
 implib shlwapi.dll, ord.513, _IStream_WritePidl@8
 implib shlwapi.dll, ord.597, _IStream_WriteStr@8
+implib shlwapi.dll, ord.645, _IStream_WriteStrLong@8
 implib shlwapi.dll, ord.169, _IUnknown_AtomicRelease@4
 implib shlwapi.dll, ord.288, _IUnknown_CPContainerInvokeIndirect@12
 implib shlwapi.dll, ord.286, _IUnknown_CPContainerInvokeParam ; This function uses the CDECL calling convention!
@@ -483,6 +484,7 @@ implib shlwapi.dll, PathUnExpandEnvStringsA, _PathUnExpandEnvStringsA@12
 implib shlwapi.dll, ord.465, _PathUnExpandEnvStringsForUserA@16
 implib shlwapi.dll, ord.466, _PathUnExpandEnvStringsForUserW@16
 implib shlwapi.dll, PathUnExpandEnvStringsW, _PathUnExpandEnvStringsW@12
+implib shlwapi.dll, ord.643, _PathUnExpandSystemEnvStrings@12
 implib shlwapi.dll, PathUndecorateA, _PathUndecorateA@4
 implib shlwapi.dll, PathUndecorateW, _PathUndecorateW@4
 implib shlwapi.dll, PathUnmakeSystemFolderA, _PathUnmakeSystemFolderA@4
@@ -496,6 +498,7 @@ implib shlwapi.dll, ord.118, _PostThreadMessageWrapW@16
 implib shlwapi.dll, ord.402, _PrintDlgWrapW@4
 implib shlwapi.dll, ord.219, _QISearch@16
 implib shlwapi.dll, ord.544, _QuerySourceCreateFromKey@20
+implib shlwapi.dll, ord.576, _QuerySourceCreateFromKeyEx@24
 implib shlwapi.dll, ord.120, _RegCreateKeyExWrapW@36
 implib shlwapi.dll, ord.119, _RegCreateKeyWrapW@12
 implib shlwapi.dll, ord.121, _RegDeleteKeyWrapW@8
@@ -530,6 +533,7 @@ implib shlwapi.dll, ord.7, _SHAllocShared@12
 implib shlwapi.dll, ord.345, _SHAnsiToAnsi@12
 implib shlwapi.dll, ord.215, _SHAnsiToUnicode@12
 implib shlwapi.dll, ord.216, _SHAnsiToUnicodeCP@16
+implib shlwapi.dll, ord.600, _SHAnsiToUnicodeCPAlloc@12
 implib shlwapi.dll, ord.548, _SHAreIconsEqual@8
 implib shlwapi.dll, SHAutoComplete, _SHAutoComplete@8
 implib shlwapi.dll, ord.537, _SHBoolSystemParametersInfo@8
@@ -604,6 +608,8 @@ implib shlwapi.dll, ord.271, _SHGetRestriction@12
 implib shlwapi.dll, ord.491, _SHGetShellKey@12
 implib shlwapi.dll, ord.635, _SHGetShellKeyEx@16
 implib shlwapi.dll, ord.559, _SHGetSignatureInfo@12
+implib shlwapi.dll, ord.642, _SHGetSignatureInfoEx@24
+implib shlwapi.dll, ord.641, _SHGetSizeShared@4
 implib shlwapi.dll, ord.443, _SHGetSystemWindowsDirectoryA@8
 implib shlwapi.dll, ord.444, _SHGetSystemWindowsDirectoryW@8
 implib shlwapi.dll, SHGetThreadRef, _SHGetThreadRef@4
@@ -758,6 +764,7 @@ implib shlwapi.dll, ord.225, _SHStripMneumonicW@4
 implib shlwapi.dll, ord.162, _SHTruncateString@8
 implib shlwapi.dll, ord.217, _SHUnicodeToAnsi@12
 implib shlwapi.dll, ord.218, _SHUnicodeToAnsiCP@16
+implib shlwapi.dll, ord.599, _SHUnicodeToAnsiCPAlloc@12
 implib shlwapi.dll, ord.346, _SHUnicodeToUnicode@12
 implib shlwapi.dll, ord.9, _SHUnlockShared@4
 implib shlwapi.dll, ord.238, _SHUnregisterClassesA@12
