@@ -1,17 +1,20 @@
 ; IMPLIB.INC v2.0.4
 ; =================
-; (c) 2006-2025 Vladimir Kamenar
+; (c) 2006-2026 Vladimir Kamenar
 
 ; Build custom import libraries for Windows DLL (32-bit).
-; These macros can be combined in a single library:
+
+; These macros can be combined to build a single library, if necessary:
 ; implib   - general purpose symbol definition macro.
 ; pbimplib - mod intended for PureBasic Userlib.
 ; vbimplib - mod intended for Visual Basic 6. It is useful for calling
 ;            CDECL DLL functions directly from Visual Basic 6, without
 ;            wrapper DLLs and/or delegators.
+
 ; MACRO implib   dllname, name, thunk, pubname
 ; MACRO pbimplib dllname, cconv, argcount, name, pb_name, pubname
 ; MACRO vbimplib module, dllname, cconv, argcount, name, vb_name, pubname
+
 ; Parameters:
 ;    dllname  : DLL file name. Enclose in quotes if the file name contains
 ;               whitespaces, '-' or other non-alphanumeric characters.
@@ -30,6 +33,7 @@
 ;               as the PureBasic name.
 ;    vb_name  : Optional Visual Basic function name. If not specified, 'name' is used
 ;               as the Visual Basic name.
+
 ; Examples:
 ;    implib   dsound.dll,   ord.1, _DirectSoundCreate@12
 ;    implib   kernel32.dll, ExitProcess, _ExitProcess@4, __imp__ExitProcess@4
