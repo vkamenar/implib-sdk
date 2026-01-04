@@ -1,13 +1,16 @@
 ; IMPLIB64.INC v2.0.4
 ; ===================
-; (c) 2006-2025 Vladimir Kamenar
+; (c) 2006-2026 Vladimir Kamenar
 
 ; Build custom import libraries for Windows DLL (64-bit).
-; These macros can be combined in a single library:
+
+; These macros can be combined to build a single library, if necessary:
 ; implib   - a general purpose symbol definition macro.
 ; pbimplib - mod intended for PureBasic Userlib.
+
 ; MACRO implib   dllname, name, thunk, pubname
 ; MACRO pbimplib dllname, name, pb_name, pubname
+
 ; Parameters:
 ;    dllname  : DLL file name. Enclose in quotes if the file name contains
 ;               whitespaces, '-' or other non-alphanumeric characters.
@@ -21,6 +24,7 @@
 ;               to be the thunk name as well.
 ;    pb_name  : Optional PureBasic function name. If not specified, 'name' is used
 ;               as the PureBasic name.
+
 ; Examples:
 ;    implib   dsound.dll,   ord.1, DirectSoundCreate
 ;    implib   kernel32.dll, ExitProcess, ExitProcess, __imp_ExitProcess
