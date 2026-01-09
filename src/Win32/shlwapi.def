@@ -79,8 +79,8 @@ include '..\implib.inc'
 ; implib shlwapi.dll, ord.422, _SHGlobalCounterCreateNamedA@8
 ; implib shlwapi.dll, ord.423, _SHGlobalCounterCreateNamedW@8
 ; implib shlwapi.dll, ord.424, _SHGlobalCounterDecrement@4
-; implib shlwapi.dll, ord.223, _SHGlobalCounterGetValue@4
-; implib shlwapi.dll, ord.224, _SHGlobalCounterIncrement@4
+; implib shlwapi.dll, ord.223, _SHGlobalCounterGetValue@4 ; Available as ordinal 632 since v6.0
+; implib shlwapi.dll, ord.224, _SHGlobalCounterIncrement@4 ; Available as ordinal 633 since v6.0
 ; implib shlwapi.dll, ord.343, _SHRegGetCLSIDKeyA@20
 ; implib shlwapi.dll, ord.258, _SHRegisterWaitForSingleObject@24
 ; implib shlwapi.dll, ord.474, _SHSetIniStringUTF7W@16
@@ -621,8 +621,8 @@ implib shlwapi.dll, ord.515, _SHGetViewStatePropertyBag@20
 implib shlwapi.dll, ord.440, _SHGetWebFolderFilePathA@12
 implib shlwapi.dll, ord.441, _SHGetWebFolderFilePathW@12
 implib shlwapi.dll, ord.634, _SHGlobalCounterDecrement@4
-implib shlwapi.dll, ord.632, _SHGlobalCounterGetValue@4
-implib shlwapi.dll, ord.633, _SHGlobalCounterIncrement@4
+implib shlwapi.dll, ord.632, _SHGlobalCounterGetValue@4 ; Available as ordinal 223 before v6.0
+implib shlwapi.dll, ord.633, _SHGlobalCounterIncrement@4 ; Available as ordinal 224 before v6.0
 implib shlwapi.dll, ord.342, _SHInterlockedCompareExchange@12
 implib shlwapi.dll, ord.363, _SHInvokeCommand@16
 implib shlwapi.dll, ord.540, _SHInvokeCommandOnContextMenu@20
