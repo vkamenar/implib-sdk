@@ -17,7 +17,7 @@ include '..\implib.inc'
 ; implib shell32.dll, SHELL32_SetPlaceholderReparsePointAttribute2, _SHELL32_SetPlaceholderReparsePointAttribute2@12
 ; implib shell32.dll, SHELL32_UpdateFilePlaceholderStates, _SHELL32_UpdateFilePlaceholderStates@12
 
-; *** Functions discontinued in v6.0 (Windows Vista)
+; *** Functions discontinued in Windows Vista
 ; implib shell32.dll, Activate_RunDLL, _Activate_RunDLL@16
 ; implib shell32.dll, CallCPLEntry16, _CallCPLEntry16@24
 ; implib shell32.dll, CheckEscapesA, _CheckEscapesA@8
@@ -127,14 +127,14 @@ include '..\implib.inc'
 ; implib shell32.dll, ord.163, _StrToOleStr@8
 ; implib shell32.dll, ord.79, _StrToOleStrN@16
 
-; *** Function available from v4.72 (Windows 98) to v5.50 (Windows Me)
+; *** Function available from Windows 98 to Windows Me
 ; implib shell32.dll, SHExitWindowsEx, _SHExitWindowsEx@16
 
-; *** Functions available in v5.0 (Windows 2000) SP3 and SP4 only
+; *** Functions available in Windows 2000 SP3 and SP4 only
 ; implib shell32.dll, FixupOptionalComponents, _FixupOptionalComponents@4
 ; implib shell32.dll, OCInstall, _OCInstall@16
 
-; *** Functions discontinued in v5.0 (Windows 2000)
+; *** Functions discontinued in Windows 2000
 ; implib shell32.dll, ord.505, _SHRegCloseKey@4
 ; implib shell32.dll, ord.512, _SHRegDeleteKeyW@8
 ; implib shell32.dll, ord.506, _SHRegOpenKeyA@12
@@ -144,10 +144,10 @@ include '..\implib.inc'
 ; implib shell32.dll, ord.511, _SHRegQueryValueExW@24
 ; implib shell32.dll, ord.510, _SHRegQueryValueW@16
 
-; *** Function discontinued in v4.71 (Internet Explorer 4.0)
+; *** Function discontinued in Internet Explorer 4.0
 ; implib shell32.dll, ord.125, _FileMenu_AddFilesForPidl@28
 
-; *** Stub functions avilable in v4.0 only (Windows 95)
+; *** Stub functions avilable in Windows 95 only
 ; implib shell32.dll, Shl1632_ThunkData32
 ; implib shell32.dll, Shl3216_ThunkData32
 ; implib shell32.dll, ord.199, _SHGetFileIcon@16
