@@ -4,6 +4,9 @@ include '..\implib.inc'
 ; They are available in specific shlwapi versions only.
 ; Feel free to uncomment the necessary symbols and recompile the library.
 
+; *** Function discontinued in v6.3 (Windows 8.1)
+; implib shlwapi.dll, ord.418, _MLFreeLibrary@4
+
 ; *** Functions discontinued in v6.1 (Windows 7)
 ; implib shlwapi.dll, ord.412, _AssocMakeFileExtsToApplicationA@12
 ; implib shlwapi.dll, ord.411, _AssocMakeFileExtsToApplicationW@12
@@ -177,6 +180,7 @@ implib shlwapi.dll, ord.426, _DestroyMenuWrap@4
 implib shlwapi.dll, ord.58, _DialogBoxIndirectParamWrapW@20
 implib shlwapi.dll, ord.59, _DialogBoxParamWrapW@20
 implib shlwapi.dll, ord.60, _DispatchMessageWrapW@4
+implib shlwapi.dll, DllGetClassObject, _SHLWAPI_DllGetClassObject@12
 implib shlwapi.dll, DllGetVersion, _SHLWAPI_DllGetVersion@4
 implib shlwapi.dll, ord.364, _DoesStringRoundTripA@12
 implib shlwapi.dll, ord.365, _DoesStringRoundTripW@12
@@ -343,7 +347,6 @@ implib shlwapi.dll, ord.330, _MIME_GetExtensionA@12
 implib shlwapi.dll, ord.331, _MIME_GetExtensionW@12
 implib shlwapi.dll, ord.405, _MLBuildResURLA@24
 implib shlwapi.dll, ord.406, _MLBuildResURLW@24
-implib shlwapi.dll, ord.418, _MLFreeLibrary@4
 implib shlwapi.dll, ord.376, _MLGetUILanguage@0
 implib shlwapi.dll, ord.377, _MLLoadLibraryA@12
 implib shlwapi.dll, ord.378, _MLLoadLibraryW@12
