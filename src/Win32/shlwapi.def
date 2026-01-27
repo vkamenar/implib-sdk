@@ -4,10 +4,10 @@ include '..\implib.inc'
 ; They are available in specific shlwapi versions only.
 ; Feel free to uncomment the necessary symbols and recompile the library.
 
-; *** Function discontinued in v6.3 (Windows 8.1)
+; *** Function discontinued in Windows 8.1
 ; implib shlwapi.dll, ord.418, _MLFreeLibrary@4
 
-; *** Functions discontinued in v6.1 (Windows 7)
+; *** Functions discontinued in Windows 7
 ; implib shlwapi.dll, ord.412, _AssocMakeFileExtsToApplicationA@12
 ; implib shlwapi.dll, ord.411, _AssocMakeFileExtsToApplicationW@12
 ; implib shlwapi.dll, ord.297, _CreateURLFileContentsA@8
@@ -54,7 +54,7 @@ include '..\implib.inc'
 ; implib shlwapi.dll, ord.226, _ZoneCheckPathA@16
 ; implib shlwapi.dll, ord.227, _ZoneCheckPathW@16
 
-; *** Functions discontinued in v6.0 (Windows Vista)
+; *** Functions discontinued in Windows Vista
 ; implib shlwapi.dll, ord.356, _CreateAllAccessSecurityAttributes@12 ; Some earlier v6.0 builds assign ordinal 356 to AssocCreate
 ; implib shlwapi.dll, ord.547, _DelayLoadFailureHook@8 ; Also ordinal 569 in v6.0
 ; implib shlwapi.dll, ord.255, _EventTraceHandler@8
@@ -105,11 +105,12 @@ include '..\implib.inc'
 ; implib shlwapi.dll, ord.245, _StopWatch_TimerHandler@16
 ; implib shlwapi.dll, ord.390, _WNetRestoreConnectionWrapW@8
 
-; *** Functions discontinued in v5.0 (Windows 2000)
+; *** Functions discontinued in Windows 2000
 ; implib shlwapi.dll, SHCreateStreamOnFileAOld, _SHCreateStreamOnFileAOld@12
 ; implib shlwapi.dll, SHCreateStreamOnFileWOld, _SHCreateStreamOnFileWOld@12
 ; implib shlwapi.dll, _SHGetInstanceExplorer@4
 
+; *** Functions currently available (tested up to Windows 11)
 implib shlwapi.dll, ord.36, _AppendMenuWrapW@16
 implib shlwapi.dll, ord.381, _AssocCopyVerbs@8
 implib shlwapi.dll, AssocCreate, _AssocCreate@24
