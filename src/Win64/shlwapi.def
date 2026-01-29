@@ -1,0 +1,380 @@
+include '..\implib64.inc'
+
+; The following symbols are commented out to limit the size of the library.
+; They are available in specific shlwapi versions only.
+; Feel free to uncomment the necessary symbols and recompile the library.
+
+; *** Function discontinued in Windows 8.1
+; implib shlwapi.dll, ord.418, MLFreeLibrary
+
+; *** Functions discontinued in Windows 7
+; implib shlwapi.dll, ord.412, AssocMakeFileExtsToApplicationA
+; implib shlwapi.dll, ord.411, AssocMakeFileExtsToApplicationW
+; implib shlwapi.dll, ord.297, CreateURLFileContentsA
+; implib shlwapi.dll, ord.296, CreateURLFileContentsW
+; implib shlwapi.dll, ord.404, IShellFolder_EnumObjects
+; implib shlwapi.dll, ord.573, IShellFolder_ParseDisplayNameC
+; implib shlwapi.dll, ord.470, IUnknown_ProfferServiceOld
+; implib shlwapi.dll, ord.602, IUnknown_QueryServiceQueryStatus
+; implib shlwapi.dll, ord.574, IWebBrowser_Navigate
+; implib shlwapi.dll, ord.431, MLClearMLHInstance
+; implib shlwapi.dll, ord.396, MLHtmlHelpA
+; implib shlwapi.dll, ord.398, MLHtmlHelpW
+; implib shlwapi.dll, ord.429, MLIsMLHInstance
+; implib shlwapi.dll, ord.430, MLSetMLHInstance
+; implib shlwapi.dll, ord.492, PrettifyFileDescriptionW
+; implib shlwapi.dll, ord.275, RegisterGlobalHotkeyA
+; implib shlwapi.dll, ord.274, RegisterGlobalHotkeyW
+; implib shlwapi.dll, ord.374, SHCheckDiskForMediaA
+; implib shlwapi.dll, ord.375, SHCheckDiskForMediaW
+; implib shlwapi.dll, ord.488, SHConvertGraphicsFile
+; implib shlwapi.dll, SHCreateStreamWrapper
+; implib shlwapi.dll, ord.277, SHDialogBox
+; implib shlwapi.dll, ord.415, SHHtmlHelpOnDemandA
+; implib shlwapi.dll, ord.414, SHHtmlHelpOnDemandW
+; implib shlwapi.dll, ord.171, SHIsSameObject
+; implib shlwapi.dll, ord.421, SHLoadPersistedDataObject
+; implib shlwapi.dll, ord.385, SHLoadRawAccelerators
+; implib shlwapi.dll, ord.482, SHMessageBoxHelpA
+; implib shlwapi.dll, ord.483, SHMessageBoxHelpW
+; implib shlwapi.dll, ord.290, SHMirrorIcon
+; implib shlwapi.dll, ord.420, SHPersistDataObject
+; implib shlwapi.dll, ord.498, SHPropertyBag_ReadBOOLOld
+; implib shlwapi.dll, ord.386, SHQueryRawAccelerator
+; implib shlwapi.dll, ord.387, SHQueryRawAcceleratorMsg
+; implib shlwapi.dll, ord.601, SHSafeQueryInterface
+; implib shlwapi.dll, ord.196, SHVerbExistsNA
+; implib shlwapi.dll, ord.417, SHWinHelpOnDemandA
+; implib shlwapi.dll, ord.416, SHWinHelpOnDemandW
+; implib shlwapi.dll, ord.605, StrIsCanonicalEqualA
+; implib shlwapi.dll, ord.603, StrIsCanonicalEqualNA
+; implib shlwapi.dll, ord.604, StrIsCanonicalEqualNW
+; implib shlwapi.dll, ord.606, StrIsCanonicalEqualW
+; implib shlwapi.dll, ord.480, UrlCrackW
+; implib shlwapi.dll, ord.226, ZoneCheckPathA
+; implib shlwapi.dll, ord.227, ZoneCheckPathW
+
+; *** Functions discontinued in Windows Vista
+; implib shlwapi.dll, ord.356, CreateAllAccessSecurityAttributes ; Some earlier v6.0 builds assign ordinal 356 to AssocCreate
+; implib shlwapi.dll, ord.547, DelayLoadFailureHook ; Also ordinal 569 in v6.0
+; implib shlwapi.dll, ord.255, EventTraceHandler
+; implib shlwapi.dll, ord.250, GetPerfTime
+; implib shlwapi.dll, ord.475, GetShellSecurityDescriptor
+; implib shlwapi.dll, ord.550, GetTemplateInfoFromHandle
+; implib shlwapi.dll, ord.551, IShellFolder_CompareIDs
+; implib shlwapi.dll, ord.293, SHCancelUserWorkItems
+; implib shlwapi.dll, ord.264, SHChangeTimerQueueTimer
+; implib shlwapi.dll, ord.557, SHCoCreateExtension ; Available in Windows 2003 Server SP1 and SP2 only, also ordinal 565 in v6.0
+; implib shlwapi.dll, ord.556, SHCoExtensionAllowed ; Available in Windows 2003 Server SP1 and SP2 only, also ordinal 564 in v6.0
+; implib shlwapi.dll, ord.558, SHCoExtensionCollectStats
+; implib shlwapi.dll, ord.261, SHCreateTimerQueue
+; implib shlwapi.dll, ord.262, SHDeleteTimerQueue
+; implib shlwapi.dll, ord.552, SHEvaluateSystemCommandTemplate
+; implib shlwapi.dll, ord.554, SHGetAllAccessSA ; Available in Windows 2003 Server SP1 and SP2 only, also ordinal 563 in v6.0
+; implib shlwapi.dll, ord.473, SHGetIniStringUTF7W
+; implib shlwapi.dll, ord.553, SHGetPrivateProfileInt ; Available in XP SP2 and SP3 only, ordinal reassigned to IsInternetESCEnabled, also ordinal 562 in v6.0
+; implib shlwapi.dll, ord.554, SHGetPrivateProfileSection ; Same odinal assigned to SHGetAllAccessSA in Windows 2003 Server SP1 and SP2, also ordinal 563 in v6.0
+; implib shlwapi.dll, ord.555, SHGetPrivateProfileSectionNames ; Also ordinal 564 in v6.0
+; implib shlwapi.dll, ord.556, SHGetPrivateProfileString ; Same odinal assigned to SHCoExtensionAllowed in Windows 2003 Server SP1 and SP2, also ordinal 565 in v6.0
+; implib shlwapi.dll, ord.557, SHGetPrivateProfileStruct ; Same odinal assigned to SHCoCreateExtension in Windows 2003 Server SP1 and SP2, also ordinal 566 in v6.0
+; implib shlwapi.dll, ord.598, SHGetUserToken
+; implib shlwapi.dll, ord.222, SHGlobalCounterCreate
+; implib shlwapi.dll, ord.422, SHGlobalCounterCreateNamedA
+; implib shlwapi.dll, ord.423, SHGlobalCounterCreateNamedW
+; implib shlwapi.dll, ord.424, SHGlobalCounterDecrement
+; implib shlwapi.dll, ord.223, SHGlobalCounterGetValue ; Available as ordinal 632 since v6.0
+; implib shlwapi.dll, ord.224, SHGlobalCounterIncrement ; Available as ordinal 633 since v6.0
+; implib shlwapi.dll, ord.343, SHRegGetCLSIDKeyA
+; implib shlwapi.dll, ord.258, SHRegisterWaitForSingleObject
+; implib shlwapi.dll, ord.474, SHSetIniStringUTF7W
+; implib shlwapi.dll, ord.272, SHSetThreadPoolLimits
+; implib shlwapi.dll, ord.273, SHTerminateThreadPool
+; implib shlwapi.dll, ord.259, SHUnregisterWait
+; implib shlwapi.dll, ord.243, StopWatchA
+; implib shlwapi.dll, ord.253, StopWatchExA
+; implib shlwapi.dll, ord.254, StopWatchExW
+; implib shlwapi.dll, ord.242, StopWatchFlush
+; implib shlwapi.dll, ord.241, StopWatchMode
+; implib shlwapi.dll, ord.244, StopWatchW
+; implib shlwapi.dll, ord.246, StopWatch_CheckMsg
+; implib shlwapi.dll, ord.251, StopWatch_DispatchTime
+; implib shlwapi.dll, ord.247, StopWatch_MarkFrameStart
+; implib shlwapi.dll, ord.249, StopWatch_MarkJavaStop
+; implib shlwapi.dll, ord.248, StopWatch_MarkSameFrameStart
+; implib shlwapi.dll, ord.252, StopWatch_SetMsgLastLocation
+; implib shlwapi.dll, ord.245, StopWatch_TimerHandler
+; implib shlwapi.dll, ord.390, WNetRestoreConnectionWrapW
+
+; *** Functions currently available (tested up to Windows 11)
+implib shlwapi.dll, ord.36, AppendMenuWrapW
+implib shlwapi.dll, ord.381, AssocCopyVerbs
+implib shlwapi.dll, AssocCreate
+implib shlwapi.dll, AssocGetPerceivedType
+implib shlwapi.dll, ord.561, AssocGetUrlAction
+implib shlwapi.dll, AssocIsDangerous
+implib shlwapi.dll, ord.410, AssocMakeApplicationByKeyA
+implib shlwapi.dll, ord.409, AssocMakeApplicationByKeyW
+implib shlwapi.dll, ord.407, AssocMakeProgid
+implib shlwapi.dll, ord.408, AssocMakeShell
+implib shlwapi.dll, AssocQueryKeyA
+implib shlwapi.dll, AssocQueryKeyW
+implib shlwapi.dll, AssocQueryStringA
+implib shlwapi.dll, AssocQueryStringByKeyA
+implib shlwapi.dll, AssocQueryStringByKeyW
+implib shlwapi.dll, AssocQueryStringW
+implib shlwapi.dll, ord.435, CLSIDFromProgIDWrap
+implib shlwapi.dll, ord.436, CLSIDFromStringWrap
+implib shlwapi.dll, ord.581, CalculateAspectRatio
+implib shlwapi.dll, ord.332, CallMsgFilterWrapW
+implib shlwapi.dll, ord.37, CallWindowProcWrapW
+implib shlwapi.dll, ord.39, CharLowerBuffWrapW
+implib shlwapi.dll, ord.453, CharLowerNoDBCSA
+implib shlwapi.dll, ord.454, CharLowerNoDBCSW
+implib shlwapi.dll, ord.38, CharLowerWrapW
+implib shlwapi.dll, ord.40, CharNextWrapW
+implib shlwapi.dll, ord.41, CharPrevWrapW
+implib shlwapi.dll, ord.42, CharToOemWrapW
+implib shlwapi.dll, ord.44, CharUpperBuffWrapW
+implib shlwapi.dll, ord.451, CharUpperNoDBCSA
+implib shlwapi.dll, ord.452, CharUpperNoDBCSW
+implib shlwapi.dll, ord.43, CharUpperWrapW
+implib shlwapi.dll, ChrCmpIA
+implib shlwapi.dll, ChrCmpIW
+implib shlwapi.dll, ColorAdjustLuma
+implib shlwapi.dll, ColorHLSToRGB
+implib shlwapi.dll, ColorRGBToHLS
+implib shlwapi.dll, ord.159, CompareStringAltW
+implib shlwapi.dll, ord.45, CompareStringWrapW
+implib shlwapi.dll, ord.168, ConnectToConnectionPoint
+implib shlwapi.dll, ord.580, ConvertDIBSECTIONToThumbnail
+implib shlwapi.dll, ord.46, CopyAcceleratorTableWrapW
+implib shlwapi.dll, ord.112, CopyFileWrapW
+implib shlwapi.dll, ord.47, CreateAcceleratorTableWrapW
+implib shlwapi.dll, ord.543, CreateColorSpaceWrapW
+implib shlwapi.dll, ord.48, CreateDCWrapW
+implib shlwapi.dll, ord.393, CreateDialogIndirectParamWrapW
+implib shlwapi.dll, ord.49, CreateDialogParamWrapW
+implib shlwapi.dll, ord.50, CreateDirectoryWrapW
+implib shlwapi.dll, ord.51, CreateEventWrapW
+implib shlwapi.dll, ord.52, CreateFileWrapW
+implib shlwapi.dll, ord.53, CreateFontIndirectWrapW
+implib shlwapi.dll, ord.300, CreateFontWrapW
+implib shlwapi.dll, ord.54, CreateICWrapW
+implib shlwapi.dll, ord.304, CreateMetaFileWrapW
+implib shlwapi.dll, ord.305, CreateMutexWrapW
+implib shlwapi.dll, ord.369, CreateProcessWrapW
+implib shlwapi.dll, ord.307, CreateSemaphoreWrapW
+implib shlwapi.dll, ord.583, CreateSizedDIBSECTION
+implib shlwapi.dll, ord.55, CreateWindowExWrapW
+implib shlwapi.dll, ord.372, DdeCreateStringHandleWrapW
+implib shlwapi.dll, ord.371, DdeInitializeWrapW
+implib shlwapi.dll, ord.373, DdeQueryStringWrapW
+implib shlwapi.dll, ord.56, DefWindowProcWrapW
+implib shlwapi.dll, ord.57, DeleteFileWrapW
+implib shlwapi.dll, ord.425, DeleteMenuWrap
+implib shlwapi.dll, ord.426, DestroyMenuWrap
+implib shlwapi.dll, ord.58, DialogBoxIndirectParamWrapW
+implib shlwapi.dll, ord.59, DialogBoxParamWrapW
+implib shlwapi.dll, ord.60, DispatchMessageWrapW
+implib shlwapi.dll, DllGetClassObject, SHLWAPI_DllGetClassObject
+implib shlwapi.dll, DllGetVersion, SHLWAPI_DllGetVersion
+implib shlwapi.dll, ord.364, DoesStringRoundTripA
+implib shlwapi.dll, ord.365, DoesStringRoundTripW
+implib shlwapi.dll, ord.318, DragQueryFileWrapW
+implib shlwapi.dll, ord.301, DrawTextExWrapW
+implib shlwapi.dll, ord.61, DrawTextWrapW
+implib shlwapi.dll, ord.617, DupWideToAnsi
+implib shlwapi.dll, ord.392, EndDialogWrap
+implib shlwapi.dll, ord.63, EnumFontFamiliesExWrapW
+implib shlwapi.dll, ord.62, EnumFontFamiliesWrapW
+implib shlwapi.dll, ord.64, EnumResourceNamesWrapW
+implib shlwapi.dll, ord.306, ExpandEnvironmentStringsWrapW
+implib shlwapi.dll, ord.299, ExtTextOutWrapW
+implib shlwapi.dll, ord.337, ExtractIconExWrapW
+implib shlwapi.dll, ord.370, ExtractIconWrapW
+implib shlwapi.dll, ord.211, FDSA_DeleteItem
+implib shlwapi.dll, ord.209, FDSA_Destroy
+implib shlwapi.dll, ord.208, FDSA_Initialize
+implib shlwapi.dll, ord.210, FDSA_InsertItem
+implib shlwapi.dll, ord.582, FactorAspectRatio
+implib shlwapi.dll, ord.65, FindFirstFileWrapW
+implib shlwapi.dll, ord.341, FindNextFileWrapW
+implib shlwapi.dll, ord.66, FindResourceWrapW
+implib shlwapi.dll, ord.319, FindWindowExWrapW
+implib shlwapi.dll, ord.67, FindWindowWrapW
+implib shlwapi.dll, ord.447, FixSlashesAndColonA
+implib shlwapi.dll, ord.448, FixSlashesAndColonW
+implib shlwapi.dll, ord.68, FormatMessageWrapW
+implib shlwapi.dll, ord.269, GUIDFromStringA
+implib shlwapi.dll, ord.270, GUIDFromStringW
+implib shlwapi.dll, ord.14, GetAcceptLanguagesA
+implib shlwapi.dll, ord.15, GetAcceptLanguagesW
+implib shlwapi.dll, ord.110, GetCharWidth32WrapW
+implib shlwapi.dll, ord.111, GetCharacterPlacementWrapW
+implib shlwapi.dll, ord.315, GetClassInfoExWrapW
+implib shlwapi.dll, ord.69, GetClassInfoWrapW
+implib shlwapi.dll, ord.70, GetClassLongWrapW
+implib shlwapi.dll, ord.71, GetClassNameWrapW
+implib shlwapi.dll, ord.72, GetClipboardFormatNameWrapW
+implib shlwapi.dll, ord.73, GetCurrentDirectoryWrapW
+implib shlwapi.dll, ord.311, GetDateFormatWrapW
+implib shlwapi.dll, ord.74, GetDlgItemTextWrapW
+implib shlwapi.dll, ord.442, GetEnvironmentVariableWrapW
+implib shlwapi.dll, ord.75, GetFileAttributesWrapW
+implib shlwapi.dll, ord.350, GetFileVersionInfoSizeWrapW
+implib shlwapi.dll, ord.351, GetFileVersionInfoWrapW
+implib shlwapi.dll, ord.76, GetFullPathNameWrapW
+implib shlwapi.dll, ord.77, GetLocaleInfoWrapW
+implib shlwapi.dll, ord.458, GetLongPathNameWrapA
+implib shlwapi.dll, ord.457, GetLongPathNameWrapW
+implib shlwapi.dll, ord.328, GetMIMETypeSubKeyA
+implib shlwapi.dll, ord.329, GetMIMETypeSubKeyW
+implib shlwapi.dll, ord.302, GetMenuItemInfoWrapW
+implib shlwapi.dll, GetMenuPosFromID
+implib shlwapi.dll, ord.78, GetMenuStringWrapW
+implib shlwapi.dll, ord.79, GetMessageWrapW
+implib shlwapi.dll, ord.80, GetModuleFileNameWrapW
+implib shlwapi.dll, ord.83, GetModuleHandleWrapW
+implib shlwapi.dll, ord.339, GetNumberFormatWrapW
+implib shlwapi.dll, ord.84, GetObjectWrapW
+implib shlwapi.dll, ord.403, GetOpenFileNameWrapW
+implib shlwapi.dll, ord.85, GetPrivateProfileIntWrapW
+implib shlwapi.dll, ord.312, GetPrivateProfileStringWrapW
+implib shlwapi.dll, ord.368, GetPrivateProfileStructWrapW
+implib shlwapi.dll, ord.86, GetProfileStringWrapW
+implib shlwapi.dll, ord.87, GetPropWrapW
+implib shlwapi.dll, ord.389, GetSaveFileNameWrapW
+implib shlwapi.dll, ord.361, GetShortPathNameWrapW
+implib shlwapi.dll, ord.35, GetStringType3ExW
+implib shlwapi.dll, ord.88, GetStringTypeExWrapW
+implib shlwapi.dll, ord.81, GetSystemDirectoryWrapW
+implib shlwapi.dll, ord.89, GetTempFileNameWrapW
+implib shlwapi.dll, ord.90, GetTempPathWrapW
+implib shlwapi.dll, ord.91, GetTextExtentPoint32WrapW
+implib shlwapi.dll, ord.92, GetTextFaceWrapW
+implib shlwapi.dll, ord.93, GetTextMetricsWrapW
+implib shlwapi.dll, ord.310, GetTimeFormatWrapW
+implib shlwapi.dll, ord.542, GetUIVersion
+implib shlwapi.dll, ord.362, GetUserNameWrapW
+implib shlwapi.dll, ord.94, GetWindowLongWrapW
+implib shlwapi.dll, ord.96, GetWindowTextLengthWrapW
+implib shlwapi.dll, ord.95, GetWindowTextWrapW
+implib shlwapi.dll, ord.97, GetWindowsDirectoryWrapW
+implib shlwapi.dll, ord.489, GlobalAddAtomWrapW
+implib shlwapi.dll, ord.490, GlobalFindAtomWrapW
+implib shlwapi.dll, HashData
+implib shlwapi.dll, ord.283, IConnectionPoint_InvokeWithCancel
+implib shlwapi.dll, ord.285, IConnectionPoint_OnChanged
+implib shlwapi.dll, ord.284, IConnectionPoint_SimpleInvoke
+implib shlwapi.dll, ord.207, IContextMenu_Invoke
+implib shlwapi.dll, ord.316, IShellFolder_GetDisplayNameOf
+implib shlwapi.dll, ord.317, IShellFolder_ParseDisplayName
+implib shlwapi.dll, ord.568, IStream_Copy
+implib shlwapi.dll, ord.184, IStream_Read
+implib shlwapi.dll, ord.512, IStream_ReadPidl
+implib shlwapi.dll, ord.596, IStream_ReadStr
+implib shlwapi.dll, ord.644, IStream_ReadStrLong
+implib shlwapi.dll, ord.213, IStream_Reset
+implib shlwapi.dll, ord.214, IStream_Size
+implib shlwapi.dll, ord.212, IStream_Write
+implib shlwapi.dll, ord.513, IStream_WritePidl
+implib shlwapi.dll, ord.597, IStream_WriteStr
+implib shlwapi.dll, ord.645, IStream_WriteStrLong
+implib shlwapi.dll, ord.169, IUnknown_AtomicRelease
+implib shlwapi.dll, ord.288, IUnknown_CPContainerInvokeIndirect
+implib shlwapi.dll, ord.286, IUnknown_CPContainerInvokeParam
+implib shlwapi.dll, ord.287, IUnknown_CPContainerOnChanged
+implib shlwapi.dll, ord.546, IUnknown_DoContextMenuPopup
+implib shlwapi.dll, ord.355, IUnknown_EnableModeless
+implib shlwapi.dll, ord.164, IUnknown_Exec
+implib shlwapi.dll, ord.175, IUnknown_GetClassID
+implib shlwapi.dll, ord.256, IUnknown_GetSite
+implib shlwapi.dll, ord.172, IUnknown_GetWindow
+implib shlwapi.dll, ord.190, IUnknown_HandleIRestrict
+implib shlwapi.dll, ord.481, IUnknown_HasFocusIO
+implib shlwapi.dll, ord.509, IUnknown_OnFocusChangeIS
+implib shlwapi.dll, ord.189, IUnknown_OnFocusOCS
+implib shlwapi.dll, ord.514, IUnknown_ProfferService
+implib shlwapi.dll, ord.176, IUnknown_QueryService
+implib shlwapi.dll, ord.484, IUnknown_QueryServiceExec
+implib shlwapi.dll, ord.538, IUnknown_QueryServiceForWebBrowserApp
+implib shlwapi.dll, ord.536, IUnknown_QueryServicePropertyBag
+implib shlwapi.dll, ord.163, IUnknown_QueryStatus
+implib shlwapi.dll, ord.611, IUnknown_RemoveBackReferences
+implib shlwapi.dll, ord.199, IUnknown_Set
+implib shlwapi.dll, ord.173, IUnknown_SetOwner
+implib shlwapi.dll, ord.174, IUnknown_SetSite
+implib shlwapi.dll, ord.539, IUnknown_ShowBrowserBar
+implib shlwapi.dll, ord.638, IUnknown_TranslateAcceleratorGlobal
+implib shlwapi.dll, ord.478, IUnknown_TranslateAcceleratorIO
+implib shlwapi.dll, ord.188, IUnknown_TranslateAcceleratorOCS
+implib shlwapi.dll, ord.479, IUnknown_UIActivateIO
+implib shlwapi.dll, ord.575, IWebBrowser_Navigate2
+implib shlwapi.dll, ord.303, InsertMenuItemWrapW
+implib shlwapi.dll, ord.98, InsertMenuWrapW
+implib shlwapi.dll, IntlStrEqWorkerA ; Alias for StrIsIntlEqualA
+implib shlwapi.dll, IntlStrEqWorkerW ; Alias for StrIsIntlEqualW
+implib shlwapi.dll, ord.308, IsBadStringPtrWrapW
+implib shlwapi.dll, ord.28, IsCharAlphaNumericWrapW
+implib shlwapi.dll, ord.25, IsCharAlphaWrapW
+implib shlwapi.dll, ord.30, IsCharBlankW
+implib shlwapi.dll, ord.32, IsCharCntrlW
+implib shlwapi.dll, ord.33, IsCharDigitW
+implib shlwapi.dll, ord.27, IsCharLowerWrapW
+implib shlwapi.dll, ord.31, IsCharPunctW
+implib shlwapi.dll, IsCharSpaceA
+implib shlwapi.dll, ord.29, IsCharSpaceW
+implib shlwapi.dll, ord.26, IsCharUpperWrapW
+implib shlwapi.dll, ord.34, IsCharXDigitW
+implib shlwapi.dll, ord.99, IsDialogMessageWrapW
+implib shlwapi.dll, ord.553, IsInternetESCEnabled ; Also ordinal 562 in v6.0
+implib shlwapi.dll, ord.437, IsOS
+implib shlwapi.dll, ord.202, IsQSForward
+implib shlwapi.dll, ord.100, LoadAcceleratorsWrapW
+implib shlwapi.dll, ord.101, LoadBitmapWrapW
+implib shlwapi.dll, ord.102, LoadCursorWrapW
+implib shlwapi.dll, ord.103, LoadIconWrapW
+implib shlwapi.dll, ord.104, LoadImageWrapW
+implib shlwapi.dll, ord.105, LoadLibraryExWrapW
+implib shlwapi.dll, ord.309, LoadLibraryWrapW
+implib shlwapi.dll, ord.106, LoadMenuWrapW
+implib shlwapi.dll, ord.107, LoadStringWrapW
+implib shlwapi.dll, ord.330, MIME_GetExtensionA
+implib shlwapi.dll, ord.331, MIME_GetExtensionW
+implib shlwapi.dll, ord.405, MLBuildResURLA
+implib shlwapi.dll, ord.406, MLBuildResURLW
+implib shlwapi.dll, ord.376, MLGetUILanguage
+implib shlwapi.dll, ord.377, MLLoadLibraryA
+implib shlwapi.dll, ord.378, MLLoadLibraryW
+implib shlwapi.dll, ord.395, MLWinHelpA
+implib shlwapi.dll, ord.397, MLWinHelpW
+implib shlwapi.dll, ord.485, MapWin32ErrorToSTG
+implib shlwapi.dll, ord.201, MayExecForward
+implib shlwapi.dll, ord.200, MayQSForward
+implib shlwapi.dll, ord.108, MessageBoxIndirectWrapW
+implib shlwapi.dll, ord.340, MessageBoxWrapW
+implib shlwapi.dll, ord.486, ModeToCreateFileFlags
+implib shlwapi.dll, ord.109, ModifyMenuWrapW
+implib shlwapi.dll, ord.113, MoveFileWrapW
+implib shlwapi.dll, ord.449, NextPathA
+implib shlwapi.dll, ord.450, NextPathW
+implib shlwapi.dll, ord.114, OemToCharWrapW
+implib shlwapi.dll, ord.359, OpenEventWrapW
+implib shlwapi.dll, ord.115, OutputDebugStringWrapW
+implib shlwapi.dll, ord.401, PageSetupDlgWrapW
+implib shlwapi.dll, ord.1, ParseURLA
+implib shlwapi.dll, ord.2, ParseURLW
+implib shlwapi.dll, PathAddBackslashA
+implib shlwapi.dll, PathAddBackslashW
+implib shlwapi.dll, PathAddExtensionA
+implib shlwapi.dll, PathAddExtensionW
+implib shlwapi.dll, PathAppendA
+implib shlwapi.dll, PathAppendW
+implib shlwapi.dll, PathBuildRootA
+implib shlwapi.dll, PathBuildRootW
+implib shlwapi.dll, PathCanonicalizeA
+implib shlwapi.dll, PathCanonicalizeW
+implib shlwapi.dll, PathCombineA
+implib shlwapi.dll, PathCombineW
+
+endlib
