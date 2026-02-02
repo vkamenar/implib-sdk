@@ -376,5 +376,129 @@ implib shlwapi.dll, PathCanonicalizeA
 implib shlwapi.dll, PathCanonicalizeW
 implib shlwapi.dll, PathCombineA
 implib shlwapi.dll, PathCombineW
+implib shlwapi.dll, PathCommonPrefixA
+implib shlwapi.dll, PathCommonPrefixW
+implib shlwapi.dll, PathCompactPathA
+implib shlwapi.dll, PathCompactPathExA
+implib shlwapi.dll, PathCompactPathExW
+implib shlwapi.dll, PathCompactPathW
+implib shlwapi.dll, PathCreateFromUrlA
+implib shlwapi.dll, PathCreateFromUrlAlloc
+implib shlwapi.dll, PathCreateFromUrlW
+implib shlwapi.dll, PathFileExistsA
+implib shlwapi.dll, ord.445, PathFileExistsAndAttributesA
+implib shlwapi.dll, ord.446, PathFileExistsAndAttributesW
+implib shlwapi.dll, ord.3, PathFileExistsDefExtA
+implib shlwapi.dll, ord.511, PathFileExistsDefExtAndAttributesW
+implib shlwapi.dll, ord.4, PathFileExistsDefExtW
+implib shlwapi.dll, PathFileExistsW
+implib shlwapi.dll, PathFindExtensionA
+implib shlwapi.dll, PathFindExtensionW
+implib shlwapi.dll, PathFindFileNameA
+implib shlwapi.dll, PathFindFileNameW
+implib shlwapi.dll, PathFindNextComponentA
+implib shlwapi.dll, PathFindNextComponentW
+implib shlwapi.dll, PathFindOnPathA
+implib shlwapi.dll, ord.5, PathFindOnPathExA
+implib shlwapi.dll, ord.6, PathFindOnPathExW
+implib shlwapi.dll, PathFindOnPathW
+implib shlwapi.dll, PathFindSuffixArrayA
+implib shlwapi.dll, PathFindSuffixArrayW
+implib shlwapi.dll, PathGetArgsA
+implib shlwapi.dll, PathGetArgsW
+implib shlwapi.dll, PathGetCharTypeA
+implib shlwapi.dll, PathGetCharTypeW
+implib shlwapi.dll, PathGetDriveNumberA
+implib shlwapi.dll, PathGetDriveNumberW
+implib shlwapi.dll, PathIsContentTypeA
+implib shlwapi.dll, PathIsContentTypeW
+implib shlwapi.dll, PathIsDirectoryA
+implib shlwapi.dll, PathIsDirectoryEmptyA
+implib shlwapi.dll, PathIsDirectoryEmptyW
+implib shlwapi.dll, PathIsDirectoryW
+implib shlwapi.dll, PathIsFileSpecA
+implib shlwapi.dll, PathIsFileSpecW
+implib shlwapi.dll, PathIsLFNFileSpecA
+implib shlwapi.dll, PathIsLFNFileSpecW
+implib shlwapi.dll, PathIsNetworkPathA
+implib shlwapi.dll, PathIsNetworkPathW
+implib shlwapi.dll, PathIsPrefixA
+implib shlwapi.dll, PathIsPrefixW
+implib shlwapi.dll, PathIsRelativeA
+implib shlwapi.dll, PathIsRelativeW
+implib shlwapi.dll, PathIsRootA
+implib shlwapi.dll, PathIsRootW
+implib shlwapi.dll, PathIsSameRootA
+implib shlwapi.dll, PathIsSameRootW
+implib shlwapi.dll, PathIsSystemFolderA
+implib shlwapi.dll, PathIsSystemFolderW
+implib shlwapi.dll, PathIsUNCA
+implib shlwapi.dll, PathIsUNCServerA
+implib shlwapi.dll, PathIsUNCServerShareA
+implib shlwapi.dll, PathIsUNCServerShareW
+implib shlwapi.dll, PathIsUNCServerW
+implib shlwapi.dll, PathIsUNCW
+implib shlwapi.dll, PathIsURLA
+implib shlwapi.dll, PathIsURLW
+implib shlwapi.dll, ord.455, PathIsValidCharA
+implib shlwapi.dll, ord.456, PathIsValidCharW
+implib shlwapi.dll, PathMakePrettyA
+implib shlwapi.dll, PathMakePrettyW
+implib shlwapi.dll, PathMakeSystemFolderA
+implib shlwapi.dll, PathMakeSystemFolderW
+implib shlwapi.dll, PathMatchSpecA
+implib shlwapi.dll, PathMatchSpecExA
+implib shlwapi.dll, PathMatchSpecExW
+implib shlwapi.dll, PathMatchSpecW
+implib shlwapi.dll, PathParseIconLocationA
+implib shlwapi.dll, PathParseIconLocationW
+implib shlwapi.dll, PathQuoteSpacesA
+implib shlwapi.dll, PathQuoteSpacesW
+implib shlwapi.dll, PathRelativePathToA
+implib shlwapi.dll, PathRelativePathToW
+implib shlwapi.dll, PathRemoveArgsA
+implib shlwapi.dll, PathRemoveArgsW
+implib shlwapi.dll, PathRemoveBackslashA
+implib shlwapi.dll, PathRemoveBackslashW
+implib shlwapi.dll, PathRemoveBlanksA
+implib shlwapi.dll, PathRemoveBlanksW
+implib shlwapi.dll, PathRemoveExtensionA
+implib shlwapi.dll, PathRemoveExtensionW
+implib shlwapi.dll, PathRemoveFileSpecA
+implib shlwapi.dll, PathRemoveFileSpecW
+implib shlwapi.dll, PathRenameExtensionA
+implib shlwapi.dll, PathRenameExtensionW
+implib shlwapi.dll, PathSearchAndQualifyA
+implib shlwapi.dll, PathSearchAndQualifyW
+implib shlwapi.dll, PathSetDlgItemPathA
+implib shlwapi.dll, PathSetDlgItemPathW
+implib shlwapi.dll, ord.170, PathSkipLeadingSlashes
+implib shlwapi.dll, PathSkipRootA
+implib shlwapi.dll, PathSkipRootW
+implib shlwapi.dll, PathStripPathA
+implib shlwapi.dll, PathStripPathW
+implib shlwapi.dll, PathStripToRootA
+implib shlwapi.dll, PathStripToRootW
+implib shlwapi.dll, PathUnExpandEnvStringsA
+implib shlwapi.dll, ord.465, PathUnExpandEnvStringsForUserA
+implib shlwapi.dll, ord.466, PathUnExpandEnvStringsForUserW
+implib shlwapi.dll, PathUnExpandEnvStringsW
+implib shlwapi.dll, ord.643, PathUnExpandSystemEnvStrings
+implib shlwapi.dll, PathUndecorateA
+implib shlwapi.dll, PathUndecorateW
+implib shlwapi.dll, PathUnmakeSystemFolderA
+implib shlwapi.dll, PathUnmakeSystemFolderW
+implib shlwapi.dll, PathUnquoteSpacesA
+implib shlwapi.dll, PathUnquoteSpacesW
+implib shlwapi.dll, ord.116, PeekMessageWrapW
+implib shlwapi.dll, ord.289, PlaySoundWrapW
+implib shlwapi.dll, ord.117, PostMessageWrapW
+implib shlwapi.dll, ord.118, PostThreadMessageWrapW
+implib shlwapi.dll, ord.402, PrintDlgWrapW
+implib shlwapi.dll, ord.219, QISearch
+implib shlwapi.dll, ord.544, QuerySourceCreateFromKey
+implib shlwapi.dll, ord.576, QuerySourceCreateFromKeyEx
+implib shlwapi.dll, ord.120, RegCreateKeyExWrapW
+implib shlwapi.dll, ord.119, RegCreateKeyWrapW
 
 endlib
