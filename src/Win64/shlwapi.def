@@ -551,5 +551,52 @@ implib shlwapi.dll, ord.472, SHCreatePropertyBagOnProfileSection
 implib shlwapi.dll, ord.471, SHCreatePropertyBagOnRegKey
 implib shlwapi.dll, ord.621, SHCreatePropertyStoreOnXML
 implib shlwapi.dll, SHCreateShellPalette
+implib shlwapi.dll, ord.627, SHCreateStreamOnDllResourceW
+implib shlwapi.dll, SHCreateStreamOnFileA
+implib shlwapi.dll, SHCreateStreamOnFileEx
+implib shlwapi.dll, SHCreateStreamOnFileW
+implib shlwapi.dll, ord.628, SHCreateStreamOnModuleResourceW
+implib shlwapi.dll, ord.16, SHCreateThread
+implib shlwapi.dll, SHCreateThreadRef
+implib shlwapi.dll, ord.615, SHCreateThreadWithHandle
+implib shlwapi.dll, ord.257, SHCreateWorkerWindowA
+implib shlwapi.dll, ord.278, SHCreateWorkerWindowW
+implib shlwapi.dll, ord.358, SHDefExtractIconWrapW
+implib shlwapi.dll, ord.240, SHDefWindowProc
+implib shlwapi.dll, SHDeleteEmptyKeyA
+implib shlwapi.dll, SHDeleteEmptyKeyW
+implib shlwapi.dll, SHDeleteKeyA
+implib shlwapi.dll, SHDeleteKeyW
+implib shlwapi.dll, SHDeleteOrphanKeyA ; Before Windows Vista, this function is an alias for SHDeleteEmptyKeyA
+implib shlwapi.dll, SHDeleteOrphanKeyW ; Before Windows Vista, this function is an alias for SHDeleteEmptyKeyW
+implib shlwapi.dll, SHDeleteValueA
+implib shlwapi.dll, SHDeleteValueW
+implib shlwapi.dll, ord.181, SHEnableMenuItem
+implib shlwapi.dll, SHEnumKeyExA
+implib shlwapi.dll, SHEnumKeyExW
+implib shlwapi.dll, SHEnumValueA
+implib shlwapi.dll, SHEnumValueW
+implib shlwapi.dll, ord.459, SHExpandEnvironmentStringsA
+implib shlwapi.dll, ord.572, SHExpandEnvironmentStringsAlloc
+implib shlwapi.dll, ord.463, SHExpandEnvironmentStringsForUserA
+implib shlwapi.dll, ord.464, SHExpandEnvironmentStringsForUserW
+implib shlwapi.dll, ord.460, SHExpandEnvironmentStringsW
+implib shlwapi.dll, ord.336, SHFileOperationWrapW
+implib shlwapi.dll, ord.197, SHFillRectClr
+implib shlwapi.dll, ord.22, SHFindDataBlock
+implib shlwapi.dll, ord.419, SHFlushSFCacheWrap
+implib shlwapi.dll, ord.353, SHFormatDateTimeA
+implib shlwapi.dll, ord.354, SHFormatDateTimeW
+implib shlwapi.dll, ord.545, SHForwardContextMenuMsg
+implib shlwapi.dll, ord.19, SHFreeDataBlockList
+implib shlwapi.dll, ord.10, SHFreeShared
+implib shlwapi.dll, ord.461, SHGetAppCompatFlags
+implib shlwapi.dll, ord.193, SHGetCurColorRes
+implib shlwapi.dll, ord.349, SHGetFileDescriptionA
+implib shlwapi.dll, ord.348, SHGetFileDescriptionW
+implib shlwapi.dll, ord.313, SHGetFileInfoWrapW
+implib shlwapi.dll, ord.294, SHGetIniStringW
+implib shlwapi.dll, SHGetInverseCMAP
+implib shlwapi.dll, ord.413, SHGetMachineInfo
 
 endlib
