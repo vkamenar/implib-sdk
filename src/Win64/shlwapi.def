@@ -500,5 +500,56 @@ implib shlwapi.dll, ord.544, QuerySourceCreateFromKey
 implib shlwapi.dll, ord.576, QuerySourceCreateFromKeyEx
 implib shlwapi.dll, ord.120, RegCreateKeyExWrapW
 implib shlwapi.dll, ord.119, RegCreateKeyWrapW
+implib shlwapi.dll, ord.121, RegDeleteKeyWrapW
+implib shlwapi.dll, ord.347, RegDeleteValueWrapW
+implib shlwapi.dll, ord.123, RegEnumKeyExWrapW
+implib shlwapi.dll, ord.122, RegEnumKeyWrapW
+implib shlwapi.dll, ord.366, RegEnumValueWrapW
+implib shlwapi.dll, ord.125, RegOpenKeyExWrapW
+implib shlwapi.dll, ord.124, RegOpenKeyWrapW
+implib shlwapi.dll, ord.126, RegQueryInfoKeyWrapW
+implib shlwapi.dll, ord.128, RegQueryValueExWrapW
+implib shlwapi.dll, ord.127, RegQueryValueWrapW
+implib shlwapi.dll, ord.130, RegSetValueExWrapW
+implib shlwapi.dll, ord.129, RegSetValueWrapW
+implib shlwapi.dll, ord.314, RegisterClassExWrapW
+implib shlwapi.dll, ord.131, RegisterClassWrapW
+implib shlwapi.dll, ord.132, RegisterClipboardFormatWrapW
+implib shlwapi.dll, ord.13, RegisterDefaultAcceptHeaders
+implib shlwapi.dll, ord.324, RegisterExtensionForMIMETypeA
+implib shlwapi.dll, ord.325, RegisterExtensionForMIMETypeW
+implib shlwapi.dll, ord.320, RegisterMIMETypeForExtensionA
+implib shlwapi.dll, ord.321, RegisterMIMETypeForExtensionW
+implib shlwapi.dll, ord.133, RegisterWindowMessageWrapW
+implib shlwapi.dll, ord.360, RemoveDirectoryWrapW
+implib shlwapi.dll, ord.134, RemovePropWrapW
+implib shlwapi.dll, ord.468, RunIndirectRegCommand
+implib shlwapi.dll, ord.469, RunRegCommand
+implib shlwapi.dll, ord.160, SHAboutInfoA
+implib shlwapi.dll, ord.161, SHAboutInfoW
+implib shlwapi.dll, ord.20, SHAddDataBlock
+implib shlwapi.dll, ord.7, SHAllocShared
+implib shlwapi.dll, ord.345, SHAnsiToAnsi
+implib shlwapi.dll, ord.215, SHAnsiToUnicode
+implib shlwapi.dll, ord.216, SHAnsiToUnicodeCP
+implib shlwapi.dll, ord.600, SHAnsiToUnicodeCPAlloc
+implib shlwapi.dll, ord.548, SHAreIconsEqual
+implib shlwapi.dll, SHAutoComplete
+implib shlwapi.dll, ord.537, SHBoolSystemParametersInfo
+implib shlwapi.dll, ord.333, SHBrowseForFolderWrapW
+implib shlwapi.dll, ord.265, SHCancelTimerQueueTimer
+implib shlwapi.dll, ord.394, SHChangeNotifyWrap
+implib shlwapi.dll, ord.182, SHCheckMenuItem
+implib shlwapi.dll, ord.616, SHClearViewStatePropertyBag
+implib shlwapi.dll, ord.549, SHCoCreateInstanceAC
+implib shlwapi.dll, SHCopyKeyA
+implib shlwapi.dll, SHCopyKeyW
+implib shlwapi.dll, ord.12, SHCreateMemStream
+implib shlwapi.dll, ord.626, SHCreatePropertyBagOnCachedProfileSection
+implib shlwapi.dll, ord.477, SHCreatePropertyBagOnMemory
+implib shlwapi.dll, ord.472, SHCreatePropertyBagOnProfileSection
+implib shlwapi.dll, ord.471, SHCreatePropertyBagOnRegKey
+implib shlwapi.dll, ord.621, SHCreatePropertyStoreOnXML
+implib shlwapi.dll, SHCreateShellPalette
 
 endlib
