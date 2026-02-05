@@ -598,5 +598,155 @@ implib shlwapi.dll, ord.313, SHGetFileInfoWrapW
 implib shlwapi.dll, ord.294, SHGetIniStringW
 implib shlwapi.dll, SHGetInverseCMAP
 implib shlwapi.dll, ord.413, SHGetMachineInfo
+implib shlwapi.dll, ord.192, SHGetMenuFromID
+implib shlwapi.dll, ord.357, SHGetNewLinkInfoWrapW
+implib shlwapi.dll, ord.476, SHGetObjectCompatFlags
+implib shlwapi.dll, ord.334, SHGetPathFromIDListWrapW
+implib shlwapi.dll, ord.533, SHGetPerScreenResName
+implib shlwapi.dll, ord.271, SHGetRestriction
+implib shlwapi.dll, ord.491, SHGetShellKey
+implib shlwapi.dll, ord.635, SHGetShellKeyEx
+implib shlwapi.dll, ord.559, SHGetSignatureInfo
+implib shlwapi.dll, ord.642, SHGetSignatureInfoEx
+implib shlwapi.dll, ord.641, SHGetSizeShared
+implib shlwapi.dll, ord.443, SHGetSystemWindowsDirectoryA
+implib shlwapi.dll, ord.444, SHGetSystemWindowsDirectoryW
+implib shlwapi.dll, SHGetThreadRef
+implib shlwapi.dll, SHGetValueA
+implib shlwapi.dll, ord.205, SHGetValueGoodBootA
+implib shlwapi.dll, ord.206, SHGetValueGoodBootW
+implib shlwapi.dll, SHGetValueW
+implib shlwapi.dll, ord.515, SHGetViewStatePropertyBag
+implib shlwapi.dll, ord.440, SHGetWebFolderFilePathA
+implib shlwapi.dll, ord.441, SHGetWebFolderFilePathW
+implib shlwapi.dll, ord.634, SHGlobalCounterDecrement
+implib shlwapi.dll, ord.632, SHGlobalCounterGetValue ; Available as ordinal 223 before v6.0
+implib shlwapi.dll, ord.633, SHGlobalCounterIncrement ; Available as ordinal 224 before v6.0
+implib shlwapi.dll, ord.342, SHInterlockedCompareExchange
+implib shlwapi.dll, ord.363, SHInvokeCommand
+implib shlwapi.dll, ord.540, SHInvokeCommandOnContextMenu
+implib shlwapi.dll, ord.639, SHInvokeCommandOnContextMenuEx
+implib shlwapi.dll, ord.571, SHInvokeCommandWithFlagsAndSite
+implib shlwapi.dll, ord.541, SHInvokeCommandsOnContextMenu
+implib shlwapi.dll, ord.640, SHInvokeCommandsOnContextMenuEx
+implib shlwapi.dll, ord.279, SHInvokeDefaultCommand
+implib shlwapi.dll, ord.204, SHIsChildOrSelf
+implib shlwapi.dll, ord.166, SHIsEmptyStream
+implib shlwapi.dll, ord.195, SHIsExpandableFolder
+implib shlwapi.dll, SHIsLowMemoryMachine
+implib shlwapi.dll, ord.187, SHLoadFromPropertyBag
+implib shlwapi.dll, ord.487, SHLoadIndirectString
+implib shlwapi.dll, ord.177, SHLoadMenuPopup
+implib shlwapi.dll, ord.438, SHLoadRegUIStringA
+implib shlwapi.dll, ord.439, SHLoadRegUIStringW
+implib shlwapi.dll, ord.8, SHLockShared
+implib shlwapi.dll, ord.510, SHLockSharedEx
+implib shlwapi.dll, ord.11, SHMapHandle
+implib shlwapi.dll, ord.179, SHMenuIndexFromID
+implib shlwapi.dll, ord.185, SHMessageBoxCheckA
+implib shlwapi.dll, ord.291, SHMessageBoxCheckExA
+implib shlwapi.dll, ord.292, SHMessageBoxCheckExW
+implib shlwapi.dll, ord.191, SHMessageBoxCheckW
+implib shlwapi.dll, SHOpenRegStream2A
+implib shlwapi.dll, SHOpenRegStream2W
+implib shlwapi.dll, SHOpenRegStreamA
+implib shlwapi.dll, SHOpenRegStreamW
+implib shlwapi.dll, ord.282, SHPackDispParams
+implib shlwapi.dll, ord.281, SHPackDispParamsV
+implib shlwapi.dll, ord.236, SHPinDllOfCLSID
+implib shlwapi.dll, ord.178, SHPropagateMessage
+implib shlwapi.dll, ord.535, SHPropertyBag_Delete
+implib shlwapi.dll, ord.534, SHPropertyBag_ReadBOOL
+implib shlwapi.dll, ord.520, SHPropertyBag_ReadBSTR
+implib shlwapi.dll, ord.507, SHPropertyBag_ReadDWORD
+implib shlwapi.dll, ord.505, SHPropertyBag_ReadGUID
+implib shlwapi.dll, ord.529, SHPropertyBag_ReadInt ; SHPropertyBag_ReadInt is an alias for SHPropertyBag_ReadLONG
+implib shlwapi.dll, ord.496, SHPropertyBag_ReadLONG
+implib shlwapi.dll, ord.521, SHPropertyBag_ReadPOINTL
+implib shlwapi.dll, ord.525, SHPropertyBag_ReadPOINTS
+implib shlwapi.dll, ord.614, SHPropertyBag_ReadPropertyKey
+implib shlwapi.dll, ord.523, SHPropertyBag_ReadRECTL
+implib shlwapi.dll, ord.527, SHPropertyBag_ReadSHORT
+implib shlwapi.dll, ord.494, SHPropertyBag_ReadStr
+implib shlwapi.dll, ord.567, SHPropertyBag_ReadStrAlloc
+implib shlwapi.dll, ord.531, SHPropertyBag_ReadStream
+implib shlwapi.dll, ord.493, SHPropertyBag_ReadType
+implib shlwapi.dll, ord.577, SHPropertyBag_ReadULONGLONG
+implib shlwapi.dll, ord.636, SHPropertyBag_ReadUnknown
+implib shlwapi.dll, ord.499, SHPropertyBag_WriteBOOL
+implib shlwapi.dll, SHPropertyBag_WriteBSTR
+implib shlwapi.dll, ord.508, SHPropertyBag_WriteDWORD
+implib shlwapi.dll, ord.506, SHPropertyBag_WriteGUID
+implib shlwapi.dll, ord.530, SHPropertyBag_WriteInt ; SHPropertyBag_WriteInt is an alias for SHPropertyBag_WriteLONG
+implib shlwapi.dll, ord.497, SHPropertyBag_WriteLONG
+implib shlwapi.dll, ord.522, SHPropertyBag_WritePOINTL
+implib shlwapi.dll, ord.526, SHPropertyBag_WritePOINTS
+implib shlwapi.dll, ord.613, SHPropertyBag_WritePropertyKey
+implib shlwapi.dll, ord.524, SHPropertyBag_WriteRECTL
+implib shlwapi.dll, ord.528, SHPropertyBag_WriteSHORT
+implib shlwapi.dll, ord.495, SHPropertyBag_WriteStr
+implib shlwapi.dll, ord.532, SHPropertyBag_WriteStream
+implib shlwapi.dll, ord.578, SHPropertyBag_WriteULONGLONG
+implib shlwapi.dll, ord.637, SHPropertyBag_WriteUnknown
+implib shlwapi.dll, SHQueryInfoKeyA
+implib shlwapi.dll, SHQueryInfoKeyW
+implib shlwapi.dll, SHQueryValueExA
+implib shlwapi.dll, SHQueryValueExW
+implib shlwapi.dll, ord.260, SHQueueUserWorkItem
+implib shlwapi.dll, ord.18, SHReadDataBlockList
+implib shlwapi.dll, SHRegCloseUSKey
+implib shlwapi.dll, SHRegCreateUSKeyA
+implib shlwapi.dll, SHRegCreateUSKeyW
+implib shlwapi.dll, SHRegDeleteEmptyUSKeyA
+implib shlwapi.dll, SHRegDeleteEmptyUSKeyW
+implib shlwapi.dll, SHRegDeleteUSValueA
+implib shlwapi.dll, SHRegDeleteUSValueW
+implib shlwapi.dll, SHRegDuplicateHKey
+implib shlwapi.dll, SHRegEnumUSKeyA
+implib shlwapi.dll, SHRegEnumUSKeyW
+implib shlwapi.dll, SHRegEnumUSValueA
+implib shlwapi.dll, SHRegEnumUSValueW
+implib shlwapi.dll, SHRegGetBoolUSValueA
+implib shlwapi.dll, SHRegGetBoolUSValueW
+implib shlwapi.dll, ord.630, SHRegGetBoolValueFromHKCUHKLM
+implib shlwapi.dll, ord.344, SHRegGetCLSIDKeyW
+implib shlwapi.dll, ord.280, SHRegGetIntW
+implib shlwapi.dll, SHRegGetPathA
+implib shlwapi.dll, SHRegGetPathW
+implib shlwapi.dll, SHRegGetUSValueA
+implib shlwapi.dll, SHRegGetUSValueW
+implib shlwapi.dll, SHRegGetValueA
+implib shlwapi.dll, ord.629, SHRegGetValueFromHKCUHKLM
+implib shlwapi.dll, SHRegGetValueW
+implib shlwapi.dll, SHRegOpenUSKeyA
+implib shlwapi.dll, SHRegOpenUSKeyW
+implib shlwapi.dll, SHRegQueryInfoUSKeyA
+implib shlwapi.dll, SHRegQueryInfoUSKeyW
+implib shlwapi.dll, SHRegQueryUSValueA
+implib shlwapi.dll, SHRegQueryUSValueW
+implib shlwapi.dll, SHRegSetPathA
+implib shlwapi.dll, SHRegSetPathW
+implib shlwapi.dll, SHRegSetUSValueA
+implib shlwapi.dll, SHRegSetUSValueW
+implib shlwapi.dll, ord.631, SHRegSetValue
+implib shlwapi.dll, SHRegWriteUSValueA
+implib shlwapi.dll, SHRegWriteUSValueW
+implib shlwapi.dll, ord.183, SHRegisterClassA
+implib shlwapi.dll, ord.237, SHRegisterClassW
+implib shlwapi.dll, SHRegisterValidateTemplate
+implib shlwapi.dll, SHReleaseThreadRef
+implib shlwapi.dll, ord.180, SHRemoveAllSubMenus
+implib shlwapi.dll, ord.21, SHRemoveDataBlock
+implib shlwapi.dll, ord.221, SHRemoveDefaultDialogFont
+implib shlwapi.dll, ord.384, SHRestrictedMessageBox
+implib shlwapi.dll, ord.266, SHRestrictionLookup
+implib shlwapi.dll, ord.467, SHRunIndirectRegClientCommand
+implib shlwapi.dll, ord.198, SHSearchMapInt
+implib shlwapi.dll, ord.432, SHSendMessageBroadcastA
+implib shlwapi.dll, ord.433, SHSendMessageBroadcastW
+implib shlwapi.dll, ord.220, SHSetDefaultDialogFont
+implib shlwapi.dll, ord.295, SHSetIniStringW
+implib shlwapi.dll, ord.167, SHSetParentHwnd
+implib shlwapi.dll, SHSetThreadRef
 
 endlib
