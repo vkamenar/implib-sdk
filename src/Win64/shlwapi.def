@@ -748,5 +748,36 @@ implib shlwapi.dll, ord.220, SHSetDefaultDialogFont
 implib shlwapi.dll, ord.295, SHSetIniStringW
 implib shlwapi.dll, ord.167, SHSetParentHwnd
 implib shlwapi.dll, SHSetThreadRef
+implib shlwapi.dll, ord.263, SHSetTimerQueueTimer
+implib shlwapi.dll, SHSetValueA
+implib shlwapi.dll, SHSetValueW
+implib shlwapi.dll, ord.165, SHSetWindowBits
+implib shlwapi.dll, ord.186, SHSimulateDrop
+implib shlwapi.dll, SHSkipJunction
+implib shlwapi.dll, SHStrDupA
+implib shlwapi.dll, SHStrDupW
+implib shlwapi.dll, ord.23, SHStringFromGUIDA
+implib shlwapi.dll, ord.24, SHStringFromGUIDW
+implib shlwapi.dll, ord.203, SHStripMneumonicA
+implib shlwapi.dll, ord.225, SHStripMneumonicW
+implib shlwapi.dll, ord.162, SHTruncateString
+implib shlwapi.dll, ord.217, SHUnicodeToAnsi
+implib shlwapi.dll, ord.218, SHUnicodeToAnsiCP
+implib shlwapi.dll, ord.599, SHUnicodeToAnsiCPAlloc
+implib shlwapi.dll, ord.346, SHUnicodeToUnicode
+implib shlwapi.dll, ord.9, SHUnlockShared
+implib shlwapi.dll, ord.238, SHUnregisterClassesA
+implib shlwapi.dll, ord.239, SHUnregisterClassesW
+implib shlwapi.dll, ord.194, SHWaitForSendMessageThread
+implib shlwapi.dll, ord.267, SHWeakQueryInterface
+implib shlwapi.dll, ord.268, SHWeakReleaseInterface
+implib shlwapi.dll, ord.618, SHWindowsPolicy
+implib shlwapi.dll, ord.560, SHWindowsPolicyGetValue
+implib shlwapi.dll, ord.17, SHWriteDataBlockList
+implib shlwapi.dll, ord.519, SKAllocValueW
+implib shlwapi.dll, ord.518, SKDeleteValueW
+implib shlwapi.dll, ord.516, SKGetValueW
+implib shlwapi.dll, ord.517, SKSetValueW
+implib shlwapi.dll, ord.82, SearchPathWrapW
 
 endlib
