@@ -779,5 +779,46 @@ implib shlwapi.dll, ord.518, SKDeleteValueW
 implib shlwapi.dll, ord.516, SKGetValueW
 implib shlwapi.dll, ord.517, SKSetValueW
 implib shlwapi.dll, ord.82, SearchPathWrapW
+implib shlwapi.dll, ord.135, SendDlgItemMessageWrapW
+implib shlwapi.dll, ord.434, SendMessageTimeoutWrapW
+implib shlwapi.dll, ord.136, SendMessageWrapW
+implib shlwapi.dll, ord.137, SetCurrentDirectoryWrapW
+implib shlwapi.dll, ord.138, SetDlgItemTextWrapW
+implib shlwapi.dll, ord.338, SetFileAttributesWrapW
+implib shlwapi.dll, ord.139, SetMenuItemInfoWrapW
+implib shlwapi.dll, ord.140, SetPropWrapW
+implib shlwapi.dll, ord.141, SetWindowLongWrapW
+implib shlwapi.dll, ord.143, SetWindowTextWrapW
+implib shlwapi.dll, ord.142, SetWindowsHookExWrapW
+implib shlwapi.dll, ord.335, ShellExecuteExWrapW
+implib shlwapi.dll, ShellMessageBoxA
+implib shlwapi.dll, ord.388, ShellMessageBoxW ; This function was known as ShellMessageBoxWrapW until v6.0
+implib shlwapi.dll, ord.380, Shell_GetCachedImageIndexWrapA
+implib shlwapi.dll, ord.379, Shell_GetCachedImageIndexWrapW
+implib shlwapi.dll, ord.144, StartDocWrapW
+implib shlwapi.dll, StrCSpnA
+implib shlwapi.dll, StrCSpnIA
+implib shlwapi.dll, StrCSpnIW
+implib shlwapi.dll, StrCSpnW
+implib shlwapi.dll, StrCatBuffA
+implib shlwapi.dll, StrCatBuffW
+implib shlwapi.dll, StrCatChainW
+implib shlwapi.dll, StrCatW
+implib shlwapi.dll, StrChrA
+implib shlwapi.dll, StrChrIA
+implib shlwapi.dll, StrChrIW
+implib shlwapi.dll, StrChrNIW
+implib shlwapi.dll, StrChrNW
+implib shlwapi.dll, StrChrW
+implib shlwapi.dll, ord.155, StrCmpCA
+implib shlwapi.dll, ord.156, StrCmpCW
+implib shlwapi.dll, ord.157, StrCmpICA
+implib shlwapi.dll, ord.158, StrCmpICW
+implib shlwapi.dll, StrCmpIW
+implib shlwapi.dll, StrCmpLogicalW
+implib shlwapi.dll, StrCmpNA
+implib shlwapi.dll, ord.151, StrCmpNCA
+implib shlwapi.dll, ord.152, StrCmpNCW
+implib shlwapi.dll, StrCmpNIA
 
 endlib
