@@ -820,5 +820,17 @@ implib shlwapi.dll, StrCmpNA
 implib shlwapi.dll, ord.151, StrCmpNCA
 implib shlwapi.dll, ord.152, StrCmpNCW
 implib shlwapi.dll, StrCmpNIA
+implib shlwapi.dll, ord.153, StrCmpNICA
+implib shlwapi.dll, ord.154, StrCmpNICW
+implib shlwapi.dll, StrCmpNIW
+implib shlwapi.dll, StrCmpNW
+implib shlwapi.dll, StrCmpW
+implib shlwapi.dll, StrCpyNW
+implib shlwapi.dll, ord.399, StrCpyNXA
+implib shlwapi.dll, ord.400, StrCpyNXW
+implib shlwapi.dll, StrCpyW
+implib shlwapi.dll, StrDupA
+implib shlwapi.dll, StrDupW
+implib shlwapi.dll, StrFormatByteSize64A
 
 endlib
