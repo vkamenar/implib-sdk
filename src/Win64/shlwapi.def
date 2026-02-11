@@ -866,5 +866,15 @@ implib shlwapi.dll, StrStrNW
 implib shlwapi.dll, StrStrW
 implib shlwapi.dll, StrToInt64ExA
 implib shlwapi.dll, StrToInt64ExW
+implib shlwapi.dll, StrToIntA
+implib shlwapi.dll, StrToIntExA
+implib shlwapi.dll, StrToIntExW
+implib shlwapi.dll, StrToIntW
+implib shlwapi.dll, StrTrimA
+implib shlwapi.dll, StrTrimW
+implib shlwapi.dll, ord.145, SystemParametersInfoWrapW
+implib shlwapi.dll, ord.428, TrackPopupMenuExWrap
+implib shlwapi.dll, ord.427, TrackPopupMenuWrap
+implib shlwapi.dll, ord.146, TranslateAcceleratorWrapW
 
 endlib
