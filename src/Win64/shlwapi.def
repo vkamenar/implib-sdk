@@ -894,5 +894,20 @@ implib shlwapi.dll, UrlCreateFromPathW
 implib shlwapi.dll, UrlEscapeA
 implib shlwapi.dll, UrlEscapeW
 implib shlwapi.dll, ord.462, UrlFixupW
+implib shlwapi.dll, UrlGetLocationA
+implib shlwapi.dll, UrlGetLocationW
+implib shlwapi.dll, UrlGetPartA
+implib shlwapi.dll, UrlGetPartW
+implib shlwapi.dll, UrlHashA
+implib shlwapi.dll, UrlHashW
+implib shlwapi.dll, UrlIsA
+implib shlwapi.dll, UrlIsNoHistoryA
+implib shlwapi.dll, UrlIsNoHistoryW
+implib shlwapi.dll, UrlIsOpaqueA
+implib shlwapi.dll, UrlIsOpaqueW
+implib shlwapi.dll, UrlIsW
+implib shlwapi.dll, UrlUnescapeA
+implib shlwapi.dll, UrlUnescapeW
+implib shlwapi.dll, ord.352, VerQueryValueWrapW
 
 endlib
