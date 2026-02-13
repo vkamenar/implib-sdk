@@ -909,5 +909,26 @@ implib shlwapi.dll, UrlIsW
 implib shlwapi.dll, UrlUnescapeA
 implib shlwapi.dll, UrlUnescapeW
 implib shlwapi.dll, ord.352, VerQueryValueWrapW
+implib shlwapi.dll, ord.148, VkKeyScanWrapW
+implib shlwapi.dll, ord.276, WhichPlatform
+implib shlwapi.dll, ord.149, WinHelpWrapW
+implib shlwapi.dll, ord.298, WritePrivateProfileStringWrapW
+implib shlwapi.dll, ord.367, WritePrivateProfileStructWrapW
+implib shlwapi.dll, ord.234, ZoneCheckHost
+implib shlwapi.dll, ord.235, ZoneCheckHostEx
+implib shlwapi.dll, ord.228, ZoneCheckUrlA
+implib shlwapi.dll, ord.230, ZoneCheckUrlExA
+implib shlwapi.dll, ord.232, ZoneCheckUrlExCacheA
+implib shlwapi.dll, ord.233, ZoneCheckUrlExCacheW
+implib shlwapi.dll, ord.231, ZoneCheckUrlExW
+implib shlwapi.dll, ord.229, ZoneCheckUrlW
+implib shlwapi.dll, ord.382, ZoneComputePaneSize
+implib shlwapi.dll, ord.383, ZoneConfigureW
+implib shlwapi.dll, ord.391, WNetGetLastErrorWrapW
+implib shlwapi.dll, wnsprintfA
+implib shlwapi.dll, wnsprintfW
+implib shlwapi.dll, wvnsprintfA
+implib shlwapi.dll, wvnsprintfW
+implib shlwapi.dll, ord.150, wvsprintfWrapW
 
 endlib
