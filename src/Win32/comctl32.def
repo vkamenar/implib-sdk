@@ -1,11 +1,29 @@
 include '..\implib.inc'
 
+; The following symbols are commented out to limit the size of the library.
+; They are available in specific comctl32 versions only.
+; Feel free to uncomment the necessary symbols and recompile the library.
+
+; *** Functions discontinued in v6.10 (Windows Vista / Server 2008 / 7)
+; implib comctl32.dll, ord.71, _Alloc@4
+; implib comctl32.dll, ord.163, _CreatePage@8
+; implib comctl32.dll, ord.73, _Free@4
+; implib comctl32.dll, ord.74, _GetSize@4
+; implib comctl32.dll, ord.72, _ReAlloc@8
+
+; *** Function discontinued in v5.82 (Windows Vista)
+; implib comctl32.dll, DllInstall, _COMCTL32_DllInstall@8
+
+implib comctl32.dll, ord.167, _AddMRUData@12
+implib comctl32.dll, ord.153, _AddMRUStringA@8
 implib comctl32.dll, ord.401, _AddMRUStringW@8
+implib comctl32.dll, ord.151, _CreateMRUListA@4
 implib comctl32.dll, ord.400, _CreateMRUListW@4
 implib comctl32.dll, ord.8, _CreateMappedBitmap@20
 implib comctl32.dll, CreatePropertySheetPage, _CreatePropertySheetPage@4
 implib comctl32.dll, CreatePropertySheetPageA, _CreatePropertySheetPageA@4
 implib comctl32.dll, CreatePropertySheetPageW, _CreatePropertySheetPageW@4
+implib comctl32.dll, ord.164, _CreateProxyPage@8
 implib comctl32.dll, CreateStatusWindow, _CreateStatusWindow@16
 implib comctl32.dll, CreateStatusWindowA, _CreateStatusWindowA@16
 implib comctl32.dll, CreateStatusWindowW, _CreateStatusWindowW@16
@@ -32,32 +50,35 @@ implib comctl32.dll, ord.10, _DPA_SaveStream@16
 implib comctl32.dll, DPA_Search, _DPA_Search@24
 implib comctl32.dll, DPA_SetPtr, _DPA_SetPtr@12
 implib comctl32.dll, DPA_Sort, _DPA_Sort@12
-implib comctl32.dll, DrawShadowText, _DrawShadowText@36
-implib comctl32.dll, ord.416, _DrawTextExPrivWrap@24
-implib comctl32.dll, ord.415, _DrawTextWrap@24
 implib comctl32.dll, DSA_Clone, _DSA_Clone@4
-implib comctl32.dll, DSA_Create, _DSA_Create@8
+implib comctl32.dll, ord.320, _DSA_Create@8
 implib comctl32.dll, DSA_DeleteAllItems, _DSA_DeleteAllItems@4
 implib comctl32.dll, ord.326, _DSA_DeleteItem@8
-implib comctl32.dll, DSA_Destroy, _DSA_Destroy@4
+implib comctl32.dll, ord.321, _DSA_Destroy@4
 implib comctl32.dll, DSA_DestroyCallback, _DSA_DestroyCallback@12
 implib comctl32.dll, DSA_EnumCallback, _DSA_EnumCallback@12
 implib comctl32.dll, ord.322, _DSA_GetItem@12
-implib comctl32.dll, DSA_GetItemPtr, _DSA_GetItemPtr@8
+implib comctl32.dll, ord.323, _DSA_GetItemPtr@8
 implib comctl32.dll, DSA_GetSize, _DSA_GetSize@4
 implib comctl32.dll, DSA_InsertItem, _DSA_InsertItem@12
 implib comctl32.dll, ord.325, _DSA_SetItem@12
 implib comctl32.dll, DSA_Sort, _DSA_Sort@12
 implib comctl32.dll, DefSubclassProc, _DefSubclassProc@16
+implib comctl32.dll, ord.156, _DelMRUString@8
 implib comctl32.dll, DestroyPropertySheetPage, _DestroyPropertySheetPage@4
 implib comctl32.dll, DllGetVersion, _COMCTL32_DllGetVersion@4
-implib comctl32.dll, DllInstall, _COMCTL32_DllInstall@8
+implib comctl32.dll, DrawShadowText, _DrawShadowText@36
+implib comctl32.dll, ord.416, _DrawTextExPrivWrap@24
+implib comctl32.dll, ord.415, _DrawTextWrap@24
 implib comctl32.dll, ord.15, _DrawInsert@12
 implib comctl32.dll, DrawStatusText, _DrawStatusText@16
 implib comctl32.dll, DrawStatusTextA, _DrawStatusTextA@16
 implib comctl32.dll, DrawStatusTextW, _DrawStatusTextW@16
+implib comctl32.dll, ord.154, _EnumMRUListA@16
 implib comctl32.dll, ord.403, _EnumMRUListW@16
 implib comctl32.dll, ord.417, _ExtTextOutWrap@32
+implib comctl32.dll, ord.169, _FindMRUData@16
+implib comctl32.dll, ord.155, _FindMRUStringA@12
 implib comctl32.dll, FlatSB_EnableScrollBar, _FlatSB_EnableScrollBar@12
 implib comctl32.dll, FlatSB_GetScrollInfo, _FlatSB_GetScrollInfo@12
 implib comctl32.dll, FlatSB_GetScrollPos, _FlatSB_GetScrollPos@8
@@ -133,7 +154,7 @@ implib comctl32.dll, ord.3, _ShowHideMenuCtl@12
 implib comctl32.dll, ord.233, _Str_GetPtrA@12
 implib comctl32.dll, ord.235, _Str_GetPtrW@12
 implib comctl32.dll, ord.234, _Str_SetPtrA@8
-implib comctl32.dll, Str_SetPtrW, _Str_SetPtrW@8
+implib comctl32.dll, ord.236, _Str_SetPtrW@8
 implib comctl32.dll, UninitializeFlatSB, _UninitializeFlatSB@4
 implib comctl32.dll, _TrackMouseEvent, __TrackMouseEvent@4
 
