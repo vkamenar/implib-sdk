@@ -1,11 +1,29 @@
 include '..\implib64.inc'
 
-implib comctl32.dll, AddMRUStringW
-implib comctl32.dll, CreateMRUListW
+; The following symbols are commented out to limit the size of the library.
+; They are available in specific comctl32 versions only.
+; Feel free to uncomment the necessary symbols and recompile the library.
+
+; *** Functions discontinued in v6.10 (Windows Vista / Server 2008 / 7)
+; implib comctl32.dll, ord.71, Alloc
+; implib comctl32.dll, ord.163, CreatePage
+; implib comctl32.dll, ord.73, Free
+; implib comctl32.dll, ord.74, GetSize
+; implib comctl32.dll, ord.72, ReAlloc
+
+; *** Function discontinued in v5.82 (Windows Vista)
+; implib comctl32.dll, DllInstall, COMCTL32_DllInstall
+
+implib comctl32.dll, ord.167, AddMRUData
+implib comctl32.dll, ord.153, AddMRUStringA
+implib comctl32.dll, ord.401, AddMRUStringW
+implib comctl32.dll, ord.151, CreateMRUListA
+implib comctl32.dll, ord.400, CreateMRUListW
 implib comctl32.dll, ord.8, CreateMappedBitmap
 implib comctl32.dll, CreatePropertySheetPage
 implib comctl32.dll, CreatePropertySheetPageA
 implib comctl32.dll, CreatePropertySheetPageW
+implib comctl32.dll, ord.164, CreateProxyPage
 implib comctl32.dll, CreateStatusWindow
 implib comctl32.dll, CreateStatusWindowA
 implib comctl32.dll, CreateStatusWindowW
@@ -30,24 +48,27 @@ implib comctl32.dll, DPA_SaveStream
 implib comctl32.dll, DPA_Search
 implib comctl32.dll, DPA_SetPtr
 implib comctl32.dll, DPA_Sort
-implib comctl32.dll, DSA_Create
+implib comctl32.dll, ord.320, DSA_Create
 implib comctl32.dll, DSA_DeleteAllItems
 implib comctl32.dll, DSA_DeleteItem
-implib comctl32.dll, DSA_Destroy
+implib comctl32.dll, ord.321, DSA_Destroy
 implib comctl32.dll, DSA_DestroyCallback
 implib comctl32.dll, DSA_EnumCallback
-implib comctl32.dll, DSA_GetItem
-implib comctl32.dll, DSA_GetItemPtr
+implib comctl32.dll, ord.322, DSA_GetItem
+implib comctl32.dll, ord.323, DSA_GetItemPtr
 implib comctl32.dll, DSA_InsertItem
 implib comctl32.dll, DSA_SetItem
 implib comctl32.dll, DefSubclassProc
+implib comctl32.dll, ord.156, DelMRUString
 implib comctl32.dll, DestroyPropertySheetPage
 implib comctl32.dll, DllGetVersion, COMCTL32_DllGetVersion
 implib comctl32.dll, ord.15, DrawInsert
 implib comctl32.dll, DrawStatusText
 implib comctl32.dll, DrawStatusTextA
 implib comctl32.dll, DrawStatusTextW
+implib comctl32.dll, ord.154, EnumMRUListA
 implib comctl32.dll, EnumMRUListW
+implib comctl32.dll, ord.155, FindMRUStringA
 implib comctl32.dll, FlatSB_EnableScrollBar
 implib comctl32.dll, FlatSB_GetScrollInfo
 implib comctl32.dll, FlatSB_GetScrollPos
@@ -59,7 +80,7 @@ implib comctl32.dll, FlatSB_SetScrollPos
 implib comctl32.dll, FlatSB_SetScrollProp
 implib comctl32.dll, FlatSB_SetScrollRange
 implib comctl32.dll, FlatSB_ShowScrollBar
-implib comctl32.dll, FreeMRUList
+implib comctl32.dll, ord.152, FreeMRUList
 implib comctl32.dll, ord.4, GetEffectiveClientRect
 implib comctl32.dll, GetMUILanguage
 implib comctl32.dll, ImageList_Add
@@ -116,7 +137,10 @@ implib comctl32.dll, RegisterClassNameW
 implib comctl32.dll, RemoveWindowSubclass
 implib comctl32.dll, SetWindowSubclass
 implib comctl32.dll, ord.3, ShowHideMenuCtl
-implib comctl32.dll, Str_SetPtrW
+implib comctl32.dll, ord.233, Str_GetPtrA
+implib comctl32.dll, ord.235, Str_GetPtrW
+implib comctl32.dll, ord.234, Str_SetPtrA
+implib comctl32.dll, ord.236, Str_SetPtrW
 implib comctl32.dll, UninitializeFlatSB
 implib comctl32.dll, _TrackMouseEvent
 
