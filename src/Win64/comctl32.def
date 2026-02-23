@@ -30,34 +30,34 @@ implib comctl32.dll, CreateStatusWindowW
 implib comctl32.dll, ord.7, CreateToolbar
 implib comctl32.dll, CreateToolbarEx
 implib comctl32.dll, ord.16, CreateUpDownControl
-implib comctl32.dll, DPA_Clone
-implib comctl32.dll, DPA_Create
-implib comctl32.dll, DPA_CreateEx
-implib comctl32.dll, DPA_DeleteAllPtrs
-implib comctl32.dll, DPA_DeletePtr
-implib comctl32.dll, DPA_Destroy
+implib comctl32.dll, ord.331, DPA_Clone
+implib comctl32.dll, ord.328, DPA_Create
+implib comctl32.dll, ord.340, DPA_CreateEx
+implib comctl32.dll, ord.337, DPA_DeleteAllPtrs
+implib comctl32.dll, ord.336, DPA_DeletePtr
+implib comctl32.dll, ord.329, DPA_Destroy
 implib comctl32.dll, DPA_DestroyCallback
 implib comctl32.dll, DPA_EnumCallback
-implib comctl32.dll, DPA_GetPtr
-implib comctl32.dll, DPA_GetPtrIndex
-implib comctl32.dll, DPA_Grow
-implib comctl32.dll, DPA_InsertPtr
+implib comctl32.dll, ord.332, DPA_GetPtr
+implib comctl32.dll, ord.333, DPA_GetPtrIndex
+implib comctl32.dll, ord.330, DPA_Grow
+implib comctl32.dll, ord.334, DPA_InsertPtr
 implib comctl32.dll, DPA_LoadStream
 implib comctl32.dll, DPA_Merge
 implib comctl32.dll, DPA_SaveStream
-implib comctl32.dll, DPA_Search
-implib comctl32.dll, DPA_SetPtr
-implib comctl32.dll, DPA_Sort
+implib comctl32.dll, ord.339, DPA_Search
+implib comctl32.dll, ord.335, DPA_SetPtr
+implib comctl32.dll, ord.338, DPA_Sort
 implib comctl32.dll, ord.320, DSA_Create
-implib comctl32.dll, DSA_DeleteAllItems
-implib comctl32.dll, DSA_DeleteItem
+implib comctl32.dll, ord.327, DSA_DeleteAllItems
+implib comctl32.dll, ord.326, DSA_DeleteItem
 implib comctl32.dll, ord.321, DSA_Destroy
 implib comctl32.dll, DSA_DestroyCallback
 implib comctl32.dll, DSA_EnumCallback
 implib comctl32.dll, ord.322, DSA_GetItem
 implib comctl32.dll, ord.323, DSA_GetItemPtr
-implib comctl32.dll, DSA_InsertItem
-implib comctl32.dll, DSA_SetItem
+implib comctl32.dll, ord.324, DSA_InsertItem
+implib comctl32.dll, ord.325, DSA_SetItem
 implib comctl32.dll, DefSubclassProc
 implib comctl32.dll, ord.156, DelMRUString
 implib comctl32.dll, DestroyPropertySheetPage
@@ -135,6 +135,8 @@ implib comctl32.dll, PropertySheetA
 implib comctl32.dll, PropertySheetW
 implib comctl32.dll, RegisterClassNameW
 implib comctl32.dll, RemoveWindowSubclass
+implib comctl32.dll, ord.341, SendNotify
+implib comctl32.dll, ord.342, SendNotifyEx
 implib comctl32.dll, SetWindowSubclass
 implib comctl32.dll, ord.3, ShowHideMenuCtl
 implib comctl32.dll, ord.233, Str_GetPtrA
