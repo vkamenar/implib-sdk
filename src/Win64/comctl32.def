@@ -10,6 +10,19 @@ include '..\implib64.inc'
 ; implib comctl32.dll, ord.73, Free
 ; implib comctl32.dll, ord.74, GetSize
 ; implib comctl32.dll, ord.72, ReAlloc
+; implib comctl32.dll, ord.356, StrCSpnA
+; implib comctl32.dll, ord.350, StrChrA
+; implib comctl32.dll, ord.358, StrChrW
+; implib comctl32.dll, ord.352, StrCmpNA
+; implib comctl32.dll, ord.353, StrCmpNIA
+; implib comctl32.dll, ord.361, StrCmpNIW
+; implib comctl32.dll, ord.360, StrCmpNW
+; implib comctl32.dll, ord.351, StrRChrA
+; implib comctl32.dll, ord.359, StrRChrW
+; implib comctl32.dll, ord.354, StrStrA
+; implib comctl32.dll, ord.355, StrStrIA
+; implib comctl32.dll, ord.362, StrStrW
+; implib comctl32.dll, ord.357, StrToIntA
 
 ; *** Function discontinued in v5.82 (Windows Vista)
 ; implib comctl32.dll, DllInstall, COMCTL32_DllInstall
