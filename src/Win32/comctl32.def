@@ -11,18 +11,27 @@ include '..\implib.inc'
 ; implib comctl32.dll, ord.74, _GetSize@4
 ; implib comctl32.dll, ord.72, _ReAlloc@8
 ; implib comctl32.dll, ord.356, _StrCSpnA@8
+; implib comctl32.dll, ord.374, _StrCSpnIA@8
+; implib comctl32.dll, ord.364, _StrCSpnW@8
 ; implib comctl32.dll, ord.350, _StrChrA@8
+; implib comctl32.dll, ord.366, _StrChrIA@8
+; implib comctl32.dll, ord.367, _StrChrIW@8
 ; implib comctl32.dll, ord.358, _StrChrW@8
 ; implib comctl32.dll, ord.352, _StrCmpNA@12
 ; implib comctl32.dll, ord.353, _StrCmpNIA@12
 ; implib comctl32.dll, ord.361, _StrCmpNIW@12
 ; implib comctl32.dll, ord.360, _StrCmpNW@12
 ; implib comctl32.dll, ord.351, _StrRChrA@12
+; implib comctl32.dll, ord.368, _StrRChrIA@12
 ; implib comctl32.dll, ord.359, _StrRChrW@12
+; implib comctl32.dll, ord.372, _StrRStrIA@12
+; implib comctl32.dll, ord.373, _StrRStrIW@12
 ; implib comctl32.dll, ord.354, _StrStrA@8
 ; implib comctl32.dll, ord.355, _StrStrIA@8
+; implib comctl32.dll, ord.363, _StrStrIW@8
 ; implib comctl32.dll, ord.362, _StrStrW@8
 ; implib comctl32.dll, ord.357, _StrToIntA@4
+; implib comctl32.dll, ord.365, _StrToIntW@4
 
 ; *** Function discontinued in v5.82 (Windows Vista)
 ; implib comctl32.dll, DllInstall, _COMCTL32_DllInstall@8
@@ -92,6 +101,7 @@ implib comctl32.dll, ord.403, _EnumMRUListW@16
 implib comctl32.dll, ord.417, _ExtTextOutWrap@32
 implib comctl32.dll, ord.169, _FindMRUData@16
 implib comctl32.dll, ord.155, _FindMRUStringA@12
+implib comctl32.dll, ord.402, _FindMRUStringW@12
 implib comctl32.dll, FlatSB_EnableScrollBar, _FlatSB_EnableScrollBar@12
 implib comctl32.dll, FlatSB_GetScrollInfo, _FlatSB_GetScrollInfo@12
 implib comctl32.dll, FlatSB_GetScrollPos, _FlatSB_GetScrollPos@8
