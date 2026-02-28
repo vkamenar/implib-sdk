@@ -12,6 +12,7 @@ include '..\implib64.inc'
 ; implib comctl32.dll, ord.72, ReAlloc
 ; implib comctl32.dll, ord.356, StrCSpnA
 ; implib comctl32.dll, ord.374, StrCSpnIA
+; implib comctl32.dll, ord.375, StrCSpnIW
 ; implib comctl32.dll, ord.364, StrCSpnW
 ; implib comctl32.dll, ord.350, StrChrA
 ; implib comctl32.dll, ord.366, StrChrIA
@@ -23,6 +24,7 @@ include '..\implib64.inc'
 ; implib comctl32.dll, ord.360, StrCmpNW
 ; implib comctl32.dll, ord.351, StrRChrA
 ; implib comctl32.dll, ord.368, StrRChrIA
+; implib comctl32.dll, ord.369, StrRChrIW
 ; implib comctl32.dll, ord.359, StrRChrW
 ; implib comctl32.dll, ord.372, StrRStrIA
 ; implib comctl32.dll, ord.373, StrRStrIW
