@@ -4,6 +4,9 @@ include '..\implib.inc'
 ; They are available in specific comctl32 versions only.
 ; Feel free to uncomment the necessary symbols and recompile the library.
 
+; *** Function available in v4.00 only
+; implib comctl32.dll, EmulateTrackMouseEvent ; Superseded by _TrackMouseEvent in v4.70
+
 ; *** Functions discontinued in v6.10 (Windows Vista / Server 2008 / 7)
 ; implib comctl32.dll, ord.71, _Alloc@4
 ; implib comctl32.dll, ord.163, _CreatePage@8
@@ -12,6 +15,7 @@ include '..\implib.inc'
 ; implib comctl32.dll, ord.72, _ReAlloc@8
 ; implib comctl32.dll, ord.356, _StrCSpnA@8
 ; implib comctl32.dll, ord.374, _StrCSpnIA@8
+; implib comctl32.dll, ord.375, _StrCSpnIW@8
 ; implib comctl32.dll, ord.364, _StrCSpnW@8
 ; implib comctl32.dll, ord.350, _StrChrA@8
 ; implib comctl32.dll, ord.366, _StrChrIA@8
@@ -23,6 +27,7 @@ include '..\implib.inc'
 ; implib comctl32.dll, ord.360, _StrCmpNW@12
 ; implib comctl32.dll, ord.351, _StrRChrA@12
 ; implib comctl32.dll, ord.368, _StrRChrIA@12
+; implib comctl32.dll, ord.369, _StrRChrIW@12
 ; implib comctl32.dll, ord.359, _StrRChrW@12
 ; implib comctl32.dll, ord.372, _StrRStrIA@12
 ; implib comctl32.dll, ord.373, _StrRStrIW@12
