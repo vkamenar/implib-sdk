@@ -12,6 +12,8 @@ include '..\implib.inc'
 ; implib comctl32.dll, ord.163, _CreatePage@8
 ; implib comctl32.dll, ord.73, _Free@4
 ; implib comctl32.dll, ord.74, _GetSize@4
+; implib comctl32.dll, ord.376, _IntlStrEqWorkerA@16
+; implib comctl32.dll, ord.377, _IntlStrEqWorkerW@16
 ; implib comctl32.dll, ord.72, _ReAlloc@8
 ; implib comctl32.dll, ord.356, _StrCSpnA@8
 ; implib comctl32.dll, ord.374, _StrCSpnIA@8
@@ -57,7 +59,6 @@ implib comctl32.dll, CreateStatusWindowW, _CreateStatusWindowW@16
 implib comctl32.dll, ord.7, _CreateToolbar@32
 implib comctl32.dll, CreateToolbarEx, _CreateToolbarEx@52
 implib comctl32.dll, ord.16, _CreateUpDownControl@48
-implib comctl32.dll, ord.383, _DoReaderMode@4
 implib comctl32.dll, ord.331, _DPA_Clone@8
 implib comctl32.dll, ord.328, _DPA_Create@4
 implib comctl32.dll, ord.340, _DPA_CreateEx@8
@@ -94,6 +95,7 @@ implib comctl32.dll, DefSubclassProc, _DefSubclassProc@16
 implib comctl32.dll, ord.156, _DelMRUString@8
 implib comctl32.dll, DestroyPropertySheetPage, _DestroyPropertySheetPage@4
 implib comctl32.dll, DllGetVersion, _COMCTL32_DllGetVersion@4
+implib comctl32.dll, ord.383, _DoReaderMode@4
 implib comctl32.dll, DrawShadowText, _DrawShadowText@36
 implib comctl32.dll, ord.416, _DrawTextExPrivWrap@24
 implib comctl32.dll, ord.415, _DrawTextWrap@24
@@ -179,8 +181,10 @@ implib comctl32.dll, RegisterClassNameW, _RegisterClassNameW@4
 implib comctl32.dll, RemoveWindowSubclass, _RemoveWindowSubclass@12
 implib comctl32.dll, ord.341, _SendNotify@16
 implib comctl32.dll, ord.342, _SendNotifyEx@20
+implib comctl32.dll, ord.384, _SetPathWordBreakProc@8
 implib comctl32.dll, SetWindowSubclass, _SetWindowSubclass@16
 implib comctl32.dll, ord.3, _ShowHideMenuCtl@12
+implib comctl32.dll, ord.382, _SmoothScrollWindow@4
 implib comctl32.dll, ord.233, _Str_GetPtrA@12
 implib comctl32.dll, ord.235, _Str_GetPtrW@12
 implib comctl32.dll, ord.234, _Str_SetPtrA@8
