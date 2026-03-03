@@ -47,6 +47,8 @@ implib comctl32.dll, ord.167, _AddMRUData@12
 implib comctl32.dll, ord.153, _AddMRUStringA@8
 implib comctl32.dll, ord.401, _AddMRUStringW@8
 implib comctl32.dll, ord.151, _CreateMRUListA@4
+implib comctl32.dll, ord.157, _CreateMRUListLazyA@16
+implib comctl32.dll, ord.404, _CreateMRUListLazyW@16
 implib comctl32.dll, ord.400, _CreateMRUListW@4
 implib comctl32.dll, ord.8, _CreateMappedBitmap@20
 implib comctl32.dll, CreatePropertySheetPage, _CreatePropertySheetPage@4
@@ -65,8 +67,8 @@ implib comctl32.dll, ord.340, _DPA_CreateEx@8
 implib comctl32.dll, ord.337, _DPA_DeleteAllPtrs@4
 implib comctl32.dll, ord.336, _DPA_DeletePtr@8
 implib comctl32.dll, ord.329, _DPA_Destroy@4
-implib comctl32.dll, DPA_DestroyCallback, _DPA_DestroyCallback@12
-implib comctl32.dll, DPA_EnumCallback, _DPA_EnumCallback@12
+implib comctl32.dll, ord.386, _DPA_DestroyCallback@12
+implib comctl32.dll, ord.385, _DPA_EnumCallback@12
 implib comctl32.dll, ord.332, _DPA_GetPtr@8
 implib comctl32.dll, ord.333, _DPA_GetPtrIndex@8
 implib comctl32.dll, DPA_GetSize, _DPA_GetSize@4
@@ -83,8 +85,8 @@ implib comctl32.dll, ord.320, _DSA_Create@8
 implib comctl32.dll, ord.327, _DSA_DeleteAllItems@4
 implib comctl32.dll, ord.326, _DSA_DeleteItem@8
 implib comctl32.dll, ord.321, _DSA_Destroy@4
-implib comctl32.dll, DSA_DestroyCallback, _DSA_DestroyCallback@12
-implib comctl32.dll, DSA_EnumCallback, _DSA_EnumCallback@12
+implib comctl32.dll, ord.388, _DSA_DestroyCallback@12
+implib comctl32.dll, ord.387, _DSA_EnumCallback@12
 implib comctl32.dll, ord.322, _DSA_GetItem@12
 implib comctl32.dll, ord.323, _DSA_GetItemPtr@8
 implib comctl32.dll, DSA_GetSize, _DSA_GetSize@4
@@ -157,6 +159,7 @@ implib comctl32.dll, ImageList_Remove, _ImageList_Remove@8
 implib comctl32.dll, ImageList_Replace, _ImageList_Replace@16
 implib comctl32.dll, ImageList_ReplaceIcon, _ImageList_ReplaceIcon@12
 implib comctl32.dll, ImageList_SetBkColor, _ImageList_SetBkColor@8
+implib comctl32.dll, ord.390, _ImageList_SetColorTable@16
 implib comctl32.dll, ImageList_SetDragCursorImage, _ImageList_SetDragCursorImage@16
 implib comctl32.dll, ImageList_SetFilter, _ImageList_SetFilter@12
 implib comctl32.dll, ImageList_SetFlags, _ImageList_SetFlags@8
@@ -179,10 +182,11 @@ implib comctl32.dll, PropertySheetA, _PropertySheetA@4
 implib comctl32.dll, PropertySheetW, _PropertySheetW@4
 implib comctl32.dll, RegisterClassNameW, _RegisterClassNameW@4
 implib comctl32.dll, RemoveWindowSubclass, _RemoveWindowSubclass@12
+implib comctl32.dll, ord.389, _SHGetProcessDword@8
 implib comctl32.dll, ord.341, _SendNotify@16
 implib comctl32.dll, ord.342, _SendNotifyEx@20
 implib comctl32.dll, ord.384, _SetPathWordBreakProc@8
-implib comctl32.dll, SetWindowSubclass, _SetWindowSubclass@16
+implib comctl32.dll, ord.410, _SetWindowSubclass@16
 implib comctl32.dll, ord.3, _ShowHideMenuCtl@12
 implib comctl32.dll, ord.382, _SmoothScrollWindow@4
 implib comctl32.dll, ord.233, _Str_GetPtrA@12
