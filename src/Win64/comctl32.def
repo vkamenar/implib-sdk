@@ -9,6 +9,8 @@ include '..\implib64.inc'
 ; implib comctl32.dll, ord.163, CreatePage
 ; implib comctl32.dll, ord.73, Free
 ; implib comctl32.dll, ord.74, GetSize
+; implib comctl32.dll, ord.376, IntlStrEqWorkerA
+; implib comctl32.dll, ord.377, IntlStrEqWorkerW
 ; implib comctl32.dll, ord.72, ReAlloc
 ; implib comctl32.dll, ord.356, StrCSpnA
 ; implib comctl32.dll, ord.374, StrCSpnIA
@@ -66,7 +68,7 @@ implib comctl32.dll, ord.332, DPA_GetPtr
 implib comctl32.dll, ord.333, DPA_GetPtrIndex
 implib comctl32.dll, ord.330, DPA_Grow
 implib comctl32.dll, ord.334, DPA_InsertPtr
-implib comctl32.dll, DPA_LoadStream
+implib comctl32.dll, ord.9, DPA_LoadStream
 implib comctl32.dll, DPA_Merge
 implib comctl32.dll, DPA_SaveStream
 implib comctl32.dll, ord.339, DPA_Search
@@ -86,6 +88,7 @@ implib comctl32.dll, DefSubclassProc
 implib comctl32.dll, ord.156, DelMRUString
 implib comctl32.dll, DestroyPropertySheetPage
 implib comctl32.dll, DllGetVersion, COMCTL32_DllGetVersion
+implib comctl32.dll, ord.383, DoReaderMode
 implib comctl32.dll, ord.15, DrawInsert
 implib comctl32.dll, DrawStatusText
 implib comctl32.dll, DrawStatusTextA
@@ -162,8 +165,10 @@ implib comctl32.dll, RegisterClassNameW
 implib comctl32.dll, RemoveWindowSubclass
 implib comctl32.dll, ord.341, SendNotify
 implib comctl32.dll, ord.342, SendNotifyEx
+implib comctl32.dll, ord.384, SetPathWordBreakProc
 implib comctl32.dll, SetWindowSubclass
 implib comctl32.dll, ord.3, ShowHideMenuCtl
+implib comctl32.dll, ord.382, SmoothScrollWindow
 implib comctl32.dll, ord.233, Str_GetPtrA
 implib comctl32.dll, ord.235, Str_GetPtrW
 implib comctl32.dll, ord.234, Str_SetPtrA
