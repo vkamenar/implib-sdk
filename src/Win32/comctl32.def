@@ -93,7 +93,7 @@ implib comctl32.dll, DSA_GetSize, _DSA_GetSize@4
 implib comctl32.dll, ord.324, _DSA_InsertItem@12
 implib comctl32.dll, ord.325, _DSA_SetItem@12
 implib comctl32.dll, DSA_Sort, _DSA_Sort@12
-implib comctl32.dll, DefSubclassProc, _DefSubclassProc@16
+implib comctl32.dll, ord.413, _DefSubclassProc@16
 implib comctl32.dll, ord.156, _DelMRUString@8
 implib comctl32.dll, DestroyPropertySheetPage, _DestroyPropertySheetPage@4
 implib comctl32.dll, DllGetVersion, _COMCTL32_DllGetVersion@4
@@ -122,10 +122,11 @@ implib comctl32.dll, FlatSB_SetScrollProp, _FlatSB_SetScrollProp@16
 implib comctl32.dll, FlatSB_SetScrollRange, _FlatSB_SetScrollRange@20
 implib comctl32.dll, FlatSB_ShowScrollBar, _FlatSB_ShowScrollBar@12
 implib comctl32.dll, ord.152, _FreeMRUList@4
+implib comctl32.dll, ord.418, _GetCharWidthWrap@16
 implib comctl32.dll, ord.4, _GetEffectiveClientRect@12
 implib comctl32.dll, GetMUILanguage, _GetMUILanguage@0
 implib comctl32.dll, ord.420, _GetTextExtentPoint32Wrap@16
-implib comctl32.dll, GetWindowSubclass, _GetWindowSubclass@16
+implib comctl32.dll, ord.411, _GetWindowSubclass@16
 implib comctl32.dll, ImageList_Add, _ImageList_Add@12
 implib comctl32.dll, ImageList_AddIcon, _ImageList_AddIcon@8
 implib comctl32.dll, ImageList_AddMasked, _ImageList_AddMasked@12
@@ -181,7 +182,7 @@ implib comctl32.dll, PropertySheet, _PropertySheet@4
 implib comctl32.dll, PropertySheetA, _PropertySheetA@4
 implib comctl32.dll, PropertySheetW, _PropertySheetW@4
 implib comctl32.dll, RegisterClassNameW, _RegisterClassNameW@4
-implib comctl32.dll, RemoveWindowSubclass, _RemoveWindowSubclass@12
+implib comctl32.dll, ord.412, _RemoveWindowSubclass@12
 implib comctl32.dll, ord.389, _SHGetProcessDword@8
 implib comctl32.dll, ord.341, _SendNotify@16
 implib comctl32.dll, ord.342, _SendNotifyEx@20
