@@ -86,7 +86,7 @@ implib comctl32.dll, ord.322, DSA_GetItem
 implib comctl32.dll, ord.323, DSA_GetItemPtr
 implib comctl32.dll, ord.324, DSA_InsertItem
 implib comctl32.dll, ord.325, DSA_SetItem
-implib comctl32.dll, DefSubclassProc
+implib comctl32.dll, ord.413, DefSubclassProc
 implib comctl32.dll, ord.156, DelMRUString
 implib comctl32.dll, DestroyPropertySheetPage
 implib comctl32.dll, DllGetVersion, COMCTL32_DllGetVersion
@@ -95,8 +95,11 @@ implib comctl32.dll, ord.15, DrawInsert
 implib comctl32.dll, DrawStatusText
 implib comctl32.dll, DrawStatusTextA
 implib comctl32.dll, DrawStatusTextW
+implib comctl32.dll, ord.416, DrawTextExPrivWrap
+implib comctl32.dll, ord.415, DrawTextWrap
 implib comctl32.dll, ord.154, EnumMRUListA
 implib comctl32.dll, ord.403, EnumMRUListW
+implib comctl32.dll, ord.417, ExtTextOutWrap
 implib comctl32.dll, ord.155, FindMRUStringA
 implib comctl32.dll, ord.402, FindMRUStringW
 implib comctl32.dll, FlatSB_EnableScrollBar
@@ -111,8 +114,10 @@ implib comctl32.dll, FlatSB_SetScrollProp
 implib comctl32.dll, FlatSB_SetScrollRange
 implib comctl32.dll, FlatSB_ShowScrollBar
 implib comctl32.dll, ord.152, FreeMRUList
+implib comctl32.dll, ord.418, GetCharWidthWrap
 implib comctl32.dll, ord.4, GetEffectiveClientRect
 implib comctl32.dll, GetMUILanguage
+implib comctl32.dll, ord.411, GetWindowSubclass
 implib comctl32.dll, ImageList_Add
 implib comctl32.dll, ImageList_AddIcon
 implib comctl32.dll, ImageList_AddMasked
@@ -161,11 +166,12 @@ implib comctl32.dll, InitializeFlatSB
 implib comctl32.dll, ord.14, LBItemFromPt
 implib comctl32.dll, ord.13, MakeDragList
 implib comctl32.dll, ord.2, MenuHelp
+implib comctl32.dll, ord.414, MirrorIcon
 implib comctl32.dll, PropertySheet
 implib comctl32.dll, PropertySheetA
 implib comctl32.dll, PropertySheetW
 implib comctl32.dll, RegisterClassNameW
-implib comctl32.dll, RemoveWindowSubclass
+implib comctl32.dll, ord.412, RemoveWindowSubclass
 implib comctl32.dll, ord.389, SHGetProcessDword
 implib comctl32.dll, ord.341, SendNotify
 implib comctl32.dll, ord.342, SendNotifyEx
