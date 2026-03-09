@@ -117,6 +117,8 @@ implib comctl32.dll, ord.152, FreeMRUList
 implib comctl32.dll, ord.418, GetCharWidthWrap
 implib comctl32.dll, ord.4, GetEffectiveClientRect
 implib comctl32.dll, GetMUILanguage
+implib comctl32.dll, ord.420, GetTextExtentPoint32Wrap ; An alias for GetTextExtentPointWrap
+implib comctl32.dll, ord.419, GetTextExtentPointWrap
 implib comctl32.dll, ord.411, GetWindowSubclass
 implib comctl32.dll, ImageList_Add
 implib comctl32.dll, ImageList_AddIcon
@@ -183,6 +185,7 @@ implib comctl32.dll, ord.233, Str_GetPtrA
 implib comctl32.dll, ord.235, Str_GetPtrW
 implib comctl32.dll, ord.234, Str_SetPtrA
 implib comctl32.dll, ord.236, Str_SetPtrW
+implib comctl32.dll, ord.421, TextOutWrap
 implib comctl32.dll, UninitializeFlatSB
 implib comctl32.dll, _TrackMouseEvent
 
