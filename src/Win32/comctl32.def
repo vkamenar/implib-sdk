@@ -46,6 +46,9 @@ include '..\implib.inc'
 implib comctl32.dll, ord.167, _AddMRUData@12
 implib comctl32.dll, ord.153, _AddMRUStringA@8
 implib comctl32.dll, ord.401, _AddMRUStringW@8
+implib comctl32.dll, AttachScrollBars, _AttachScrollBars@4
+implib comctl32.dll, CCEnableScrollBar, _CCEnableScrollBar@12
+implib comctl32.dll, CCGetScrollInfo, _CCGetScrollInfo@12
 implib comctl32.dll, ord.151, _CreateMRUListA@4
 implib comctl32.dll, ord.157, _CreateMRUListLazyA@16
 implib comctl32.dll, ord.404, _CreateMRUListLazyW@16
@@ -98,13 +101,13 @@ implib comctl32.dll, ord.156, _DelMRUString@8
 implib comctl32.dll, DestroyPropertySheetPage, _DestroyPropertySheetPage@4
 implib comctl32.dll, DllGetVersion, _COMCTL32_DllGetVersion@4
 implib comctl32.dll, ord.383, _DoReaderMode@4
-implib comctl32.dll, DrawShadowText, _DrawShadowText@36
-implib comctl32.dll, ord.416, _DrawTextExPrivWrap@24
-implib comctl32.dll, ord.415, _DrawTextWrap@24
 implib comctl32.dll, ord.15, _DrawInsert@12
+implib comctl32.dll, DrawShadowText, _DrawShadowText@36
 implib comctl32.dll, DrawStatusText, _DrawStatusText@16
 implib comctl32.dll, DrawStatusTextA, _DrawStatusTextA@16
 implib comctl32.dll, DrawStatusTextW, _DrawStatusTextW@16
+implib comctl32.dll, ord.416, _DrawTextExPrivWrap@24
+implib comctl32.dll, ord.415, _DrawTextWrap@24
 implib comctl32.dll, ord.154, _EnumMRUListA@16
 implib comctl32.dll, ord.403, _EnumMRUListW@16
 implib comctl32.dll, ord.417, _ExtTextOutWrap@32
@@ -128,6 +131,7 @@ implib comctl32.dll, GetMUILanguage, _GetMUILanguage@0
 implib comctl32.dll, ord.420, _GetTextExtentPoint32Wrap@16 ; An alias for GetTextExtentPointWrap
 implib comctl32.dll, ord.419, _GetTextExtentPointWrap@16
 implib comctl32.dll, ord.411, _GetWindowSubclass@16
+implib comctl32.dll, HIMAGELIST_QueryInterface, _HIMAGELIST_QueryInterface@12
 implib comctl32.dll, ImageList_Add, _ImageList_Add@12
 implib comctl32.dll, ImageList_AddIcon, _ImageList_AddIcon@8
 implib comctl32.dll, ImageList_AddMasked, _ImageList_AddMasked@12
@@ -157,6 +161,7 @@ implib comctl32.dll, ImageList_LoadImageA, _ImageList_LoadImageA@28
 implib comctl32.dll, ImageList_LoadImageW, _ImageList_LoadImageW@28
 implib comctl32.dll, ImageList_Merge, _ImageList_Merge@24
 implib comctl32.dll, ImageList_Read, _ImageList_Read@4
+implib comctl32.dll, ImageList_ReadEx, _ImageList_ReadEx@16
 implib comctl32.dll, ImageList_Remove, _ImageList_Remove@8
 implib comctl32.dll, ImageList_Replace, _ImageList_Replace@16
 implib comctl32.dll, ImageList_ReplaceIcon, _ImageList_ReplaceIcon@12
@@ -169,6 +174,7 @@ implib comctl32.dll, ImageList_SetIconSize, _ImageList_SetIconSize@12
 implib comctl32.dll, ImageList_SetImageCount, _ImageList_SetImageCount@8
 implib comctl32.dll, ImageList_SetOverlayImage, _ImageList_SetOverlayImage@12
 implib comctl32.dll, ImageList_Write, _ImageList_Write@8
+implib comctl32.dll, ImageList_WriteEx, _ImageList_WriteEx@12
 implib comctl32.dll, ord.17, _InitCommonControls@0
 implib comctl32.dll, InitCommonControlsEx, _InitCommonControlsEx@4
 implib comctl32.dll, InitMUILanguage, _InitMUILanguage@4
