@@ -43,6 +43,9 @@ include '..\implib64.inc'
 implib comctl32.dll, ord.167, AddMRUData
 implib comctl32.dll, ord.153, AddMRUStringA
 implib comctl32.dll, ord.401, AddMRUStringW
+implib comctl32.dll, AttachScrollBars
+implib comctl32.dll, CCEnableScrollBar
+implib comctl32.dll, CCGetScrollInfo
 implib comctl32.dll, ord.151, CreateMRUListA
 implib comctl32.dll, ord.157, CreateMRUListLazyA
 implib comctl32.dll, ord.404, CreateMRUListLazyW
@@ -92,6 +95,7 @@ implib comctl32.dll, DestroyPropertySheetPage
 implib comctl32.dll, DllGetVersion, COMCTL32_DllGetVersion
 implib comctl32.dll, ord.383, DoReaderMode
 implib comctl32.dll, ord.15, DrawInsert
+implib comctl32.dll, DrawShadowText
 implib comctl32.dll, DrawStatusText
 implib comctl32.dll, DrawStatusTextA
 implib comctl32.dll, DrawStatusTextW
@@ -120,6 +124,7 @@ implib comctl32.dll, GetMUILanguage
 implib comctl32.dll, ord.420, GetTextExtentPoint32Wrap ; An alias for GetTextExtentPointWrap
 implib comctl32.dll, ord.419, GetTextExtentPointWrap
 implib comctl32.dll, ord.411, GetWindowSubclass
+implib comctl32.dll, HIMAGELIST_QueryInterface
 implib comctl32.dll, ImageList_Add
 implib comctl32.dll, ImageList_AddIcon
 implib comctl32.dll, ImageList_AddMasked
@@ -149,6 +154,7 @@ implib comctl32.dll, ImageList_LoadImageA
 implib comctl32.dll, ImageList_LoadImageW
 implib comctl32.dll, ImageList_Merge
 implib comctl32.dll, ImageList_Read
+implib comctl32.dll, ImageList_ReadEx
 implib comctl32.dll, ImageList_Remove
 implib comctl32.dll, ImageList_Replace
 implib comctl32.dll, ImageList_ReplaceIcon
@@ -161,6 +167,7 @@ implib comctl32.dll, ImageList_SetIconSize
 implib comctl32.dll, ImageList_SetImageCount
 implib comctl32.dll, ImageList_SetOverlayImage
 implib comctl32.dll, ImageList_Write
+implib comctl32.dll, ImageList_WriteEx
 implib comctl32.dll, ord.17, InitCommonControls
 implib comctl32.dll, InitCommonControlsEx
 implib comctl32.dll, InitMUILanguage
