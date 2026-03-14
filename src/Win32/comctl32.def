@@ -49,6 +49,7 @@ implib comctl32.dll, ord.401, _AddMRUStringW@8
 implib comctl32.dll, AttachScrollBars, _AttachScrollBars@4
 implib comctl32.dll, CCEnableScrollBar, _CCEnableScrollBar@12
 implib comctl32.dll, CCGetScrollInfo, _CCGetScrollInfo@12
+implib comctl32.dll, CCSetScrollInfo, _CCSetScrollInfo@16
 implib comctl32.dll, ord.151, _CreateMRUListA@4
 implib comctl32.dll, ord.157, _CreateMRUListLazyA@16
 implib comctl32.dll, ord.404, _CreateMRUListLazyW@16
@@ -99,10 +100,13 @@ implib comctl32.dll, DSA_Sort, _DSA_Sort@12
 implib comctl32.dll, ord.413, _DefSubclassProc@16
 implib comctl32.dll, ord.156, _DelMRUString@8
 implib comctl32.dll, DestroyPropertySheetPage, _DestroyPropertySheetPage@4
+implib comctl32.dll, DetachScrollBars, _DetachScrollBars@4
 implib comctl32.dll, DllGetVersion, _COMCTL32_DllGetVersion@4
 implib comctl32.dll, ord.383, _DoReaderMode@4
 implib comctl32.dll, ord.15, _DrawInsert@12
+implib comctl32.dll, DrawScrollBar, _DrawScrollBar@16
 implib comctl32.dll, DrawShadowText, _DrawShadowText@36
+implib comctl32.dll, DrawSizeBox, _DrawSizeBox@16
 implib comctl32.dll, DrawStatusText, _DrawStatusText@16
 implib comctl32.dll, DrawStatusTextA, _DrawStatusTextA@16
 implib comctl32.dll, DrawStatusTextW, _DrawStatusTextW@16
@@ -132,13 +136,16 @@ implib comctl32.dll, ord.420, _GetTextExtentPoint32Wrap@16 ; An alias for GetTex
 implib comctl32.dll, ord.419, _GetTextExtentPointWrap@16
 implib comctl32.dll, ord.411, _GetWindowSubclass@16
 implib comctl32.dll, HIMAGELIST_QueryInterface, _HIMAGELIST_QueryInterface@12
+implib comctl32.dll, HandleScrollCmd, _HandleScrollCmd@12
 implib comctl32.dll, ImageList_Add, _ImageList_Add@12
 implib comctl32.dll, ImageList_AddIcon, _ImageList_AddIcon@8
 implib comctl32.dll, ImageList_AddMasked, _ImageList_AddMasked@12
 implib comctl32.dll, ImageList_BeginDrag, _ImageList_BeginDrag@16
+implib comctl32.dll, ImageList_CoCreateInstance, _ImageList_CoCreateInstance@16
 implib comctl32.dll, ImageList_Copy, _ImageList_Copy@20
 implib comctl32.dll, ImageList_Create, _ImageList_Create@20
 implib comctl32.dll, ImageList_Destroy, _ImageList_Destroy@4
+implib comctl32.dll, ImageList_DestroyShared, _ImageList_DestroyShared@4
 implib comctl32.dll, ImageList_DragEnter, _ImageList_DragEnter@12
 implib comctl32.dll, ImageList_DragLeave, _ImageList_DragLeave@4
 implib comctl32.dll, ImageList_DragMove, _ImageList_DragMove@8
@@ -165,6 +172,7 @@ implib comctl32.dll, ImageList_ReadEx, _ImageList_ReadEx@16
 implib comctl32.dll, ImageList_Remove, _ImageList_Remove@8
 implib comctl32.dll, ImageList_Replace, _ImageList_Replace@16
 implib comctl32.dll, ImageList_ReplaceIcon, _ImageList_ReplaceIcon@12
+implib comctl32.dll, ImageList_Resize, _ImageList_Resize@12
 implib comctl32.dll, ImageList_SetBkColor, _ImageList_SetBkColor@8
 implib comctl32.dll, ord.390, _ImageList_SetColorTable@16
 implib comctl32.dll, ImageList_SetDragCursorImage, _ImageList_SetDragCursorImage@16
