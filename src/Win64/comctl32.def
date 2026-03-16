@@ -46,6 +46,7 @@ implib comctl32.dll, ord.401, AddMRUStringW
 implib comctl32.dll, AttachScrollBars
 implib comctl32.dll, CCEnableScrollBar
 implib comctl32.dll, CCGetScrollInfo
+implib comctl32.dll, CCSetScrollInfo
 implib comctl32.dll, ord.151, CreateMRUListA
 implib comctl32.dll, ord.157, CreateMRUListLazyA
 implib comctl32.dll, ord.404, CreateMRUListLazyW
@@ -71,6 +72,7 @@ implib comctl32.dll, ord.386, DPA_DestroyCallback
 implib comctl32.dll, ord.385, DPA_EnumCallback
 implib comctl32.dll, ord.332, DPA_GetPtr
 implib comctl32.dll, ord.333, DPA_GetPtrIndex
+implib comctl32.dll, DPA_GetSize
 implib comctl32.dll, ord.330, DPA_Grow
 implib comctl32.dll, ord.334, DPA_InsertPtr
 implib comctl32.dll, ord.9, DPA_LoadStream
@@ -79,6 +81,7 @@ implib comctl32.dll, ord.10, DPA_SaveStream
 implib comctl32.dll, ord.339, DPA_Search
 implib comctl32.dll, ord.335, DPA_SetPtr
 implib comctl32.dll, ord.338, DPA_Sort
+implib comctl32.dll, DSA_Clone
 implib comctl32.dll, ord.320, DSA_Create
 implib comctl32.dll, ord.327, DSA_DeleteAllItems
 implib comctl32.dll, ord.326, DSA_DeleteItem
@@ -87,15 +90,20 @@ implib comctl32.dll, ord.388, DSA_DestroyCallback
 implib comctl32.dll, ord.387, DSA_EnumCallback
 implib comctl32.dll, ord.322, DSA_GetItem
 implib comctl32.dll, ord.323, DSA_GetItemPtr
+implib comctl32.dll, DSA_GetSize
 implib comctl32.dll, ord.324, DSA_InsertItem
 implib comctl32.dll, ord.325, DSA_SetItem
+implib comctl32.dll, DSA_Sort
 implib comctl32.dll, ord.413, DefSubclassProc
 implib comctl32.dll, ord.156, DelMRUString
 implib comctl32.dll, DestroyPropertySheetPage
+implib comctl32.dll, DetachScrollBars
 implib comctl32.dll, DllGetVersion, COMCTL32_DllGetVersion
 implib comctl32.dll, ord.383, DoReaderMode
 implib comctl32.dll, ord.15, DrawInsert
+implib comctl32.dll, DrawScrollBar
 implib comctl32.dll, DrawShadowText
+implib comctl32.dll, DrawSizeBox
 implib comctl32.dll, DrawStatusText
 implib comctl32.dll, DrawStatusTextA
 implib comctl32.dll, DrawStatusTextW
@@ -125,13 +133,16 @@ implib comctl32.dll, ord.420, GetTextExtentPoint32Wrap ; An alias for GetTextExt
 implib comctl32.dll, ord.419, GetTextExtentPointWrap
 implib comctl32.dll, ord.411, GetWindowSubclass
 implib comctl32.dll, HIMAGELIST_QueryInterface
+implib comctl32.dll, HandleScrollCmd
 implib comctl32.dll, ImageList_Add
 implib comctl32.dll, ImageList_AddIcon
 implib comctl32.dll, ImageList_AddMasked
 implib comctl32.dll, ImageList_BeginDrag
+implib comctl32.dll, ImageList_CoCreateInstance
 implib comctl32.dll, ImageList_Copy
 implib comctl32.dll, ImageList_Create
 implib comctl32.dll, ImageList_Destroy
+implib comctl32.dll, ImageList_DestroyShared
 implib comctl32.dll, ImageList_DragEnter
 implib comctl32.dll, ImageList_DragLeave
 implib comctl32.dll, ImageList_DragMove
@@ -158,6 +169,7 @@ implib comctl32.dll, ImageList_ReadEx
 implib comctl32.dll, ImageList_Remove
 implib comctl32.dll, ImageList_Replace
 implib comctl32.dll, ImageList_ReplaceIcon
+implib comctl32.dll, ImageList_Resize
 implib comctl32.dll, ImageList_SetBkColor
 implib comctl32.dll, ord.390, ImageList_SetColorTable
 implib comctl32.dll, ImageList_SetDragCursorImage
@@ -173,6 +185,7 @@ implib comctl32.dll, InitCommonControlsEx
 implib comctl32.dll, InitMUILanguage
 implib comctl32.dll, InitializeFlatSB
 implib comctl32.dll, ord.14, LBItemFromPt
+implib comctl32.dll, LoadIconMetric
 implib comctl32.dll, ord.13, MakeDragList
 implib comctl32.dll, ord.2, MenuHelp
 implib comctl32.dll, ord.414, MirrorIcon
