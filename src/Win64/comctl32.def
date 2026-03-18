@@ -47,6 +47,8 @@ implib comctl32.dll, AttachScrollBars
 implib comctl32.dll, CCEnableScrollBar
 implib comctl32.dll, CCGetScrollInfo
 implib comctl32.dll, CCSetScrollInfo
+implib comctl32.dll, ord.18, CreateCheckBoxImageList
+implib comctl32.dll, ord.174, CreateDUIPropertySheetPage
 implib comctl32.dll, ord.151, CreateMRUListA
 implib comctl32.dll, ord.157, CreateMRUListLazyA
 implib comctl32.dll, ord.404, CreateMRUListLazyW
@@ -97,6 +99,7 @@ implib comctl32.dll, DSA_Sort
 implib comctl32.dll, ord.413, DefSubclassProc
 implib comctl32.dll, ord.156, DelMRUString
 implib comctl32.dll, DestroyPropertySheetPage
+implib comctl32.dll, ord.165, DestroyPropsheetPageArray
 implib comctl32.dll, DetachScrollBars
 implib comctl32.dll, DllGetVersion, COMCTL32_DllGetVersion
 implib comctl32.dll, ord.383, DoReaderMode
@@ -186,25 +189,32 @@ implib comctl32.dll, InitMUILanguage
 implib comctl32.dll, InitializeFlatSB
 implib comctl32.dll, ord.14, LBItemFromPt
 implib comctl32.dll, LoadIconMetric
+implib comctl32.dll, LoadIconWithScaleDown
 implib comctl32.dll, ord.13, MakeDragList
 implib comctl32.dll, ord.2, MenuHelp
 implib comctl32.dll, ord.414, MirrorIcon
 implib comctl32.dll, PropertySheet
 implib comctl32.dll, PropertySheetA
 implib comctl32.dll, PropertySheetW
+implib comctl32.dll, QuerySystemGestureStatus
 implib comctl32.dll, RegisterClassNameW
 implib comctl32.dll, ord.412, RemoveWindowSubclass
 implib comctl32.dll, ord.389, SHGetProcessDword
+implib comctl32.dll, ScrollBar_Menu
+implib comctl32.dll, ScrollBar_MouseMove
 implib comctl32.dll, ord.341, SendNotify
 implib comctl32.dll, ord.342, SendNotifyEx
 implib comctl32.dll, ord.384, SetPathWordBreakProc
 implib comctl32.dll, ord.410, SetWindowSubclass
 implib comctl32.dll, ord.3, ShowHideMenuCtl
+implib comctl32.dll, SizeBoxHwnd
 implib comctl32.dll, ord.382, SmoothScrollWindow
 implib comctl32.dll, ord.233, Str_GetPtrA
 implib comctl32.dll, ord.235, Str_GetPtrW
 implib comctl32.dll, ord.234, Str_SetPtrA
 implib comctl32.dll, ord.236, Str_SetPtrW
+implib comctl32.dll, TaskDialog
+implib comctl32.dll, TaskDialogIndirect
 implib comctl32.dll, ord.421, TextOutWrap
 implib comctl32.dll, UninitializeFlatSB
 implib comctl32.dll, _TrackMouseEvent
