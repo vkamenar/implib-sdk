@@ -58,6 +58,7 @@ implib comctl32.dll, CreatePropertySheetPage
 implib comctl32.dll, CreatePropertySheetPageA
 implib comctl32.dll, CreatePropertySheetPageW
 implib comctl32.dll, ord.164, CreateProxyPage
+implib comctl32.dll, ord.393, CreateSmallerIcon
 implib comctl32.dll, CreateStatusWindow
 implib comctl32.dll, CreateStatusWindowA
 implib comctl32.dll, CreateStatusWindowW
@@ -134,6 +135,7 @@ implib comctl32.dll, ord.4, GetEffectiveClientRect
 implib comctl32.dll, GetMUILanguage
 implib comctl32.dll, ord.420, GetTextExtentPoint32Wrap ; An alias for GetTextExtentPointWrap
 implib comctl32.dll, ord.419, GetTextExtentPointWrap
+implib comctl32.dll, ord.391, GetTitleFromPropSheetHeader
 implib comctl32.dll, ord.411, GetWindowSubclass
 implib comctl32.dll, HIMAGELIST_QueryInterface
 implib comctl32.dll, HandleScrollCmd
@@ -191,8 +193,10 @@ implib comctl32.dll, ord.14, LBItemFromPt
 implib comctl32.dll, LoadIconMetric
 implib comctl32.dll, LoadIconWithScaleDown
 implib comctl32.dll, ord.13, MakeDragList
+implib comctl32.dll, ord.395, Markup_Create
 implib comctl32.dll, ord.2, MenuHelp
 implib comctl32.dll, ord.414, MirrorIcon
+implib comctl32.dll, ord.392, PremultiplyAlphaChannel
 implib comctl32.dll, PropertySheet
 implib comctl32.dll, PropertySheetA
 implib comctl32.dll, PropertySheetW
