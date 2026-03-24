@@ -116,6 +116,7 @@ implib comctl32.dll, ord.415, DrawTextWrap
 implib comctl32.dll, ord.154, EnumMRUListA
 implib comctl32.dll, ord.403, EnumMRUListW
 implib comctl32.dll, ord.417, ExtTextOutWrap
+implib comctl32.dll, ord.169, FindMRUData
 implib comctl32.dll, ord.155, FindMRUStringA
 implib comctl32.dll, ord.402, FindMRUStringW
 implib comctl32.dll, FlatSB_EnableScrollBar
