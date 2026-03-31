@@ -1,0 +1,19 @@
+include '..\implib.inc'
+
+; *** Function available in v6 only
+; implib propsys.dll, ord.418, _GetDefaultVisibleInForExtension@8 ; Ordinal reused for GetDefaultKindsForExtension in v7
+
+implib propsys.dll, ClearPropVariantArray, _ClearPropVariantArray@8
+implib propsys.dll, ClearVariantArray, _ClearVariantArray@8
+implib propsys.dll, ord.433, _CreateSnippet@16
+implib propsys.dll, DllCanUnloadNow, _PROPSYS_DllCanUnloadNow@0
+implib propsys.dll, DllGetClassObject, _PROPSYS_DllGetClassObject@12
+implib propsys.dll, DllRegisterServer, _PROPSYS_DllRegisterServer@0
+implib propsys.dll, DllUnregisterServer, _PROPSYS_DllUnregisterServer@0
+implib propsys.dll, ord.418, _GetDefaultKindsForExtension@8 ; Also ordinal 430
+implib propsys.dll, ord.431, _GetDefaultLocationKindsForExtension@8
+implib propsys.dll, GetProxyDllInfo, _PROPSYS_GetProxyDllInfo@8
+implib propsys.dll, InitPropVariantFromBooleanVector, _InitPropVariantFromBooleanVector@12
+implib propsys.dll, InitPropVariantFromBuffer, _InitPropVariantFromBuffer@12
+
+endlib
