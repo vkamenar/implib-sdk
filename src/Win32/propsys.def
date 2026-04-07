@@ -76,6 +76,17 @@ implib propsys.dll, ord.428, _PSEnumerateSemanticTypes@12
 implib propsys.dll, ord.420, _PSFormatDateTimeW@16
 implib propsys.dll, PSFormatForDisplay, _PSFormatForDisplay@20
 implib propsys.dll, PSFormatForDisplayAlloc, _PSFormatForDisplayAlloc@16
+implib propsys.dll, PSFormatPropertyValue, _PSFormatPropertyValue@16
+implib propsys.dll, ord.423, _PSGetCanonicalValue@12
+implib propsys.dll, PSGetImageReferenceForValue, _PSGetImageReferenceForValue@12
+implib propsys.dll, PSGetItemPropertyHandler, _PSGetItemPropertyHandler@16
+implib propsys.dll, PSGetItemPropertyHandlerWithCreateObject, _PSGetItemPropertyHandlerWithCreateObject@20
+implib propsys.dll, ord.409, _PSGetNamedPropertyFromPropertyStorage@16
+implib propsys.dll, ord.425, _PSGetNamedValueAndPath@24
+implib propsys.dll, PSGetNameFromPropertyKey, _PSGetNameFromPropertyKey@8
+implib propsys.dll, ord.426, _PSGetObjectIdentity@16
+implib propsys.dll, PSGetPropertyDescription, _PSGetPropertyDescription@12
+implib propsys.dll, PSGetPropertyDescriptionByName, _PSGetPropertyDescriptionByName@12
 implib propsys.dll, PropVariantChangeType, _PropVariantChangeType@16
 implib propsys.dll, PropVariantCompareEx, _PropVariantCompareEx@16
 implib propsys.dll, ord.432, _PropVariantConcatenateAsVector@12
