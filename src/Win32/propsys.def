@@ -104,6 +104,16 @@ implib propsys.dll, PSPropertyBag_ReadInt, _PSPropertyBag_ReadInt@12
 implib propsys.dll, PSPropertyBag_ReadLONG, _PSPropertyBag_ReadLONG@12
 implib propsys.dll, PSPropertyBag_ReadPOINTL, _PSPropertyBag_ReadPOINTL@12
 implib propsys.dll, PSPropertyBag_ReadPOINTS, _PSPropertyBag_ReadPOINTS@12
+implib propsys.dll, PSPropertyBag_ReadPropertyKey, _PSPropertyBag_ReadPropertyKey@12
+implib propsys.dll, PSPropertyBag_ReadRECTL, _PSPropertyBag_ReadRECTL@12
+implib propsys.dll, PSPropertyBag_ReadSHORT, _PSPropertyBag_ReadSHORT@12
+implib propsys.dll, PSPropertyBag_ReadStr, _PSPropertyBag_ReadStr@16
+implib propsys.dll, PSPropertyBag_ReadStrAlloc, _PSPropertyBag_ReadStrAlloc@12
+implib propsys.dll, PSPropertyBag_ReadStream, _PSPropertyBag_ReadStream@12
+implib propsys.dll, PSPropertyBag_ReadType, _PSPropertyBag_ReadType@16
+implib propsys.dll, PSPropertyBag_ReadULONGLONG, _PSPropertyBag_ReadULONGLONG@12
+implib propsys.dll, PSPropertyBag_ReadUnknown, _PSPropertyBag_ReadUnknown@16
+implib propsys.dll, PSPropertyBag_WriteBOOL, _PSPropertyBag_WriteBOOL@12
 implib propsys.dll, PropVariantChangeType, _PropVariantChangeType@16
 implib propsys.dll, PropVariantCompareEx, _PropVariantCompareEx@16
 implib propsys.dll, ord.432, _PropVariantConcatenateAsVector@12
