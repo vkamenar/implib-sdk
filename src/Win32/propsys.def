@@ -77,7 +77,7 @@ implib propsys.dll, ord.420, _PSFormatDateTimeW@16
 implib propsys.dll, PSFormatForDisplay, _PSFormatForDisplay@20
 implib propsys.dll, PSFormatForDisplayAlloc, _PSFormatForDisplayAlloc@16
 implib propsys.dll, PSFormatPropertyValue, _PSFormatPropertyValue@16
-implib propsys.dll, ord.423, _PSGetCanonicalValue@12
+implib propsys.dll, ord.423, _PSGetCanonicalValue@12 ; Ordinal 423 allocated to PSStrFormatByteSizeEx in v6
 implib propsys.dll, PSGetImageReferenceForValue, _PSGetImageReferenceForValue@12
 implib propsys.dll, PSGetItemPropertyHandler, _PSGetItemPropertyHandler@16
 implib propsys.dll, PSGetItemPropertyHandlerWithCreateObject, _PSGetItemPropertyHandlerWithCreateObject@20
@@ -122,6 +122,21 @@ implib propsys.dll, PSPropertyBag_WriteLONG, _PSPropertyBag_WriteLONG@12
 implib propsys.dll, PSPropertyBag_WritePOINTL, _PSPropertyBag_WritePOINTL@12
 implib propsys.dll, PSPropertyBag_WritePOINTS, _PSPropertyBag_WritePOINTS@12
 implib propsys.dll, PSPropertyBag_WritePropertyKey, _PSPropertyBag_WritePropertyKey@12
+implib propsys.dll, PSPropertyBag_WriteRECTL, _PSPropertyBag_WriteRECTL@12
+implib propsys.dll, PSPropertyBag_WriteSHORT, _PSPropertyBag_WriteSHORT@12
+implib propsys.dll, PSPropertyBag_WriteStr, _PSPropertyBag_WriteStr@12
+implib propsys.dll, PSPropertyBag_WriteStream, _PSPropertyBag_WriteStream@12
+implib propsys.dll, PSPropertyBag_WriteULONGLONG, _PSPropertyBag_WriteULONGLONG@16
+implib propsys.dll, PSPropertyBag_WriteUnknown, _PSPropertyBag_WriteUnknown@12
+implib propsys.dll, PSPropertyKeyFromString, _PSPropertyKeyFromString@8
+implib propsys.dll, PSRefreshPropertySchema, _PSRefreshPropertySchema@0
+implib propsys.dll, PSRegisterPropertySchema, _PSRegisterPropertySchema@4
+implib propsys.dll, PSSetPropertyValue, _PSSetPropertyValue@12
+implib propsys.dll, ord.429, _PSStrFormatByteSizeEx@20 ; Ordinal 423 in v6
+implib propsys.dll, ord.421, _PSStrFormatByteSizeW@16
+implib propsys.dll, ord.422, _PSStrFormatKBSizeW@16
+implib propsys.dll, PSStringFromPropertyKey, _PSStringFromPropertyKey@12
+implib propsys.dll, PSUnregisterPropertySchema, _PSUnregisterPropertySchema@4
 implib propsys.dll, PropVariantChangeType, _PropVariantChangeType@16
 implib propsys.dll, PropVariantCompareEx, _PropVariantCompareEx@16
 implib propsys.dll, ord.432, _PropVariantConcatenateAsVector@12
@@ -183,5 +198,7 @@ implib propsys.dll, PropVariantToUInt64Vector, _PropVariantToUInt64Vector@16
 implib propsys.dll, PropVariantToUInt64VectorAlloc, _PropVariantToUInt64VectorAlloc@12
 implib propsys.dll, PropVariantToUInt64WithDefault, _PropVariantToUInt64WithDefault@12
 implib propsys.dll, PropVariantToVariant, _PropVariantToVariant@8
+implib propsys.dll, StgDeserializePropVariant, _StgDeserializePropVariant@12
+implib propsys.dll, StgSerializePropVariant, _StgSerializePropVariant@12
 
 endlib
