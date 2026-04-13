@@ -200,5 +200,20 @@ implib propsys.dll, PropVariantToUInt64WithDefault, _PropVariantToUInt64WithDefa
 implib propsys.dll, PropVariantToVariant, _PropVariantToVariant@8
 implib propsys.dll, StgDeserializePropVariant, _StgDeserializePropVariant@12
 implib propsys.dll, StgSerializePropVariant, _StgSerializePropVariant@12
+implib propsys.dll, VariantCompare, _VariantCompare@8
+implib propsys.dll, VariantGetBooleanElem, _VariantGetBooleanElem@12
+implib propsys.dll, VariantGetDoubleElem, _VariantGetDoubleElem@12
+implib propsys.dll, VariantGetElementCount, _VariantGetElementCount@4
+implib propsys.dll, VariantGetInt16Elem, _VariantGetInt16Elem@12
+implib propsys.dll, VariantGetInt32Elem, _VariantGetInt32Elem@12
+implib propsys.dll, VariantGetInt64Elem, _VariantGetInt64Elem@12
+implib propsys.dll, VariantGetStringElem, _VariantGetStringElem@12
+implib propsys.dll, VariantGetUInt16Elem, _VariantGetUInt16Elem@12
+implib propsys.dll, VariantGetUInt32Elem, _VariantGetUInt32Elem@12
+implib propsys.dll, VariantGetUInt64Elem, _VariantGetUInt64Elem@12
+implib propsys.dll, VariantToBoolean, _VariantToBoolean@8
+implib propsys.dll, VariantToBooleanArray, _VariantToBooleanArray@16
+implib propsys.dll, VariantToBooleanArrayAlloc, _VariantToBooleanArrayAlloc@12
+implib propsys.dll, VariantToBooleanWithDefault, _VariantToBooleanWithDefault@8
 
 endlib
