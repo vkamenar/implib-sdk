@@ -215,5 +215,17 @@ implib propsys.dll, VariantToBoolean, _VariantToBoolean@8
 implib propsys.dll, VariantToBooleanArray, _VariantToBooleanArray@16
 implib propsys.dll, VariantToBooleanArrayAlloc, _VariantToBooleanArrayAlloc@12
 implib propsys.dll, VariantToBooleanWithDefault, _VariantToBooleanWithDefault@8
+implib propsys.dll, VariantToBuffer, _VariantToBuffer@12
+implib propsys.dll, VariantToDosDateTime, _VariantToDosDateTime@12
+implib propsys.dll, VariantToDouble, _VariantToDouble@8
+implib propsys.dll, VariantToDoubleArray, _VariantToDoubleArray@16
+implib propsys.dll, VariantToDoubleArrayAlloc, _VariantToDoubleArrayAlloc@12
+implib propsys.dll, VariantToDoubleWithDefault, _VariantToDoubleWithDefault@12
+implib propsys.dll, VariantToFileTime, _VariantToFileTime@12
+implib propsys.dll, VariantToGUID, _VariantToGUID@8
+implib propsys.dll, VariantToInt16, _VariantToInt16@8
+implib propsys.dll, VariantToInt16Array, _VariantToInt16Array@16
+implib propsys.dll, VariantToInt16ArrayAlloc, _VariantToInt16ArrayAlloc@12
+implib propsys.dll, VariantToInt16WithDefault, _VariantToInt16WithDefault@8
 
 endlib
