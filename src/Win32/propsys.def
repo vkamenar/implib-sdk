@@ -238,5 +238,15 @@ implib propsys.dll, VariantToInt64WithDefault, _VariantToInt64WithDefault@12
 implib propsys.dll, VariantToPropVariant, _VariantToPropVariant@8
 implib propsys.dll, VariantToString, _VariantToString@12
 implib propsys.dll, VariantToStringAlloc, _VariantToStringAlloc@8
+implib propsys.dll, VariantToStringArray, _VariantToStringArray@16
+implib propsys.dll, VariantToStringArrayAlloc, _VariantToStringArrayAlloc@12
+implib propsys.dll, VariantToStringWithDefault, _VariantToStringWithDefault@8
+implib propsys.dll, VariantToStrRet, _VariantToStrRet@8
+implib propsys.dll, VariantToUInt16, _VariantToUInt16@8
+implib propsys.dll, VariantToUInt16Array, _VariantToUInt16Array@16
+implib propsys.dll, VariantToUInt16ArrayAlloc, _VariantToUInt16ArrayAlloc@12
+implib propsys.dll, VariantToUInt16WithDefault, _VariantToUInt16WithDefault@8
+implib propsys.dll, VariantToUInt32, _VariantToUInt32@8
+implib propsys.dll, VariantToUInt32Array, _VariantToUInt32Array@16
 
 endlib
