@@ -248,5 +248,11 @@ implib propsys.dll, VariantToUInt16ArrayAlloc, _VariantToUInt16ArrayAlloc@12
 implib propsys.dll, VariantToUInt16WithDefault, _VariantToUInt16WithDefault@8
 implib propsys.dll, VariantToUInt32, _VariantToUInt32@8
 implib propsys.dll, VariantToUInt32Array, _VariantToUInt32Array@16
+implib propsys.dll, VariantToUInt32ArrayAlloc, _VariantToUInt32ArrayAlloc@12
+implib propsys.dll, VariantToUInt32WithDefault, _VariantToUInt32WithDefault@8
+implib propsys.dll, VariantToUInt64, _VariantToUInt64@8
+implib propsys.dll, VariantToUInt64Array, _VariantToUInt64Array@16
+implib propsys.dll, VariantToUInt64ArrayAlloc, _VariantToUInt64ArrayAlloc@12
+implib propsys.dll, VariantToUInt64WithDefault, _VariantToUInt64WithDefault@12
 
 endlib
