@@ -1,0 +1,144 @@
+include '..\implib64.inc'
+
+; *** Function available in v6 only
+; implib propsys.dll, ord.418, GetDefaultVisibleInForExtension ; Ordinal reused for GetDefaultKindsForExtension in v7
+
+implib propsys.dll, ClearPropVariantArray
+implib propsys.dll, ClearVariantArray
+implib propsys.dll, ord.433, CreateSnippet
+implib propsys.dll, DllCanUnloadNow, PROPSYS_DllCanUnloadNow
+implib propsys.dll, DllGetClassObject, PROPSYS_DllGetClassObject
+implib propsys.dll, DllRegisterServer, PROPSYS_DllRegisterServer
+implib propsys.dll, DllUnregisterServer, PROPSYS_DllUnregisterServer
+implib propsys.dll, ord.418, GetDefaultKindsForExtension ; Also ordinal 430
+implib propsys.dll, ord.431, GetDefaultLocationKindsForExtension
+implib propsys.dll, GetProxyDllInfo, PROPSYS_GetProxyDllInfo
+implib propsys.dll, InitPropVariantFromBooleanVector
+implib propsys.dll, InitPropVariantFromBuffer
+implib propsys.dll, InitPropVariantFromCLSID
+implib propsys.dll, ord.402, InitPropVariantFromDateVector
+implib propsys.dll, InitPropVariantFromDoubleVector
+implib propsys.dll, InitPropVariantFromFileTime
+implib propsys.dll, InitPropVariantFromFileTimeVector
+implib propsys.dll, InitPropVariantFromGUIDAsString
+implib propsys.dll, InitPropVariantFromInt16Vector
+implib propsys.dll, InitPropVariantFromInt32Vector
+implib propsys.dll, InitPropVariantFromInt64Vector
+implib propsys.dll, InitPropVariantFromPropVariantVectorElem
+implib propsys.dll, InitPropVariantFromResource
+implib propsys.dll, InitPropVariantFromStrRet
+implib propsys.dll, ord.411, InitPropVariantFromStreamAsBlob
+implib propsys.dll, InitPropVariantFromStringAsVector
+implib propsys.dll, InitPropVariantFromStringVector
+implib propsys.dll, InitPropVariantFromUInt16Vector
+implib propsys.dll, InitPropVariantFromUInt32Vector
+implib propsys.dll, InitPropVariantFromUInt64Vector
+implib propsys.dll, InitPropVariantVectorFromPropVariant
+implib propsys.dll, InitVariantFromBooleanArray
+implib propsys.dll, InitVariantFromBuffer
+implib propsys.dll, InitVariantFromDoubleArray
+implib propsys.dll, InitVariantFromFileTime
+implib propsys.dll, InitVariantFromFileTimeArray
+implib propsys.dll, InitVariantFromGUIDAsString
+implib propsys.dll, InitVariantFromInt16Array
+implib propsys.dll, InitVariantFromInt32Array
+implib propsys.dll, InitVariantFromInt64Array
+implib propsys.dll, InitVariantFromResource
+implib propsys.dll, InitVariantFromStrRet
+implib propsys.dll, InitVariantFromStringArray
+implib propsys.dll, InitVariantFromUInt16Array
+implib propsys.dll, InitVariantFromUInt32Array
+implib propsys.dll, InitVariantFromUInt64Array
+implib propsys.dll, InitVariantFromVariantArrayElem
+implib propsys.dll, ord.434, IsPropVariantValid
+implib propsys.dll, ord.403, MakeTreeValueCanonical
+implib propsys.dll, ord.405, PSApplyPropertiesToPropertyStore
+implib propsys.dll, ord.406, PSApplyPropertyChangeToStore
+implib propsys.dll, PSCoerceToCanonicalValue
+implib propsys.dll, ord.413, PSCreateAdapterFromObject
+implib propsys.dll, ord.414, PSCreateAdapterFromObjects
+implib propsys.dll, PSCreateAdapterFromPropertyStore
+implib propsys.dll, ord.415, PSCreateAggregatePropertyProvider
+implib propsys.dll, PSCreateDelayedMultiplexPropertyStore
+implib propsys.dll, ord.417, PSCreateItemStoresFromDelegate
+implib propsys.dll, PSCreateMemoryPropertyStore
+implib propsys.dll, ord.407, PSCreateMemoryPropertyStoreFromSerializedData
+implib propsys.dll, PSCreateMultiplexPropertyStore
+implib propsys.dll, PSCreatePropertyChangeArray
+implib propsys.dll, ord.416, PSCreatePropertyDescriptionList
+implib propsys.dll, ord.408, PSCreatePropertyKeyStore
+implib propsys.dll, ord.400, PSCreatePropertyProvider
+implib propsys.dll, PSCreatePropertyStoreFromObject
+implib propsys.dll, PSCreatePropertyStoreFromPropertySetStorage
+implib propsys.dll, PSCreateSimplePropertyChange
+implib propsys.dll, PSEnumeratePropertyDescriptions
+implib propsys.dll, ord.428, PSEnumerateSemanticTypes
+implib propsys.dll, ord.420, PSFormatDateTimeW
+implib propsys.dll, PSFormatForDisplay
+implib propsys.dll, PSFormatForDisplayAlloc
+implib propsys.dll, PSFormatPropertyValue
+implib propsys.dll, ord.423, PSGetCanonicalValue ; Ordinal 423 allocated to PSStrFormatByteSizeEx in v6
+implib propsys.dll, PSGetImageReferenceForValue
+implib propsys.dll, PSGetItemPropertyHandler
+implib propsys.dll, PSGetItemPropertyHandlerWithCreateObject
+implib propsys.dll, ord.409, PSGetNamedPropertyFromPropertyStorage
+implib propsys.dll, ord.425, PSGetNamedValueAndPath
+implib propsys.dll, PSGetNameFromPropertyKey
+implib propsys.dll, ord.426, PSGetObjectIdentity
+implib propsys.dll, PSGetPropertyDescription
+implib propsys.dll, PSGetPropertyDescriptionByName
+implib propsys.dll, PSGetPropertyDescriptionListFromString
+implib propsys.dll, ord.410, PSGetPropertyFromPropertyStorage
+implib propsys.dll, PSGetPropertyKeyFromName
+implib propsys.dll, PSGetPropertySystem
+implib propsys.dll, PSGetPropertyValue
+implib propsys.dll, ord.427, PSGetSemanticTypeByName
+implib propsys.dll, ord.424, PSGetValueAndPath
+implib propsys.dll, PSLookupPropertyHandlerCLSID
+implib propsys.dll, PSPropertyBag_Delete
+implib propsys.dll, PSPropertyBag_ReadBOOL
+implib propsys.dll, PSPropertyBag_ReadBSTR
+implib propsys.dll, PSPropertyBag_ReadDWORD
+implib propsys.dll, PSPropertyBag_ReadGUID
+implib propsys.dll, PSPropertyBag_ReadInt
+implib propsys.dll, PSPropertyBag_ReadLONG
+implib propsys.dll, PSPropertyBag_ReadPOINTL
+implib propsys.dll, PSPropertyBag_ReadPOINTS
+implib propsys.dll, PSPropertyBag_ReadPropertyKey
+implib propsys.dll, PSPropertyBag_ReadRECTL
+implib propsys.dll, PSPropertyBag_ReadSHORT
+implib propsys.dll, PSPropertyBag_ReadStr
+implib propsys.dll, PSPropertyBag_ReadStrAlloc
+implib propsys.dll, PSPropertyBag_ReadStream
+implib propsys.dll, PSPropertyBag_ReadType
+implib propsys.dll, PSPropertyBag_ReadULONGLONG
+implib propsys.dll, PSPropertyBag_ReadUnknown
+implib propsys.dll, PSPropertyBag_WriteBOOL
+implib propsys.dll, PSPropertyBag_WriteBSTR
+implib propsys.dll, PSPropertyBag_WriteDWORD
+implib propsys.dll, PSPropertyBag_WriteGUID
+implib propsys.dll, PSPropertyBag_WriteInt
+implib propsys.dll, PSPropertyBag_WriteLONG
+implib propsys.dll, PSPropertyBag_WritePOINTL
+implib propsys.dll, PSPropertyBag_WritePOINTS
+implib propsys.dll, PSPropertyBag_WritePropertyKey
+implib propsys.dll, PSPropertyBag_WriteRECTL
+implib propsys.dll, PSPropertyBag_WriteSHORT
+implib propsys.dll, PSPropertyBag_WriteStr
+implib propsys.dll, PSPropertyBag_WriteStream
+implib propsys.dll, PSPropertyBag_WriteULONGLONG
+implib propsys.dll, PSPropertyBag_WriteUnknown
+implib propsys.dll, PSPropertyKeyFromString
+implib propsys.dll, PSRefreshPropertySchema
+implib propsys.dll, PSRegisterPropertySchema
+implib propsys.dll, PSSetPropertyValue
+implib propsys.dll, ord.429, PSStrFormatByteSizeEx ; Ordinal 423 in v6
+implib propsys.dll, ord.421, PSStrFormatByteSizeW
+implib propsys.dll, ord.422, PSStrFormatKBSizeW
+implib propsys.dll, PSStringFromPropertyKey
+implib propsys.dll, PSUnregisterPropertySchema
+implib propsys.dll, PropVariantChangeType
+implib propsys.dll, PropVariantCompareEx
+implib propsys.dll, ord.432, PropVariantConcatenateAsVector
+
+endlib
